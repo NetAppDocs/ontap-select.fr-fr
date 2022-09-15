@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: concept_perf_premium_ha_direct_ssd_96.html 
+keywords: ontap select, performance 
+summary: Informations sur les performances de ONTAP Select 9.6 – stockage SSD haute disponibilité directe premium. 
+---
+= Performances d'ONTAP Select 9.6 : stockage SSD premium HA directe
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Informations sur les performances de la plate-forme de référence.
+
+
+
+== Plate-forme de référence
+
+Matériel ONTAP Select 9.6 (Premium XL) (par nœud)
+
+* FUJITSU PRIMERGY RX2540 M4 :
++
+** Processeur Intel(R) Xeon(R) Gold 6142b à 2.6 GHz
+** 32 cœurs physiques (16 x 2 sockets), 64 cœurs logiques
+** 256 GO DE RAM
+** Disques par hôte : 24 SSD de 960 Go
+** ESX 6.5U1
+
+
+
+
+Matériel client
+
+* 5 clients IBM 3550m4 NFSv3
+
+
+Informations de configuration
+
+* SW RAID 1 x 9 + 2 RAID-DP (11 lecteurs)
+* 22+1 RAID-5 (RAID-0 dans ONTAP) / NVRAM de cache RAID
+* Aucune fonctionnalité d'efficacité du stockage utilisée (compression, déduplication, copies Snapshot, SnapMirror, etc.)
+
+
+Le tableau ci-dessous répertorie le débit mesuré en ce qui concerne les workloads de lecture/écriture sur une paire haute disponibilité de nœuds ONTAP Select Premium avec RAID logiciel et RAID matériel. Les mesures de performances ont été effectuées à l'aide de l'outil de génération de charge SIO.
+
+*Résultats pour un seul nœud (faisant partie d'un cluster ONTAP Select 9.5 de type moyenne instance) sur DAS (SSD) avec RAID logiciel et RAID matériel*
+
+[cols="6*"]
+|===
+| Description | Lecture séquentielle 64Kio | Écriture séquentielle 64Kio | Lecture aléatoire 8Kio | Écriture aléatoire 8Kio | Aléatoire WR/RD (50/50) 8Kio 
+
+
+| ONTAP 9.6 sélectionnez une grande instance avec RAID du logiciel DAS (SSD) | 2171 MiBps | 559 MiBps | 954 MiBps | 394 MiBps | 564 MiBps 
+
+
+| ONTAP 9.6 sélectionnez instance moyenne avec RAID du logiciel DAS (SSD) | 2090 MiBps | 592 MiBps | 677 MiBps | 335 MiBps | 441 3MiBps 
+
+
+| ONTAP 9.6 sélectionnez instance moyenne avec RAID matériel DAS (SSD) | 2038 MiBps | 520 MiBps | 578 MiBps | 325 MiBps | 399 MiBps 
+|===
+
+
+=== Lecture séquentielle de 64 Ko
+
+Détails :
+
+* E/S directes activées
+* 2 nœuds
+* 2 cartes d'interface réseau de données par nœud
+* 1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 8 To)
+* 64 processus SIO, 1 thread par proc
+* 32 volumes par nœud
+* 1 x fichiers par proc ; les fichiers sont de 12000 Mo chacun
+
+
+
+
+=== Écriture séquentielle de 64 Ko
+
+Détails :
+
+* E/S directes activées
+* 2 nœuds
+* 2 cartes d'interface réseau de données par nœud
+* 1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 4 To)
+* 128 processus SIO, 1 thread par proc
+* Volumes par nœud 32 (RAID matériel), 16 (RAID logiciel)
+* 1 x fichiers par proc ; les fichiers sont de 30720 Mo chacun
+
+
+
+
+=== Lecture aléatoire 8K
+
+Détails :
+
+* E/S directes activées
+* 2 nœuds
+* 2 cartes d'interface réseau de données par nœud
+* 1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 4 To)
+* 64 processus SIO, 8 threads par processeur
+* volumes par nœud 32
+* 1 x fichiers par proc ; les fichiers sont de 122 28 Mo chacun
+
+
+
+
+=== Écriture aléatoire 8K
+
+Détails :
+
+* E/S directes activées
+* 2 nœuds
+* 2 cartes d'interface réseau de données par nœud
+* 1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 4 To)
+* 64 processus SIO, 8 threads par processeur
+* volumes par nœud 32
+* 1 x fichiers par proc ; les fichiers sont de 8192Mo chacun
+
+
+
+
+=== 50 % aléatoire 8K lecture 50 %
+
+Détails :
+
+* E/S directes activées
+* 2 nœuds
+* 2 cartes d'interface réseau de données par nœud
+* 1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 4 To)
+* 64 threads SIO proc208 par proc
+* volumes par nœud 32
+* 1 x fichiers par proc ; les fichiers sont de 122 28 Mo chacun
+

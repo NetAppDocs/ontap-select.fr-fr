@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: concept_ha_other.html 
+keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
+summary: 'Battement des disques DE HAUTE DISPONIBILITÉ, boîte aux lettres haute disponibilité, battement des cœur de haute disponibilité, basculement haute disponibilité et rétablissement afin d"améliorer la protection des données.' 
+---
+= HA de détails supplémentaires
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Battement des disques DE HAUTE DISPONIBILITÉ, boîte aux lettres haute disponibilité, battement des cœur de haute disponibilité, basculement haute disponibilité et rétablissement afin d'améliorer la protection des données.
+
+
+
+== Les pulsations du disque
+
+Bien que l'architecture ONTAP Select HA tire parti de la plupart des chemins de code utilisés par les baies FAS traditionnelles, il existe quelques exceptions. L'une de ces exceptions est la mise en œuvre d'une méthode de communication sans réseau utilisée par les nœuds de cluster pour empêcher l'isolement du réseau de provoquer un comportement split-brain. Un scénario split-brain est le résultat du partitionnement du cluster, généralement causé par des pannes réseau, où chaque côté estime que l'autre est en panne et tente de reprendre les ressources du cluster.
+
+Les implémentations haute disponibilité de classe entreprise doivent gérer aisément ce type de scénario. Pour ce faire, ONTAP utilise une méthode d'cœur personnalisée, basée sur disque. Il s'agit du travail de la boîte aux lettres haute disponibilité, emplacement sur le stockage physique utilisé par les nœuds du cluster pour transmettre les messages de signal de détection. Cela permet au cluster de déterminer la connectivité et donc de définir le quorum en cas de basculement.
+
+Sur les baies FAS, qui utilisent une architecture haute disponibilité du stockage partagé, ONTAP résout les problèmes « split-brain » de la manière suivante :
+
+* Réservations persistantes SCSI
+* Des métadonnées haute disponibilité persistantes
+* État HAUTE DISPONIBILITÉ envoyé via l'interconnexion haute disponibilité
+
+
+Toutefois, dans l'architecture sans partage d'un cluster ONTAP Select, un nœud ne peut voir que son propre stockage local et non celui du partenaire haute disponibilité. Par conséquent, lorsque le partitionnement réseau isole chaque côté d'une paire haute disponibilité, les méthodes ci-dessus permettant de déterminer le quorum du cluster et le comportement de basculement sont indisponibles.
+
+Bien que la méthode existante de détection et d'évitement du split-brain ne puisse pas être utilisée, une méthode de médiation est toujours nécessaire, qui s'inscrit dans les contraintes d'un environnement sans partage. ONTAP Select étend encore davantage l'infrastructure de la boîte aux lettres existante, ce qui lui permet d'agir comme une méthode de médiation en cas de partitionnement du réseau. Étant donné que le stockage partagé n'est pas disponible, la médiation est effectuée par l'accès aux disques de boîte aux lettres via NAS. Ces disques sont répartis dans tout le cluster, notamment le médiateur dans un cluster à deux nœuds, à l'aide du protocole iSCSI. Il est donc possible de prendre des décisions intelligentes en matière de basculement par un nœud de cluster en fonction de l'accès à ces disques. Si un nœud peut accéder aux disques de boîte aux lettres d'autres nœuds en dehors de son partenaire de haute disponibilité, il est probable qu'il soit fonctionnel et prêt à être fonctionnement.
+
+
+NOTE: L'architecture de la boîte aux lettres et la méthode de heartbeef basée sur disque pour résoudre les problèmes de quorum du cluster et de split-brain sont les raisons pour lesquelles la variante à plusieurs nœuds de ONTAP Select nécessite quatre nœuds distincts ou un médiateur pour un cluster à deux nœuds.
+
+
+
+== Publication de boîte aux lettres HAUTE DISPONIBILITÉ
+
+L'architecture de la boîte aux lettres haute disponibilité utilise un modèle d'envoi de messages. À intervalles réguliers, les nœuds du cluster publient des messages sur tous les autres disques de boîte aux lettres du cluster, notamment le médiateur, indiquant que le nœud est opérationnel. Dans un cluster sain à tout moment, un seul disque de boîte aux lettres sur un nœud de cluster contient des messages publiés de tous les autres nœuds de cluster.
+
+Connecté à chaque nœud Select cluster est un disque virtuel utilisé spécifiquement pour l'accès aux boîtes aux lettres partagées. Ce disque est appelé disque de boîte aux lettres médiateur, car sa fonction principale est de servir de méthode de médiation de cluster en cas de défaillance de nœud ou de partitionnement de réseau. Ce disque de boîte aux lettres contient des partitions pour chaque nœud de cluster et est monté sur un réseau iSCSI par d'autres nœuds de cluster Select. Ces nœuds postont régulièrement des États d'intégrité sur la partition appropriée du disque de la boîte aux lettres. L'utilisation de disques de boîtes aux lettres accessibles en réseau répartis dans tout le cluster vous permet de déduire l'état de santé des nœuds via une matrice de réaccessibilité. Par exemple, les nœuds de cluster A et B peuvent envoyer à la boîte aux lettres du nœud D du cluster, mais pas à la boîte aux lettres du nœud C. De plus, le nœud D du cluster ne peut pas envoyer la boîte aux lettres du nœud C, il est donc probable que le nœud C soit en panne ou qu'il soit isolé du réseau et qu'il doit être pris en charge.
+
+
+
+== Heartbeef
+
+Comme pour les plateformes NetApp FAS, ONTAP Select envoie régulièrement des messages de signal de détection haute disponibilité sur l'interconnexion haute disponibilité. Dans le cluster ONTAP Select, cette opération s'effectue sur une connexion réseau TCP/IP entre les partenaires haute disponibilité. Par ailleurs, les messages de signal de détection sur disque sont transmis à tous les disques de boîte aux lettres HA, notamment les disques de boîte aux lettres médiateur. Ces messages sont transmis toutes les quelques secondes et lus régulièrement. La fréquence d'envoi et de réception de ces dernières permet au cluster ONTAP Select de détecter les événements de panne haute disponibilité en 15 secondes environ, dans la même fenêtre que sur les plateformes FAS. Lorsque les messages de pulsation ne sont plus lus, un événement de basculement est déclenché.
+
+La figure ci-dessous illustre le processus d'envoi et de réception de messages de signal de détection via l'interconnexion haute disponibilité et les disques médiateurs du point de vue d'un seul nœud de cluster ONTAP Select, nœud C.
+
+
+NOTE: Les pulsations du réseau sont transmises via l'interconnexion haute disponibilité au partenaire de haute disponibilité, le nœud D, tandis que les pulsations des disques utilisent des disques de toutes les boîtes aux lettres sur l'ensemble des nœuds du cluster, A, B, C et D.
+
+*Battement de cœur HA dans un cluster à quatre nœuds : état stable*image:DDHA_05.jpg["Heartbeef HA dans un cluster à quatre nœuds : état stable"]
+
+
+
+== Basculement et rétablissement HAUTE DISPONIBILITÉ
+
+Lors d'une opération de basculement, le nœud survivant prend en charge le service des données de son nœud homologue à l'aide de la copie locale des données de son partenaire HA. Les E/S client peuvent continuer à être interrompues, mais les modifications apportées à ces données doivent être répliquées à nouveau avant que le rétablissement ne puisse avoir lieu. Notez que ONTAP Select ne prend pas en charge un rétablissement forcé, car cela entraîne la perte des modifications stockées sur le nœud survivant.
+
+L'opération de resynchronisation arrière est automatiquement déclenchée lorsque le nœud redémarré rejoint le cluster. Le temps nécessaire à la synchronisation inverse dépend de plusieurs facteurs. Ces facteurs incluent le nombre de modifications à répliquer, la latence du réseau entre les nœuds et la vitesse des sous-systèmes de disques sur chaque nœud. Il est possible que le temps requis pour la synchronisation inverse dépasse la fenêtre de réaffichage automatique de 10 minutes. Dans ce cas, un rétablissement manuel est nécessaire après la synchronisation inverse. La progression de la resynchronisation arrière peut être surveillée à l'aide de la commande suivante :
+
+[listing]
+----
+storage aggregate status -r -aggregate <aggregate name>
+----

@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_manually_remove.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, vcenter, remove, removing, manually removing 
+summary: Vous pouvez supprimer manuellement le plug-in de déploiement du serveur vCenter. 
+---
+= Suppression manuelle du plug-in de déploiement depuis vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer manuellement le plug-in de déploiement du serveur vCenter.
+
+
+
+== Avant de commencer
+
+Vous devez toujours commencer par supprimer le plug-in à l'aide du navigateur d'objets gérés VMware (MOB), puis en le supprimant des répertoires vSphere situés dans le serveur vCenter.
+
+Il existe plusieurs instances dans lesquelles vous devez supprimer manuellement le plug-in :
+
+* Le plug-in a été supprimé à l'aide de l'interface utilisateur native de l'utilitaire de déploiement, mais le serveur vCenter n'a pas pu être redémarré.
+* L'utilitaire de déploiement a été déclassé sans retirer le plug-in.
+
+
+
+
+== Utilisation de VMware MOB pour retirer le plug-in
+
+Le MOB est une application VMware qui vous permet d'afficher et de gérer les objets sur un serveur VMware vCenter. Vous pouvez utiliser le MOB pour supprimer le plug-in vCenter de déploiement.
+
+.Étapes
+. Accédez au MOB sur le serveur vCenter à l'aide d'un navigateur et connectez-vous :
++
+`\https://<FQDN_or_IP-address>/mob`
+
+. Cliquez sur *content*, puis sur *ExtensionManager*.
+. Vérifiez que le poste à supprimer est présent en fonction du nom complet :
++
+`com.netapp.selectdeploy`
+
+. Cliquez sur *UnregisterExtension*.
+. Saisissez le nom de l'extension et cliquez sur *InvokeMethod*.
+
+
+Le plug-in est supprimé de la liste des extensions.
+
+
+
+== Suppression du plug-in du dossier de l'interface utilisateur vSphere
+
+Vous devez examiner le répertoire de l'interface utilisateur vSphere sur le serveur vCenter et supprimer le plug-in de déploiement si trouvé.
+
+Vous devez disposer du mot de passe pour le compte racine sur le serveur vCenter. Vous devez supprimer le plug-in à l'aide de vSphere MOB.
+
+.Étapes
+. Utilisez SSH pour accéder au serveur vCenter et connectez-vous :
++
+`ssh root@<FQDN_or_IP-address>`
+
+. Tapez *shell* et appuyez sur *entrée* pour lancer le shell Bash.
+. Accédez au `vsphere-client-serenity` Répertoire du service vSphere-UI :
++
+`cd /etc/vmware/vsphere-ui/vc-packages/vsphere-client-serenity`
+
+. Déterminez s'il existe des répertoires du formulaire `com.netapp.selectdeploy` qui doit être supprimé :
++
+`ls -al`
+
+. Arrêtez le client Web HTML5 vSphere-UI :
++
+`service-control --stop vsphere-ui`
+
+. Supprimez le répertoire contenant les extensions de l'interface utilisateur :
++
+`rm -rf com.netapp.selectdeploy-1.0.0`
+
+. Redémarrez le client Web HTML5 vSphere-UI :
++
+`service-control --start vsphere-ui`
+
+
+
+Le redémarrage du plug-in déployé peut prendre plusieurs minutes et le rendre disponible.
+
+
+
+== Suppression du plug-in du dossier client vSphere
+
+Vous devez examiner le répertoire du client vSphere sur le serveur vCenter et supprimer le plug-in de déploiement, le cas échéant. Bien que le plug-in de déploiement n'utilise pas Flash, il est recommandé d'examiner ce répertoire dans le cadre de la procédure de suppression du plug-in.
+
+Vous devez disposer du mot de passe pour le compte racine sur le serveur vCenter. Vous devez supprimer le plug-in à l'aide du MOB vSphere et supprimer le plug-in du répertoire de l'interface utilisateur vSphere.
+
+.Étapes
+. Utilisez SSH pour accéder au serveur vCenter et connectez-vous :
++
+`ssh root@<FQDN_or_IP-address>`
+
+. Tapez *shell* et appuyez sur *entrée* pour lancer le shell Bash.
+. Accédez au `vsphere-client-serenity` Répertoire du service vSphere-client :
++
+`cd /etc/vmware/vsphere-client/vc-packages/vsphere-client-serenity`
+
+. Déterminez s'il existe des répertoires du formulaire `com.netapp.selectdeploy` qui doit être supprimé :
++
+`ls -al`
+
+. Arrêtez le client Web HTML5 vSphere-UI :
++
+`service-control --stop vsphere-client`
+
+. Supprimez le répertoire contenant les extensions client :
++
+`rm -rf com.netapp.selectdeploy-1.0.0`
+
+. Redémarrez le client Web HTML5 vSphere-UI :
++
+`service-control --start vsphere-client`
+
+
+
+Le redémarrage du plug-in déployé peut prendre plusieurs minutes et le rendre disponible.

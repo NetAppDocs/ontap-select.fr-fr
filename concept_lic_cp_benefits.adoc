@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_benefits.html 
+keywords: license, licensing, capacity pools, benefits 
+summary: 'Il existe plusieurs avantages lors de l"utilisation du modèle de licence des pools de capacité au lieu du modèle de licence des niveaux de capacité.' 
+---
+= Récapitulatif des avantages
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il existe plusieurs avantages lors de l'utilisation du modèle de licence des pools de capacité au lieu du modèle de licence des niveaux de capacité.
+
+
+
+== L'utilisation plus efficace de la capacité de stockage
+
+Lorsque vous utilisez des licences de niveaux de capacité, allouez une capacité de stockage fixe à chaque nœud. Tout espace inutilisé ne peut être partagé avec les autres nœuds et est réellement gaspillé. Avec la licence relative aux pools de capacité, chaque nœud consomme uniquement la capacité dont il a besoin, en fonction de la taille des agrégats de données.
+
+Et comme la capacité est ancrée dans un pool central, elle peut être partagée entre de nombreux nœuds de votre organisation.
+
+
+
+== Réduction considérable de la surcharge administrative et donc des coûts
+
+Si vous utilisez des licences de niveau de capacité, vous devez obtenir et installer une licence pour chaque nœud. Lorsque vous utilisez des pools de capacité, une licence est accordée pour chaque pool partagé. Cela permet de réduire considérablement les frais administratifs et donc les coûts.
+
+
+
+== Amélioration des mesures d'utilisation
+
+L'interface utilisateur Web de déploiement fournit des informations améliorées sur l'utilisation des pools de capacité. Vous pouvez rapidement déterminer la quantité de stockage utilisée et disponible dans un pool de capacité, quels nœuds utilisent le stockage d'un pool et quels pools un cluster alloue de la capacité.

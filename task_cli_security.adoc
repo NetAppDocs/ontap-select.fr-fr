@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task_cli_security.html 
+keywords: administer, administering, cli, security 
+summary: 'Dans le cadre de la sécurisation d"un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.' 
+---
+= Sécurité
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans le cadre de la sécurisation d'un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.
+
+
+
+= Modification du mot de passe administrateur de déploiement
+
+Vous pouvez modifier le mot de passe du compte administrateur de la machine virtuelle de déploiement selon vos besoins à l'aide de l'interface de ligne de commande.
+
+.Étapes
+. Connectez-vous à la CLI de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Modifier le mot de passe :
+`password modify`
+. Répondez à toutes les invites correspondant à votre environnement.
+

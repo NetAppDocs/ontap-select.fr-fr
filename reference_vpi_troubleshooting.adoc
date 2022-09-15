@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: reference_vpi_troubleshooting.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, troubleshooting 
+summary: Vous devez connaître les techniques de dépannage disponibles et les erreurs courantes dans le cadre de la prise en charge du plug-in vCenter de déploiement. 
+---
+= Dépannage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez connaître les techniques de dépannage disponibles et les erreurs courantes dans le cadre de la prise en charge du plug-in vCenter de déploiement.
+
+
+
+== Erreurs d'installation, de désinstallation et de mise à jour
+
+Si une erreur se produit pendant l'installation, la désinstallation ou une procédure de mise à jour, l'API renvoie un message d'erreur qui s'affiche par l'interface de déploiement utilisée pour lancer la procédure (interface utilisateur Web ou CLI).
+
+Les erreurs courantes sont les suivantes :
+
+* Informations d'identification incorrectes (nom d'utilisateur ou mot de passe)
+* Plug-in non valide ou manquant spécifié pour l'installation
+* Le serveur vCenter est hors ligne ou inaccessible
+
+
+Pour plus d'informations sur une erreur, consultez les journaux suivants :
+
+* Déployer le journal du serveur
+* Journal du serveur vCenter
+
+
+
+
+== Erreurs de plug-in dans vCenter
+
+Si une erreur se produit au cours d'une session avec vCenter, un message d'erreur s'affiche. Les erreurs courantes sont les suivantes :
+
+* Impossible de charger le contenu intégré dans vCenter à partir du serveur de déploiement car le certificat SSL du serveur de déploiement n'a pas été accepté dans le navigateur.
+* Le serveur de déploiement ne parvient pas à autoriser l'ID de session d'un utilisateur vCenter qui tente d'accéder au plug-in de déploiement vCenter. La session est expirée.
+* Privilèges insuffisants pour accéder au plug-in vCenter de déploiement.
+* Le serveur déployé est hors ligne ou inaccessible.
+
+
+Pour plus d'informations sur une erreur, consultez les journaux suivants :
+
+* Journal du serveur vCenter
+* Déployer le journal du serveur
+

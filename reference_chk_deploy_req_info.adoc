@@ -1,0 +1,71 @@
+---
+bar: sidebar 
+permalink: reference_chk_deploy_req_info.html 
+keywords: ontap select, deploy, pre-installation, vmware 
+summary: 'Avant d"installer l"utilitaire d"administration de déploiement dans un environnement VMware, vérifiez les conditions de base requises et préparez-vous à un déploiement réussi.' 
+---
+= Informations requises pour l'installation de l'utilitaire de déploiement
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avant d'installer l'utilitaire d'administration de déploiement dans un environnement VMware, consultez les informations de configuration requises et les informations de configuration réseau facultatives pour vous préparer à un déploiement réussi.
+
+
+
+== Informations de configuration requises
+
+Dans le cadre de la planification de votre déploiement, vous devez déterminer les informations de configuration requises avant d'installer l'utilitaire d'administration ONTAP Select Deploy.
+
+[cols="40,60"]
+|===
+| Informations requises | Description 
+
+
+| Nom de la machine virtuelle déployée | Identificateur à utiliser pour la machine virtuelle. 
+
+
+| Nom de l'hôte ESXi | Identifiant de l'hôte VMware ESXi sur lequel l'utilitaire de déploiement est installé. 
+
+
+| Nom du datastore | Identifiant du datastore VMware contenant les fichiers de la machine virtuelle (environ 40 Go sont requis). 
+
+
+| Réseau de la machine virtuelle | Identifiant du réseau sur lequel la machine virtuelle de déploiement est connectée. 
+|===
+
+
+== Informations optionnelles sur la configuration du réseau
+
+Par défaut, la machine virtuelle déployée est configurée à l'aide de DHCP. Toutefois, si nécessaire, vous pouvez configurer manuellement l'interface réseau de la machine virtuelle.
+
+[cols="35,65"]
+|===
+| Informations sur le réseau | Description 
+
+
+| Nom d'hôte | Identifiant de la machine hôte. 
+
+
+| Adresse IP de l'hôte | Adresse IPv4 statique de la machine hôte. 
+
+
+| Masque de sous-réseau | Masque de sous-réseau, basé sur le réseau dont fait partie la machine virtuelle. 
+
+
+| Passerelle | Passerelle ou routeur par défaut. 
+
+
+| Serveur DNS principal | Serveur de nom de domaine principal. 
+
+
+| Serveur DNS secondaire | Serveur de nom de domaine secondaire. 
+
+
+| Domaines de recherche | Liste des domaines de recherche à utiliser. 
+|===

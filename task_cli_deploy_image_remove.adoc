@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: task_cli_deploy_image_remove.html 
+keywords: administer, administering, cli, deploy, ontap select image, remove 
+summary: 'Vous pouvez supprimer des images ONTAP Select de votre instance de l"utilitaire d"administration de déploiement lorsqu"elles ne sont plus nécessaires.' 
+---
+= Suppression d'une image ONTAP Select du déploiement
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez supprimer des images ONTAP Select de votre instance de l'utilitaire d'administration de déploiement lorsqu'elles ne sont plus nécessaires.
+
+
+CAUTION: Vous ne devez pas supprimer les images ONTAP Select utilisées par un cluster.
+
+Vous pouvez supprimer les anciennes images ONTAP Select qui ne sont pas actuellement utilisées par un cluster ou qui seront utilisées avec un futur déploiement de cluster.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte administrateur (admin).
+. Affichez les clusters gérés par le déploiement et l'enregistrement des images ONTAP utilisées :
++
+`cluster show`
+
++
+Notez le numéro de version et la plateforme d'hyperviseur dans chaque cas.
+
+. Démarrer la coque de Bash :
++
+`shell bash`
+
+. Afficher toutes les images ONTAP Select disponibles :
++
+`ls -lh /opt/netapp/images`
+
+. Vous pouvez également supprimer une image ESXi.
++
+Exemple
+`rm -r /opt/netapp/images/DataONTAPv-9.3RC1-vidconsole-esx.ova`
+
+. Vous pouvez également supprimer une image KVM lorsque vous utilisez une version antérieure à ONTAP Select 9.10.1.
++
+Exemple
+`rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar`
+
+

@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: concept_adm_upgrading_nodes.html 
+keywords: administer, administering, web, upgrading nodes 
+summary: 'Une fois que vous avez déployé un cluster ONTAP Select, vous pouvez mettre à niveau l"image ONTAP de chaque nœud en fonction des besoins à l"aide de la procédure standard de mise à niveau du logiciel ONTAP.' 
+---
+= Mise à niveau des nœuds ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois le déploiement d'un cluster ONTAP Select déployé, vous pouvez mettre à niveau l'image ONTAP sur chaque nœud du cluster si nécessaire.
+
+
+CAUTION: Vous ne pouvez pas utiliser l'utilitaire d'administration Deploy pour effectuer la mise à niveau de nœuds ONTAP Select existants. L'utilitaire Deploy peut uniquement être utilisé pour créer de nouveaux clusters ONTAP Select.
+
+
+
+== Procédure générale
+
+Procédez comme suit pour mettre à niveau un nœud ONTAP Select existant.
+
+. Accédez à la page de téléchargements du site de support NetApp.
++
+https://mysupport.netapp.com/site/downloads["Téléchargements de support NetApp"^]
+
+. Cliquez sur *mise à niveau du nœud ONTAP Select*.
+. Sélectionnez et téléchargez l'image de mise à niveau appropriée répondant à toutes les invites, le cas échéant.
+. Consultez les notes de version pour obtenir des informations supplémentaires et connaître les procédures nécessaires avant de mettre à niveau un nœud ONTAP Select. Vous pouvez accéder aux notes de version de votre version de ONTAP Select sur la page de la bibliothèque de produits.
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Bibliothèque de produits ONTAP Select"^]
+
+. Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select.
++
+https://docs.netapp.com/us-en/ontap/["Documentation sur ONTAP 9"^]
+
+
+
+
+
+== Rétablissement d'un nœud ONTAP Select
+
+Vous ne pouvez pas restaurer une version antérieure à la version d'origine d'un nœud ONTAP Select. Par exemple :
+
+ONTAP Select 9.4 est installé à l'origine:: Vous pouvez mettre à niveau le nœud vers la version 9.5 et revenir à la version 9.4 si nécessaire.
+ONTAP Select 9.5 est installé à l'origine:: Vous ne pouvez pas revenir à la version 9.4 car cette version est antérieure à la version installée à l'origine.
+
+
+
+
+== Utilisation du pilote réseau VMXNET3
+
+Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select existant vers la version 9.5, le pilote réseau n'est pas automatiquement mis à niveau. Vous devez effectuer une mise à niveau manuelle vers VMXNET3. Vous devez contacter le support NetApp pour obtenir de l'aide concernant la mise à niveau.

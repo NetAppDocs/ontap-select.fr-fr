@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: task_adm_licenses.html 
+keywords: administer, administering, web, licenses 
+summary: 'Vous pouvez effectuer plusieurs tâches associées dans le cadre de l"administration des licences ONTAP Select.' 
+---
+= Licences ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez effectuer plusieurs tâches associées dans le cadre de l'administration des licences ONTAP Select.
+
+
+
+== Gestion des licences des tiers de capacité
+
+Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité ONTAP Select selon vos besoins.
+
+.Étapes
+. Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
+. Cliquez sur l'onglet *Administration* en haut de la page.
+. Cliquez sur *licences* et sur *niveau de capacité*.
+. Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
+. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante
+. Pour ajouter une nouvelle licence, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence dans votre poste de travail local.
+
+
+
+
+== Gestion des licences du pool de capacité
+
+Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONTAP Select selon vos besoins.
+
+.Étapes
+. Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
+. Cliquez sur l'onglet *Administration* en haut de la page.
+. Cliquez sur *licences* et sur *pools de capacité*.
+. Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
+. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante
+. Pour ajouter une nouvelle licence ou renouveler une licence existante, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence depuis votre poste de travail local.
+. Pour afficher la liste des pools de capacité :
++
+.. Cliquez sur *Résumé*.
+.. Sélectionnez et développez un pool pour voir les clusters et les nœuds qui louent le stockage du pool.
+.. Afficher l'état actuel de la licence sous *informations de licence*.
+.. Vous pouvez modifier la durée des contrats de location émis pour le pool en vertu de l'expiration du bail.
+
+
+. Pour afficher la liste des clusters :
++
+.. Cliquez sur *Détails*.
+.. Sélectionnez et développez le cluster pour voir l'utilisation du stockage.
+
+
+
+
+
+
+== Réinstallation d'une licence de pool de capacité
+
+Chaque licence de pool de capacité active est verrouillée à une instance spécifique du Gestionnaire de licences, contenue dans une instance de l'utilitaire d'administration de déploiement. Si vous utilisez une licence de pool de capacité puis restaurez ou récupérez l'instance de déploiement, la licence d'origine n'est plus valide. Vous devez générer un nouveau fichier de licence de capacité, puis installer la licence sur la nouvelle instance de déploiement.
+
+.Avant de commencer
+* Déterminez toutes les licences de pool de capacité utilisées par l'instance de déploiement d'origine.
+* Si vous restaurez une sauvegarde dans le cadre de la création de la nouvelle instance de déploiement, déterminez si la sauvegarde est à jour et à jour.
+* Recherchez les nœuds ONTAP Select les plus récemment créés par l'instance de déploiement d'origine (uniquement si une sauvegarde à jour de l'instance de déploiement d'origine n'est pas restaurée sur la nouvelle instance de déploiement).
+* Restaurez ou recréez l'instance de déploiement
+
+
+À un niveau élevé, cette tâche est composée de trois parties. Vous devez régénérer et installer toutes les licences de pool de capacité utilisées par l'instance de déploiement. Une fois que toutes les licences ont été réinstallées sur la nouvelle instance de déploiement, vous pouvez réinitialiser le numéro de séquence de série si nécessaire. Enfin, si l'adresse IP de déploiement a changé, vous devez mettre à jour chaque nœud ONTAP Select qui utilise une licence de pools de capacité.
+
+.Étapes
+. Contactez le support NetApp et bénéficiez de toutes les licences de pool de capacité pour l'instance de déploiement initiale sans limites ou non.
+. Obtenez et téléchargez un nouveau fichier de licence pour chacune des licences du pool de capacité.
++
+Voir link:task_lic_acquire_cp.html["Acquisition d'une licence de pool de capacité"] pour en savoir plus.
+
+. Installez les licences du pool de capacité sur la nouvelle instance de déploiement :
++
+.. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+.. Cliquez sur l'onglet *Administration* en haut de la page.
+.. Cliquez sur *licences*, puis sur *Pool de capacité*.
+.. Cliquez sur *Ajouter*, puis sur *Télécharger les licences* pour sélectionner et télécharger les licences.
+
+
+. Si vous avez créé la nouvelle instance de déploiement sans restaurer une sauvegarde, ou si vous avez utilisé une sauvegarde qui n'était pas à jour et à jour, vous devez mettre à jour le numéro de séquence de série :
++
+.. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide du compte administrateur.
+.. Afficher le numéro de série d'un nœud créé le plus récemment par l'instance de déploiement d'origine :
++
+`node show -cluster-name CLUSTER_NAME -name NODE_NAME -detailed`
+
+.. Extrayez les huit derniers chiffres du numéro de série du nœud à vingt chiffres pour obtenir le dernier numéro de séquence de série utilisé par l'instance de déploiement d'origine.
+.. Ajoutez 20 au numéro de séquence de série pour créer le nouveau numéro de séquence de série.
+.. Définissez le numéro de séquence de série de la nouvelle instance de déploiement :
++
+`license-manager modify -serial-sequence SEQ_NUMBER`
+
+
+
+. Si l'adresse IP attribuée à la nouvelle instance de déploiement est différente de celle de l'instance de déploiement d'origine, vous devez mettre à jour l'adresse IP sur chaque nœud ONTAP Select qui utilise une licence de pools de capacité :
++
+.. Connectez-vous à l'interface de ligne de commande ONTAP du nœud ONTAP Select.
+.. Entrer en mode de privilège avancé :
++
+`set adv`
+
+.. Afficher la configuration actuelle :
++
+`system license license-manager show`
+
+.. Définissez l'adresse IP du Gestionnaire de licences (Deploy) utilisée par le nœud :
++
+`system license license-manager modify -host NEW_IP_ADDRESS`
+
+
+
+
+
+
+
+== Conversion d'une licence d'évaluation en licence de production
+
+Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de niveau de capacité de production avec l'utilitaire d'administration Deploy.
+
+.Avant de commencer
+* Vous devez utiliser ONTAP Select 9.5P1 avec Deploy 2.11 ou version ultérieure
+* Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production.
+* Vous devez disposer de licences de niveau de capacité pour chaque nœud du cluster d'évaluation.
+
+
+La modification de la licence de cluster pour un cluster à un seul nœud entraîne un perturbation. Cependant, ce n'est pas le cas pour un cluster à plusieurs nœuds car le processus de conversion redémarre chaque nœud un par un pour appliquer la licence.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité.
+. En haut de la page des détails du cluster, cliquez sur *cliquez ici* pour modifier la licence du cluster.
++
+Vous pouvez également cliquer sur *Modifier* en regard de la licence d'évaluation dans la section *Détails du cluster*.
+
+. Sélectionnez une licence de production disponible pour chaque nœud, ou téléchargez des licences supplémentaires selon les besoins.
+. Indiquez les informations d'identification ONTAP et cliquez sur *Modifier*.
++
+La mise à niveau de licence d'un cluster peut prendre plusieurs minutes. Laissez le processus se terminer avant de quitter la page ou d'apporter d'autres modifications.
+
+
+
+Les numéros de série de nœud de 20 chiffres initialement attribués à chaque nœud pour le déploiement d'évaluation sont remplacés par les numéros de série à neuf chiffres des licences de production utilisées pour la mise à niveau.

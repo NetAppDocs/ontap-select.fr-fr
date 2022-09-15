@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_host_prep.html 
+keywords: ontap select, pre-installation checklist, host preparation 
+summary: 'Préparez chacun des hôtes de l"hyperviseur où un nœud ONTAP Select est déployé. Lors de la préparation des hôtes, évaluez minutieusement l"environnement de déploiement afin de s"assurer que les hôtes sont correctement configurés et prêts à prendre en charge le déploiement d"un cluster ONTAP Select.' 
+---
+= Liste de contrôle de la configuration et de la préparation des hôtes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Préparez chacun des hôtes de l'hyperviseur où un nœud ONTAP Select est déployé. Lors de la préparation des hôtes, évaluez minutieusement l'environnement de déploiement afin de s'assurer que les hôtes sont correctement configurés et prêts à prendre en charge le déploiement d'un cluster ONTAP Select.
+
+
+NOTE: L'utilitaire d'administration ONTAP Select Deploy n'effectue pas la configuration réseau et de stockage requise des hôtes de l'hyperviseur. Vous devez préparer manuellement chaque hôte avant de déployer un cluster ONTAP Select.
+
+
+
+== Préparation générale de l'hyperviseur
+
+Vous devez préparer les hôtes de l'hyperviseur.
+
+Chaque hôte doit être configuré avec :
+
+* Un hyperviseur préinstallé et pris en charge
+* Licence VMware vSphere
+
+
+Par ailleurs, le même serveur vCenter doit pouvoir gérer tous les hôtes sur lesquels un nœud ONTAP Select est déployé au sein du cluster.
+
+Assurez-vous également que les ports de pare-feu sont configurés de manière à autoriser l'accès à vSphere. Ces ports doivent être ouverts pour prendre en charge la connectivité de port série vers les serveurs virtuels ONTAP Select.
+
+Par défaut, VMware permet l'accès sur les ports suivants :
+
+* Port 22 et ports 1024 – 65535 (trafic entrant)
+* Ports 0 à 65535 (trafic sortant)
+
+
+NetApp recommande d'ouvrir les ports de pare-feu suivants pour autoriser l'accès à vSphere :
+
+* Ports 7200 à 7400 (trafic entrant et sortant)
+
+
+Vous devez également connaître les droits vCenter requis. Voir link:reference_plan_ots_vcenter.html["Serveur VMware vCenter"] pour en savoir plus.
+
+
+
+== Préparation du réseau de clusters ONTAP Select
+
+Vous pouvez déployer ONTAP Select en tant que cluster à plusieurs nœuds ou cluster à un seul nœud. Dans de nombreux cas, il est préférable d'utiliser un cluster à plusieurs nœuds en raison de la capacité de stockage supplémentaire et de la capacité haute disponibilité.
+
+
+
+=== Illustration des réseaux et nœuds ONTAP Select
+
+Les figures ci-dessous illustrent les réseaux utilisés avec un cluster à un seul nœud et un cluster à quatre nœuds.
+
+
+
+==== Cluster à un seul nœud montrant un réseau
+
+La figure suivante illustre un cluster à un seul nœud. Le réseau externe supporte le trafic client, de gestion et de réplication entre les clusters (SnapMirror/SnapVault).
+
+image:CHK_01.jpg["Cluster à un seul nœud montrant un réseau"]
+
+
+
+==== Cluster à quatre nœuds affichant deux réseaux
+
+La figure suivante illustre un cluster à quatre nœuds. Le réseau interne permet la communication entre les nœuds qui prennent en charge les services réseau du cluster ONTAP. Le réseau externe supporte le trafic client, de gestion et de réplication entre les clusters (SnapMirror/SnapVault).
+
+image:CHK_02.jpg["Cluster à quatre nœuds affichant deux réseaux"]
+
+
+
+==== Un seul nœud dans un cluster à quatre nœuds
+
+La figure suivante illustre la configuration réseau standard d'une machine virtuelle ONTAP Select dans un cluster à quatre nœuds. Il existe deux réseaux distincts : ONTAP interne et ONTAP-externe.
+
+image:CHK_03.jpg["Un seul nœud dans un cluster à quatre nœuds"]
+
+
+
+=== Configuration vSwitch sur un hôte hyperviseur
+
+Le vSwitch est le composant principal de l'hyperviseur utilisé pour prendre en charge la connectivité des réseaux internes et externes. Dans le cadre de la configuration de chaque hyperviseur, vous devez tenir compte de plusieurs éléments.
+
+
+
+==== Configuration vSwitch pour un hôte doté de deux ports physiques (2 x 10 Go)
+
+Lorsque chaque hôte inclut deux ports 10 Gbits, vous devez configurer le vSwitch comme suit :
+
+* Configurer un vSwitch et attribuer les deux ports au vSwitch. Créez une équipe NIC à l'aide des deux ports.
+* Définissez la règle d'équilibrage de charge sur « route basée sur l'ID de port virtuel d'origine ».
+* Marquer les deux adaptateurs comme "actifs".
+* Définissez le paramètre "Retour arrière" sur "Oui".image:CHK_04.jpg["Propriétés vSwitch)"]
+* Configurer le vSwitch pour utiliser des trames jumbo (9000 MTU).
+* Configurer un port group sur le vSwitch pour le trafic interne (ONTAP-interne) :
++
+** Le groupe de ports est attribué aux adaptateurs réseau virtuels ONTAP Select e0c-e0g utilisés pour le trafic de cluster, d'interconnexion haute disponibilité et de mise en miroir.
+** Le groupe de ports doit se trouver sur un VLAN non routable, car ce réseau devrait être privé. Vous devez ajouter la balise VLAN appropriée au groupe de ports pour prendre ceci en compte.
+** Les paramètres d'équilibrage de charge, de retour arrière et d'ordre de basculement du port group doivent être identiques à ceux du vSwitch.
+
+
+* Configurer un port group sur le vSwitch pour le trafic externe (ONTAP-externe) :
++
+** Le groupe de ports est attribué aux adaptateurs réseau virtuels ONTAP Select e0a-e0c utilisés pour le trafic de données et de gestion.
+** Le groupe de ports peut se trouver sur un VLAN routable. En outre, selon l'environnement réseau, vous devez ajouter une balise VLAN appropriée ou configurer le groupe de ports pour la mise en circuit VLAN.
+** Les paramètres d'équilibrage de charge, de retour arrière et d'ordre de basculement du port group doivent être identiques à ceux du vSwitch.
+
+
+
+
+La configuration ci-dessus du vSwitch est destinée à un hôte doté de 2 ports 10 Go dans un environnement réseau standard.

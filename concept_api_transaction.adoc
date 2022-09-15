@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: concept_api_transaction.html 
+keywords: rest api, deploy rest api, rest, transaction, request, response, headers, input, output 
+summary: 'Chaque appel API de déploiement est exécuté sous forme de requête HTTP vers la machine virtuelle de déploiement, qui génère une réponse associée au client. Cette paire de requête/réponse est considérée comme une transaction API. Avant d"utiliser l"API de déploiement, vous devez connaître les variables d"entrée disponibles pour contrôler une requête et le contenu de la sortie de réponse.' 
+---
+= Transaction d'API de demande et de réponse
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Chaque appel API de déploiement est exécuté sous forme de requête HTTP vers la machine virtuelle de déploiement, qui génère une réponse associée au client. Cette paire de requête/réponse est considérée comme une transaction API. Avant d'utiliser l'API de déploiement, vous devez connaître les variables d'entrée disponibles pour contrôler une requête et le contenu de la sortie de réponse.
+
+
+
+== Variables d'entrée contrôlant une requête API
+
+Vous pouvez contrôler le traitement d'un appel API à l'aide de paramètres définis dans la requête HTTP.
+
+
+
+=== En-têtes de demande
+
+Vous devez inclure plusieurs en-têtes dans la requête HTTP, notamment :
+
+* Type de contenu si le corps de la demande inclut JSON, cet en-tête doit être défini sur application/json.
+* Accepter si le corps de réponse inclut JSON, cet en-tête doit être défini sur application/json.
+* Autorisation l'authentification de base doit être définie avec le nom d'utilisateur et le mot de passe codés dans une chaîne base64.
+
+
+
+
+=== Corps de la demande
+
+Le contenu du corps de la demande varie en fonction de l'appel spécifique. Le corps de requête HTTP comprend l'un des éléments suivants :
+
+* Objet JSON avec variables d'entrée (par exemple, le nom d'un nouveau cluster)
+* Vide
+
+
+
+
+=== Filtrage d'objets
+
+Lors de l'émission d'un appel API utilisant GET, vous pouvez limiter ou filtrer les objets renvoyés en fonction de n'importe quel attribut. Par exemple, vous pouvez spécifier une valeur exacte à associer :
+
+`<field>=<query value>`
+
+En plus d'une correspondance exacte, d'autres opérateurs sont disponibles pour renvoyer un ensemble d'objets sur une plage de valeurs. ONTAP Select prend en charge les opérateurs de filtrage indiqués ci-dessous.
+
+[cols="30,70"]
+|===
+| Opérateur | Description 
+
+
+| = | Égal à 
+
+
+| < | Inférieur à 
+
+
+| > | Supérieur à 
+
+
+| <= | Inférieur ou égal à 
+
+
+| >= | Supérieur ou égal à 
+
+
+|  | Ou 
+
+
+| ! | Différent de 
+
+
+| * | Un caractère générique gourmand 
+|===
+Vous pouvez également renvoyer un ensemble d'objets en fonction de la définition ou non d'un champ spécifique à l'aide du mot clé null ou de sa négation (!null) dans le cadre de la requête.
+
+
+
+=== Sélection des champs d'objet
+
+Par défaut, l'émission d'un appel API à l'aide DE GET renvoie uniquement les attributs qui identifient de manière unique l'objet ou les objets. Cet ensemble minimal de champs sert de clé pour chaque objet et varie en fonction du type d'objet. Vous pouvez sélectionner des propriétés d'objet supplémentaires à l'aide du paramètre de requête de champs de la manière suivante :
+
+* Les champs peu coûteux sont spécifiés `fields=*` pour récupérer les champs d'objet qui sont conservés dans la mémoire du serveur local ou nécessitant peu de traitement pour accéder à.
+* Les champs coûteux sont spécifiés `fields=**` pour récupérer tous les champs d'objet, y compris ceux nécessitant un traitement serveur supplémentaire pour accéder.
+* Utilisation de la sélection de champ personnalisée `fields=FIELDNAME` pour spécifier le champ exact souhaité. Lorsque vous demandez plusieurs champs, les valeurs doivent être séparées par des virgules sans espaces.
+
+
+
+TIP: Vous devez toujours identifier les champs spécifiques que vous souhaitez. Vous ne devriez récupérer que l'ensemble de champs bon marché ou coûteux si nécessaire. Cette classification économique et onéreuse est déterminée par NetApp sur la base de l'analyse interne des performances. La classification d'un champ donné peut changer à tout moment.
+
+
+
+=== Tri des objets dans le jeu de sortie
+
+Les enregistrements d'une collection de ressources sont renvoyés dans l'ordre par défaut défini par l'objet. Vous pouvez modifier l'ordre à l'aide du paramètre de requête order_by avec le nom de champ et la direction de tri comme suit :
+`order_by=<field name> asc|desc`
+
+Par exemple, vous pouvez trier le champ de type par ordre décroissant, suivi d'un ID par ordre croissant :
+`order_by=type desc, id asc`
+
+Lorsque vous ajoutez plusieurs paramètres, vous devez séparer les champs par une virgule.
+
+
+
+=== Pagination
+
+Lors de l'émission d'un appel API à l'aide DE GET pour accéder à une collection d'objets du même type, tous les objets correspondants sont renvoyés par défaut. Si nécessaire, vous pouvez limiter le nombre d'enregistrements renvoyés à l'aide du paramètre de requête max_records avec la demande. Par exemple :
+`max_records=20`
+
+Si nécessaire, vous pouvez combiner ce paramètre avec d'autres paramètres de requête pour affiner le jeu de résultats. Par exemple, ce qui suit renvoie jusqu'à 10 événements système générés après le temps spécifié :
+`time=> 2019-04-04T15:41:29.140265Z&max_records=10`
+
+Vous pouvez émettre plusieurs requêtes à la page via les événements (ou tout type d'objet). Chaque appel d'API suivant doit utiliser une nouvelle valeur de temps basée sur le dernier événement du dernier jeu de résultats.
+
+
+
+== Interprétation d'une réponse API
+
+Chaque requête d'API génère une réponse au client. Vous pouvez examiner la réponse pour déterminer si elle a réussi et récupérer des données supplémentaires si nécessaire.
+
+
+
+=== Code d'état HTTP
+
+Les codes d'état HTTP utilisés par l'API REST de déploiement sont décrits ci-dessous.
+
+[cols="15,20,65"]
+|===
+| Code | Signification | Description 
+
+
+| 200 | OK | Indique que les appels qui ne créent pas d'objet ont réussi. 
+
+
+| 201 | Créé | Un objet est créé avec succès ; l'en-tête de réponse d'emplacement inclut l'identifiant unique de l'objet. 
+
+
+| 202 | Accepté | Une tâche en arrière-plan longue durée a été démarrée pour exécuter la demande, mais l'opération n'a pas encore été terminée. 
+
+
+| 400 | Demande incorrecte | L'entrée de la demande n'est pas reconnue ou est inappropriée. 
+
+
+| 403 | Interdit | L'accès est refusé en raison d'une erreur d'autorisation. 
+
+
+| 404 | Introuvable | La ressource mentionnée dans la demande n'existe pas. 
+
+
+| 405 | Méthode non autorisée | Le verbe HTTP de la demande n'est pas pris en charge pour la ressource. 
+
+
+| 409 | Conflit | La tentative de création d'un objet a échoué car celui-ci existe déjà. 
+
+
+| 500 | Erreur interne | Une erreur interne générale s'est produite sur le serveur. 
+
+
+| 501 | Non mis en œuvre | L'URI est connu mais ne peut pas exécuter la demande. 
+|===
+
+
+=== En-têtes de réponse
+
+Plusieurs en-têtes sont inclus dans la réponse HTTP générée par le serveur de déploiement, notamment :
+
+* Request-ID chaque requête API réussie est affectée à un identifiant de requête unique.
+* Emplacement lors de la création d'un objet, l'en-tête d'emplacement inclut l'URL complète du nouvel objet, y compris l'identificateur d'objet unique.
+
+
+
+
+=== Corps de réponse
+
+Le contenu de la réponse associée à une requête API diffère selon l'objet, le type de traitement et le succès ou l'échec de la requête. Le corps de réponse est rendu au format JSON.
+
+* Objet unique un seul objet peut être renvoyé avec un ensemble de champs en fonction de la requête. Par exemple, vous pouvez utiliser OBTENIR pour extraire les propriétés sélectionnées d'un cluster à l'aide de l'identifiant unique.
+* Plusieurs objets plusieurs objets d'une collection de ressources peuvent être renvoyés. Dans tous les cas, un format cohérent est utilisé avec `num_records` indique le nombre d'enregistrements et d'enregistrements contenant un tableau des instances d'objet. Par exemple, vous pouvez extraire tous les nœuds définis dans un cluster spécifique.
+* Objet travail si un appel API est traité de façon asynchrone, un objet travail est renvoyé, qui ancres la tâche d'arrière-plan. Par exemple, la demande POST utilisée pour déployer un cluster est traitée de manière asynchrone et renvoie un objet Job.
+* Objet erreur si une erreur se produit, un objet erreur est toujours renvoyé. Par exemple, vous recevrez une erreur lors de la tentative de création d'un cluster dont le nom existe déjà.
+* Vide dans certains cas, aucune donnée n'est renvoyée et le corps de réponse est vide. Par exemple, le corps de réponse est vide après avoir utilisé SUPPRIMER pour supprimer un hôte existant.
+

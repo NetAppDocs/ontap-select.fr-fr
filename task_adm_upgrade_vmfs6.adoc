@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task_adm_upgrade_vmfs6.html 
+keywords: administer, administering, web, storage vmotion, upgrade vmfs6 
+summary: 'VMware ne prend pas en charge la mise à niveau sans déplacement de VMFS 5 vers VMFS 6. Vous pouvez utiliser Storage vMotion pour effectuer la transition d"un datastore VMFS 5 vers un datastore VMFS 6 pour un nœud ONTAP Select existant.' 
+---
+= Mise à niveau vers VMFS6 à l'aide de Storage vMotion
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+VMware ne prend pas en charge la mise à niveau sans déplacement de VMFS 5 vers VMFS 6. Vous pouvez utiliser Storage vMotion pour effectuer la transition d'un datastore VMFS 5 vers un datastore VMFS 6 pour un nœud ONTAP Select existant.
+
+Pour les machines virtuelles ONTAP Select, Storage vMotion peut être utilisé pour les clusters à un ou plusieurs nœuds. Elle peut être utilisée à la fois pour les migrations de stockage et de calcul.
+
+image:ST_10.jpg["Migrer"]
+
+Vérifiez que le nouvel hôte peut prendre en charge le nœud ONTAP Select. Par exemple, si un contrôleur RAID et un stockage DAS sont utilisés sur l'hôte d'origine, une configuration similaire doit exister sur le nouvel hôte.
+
+
+CAUTION: Des problèmes de performances graves peuvent se produire si la machine virtuelle ONTAP Select est hébergée dans un environnement inapproprié.
+
+.Étapes
+. Arrêtez la machine virtuelle ONTAP Select.
++
+Si le nœud fait partie d'une paire haute disponibilité, effectuez d'abord un basculement de stockage.
+
+. Effacez l'option *lecteur de CD/DVD*.
++
+Cette étape ne s'applique pas si vous avez installé ONTAP Select sans utiliser ONTAP Deploy.
+
++
+image:ST_11.jpg["Modifier les paramètres"]
+
+. Une fois l'opération Storage vMotion terminée, mettez la machine virtuelle ONTAP Select sous tension.
++
+Si ce nœud fait partie d'une paire HA, vous pouvez effectuer un rétablissement manuel.
+
+. Exécutez un `cluster refresh` Opération à l'aide de l'utilitaire de déploiement et confirmation qu'il a réussi.
+. Sauvegardez la base de données de l'utilitaire de déploiement.
+
+
+À la fin de l'opération Storage vMotion, vous devez utiliser l'utilitaire Deploy pour effectuer une `cluster refresh` fonctionnement. Le `cluster refresh` Met à jour la base de données ONTAP Deploy avec le nouvel emplacement du nœud ONTAP Select.

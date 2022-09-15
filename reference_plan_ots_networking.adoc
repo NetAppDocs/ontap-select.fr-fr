@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_networking.html 
+keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
+summary: 'Vous devez configurer le réseau de l"hyperviseur correctement avant de déployer ONTAP Select.' 
+---
+= Considérations relatives à la mise en réseau
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez configurer le réseau de l'hyperviseur correctement avant de déployer ONTAP Select.
+
+
+
+== Options de commutateurs virtuels
+
+Vous devez configurer un switch virtuel sur chacun des hôtes ONTAP Select pour prendre en charge le réseau externe et le réseau interne (clusters multi-nœuds uniquement). Dans le cadre du déploiement d'un cluster multinœud, vous devez tester la connectivité réseau sur le réseau interne du cluster.
+
+
+NOTE: Pour plus d'informations sur la configuration d'un vSwitch sur un hôte d'hyperviseur et sur la fonctionnalité d'interface à haut débit, reportez-vous au link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] section.
+
+
+
+== Mise à niveau vers VMXNET3
+
+Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select existant vers la version 9.5 ou ultérieure, le pilote n'est pas automatiquement mis à niveau.
+
+
+NOTE: La mise à niveau vers VMXNET3 n'est pas requise pour le moment. Toutefois, si vous choisissez de mettre à niveau le pilote, vous devez effectuer la mise à niveau manuellement. Dans ce cas, contactez le support NetApp pour obtenir de l'aide.
+
+
+
+== MTU du cluster
+
+Un réseau interne distinct est utilisé pour connecter les nœuds ONTAP Select dans un cluster multinœud. La taille de MTU de ce réseau est généralement de 9000. Toutefois, il est parfois difficile de savoir que cette taille de MTU est trop élevée pour le réseau qui connecte les nœuds ONTAP Select. Pour prendre en charge les trames les plus petites, la taille de MTU utilisée par ONTAP Select sur le réseau interne peut être comprise entre 1 7500-9000 octets.
+
+La taille MTU s'affiche dans la section Cluster Details de la page de création du cluster. La valeur est déterminée par l'utilitaire d'administration de déploiement comme suit :
+
+. Valeur par défaut initiale de 9000.
+. Au fur et à mesure de l'ajout des hôtes et des réseaux pour les paires haute disponibilité, la valeur MTU est réduite selon les besoins, en fonction de la configuration des vSwitches dans le réseau.
+. La valeur MTU finale du cluster est définie une fois que vous avez ajouté toutes les paires haute disponibilité et qu'elles sont prêtes à créer le cluster.
+
+
+
+NOTE: Vous pouvez définir manuellement la valeur MTU du cluster si nécessaire, en fonction de la conception de votre réseau.
+
+
+
+== Hôte à deux cartes NIC avec vSwitch standard
+
+Afin d'améliorer les performances ONTAP Select dans une configuration à deux cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de deux groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
+
+* Cluster multinœud ONTAP Select
+* Deux cartes NIC (NIC1 et NIC2)
+* VSwitch standard
+
+
+Dans cet environnement, vous devez configurer le trafic à l'aide de deux port groups comme suit :
+
+.Groupe de ports 1
+* Réseau interne (cluster, RSM, trafic HA-IC)
+* NIC1 est actif
+* NIC2 en veille
+
+
+.Groupe de ports 2
+* Réseau externe (trafic de données et de gestion)
+* NIC1 est en veille
+* NIC2 en mode actif
+
+
+Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] Pour plus d'informations sur les déploiements à deux cartes réseau.
+
+
+
+== Hôte à quatre NIC avec vSwitch standard
+
+Afin d'améliorer les performances ONTAP Select dans une configuration à quatre cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de quatre groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
+
+* Cluster multinœud ONTAP Select
+* Quatre NIC (NIC1, NIA2, NIC3 et NIC4)
+* VSwitch standard
+
+
+Dans cet environnement, vous devez configurer le trafic à l'aide de quatre port groups comme suit :
+
+.Groupe de ports 1
+* Réseau interne (cluster, trafic RSM)
+* NIC1 est actif
+* NIC2, NIC3, NIC4 en veille
+
+
+.Groupe de ports 2
+* Réseau interne (cluster, trafic HA-IC)
+* NIC3 est actif
+* NIC1, NIC2, NIC4 en veille
+
+
+.Groupe de ports 3
+* Réseau externe (trafic de données et de gestion)
+* NIC2 est actif
+* NIC1, NIC3, NIC4 en veille
+
+
+.Groupe de ports 4
+* Réseau externe (trafic de données)
+* NIC4 est actif
+* NIC1, NIC2, NIC3 en veille
+
+
+Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] Pour plus d'informations sur les déploiements de quatre cartes réseau.
+
+
+
+== Exigences en matière de trafic réseau
+
+Vous devez vous assurer que vos pare-feu sont correctement configurés pour permettre au trafic réseau de circuler entre les différents participants d'un environnement de déploiement ONTAP Select.
+
+Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'un déploiement ONTAP Select. Elles sont introduites, puis utilisées dans la description récapitulative des besoins en trafic réseau.
+
+* Déployez l'utilitaire d'administration ONTAP Select Deploy
+* VSphere/ESXi soit un serveur vSphere soit un hôte ESXi, selon la manière dont l'hôte est géré dans le déploiement du cluster
+* Hôte de l'hyperviseur ESXi du serveur de l'hyperviseur
+* Nœud OTS et nœud ONTAP Select
+* Cluster OTS et cluster ONTAP Select
+* Station de travail d'administration locale WS Admin
+
+
+Le tableau suivant décrit les exigences en termes de trafic réseau pour un déploiement ONTAP Select.
+
+[cols="20,45,35"]
+|===
+| Protocole / port | Direction | Description 
+
+
+| TLS (443) | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
+
+
+| 902 | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
+
+
+| ICMP | Déploiement sur un serveur d'hyperviseur | Ping 
+
+
+| ICMP | Déploiement sur chaque nœud OTS | Ping 
+
+
+| SSH (22) | Admin WS à chaque nœud OTS | L'administration 
+
+
+| TLS (443) | Déploiement sur les nœuds et les clusters OTS | Accédez à ONTAP 
+
+
+| TLS (443) | Chaque nœud OTS à déployer | Accès déployé 
+
+
+| ISCSI (3260) | Chaque nœud OTS à déployer | Disque médiateur/boîte aux lettres 
+|===

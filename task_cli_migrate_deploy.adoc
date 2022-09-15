@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task_cli_migrate_deploy.html 
+keywords: administer, administering, cli, deploy, deploy instance, migrate 
+summary: 'Vous pouvez migrer une instance existante de l"utilitaire d"administration de déploiement vers une nouvelle machine virtuelle à l"aide de l"interface de ligne de commande.' 
+---
+= Migration d'une instance de déploiement vers une nouvelle machine virtuelle
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez migrer une instance existante de l'utilitaire d'administration de déploiement vers une nouvelle machine virtuelle à l'aide de l'interface de ligne de commande.
+
+Cette procédure est basée sur la création d'une nouvelle machine virtuelle qui utilise les données de configuration de la machine virtuelle d'origine. Les machines virtuelles nouvelles et d'origine doivent exécuter la même version et la même version de l'utilitaire de déploiement. Vous ne pouvez pas migrer vers une version et une version différentes de l'utilitaire de déploiement.
+
+
+
+== Sauvegarde des données de configuration de déploiement
+
+Vous devez créer une sauvegarde des données de configuration de déploiement dans le cadre de la migration de la machine virtuelle. Vous devez également créer une sauvegarde après le déploiement d'un cluster ONTAP Select. Les données sont enregistrées dans un seul fichier crypté que vous pouvez télécharger sur votre poste de travail local.
+
+Assurez-vous que le déploiement n'exécute pas d'autres tâches au cours de l'opération de sauvegarde.
+
+Le fichier de sauvegarde que vous créez capture toutes les données de configuration de la machine virtuelle. Ces données décrit des aspects de votre environnement de déploiement, y compris les clusters ONTAP Select.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
+. Créez une sauvegarde des données de configuration de déploiement, qui sont stockées dans un répertoire interne sur le serveur de déploiement :
++
+`deploy backup create`
+
+. Indiquez un mot de passe pour la sauvegarde lorsque vous y êtes invité.
++
+Le fichier de sauvegarde est crypté en fonction du mot de passe.
+
+. Afficher les sauvegardes disponibles dans le système :
++
+`deploy backup show -detailed`
+
+. Sélectionnez votre fichier de sauvegarde en fonction de la date dans le champ *created* et enregistrez la valeur *Download URL*.
++
+Vous pouvez accéder au fichier de sauvegarde via l'URL.
+
+. À l'aide d'un navigateur Web ou d'un utilitaire tel que Curl, téléchargez le fichier de sauvegarde sur votre poste de travail local à l'aide de l'URL.
+
+
+
+
+== Installation d'une nouvelle instance de la machine virtuelle de déploiement
+
+Vous devez créer une nouvelle instance de la machine virtuelle de déploiement que vous pouvez mettre à jour avec les données de configuration de la machine virtuelle d'origine.
+
+Vous devez maîtriser les procédures utilisées pour télécharger et déployer la machine virtuelle ONTAP Select Deploy dans un environnement VMware.
+
+Cette tâche est décrite à un niveau élevé.
+
+.Étapes
+. Créez une nouvelle instance de la machine virtuelle de déploiement :
++
+.. Téléchargez l'image de la machine virtuelle.
+.. Déployez la machine virtuelle et configurez l'interface réseau.
+.. Accéder à l'utilitaire de déploiement à l'aide de SSH.
+
+
+
+
+link:task_install_deploy.html["Installation de ONTAP Select Deploy"]
+
+
+
+== Restauration des données de configuration de déploiement sur la nouvelle machine virtuelle
+
+Vous devez restaurer les données de configuration de la machine virtuelle d'origine de l'utilitaire de déploiement vers la nouvelle machine virtuelle. Les données se trouvent dans un seul fichier que vous devez télécharger à partir de votre poste de travail local.
+
+Vous devez disposer des données de configuration d'une sauvegarde précédente. Les données sont contenues dans un seul fichier et doivent être disponibles sur votre poste de travail local.
+
+.Étapes
+. Dans un shell de commande sur votre poste de travail local, utilisez l'utilitaire sftp pour charger le fichier de sauvegarde sur la machine virtuelle de déploiement.
++
+Exemple
+
++
+....
+sftp admin@10.234.81.101 (provide password when prompted)
+put deploy_backup_20190601162151.tar.gz
+exit
+....
+. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
+. Restaurez les données de configuration.
++
+`deploy backup restore -path PATHNAME -filename FILENAME`
+
++
+Exemple
+
++
+`deploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`
+
+

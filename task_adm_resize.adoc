@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_adm_resize.html 
+keywords: administer, administering, web, resizing nodes, resizing 
+summary: 'Une fois le cluster ONTAP Select déployé, vous pouvez mettre à niveau le type d"instance d"hyperviseur des nœuds à l"aide de l"utilitaire d"administration Deploy.' 
+---
+= Redimensionnement des nœuds du cluster ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Une fois le cluster ONTAP Select déployé, vous pouvez mettre à niveau le type d'instance d'hyperviseur des nœuds à l'aide de l'utilitaire d'administration Deploy.
+
+
+NOTE: Vous ne pouvez effectuer l'opération de redimensionnement des nœuds de cluster que lorsque vous utilisez le modèle de licence des niveaux de capacité. Impossible de redimensionner les nœuds ONTAP Select dotés d'une licence de pools de capacité.
+
+Le cluster doit être défini sur l'état en ligne.
+
+Cette tâche explique comment utiliser l'interface utilisateur Web de déploiement. Vous pouvez également utiliser l'interface de ligne de commande déployer pour redimensionner l'instance. Quelle que soit l'interface que vous utilisez, le temps nécessaire à l'opération de redimensionnement peut varier considérablement en fonction de plusieurs facteurs et peut prendre un temps plus long à réaliser. Vous ne pouvez redimensionner un nœud que si sa taille est supérieure.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *Cluster* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sur la page des détails du cluster, cliquez sur l'icône engrenage à droite de la page et sélectionnez *Redimensionner l'instance*.
+. Sélectionnez *Type d'instance* et indiquez les informations d'identification ONTAP, puis cliquez sur *Modifier*.
+
+
+Vous devez attendre la fin de l'opération de redimensionnement.

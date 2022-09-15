@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: concept_ots_deploy.html 
+keywords: ontap select deploy, deploy administration utility, deploy utility, functionality, accessing 
+summary: 'ONTAP Select Deploy est l"utilitaire d"administration utilisé pour déployer et gérer les clusters ONTAP Select.' 
+---
+= Déploiement de ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select Deploy est l'utilitaire d'administration utilisé pour déployer et gérer les clusters ONTAP Select. Le déploiement est une machine virtuelle Linux que vous devez installer avant de créer un cluster ONTAP Select.
+
+
+
+== Fonctionnalité centrale
+
+L'utilitaire d'administration Deploy exécute les fonctions de base suivantes :
+
+* Notez les détails de chaque hôte d'hyperviseur sur lequel ONTAP Select est déployé
+* Configurez les hôtes et installez les licences requises
+* Déployer et gérer les clusters ONTAP Select
+* Gérer un inventaire des clusters et hôtes ONTAP Select
+* Collectez et envoyez des données AutoSupport à NetApp
+* Conservez un ensemble interne d'images de nœud ONTAP Select
+* Prise en charge des formats de commandes et des protocoles spécifiques à l'hyperviseur
+
+
+
+
+== Méthodes d'accès à l'utilitaire de déploiement
+
+Plusieurs options sont disponibles lors de l'accès à l'utilitaire d'administration de déploiement. Toutes les interfaces externes sont fonctionnellement équivalentes. Vous devez sélectionner l'option d'accès qui correspond le mieux à vos objectifs et exigences de déploiement spécifiques. Dans tous les cas, vous devez vous connecter à l'aide du compte administrateur avec un mot de passe valide.
+
+
+
+=== Interface utilisateur graphique Web
+
+Vous pouvez accéder à l'utilitaire de déploiement à l'aide d'un navigateur Web moderne. L'interface graphique Web fournit une interface intuitive et facile à utiliser, et dans la plupart des cas, il s'agit de votre interface principale lorsque vous utilisez l'utilitaire.
+
+
+
+=== Interface de ligne de commandes
+
+Une interface de ligne de commande texte est disponible via le shell de gestion. Vous pouvez accéder au shell de gestion de la CLI des manières suivantes :
+
+* Shell sécurisé (SSH)
+* Console de machine virtuelle
+
+
+Vous utilisez généralement la console de la machine virtuelle dans le cadre du processus d'installation et de configuration initiale. Cependant, dans la plupart des cas, SSH offre une option plus flexible et plus pratique.
+
+
+
+=== API de services web REST
+
+L'API de services Web REST exposée aux clients externes fournit une autre option lors de la connexion à l'utilitaire de déploiement. Vous pouvez accéder à l'API à l'aide de n'importe quel langage ou outil de programmation standard prenant en charge les services Web REST. Parmi les choix les plus populaires :
+
+* Python
+* Java
+* Gondolage
+
+
+L'utilisation d'un langage de programmation ou de script permet d'automatiser le déploiement et la gestion des clusters ONTAP Select.
+
+
+
+=== Page web de la documentation en ligne de ONTAP Select
+
+L'affichage de la page Web de documentation en ligne sur l'utilitaire de déploiement constitue une alternative pour accéder à l'API de services Web REST. Toutefois, au lieu d'utiliser un langage de programmation, vous accédez à l'API de gestion via la page à l'aide d'un navigateur. Les fonctionnalités suivantes sont fournies :
+
+* Description détaillée de chaque appel dans l'API des services Web REST
+* Possibilité d'émettre manuellement n'importe quel appel d'API
+
+
+Vous pouvez accéder à la page de documentation en ligne à l'aide de l'adresse IP ou du nom de domaine de la machine virtuelle de déploiement. Pour afficher la page, entrez une URL au format suivant dans votre navigateur (en remplaçant l'adresse IP ou le nom de domaine approprié pour votre instance de machine virtuelle de déploiement) : `\http://<ip_address>/api/ui`

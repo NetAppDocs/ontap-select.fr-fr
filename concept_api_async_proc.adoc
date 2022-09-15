@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept_api_async_proc.html 
+keywords: rest api, deploy rest api, rest, asynchronous processing, job object 
+summary: 'Certains appels API de déploiement, en particulier ceux qui créent ou modifient une ressource, peuvent prendre plus de temps que d"autres appels. Le déploiement de ONTAP Select traite ces requêtes à long terme de manière asynchrone.' 
+---
+= Traitement asynchrone à l'aide de l'objet de travail
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Certains appels API de déploiement, en particulier ceux qui créent ou modifient une ressource, peuvent prendre plus de temps que d'autres appels. Le déploiement de ONTAP Select traite ces requêtes à long terme de manière asynchrone.
+
+
+
+== Demandes asynchrones décrites à l'aide de l'objet travail
+
+Après avoir effectué un appel API qui s'exécute de manière asynchrone, le code de réponse HTTP 202 indique que la demande a été validée et acceptée avec succès, mais pas encore terminée. La requête est traitée comme une tâche d'arrière-plan qui continue à s'exécuter après la réponse HTTP initiale au client. La réponse inclut l'objet Job qui fixe la requête, y compris son identifiant unique.
+
+
+NOTE: Reportez-vous à la page de documentation en ligne de ONTAP Select Deploy pour déterminer quels appels API fonctionnent de manière asynchrone.
+
+
+
+== Interrogation de l'objet travail associé à une requête API
+
+L'objet travail renvoyé dans la réponse HTTP contient plusieurs propriétés. Vous pouvez interroger la propriété d'état pour déterminer si la demande a bien été effectuée. Un objet travail peut être dans l'un des États suivants :
+
+* En file d'attente
+* Exécution
+* Réussite
+* Panne
+
+
+Il existe deux techniques que vous pouvez utiliser lors de l'interrogation d'un objet travail pour détecter un état de terminal pour la tâche, succès ou échec :
+
+* Demande d'interrogation standard l'état actuel du travail est renvoyé immédiatement
+* Demande d'interrogation longue l'état du travail n'est renvoyé que lorsque l'un des événements suivants se produit :
++
+** L'état a changé plus récemment que la valeur date-heure fournie sur la demande d'interrogation
+** La valeur de temporisation a expiré (1 à 120 secondes)
+
+
+
+
+Interrogation standard et interrogation longue utilisent le même appel API pour interroger un objet travail. Cependant, une demande d'interrogation longue inclut deux paramètres de requête : `poll_timeout` et `last_modified`.
+
+
+TIP: Vous devez toujours utiliser une interrogation longue pour réduire la charge de travail sur la machine virtuelle de déploiement.
+
+
+
+== Procédure générale d'émission d'une demande asynchrone
+
+Vous pouvez utiliser la procédure de haut niveau suivante pour effectuer un appel d'API asynchrone :
+
+. Lancez l'appel d'API asynchrone.
+. Recevoir une réponse HTTP 202 indiquant que la demande a été acceptée avec succès.
+. Extraire l'identifiant de l'objet travail du corps de réponse.
+. Dans une boucle, effectuez les opérations suivantes dans chaque cycle :
++
+.. Obtenir l'état actuel du travail avec une demande de sondage long
+.. Si le travail est dans un état autre que terminal (en file d'attente, en cours d'exécution), exécutez de nouveau la boucle.
+
+
+. Arrêter lorsque le travail atteint un état terminal (réussite, échec).
+

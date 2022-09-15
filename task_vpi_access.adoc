@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_access.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, access, accessing 
+summary: Vous pouvez accéder au plug-in vCenter de déploiement via le client Web vSphere. 
+---
+= Accès au plug-in vCenter via vSphere
+:allow-uri-read: 
+
+
+[role="lead"]
+Vous pouvez accéder au plug-in vCenter de déploiement via le client Web vSphere.
+
+Le plug-in vCenter doit être installé. En outre, le compte vCenter que vous utilisez lors de votre connexion à vSphere doit disposer des privilèges suivants :
+
+* NetApp
++
+** Déploiement de ONTAP Select
++
+*** Administrateur
+
+
+
+
+
+
+.Étapes
+. Déconnectez-vous du client Web vSphere si vous êtes connecté.
+. Connectez-vous à vCenter à l'aide du client Web vSphere, sélectionnez HTML5 et acceptez le certificat SSL.
++
+La déconnexion, puis la réactualisation des informations de configuration vCenter.
+
+. Cliquez sur *listes d'inventaire globales*.
+
+
+Les options *clusters ONTAP Select* et *ONTAP Select Deploy* sont disponibles dans le volet de gauche. S'ils ne sont pas affichés, vous devez vous déconnecter puis vous reconnecter.

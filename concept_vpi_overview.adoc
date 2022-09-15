@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: concept_vpi_overview.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, overview, functionality 
+summary: 'Le plug-in VMware vCenter pour ONTAP Select Deploy est conçu pour les administrateurs ONTAP Select qui travaillent dans l"environnement VMware. Il offre une alternative à l"interface utilisateur de déploiement natif.' 
+---
+= Présentation du plug-in de déploiement vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le plug-in VMware vCenter pour ONTAP Select Deploy est conçu pour les administrateurs ONTAP Select qui travaillent dans l'environnement VMware. Il offre une alternative à l'interface utilisateur de déploiement natif.
+
+
+
+== Packagées avec déploiement
+
+Le plug-in vCenter Deploy est fourni avec l'utilitaire d'administration Deploy. Après avoir utilisé l'interface utilisateur de déploiement pour installer le plug-in sur le serveur vCenter, vous pouvez accéder au plug-in via l'interface Web vSphere.
+
+
+
+== Intégration avec VMware
+
+Pour de nombreuses entreprises, VMware vCenter est une plateforme centrale d'administration des ressources du cloud et du data Center virtualisé. Le plug-in déployé étant étroitement intégré à vCenter, les administrateurs peuvent rapidement déplacer entre les domaines ONTAP Select et vCenter pour exploiter les relations entre les différentes ressources.
+
+
+
+== Fonctionnalité fournie par le plug-in vCenter de déploiement
+
+Après avoir installé le plug-in vCenter Deploy, deux options principales sont disponibles via vSphere dans le volet *listes d'inventaire globales*.
+
+
+
+=== Clusters ONTAP Select
+
+L'option clusters ONTAP Select est à peu près équivalente à l'onglet *clusters* de l'interface utilisateur Web de déploiement natif. Il fournit les fonctionnalités décrites dans le tableau suivant.
+
+[cols="30,70"]
+|===
+| Vous effectuez cette opération ... | En faisant cela ... 
+
+
+| Déployer un cluster ONTAP Select | Cliquez sur Nouveau ONTAP Select. 
+
+
+| Afficher les détails du cluster | Sélectionnez un cluster, cliquez sur Résumé, puis sur Détails. 
+
+
+| Afficher les messages d'événement du cluster | Sélectionnez un cluster, cliquez sur Résumé, puis sur événements. 
+
+
+| Déplacer un cluster en ligne ou hors ligne, ou supprimer un cluster | Sélectionnez un cluster, cliquez sur actions, puis cliquez sur l'action souhaitée. 
+
+
+| Lancez System Manager | Sélectionnez un cluster, cliquez sur Résumé, puis sur Détails et cliquez sur lancer System Manager. 
+
+
+| Afficher les hôtes ESXi utilisés par un cluster | Sélectionnez un cluster, cliquez sur plus d'objets, puis sur hôtes. Sélectionnez un hôte pour plus de détails et d'autres actions. 
+
+
+| Afficher les ONTAP VM utilisées par un cluster | Sélectionnez un cluster, cliquez sur plus d'objets, puis sur ONTAP VM. Sélectionnez une VM pour plus de détails et d'autres actions. 
+
+
+| Afficher les datastores utilisés par un cluster | Sélectionnez un cluster, cliquez sur plus d'objets, puis cliquez sur datastores. Sélectionnez un datastore pour plus de détails et d'autres actions. 
+
+
+| Afficher les réseaux utilisés par un cluster | Sélectionnez un cluster, cliquez sur plus d'objets, puis cliquez sur réseaux. Sélectionnez un réseau pour plus de détails et d'autres actions. 
+|===
+
+
+=== Déploiement de ONTAP Select
+
+L'option de déploiement ONTAP Select équivaut à peu près aux onglets *Hypervisor hosts* et *Administration* de l'interface utilisateur Web de déploiement natif. Il fournit des fonctionnalités via trois onglets en haut de la page, comme décrit dans le tableau suivant.
+
+[cols="15,85"]
+|===
+| Onglet | Description 
+
+
+| Récapitulatif | Décrit les caractéristiques de l'instance de déploiement, y compris le nom d'hôte et l'adresse IP. 
+
+
+| Hôte | Affiche des informations sur les hôtes ESXi enregistrés avec ONTAP Select Deploy. Vous pouvez ajouter ou supprimer des hôtes. 
+
+
+| L'administration | Permet d'effectuer des tâches administratives via l'utilitaire de déploiement. Cette fonctionnalité est équivalente à l'interface utilisateur native de ONTAP Select Deploy, sauf que les options *Credentials* et *Plugins* ne sont pas disponibles avec le plug-in. 
+|===
+
+
+== Comparaison du plug-in vCenter avec l'interface utilisateur de déploiement natif
+
+Les fonctionnalités fournies avec le plug-in vCenter via vSphere sont équivalentes à l'interface utilisateur de déploiement natif. Cependant, certaines fonctionnalités ne sont pas fournies avec le plug-in et sont uniquement disponibles avec l'interface utilisateur de déploiement.
+
+
+
+=== Gestion du plug-in vCenter
+
+Vous ne pouvez pas installer, mettre à jour, supprimer ou vérifier le plug-in vCenter à l'aide du plug-in vCenter. Vous devez effectuer ces tâches de gestion via l'interface utilisateur de déploiement natif.
+
+
+
+=== Gestion des informations d'identification vCenter
+
+Avant d'installer le plug-in vCenter, vous devez ajouter les informations d'identification vCenter nécessaires au déploiement à l'aide de l'interface utilisateur de déploiement natif.
+
+
+
+=== Les clusters ONTAP Select doivent être contrôlés par le même serveur vCenter
+
+Vous ne pouvez déployer et prendre en charge que les clusters ONTAP Select gérés par le serveur vCenter unique sur lequel le plug-in est installé. Vous ne pouvez pas utiliser le plug-in pour accéder aux clusters ONTAP Select gérés par d'autres serveurs ou clusters vCenter s'exécutant sur des hôtes ESXi ou KVM autonomes.

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_adm_clusters.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, clusters 
+summary: 'Vous pouvez effectuer plusieurs tâches liées à l"administration d"un cluster ONTAP Select.' 
+---
+= Clusters ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez effectuer plusieurs tâches liées à l'administration d'un cluster ONTAP Select.
+
+
+
+== Déplacement d'un cluster ONTAP Select vers l'état hors ligne et en ligne
+
+Une fois le cluster créé, vous pouvez le mettre hors ligne ou en ligne selon vos besoins.
+
+.Étapes
+. Cliquez sur *clusters ONTAP Select* dans le volet *listes d'inventaire globales*.
+. Cliquez avec le bouton droit de la souris sur le cluster souhaité pour afficher les actions disponibles.
+. Cliquez sur *mettre hors ligne* ou *mettre en ligne* selon les besoins et cliquez sur *Oui* pour confirmer la demande.
+
+
+
+
+== Suppression d'un cluster ONTAP Select
+
+Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.
+
+Le cluster doit être défini sur l'état hors ligne.
+
+.Étapes
+. Cliquez sur *clusters ONTAP Select* dans le volet *listes d'inventaire globales*.
+. Cliquez avec le bouton droit de la souris sur le cluster souhaité pour afficher les actions disponibles.
+. Cliquez sur *Supprimer le cluster* et cliquez sur *Oui* pour confirmer la demande.
++
+Si l'option de suppression n'est pas disponible, le cluster n'est pas à l'état hors ligne.
+
+

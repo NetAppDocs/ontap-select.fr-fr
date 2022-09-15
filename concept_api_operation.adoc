@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: concept_api_operation.html 
+keywords: rest api, deploy rest api, rest, operation, basic operation 
+summary: 'Alors QUE REST établit un ensemble commun de technologies et de meilleures pratiques, les détails de chaque API peuvent varier en fonction des choix de conception. Vous devez connaître les détails et les caractéristiques opérationnelles de l"API de déploiement ONTAP Select avant d"utiliser l"API.' 
+---
+= Caractéristiques opérationnelles de base
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Alors QUE REST établit un ensemble commun de technologies et de meilleures pratiques, les détails de chaque API peuvent varier en fonction des choix de conception. Vous devez connaître les détails et les caractéristiques opérationnelles de l'API de déploiement ONTAP Select avant d'utiliser l'API.
+
+
+
+== Hôte de l'hyperviseur ou nœud ONTAP Select
+
+Un _hyperviseur host_ est la plate-forme matérielle principale qui héberge une machine virtuelle ONTAP Select. Lorsqu'une machine virtuelle ONTAP Select est déployée et active sur un hôte hyperviseur, la machine virtuelle est considérée comme un _ONTAP Select node_. Avec la version 3 de l'API REST déployée, les objets hôte et nœud sont distincts. Cela permet une relation un-à-plusieurs, dans laquelle un ou plusieurs nœuds ONTAP Select peuvent s'exécuter sur le même hôte hyperviseur.
+
+
+
+== Identifiants d'objets
+
+Un identifiant unique est attribué à chaque instance de ressource ou objet lors de sa création. Ces identifiants sont globalement uniques dans une instance spécifique du déploiement ONTAP Select. Après l'émission d'un appel API qui crée une nouvelle instance d'objet, la valeur d'ID associée est renvoyée à l'appelant dans le `location` En-tête de la réponse HTTP. Vous pouvez extraire l'identificateur et l'utiliser sur les appels suivants lorsque vous faites référence à l'instance de ressource.
+
+
+NOTE: Le contenu et la structure interne des identificateurs d'objet peuvent changer à tout moment. Vous ne devez utiliser les identificateurs sur les appels API applicables que si nécessaire lorsque vous faites référence aux objets associés.
+
+
+
+== Demander des identifiants
+
+Un identifiant unique est attribué à chaque requête d'API réussie. L'identifiant est renvoyé dans le `request-id` En-tête de la réponse HTTP associée. Vous pouvez utiliser un identificateur de demande pour faire référence collectivement aux activités d'une seule transaction de réponse de requête API spécifique. Par exemple, vous pouvez récupérer tous les messages d'événement pour une transaction basée sur l'ID de demande
+
+
+
+== Appels synchrones et asynchrones
+
+Il existe deux méthodes principales pour qu'un serveur exécute une requête HTTP reçue d'un client :
+
+* Synchrone le serveur exécute la demande immédiatement et répond avec un code d'état 200, 201 ou 204.
+* Asynchrone le serveur accepte la demande et répond par un code d'état 202. Cela indique que le serveur a accepté la demande du client et a lancé une tâche en arrière-plan pour terminer la demande. Le succès ou l'échec final n'est pas immédiatement disponible et doit être déterminé par d'autres appels API.
+
+
+
+
+== Confirmation de l'achèvement d'une tâche longue durée
+
+De manière générale, toute opération qui peut prendre un certain temps est traitée de manière asynchrone à l'aide d'une tâche d'arrière-plan sur le serveur. Avec l'API REST de déploiement, chaque tâche d'arrière-plan est ancrée par un objet Job qui suit la tâche et fournit des informations, telles que l'état actuel. Un objet Job, y compris son identifiant unique, est renvoyé dans la réponse HTTP après la création d'une tâche d'arrière-plan.
+
+Vous pouvez interroger l'objet Job directement pour déterminer le succès ou l'échec de l'appel API associé. Pour plus d'informations, reportez-vous à la section _traitement asynchrone à l'aide de l'objet travail_.
+
+Outre l'utilisation de l'objet travail, vous pouvez déterminer la réussite ou l'échec d'une demande, notamment :
+
+* Messages d’événement vous pouvez récupérer tous les messages d’événement associés à un appel API spécifique à l’aide de l’ID de requête renvoyé avec la réponse d’origine. Les messages d'événement contiennent généralement une indication de réussite ou d'échec et peuvent également être utiles lors du débogage d'une condition d'erreur.
+* État ou état de la ressource plusieurs des ressources conservent une valeur d'état ou d'état que vous pouvez interroger pour déterminer indirectement le succès ou l'échec d'une requête.
+
+
+
+
+== Sécurité
+
+L'API de déploiement utilise les technologies de sécurité suivantes :
+
+* Sécurité de la couche de transport tout le trafic envoyé sur le réseau entre le serveur de déploiement et le client est crypté via TLS. L'utilisation du protocole HTTP sur un canal non crypté n'est pas prise en charge. TLS version 1.2 est pris en charge.
+* Authentification HTTP l'authentification de base est utilisée pour chaque transaction d'API. Un en-tête HTTP, qui inclut le nom d'utilisateur et le mot de passe dans une chaîne base64, est ajouté à chaque requête.
+

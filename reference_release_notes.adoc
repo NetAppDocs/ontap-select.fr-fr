@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: reference_release_notes.html 
+keywords:  
+summary:  
+---
+= Notes de version de ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Les notes de version pour ONTAP Select fournissent des informations spécifiques à la version, notamment les nouvelles fonctionnalités, les configurations prises en charge, les notes de mise à niveau, les problèmes connus, problèmes résolus et limitations connues.
+
+
+NOTE: Vous devez disposer d'un compte pour vous connecter sur le site du support NetApp afin d'accéder aux notes de version.
+
+Vous pouvez accéder au https://library.netapp.com/ecm/ecm_download_file/ECMLP2882082["Notes de version de ONTAP Select 9.11.1"^] pour afficher les détails de la version actuelle.
+
+Pour accéder aux notes de version des versions précédentes du produit, reportez-vous à la section :
+
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Bibliothèque de produits ONTAP Select"^]
+* https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293&archive=true["Archives de la bibliothèque de produits ONTAP Select"^]
+

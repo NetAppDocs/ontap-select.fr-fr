@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task_lic_acquire_ct.html 
+keywords: license, licensing, acquire, capacity tiers 
+summary: Lorsque vous utilisez des licences de niveaux de capacité, vous devez acheter un fichier de licence pour chaque nœud ONTAP Select. Le fichier de licence définit la capacité de stockage du nœud et est verrouillé pour ce nœud via le numéro de série à neuf chiffres unique attribué par NetApp. 
+---
+= L'acquisition d'une licence de niveau de capacité
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous utilisez des licences de niveaux de capacité, vous devez acheter un fichier de licence pour chaque nœud ONTAP Select. Le fichier de licence définit la capacité de stockage du nœud et est verrouillé pour ce nœud via le numéro de série à neuf chiffres unique attribué par NetApp.
+
+Vous devez disposer du numéro de série de licence à neuf chiffres attribué au nœud par NetApp. Avant de tenter d'acquérir un fichier de licence, vous devez attendre au moins vingt quatre heures après la date d'expédition de votre bon de commande.
+
+Vous devez effectuer cette tâche pour chaque nœud ONTAP Select qui requiert une licence de niveau de capacité.
+
+.Étapes
+. Accédez au site des licences ONTAP Select à l'aide d'un navigateur Web :
++
+`https://register.netapp.com/register/getlicensefile`
+
+. Connectez-vous à l'aide de vos identifiants de compte NetApp.
+. Sur la page *License Generator*, sélectionnez l'offre de licence souhaitée dans la liste déroulante.
+. Remplissez les champs restants de la même page, y compris le *N° de série de produit*, qui est le numéro de série du nœud ONTAP Select.
+. Cliquez sur *soumettre*.
+. Une fois la demande validée, sélectionnez le mode de livraison de la licence.
++
+Vous pouvez cliquer sur *Download License* ou *Email License*.
+
+. Confirmez que vous avez reçu le fichier de licence en fonction du mode de livraison choisi.
+
+
+Vous devez charger le fichier de licence dans l'utilitaire d'administration de déploiement avant de pouvoir l'appliquer à un noeud ONTAP Select.

@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: concept_api_rest.html 
+keywords: rest api, deploy rest api, rest, architecture, resources, state, uri, http, json 
+summary: 'Representational State Transfer (REST) est un style qui permet de créer des applications Web distribuées. Lorsqu"il est appliqué à la conception d"une API de services Web, il établit un ensemble de technologies et de meilleures pratiques pour l"exposition des ressources basées sur serveur et la gestion de leurs États. Il utilise des protocoles et des normes courants pour offrir une base flexible pour le déploiement et la gestion des clusters ONTAP Select.' 
+---
+= Base de services Web REST
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Representational State Transfer (REST) est un style qui permet de créer des applications Web distribuées. Lorsqu'il est appliqué à la conception d'une API de services Web, il établit un ensemble de technologies et de meilleures pratiques pour l'exposition des ressources basées sur serveur et la gestion de leurs États. Il utilise des protocoles et des normes courants pour offrir une base flexible pour le déploiement et la gestion des clusters ONTAP Select.
+
+
+
+== Contraintes classiques et architectures
+
+REST a été formellement articulé par Roy Fielding dans son doctorat https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["thèse"] À UC Irvine en 2000. Il définit un style architectural à travers un ensemble de contraintes, qui ont collectivement amélioré les applications basées sur le Web et les protocoles sous-jacents. Ces contraintes créent une application de services web RESTful basée sur une architecture client/serveur utilisant un protocole de communication sans état.
+
+
+
+== Ressources et représentation d'état
+
+Les ressources sont les composants de base d'un système basé sur le Web. Lors de la création d'une application de services Web REST, les premières tâches de conception incluent :
+
+* Identification des ressources système ou serveur chaque système utilise et gère les ressources. Une ressource peut être un fichier, une transaction commerciale, un processus ou une entité administrative. L'une des premières tâches de conception d'une application basée sur des services Web REST consiste à identifier les ressources.
+* Définition des États de ressource et des opérations d'état associées les ressources sont toujours dans l'un des États finis. Les États, ainsi que les opérations associées utilisées pour affecter les changements d'état, doivent être clairement définis.
+
+
+Les messages sont échangés entre le client et le serveur pour accéder aux ressources et les modifier selon le modèle CRUD générique (Créer, lire, mettre à jour et Supprimer).
+
+
+
+== Terminaux URI
+
+Chaque ressource REST doit être définie et mise à disposition à l'aide d'un schéma d'adressage bien défini. Les noeuds finaux où les ressources sont situées et identifiées utilisent un URI (Uniform Resource identifier). L'URI fournit un cadre général pour créer un nom unique pour chaque ressource du réseau. L'URL (Uniform Resource Locator) est un type d'URI utilisé avec les services Web pour identifier et accéder aux ressources. Les ressources sont généralement exposées dans une structure hiérarchique similaire à un répertoire de fichiers.
+
+
+
+== Messages HTTP
+
+Le protocole HTTP (Hypertext Transfer Protocol) est le protocole utilisé par le client et le serveur de services Web pour échanger des messages de requête et de réponse sur les ressources. Dans le cadre de la conception d'une application de services Web, les verbes HTTP (COMME GET et POST) sont mappées aux ressources et aux actions de gestion d'état correspondantes.
+
+Le HTTP est sans état. Par conséquent, pour associer un ensemble de requêtes et de réponses associées sous une même transaction, des informations supplémentaires doivent être incluses dans les en-têtes HTTP des flux de données requête/réponse.
+
+
+
+== Formatage JSON
+
+Bien que les informations puissent être structurées et transférées de plusieurs façons entre un client et un serveur, l'option la plus populaire (et celle utilisée avec l'API REST de déploiement) est JavaScript Object notation (JSON). JSON est une norme de l'industrie qui représente les structures de données simples en texte brut et permet de transférer les informations d'état décrivant les ressources.

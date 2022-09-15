@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task_adm_security.html 
+keywords: administer, administering, web, security 
+summary: 'Dans le cadre de la sécurisation d"un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.' 
+---
+= Sécurité
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans le cadre de la sécurisation d'un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.
+
+
+
+== Modification du mot de passe administrateur de déploiement
+
+Vous pouvez modifier le mot de passe du compte administrateur de la machine virtuelle de déploiement selon vos besoins à l'aide de l'interface utilisateur Web.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'icône figure en haut à droite de la page et sélectionnez *changer mot de passe*.
+. Indiquez le mot de passe actuel et le nouveau mot de passe, comme vous y êtes invité, puis cliquez sur *Submit* (soumettre).
+
+
+
+
+== Ajout d'un compte de serveur de gestion
+
+Vous pouvez ajouter un compte de serveur de gestion à la base de données de stockage des identifiants de déploiement.
+
+Vous devez connaître les types d'identifiants requis et connaître leur utilisation par ONTAP Select.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *Administration* en haut de la page.
+. Cliquez sur *Management Servers*, puis sur *Add vCenter*.
+. Entrez les informations suivantes et cliquez sur *Ajouter*.
++
+[cols="30,70"]
+|===
+| Dans ce domaine … | Procédez comme suit… 
+
+
+| Nom/adresse IP | Indiquez le nom de domaine ou l'adresse IP du serveur vCenter. 
+
+
+| Nom d'utilisateur | Entrez le nom d'utilisateur du compte pour accéder à vCenter. 
+
+
+| Mot de passe | Entrez le mot de passe du nom d'utilisateur associé. 
+|===
+. Vous pouvez éventuellement enregistrer (installer) le plug-in vCenter de déploiement.
+. Une fois le nouveau serveur de gestion ajouté, vous pouvez, si vous le souhaitez, cliquer sur image:icon_kebab.gif["Options"] et sélectionnez l'une des options suivantes :
++
+** Mettre à jour les informations d'identification
+** Enregistrez-vous en tant que plug-in
+** Vérifiez les informations d'identification
+** Supprimer le serveur de gestion
+
+
+

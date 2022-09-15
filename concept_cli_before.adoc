@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: concept_cli_before.html 
+keywords: administer, administering, cli, before you begin 
+summary: 'Vous pouvez accéder au shell de gestion de déploiement à l"aide de SSH. Une fois connecté, vous pouvez effectuer diverses procédures administratives.' 
+---
+= Avant de commencer
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez accéder au shell de gestion de déploiement à l'aide de SSH. Une fois connecté, vous pouvez effectuer diverses procédures administratives.
+
+En général, les procédures que vous pouvez effectuer à l'aide de l'interface de ligne de commande se divisent en trois catégories.
+
+Déployer un cluster ONTAP Select:: Vous pouvez déployer un cluster à un ou plusieurs nœuds.
+Exécutez une procédure sur un cluster ONTAP Select existant:: Les procédures administratives sont organisées en différentes catégories, telles que _Security_ et _clusters_.
+Effectuez une procédure sur l'utilitaire de déploiement:: Plusieurs procédures sont spécifiques au déploiement (par exemple, la modification du mot de passe de l'administrateur).
+

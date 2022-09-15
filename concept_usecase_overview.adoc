@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept_usecase_overview.html 
+keywords: ontap select, business use case overview, deployment, storage, development and testing 
+summary: 'ONTAP Select convient à plusieurs types d"applications en fonction de la flexibilité inhérente fournie par le biais de la virtualisation de l"hyperviseur.' 
+---
+= Besoins professionnels et scénarios d'utilisation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select convient à plusieurs types d'applications en fonction de la flexibilité inhérente fournie par le biais de la virtualisation de l'hyperviseur.
+
+
+
+== Déploiement
+
+En haut de gamme, vous pouvez déployer ONTAP Select de deux façons différentes par rapport à la charge de travail sur les serveurs hôtes de l'hyperviseur.
+
+
+
+=== Déploiement dédié
+
+Dans le modèle de déploiement dédié, une instance unique de ONTAP Select s'exécute sur le serveur hôte. Aucun autre traitement important n'exécute sur le même hôte hyperviseur.
+
+
+
+=== Déploiement en colocation
+
+Dans le modèle de déploiement en colocation, ONTAP Select partage l'hôte avec d'autres charges de travail. Plus précisément, il existe des machines virtuelles supplémentaires, chacune exécutant des applications de calcul. Ces charges de travail de calcul sont locales dans le cluster ONTAP Select. Ce modèle prend en charge les exigences spécifiques en matière de déploiement et d'applications. Comme pour le modèle de déploiement dédié, chaque machine virtuelle ONTAP Select doit s'exécuter sur un hôte d'hyperviseur dédié et séparé.
+
+
+
+== Stockage
+
+ONTAP Select peut être utilisé comme stockage primaire ou secondaire, selon les besoins de votre entreprise.
+
+
+
+=== Le stockage primaire
+
+Dans certains cas, vous pouvez choisir de déployer ONTAP Select comme plateforme de stockage primaire. Ces types d'implémentations varient en fonction des caractéristiques des charges de travail des applications et des objectifs de votre entreprise.
+
+
+
+=== Reprise après incident et stockage secondaire
+
+Vous pouvez utiliser ONTAP Select pour implémenter un stockage supplémentaire qui augmente vos capacités de stockage primaire. Le stockage supplémentaire peut être utilisé pour soutenir les efforts de reprise après sinistre et les plans de sauvegarde des données de votre organisation.
+
+
+
+== Développement et test
+
+Lorsque vous déployez diverses applications dans votre organisation, ONTAP Select fait partie intégrante du processus global de développement et de test. Par exemple, vous pouvez avoir besoin d'un stockage temporaire pour contenir les données d'entrée ou de sortie du test. La durée de ces types de déploiements peut varier en fonction des caractéristiques et des besoins de l'application.

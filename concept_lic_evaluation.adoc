@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_evaluation.html 
+keywords: license, licensing, evaluation, upgrade license 
+summary: 'Vous pouvez utiliser une licence d"évaluation si vous souhaitez évaluer ONTAP Select avant de prendre la décision d"achat. La licence d"évaluation est incluse à l"utilitaire d"administration ONTAP Select Deploy et s"applique automatiquement à chaque nœud ONTAP Select dans le cadre d"un déploiement d"évaluation.' 
+---
+= Licences d'évaluation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez utiliser une licence d'évaluation si vous souhaitez évaluer ONTAP Select avant de prendre la décision d'achat. La licence d'évaluation est incluse à l'utilitaire d'administration ONTAP Select Deploy et s'applique automatiquement à chaque nœud ONTAP Select dans le cadre d'un déploiement d'évaluation.
+
+
+
+== Caractéristiques des licences
+
+La licence d'évaluation ONTAP Select présente les caractéristiques suivantes :
+
+* Aucune licence de production avec capacité de stockage n'est requise
+* Le numéro de série du nœud est composé de 20 chiffres et automatiquement généré par ONTAP Select Deploy
++
+(Vous ne l'achetez pas directement auprès de NetApp)
+
+* La période d'évaluation fournie par la licence peut aller jusqu'à 90 jours
+* Le stockage maximal alloué par chaque nœud est le même que pour une licence de production
+
+
+
+
+== Mise à niveau vers une licence de production
+
+Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de production. Vous devez connaître les restrictions suivantes :
+
+* Vous devez utiliser l'utilitaire d'administration de déploiement pour effectuer la mise à niveau de la licence
+* La mise à niveau de licence est uniquement prise en charge par ONTAP Select 9.5P1 avec Deploy 2.11 ou version ultérieure
+* Il est possible d'utiliser une licence de niveau de capacité, mais les licences de pools de capacité ne sont pas prises en charge
+* Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production, en fonction de la taille du cluster
+
+
+link:task_adm_licenses.html["Conversion d'une licence d'évaluation en licence de production"] pour en savoir plus.

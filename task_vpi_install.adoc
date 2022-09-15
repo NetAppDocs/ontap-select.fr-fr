@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_install.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, install, installing 
+summary: 'Le plug-in vCenter Deploy est inclus avec l"utilitaire d"administration de ONTAP Select Deploy. Vous pouvez utiliser l"interface utilisateur Web de déploiement de ONTAP Select pour installer et enregistrer le plug-in sur le serveur vCenter.' 
+---
+= Installation du plug-in de déploiement vCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le plug-in vCenter Deploy est inclus avec l'utilitaire d'administration de ONTAP Select Deploy. Vous pouvez utiliser l'interface utilisateur Web de déploiement de ONTAP Select pour installer et enregistrer le plug-in sur le serveur vCenter.
+
+.Avant de commencer
+* Révision link:concept_vpi_manage_before.html["Avant de commencer"].
+* Définissez un compte vCenter à déployer avec le privilège suivant : sessions.validate.session.
+* Disposer d'informations d'identification pour un compte vCenter avec les privilèges suivants :
++
+** Extension
++
+*** Extension de registre
+
+
+
+
+
+
+Il est supposé que le serveur de gestion vCenter a déjà été ajouté au déploiement. Si le serveur vCenter n'a pas été ajouté, reportez-vous à la section link:task_adm_security.html["Ajout d'un compte de serveur de gestion"] pour en savoir plus.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *Administration* en haut de la page, puis cliquez sur *Management Servers* dans le volet de gauche.
+. Sélectionnez le serveur de gestion cible et cliquez sur image:icon_kebab.gif["Options"] Et cliquez sur *Enregistrer comme plugin*.
+. Indiquez les informations d'identification vCenter et sélectionnez la version du plug-in.
+. Cliquez sur *Enregistrer*.
+

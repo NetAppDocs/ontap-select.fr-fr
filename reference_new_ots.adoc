@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: reference_new_ots.html 
+keywords: new features 
+summary: La version actuelle de ONTAP Select propose plusieurs fonctionnalités, nouvelles et modifiées. 
+---
+= Nouveautés de ONTAP Select 9.10.1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La version actuelle de ONTAP Select propose plusieurs fonctionnalités, nouvelles et modifiées.
+
+
+
+== Prise en charge améliorée de VMware ESXi
+
+ONTAP Select 9.11.1 inclut la prise en charge de VMware ESXi 7.0 U3C.
+
+
+
+== Prise en charge de VMware NSX-T
+
+ONTAP Select 9.10.1 a été qualifié pour VMware NSX-T version 3.1.2. Il n'y a aucun problème fonctionnel ni défaillance lors de l'utilisation de NSX-T avec un Cluster à nœud unique ONTAP Select déployé avec un fichier OVA et l'utilitaire d'administration ONTAP Select Deploy.
+
+Cependant, lorsque vous utilisez NSX-T avec un cluster multinœud ONTAP Select, nous vous conseillons de respecter les exigences et restrictions suivantes concernant ONTAP Select 9.11.1 :
+
+Vérificateur de connectivité réseau:: Le vérificateur de connectivité réseau disponible via la CLI de déploiement échoue lorsqu'il est exécuté sur un réseau basé sur NSX-T.
+
+
+
+
+== L'hyperviseur KVM n'est plus pris en charge
+
+L'hyperviseur KVM n'est plus pris en charge.
+
+Depuis ONTAP Select 9.10.1 et les versions ultérieures, vous n'avez plus pu créer de clusters basés sur KVM ou ajouter des hôtes basés sur KVM à l'aide de l'utilitaire Deploy. En outre, la version 9.10.1 était la dernière version prenant en charge les fonctions de gestion, telles que la mise en ligne, avec les clusters et hôtes KVM existants.
+
+Depuis ONTAP Select 9.11.1 et les versions ultérieures, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.

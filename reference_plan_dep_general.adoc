@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_dep_general.html 
+keywords: plan, planning, ontap select deploy, general requirements 
+summary: 'Dans le cadre de la planification de l"installation de l"utilitaire d"administration ONTAP Select Deploy, vous devez tenir compte de plusieurs exigences générales.' 
+---
+= ONTAP Select déploie exigences générales et planification
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans le cadre de la planification de l'installation de l'utilitaire d'administration ONTAP Select Deploy, vous devez tenir compte de plusieurs exigences générales.
+
+
+
+== Association de l'utilitaire de déploiement avec les clusters ONTAP Select
+
+Vous disposez de plusieurs options lors du couplage d'une instance de l'utilitaire de déploiement avec les clusters ONTAP Select.
+
+
+NOTE: Dans tous les scénarios de déploiement, un cluster ONTAP Select unique et les nœuds du cluster ne peuvent être gérés que par une seule instance de l'utilitaire d'administration Deploy. Un cluster ne peut pas être géré par au moins deux instances différentes de l'utilitaire de déploiement.
+
+Vous pouvez déployer et gérer chaque cluster ONTAP Select à l'aide d'une instance dédiée de l'utilitaire de déploiement. Cette configuration un-à-un sépare clairement chacune des paires utilitaire-cluster. Cette configuration offre un niveau d'isolation élevé avec des domaines de défaillance plus petits.
+
+Vous pouvez déployer et gérer plusieurs clusters ONTAP Select dans votre entreprise à l'aide d'une instance unique de l'utilitaire de déploiement. Avec cette configuration un-à-plusieurs, toutes les données de traitement et de configuration sont gérées par la même instance de l'utilitaire de déploiement.
+
+
+NOTE: Une instance de l'utilitaire de déploiement peut administrer jusqu'à 400 nœuds ONTAP Select ou 100 clusters.
+
+
+
+== Authentification à l'aide du magasin d'informations d'identification
+
+Le magasin d'informations d'identification ONTAP Select Deploy est une base de données contenant des informations de compte. Le déploiement utilise les identifiants de compte pour effectuer l'authentification hôte dans le cadre de la création et de la gestion du cluster. Vous devez savoir comment le magasin d'informations d'identification est utilisé dans le cadre de la planification d'un déploiement ONTAP Select.
+
+
+NOTE: Les informations de compte sont stockées en toute sécurité dans la base de données à l'aide de l'algorithme de cryptage AES et de l'algorithme de hachage SHA-256.
+
+Les types d'informations d'identification suivants sont pris en charge :
+
+* Hôte utilisé pour authentifier un hôte d'hyperviseur dans le cadre du déploiement d'un nœud ONTAP Select directement dans VMware ESXi
+* VCenter utilisé pour authentifier un serveur vCenter dans le cadre du déploiement d'un nœud ONTAP Select vers ESXi lorsque l'hôte est géré par VMware vCenter
+
+
+Le magasin d'informations d'identification est accessible en interne dans le cadre de l'exécution de tâches administratives normales à l'aide de Deploy, telles que l'ajout d'un hôte d'hyperviseur. Vous pouvez également gérer le magasin d'informations d'identification directement via l'interface utilisateur Web de déploiement et l'interface de ligne de commande.

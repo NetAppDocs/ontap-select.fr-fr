@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: concept_lic_cp_serial_number.html 
+keywords: license, licensing, capacity pools, node serial numbers 
+summary: Avec le modèle de licence des niveaux de capacité, le numéro de série à neuf chiffres est le même que le numéro de série de licence attribué au nœud. Toutefois, le format des numéros de série attribués aux nœuds qui utilisent le modèle de licence des pools de capacité est différent. 
+---
+= Numéros de série du nœud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avec le modèle de licence des niveaux de capacité, le numéro de série à neuf chiffres est le même que le numéro de série de licence attribué au nœud. Toutefois, le format des numéros de série attribués aux nœuds qui utilisent le modèle de licence des pools de capacité est différent.
+
+Le format suivant est le numéro de série d'un nœud utilisant une licence pour les pools de capacité :
+
+`999 ppppppppp nnnnnnnn`
+
+
+NOTE: Des espaces ont été ajoutés pour plus de clarté, mais ne font pas partie du numéro de série réel.
+
+Chaque section du numéro de série du nœud est décrite dans le tableau suivant, de gauche à droite.
+
+[cols="15,85"]
+|===
+| Section | Description 
+
+
+| « 999 » | Valeur à trois chiffres constante réservée par NetApp. 
+
+
+| ppppp | Numéro de série de licence à neuf chiffres variable attribué par NetApp au pool de capacité 
+
+
+| nnnnnnnn | Valeur à huit chiffres de la variable générée par le Gestionnaire de licences pour chaque nœud utilisant le pool de capacités 
+|===
+
+NOTE: Attention : lors de l'ouverture d'un dossier auprès du support NetApp impliquant un nœud qui utilise une licence de pool de capacité, vous ne pouvez pas fournir le numéro de série de nœud à vingt chiffres complet. Vous devez plutôt fournir le numéro de série de la licence de pool de capacité à neuf chiffres. Vous pouvez obtenir le numéro de série de la licence à partir du numéro de série de nœud, comme indiqué ci-dessus. Ignorez les trois premiers chiffres du numéro de série du nœud ('999') et extrayez les neuf chiffres suivants (ppppp).

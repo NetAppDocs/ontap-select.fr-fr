@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: concept_api_before_browser.html 
+keywords: rest api, deploy rest api, rest, access browser, before you begin 
+summary: 'Vous devez connaître plusieurs éléments avant d"utiliser la page de documentation en ligne de déploiement.' 
+---
+= Avant d'accéder à l'API avec un navigateur
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez connaître plusieurs éléments avant d'utiliser la page de documentation en ligne de déploiement.
+
+
+
+== Plan de déploiement
+
+Si vous prévoyez d'émettre des appels d'API dans le cadre de l'exécution de tâches de déploiement ou d'administration spécifiques, vous devez envisager de créer un plan de déploiement. Ces plans peuvent être formels ou informels, et contiennent généralement vos buts et les appels API à utiliser. Consultez le document processus de workflow à l'aide de l'API REST de déploiement pour plus d'informations.
+
+
+
+== Exemples JSON et définitions de paramètres
+
+Chaque appel d'API est décrit sur la page de documentation à l'aide d'un format cohérent. Le contenu inclut des notes d'implémentation, des paramètres de requête et des codes d'état HTTP. En outre, vous pouvez afficher les détails du fichier JSON utilisé avec les demandes et les réponses de l'API, comme suit :
+
+* Exemple de valeur si vous cliquez sur _example Value_ lors d'un appel API, une structure JSON type pour l'appel s'affiche. Vous pouvez modifier l'exemple selon vos besoins et l'utiliser comme saisie pour votre demande.
+* Modèle si vous cliquez sur _Model_, une liste complète des paramètres JSON s'affiche, avec une description pour chaque paramètre.
+
+
+
+
+== Attention lors de l'émission d'appels API
+
+Toutes les opérations d'API que vous effectuez à l'aide de la page de documentation de déploiement sont des opérations en direct. Veillez à ne pas créer, mettre à jour ou supprimer une configuration ou d'autres données par erreur.

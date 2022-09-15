@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_concepts_chars.html 
+keywords: ontap select, networking concepts, cluster characteristics 
+summary: 'Commencez par vous familiariser avec les concepts généraux de mise en réseau qui s"appliquent à l"environnement ONTAP Select. Explorez ensuite les caractéristiques et les options spécifiques disponibles avec les clusters à un ou plusieurs nœuds.' 
+---
+= Mise en réseau : concepts et caractéristiques généraux
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Commencez par vous familiariser avec les concepts généraux de mise en réseau qui s'appliquent à l'environnement ONTAP Select. Explorez ensuite les caractéristiques et les options spécifiques disponibles avec les clusters à un ou plusieurs nœuds.
+
+
+
+== Mise en réseau physique
+
+Le réseau physique prend en charge le déploiement de clusters ONTAP Select principalement en fournissant l'infrastructure de commutation de couche 2 sous-jacente. La configuration associée au réseau physique inclut à la fois l'hôte de l'hyperviseur et l'environnement réseau commuté plus vaste.
+
+
+
+=== Options de carte réseau de l'hôte
+
+Chaque hôte d'hyperviseur ONTAP Select doit être configuré avec deux ou quatre ports physiques. La configuration exacte que vous choisissez dépend de plusieurs facteurs, notamment :
+
+* Indique si le cluster contient un ou plusieurs hôtes ONTAP Select
+* Quel système d'exploitation d'hyperviseur est utilisé
+* Configuration du commutateur virtuel
+* Indique si LACP est utilisé avec les liens ou non
+
+
+
+
+=== Configuration physique des commutateurs
+
+Vous devez vous assurer que la configuration des switchs physiques prend en charge le déploiement ONTAP Select. Ces commutateurs physiques sont intégrés aux commutateurs virtuels basés sur l'hyperviseur. La configuration exacte choisie dépend de plusieurs facteurs. Plusieurs points sont à prendre en compte :
+
+* Comment allez-vous maintenir une séparation entre les réseaux internes et externes ?
+* Allez-vous conserver une séparation entre les réseaux de gestion et de données ?
+* Comment seront configurés les VLAN de couche 2 ?
+
+
+
+
+== Mise en réseau logique
+
+ONTAP Select utilise deux réseaux logiques différents, séparant le trafic par type. Plus précisément, le trafic peut circuler entre les hôtes dans le cluster, ainsi qu'vers les clients de stockage et d'autres machines à l'extérieur du cluster. Les commutateurs virtuels gérés par les hyperviseurs permettent la prise en charge du réseau logique.
+
+
+
+=== Réseau interne
+
+Dans le cas d’un déploiement de cluster à plusieurs nœuds, les nœuds ONTAP Select individuels communiquent à l’aide d’un réseau « interne » isolé. Ce réseau n'est pas exposé ni disponible en dehors des nœuds du cluster ONTAP Select.
+
+
+NOTE: Le réseau interne est uniquement présent avec un cluster à plusieurs nœuds.
+
+Le réseau interne présente les caractéristiques suivantes :
+
+* Permet de traiter le trafic intra-cluster ONTAP, notamment :
++
+** Cluster
+** Interconnexion haute disponibilité (HA-IC)
+** Miroir synchrone RAID (RSM)
+
+
+* Réseau à couche unique - 2 basé sur un VLAN
+* Les adresses IP statiques sont attribuées par ONTAP Select :
++
+** IPv4 uniquement
+** DHCP non utilisé
+** Adresse lien-local
+
+
+* La taille de MTU est de 9000 octets par défaut et peut être ajustée dans une plage de 7500-9000 (inclus)
+
+
+
+
+=== Réseau externe
+
+Le réseau externe traite le trafic entre les nœuds d'un cluster ONTAP Select et les clients de stockage externe, ainsi que les autres ordinateurs. Le réseau externe fait partie intégrante de chaque déploiement de cluster et présente les caractéristiques suivantes :
+
+* Permet de traiter le trafic ONTAP, notamment :
++
+** Données (NFS, CIFS, iSCSI)
+** Gestion (cluster et nœud ; option de SVM)
+** Intercluster (en option)
+
+
+* Prise en charge facultative des VLAN :
++
+** Groupe de ports de données
+** Groupe de ports de gestion
+
+
+* Adresses IP attribuées en fonction des choix de configuration de l'administrateur :
++
+** IPv4 ou IPv6
+
+
+* La taille de MTU est de 1 1500 octets par défaut (peut être ajustée)
+
+
+Le réseau externe est présent avec des clusters de toutes tailles.
+
+
+
+== Environnement réseau de machines virtuelles
+
+L'hôte de l'hyperviseur fournit plusieurs fonctionnalités réseau.
+
+ONTAP Select se base sur les capacités suivantes exposées à la machine virtuelle :
+
+Ports de machines virtuelles:: Plusieurs ports sont disponibles pour l'utilisation par ONTAP Select. Ils sont attribués et utilisés en fonction de plusieurs facteurs, dont la taille du cluster.
+Commutateur virtuel:: Le logiciel de commutation virtuelle dans l'environnement de l'hyperviseur, qu'il s'agisse de vSwitch (VMware) ou Open vSwitch (KVM), rejoint les ports exposés par la machine virtuelle par les ports de carte réseau Ethernet physiques. Vous devez configurer un vSwitch pour chaque hôte ONTAP Select, selon le cas de votre environnement.
+

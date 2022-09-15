@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_robo.html 
+keywords: plan, planning, remote and branch office, robo 
+summary: 'Vous pouvez déployer l"ONTAP Select dans un environnement de bureau distant/succursale. Dans le cadre de la planification d"un déploiement ROBO, vous devez sélectionner la configuration à l"appui de vos objectifs.' 
+---
+= Déploiement dans les succursales et bureaux distants
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez déployer l'ONTAP Select dans un environnement de bureau distant/succursale. Dans le cadre de la planification d'un déploiement ROBO, vous devez sélectionner la configuration à l'appui de vos objectifs.
+
+Deux configurations principales sont disponibles pour le déploiement d'ONTAP Select dans un environnement ROBO.
+
+
+NOTE: Vous pouvez utiliser n'importe quelle licence VMware vSphere lors du déploiement de ONTAP Select.
+
+Le cluster à deux nœuds ONTAP Select est composé d'une paire haute disponibilité et convient parfaitement aux déploiements ROBO.
+
+Vous pouvez déployer un cluster ONTAP Select à un seul nœud dans un environnement ROBO. Alors qu'un seul nœud n'offre pas de fonctionnalité haute disponibilité native, vous pouvez déployer le cluster de l'une des manières suivantes pour protéger le stockage :
+
+* Stockage externe partagé avec VMware HA
+* VMware VSAN
+
+
+
+NOTE: Si vous utilisez VSAN, vous devez disposer d'une licence ROBO VMware VSAN.

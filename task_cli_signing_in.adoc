@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: task_cli_signing_in.html 
+keywords: administer, administering, cli, deploy, sign in, signing in 
+summary: 'Vous devez vous connecter au shell de gestion de déploiement à l"aide de SSH. Une fois connecté, vous pouvez créer un cluster ONTAP Select et effectuer les procédures administratives associées à l"aide des commandes de l"interface de ligne de commande.' 
+---
+= Connectez-vous pour déployer à l'aide de SSH
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous devez vous connecter au shell de gestion de déploiement à l'aide de SSH. Une fois connecté, vous pouvez créer un cluster ONTAP Select et effectuer les procédures administratives associées à l'aide des commandes de l'interface de ligne de commande.
+
+Vous devez disposer du mot de passe actuel pour le compte administrateur déploiement (admin). Si vous vous connectez pour la première fois et que vous avez utilisé vCenter pour installer la machine virtuelle de déploiement, vous devez utiliser le mot de passe défini lors de l'installation.
+
+.Étapes
+. Connectez-vous à l'aide du compte d'administrateur et de l'adresse IP de gestion de la machine virtuelle déployée ; par exemple :
++
+`ssh admin@<10.235.82.22>`
+
+. Si c'est la première fois que vous vous êtes connecté et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :
++
+** Nouveau mot de passe pour le compte administrateur (obligatoire)
+** Nom de la société (obligatoire)
+** URL du proxy (facultatif)
+
+
+. Tapez *?* et appuyez sur *entrée* pour afficher la liste des commandes de shell de gestion disponibles.
+

@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: reference_chk_select_req_info.html 
+keywords: ontap select, pre-installation, vmware 
+summary: 'Dans le cadre de la préparation au déploiement d"un cluster ONTAP Select dans un environnement VMware, collectez les informations requises lors de l"utilisation de l"utilitaire d"administration ONTAP Select Deploy pour déployer et configurer le cluster.' 
+---
+= Informations requises pour l'installation de ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dans le cadre de la préparation au déploiement d'un cluster ONTAP Select dans un environnement VMware, collectez les informations requises lors de l'utilisation de l'utilitaire d'administration ONTAP Select Deploy pour déployer et configurer le cluster.
+
+Certaines informations que vous collectez s'appliquent au cluster lui-même, tandis que d'autres informations s'appliquent aux nœuds individuels du cluster.
+
+
+
+== Informations au niveau du cluster
+
+Vous devez collecter les informations relatives au cluster ONTAP Select.
+
+[cols="35,65"]
+|===
+| Informations sur le cluster | Description 
+
+
+| Nom du cluster | Identificateur unique du cluster. 
+
+
+| Mode de licence | Évaluation ou achat de licences. 
+
+
+| Configuration IP du cluster | Configuration IP pour les clusters et les nœuds, notamment : * adresse IP de gestion du cluster * masque de sous-réseau * passerelle par défaut 
+|===
+
+
+== Informations au niveau de l'hôte
+
+Vous devez collecter des informations relatives à chacun des nœuds du cluster ONTAP Select.
+
+[cols="35,65"]
+|===
+| Informations sur le cluster | Description 
+
+
+| Nom de l'hôte | Identificateur unique de l'hôte. 
+
+
+| Nom de domaine de l'hôte | Nom de domaine complet de l'hôte. 
+
+
+| Configuration IP pour les nœuds | Adresse IP de gestion pour chaque nœud du cluster. 
+
+
+| Nœud en miroir | Nom du nœud associé dans la paire HA (clusters à plusieurs nœuds uniquement). 
+
+
+| Pool de stockage | Nom du pool de stockage utilisé. 
+
+
+| Disques de stockage | Liste des disques en cas d'utilisation du RAID logiciel. 
+
+
+| Numéro de série | Si vous déployez une licence achetée, le numéro de série à neuf chiffres unique fourni par NetApp. 
+|===

@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: task_adm_clusters.html 
+keywords: administer, administering, web, clusters 
+summary: 'Vous pouvez effectuer plusieurs tâches liées à l"administration d"un cluster ONTAP Select.' 
+---
+= Clusters ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez effectuer plusieurs tâches liées à l'administration d'un cluster ONTAP Select.
+
+
+
+== Déplacement d'un cluster ONTAP Select hors ligne et en ligne
+
+Une fois que vous avez créé un cluster, vous pouvez le déplacer hors ligne et en ligne selon vos besoins.
+
+Lorsqu'un cluster est créé, il est initialement défini sur l'état en ligne.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Cliquez sur image:icon_kebab.gif["Options"] À droite du cluster et sélectionnez *mettre hors ligne*.
++
+Si l'option hors ligne n'est pas disponible, le cluster est déjà à l'état hors ligne.
+
+. Cliquez sur *Oui* dans la fenêtre contextuelle pour confirmer la demande.
+. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est hors ligne.
+. Pour remettre le cluster en ligne, cliquez sur image:icon_kebab.gif["Options"] Et sélectionnez *mettre en ligne*.
+. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est en ligne.
+
+
+
+
+== Suppression d'un cluster ONTAP Select
+
+Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.
+
+Le cluster doit être défini sur l'état hors ligne.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Cliquez sur image:icon_kebab.gif["Options"] À droite du cluster et sélectionnez *Supprimer*.
++
+Si l'option de suppression n'est pas disponible, le cluster n'est pas à l'état hors ligne.
+
+. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est supprimé de la liste.
+
+
+
+
+== Actualisation de la configuration du cluster de déploiement
+
+Une fois que vous avez créé un cluster ONTAP Select, vous pouvez modifier le cluster ou la configuration du serveur virtuel en dehors de l'utilitaire de déploiement à l'aide des outils d'administration de ONTAP ou d'hyperviseur. La configuration d'un ordinateur virtuel peut également être modifiée après la migration.
+
+Lorsque ces modifications sont apportées au cluster ou à la machine virtuelle, la base de données de configuration de l'utilitaire de déploiement n'est pas automatiquement mise à jour et peut devenir désynchronisée avec l'état du cluster. Vous devez actualiser le cluster dans ces situations et dans d'autres cas pour mettre à jour la base de données de déploiement en fonction de l'état actuel du cluster.
+
+.Avant de commencer
+Informations requises:: Vous devez disposer des informations de configuration actuelles pour le cluster, y compris :
++
+--
+* Informations d'identification de l'administrateur ONTAP
+* Adresse IP de gestion du cluster
+* Noms des nœuds du cluster
+
+
+--
+État stable du cluster:: Le cluster doit être dans un état stable. Vous ne pouvez pas actualiser un cluster lorsqu'il est en cours de création ou de suppression, ou lorsqu'il est à l'état _create_FAILED_ ou _delete_FAILED_.
+Après une migration de machines virtuelles:: Après la migration d'une machine virtuelle exécutant ONTAP Select, vous devez créer un hôte à l'aide de l'utilitaire Deploy avant d'actualiser votre cluster.
+
+
+Vous pouvez actualiser le cluster pour mettre à jour la base de données de configuration de déploiement à l'aide de l'interface utilisateur Web.
+
+
+NOTE: Au lieu d'utiliser l'interface graphique de déploiement, vous pouvez utiliser la commande cluster Refresh dans le shell de l'interface de ligne de commande de déploiement pour actualiser un cluster.
+
+Configuration en clusters et de serveurs virtuels:: Voici quelques-unes des valeurs de configuration pouvant être modifiées et entraîner la désynchronisation de la base de données de déploiement :
++
+--
+* Noms des nœuds et des clusters
+* Configuration réseau ONTAP
+* Version ONTAP (après mise à niveau)
+* Noms des machines virtuelles
+* Noms de réseau de l'hôte
+* Noms des pools de stockage
+
+
+--
+État du cluster et du nœud:: Un cluster ou un nœud ONTAP Select peut être défini sur un état qui l'empêche de fonctionner correctement. Vous devez effectuer une opération de mise à jour du cluster pour corriger les conditions suivantes :
++
+--
+* Noeud dans l'état _Unknown_ un noeud ONTAP Select peut se trouver dans l'état _Unknown_ pour plusieurs raisons, y compris le noeud est introuvable.
+* Cluster dans l'état _dégradé_ si un nœud est hors tension, il peut sembler toujours en ligne dans l'utilitaire de déploiement. Dans cette situation, le cluster est à l'état _dégradé_.
+
+
+--
+
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* en haut à gauche de la page et sélectionnez le cluster souhaité dans la liste.
+. Cliquez sur image:icon_kebab.gif["Options"] Sur le côté droit de la page, sélectionnez *Cluster Refresh*.
+. Sous *informations d'identification du cluster*, indiquez le mot de passe administrateur ONTAP pour le cluster.
+. Cliquez sur *Actualiser*.
+
+
+Si l'opération est réussie, le champ _dernière actualisation_ est mis à jour. Vous devez sauvegarder les données de configuration du déploiement une fois l'opération de mise à jour du cluster terminée.

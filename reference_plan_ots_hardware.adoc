@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: reference_plan_ots_hardware.html 
+keywords: plan, planning, vmware, hardware, hardware requirements 
+summary: 'Il existe plusieurs problèmes matériels à prendre en compte et à planifier liés à l"environnement VMware.' 
+---
+= Considérations relatives à l'hyperviseur et au matériel VMware
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il existe plusieurs problèmes matériels à prendre en compte et à planifier liés à l'environnement VMware.
+
+
+
+== Exigences liées à l'hyperviseur
+
+Il existe plusieurs exigences relatives à l'hyperviseur dans lequel ONTAP Select s'exécute.
+
+
+NOTE: Consultez les notes de mise à jour de votre version de ONTAP Select pour connaître les restrictions ou limitations connues supplémentaires.
+
+
+
+=== Licences VMware
+
+Pour déployer un cluster ONTAP Select, votre entreprise doit disposer d'une licence VMware vSphere valide pour les hôtes de l'hyperviseur où ONTAP Select s'exécute. Vous devez utiliser les licences adaptées à votre déploiement.
+
+
+
+=== Compatibilité logicielle
+
+ONTAP Select peut être déployé sur les hyperviseurs suivants :
+
+* VMware ESXi 6.5 U2 (build 8294253 ou ultérieure)
+* VMware ESXi 6.7 GA (version 8169922 ou ultérieure), dont 6.7 U1, U2 et U3
+* VMware ESXi 7.0 GA (version 15843807 ou ultérieure), dont 7.0 U1, U2 et U3C
+
+
+
+NOTE: NetApp prend en charge ONTAP Select sur les versions identifiées de ESXi tant que VMware continue également à prendre en charge les mêmes versions.
+
+
+
+=== Mise à niveau vers VMware ESXi 6.5 U2 ou version ultérieure
+
+Si ONTAP Select est actuellement déployé sur VMware ESXi 6.5 U1, vous devez effectuer une mise à niveau vers ESXi 6.5 U2 ou version ultérieure dès que possible. L'utilisation de ESXi 6.5 U1 peut vous exposer à une défaillance de machine virtuelle en raison d'un bogue VMware connu.
+
+
+
+=== VMware vCenter et les hôtes ESXi autonomes
+
+Si un hôte d'hyperviseur ESXi est géré par un serveur vCenter, vous devez enregistrer l'hôte dans l'utilitaire d'administration de déploiement à l'aide des informations d'identification vCenter. Vous ne pouvez pas enregistrer l'hôte en tant qu'hôte autonome à l'aide des informations d'identification VMware ESXi.
+
+
+
+== Configuration matérielle principale requise
+
+L'hôte de l'hyperviseur physique dans lequel vous déployez ONTAP Select doit respecter plusieurs exigences matérielles. Vous pouvez choisir n'importe quelle plateforme pour l'hôte de l'hyperviseur, tant qu'elle respecte les exigences matérielles minimales. Les fournisseurs suivants proposent des plateformes matérielles prises en charge : Cisco, Dell, HP, Fujitsu, Lenovo, Et Supermicro.
+
+
+NOTE: À partir de ONTAP Select 9.9.1, seuls les modèles de CPU basés sur Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge.
+
+Reportez-vous à la https://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp,window=_blank"] pour en savoir plus.
+
+
+
+=== Configuration matérielle de base
+
+Il existe plusieurs exigences matérielles courantes qui s'appliquent à toutes les plateformes, indépendamment du type d'instance de nœud ou de l'offre de licence.
+
+Les microprocesseurs pris en charge incluent les composants suivants :
+
+* Processeurs Intel Xeon pour serveur (voir link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processeurs Intel Xeon,window=_blank"] pour en savoir plus)
+
+
+Il existe plusieurs configurations Ethernet prises en charge en fonction de la taille du cluster.
+
+[cols="30,35,35"]
+|===
+
+
+| Taille du cluster | Configuration minimale requise | Recommandation 
+
+
+| Cluster à un seul nœud | 2 x 1 GbE | 2 x 10 GbE 
+
+
+| Cluster à deux nœuds ou MetroCluster SDS | 4 x 1 GbE ou 1 x 10 GbE | 2 x 10 GbE 
+
+
+| cluster à 4 ou 6/8 nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
+|===
+
+
+=== Configuration matérielle supplémentaire en fonction du type d'instance
+
+Il y a plusieurs autres exigences matérielles en fonction du type d'instance de nœud.
+
+Reportez-vous à la section link:concept_lic_platforms.html["Comprendre les offres de licences de plateforme"] pour en savoir plus.
+
+.Petit
+* Cœurs de processeurs six cœurs physiques ou plus, avec quatre réservés pour ONTAP Select.
+* Mémoire de 24 Go ou plus avec 16 Go réservés pour ONTAP Select.
+* Licence de plateforme requise pour l'offre Standard, Premium ou Premium XL
+
+
+.Moyen
+* Dix cœurs de processeurs physiques ou plus, huit pour ONTAP Select.
+* 72 Go ou plus avec 64 Go réservés pour ONTAP Select
+* Licence de plateforme requise pour l'offre Premium ou Premium XL
+
+
+.Grand
+* Cœurs de processeur 80 cœurs physiques ou plus, 16 réservés pour ONTAP Select.
+* 136 Go de mémoire ou plus avec 128 Go réservés pour ONTAP Select
+* Licence de plateforme requise pour l'offre Premium XL
+
+
+
+NOTE: Il existe des besoins supplémentaires en termes de disque selon les licences de la plate-forme. Voir link:reference_plan_ots_storage.html["Stockage et RAID"] pour en savoir plus.

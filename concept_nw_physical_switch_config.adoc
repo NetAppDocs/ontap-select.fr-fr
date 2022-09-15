@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: concept_nw_physical_switch_config.html 
+keywords: ontap select, upstream physical switch configuration 
+summary: Détails de la configuration des commutateurs physiques en amont basés sur des environnements à commutateur unique et à commutateurs multiples. 
+---
+= Configuration physique des commutateurs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Détails de la configuration des commutateurs physiques en amont basés sur des environnements à commutateur unique et à commutateurs multiples.
+
+Des considérations rigoureuses doivent être prises en compte lors des décisions de connectivité, de la couche du commutateur virtuel aux commutateurs physiques. La séparation du trafic interne sur le cluster des services de données externes doit s'étendre à la couche réseau physique en amont via l'isolation fournie par les VLAN de couche 2.
+
+Les ports des switchs physiques doivent être configurés en tant que ports trunkports. Le trafic externe ONTAP Select peut être séparé sur plusieurs réseaux de couche 2 de deux manières. L'une des méthodes consiste à utiliser des ports virtuels balisés ONTAP VLAN avec un seul port group. L'autre méthode consiste à attribuer des groupes de ports distincts en mode VST au port de gestion e0a. Vous devez également attribuer des ports de données à e0b et e0c/e0g en fonction de la version du ONTAP Select et de la configuration à un ou plusieurs nœuds. Si le trafic externe est séparé sur plusieurs réseaux de couche 2, les ports de commutation physique uplink doivent avoir ces VLAN dans sa liste VLAN autorisés.
+
+Le trafic réseau interne ONTAP Select se produit à l'aide d'interfaces virtuelles définies avec des adresses IP locales de liaison. Comme ces adresses IP ne sont pas routables, le trafic interne entre les nœuds du cluster doit circuler sur un réseau de couche 2 unique. Les sauts de route entre les nœuds du cluster ONTAP Select ne sont pas pris en charge.
+
+
+
+== Commutateur physique partagé
+
+La figure suivante décrit une configuration de switch utilisée par un nœud d'un cluster ONTAP Select à plusieurs nœuds. Dans cet exemple, les cartes réseau physiques utilisées par les vswitches hébergeant les groupes de ports réseau interne et externe sont câblées sur le même commutateur en amont. Le trafic des switchs est maintenu isolé à l'aide des domaines de diffusion contenus dans des VLAN séparés.
+
+
+NOTE: Pour le réseau interne ONTAP Select, l'étiquetage s'effectue au niveau du port group. Alors que l'exemple suivant utilise VGT pour le réseau externe, VGT et VST sont pris en charge sur ce groupe de ports.
+
+*Configuration réseau utilisant un commutateur physique partagé*
+
+image:DDN_06.jpg["Configuration du réseau à l'aide d'un commutateur physique partagé"]
+
+
+NOTE: Dans cette configuration, le commutateur partagé devient un point unique de défaillance. Si possible, plusieurs commutateurs doivent être utilisés pour éviter une défaillance matérielle physique susceptible d'entraîner une panne du réseau du cluster.
+
+
+
+== Commutateurs physiques multiples
+
+Lorsque la redondance est nécessaire, il convient d'utiliser plusieurs commutateurs de réseau physique. La figure suivante présente une configuration recommandée utilisée par un nœud d'un cluster ONTAP Select multinœud. Les cartes réseau des groupes de ports internes et externes sont câblées en différents commutateurs physiques, ce qui protège l'utilisateur contre une défaillance unique du commutateur matériel. Un canal de port virtuel est configuré entre les commutateurs pour éviter les problèmes liés à l'arborescence à ressources multiples.
+
+*Configuration réseau utilisant plusieurs commutateurs physiques*
+
+image:DDN_07.jpg["Configuration du réseau avec plusieurs commutateurs physiques"]

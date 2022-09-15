@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: task_adm_connectivity.html 
+keywords: administer, administering, web, connectivity, network connectivity, network checker 
+summary: 'Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Généralement, vous exécutez ce test avant le déploiement d"un cluster multinœud afin de détecter les problèmes susceptibles d"entraîner l"échec de l"opération.' 
+---
+= Confirmation de la connectivité entre les nœuds ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Généralement, vous exécutez ce test avant le déploiement d'un cluster multinœud afin de détecter les problèmes susceptibles d'entraîner l'échec de l'opération.
+
+Tous les nœuds ONTAP Select inclus dans le test doivent être configurés et sous tension.
+
+Chaque fois que vous démarrez un test, une nouvelle exécution de processus est créée en arrière-plan et un identifiant d'exécution unique lui est attribué. Une seule séquence peut être active à la fois.
+
+Le test comporte deux modes qui contrôlent son fonctionnement :
+
+* Rapide ce mode effectue un test de base sans perturbation. Un test PING est effectué, avec un test de la taille de MTU du réseau et du vSwitch.
+* Étendu ce mode effectue un test plus complet sur tous les chemins réseau redondants. Si vous exécutez cet outil sur un cluster ONTAP Select actif, les performances du cluster peuvent être affectées.
+
+
+
+NOTE: Il est recommandé d'effectuer toujours un test rapide avant de créer un cluster multinœud. Une fois le test rapide terminé, vous pouvez éventuellement effectuer un test étendu en fonction de vos besoins de production.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *Administration* en haut de la page et cliquez sur *Network Checker*.
+. Cliquez sur *Démarrer Nouvelle exécution* et sélectionnez les hôtes et les réseaux pour la paire HA
++
+Vous pouvez ajouter et configurer des paires haute disponibilité supplémentaires selon vos besoins.
+
+. Cliquez sur *Démarrer* pour lancer le test de connectivité réseau.
+

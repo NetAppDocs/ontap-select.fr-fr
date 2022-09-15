@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_adm_replace_drives_swraid.html 
+keywords: administer, administering, web, software raid, replace drive 
+summary: 'Lorsqu"un disque tombe en panne avec le RAID logiciel, ONTAP Select utilise un disque de rechange (si un disque est disponible) et démarre le processus de reconstruction automatiquement. Cela est similaire au fonctionnement d"ONTAP sur FAS et AFF. Toutefois, si aucun disque de spare n"est disponible, vous devez en ajouter un au nœud ONTAP Select.' 
+---
+= Remplacement d'un lecteur défectueux lors de l'utilisation de SW RAID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsqu'un lecteur utilisant le RAID logiciel tombe en panne, ONTAP Select attribue un disque de rechange si un disque est disponible et lance automatiquement le processus de reconstruction. Cela est similaire au fonctionnement d'ONTAP sur FAS et AFF. Toutefois, si aucun disque de spare n'est disponible, vous devez en ajouter un au nœud ONTAP Select.
+
+
+NOTE: Le retrait du disque défectueux et l'ajout d'un nouveau disque (marqué comme disque de rechange) doivent être effectués via ONTAP Select Deploy. La connexion d'un disque à la machine virtuelle ONTAP Select à l'aide de vSphere n'est pas prise en charge.
+
+
+
+== Identifiez le disque défectueux
+
+Lorsqu'un disque tombe en panne, vous devez utiliser l'interface de ligne de commandes de ONTAP pour identifier le disque défectueux.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de ONTAP à l'aide du compte d'administrateur.
+. Identifiez le lecteur de disque défectueux.
++
+[listing]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+
+
+== Retirez le disque défectueux
+
+Après avoir identifié le lecteur défectueux, retirez le disque.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* et sélectionnez le cluster approprié.
++
+image:ST_22.jpg["Détails du nœud"]
+
+. Cliquez sur *+* pour développer la vue de stockage.
++
+image:ST_23.jpg["Modifier le stockage de nœud"]
+
+. Cliquez sur *Modifier* pour modifier les disques connectés et décochez le disque défectueux.
++
+image:ST_24.jpg["Détails du disque de stockage"]
+
+. Indiquez les informations d'identification du cluster et cliquez sur *Modifier le stockage*.
++
+image:ST_25.jpg["Identifiants ONTAP"]
+
+. Confirmer l'opération
++
+image:ST_26.jpg["Avertissement"]
+
+
+
+
+
+== Ajoutez le nouveau lecteur de rechange
+
+Après avoir retiré le disque défectueux, ajoutez le disque de réserve.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de déploiement à l'aide du compte administrateur.
+. Cliquez sur l'onglet *clusters* et sélectionnez le cluster approprié.
++
+image:ST_27.jpg["Paire HA"]
+
+. Cliquez sur *+* pour développer la vue de stockage.
++
+image:ST_28.jpg["Modifier le stockage de nœud"]
+
+. Cliquez sur *Modifier* et confirmez que le nouveau lecteur est disponible et sélectionnez-le.
++
+image:ST_29.jpg["Détails du disque de stockage"]
+
+. Indiquez les informations d'identification du cluster et cliquez sur *Modifier le stockage*.
++
+image:ST_30.jpg["Détails du disque de stockage"]
+
+. Confirmer l'opération
++
+image:ST_31.jpg["Détails du disque de stockage"]
+
+

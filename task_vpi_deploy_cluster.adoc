@@ -1,0 +1,173 @@
+---
+sidebar: sidebar 
+permalink: task_vpi_deploy_cluster.html 
+keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, deploy cluster, deploying cluster, create cluster, creating cluster 
+summary: 'Vous pouvez utiliser le plug-in vCenter de déploiement via l"interface utilisateur Web vSphere pour déployer des clusters ONTAP Select.' 
+---
+= Déploiement d'un cluster ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez utiliser le plug-in vCenter de déploiement via l'interface utilisateur Web vSphere pour déployer des clusters ONTAP Select.
+
+
+
+== Avant de commencer
+
+Vous devez préparer l'utilisation du plug-in de déploiement vCenter avant de déployer un cluster ONTAP Select.
+
+
+
+=== Préparation commune pour les grappes de toutes tailles
+
+Vous devez effectuer plusieurs étapes indépendamment de la taille du cluster :
+
+* Lisez la section _mise en route_ pour vous familiariser avec le plug-in de déploiement vCenter.
+* Assurez-vous que l'utilitaire d'administration ONTAP Select Deploy est installé et en cours d'exécution.
+* Installez le plug-in vCenter de déploiement.
+* Préparez l'hôte de l'hyperviseur ou les hôtes sur lesquels le cluster ONTAP Select sera exécuté.
+* Obtenez les fichiers de licence de stockage requis pour le ou les nœuds du cluster.
+* Obtenez les identifiants des comptes suivants :
++
+** Déployer un compte administrateur
+** Compte vCenter avec accès au plug-in
+
+
+* Si nécessaire, installez le certificat de déploiement SSL sur le Gestionnaire de certificats Windows en tant qu'autorité de certification racine approuvée.
+* Assurez-vous que l'utilitaire de déploiement dispose d'un accès réseau au port 443 sur le serveur vCenter.
+
+
+
+
+=== Préparation supplémentaire pour un cluster multinœud
+
+Outre la préparation commune, vous devez vous familiariser avec le vérificateur de réseau de déploiement avant de déployer un cluster multinœud.
+
+
+
+== Ajout d'un hôte hyperviseur
+
+Vous pouvez ajouter des hôtes hyperviseurs à l'utilitaire de déploiement sur lequel les nœuds ONTAP Select s'exécutent avant de déployer un cluster. Si nécessaire, vous pouvez à la place ajouter les hôtes dans la boîte de dialogue de création du cluster.
+
+Consultez la section préparation au déploiement d'un cluster ONTAP Select.
+
+Vous pouvez ajouter un ou plusieurs hôtes en fonction de la taille du cluster.
+
+.Étapes
+. Connectez-vous au serveur vCenter via vSphere HTML5 à l'aide d'un navigateur.
+. Dans la barre d'outils, cliquez sur *Menu*, puis sur *listes d'inventaire globales*.
+. Dans le volet de gauche, cliquez sur *ONTAP Select Deploy*, puis cliquez sur l'onglet *hosts*.
+. Cliquez sur *Ajouter* à droite.
+. Indiquez le nom d'hôte ou l'adresse IP de l'hôte, puis cliquez sur *Ajouter* ou *Ajouter et quitter*.
+
+
+
+
+== Création d'un cluster à un seul nœud
+
+Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé d'un nœud unique.
+
+Consultez la section préparation au déploiement d'un cluster ONTAP Select et ajout d'un hôte d'hyperviseur. Vous pouvez ajouter l'hôte sur lequel le nœud ONTAP Select sera exécuté avant de créer le cluster ou dans le cadre de la création du cluster à un seul nœud.
+
+.Étapes
+. Connectez-vous au serveur vCenter via vSphere HTML5 à l'aide d'un navigateur.
+. Cliquez sur *Menu* en haut, puis sur *listes d'inventaire mondiales*.
+. Cliquez sur *clusters ONTAP Select* dans le volet de gauche, puis sur *Nouveau ONTAP Select*.
++
+Si vous n'avez pas accepté le certificat SSL auparavant, cliquez sur le lien IP dans le message d'avertissement et acceptez le certificat. Revenez ensuite à la page vCenter et cliquez sur le lien du message d'avertissement pour recharger la page.
+
+. Sur la page *Nouveau ONTAP Select*, entrez les détails du cluster et cliquez sur *Done*.
+. Dans la section *Node Setup*, indiquez la configuration et sélectionnez une licence.
++
+Vous pouvez modifier le nom de nœud par défaut et télécharger une nouvelle licence si nécessaire.
+
+. Dans la section *Hypervisor and Network*, sélectionnez le type d'instance, l'hôte et les réseaux.
++
+Vous pouvez ajouter un hôte si nécessaire. La licence pour le nœud doit respecter ou dépasser le type d'instance.
+
+. Dans la section *stockage*, sélectionnez la capacité de stockage et un pool de stockage.
++
+Vous pouvez éventuellement activer RAID logiciel lors de l'utilisation d'une licence Premium.
+
+. Cliquez sur *Done* et vérifiez la configuration du cluster.
++
+Vous pouvez modifier la configuration en cliquant sur Modifier dans chaque section selon vos besoins.
+
+. Cliquez sur *Suivant*.
+. Indiquez le mot de passe administrateur ONTAP et cliquez sur *Créer un cluster* pour lancer le processus de création du cluster, puis cliquez sur *OK* dans la fenêtre contextuelle de confirmation.
++
+La création du cluster peut prendre jusqu'à 30 minutes.
+
+. Actualisez la page et sélectionnez le nouveau cluster, puis cliquez sur *Résumé* et *Détails* pour contrôler le processus de création de cluster en plusieurs étapes.
++
+
+TIP: Si l'opération de création de cluster est initiée mais que l'opération n'a pas réussi à se terminer, le mot de passe d'administration ONTAP que vous avez défini n'est pas enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe `changeme123` avec le `admin` compte.
+
+
+
+.Une fois que vous avez terminé
+* Vérifiez que la fonctionnalité ONTAP Select AutoSupport est activée.
+* Sauvegarder les données de configuration ONTAP Select Deploy.
+
+
+
+
+== Création d'un cluster multinœud
+
+Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé de plusieurs nœuds.
+
+Consultez la section préparation au déploiement d'un cluster ONTAP Select et ajout d'un hôte d'hyperviseur. Vous pouvez ajouter les hôtes sur lesquels les nœuds ONTAP Select s'exécuteront avant de créer le cluster ou dans le cadre de la création du cluster multinœud.
+
+Un cluster multinœud ONTAP Select se compose d'un nombre pair de nœuds. Les nœuds sont toujours associés en tant que paires haute disponibilité.
+
+.Étapes
+. Connectez-vous au serveur vCenter via vSphere HTML5 à l'aide d'un navigateur.
+. Cliquez sur *Menu* en haut, puis sur *listes d'inventaire mondiales*.
+. Cliquez sur *clusters ONTAP Select* dans le volet de gauche, puis sur *Nouveau ONTAP Select*
++
+Si vous n'avez pas accepté le certificat SSL auparavant, cliquez sur le lien IP dans le message d'avertissement et acceptez le certificat. Revenez ensuite à la page vCenter et cliquez sur le lien du message d'avertissement pour recharger la page.
+
+. Sur la page *Nouveau ONTAP Select*, entrez les détails du cluster et cliquez sur *Done*.
++
+Sauf si vous avez une raison de définir la taille de la MTU du cluster, vous devez accepter la valeur par défaut et autoriser le déploiement effectuer les ajustements nécessaires.
+
+. Dans la section *Node Setup*, indiquez la configuration et sélectionnez les licences pour les deux nœuds de la paire HA.
++
+Vous pouvez modifier les noms de nœud par défaut et télécharger de nouvelles licences si nécessaire.
+
+. Dans la section *hyperviseur et réseau*, sélectionnez le type d'instance, l'hôte et les réseaux pour chaque nœud.
++
+Vous pouvez ajouter un hôte si nécessaire. Vous devez sélectionner les trois réseaux. Le réseau interne ne peut pas être identique au réseau de gestion ou de données. Les licences pour les nœuds doivent respecter ou dépasser le type d'instance.
+
+. Dans la section *stockage*, sélectionnez la capacité de stockage et un pool de stockage.
++
+Vous pouvez éventuellement activer RAID logiciel lors de l'utilisation d'une licence Premium.
+
+. Si le cluster comporte quatre nœuds ou plus, vous devez configurer les nœuds dans les paires haute disponibilité supplémentaires en suivant la procédure utilisée pour la première paire haute disponibilité.
+. Cliquez sur *Done* et vérifiez la configuration du cluster.
++
+Vous pouvez modifier la configuration en cliquant sur *Modifier* dans chaque section selon vos besoins.
+
+. Vous pouvez également exécuter le vérificateur de connectivité réseau afin de tester la connectivité entre les nœuds sur le réseau de cluster interne.
+. Cliquez sur *Suivant*.
+. Indiquez le mot de passe administrateur ONTAP et cliquez sur *Créer un cluster* pour lancer le processus de création du cluster, puis cliquez sur *OK* dans la fenêtre contextuelle de confirmation.
++
+La création du cluster peut prendre jusqu'à 30 minutes.
+
+. Actualisez la page et sélectionnez le nouveau cluster, puis cliquez sur *Résumé* et *Détails* pour contrôler le processus de création de cluster en plusieurs étapes.
++
+
+TIP: Si l'opération de création de cluster est initiée mais que l'opération n'a pas réussi à se terminer, le mot de passe d'administration ONTAP que vous avez défini n'est pas enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe `changeme123` avec le `admin` compte.
+
+
+
+.Une fois que vous avez terminé
+* Vérifiez que la fonctionnalité ONTAP Select AutoSupport est activée.
+* Sauvegarder les données de configuration ONTAP Select Deploy.
+
