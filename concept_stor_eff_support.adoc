@@ -16,9 +16,9 @@ summary: 'ONTAP Select fournit des options d"efficacité du stockage similaires 
 [role="lead"]
 ONTAP Select fournit des options d'efficacité du stockage similaires aux options d'efficacité du stockage présentes sur les baies FAS et AFF.
 
-Les déploiements ONTAP Select de NAS virtuel (vNAS) avec VSAN 100 % Flash ou les baies Flash génériques doivent suivre les bonnes pratiques pour ONTAP Select avec stockage DAS non SSD.
+Les déploiements NAS virtuels ONTAP Select (vNAS) avec VSAN 100 % Flash ou les baies Flash génériques doivent suivre les bonnes pratiques pour ONTAP Select avec stockage DAS non SSD.
 
-La personnalisation du système AFF est automatiquement activée sur les nouvelles installations, à condition que vous ayez un stockage DAS avec des disques SSD et une licence Premium.
+La personnalisation du système AFF est automatiquement activée sur les nouvelles installations, à condition que vous disposiez d'un stockage DAS avec disques SSD et d'une licence Premium.
 
 Les fonctionnalités de se à la volée suivantes sont automatiquement activées lors de l'installation.
 
@@ -54,52 +54,52 @@ Cross Volume Inline Deduplication:      true
 Cross Volume Background Deduplication:  true
 ----
 
-NOTE: Pour les mises à niveau ONTAP Select à partir de la version 9.4, vous devez installer ONTAP Select 9.4 sur un stockage SSD DAS avec une licence Premium. De plus, la case à cocher *Activer l'efficacité du stockage* doit être cochée lors de l'installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
+NOTE: Pour les mises à niveau ONTAP Select à partir de la version 9.6 et ultérieures, vous devez installer ONTAP Select sur un stockage SSD DAS avec une licence Premium. De plus, vous devez cocher la case *Activer l'efficacité du stockage* lors de l'installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
 
-Le tableau ci-dessous récapitule les différentes options d'efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction de la version ONTAP Select et du type de support.
+Le tableau suivant récapitule les différentes options d'efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction du type de support et des licences logicielles. Les informations du tableau suivant s'appliquent aux versions ONTAP Select 9.6 et ultérieures. Pour les versions antérieures, reportez-vous à la section _prise en charge de l'efficacité du stockage ONTAP Select_ du https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
 
-[cols="6"]
+[cols="4"]
 |===
-| Fonctionnalités ONTAP Select | 9.6 / 9.5 Premium ou Premium XL^4^ (SSD DAS) | 9.4^1^ / 9.3^2^ Premium (SSD DAS) | 9.6 / 9.5 / 9.4^1^ / 9.3^2^ toutes les licences (disque dur DAS) | 9.6 toutes les licences (vNAS) | 9.5 / 9.4^1^ / 9.3^2^ Premium ou Standard (vNAS)^3^ 
+| Fonctionnalités ONTAP Select | SSD DAS (Premium ou Premium XL^1^) | Disque dur DAS (toutes licences) | VNAS (toutes licences) 
 
 
-| Détection nulle en ligne | Oui (par défaut) | Oui, activé par l'utilisateur et par volume | Oui, activé par l'utilisateur et par volume | Oui, activé par l'utilisateur et par volume | Non pris en charge 
+| Détection nulle en ligne | Oui (par défaut) | Oui, activé par l'utilisateur et par volume | Oui, activé par l'utilisateur et par volume 
 
 
-| Déduplication à la volée des volumes | Oui (par défaut) | Oui (recommandé) activé par l'utilisateur sur la base du volume | Non disponible | Non pris en charge | Non pris en charge 
+| Déduplication à la volée des volumes | Oui (par défaut) | Non disponible | Non pris en charge 
 
 
-| Compression 32 K en ligne (compression secondaire) | Oui, activée par l'utilisateur sur la base d'un volume. | Oui, activé par l'utilisateur et par volume | Oui, activé par l'utilisateur et par volume | Non pris en charge | Non pris en charge 
+| Compression 32 K en ligne (compression secondaire) | Oui, activée par l'utilisateur sur la base d'un volume. | Oui, activé par l'utilisateur et par volume | Non pris en charge 
 
 
-| Compression à la volée 8 Ko (compression adaptative) | Oui (par défaut) | Oui (recommandé) activé par l'utilisateur sur la base du volume | Oui, activée par l'utilisateur sur la base d'un volume | Non pris en charge | Non pris en charge 
+| Compression à la volée 8 Ko (compression adaptative) | Oui (par défaut) | Oui, activée par l'utilisateur sur la base d'un volume | Non pris en charge 
 
 
-| Compression en arrière-plan | Non pris en charge | Non pris en charge | Oui, activée par l'utilisateur sur la base d'un volume | Oui, activé par l'utilisateur et par volume | Non pris en charge 
+| Compression en arrière-plan | Non pris en charge | Oui, activée par l'utilisateur sur la base d'un volume | Oui, activé par l'utilisateur et par volume 
 
 
-| Lecteur de compression | Oui. | Oui, activé par l'utilisateur et par volume | Oui. | Oui, activé par l'utilisateur et par volume | Non pris en charge 
+| Lecteur de compression | Oui. | Oui. | Oui, activé par l'utilisateur et par volume 
 
 
-| Compaction des données à la volée | Oui (par défaut) | Oui (recommandé) activé par l'utilisateur sur la base du volume | Oui, activée par l'utilisateur sur la base d'un volume | Non pris en charge | Non pris en charge 
+| Compaction des données à la volée | Oui (par défaut) | Oui, activée par l'utilisateur sur la base d'un volume | Non pris en charge 
 
 
-| Scanner de compactage | Oui. | Oui, activé par l'utilisateur et par volume | Oui. | Non pris en charge | Non pris en charge 
+| Scanner de compactage | Oui. | Oui. | Non pris en charge 
 
 
-| Déduplication à la volée dans l'agrégat | Oui (par défaut) | Oui (recommandé) pour chaque volume avec garantie d'espace = aucune) | S/O | Non pris en charge | Non pris en charge 
+| Déduplication à la volée dans l'agrégat | Oui (par défaut) | S/O | Non pris en charge 
 
 
-| Déduplication en arrière-plan des volumes | Oui (par défaut) | Oui (recommandé) | Oui, activée par l'utilisateur sur la base d'un volume | Oui, activé par l'utilisateur et par volume | Non pris en charge 
+| Déduplication en arrière-plan des volumes | Oui (par défaut) | Oui, activée par l'utilisateur sur la base d'un volume | Oui, activé par l'utilisateur et par volume 
 
 
-| Déduplication en arrière-plan de l'agrégat | Oui (par défaut) | Oui (recommandé) pour chaque volume avec garantie d'espace = aucune) | S/O | Non pris en charge | Non pris en charge 
+| Déduplication en arrière-plan de l'agrégat | Oui (par défaut) | S/O | Non pris en charge 
 |===
-[Small]#^1^ONTAP Select 9.4 sur des SSD DAS (nécessite une licence Premium) permet la déduplication des données existantes dans un agrégat à l'aide de scanners de volumes interglobaux en arrière-plan au niveau de l'agrégat. Cette opération unique est effectuée manuellement pour les volumes créés avant 9.4.# [Small]#^2^ONTAP Select 9.3 sur des SSD DAS (nécessite une licence Premium) prend en charge la déduplication en arrière-plan au niveau de l'agrégat. Cependant, cette fonctionnalité doit être activée après la création de l'agrégat.# [Small]#^3^ONTAP Select 9.5 vNAS par défaut ne prend pas en charge les stratégies d'efficacité du stockage. Consultez la section vNAS pour obtenir plus de détails sur l'enregistrement de données sur instance unique (SIDL).# [Small]#^4^ONTAP Select 9.6 prend en charge une nouvelle licence (Premium XL) et une nouvelle taille de machine virtuelle (grande). Toutefois, la machine virtuelle grande taille n'est prise en charge que pour les configurations DAS utilisant RAID logiciel. Les configurations RAID et vNAS matérielles ne sont pas prises en charge avec la machine virtuelle ONTAP Select grande dans la version actuelle.#
+[Small]#^1^ONTAP Select 9.6 prend en charge une nouvelle licence (Premium XL) et une nouvelle taille de machine virtuelle (grande). Toutefois, la machine virtuelle grande taille n'est prise en charge que pour les configurations DAS utilisant RAID logiciel. Les configurations RAID et vNAS matérielles ne sont pas prises en charge avec la machine virtuelle ONTAP Select grande dans la version 9.6.#
 
-Après la mise à niveau vers ONTAP Select 9.5 ou une version ultérieure, attendez que le système `system node upgrade-revert show` commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d'efficacité du stockage pour les volumes existants.
+Après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure, attendez que le système `system node upgrade-revert show` commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d'efficacité du stockage pour les volumes existants.
 
-Sur un système mis à niveau vers ONTAP Select 9.5 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d'un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d'efficacité du stockage que ceux d'un nouveau volume, avec quelques variantes :
+Sur un système mis à niveau vers ONTAP Select 9.6 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d'un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d'efficacité du stockage que ceux d'un nouveau volume, avec quelques variantes :
 
 Scénario 1:: Si aucune stratégie d'efficacité du stockage n'était activée sur un volume avant la mise à niveau, alors :
 +
@@ -122,4 +122,4 @@ Scénario 2:: Si les fonctionnalités d'efficacité du stockage sont déjà acti
 --
 
 
-Les fonctionnalités d'efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.5 ou une version ultérieure. Si les fonctionnalités d'efficacité du stockage n'étaient pas activées avant la mise à niveau, l'efficacité du stockage n'est pas activée après la mise à niveau.
+Les fonctionnalités d'efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure. Si les fonctionnalités d'efficacité du stockage n'étaient pas activées avant la mise à niveau, l'efficacité du stockage n'est pas activée après la mise à niveau.
