@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-11-24 07:41:53 +0000">11/24/2022</time>
     
   
 
@@ -2584,10 +2584,10 @@
 <p>ONTAP Select fournit des options d&#8217;efficacité du stockage similaires aux options d&#8217;efficacité du stockage présentes sur les baies FAS et AFF.</p>
 </div>
 <div class="paragraph">
-<p>Les déploiements ONTAP Select de NAS virtuel (vNAS) avec VSAN 100 % Flash ou les baies Flash génériques doivent suivre les bonnes pratiques pour ONTAP Select avec stockage DAS non SSD.</p>
+<p>Les déploiements NAS virtuels ONTAP Select (vNAS) avec VSAN 100 % Flash ou les baies Flash génériques doivent suivre les bonnes pratiques pour ONTAP Select avec stockage DAS non SSD.</p>
 </div>
 <div class="paragraph">
-<p>La personnalisation du système AFF est automatiquement activée sur les nouvelles installations, à condition que vous ayez un stockage DAS avec des disques SSD et une licence Premium.</p>
+<p>La personnalisation du système AFF est automatiquement activée sur les nouvelles installations, à condition que vous disposiez d&#8217;un stockage DAS avec disques SSD et d&#8217;une licence Premium.</p>
 </div>
 <div class="paragraph">
 <p>Les fonctionnalités de se à la volée suivantes sont automatiquement activées lors de l&#8217;installation.</p>
@@ -2648,31 +2648,27 @@ Cross Volume Background Deduplication:  true</pre>
 <img src="/us-en/ontap-select/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Pour les mises à niveau ONTAP Select à partir de la version 9.4, vous devez installer ONTAP Select 9.4 sur un stockage SSD DAS avec une licence Premium. De plus, la case à cocher <strong>Activer l&#8217;efficacité du stockage</strong> doit être cochée lors de l&#8217;installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
+Pour les mises à niveau ONTAP Select à partir de la version 9.6 et ultérieures, vous devez installer ONTAP Select sur un stockage SSD DAS avec une licence Premium. De plus, vous devez cocher la case <strong>Activer l&#8217;efficacité du stockage</strong> lors de l&#8217;installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Le tableau ci-dessous récapitule les différentes options d&#8217;efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction de la version ONTAP Select et du type de support.</p>
+<p>Le tableau suivant récapitule les différentes options d&#8217;efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction du type de support et des licences logicielles. Les informations du tableau suivant s&#8217;appliquent aux versions ONTAP Select 9.6 et ultérieures. Pour les versions antérieures, reportez-vous à la section <em>prise en charge de l&#8217;efficacité du stockage ONTAP Select</em> du <a href="https://www.netapp.com/media/10662-tr4517.pdf" target="_blank" rel="noopener">"TR-4517"</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 16.667%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Fonctionnalités ONTAP Select</th>
-<th class="tableblock halign-left valign-top">9.6 / 9.5 Premium ou Premium XL<sup>4</sup> (SSD DAS)</th>
-<th class="tableblock halign-left valign-top">9.4<sup>1</sup> / 9.3<sup>2</sup> Premium (SSD DAS)</th>
-<th class="tableblock halign-left valign-top">9.6 / 9.5 / 9.4<sup>1</sup> / 9.3<sup>2</sup> toutes les licences (disque dur DAS)</th>
-<th class="tableblock halign-left valign-top">9.6 toutes les licences (vNAS)</th>
-<th class="tableblock halign-left valign-top">9.5 / 9.4<sup>1</sup> / 9.3<sup>2</sup> Premium ou Standard (vNAS)<sup>3</sup></th>
+<th class="tableblock halign-left valign-top">SSD DAS (Premium ou Premium XL<sup>1</sup>)</th>
+<th class="tableblock halign-left valign-top">Disque dur DAS (toutes licences)</th>
+<th class="tableblock halign-left valign-top">VNAS (toutes licences)</th>
 </tr>
 </thead>
 <tbody>
@@ -2681,99 +2677,77 @@ Pour les mises à niveau ONTAP Select à partir de la version 9.4, vous devez in
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Déduplication à la volée des volumes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé) activé par l&#8217;utilisateur sur la base du volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non disponible</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compression 32 K en ligne (compression secondaire)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activée par l&#8217;utilisateur sur la base d&#8217;un volume.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compression à la volée 8 Ko (compression adaptative)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé) activé par l&#8217;utilisateur sur la base du volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activée par l&#8217;utilisateur sur la base d&#8217;un volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compression en arrière-plan</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activée par l&#8217;utilisateur sur la base d&#8217;un volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lecteur de compression</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compaction des données à la volée</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé) activé par l&#8217;utilisateur sur la base du volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activée par l&#8217;utilisateur sur la base d&#8217;un volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Scanner de compactage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Déduplication à la volée dans l&#8217;agrégat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé) pour chaque volume avec garantie d&#8217;espace = aucune)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S/O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Déduplication en arrière-plan des volumes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activée par l&#8217;utilisateur sur la base d&#8217;un volume</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui, activé par l&#8217;utilisateur et par volume</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Déduplication en arrière-plan de l&#8217;agrégat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Oui (par défaut)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Oui (recommandé) pour chaque volume avec garantie d&#8217;espace = aucune)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S/O</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non pris en charge</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p><span class="Small"><sup>1</sup>ONTAP Select 9.4 sur des SSD DAS (nécessite une licence Premium) permet la déduplication des données existantes dans un agrégat à l&#8217;aide de scanners de volumes interglobaux en arrière-plan au niveau de l&#8217;agrégat. Cette opération unique est effectuée manuellement pour les volumes créés avant 9.4.</span> <span class="Small"><sup>2</sup>ONTAP Select 9.3 sur des SSD DAS (nécessite une licence Premium) prend en charge la déduplication en arrière-plan au niveau de l&#8217;agrégat. Cependant, cette fonctionnalité doit être activée après la création de l&#8217;agrégat.</span> <span class="Small"><sup>3</sup>ONTAP Select 9.5 vNAS par défaut ne prend pas en charge les stratégies d&#8217;efficacité du stockage. Consultez la section vNAS pour obtenir plus de détails sur l&#8217;enregistrement de données sur instance unique (SIDL).</span> <span class="Small"><sup>4</sup>ONTAP Select 9.6 prend en charge une nouvelle licence (Premium XL) et une nouvelle taille de machine virtuelle (grande). Toutefois, la machine virtuelle grande taille n&#8217;est prise en charge que pour les configurations DAS utilisant RAID logiciel. Les configurations RAID et vNAS matérielles ne sont pas prises en charge avec la machine virtuelle ONTAP Select grande dans la version actuelle.</span></p>
+<p><span class="Small"><sup>1</sup>ONTAP Select 9.6 prend en charge une nouvelle licence (Premium XL) et une nouvelle taille de machine virtuelle (grande). Toutefois, la machine virtuelle grande taille n&#8217;est prise en charge que pour les configurations DAS utilisant RAID logiciel. Les configurations RAID et vNAS matérielles ne sont pas prises en charge avec la machine virtuelle ONTAP Select grande dans la version 9.6.</span></p>
 </div>
 <div class="paragraph">
-<p>Après la mise à niveau vers ONTAP Select 9.5 ou une version ultérieure, attendez que le système <code>system node upgrade-revert show</code> commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d&#8217;efficacité du stockage pour les volumes existants.</p>
+<p>Après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure, attendez que le système <code>system node upgrade-revert show</code> commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d&#8217;efficacité du stockage pour les volumes existants.</p>
 </div>
 <div class="paragraph">
-<p>Sur un système mis à niveau vers ONTAP Select 9.5 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d&#8217;un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d&#8217;efficacité du stockage que ceux d&#8217;un nouveau volume, avec quelques variantes :</p>
+<p>Sur un système mis à niveau vers ONTAP Select 9.6 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d&#8217;un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d&#8217;efficacité du stockage que ceux d&#8217;un nouveau volume, avec quelques variantes :</p>
 </div>
 <div class="dlist">
 <dl>
@@ -2825,7 +2799,7 @@ Pour les mises à niveau ONTAP Select à partir de la version 9.4, vous devez in
 </dl>
 </div>
 <div class="paragraph">
-<p>Les fonctionnalités d&#8217;efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.5 ou une version ultérieure. Si les fonctionnalités d&#8217;efficacité du stockage n&#8217;étaient pas activées avant la mise à niveau, l&#8217;efficacité du stockage n&#8217;est pas activée après la mise à niveau.</p>
+<p>Les fonctionnalités d&#8217;efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure. Si les fonctionnalités d&#8217;efficacité du stockage n&#8217;étaient pas activées avant la mise à niveau, l&#8217;efficacité du stockage n&#8217;est pas activée après la mise à niveau.</p>
 </div>
 
     </article>
