@@ -1093,7 +1093,6 @@
   <block id="9b0fbf172f51b4a5abce0857edfab0f9" category="section-title">Ressources produits ONTAP Select</block>
   <block id="c49e76269f99b6773f9b3a78f408edb0" category="paragraph">Les pages produits suivantes incluent des liens vers de nombreuses ressources ONTAP Select.</block>
   <block id="a8880942f614154c0bef5b881090cda1" category="inline-link">Ressources NetApp ONTAP Select</block>
-  <block id="4dbedeedb10d03b7a8ed66a0dda3941d" category="list-text"><block ref="4dbedeedb10d03b7a8ed66a0dda3941d" category="inline-link-rx"></block></block>
   <block id="bb0cd218d1754229c2a730e5e27f5a5b" category="inline-link">Page produit de NetApp ONTAP Select</block>
   <block id="e2e78aa3752db107a66c2193b8f739a3" category="list-text"><block ref="e2e78aa3752db107a66c2193b8f739a3" category="inline-link-rx"></block></block>
   <block id="f372ae3b2fda116fe4b7463cbac902c0" category="section-title">Ressources ONTAP 9</block>
@@ -3556,4 +3555,5 @@
   <block id="2b306d5ec9ffced1b4c962a0d5f78acb" category="paragraph">Après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure, attendez que le système<block ref="65c6cabf39cf5a036e1dff5fc1483802" prefix=" " category="inline-code"></block> commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d'efficacité du stockage pour les volumes existants.</block>
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">Sur un système mis à niveau vers ONTAP Select 9.6 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d'un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d'efficacité du stockage que ceux d'un nouveau volume, avec quelques variantes :</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">Les fonctionnalités d'efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure. Si les fonctionnalités d'efficacité du stockage n'étaient pas activées avant la mise à niveau, l'efficacité du stockage n'est pas activée après la mise à niveau.</block>
+  <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
 </blocks>
