@@ -38,6 +38,7 @@ Pour commencer le processus de mise à niveau, vous devez télécharger le fichi
 . Sélectionnez et téléchargez le pack approprié en répondant à toutes les invites de votre environnement.
 
 
+.Informations associées
 link:https://mysupport.netapp.com["Support NetApp"^]
 
 
@@ -46,8 +47,10 @@ link:https://mysupport.netapp.com["Support NetApp"^]
 
 Après l'acquisition du package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle de déploiement.
 
+.Avant de commencer
 Le fichier de mise à niveau doit être disponible sur votre poste de travail local. Vous devez également disposer du mot de passe pour le compte utilisateur administrateur.
 
+.À propos de ces tâches
 Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle de déploiement. D'autres options peuvent être plus adaptées à votre environnement.
 
 .Étapes
@@ -63,6 +66,7 @@ exit
 ....
 
 
+.Résultat
 Le fichier de mise à niveau est stocké dans le répertoire personnel de l'utilisateur admin.
 
 
@@ -71,6 +75,7 @@ Le fichier de mise à niveau est stocké dans le répertoire personnel de l'util
 
 Une fois le fichier de mise à niveau téléchargé sur la machine virtuelle de déploiement, vous pouvez appliquer la mise à niveau.
 
+.Avant de commencer
 Vous devez savoir dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire de déploiement. Assurez-vous également que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.
 
 .Étapes
@@ -89,4 +94,5 @@ ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
+.Une fois que vous avez terminé
 Une fois la procédure de mise à niveau terminée, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle de déploiement. Vous devez également effacer le cache du navigateur pour pouvoir afficher les nouvelles pages de déploiement.

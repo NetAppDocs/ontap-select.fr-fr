@@ -21,8 +21,10 @@ Deux configurations principales sont disponibles pour le déploiement d'ONTAP Se
 
 NOTE: Vous pouvez utiliser n'importe quelle licence VMware vSphere lors du déploiement de ONTAP Select.
 
+.Cluster ONTAP Select à deux nœuds avec ONTAP HA
 Le cluster à deux nœuds ONTAP Select est composé d'une paire haute disponibilité et convient parfaitement aux déploiements ROBO.
 
+.Cluster à nœud unique ONTAP Select avec prise en charge de VMware
 Vous pouvez déployer un cluster ONTAP Select à un seul nœud dans un environnement ROBO. Alors qu'un seul nœud n'offre pas de fonctionnalité haute disponibilité native, vous pouvez déployer le cluster de l'une des manières suivantes pour protéger le stockage :
 
 * Stockage externe partagé avec VMware HA

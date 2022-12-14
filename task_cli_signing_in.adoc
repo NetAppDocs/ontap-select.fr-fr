@@ -16,6 +16,7 @@ summary: 'Vous devez vous connecter au shell de gestion de déploiement à l"aid
 [role="lead"]
 Vous devez vous connecter au shell de gestion de déploiement à l'aide de SSH. Une fois connecté, vous pouvez créer un cluster ONTAP Select et effectuer les procédures administratives associées à l'aide des commandes de l'interface de ligne de commande.
 
+.Avant de commencer
 Vous devez disposer du mot de passe actuel pour le compte administrateur déploiement (admin). Si vous vous connectez pour la première fois et que vous avez utilisé vCenter pour installer la machine virtuelle de déploiement, vous devez utiliser le mot de passe défini lors de l'installation.
 
 .Étapes

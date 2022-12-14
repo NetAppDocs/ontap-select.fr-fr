@@ -18,20 +18,24 @@ Vous devez connaître l'état initial d'un cluster après son déploiement et sa
 
 Un cluster ONTAP Select possède plusieurs caractéristiques après sa création.
 
+.LIF
 Deux types de LIF spécifiées par le client sont attribués :
 
 * Gestion du cluster (un par cluster)
 * Gestion des nœuds (un par nœud)
 
 
+.SVM
 Deux SVM d'administration sont actifs :
 
 * SVM par défaut
 * SVM cluster
 
 
+.64 bits
 L'agrégat root est créé.
 
+.Caractéristiques
 Toutes les fonctionnalités sont disponibles sous licence. SnapLock et FabricPool requièrent deux licences distinctes.
 
 

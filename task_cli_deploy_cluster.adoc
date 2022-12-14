@@ -51,6 +51,7 @@ Après avoir acquis un fichier de licence avec capacité de stockage, vous devez
 
 NOTE: Si vous déployez un cluster pour évaluation uniquement, vous pouvez ignorer cette étape.
 
+.Avant de commencer
 Vous devez disposer du mot de passe pour le compte utilisateur admin.
 
 .Étapes
@@ -84,6 +85,7 @@ Indiquez le mot de passe du compte administrateur lorsque vous y êtes invité.
 
 Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Select sera exécuté. Dans le cadre de cette opération, l'utilitaire d'administration Deploy s'authentifie auprès du serveur vCenter gérant l'hôte ou directement vers l'hôte autonome ESXi.
 
+.Description de la tâche
 Avant d'enregistrer un hôte géré par vCenter, vous devez ajouter un compte de serveur de gestion pour le serveur vCenter. Si l'hôte n'est pas géré par vCenter, vous pouvez fournir les informations d'identification de l'hôte dans le cadre de l'enregistrement de l'hôte. Cette procédure doit être utilisée pour ajouter chaque hôte.
 
 .Étapes
@@ -133,8 +135,10 @@ host show -name 10.234.81.14 -detailed
 
 Vous devez créer, puis configurer le cluster ONTAP Select. Une fois le cluster configuré, vous pouvez configurer chaque nœud.
 
+.Avant de commencer
 Vous devez décider du nombre de nœuds qu'il contient et des informations de configuration associées.
 
+.Description de la tâche
 Lorsque vous créez un cluster ONTAP Select, l'utilitaire Deploy génère automatiquement des noms de nœud en fonction du nom du cluster et du nombre de nœuds que vous fournissez. Le déploiement génère également les identifiants de nœud uniques.
 
 .Étapes
@@ -174,8 +178,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 
 Vous devez configurer chacun des nœuds du cluster ONTAP Select.
 
+.Avant de commencer
 Vous devez disposer des informations de configuration pour le nœud. Le fichier de licence du niveau de capacité doit être téléchargé et installé à l'aide de l'utilitaire de déploiement.
 
+.Description de la tâche
 Vous devez utiliser cette procédure pour configurer chaque nœud. Une licence de niveau de capacité est appliquée au nœud dans cet exemple.
 
 .Étapes
@@ -245,8 +251,10 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 Vous devez configurer le stockage utilisé par chaque nœud du cluster ONTAP Select. Au moins un pool de stockage doit toujours être attribué à chaque nœud. Si vous utilisez un RAID logiciel, chaque nœud doit également être affecté à au moins un disque dur.
 
+.Avant de commencer
 Vous devez créer le pool de stockage à l'aide de VMware vSphere. Si vous utilisez le RAID logiciel, vous avez également besoin d'au moins un lecteur de disque disponible.
 
+.Description de la tâche
 Lorsque vous utilisez un contrôleur RAID matériel local, vous devez effectuer les étapes 1 à 4. Lorsque vous utilisez le RAID logiciel, vous devez effectuer les étapes 1 à 6.
 
 .Étapes
@@ -326,6 +334,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 Une fois le cluster et les nœuds configurés, vous pouvez déployer le cluster.
 
+.Avant de commencer
 Avant de déployer un cluster multinœud, vous devez exécuter le vérificateur de connectivité réseau pour confirmer la connectivité entre les nœuds de cluster sur le réseau interne.
 
 .Étapes
@@ -351,4 +360,5 @@ Indiquez le mot de passe à utiliser pour le compte d'administrateur ONTAP lorsq
 
 
 
+.Une fois que vous avez terminé
 Il est conseillé de sauvegarder les données de configuration de ONTAP Select Deploy.

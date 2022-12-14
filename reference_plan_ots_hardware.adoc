@@ -74,11 +74,13 @@ Reportez-vous à la https://mysupport.netapp.com/matrix["Matrice d'interopérabi
 
 Il existe plusieurs exigences matérielles courantes qui s'appliquent à toutes les plateformes, indépendamment du type d'instance de nœud ou de l'offre de licence.
 
+.Processeur
 Les microprocesseurs pris en charge incluent les composants suivants :
 
 * Processeurs Intel Xeon pour serveur (voir link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processeurs Intel Xeon,window=_blank"] pour en savoir plus)
 
 
+.Configuration Ethernet
 Il existe plusieurs configurations Ethernet prises en charge en fonction de la taille du cluster.
 
 [cols="30,35,35"]

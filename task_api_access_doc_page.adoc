@@ -16,6 +16,7 @@ summary: 'Vous devez accéder à la page de documentation en ligne ONTAP Select 
 [role="lead"]
 Vous devez accéder à la page de documentation en ligne ONTAP Select Deploy pour afficher la documentation de l'API et lancer manuellement un appel d'API.
 
+.Avant de commencer
 Vous devez disposer des éléments suivants :
 
 * L'adresse IP ou le nom de domaine du ONTAP Select déploient la machine virtuelle
@@ -30,4 +31,5 @@ Vous devez disposer des éléments suivants :
 . Connectez-vous à l'aide du nom d'utilisateur et du mot de passe administrateur.
 
 
+.Résultat
 La page Web déployer la documentation s'affiche avec les appels organisés par catégorie au bas de la page.

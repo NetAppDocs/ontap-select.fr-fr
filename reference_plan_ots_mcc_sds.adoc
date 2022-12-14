@@ -18,10 +18,13 @@ MetroCluster SDS est une option de configuration lors de la création d'un clust
 
 Avant de déployer MetroCluster SDS, vous devez vous assurer que les exigences suivantes sont respectées.
 
+.Licences
 Chaque nœud doit disposer d'une licence ONTAP Select Premium ou supérieure.
 
+.Plateformes d'hyperviseur
 Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster Notez que KVM n'est plus pris en charge par ONTAP Select 9.10.1 et les versions ultérieures.
 
+.Configuration du réseau
 La connectivité de couche 2 est requise entre les sites participants. 10 GbE et 1 GbE sont pris en charge, y compris les configurations suivantes :
 
 * 1 x 10 GbE
@@ -31,13 +34,17 @@ La connectivité de couche 2 est requise entre les sites participants. 10 GbE et
 
 NOTE: Les ports de transmission de données et d'interconnexion doivent être connectés au même premier commutateur.
 
+.Latence entre les nœuds
 Le réseau entre les deux nœuds doit prendre en charge une latence moyenne de 5 ms avec une gigue périodique supplémentaire de 5 ms. Avant de déployer le cluster, vous devez tester le réseau à l'aide de la procédure décrite dans link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] section.
 
+.Service médiateur
 Comme pour tous les clusters ONTAP Select à deux nœuds, un service de médiateur distinct est inclus dans la machine virtuelle de déploiement. Ce service permet de surveiller les nœuds et de gérer les défaillances. Lorsque la distance améliorée est disponible avec MetroCluster SDS, cela crée trois sites distincts dans la topologie réseau. La latence sur la liaison entre le médiateur et un nœud doit être inférieure ou égale à 125 ms aller-retour.
 
+.Stockage
 Le stockage DAS est pris en charge à l'aide de disques durs et SSD. VNAS est également pris en charge, notamment les baies de stockage externes et VSAN dans un environnement VMware.
 
 
 NOTE: Lorsque vous déployez MetroCluster SDS, vous ne pouvez pas utiliser VSAN dans une topologie distribuée ou étendue.
 
+.Adresse IP statique attribuée au déploiement
 Vous devez affecter une adresse IP statique à l'utilitaire d'administration de déploiement. Elle s'applique à toutes les instances de déploiement qui gèrent un ou plusieurs clusters ONTAP Select à deux nœuds.

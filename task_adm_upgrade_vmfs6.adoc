@@ -20,6 +20,7 @@ Pour les machines virtuelles ONTAP Select, Storage vMotion peut être utilisé p
 
 image:ST_10.jpg["Migrer"]
 
+.Avant de commencer
 Vérifiez que le nouvel hôte peut prendre en charge le nœud ONTAP Select. Par exemple, si un contrôleur RAID et un stockage DAS sont utilisés sur l'hôte d'origine, une configuration similaire doit exister sur le nouvel hôte.
 
 
@@ -45,4 +46,5 @@ Si ce nœud fait partie d'une paire HA, vous pouvez effectuer un rétablissement
 . Sauvegardez la base de données de l'utilitaire de déploiement.
 
 
+.Une fois que vous avez terminé
 À la fin de l'opération Storage vMotion, vous devez utiliser l'utilitaire Deploy pour effectuer une `cluster refresh` fonctionnement. Le `cluster refresh` Met à jour la base de données ONTAP Deploy avec le nouvel emplacement du nœud ONTAP Select.

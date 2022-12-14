@@ -19,6 +19,7 @@ Vous pouvez supprimer des images ONTAP Select de votre instance de l'utilitaire 
 
 CAUTION: Vous ne devez pas supprimer les images ONTAP Select utilisées par un cluster.
 
+.Description de la tâche
 Vous pouvez supprimer les anciennes images ONTAP Select qui ne sont pas actuellement utilisées par un cluster ou qui seront utilisées avec un futur déploiement de cluster.
 
 .Étapes

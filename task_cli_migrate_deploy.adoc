@@ -24,8 +24,10 @@ Cette procédure est basée sur la création d'une nouvelle machine virtuelle qu
 
 Vous devez créer une sauvegarde des données de configuration de déploiement dans le cadre de la migration de la machine virtuelle. Vous devez également créer une sauvegarde après le déploiement d'un cluster ONTAP Select. Les données sont enregistrées dans un seul fichier crypté que vous pouvez télécharger sur votre poste de travail local.
 
+.Avant de commencer
 Assurez-vous que le déploiement n'exécute pas d'autres tâches au cours de l'opération de sauvegarde.
 
+.Description de la tâche
 Le fichier de sauvegarde que vous créez capture toutes les données de configuration de la machine virtuelle. Ces données décrit des aspects de votre environnement de déploiement, y compris les clusters ONTAP Select.
 
 .Étapes
@@ -55,8 +57,10 @@ Vous pouvez accéder au fichier de sauvegarde via l'URL.
 
 Vous devez créer une nouvelle instance de la machine virtuelle de déploiement que vous pouvez mettre à jour avec les données de configuration de la machine virtuelle d'origine.
 
+.Avant de commencer
 Vous devez maîtriser les procédures utilisées pour télécharger et déployer la machine virtuelle ONTAP Select Deploy dans un environnement VMware.
 
+.Description de la tâche
 Cette tâche est décrite à un niveau élevé.
 
 .Étapes
@@ -69,6 +73,7 @@ Cette tâche est décrite à un niveau élevé.
 
 
 
+.Informations associées
 link:task_install_deploy.html["Installation de ONTAP Select Deploy"]
 
 
@@ -77,6 +82,7 @@ link:task_install_deploy.html["Installation de ONTAP Select Deploy"]
 
 Vous devez restaurer les données de configuration de la machine virtuelle d'origine de l'utilitaire de déploiement vers la nouvelle machine virtuelle. Les données se trouvent dans un seul fichier que vous devez télécharger à partir de votre poste de travail local.
 
+.Avant de commencer
 Vous devez disposer des données de configuration d'une sauvegarde précédente. Les données sont contenues dans un seul fichier et doivent être disponibles sur votre poste de travail local.
 
 .Étapes

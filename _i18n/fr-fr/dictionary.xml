@@ -405,7 +405,6 @@
   <block id="ae6ece3040d8e73c3c76bc342db2a5b5" category="summary">Bienvenue sur le portail de documentation de ONTAP Select.</block>
   <block id="7436b418bed093768e360d32105591d2" category="doc">Documentation ONTAP Select</block>
   <block id="8a7497698e274b257189171d812c4134" category="paragraph">NetApp ONTAP Select est une appliance de stockage Software-defined que vous pouvez déployer sur de nombreux serveurs matériels génériques exécutant l'hyperviseur VMware ESXi. Elle vous apporte l'agilité dont vous avez besoin pour concevoir une infrastructure de cloud privé flexible et évolutive.</block>
-  <block id="1fde0727b387439572ade83eecff4f68" category="section-title">Découvrez les nouveautés</block>
   <block id="93c13bfba0d6bca47835d55338a89bcb" category="section-title">Accédez à la documentation du produit</block>
   <block id="f24c86f59b1831aca015361d668be674" category="paragraph">Vous trouverez les notes de mise à jour ainsi que la documentation relative à la version KVM du produit prise en charge par les versions précédentes sur le<block ref="39a2274ac9dcd1e1802780008f8c7665" category="inline-link-rx"></block>.</block>
   <block id="a753bf5f3b9313fdceb106b5c3e89d3f" category="section-title">Obtenez plus d'informations et entrez en contact avec vos pairs</block>
@@ -3556,4 +3555,99 @@
   <block id="7c36dc7bcc9976cf87d97958fae57918" category="paragraph">Sur un système mis à niveau vers ONTAP Select 9.6 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d'un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d'efficacité du stockage que ceux d'un nouveau volume, avec quelques variantes :</block>
   <block id="7e5c11f3396281e6016d7007a1a0a45c" category="paragraph">Les fonctionnalités d'efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure. Si les fonctionnalités d'efficacité du stockage n'étaient pas activées avant la mise à niveau, l'efficacité du stockage n'est pas activée après la mise à niveau.</block>
   <block id="6d7b1bef7e9e53ab5f633ac04956a24b" category="list-text"><block ref="6d7b1bef7e9e53ab5f633ac04956a24b" category="inline-link-rx"></block></block>
+  <block id="201d6cf1ba171c49bcdcb0766d20f3f9" category="paragraph-title">Compétences et informations requises</block>
+  <block id="7322a68bf06479e293387c20bf0f3e8e" category="paragraph-title">Installation de la machine virtuelle de déploiement</block>
+  <block id="816d0d92458bc1f7a68303a845228dde" category="paragraph-title">Interface de ligne de commande ONTAP</block>
+  <block id="fe8a09bfef8f50e4e72bec1b0f9c18db" category="paragraph-title">Disponibilité de la sauvegarde de configuration de l'utilitaire de déploiement</block>
+  <block id="8fbcf0a0690f2df2d9b37ca23e0733f5" category="paragraph-title">Restauration d'une sauvegarde de la configuration de déploiement</block>
+  <block id="d929d228dc7d6e05fe2b30f1a5826c49" category="paragraph-title">Adresse IP de la machine virtuelle de déploiement d'origine</block>
+  <block id="b957b13a65ee2e9c4a639a76b0b7cce7" category="paragraph-title">Licences de capacité de stockage</block>
+  <block id="ed67f205040bfaf568fb57e318f22a15" category="paragraph-title">Décider de la procédure de récupération à utiliser</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Description de la tâche</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Résultat</block>
+  <block id="801333bc71ada3c7b40aa384a24d7978" category="paragraph-title">Configurations minimales et recommandées pour le réseau</block>
+  <block id="7e9f6a3ecc2e8ef83d7c15d09d7343f7" category="paragraph-title">Cluster ONTAP Select à deux nœuds avec ONTAP HA</block>
+  <block id="918565c2d0e9439ff8f11d84c548453a" category="paragraph-title">Cluster à nœud unique ONTAP Select avec prise en charge de VMware</block>
+  <block id="e22b6495595f2c4ad67a830d1be05c6e" category="paragraph-title">Processeur</block>
+  <block id="aca8e861c6f30fe2d42d0310a387312b" category="paragraph-title">Configuration Ethernet</block>
+  <block id="bfa10f7c5e846fdab9228aa316c04549" category="paragraph-title">LIF</block>
+  <block id="642223473862db290604321fe2ebe763" category="paragraph-title">SVM</block>
+  <block id="d5350d8759b1ec84607e47908809058e" category="paragraph-title">64 bits</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="paragraph-title">Caractéristiques</block>
+  <block id="60311a7026f3d48f88b9518fc315cec6" category="paragraph-title">Environnement cible</block>
+  <block id="0b9c6eef4e3d3a222eb04e910d252339" category="paragraph-title">Licences</block>
+  <block id="dff5ebd3a9adcb736da925d0da3936b9" category="paragraph-title">Emplacement du service cluster et médiateur</block>
+  <block id="c56f96d077c10fb4c4d1ce83cf5edfaa" category="paragraph-title">Adresse IP statique attribuée au déploiement</block>
+  <block id="8b85794e07760e9397de8eb59192abb9" category="paragraph-title">Configurations d'efficacité du stockage ONTAP Select</block>
+  <block id="47228ec57373d626b6ba8033642aa844" category="paragraph-title">Remarques sur le comportement de mise à niveau pour les configurations SSD DAS</block>
+  <block id="2ebe501f9076f748c335cf335b5e07aa" category="paragraph-title">Remarques sur le comportement de mise à niveau pour la configuration du disque dur DAS</block>
+  <block id="06be3d2851694a8ac21502e41f3e4305" category="paragraph-title">Modèle de licence cohérent pour chaque cluster</block>
+  <block id="4b0e422dcf415e37a99fb9240372b2e7" category="paragraph-title">Tous les nœuds d'un cluster utilisent la même instance de Gestionnaire de licences</block>
+  <block id="02adb22963ca335394cfa32d81eb77c1" category="paragraph-title">Un pool de capacité par nœud</block>
+  <block id="b738a2037fc94e2290be56df30341770" category="paragraph-title">Même pool pour les nœuds d'une paire haute disponibilité</block>
+  <block id="affb254e2447d7a107f972ff759efbb0" category="paragraph-title">Durée de la licence de stockage</block>
+  <block id="231c03420ee8b0ab0994fb02ab1e1c01" category="paragraph-title">Durée totale du bail</block>
+  <block id="492e5546e60705134bff8d7f80511a8d" category="section-title">Découvrez les nouveautés</block>
+  <block id="510a8cb711495bfdd04c792d2fc4b0fe" category="paragraph-title">Participants</block>
+  <block id="4bf581a821f13c0335aed161abdd6607" category="paragraph-title">Récapitulatif des besoins en trafic réseau</block>
+  <block id="711926301465cde3461f5fc265229189" category="paragraph-title">Quelle est la différence entre le déploiement ONTAP Select et ONTAP Select ?</block>
+  <block id="2cafb84adddb7f33d640fbedf4b9e1ed" category="paragraph-title">Comment résoudre un problème de performances avec ONTAP Select ?</block>
+  <block id="2a07e658b19b1a46502dcaa156304d77" category="paragraph-title">La machine virtuelle ONTAP Select peut-elle être sauvegardée avec VMware ou d'autres snapshots tiers ?</block>
+  <block id="9b837fd67d580207d87f58b37e1fefed" category="paragraph-title">Où puis-je obtenir des précisions sur les questions qui ne sont pas traitées dans cette FAQ ?</block>
+  <block id="676e5b6258c8aedd468f71142c59be64" category="paragraph-title">Est-il possible de mettre à niveau ONTAP Select et ONTAP Select Deploy séparément ?</block>
+  <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">ONTAP Select peut-il être mis à niveau à l'aide de la même procédure qu'un cluster FAS ?</block>
+  <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">Est-il possible de rétablir ONTAP Select avec la même procédure que celle d'un cluster FAS ?</block>
+  <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">ONTAP MetroCluster SDS a-t-il besoin d'une licence Premium au moins ?</block>
+  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">Est-il possible de modifier les adresses IP des clusters et nœuds ONTAP Select Deploy et de la gestion ONTAP Select après l'installation ?</block>
+  <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">Une seule instance ONTAP Select peut-elle créer des clusters sur ESX et KVM ?</block>
+  <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">VCenter est-il requis pour ONTAP Select sur ESX ?</block>
+  <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">Qu'est-ce que le RAID logiciel ?</block>
+  <block id="4e0891be88802b935c566dc6245269b2" category="paragraph-title">En quoi le RAID logiciel est-il différent d'une configuration RAID matérielle ?</block>
+  <block id="d0093f68bddcefc4d27db886e2488615" category="paragraph-title">ONTAP Select pour KVM prend-il en charge plusieurs liaisons NIC ?</block>
+  <block id="baf467f7c147f366ee1e95629aa35ddb" category="paragraph-title">Comment ONTAP Select signale-t-il une panne de disque physique ou de carte réseau dans l'hôte de l'hyperviseur ou signale-t-il une alerte ? ONTAP Select récupère-t-il ces informations depuis l'hyperviseur ou doit-il être défini au niveau de l'hyperviseur ?</block>
+  <block id="c7b611d510bc619ec380a5444620746f" category="paragraph-title">Quelle est la taille maximale des datastores ONTAP Select prise en charge ?</block>
+  <block id="4bb81c896f6353933a5f144d4f155bba" category="paragraph-title">Comment augmenter la capacité d'un nœud ONTAP Select ?</block>
+  <block id="5e9f8d0ad5095acd00ef1ca82d1d0612" category="paragraph-title">ONTAP Select prend-il en charge les datastores VSAN ou de type baie externe ?</block>
+  <block id="e9939028b5812a609cc9ffa930082fba" category="paragraph-title">ONTAP Select prend-il en charge les clusters à plusieurs nœuds sur VSAN ou tout autre stockage externe partagé incluant certaines piles HCI ?</block>
+  <block id="8f45fcba53179b19aa4b7255218edbff" category="paragraph-title">ONTAP Select prend-il en charge NSX VXLAN de VMware ?</block>
+  <block id="2b759707434dfe6525eb57ceb25c887f" category="paragraph-title">ONTAP Select prend-il en charge la migration KVM ?</block>
+  <block id="ce777469b9f51fcc7f290822407d49c8" category="paragraph-title">Ai-je besoin d'AF ONTAP Select Premium pour VSAN ?</block>
+  <block id="8835ca2abfedf3bf3f774e0cbc020504" category="paragraph-title">Quels sont les paramètres VSAN FTT/FTM pris en charge ?</block>
+  <block id="f13bfc8565d5515f3a1d879c5ecc3e18" category="paragraph-title">Est-il possible d'exécuter plusieurs nœuds ONTAP Select sur un même hôte s'ils font partie de différents clusters Select ?</block>
+  <block id="0599d62f7e6320d42cfbeebf39e88a84" category="paragraph-title">Peut-on disposer d'un hôte avec un seul port 10GE sur le ONTAP Select. Est-il disponible pour ESX et KVM ?</block>
+  <block id="935a7d198067fd5cc94997a307675cd6" category="paragraph-title">Quels processus supplémentaires devez-vous exécuter pour effectuer une migration en direct sur KVM ?</block>
+  <block id="217b7fb2555068ab584db913a7aea017" category="paragraph-title">Comment ONTAP Select déploie-t-il la communication avec vCenter et quels ports de pare-feu doivent être ouverts ?</block>
+  <block id="60789e3f721edfada82e8544b0181a42" category="paragraph-title">Quels sont les droits vCenter nécessaires à ONTAP Select Deploy pour créer des clusters ONTAP Select ?</block>
+  <block id="cb5e1276bf07a1471cf95cbe7e0aacac" category="paragraph-title">Qu'est-ce que le plug-in vCenter Deploy ?</block>
+  <block id="27239a2d535b7aad4fede1afbfc975ce" category="paragraph-title">Combien de ONTAP Select déploient des machines virtuelles peuvent enregistrer leurs plug-ins sur un seul serveur vCenter ?</block>
+  <block id="214da09e3e95b0ef18f3b1348583230d" category="paragraph-title">Quels sont les avantages du plug-in ONTAP Select Deploy vCenter ?</block>
+  <block id="b622687ba14734f3e63b4781b7e16324" category="paragraph-title">Quelle est la différence entre un cluster à quatre, six ou huit nœuds et un cluster ONTAP Select à deux nœuds ?</block>
+  <block id="22d02cab0c9108f9f86736e68a4be2de" category="paragraph-title">Qu'est-ce que le SDS MetroCluster ?</block>
+  <block id="5c13f1d93ecc5cc8fc37b87a8fedb3b7" category="paragraph-title">En quoi le SDS de MetroCluster est-il différent de celui de NetApp MetroCluster ?</block>
+  <block id="1092371194caad84c750464b682a97f5" category="paragraph-title">Quelle est la différence entre un cluster ONTAP Select à deux nœuds et un ONTAP MetroCluster SDS à deux nœuds ?</block>
+  <block id="8cfa2d102770158dc8e70d7e66b373c1" category="paragraph-title">Le SDS ONTAP MetroCluster requiert-il du stockage local (DAS) ?</block>
+  <block id="f631c65fafafcb98d092145300c095ee" category="paragraph-title">ONTAP MetroCluster SDS prend-il en charge le RAID logiciel ?</block>
+  <block id="d36cfdb5417305fbac63c342a62834bb" category="paragraph-title">ONTAP MetroCluster SDS prend-il en charge les disques SSD et rotatifs ?</block>
+  <block id="8b331b2a82b49d9dafa0973ccc6ec8bf" category="paragraph-title">ONTAP MetroCluster SDS prend-il en charge les tailles de clusters à quatre nœuds ou plus ?</block>
+  <block id="2643662b1523cd419f3e1a430c3d5ca5" category="paragraph-title">Quelles sont les exigences du SDS ONTAP MetroCluster ?</block>
+  <block id="17a218f1a33ec9a62075f6e806d197be" category="paragraph-title">ONTAP Select prend-il en charge vMotion ou VMware HA ?</block>
+  <block id="32c62abec281fb2b058ef0af1f973abc" category="paragraph-title">ONTAP Select prend-il en charge Storage vMotion ?</block>
+  <block id="d89c5456578e0bb5466c0194a63dbf13" category="paragraph-title">Le trafic haute disponibilité entre les nœuds ONTAP Select peut-il s'exécuter sur un vSwitch différent et/ou des ports physiques séparés et/ou à l'aide de câbles IP point à point entre les hôtes ESX ?</block>
+  <block id="02134a14eda4b0c0557ac5e897c7ad16" category="paragraph-title">Qu'est-ce que le service Mediator ?</block>
+  <block id="4d400d9f529e89c20ecab9cde4405a26" category="paragraph-title">Le service Mediator peut-il être distant ?</block>
+  <block id="5c3d06658ad9d8eaedefa625da8a9c54" category="paragraph-title">Quel protocole le service Mediator utilise-t-il ?</block>
+  <block id="dbeee071e162d66777e5e130dcd67249" category="paragraph-title">Puis-je utiliser un service Mediator pour plusieurs clusters HA à deux nœuds ?</block>
+  <block id="ecf49f01e42124f2d85776c522feaa41" category="paragraph-title">L'emplacement du service Mediator peut-il être modifié après le déploiement ?</block>
+  <block id="40910d9d6a3231bdd6eae7aec77b73aa" category="paragraph-title">ONTAP Select prend-il en charge les clusters étirés avec (ou sans) le médiateur ?</block>
+  <block id="bd609b0252eeccc3bcce74e0c9234a88" category="paragraph-title">Une instance de l'utilitaire pour chaque cluster ONTAP Select</block>
+  <block id="6c7ded8cf41b50f61e1af82df9af57eb" category="paragraph-title">Une instance de l'utilitaire pour plusieurs clusters ONTAP Select</block>
+  <block id="dfe55bfdf78bf686c853c934cacca8aa" category="paragraph-title">Types d'informations d'identification</block>
+  <block id="f2d299d92bba14c1b1251b504639222c" category="paragraph-title">Logiciels client NetApp</block>
+  <block id="91aa06ef59aa905f170919b05e594df9" category="paragraph-title">Options de configuration possibles</block>
+  <block id="42cac712a9acf93c75659c9fa981f95f" category="paragraph-title">Licences achetées avec capacité de stockage</block>
+  <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">Plateformes d'hyperviseur</block>
+  <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">Latence entre les nœuds</block>
+  <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">Version actuelle de ONTAP Select</block>
+  <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">Versions précédentes de ONTAP Select</block>
+  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">À propos de ces tâches</block>
 </blocks>

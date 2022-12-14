@@ -18,6 +18,7 @@ Si vous prévoyez d'utiliser des disques NVMe avec la technologie RAID logiciell
 
 Optimisation de l'efficacité des données grâce au pass-through en E/S VMDirectPath sur les périphériques NVMe. Ce paramètre expose les lecteurs à la machine virtuelle ONTAP Select, ce qui permet à ONTAP d'avoir un accès PCI direct au périphérique.
 
+.Avant de commencer
 Vérifiez que votre environnement de déploiement répond aux exigences minimales suivantes :
 
 * ONTAP Select 9.7 ou version ultérieure avec l'utilitaire d'administration de déploiement associé
@@ -28,6 +29,7 @@ Vérifiez que votre environnement de déploiement répond aux exigences minimale
 
 Suivez le link:reference_chk_host_prep.html["checklist de préparation des hôtes"], passez en revue le link:reference_chk_deploy_req_info.html["Informations requises pour l'installation de l'utilitaire de déploiement"], et le link:reference_chk_select_req_info.html["Informations requises pour l'installation de ONTAP Select"] pour en savoir plus.
 
+.Description de la tâche
 Cette procédure est conçue avant de créer un nouveau cluster ONTAP Select. Vous pouvez également effectuer la procédure de configuration de disques NVMe supplémentaires pour un cluster NVMe SW-RAID existant. Dans ce cas, une fois les disques configurés, vous devez les ajouter via le déploiement, en tant que disques SSD supplémentaires. La principale différence est que le déploiement détecte les disques NVMe et redémarre les nœuds. Lorsque vous ajoutez des disques NVMe à un cluster existant, notez les informations suivantes concernant le processus de redémarrage :
 
 * Le déploiement se charge de l'orchestration du redémarrage.
@@ -67,6 +69,7 @@ image:nvme_03.png["Redémarrez cet hôte"]
 
 
 
+.Une fois que vous avez terminé
 Une fois les hôtes prêts, vous pouvez installer l'utilitaire ONTAP Select Deploy. Déployez des guides pour créer des clusters de stockage ONTAP Select sur vos hôtes nouvellement préparés. Au cours de ce processus, le déploiement détecte la présence des disques NVMe configurés pour le pass-through et les sélectionne automatiquement pour une utilisation comme disques de données ONTAP. Vous pouvez régler la sélection par défaut si nécessaire.
 
 

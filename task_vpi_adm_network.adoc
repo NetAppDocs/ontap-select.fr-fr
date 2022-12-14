@@ -22,6 +22,7 @@ Il existe plusieurs aspects du réseau que vous pouvez explorer et afficher.
 
 Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Vous devez généralement exécuter ce test avant le déploiement d'un cluster multinœud afin de détecter les problèmes susceptibles d'entraîner l'échec de l'opération. Vous pouvez également exécuter le test de connectivité après le déploiement et la mise en ligne d'un cluster.
 
+.Description de la tâche
 Chaque fois que vous démarrez le test, un nouveau processus est créé en arrière-plan et un identifiant d'exécution unique lui est attribué. Une seule séquence peut être active à la fois.
 
 Le test est toujours exécuté en mode rapide qui effectue un test sans interruption de base. Un test PING est effectué, avec un test de la taille de MTU du réseau et du vSwitch.
@@ -40,6 +41,7 @@ Le test est toujours exécuté en mode rapide qui effectue un test sans interrup
 
 Chaque cluster ONTAP Select à deux nœuds est surveillé par le service de médiateur, qui facilite la gestion de la capacité haute disponibilité partagée par les nœuds. Vous pouvez afficher l'état du service médiateur pour chacun des clusters à deux nœuds définis dans l'utilitaire d'administration Deploy.
 
+.Description de la tâche
 Vous pouvez afficher la configuration de chaque médiateur, notamment :
 
 * État actuel

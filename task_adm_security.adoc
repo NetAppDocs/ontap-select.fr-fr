@@ -34,6 +34,7 @@ Vous pouvez modifier le mot de passe du compte administrateur de la machine virt
 
 Vous pouvez ajouter un compte de serveur de gestion à la base de données de stockage des identifiants de déploiement.
 
+.Avant de commencer
 Vous devez connaître les types d'identifiants requis et connaître leur utilisation par ONTAP Select.
 
 .Étapes

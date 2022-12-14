@@ -22,6 +22,7 @@ Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utilis
 
 Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.
 
+.Description de la tâche
 L'utilitaire d'administration ONTAP Select Deploy est proposé en tant que machine virtuelle basée sur le format OVF (Open Virtualization format). Le suffixe du fichier compressé unique `ova`.
 
 .Étapes
@@ -40,6 +41,7 @@ L'utilitaire d'administration ONTAP Select Deploy est proposé en tant que machi
 
 Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de la machine virtuelle OVF. Dans le cadre du processus d'installation, vous devez configurer l'interface réseau pour utiliser DHCP ou une configuration IP statique.
 
+.Avant de commencer
 Vous devez préparer le déploiement de la machine virtuelle ONTAP Select Deploy :
 
 * Activez la fonctionnalité OVF dans votre navigateur en installant le plug-in d'intégration client VMware ou en effectuant une configuration similaire, si nécessaire
@@ -56,6 +58,7 @@ Vous devez disposer des informations de configuration à utiliser lors de la cr�
 * Domaines de recherche DNS
 
 
+.Description de la tâche
 Si vous utilisez vSphere, l'assistant déployer le modèle OVF comprend un formulaire pour fournir toutes les informations de configuration de déploiement, y compris la configuration du réseau. Toutefois, si vous choisissez de ne pas utiliser ce formulaire, vous pouvez utiliser la console de la machine virtuelle de déploiement pour configurer le réseau à la place.
 
 .Étapes
@@ -111,4 +114,5 @@ Vous devez vous connecter à l'interface utilisateur Web pour confirmer que l'ut
 
 
 
+.Informations associées
 link:task_cli_signing_in.html["Connectez-vous pour déployer à l'aide de SSH"]

@@ -43,6 +43,7 @@ Vous pouvez utiliser l'interface utilisateur Web de déploiement de ONTAP Select
 . Indiquez les informations d'identification vCenter si vous y êtes invité.
 
 
+.Une fois que vous avez terminé
 Si vous supprimez le plug-in, vous devez effectuer l'une des tâches suivantes pour terminer sa suppression du serveur vCenter :
 
 * Redémarrez le serveur vCenter

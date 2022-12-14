@@ -122,6 +122,7 @@ Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau
 
 Vous devez vous assurer que vos pare-feu sont correctement configurés pour permettre au trafic réseau de circuler entre les différents participants d'un environnement de déploiement ONTAP Select.
 
+.Participants
 Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'un déploiement ONTAP Select. Elles sont introduites, puis utilisées dans la description récapitulative des besoins en trafic réseau.
 
 * Déployez l'utilitaire d'administration ONTAP Select Deploy
@@ -132,6 +133,7 @@ Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'
 * Station de travail d'administration locale WS Admin
 
 
+.Récapitulatif des besoins en trafic réseau
 Le tableau suivant décrit les exigences en termes de trafic réseau pour un déploiement ONTAP Select.
 
 [cols="20,45,35"]

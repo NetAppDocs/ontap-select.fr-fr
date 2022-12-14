@@ -22,20 +22,28 @@ Si l'utilitaire ONTAP Select Deploy tombe en panne ou si vous êtes indisponible
 
 Vous devez vous préparer avant de tenter de récupérer une instance de l'utilitaire de déploiement pour garantir la réussite de l'opération.
 
+.Compétences et informations requises
 Vous devez connaître plusieurs procédures administratives et disposer des informations requises.
 
+.Installation de la machine virtuelle de déploiement
 Vous devez pouvoir installer une nouvelle instance de l'utilitaire ONTAP Select Deploy dans votre environnement d'hyperviseur.
 
+.Interface de ligne de commande ONTAP
 Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster ONTAP Select et utiliser l'interface Shell.
 
+.Disponibilité de la sauvegarde de configuration de l'utilitaire de déploiement
 Vous devez déterminer si vous disposez d'une sauvegarde des données de configuration à partir de l'instance d'utilitaire de déploiement défaillant qui contient le cluster à deux nœuds ONTAP Select. Il se peut que vous ayez une sauvegarde qui ne contienne pas le cluster.
 
+.Restauration d'une sauvegarde de la configuration de déploiement
 Vous devriez pouvoir restaurer une sauvegarde des données de configuration de déploiement, en fonction de la procédure de récupération utilisée.
 
+.Adresse IP de la machine virtuelle de déploiement d'origine
 Vous devez connaître l'adresse IP de la machine virtuelle d'origine de l'utilitaire de déploiement qui a échoué.
 
+.Licences de capacité de stockage
 Vous devez déterminer si les pools de capacité ou les niveaux de capacité utilisent des licences. Si vous utilisez la licence de pools de capacité, vous devez réinstaller chaque licence de pool de capacité après avoir restauré ou restauré l'instance de déploiement.
 
+.Décider de la procédure de récupération à utiliser
 Vous devez décider de la procédure à utiliser lors de la récupération d'une instance de l'utilitaire ONTAP Select Deploy. Votre décision est basée sur la sauvegarde des données de configuration à partir de l'utilitaire de déploiement initial qui contient le cluster ONTAP Select à deux nœuds.
 
 [cols="35,65"]
@@ -54,8 +62,10 @@ Vous devez décider de la procédure à utiliser lors de la récupération d'une
 
 Si vous disposez d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous pouvez restaurer les données de configuration dans la nouvelle instance de déploiement de machine virtuelle. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
 
+.Avant de commencer
 Vous devez disposer d'une sauvegarde des données de configuration à partir de la machine virtuelle de déploiement d'origine défaillante qui contient le cluster à deux nœuds. Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
 
+.Description de la tâche
 Étant donné que la sauvegarde de configuration que vous restaurez contient le cluster à deux nœuds, les cibles iSCSI du médiateur et les boîtes aux lettres sont recréées dans la nouvelle machine virtuelle de l'utilitaire de déploiement.
 
 .Étapes
@@ -104,6 +114,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 
+.Une fois que vous avez terminé
 Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Voir _réinstallation d'une licence de pool de capacité_ pour plus de détails.
 
 
@@ -112,8 +123,10 @@ Si vous utilisez les licences de pools de capacité, vous devez réinstaller cha
 
 Si vous ne disposez pas d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous devez configurer la cible iSCSI médiateur et la boîte aux lettres dans la nouvelle machine virtuelle de déploiement. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
 
+.Avant de commencer
 Vous devez avoir le nom de la cible du médiateur pour la nouvelle instance de l'utilitaire de déploiement. Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
 
+.Description de la tâche
 Vous pouvez également restaurer une sauvegarde de configuration vers le nouveau serveur virtuel déployé, même s'il ne contient pas le cluster à deux nœuds. Étant donné que le cluster à deux nœuds n'est pas recréé avec la restauration, vous devez ajouter manuellement la cible et la boîte aux lettres du médiateur iSCSI à la nouvelle instance de l'utilitaire de déploiement via la page Web de documentation en ligne ONTAP Select du déploiement. Vous devez pouvoir vous connecter au cluster à deux nœuds et connaître les noms de ONTAP des deux nœuds.
 
 
@@ -193,6 +206,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 
+.Une fois que vous avez terminé
 Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Pour plus d'informations, reportez-vous à la section réinstallation d'une licence de pool de capacité.
 
 .Informations associées

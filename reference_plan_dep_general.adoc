@@ -25,8 +25,10 @@ Vous disposez de plusieurs options lors du couplage d'une instance de l'utilitai
 
 NOTE: Dans tous les scénarios de déploiement, un cluster ONTAP Select unique et les nœuds du cluster ne peuvent être gérés que par une seule instance de l'utilitaire d'administration Deploy. Un cluster ne peut pas être géré par au moins deux instances différentes de l'utilitaire de déploiement.
 
+.Une instance de l'utilitaire pour chaque cluster ONTAP Select
 Vous pouvez déployer et gérer chaque cluster ONTAP Select à l'aide d'une instance dédiée de l'utilitaire de déploiement. Cette configuration un-à-un sépare clairement chacune des paires utilitaire-cluster. Cette configuration offre un niveau d'isolation élevé avec des domaines de défaillance plus petits.
 
+.Une instance de l'utilitaire pour plusieurs clusters ONTAP Select
 Vous pouvez déployer et gérer plusieurs clusters ONTAP Select dans votre entreprise à l'aide d'une instance unique de l'utilitaire de déploiement. Avec cette configuration un-à-plusieurs, toutes les données de traitement et de configuration sont gérées par la même instance de l'utilitaire de déploiement.
 
 
@@ -41,10 +43,12 @@ Le magasin d'informations d'identification ONTAP Select Deploy est une base de d
 
 NOTE: Les informations de compte sont stockées en toute sécurité dans la base de données à l'aide de l'algorithme de cryptage AES et de l'algorithme de hachage SHA-256.
 
+.Types d'informations d'identification
 Les types d'informations d'identification suivants sont pris en charge :
 
 * Hôte utilisé pour authentifier un hôte d'hyperviseur dans le cadre du déploiement d'un nœud ONTAP Select directement dans VMware ESXi
 * VCenter utilisé pour authentifier un serveur vCenter dans le cadre du déploiement d'un nœud ONTAP Select vers ESXi lorsque l'hôte est géré par VMware vCenter
 
 
+.L'accès
 Le magasin d'informations d'identification est accessible en interne dans le cadre de l'exécution de tâches administratives normales à l'aide de Deploy, telles que l'ajout d'un hôte d'hyperviseur. Vous pouvez également gérer le magasin d'informations d'identification directement via l'interface utilisateur Web de déploiement et l'interface de ligne de commande.

@@ -11,6 +11,7 @@ summary: Vous pouvez accéder au plug-in vCenter de déploiement via le client W
 [role="lead"]
 Vous pouvez accéder au plug-in vCenter de déploiement via le client Web vSphere.
 
+.Avant de commencer
 Le plug-in vCenter doit être installé. En outre, le compte vCenter que vous utilisez lors de votre connexion à vSphere doit disposer des privilèges suivants :
 
 * NetApp
@@ -33,4 +34,5 @@ La déconnexion, puis la réactualisation des informations de configuration vCen
 . Cliquez sur *listes d'inventaire globales*.
 
 
+.Résultat
 Les options *clusters ONTAP Select* et *ONTAP Select Deploy* sont disponibles dans le volet de gauche. S'ils ne sont pas affichés, vous devez vous déconnecter puis vous reconnecter.

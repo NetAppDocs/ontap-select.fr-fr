@@ -77,8 +77,10 @@ Après le déploiement d'un cluster:: Il est conseillé de sauvegarder les donn�
 
 Vous pouvez utiliser l'interface utilisateur Web de déploiement de ONTAP Select pour déployer un cluster ONTAP Select à un seul nœud.
 
+.Avant de commencer
 Voir link:task_deploy_cluster.html#before-you-begin["Avant de commencer"] pour préparer le déploiement du cluster. L'administration Deploy doit être installée et configurée au départ (mot de passe, AutoSupport, vCenter).
 
+.Description de la tâche
 Un cluster ONTAP Select avec un nœud est créé pour le déploiement de production.
 
 .Étapes
@@ -128,4 +130,5 @@ TIP: Si l'opération de création de cluster est initiée mais que le processus 
 
 
 
+.Une fois que vous avez terminé
 Vous devez vérifier que la fonctionnalité ONTAP Select AutoSupport est configurée et sauvegarder les données de configuration de ONTAP Select Deploy.

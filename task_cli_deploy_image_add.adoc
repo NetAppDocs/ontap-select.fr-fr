@@ -56,8 +56,10 @@ Pour commencer à ajouter une image ONTAP Select à une instance de l'utilitaire
 
 Après avoir acquis l'image d'installation de ONTAP Select, vous devez charger le fichier sur la machine virtuelle de déploiement.
 
+.Avant de commencer
 Le fichier image d'installation doit être disponible sur votre poste de travail local. Vous devez également disposer du mot de passe pour le compte utilisateur administrateur de déploiement.
 
+.Description de la tâche
 Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle de déploiement. D'autres options peuvent être plus adaptées à votre environnement.
 
 .Étape
@@ -80,6 +82,7 @@ exit
 ....
 
 
+.Résultat
 Le fichier d'installation du nœud est stocké dans le répertoire personnel de l'utilisateur admin.
 
 
@@ -88,6 +91,7 @@ Le fichier d'installation du nœud est stocké dans le répertoire personnel de 
 
 Vous pouvez ajouter l'image d'installation de ONTAP Select au répertoire déployer des images afin qu'elle soit disponible lors du déploiement d'un nouveau cluster.
 
+.Avant de commencer
 Vous devez savoir dans quel répertoire le fichier image d'installation a été placé sur la machine virtuelle de l'utilitaire de déploiement. Il est supposé que le fichier se trouve dans le répertoire personnel de l'administrateur.
 
 .Étapes

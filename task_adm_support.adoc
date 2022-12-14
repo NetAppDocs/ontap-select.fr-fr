@@ -22,6 +22,7 @@ Vous pouvez effectuer plusieurs tâches de diagnostic et de support associées d
 
 Vous devez définir les paramètres de configuration système de base qui affectent le fonctionnement de l'utilitaire de déploiement.
 
+.Description de la tâche
 Les données de configuration de déploiement sont utilisées par AutoSupport.
 
 .Étapes
@@ -45,6 +46,7 @@ Exemple
 
 L'utilitaire ONTAP Select Deploy comprend une fonction de journalisation des événements qui fournit des informations sur l'activité du système. Vous devez afficher le contenu du journal des événements pour déboguer tout problème ou lorsque le support vous le demande.
 
+.Description de la tâche
 Vous pouvez filtrer la liste des messages d'événement en fonction de plusieurs caractéristiques, notamment :
 
 * État
@@ -68,6 +70,7 @@ Vous pouvez filtrer la liste des messages d'événement en fonction de plusieurs
 
 Vous pouvez activer et désactiver la fonction AutoSupport si nécessaire.
 
+.Description de la tâche
 AutoSupport est le principal outil de dépannage utilisé par NetApp pour prendre en charge ONTAP Select. Par conséquent, vous ne devez pas désactiver AutoSupport sauf si cela est absolument nécessaire. Si vous désactivez le protocole AutoSupport, les données sont toujours collectées, mais elles ne sont pas transmises à NetApp.
 
 .Étapes
@@ -83,6 +86,7 @@ AutoSupport est le principal outil de dépannage utilisé par NetApp pour prendr
 
 ONTAP Select permet de générer un pack AutoSupport. Vous devez générer un package pour déboguer tout problème ou lorsque vous y êtes invité par le support.
 
+.Description de la tâche
 Vous pouvez générer les packages AutoSupport suivants sous la direction et les conseils du support NetApp :
 
 * Déployer les journaux fichiers journaux créés par l'utilitaire ONTAP Select Deploy

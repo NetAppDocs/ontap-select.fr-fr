@@ -16,8 +16,10 @@ summary: 'Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Se
 [role="lead"]
 Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Généralement, vous exécutez ce test avant le déploiement d'un cluster multinœud afin de détecter les problèmes susceptibles d'entraîner l'échec de l'opération.
 
+.Avant de commencer
 Tous les nœuds ONTAP Select inclus dans le test doivent être configurés et sous tension.
 
+.Description de la tâche
 Chaque fois que vous démarrez un test, une nouvelle exécution de processus est créée en arrière-plan et un identifiant d'exécution unique lui est attribué. Une seule séquence peut être active à la fois.
 
 Le test comporte deux modes qui contrôlent son fonctionnement :
@@ -54,4 +56,5 @@ network connectivity-check start -host-names 10.234.81.14
 
 
 
+.Une fois que vous avez terminé
 Le vérificateur de connectivité réseau nettoie normalement en supprimant les ports temporaires et les adresses IP ajoutés au groupe de ports ONTAP-Internal. Cependant, si le vérificateur de connectivité ne parvient pas à supprimer les ports temporaires, vous devez effectuer une opération de nettoyage manuel en réexécutant la commande CLI avec l'option `-mode cleanup`. Si vous ne supprimez pas les ports temporaires du groupe de ports internes ONTAP, la machine virtuelle ONTAP Select risque de ne pas être créée.

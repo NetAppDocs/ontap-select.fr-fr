@@ -73,6 +73,7 @@ Chaque licence de pool de capacité active est verrouillée à une instance spé
 * Restaurez ou recréez l'instance de déploiement
 
 
+.Description de la tâche
 À un niveau élevé, cette tâche est composée de trois parties. Vous devez régénérer et installer toutes les licences de pool de capacité utilisées par l'instance de déploiement. Une fois que toutes les licences ont été réinstallées sur la nouvelle instance de déploiement, vous pouvez réinitialiser le numéro de séquence de série si nécessaire. Enfin, si l'adresse IP de déploiement a changé, vous devez mettre à jour chaque nœud ONTAP Select qui utilise une licence de pools de capacité.
 
 .Étapes
@@ -135,6 +136,7 @@ Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière �
 * Vous devez disposer de licences de niveau de capacité pour chaque nœud du cluster d'évaluation.
 
 
+.Description de la tâche
 La modification de la licence de cluster pour un cluster à un seul nœud entraîne un perturbation. Cependant, ce n'est pas le cas pour un cluster à plusieurs nœuds car le processus de conversion redémarre chaque nœud un par un pour appliquer la licence.
 
 .Étapes
@@ -151,4 +153,5 @@ La mise à niveau de licence d'un cluster peut prendre plusieurs minutes. Laisse
 
 
 
+.Une fois que vous avez terminé
 Les numéros de série de nœud de 20 chiffres initialement attribués à chaque nœud pour le déploiement d'évaluation sont remplacés par les numéros de série à neuf chiffres des licences de production utilisées pour la mise à niveau.

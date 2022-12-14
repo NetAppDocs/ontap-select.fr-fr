@@ -102,4 +102,5 @@ NOTE: Vous ne devez ajouter qu'une image ONTAP Select avec une version antérieu
 Administration d'un cluster ONTAP Select après son déploiement:: Une fois que vous avez déployé un cluster ONTAP Select, vous pouvez le configurer comme s'il s'agit d'un cluster ONTAP matériel. Par exemple, vous pouvez configurer un cluster ONTAP Select à l'aide de System Manager ou de l'interface de ligne de commandes ONTAP standard.
 
 
+.Informations associées
 link:task_cli_deploy_image_add.html["Ajout d'une image ONTAP Select à déployer"]

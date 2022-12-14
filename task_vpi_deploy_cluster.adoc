@@ -55,8 +55,10 @@ Outre la préparation commune, vous devez vous familiariser avec le vérificateu
 
 Vous pouvez ajouter des hôtes hyperviseurs à l'utilitaire de déploiement sur lequel les nœuds ONTAP Select s'exécutent avant de déployer un cluster. Si nécessaire, vous pouvez à la place ajouter les hôtes dans la boîte de dialogue de création du cluster.
 
+.Avant de commencer
 Consultez la section préparation au déploiement d'un cluster ONTAP Select.
 
+.Description de la tâche
 Vous pouvez ajouter un ou plusieurs hôtes en fonction de la taille du cluster.
 
 .Étapes
@@ -73,6 +75,7 @@ Vous pouvez ajouter un ou plusieurs hôtes en fonction de la taille du cluster.
 
 Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé d'un nœud unique.
 
+.Avant de commencer
 Consultez la section préparation au déploiement d'un cluster ONTAP Select et ajout d'un hôte d'hyperviseur. Vous pouvez ajouter l'hôte sur lequel le nœud ONTAP Select sera exécuté avant de créer le cluster ou dans le cadre de la création du cluster à un seul nœud.
 
 .Étapes
@@ -122,8 +125,10 @@ TIP: Si l'opération de création de cluster est initiée mais que l'opération 
 
 Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé de plusieurs nœuds.
 
+.Avant de commencer
 Consultez la section préparation au déploiement d'un cluster ONTAP Select et ajout d'un hôte d'hyperviseur. Vous pouvez ajouter les hôtes sur lesquels les nœuds ONTAP Select s'exécuteront avant de créer le cluster ou dans le cadre de la création du cluster multinœud.
 
+.Description de la tâche
 Un cluster multinœud ONTAP Select se compose d'un nombre pair de nœuds. Les nœuds sont toujours associés en tant que paires haute disponibilité.
 
 .Étapes

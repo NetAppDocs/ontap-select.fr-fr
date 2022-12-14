@@ -56,6 +56,7 @@ Cross Volume Background Deduplication:  true
 
 NOTE: Pour les mises à niveau ONTAP Select à partir de la version 9.6 et ultérieures, vous devez installer ONTAP Select sur un stockage SSD DAS avec une licence Premium. De plus, vous devez cocher la case *Activer l'efficacité du stockage* lors de l'installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
 
+.Configurations d'efficacité du stockage ONTAP Select
 Le tableau suivant récapitule les différentes options d'efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction du type de support et des licences logicielles. Les informations du tableau suivant s'appliquent aux versions ONTAP Select 9.6 et ultérieures. Pour les versions antérieures, reportez-vous à la section _prise en charge de l'efficacité du stockage ONTAP Select_ du https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
 
 [cols="4"]
@@ -97,6 +98,7 @@ Le tableau suivant récapitule les différentes options d'efficacité du stockag
 |===
 [Small]#^1^ONTAP Select 9.6 prend en charge une nouvelle licence (Premium XL) et une nouvelle taille de machine virtuelle (grande). Toutefois, la machine virtuelle grande taille n'est prise en charge que pour les configurations DAS utilisant RAID logiciel. Les configurations RAID et vNAS matérielles ne sont pas prises en charge avec la machine virtuelle ONTAP Select grande dans la version 9.6.#
 
+.Remarques sur le comportement de mise à niveau pour les configurations SSD DAS
 Après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure, attendez que le système `system node upgrade-revert show` commande pour indiquer que la mise à niveau est terminée avant de vérifier les valeurs d'efficacité du stockage pour les volumes existants.
 
 Sur un système mis à niveau vers ONTAP Select 9.6 ou version ultérieure, un nouveau volume créé sur un agrégat existant ou un nouvel agrégat a le même comportement que le volume créé lors d'un nouveau déploiement. Les volumes existants soumis à la mise à niveau du code ONTAP Select possèdent la plupart des mêmes règles d'efficacité du stockage que ceux d'un nouveau volume, avec quelques variantes :
@@ -122,4 +124,5 @@ Scénario 2:: Si les fonctionnalités d'efficacité du stockage sont déjà acti
 --
 
 
+.Remarques sur le comportement de mise à niveau pour la configuration du disque dur DAS
 Les fonctionnalités d'efficacité du stockage, activées avant la mise à niveau, sont conservées après la mise à niveau vers ONTAP Select 9.6 ou une version ultérieure. Si les fonctionnalités d'efficacité du stockage n'étaient pas activées avant la mise à niveau, l'efficacité du stockage n'est pas activée après la mise à niveau.

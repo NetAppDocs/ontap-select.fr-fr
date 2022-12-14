@@ -22,6 +22,7 @@ Chaque cluster ONTAP Select à deux nœuds est surveillé par le service de méd
 
 Vous pouvez afficher l'état du service médiateur par rapport à chacun des clusters à deux nœuds définis dans l'utilitaire ONTAP Select Deploy.
 
+.Description de la tâche
 Vous pouvez afficher la configuration de chaque médiateur, notamment l'état actuel, les deux nœuds ONTAP Select et la cible iSCSI dans laquelle sont stockées les informations de contrôle HA. Passez le curseur sur les objets de la page pour afficher des informations détaillées.
 
 .Étapes

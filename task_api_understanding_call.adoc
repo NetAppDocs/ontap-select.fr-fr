@@ -16,8 +16,10 @@ summary: Les détails de tous les appels API sont documentés et affichés dans 
 [role="lead"]
 Les détails de tous les appels API sont documentés et affichés dans un format commun sur la page Web de documentation en ligne de ONTAP Select Deploy. En comprenant un seul appel API, vous pouvez accéder aux détails de tous les appels API et les interpréter.
 
+.Avant de commencer
 Vous devez vous connecter à la page Web de documentation en ligne de ONTAP Select Deploy. Vous devez disposer de l'identifiant unique attribué à votre cluster ONTAP Select au moment de sa création.
 
+.Description de la tâche
 Vous pouvez récupérer les informations de configuration décrivant un cluster ONTAP Select à l'aide de son identifiant unique. Dans cet exemple, tous les champs classés comme peu coûteux sont retournés. Toutefois, conformément aux bonnes pratiques, vous devez uniquement demander les champs spécifiques nécessaires.
 
 .Étapes

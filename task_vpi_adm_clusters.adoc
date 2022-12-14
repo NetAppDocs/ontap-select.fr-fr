@@ -34,6 +34,7 @@ Une fois le cluster créé, vous pouvez le mettre hors ligne ou en ligne selon v
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.
 
+.Avant de commencer
 Le cluster doit être défini sur l'état hors ligne.
 
 .Étapes

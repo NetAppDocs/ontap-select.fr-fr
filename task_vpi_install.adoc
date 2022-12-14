@@ -30,6 +30,7 @@ Le plug-in vCenter Deploy est inclus avec l'utilitaire d'administration de ONTAP
 
 
 
+.Description de la tâche
 Il est supposé que le serveur de gestion vCenter a déjà été ajouté au déploiement. Si le serveur vCenter n'a pas été ajouté, reportez-vous à la section link:task_adm_security.html["Ajout d'un compte de serveur de gestion"] pour en savoir plus.
 
 .Étapes
