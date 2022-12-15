@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:00:41 +0000">12/14/2022</time>
     
   
 
@@ -2587,12 +2587,15 @@
 <p>Avant de déployer MetroCluster SDS, vous devez vous assurer que les exigences suivantes sont respectées.</p>
 </div>
 <div class="paragraph">
+<div class="title">Licences</div>
 <p>Chaque nœud doit disposer d&#8217;une licence ONTAP Select Premium ou supérieure.</p>
 </div>
 <div class="paragraph">
+<div class="title">Plateformes d&#8217;hyperviseur</div>
 <p>Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster Notez que KVM n&#8217;est plus pris en charge par ONTAP Select 9.10.1 et les versions ultérieures.</p>
 </div>
 <div class="paragraph">
+<div class="title">Configuration du réseau</div>
 <p>La connectivité de couche 2 est requise entre les sites participants. 10 GbE et 1 GbE sont pris en charge, y compris les configurations suivantes :</p>
 </div>
 <div class="ulist">
@@ -2618,12 +2621,15 @@ Les ports de transmission de données et d&#8217;interconnexion doivent être co
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Latence entre les nœuds</div>
 <p>Le réseau entre les deux nœuds doit prendre en charge une latence moyenne de 5 ms avec une gigue périodique supplémentaire de 5 ms. Avant de déployer le cluster, vous devez tester le réseau à l&#8217;aide de la procédure décrite dans <a href="concept_nw_concepts_chars.html">"Présentation de la mise en réseau"</a> section.</p>
 </div>
 <div class="paragraph">
+<div class="title">Service médiateur</div>
 <p>Comme pour tous les clusters ONTAP Select à deux nœuds, un service de médiateur distinct est inclus dans la machine virtuelle de déploiement. Ce service permet de surveiller les nœuds et de gérer les défaillances. Lorsque la distance améliorée est disponible avec MetroCluster SDS, cela crée trois sites distincts dans la topologie réseau. La latence sur la liaison entre le médiateur et un nœud doit être inférieure ou égale à 125 ms aller-retour.</p>
 </div>
 <div class="paragraph">
+<div class="title">Stockage</div>
 <p>Le stockage DAS est pris en charge à l&#8217;aide de disques durs et SSD. VNAS est également pris en charge, notamment les baies de stockage externes et VSAN dans un environnement VMware.</p>
 </div>
 <div class="admonitionblock note">
@@ -2639,6 +2645,7 @@ Lorsque vous déployez MetroCluster SDS, vous ne pouvez pas utiliser VSAN dans u
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Adresse IP statique attribuée au déploiement</div>
 <p>Vous devez affecter une adresse IP statique à l&#8217;utilitaire d&#8217;administration de déploiement. Elle s&#8217;applique à toutes les instances de déploiement qui gèrent un ou plusieurs clusters ONTAP Select à deux nœuds.</p>
 </div>
 

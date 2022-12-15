@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:00:41 +0000">12/14/2022</time>
     
   
 
@@ -2594,27 +2594,35 @@
 <p>Vous devez vous préparer avant de tenter de récupérer une instance de l&#8217;utilitaire de déploiement pour garantir la réussite de l&#8217;opération.</p>
 </div>
 <div class="paragraph">
+<div class="title">Compétences et informations requises</div>
 <p>Vous devez connaître plusieurs procédures administratives et disposer des informations requises.</p>
 </div>
 <div class="paragraph">
+<div class="title">Installation de la machine virtuelle de déploiement</div>
 <p>Vous devez pouvoir installer une nouvelle instance de l&#8217;utilitaire ONTAP Select Deploy dans votre environnement d&#8217;hyperviseur.</p>
 </div>
 <div class="paragraph">
+<div class="title">Interface de ligne de commande ONTAP</div>
 <p>Vous devez pouvoir vous connecter à l&#8217;interface de ligne de commandes ONTAP du cluster ONTAP Select et utiliser l&#8217;interface Shell.</p>
 </div>
 <div class="paragraph">
+<div class="title">Disponibilité de la sauvegarde de configuration de l&#8217;utilitaire de déploiement</div>
 <p>Vous devez déterminer si vous disposez d&#8217;une sauvegarde des données de configuration à partir de l&#8217;instance d&#8217;utilitaire de déploiement défaillant qui contient le cluster à deux nœuds ONTAP Select. Il se peut que vous ayez une sauvegarde qui ne contienne pas le cluster.</p>
 </div>
 <div class="paragraph">
+<div class="title">Restauration d&#8217;une sauvegarde de la configuration de déploiement</div>
 <p>Vous devriez pouvoir restaurer une sauvegarde des données de configuration de déploiement, en fonction de la procédure de récupération utilisée.</p>
 </div>
 <div class="paragraph">
+<div class="title">Adresse IP de la machine virtuelle de déploiement d&#8217;origine</div>
 <p>Vous devez connaître l&#8217;adresse IP de la machine virtuelle d&#8217;origine de l&#8217;utilitaire de déploiement qui a échoué.</p>
 </div>
 <div class="paragraph">
+<div class="title">Licences de capacité de stockage</div>
 <p>Vous devez déterminer si les pools de capacité ou les niveaux de capacité utilisent des licences. Si vous utilisez la licence de pools de capacité, vous devez réinstaller chaque licence de pool de capacité après avoir restauré ou restauré l&#8217;instance de déploiement.</p>
 </div>
 <div class="paragraph">
+<div class="title">Décider de la procédure de récupération à utiliser</div>
 <p>Vous devez décider de la procédure à utiliser lors de la récupération d&#8217;une instance de l&#8217;utilitaire ONTAP Select Deploy. Votre décision est basée sur la sauvegarde des données de configuration à partir de l&#8217;utilitaire de déploiement initial qui contient le cluster ONTAP Select à deux nœuds.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2648,9 +2656,11 @@
 <p>Si vous disposez d&#8217;une sauvegarde de l&#8217;instance d&#8217;utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous pouvez restaurer les données de configuration dans la nouvelle instance de déploiement de machine virtuelle. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez disposer d&#8217;une sauvegarde des données de configuration à partir de la machine virtuelle de déploiement d&#8217;origine défaillante qui contient le cluster à deux nœuds. Vous devez pouvoir vous connecter à l&#8217;interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Étant donné que la sauvegarde de configuration que vous restaurez contient le cluster à deux nœuds, les cibles iSCSI du médiateur et les boîtes aux lettres sont recréées dans la nouvelle machine virtuelle de l&#8217;utilitaire de déploiement.</p>
 </div>
 <div class="olist arabic">
@@ -2723,6 +2733,7 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Une fois que vous avez terminé</div>
 <p>Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Voir <em>réinstallation d&#8217;une licence de pool de capacité</em> pour plus de détails.</p>
 </div>
 </div>
@@ -2734,9 +2745,11 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 <p>Si vous ne disposez pas d&#8217;une sauvegarde de l&#8217;instance d&#8217;utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous devez configurer la cible iSCSI médiateur et la boîte aux lettres dans la nouvelle machine virtuelle de déploiement. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez avoir le nom de la cible du médiateur pour la nouvelle instance de l&#8217;utilitaire de déploiement. Vous devez pouvoir vous connecter à l&#8217;interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Vous pouvez également restaurer une sauvegarde de configuration vers le nouveau serveur virtuel déployé, même s&#8217;il ne contient pas le cluster à deux nœuds. Étant donné que le cluster à deux nœuds n&#8217;est pas recréé avec la restauration, vous devez ajouter manuellement la cible et la boîte aux lettres du médiateur iSCSI à la nouvelle instance de l&#8217;utilitaire de déploiement via la page Web de documentation en ligne ONTAP Select du déploiement. Vous devez pouvoir vous connecter au cluster à deux nœuds et connaître les noms de ONTAP des deux nœuds.</p>
 </div>
 <div class="admonitionblock note">
@@ -2868,6 +2881,7 @@ disk assign -disk &lt;mediator-disk2-name&gt; -owner &lt;node2-name&gt;</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Une fois que vous avez terminé</div>
 <p>Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Pour plus d&#8217;informations, reportez-vous à la section réinstallation d&#8217;une licence de pool de capacité.</p>
 </div>
 <div class="ulist">

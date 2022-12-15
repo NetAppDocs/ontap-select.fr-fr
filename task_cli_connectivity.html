@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:00:41 +0000">12/14/2022</time>
     
   
 
@@ -2584,9 +2584,11 @@
 <p>Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Généralement, vous exécutez ce test avant le déploiement d&#8217;un cluster multinœud afin de détecter les problèmes susceptibles d&#8217;entraîner l&#8217;échec de l&#8217;opération.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Tous les nœuds ONTAP Select inclus dans le test doivent être configurés et sous tension.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Chaque fois que vous démarrez un test, une nouvelle exécution de processus est créée en arrière-plan et un identifiant d&#8217;exécution unique lui est attribué. Une seule séquence peut être active à la fois.</p>
 </div>
 <div class="paragraph">
@@ -2650,6 +2652,7 @@ Il est recommandé d&#8217;effectuer toujours un test rapide avant de créer un 
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Une fois que vous avez terminé</div>
 <p>Le vérificateur de connectivité réseau nettoie normalement en supprimant les ports temporaires et les adresses IP ajoutés au groupe de ports ONTAP-Internal. Cependant, si le vérificateur de connectivité ne parvient pas à supprimer les ports temporaires, vous devez effectuer une opération de nettoyage manuel en réexécutant la commande CLI avec l&#8217;option <code>-mode cleanup</code>. Si vous ne supprimez pas les ports temporaires du groupe de ports internes ONTAP, la machine virtuelle ONTAP Select risque de ne pas être créée.</p>
 </div>
 

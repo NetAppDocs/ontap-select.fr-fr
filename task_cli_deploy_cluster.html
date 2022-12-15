@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:00:41 +0000">12/14/2022</time>
     
   
 
@@ -2635,6 +2635,7 @@ Si vous déployez un cluster pour évaluation uniquement, vous pouvez ignorer ce
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez disposer du mot de passe pour le compte utilisateur admin.</p>
 </div>
 <div class="olist arabic">
@@ -2682,6 +2683,7 @@ exit</pre>
 <p>Vous devez enregistrer chaque hôte d&#8217;hyperviseur sur lequel un nœud ONTAP Select sera exécuté. Dans le cadre de cette opération, l&#8217;utilitaire d&#8217;administration Deploy s&#8217;authentifie auprès du serveur vCenter gérant l&#8217;hôte ou directement vers l&#8217;hôte autonome ESXi.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Avant d&#8217;enregistrer un hôte géré par vCenter, vous devez ajouter un compte de serveur de gestion pour le serveur vCenter. Si l&#8217;hôte n&#8217;est pas géré par vCenter, vous pouvez fournir les informations d&#8217;identification de l&#8217;hôte dans le cadre de l&#8217;enregistrement de l&#8217;hôte. Cette procédure doit être utilisée pour ajouter chaque hôte.</p>
 </div>
 <div class="olist arabic">
@@ -2752,9 +2754,11 @@ exit</pre>
 <p>Vous devez créer, puis configurer le cluster ONTAP Select. Une fois le cluster configuré, vous pouvez configurer chaque nœud.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez décider du nombre de nœuds qu&#8217;il contient et des informations de configuration associées.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Lorsque vous créez un cluster ONTAP Select, l&#8217;utilitaire Deploy génère automatiquement des noms de nœud en fonction du nom du cluster et du nombre de nœuds que vous fournissez. Le déploiement génère également les identifiants de nœud uniques.</p>
 </div>
 <div class="olist arabic">
@@ -2809,9 +2813,11 @@ exit</pre>
 <p>Vous devez configurer chacun des nœuds du cluster ONTAP Select.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez disposer des informations de configuration pour le nœud. Le fichier de licence du niveau de capacité doit être téléchargé et installé à l&#8217;aide de l&#8217;utilitaire de déploiement.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Vous devez utiliser cette procédure pour configurer chaque nœud. Une licence de niveau de capacité est appliquée au nœud dans cet exemple.</p>
 </div>
 <div class="olist arabic">
@@ -2902,9 +2908,11 @@ exit</pre>
 <p>Vous devez configurer le stockage utilisé par chaque nœud du cluster ONTAP Select. Au moins un pool de stockage doit toujours être attribué à chaque nœud. Si vous utilisez un RAID logiciel, chaque nœud doit également être affecté à au moins un disque dur.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Vous devez créer le pool de stockage à l&#8217;aide de VMware vSphere. Si vous utilisez le RAID logiciel, vous avez également besoin d&#8217;au moins un lecteur de disque disponible.</p>
 </div>
 <div class="paragraph">
+<div class="title">Description de la tâche</div>
 <p>Lorsque vous utilisez un contrôleur RAID matériel local, vous devez effectuer les étapes 1 à 4. Lorsque vous utilisez le RAID logiciel, vous devez effectuer les étapes 1 à 6.</p>
 </div>
 <div class="olist arabic">
@@ -3001,6 +3009,7 @@ node-name test-cluster-01 -capacity-limit 500GB</pre>
 <p>Une fois le cluster et les nœuds configurés, vous pouvez déployer le cluster.</p>
 </div>
 <div class="paragraph">
+<div class="title">Avant de commencer</div>
 <p>Avant de déployer un cluster multinœud, vous devez exécuter le vérificateur de connectivité réseau pour confirmer la connectivité entre les nœuds de cluster sur le réseau interne.</p>
 </div>
 <div class="olist arabic">
@@ -3035,6 +3044,7 @@ node-name test-cluster-01 -capacity-limit 500GB</pre>
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Une fois que vous avez terminé</div>
 <p>Il est conseillé de sauvegarder les données de configuration de ONTAP Select Deploy.</p>
 </div>
 </div>

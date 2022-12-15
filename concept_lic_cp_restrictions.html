@@ -2570,7 +2570,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 09:05:47 +0000">11/15/2022</time>
+    <time datetime="2022-12-14 18:00:41 +0000">12/14/2022</time>
     
   
 
@@ -2584,24 +2584,31 @@
 <p>Les restrictions qui s&#8217;appliquent lors de l&#8217;utilisation du modèle de licence de pool de capacité sont présentées ci-dessous.</p>
 </div>
 <div class="paragraph">
+<div class="title">Modèle de licence cohérent pour chaque cluster</div>
 <p>Tous les nœuds d&#8217;un cluster ONTAP Select unique doivent utiliser le même modèle de licence, qu&#8217;il s&#8217;agisse de tiers de capacité ou de pools de capacité. Vous ne pouvez pas combiner les types de licence des nœuds dans un même cluster.</p>
 </div>
 <div class="paragraph">
+<div class="title">Tous les nœuds d&#8217;un cluster utilisent la même instance de Gestionnaire de licences</div>
 <p>Tous les nœuds avec une licence de pool de capacité dans un cluster ONTAP Select doivent utiliser la même instance License Manager. Comme il y a une instance de License Manager dans chaque instance de déploiement, cette restriction est une nouvelle instruction de l&#8217;exigence existante que tous les nœuds d&#8217;un cluster doivent être gérés par la même instance de déploiement.</p>
 </div>
 <div class="paragraph">
+<div class="title">Un pool de capacité par nœud</div>
 <p>Chaque nœud peut louer du stockage depuis un pool de capacité précis. Un nœud ne peut pas utiliser deux pools ou plus.</p>
 </div>
 <div class="paragraph">
+<div class="title">Même pool pour les nœuds d&#8217;une paire haute disponibilité</div>
 <p>Les deux nœuds d&#8217;une seule paire haute disponibilité doivent louer du stockage du même pool de capacité. Cependant, différentes paires haute disponibilité au sein d&#8217;un même cluster peuvent louer du stockage à partir de différents pools gérés par le même Gestionnaire de licences.</p>
 </div>
 <div class="paragraph">
+<div class="title">Durée de la licence de stockage</div>
 <p>Vous devez choisir une durée de licence lors de l&#8217;acquisition de la licence de stockage auprès de NetApp. Par exemple, une licence peut être valide pour un an.</p>
 </div>
 <div class="paragraph">
+<div class="title">Durée totale du bail</div>
 <p>Lorsqu&#8217;un nœud ONTAP Select demande un bail de stockage pour un agrégat de données, le Gestionnaire de licences fournit une location pour une durée spécifique en fonction de la configuration du pool de capacité. Vous pouvez configurer la durée du bail pour chaque pool entre une heure et sept jours. La durée du bail par défaut est de 24 heures.</p>
 </div>
 <div class="paragraph">
+<div class="title">Adresse IP statique attribuée au déploiement</div>
 <p>Vous devez attribuer une adresse IP statique à l&#8217;utilitaire d&#8217;administration de déploiement lorsque la licence des pools de capacité est utilisée.</p>
 </div>
 
