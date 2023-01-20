@@ -1113,63 +1113,6 @@
   <block id="6d8b4f8c049f3c393747d18747a67b39" category="paragraph">La matrice d'interopérabilité contient des informations détaillées sur la configuration et la prise en charge des produits.</block>
   <block id="471ff51c89daf6e35e8e2b5111039744" category="inline-link">NetApp IMT</block>
   <block id="e7174cdff2de95e16bdf33105f509464" category="list-text"><block ref="e7174cdff2de95e16bdf33105f509464" category="inline-link-rx"></block></block>
-  <block id="6d42c54012b863cd6eedcc3d403ad0c6" category="summary">Performances d'ONTAP Select 9.5 : stockage SSD haute disponibilité de premier ordre avec connexion directe au stockage SSD.</block>
-  <block id="ff0e3825fd4663837f971a7ba681159f" category="doc">Performances d'ONTAP Select 9.5 : stockage SSD premium HA directe</block>
-  <block id="c9b1fc9101d9afb87bc8e65e52b3cdaf" category="paragraph">Performances d'ONTAP Select 9.5 avec un stockage SSD premium HA DAS (HA).</block>
-  <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">Plate-forme de référence</block>
-  <block id="d8ae9b53271ef4ae7e463671d9edd15f" category="paragraph">Matériel ONTAP Select 9.5 (Premium) (par nœud) :</block>
-  <block id="da8d0349a5f6486d92d1203e4c900b69" category="list-text">CISCO UCS C240 M4SX :</block>
-  <block id="66b56969cc3581bdd13812374d117941" category="list-text">Processeur Intel Xeon E5-2620 à 2,1 GHz</block>
-  <block id="79f2a0232b06d44ab405491d76e73a16" category="list-text">2 sockets ; 16 processeurs par socket</block>
-  <block id="88f6a554563c7a608913d59040ebaf62" category="list-text">128 GO DE RAM</block>
-  <block id="433abae658dcc70d5d3761c8600f7b1f" category="list-text">VMware ESXi 6.5</block>
-  <block id="1762c54cddae477ffccf703524615078" category="list-text">Disques par hôte : 24 SSD de 900 Go</block>
-  <block id="89b13670b1db743f4d85d8e8f4088bcf" category="paragraph">Matériel client :</block>
-  <block id="d70f3d88adda420e79658dc52e515383" category="list-text">5 clients IBM 3550m4 NFSv3</block>
-  <block id="2eb19baafd2ac3bf96bb137917d946fa" category="paragraph">Informations de configuration :</block>
-  <block id="a40f55e0a537eb3307ad8510ba1e6e1b" category="list-text">1,500 MTU pour le chemin d'accès aux données entre les clients et le cluster Select</block>
-  <block id="417cf38711a7b90410407706cc8becb3" category="list-text">Aucune fonctionnalité d'efficacité du stockage utilisée (compression, déduplication, copies Snapshot, SnapMirror, etc.)</block>
-  <block id="d906eb9f16fe5d1f0efd1b7177d61563" category="paragraph">Le tableau ci-dessous répertorie le débit mesuré en ce qui concerne les workloads de lecture/écriture sur une paire haute disponibilité de nœuds ONTAP Select Premium avec RAID logiciel et RAID matériel. Les mesures de performances ont été effectuées à l'aide de l'outil de génération de charge SIO.</block>
-  <block id="98e524c388d1dc4bc579ff68a03fac92" category="paragraph">*Résultats pour un seul nœud (faisant partie d'un cluster ONTAP Select 9.5 de type moyenne instance) sur DAS (SSD) avec RAID logiciel et RAID matériel*</block>
-  <block id="f85fbc2afc4c94e602061bdba197fe30" category="cell">Lecture séquentielle 64Kio</block>
-  <block id="b744fd78ba8f25a68adbe10e05a26b83" category="cell">Écriture séquentielle 64Kio</block>
-  <block id="1a6235b566ae1675e7cad6ac984c685e" category="cell">Lecture aléatoire 8Kio</block>
-  <block id="5b12bccfe0f07270acf93f4031d373f1" category="cell">Écriture aléatoire 8Kio</block>
-  <block id="e78425925b16cdbe3107734a56031c80" category="cell">Aléatoire WR/RD (50/50) 8Kio</block>
-  <block id="b488012d536d61994101d21973ccb5fc" category="cell">ONTAP 9.5 sélectionnez instance moyenne avec RAID matériel DAS (SSD)</block>
-  <block id="f3478912bb07f7ec7c8444a5e316e819" category="cell">1 714 MiBps</block>
-  <block id="95017f29234ec8b67e7f06611466891b" category="cell">412MPS</block>
-  <block id="48c28f3a705b0584dbfb937f1e189873" category="cell">391MiBps</block>
-  <block id="9dcedfb9f11c04fb8a4aaa046d530c89" category="cell">121MiBps</block>
-  <block id="772f559bb1cae1f865b3a396cf692ddc" category="cell">309MiBps</block>
-  <block id="c91e356267219d84f0202e2d0dfbffb2" category="cell">ONTAP 9.5 sélectionnez instance moyenne avec RAID du logiciel DAS (SSD)</block>
-  <block id="aad82c942b780f118f2cb44de2a917b2" category="cell">1 674MiBps</block>
-  <block id="c17a615d3925b4ae5b453126b17c321f" category="cell">360 Mips</block>
-  <block id="db456de05f2855d308ef49d553c921f7" category="cell">451MiBps</block>
-  <block id="6f874ec8b8b77dc7dd8d2a094888d1e3" category="cell">223MiBps</block>
-  <block id="2de50a1b7b5776ec223eb8252b6d9597" category="cell">293 Mips</block>
-  <block id="44607c8f3709be606339fc490a5b45c3" category="section-title">Lecture séquentielle de 64 Ko</block>
-  <block id="2babe53026309ed1bc4d26626dbaf9b3" category="paragraph">Détails :</block>
-  <block id="1c565cb1ef40fca7276174f53620ea60" category="list-text">E/S directes activées</block>
-  <block id="47957b19a7354408ab1556b6c86baf29" category="list-text">2 nœuds</block>
-  <block id="dc6520d5a009ec5f940d658ec28adabd" category="list-text">2 cartes d'interface réseau de données par nœud</block>
-  <block id="4bcdc16a8f6fec0919f4bfd39504533f" category="list-text">1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 8 To)</block>
-  <block id="1eec63dddc28c105e19e99a28e53426c" category="list-text">64 processus SIO, 1 thread par proc</block>
-  <block id="217f0d39a6dd36c24aa44ac1d6a1978f" category="list-text">32 volumes par nœud</block>
-  <block id="df5b44ae62b5b5de9a6c68ef74b8631f" category="list-text">1 x fichiers par proc ; les fichiers sont de 12000 Mo chacun</block>
-  <block id="6a054d687d8afaf7ec67dbc99b543066" category="section-title">Écriture séquentielle de 64 Ko</block>
-  <block id="f0d309eaf86b429045988bce455aacb3" category="list-text">1 agrégat de données par nœud (RAID matériel de 2 To), (RAID logiciel de 4 To)</block>
-  <block id="af5bc1c073864156b93943dba0eb0a17" category="list-text">128 processus SIO, 1 thread par proc</block>
-  <block id="5347890bfa18e54f63569bc0327414f2" category="list-text">Volumes par nœud 32 (RAID matériel), 16 (RAID logiciel)</block>
-  <block id="64e33af903cb7246c7d6049d95b81855" category="list-text">1 x fichiers par proc ; les fichiers sont de 30720 Mo chacun</block>
-  <block id="f6285a044a1b4d88a9e7fb351cf9e8c1" category="section-title">Lecture aléatoire 8K</block>
-  <block id="5432662d6c3f66b86011e5482fd1b013" category="list-text">64 processus SIO, 8 threads par processeur</block>
-  <block id="5e891e0901bd4eb1cada8b221b715ae8" category="list-text">volumes par nœud 32</block>
-  <block id="114ff4f2711841720a4f7186e6a15a6a" category="list-text">1 fichier par proc ; les fichiers sont de 122 28 Mo chacun</block>
-  <block id="c85b30614082693f9ffcec7ecb79fb0a" category="section-title">Écriture aléatoire 8K</block>
-  <block id="1180f790e23bf2a48f8bf9f2b5e2a5d4" category="list-text">1 fichier par proc ; les fichiers sont de 8192Mo chacun</block>
-  <block id="c177226dbb26cef0a4f5eff0b87d5d44" category="section-title">50 % aléatoire 8K lecture 50 %</block>
-  <block id="e919c753c1379472f37d0b73be4c0c35" category="list-text">64 processus SIO, 20 threads par processeur</block>
   <block id="bd5ae2e61e1784e8eadc165e6029ecf8" category="summary">Dans le cadre de la sécurisation d'un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="doc">Sécurité</block>
   <block id="6ba2d4941e369d15ce3b54f9f454eabc" category="section-title">Modification du mot de passe administrateur de déploiement</block>
@@ -1338,41 +1281,6 @@
   <block id="51c280bc8477f0f8cc09d003428c0349" category="paragraph"><block ref="51c280bc8477f0f8cc09d003428c0349" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6ad5e0a20f49ad6a370454bb3afc9a9e" category="inline-image-macro">ONTAP System Manager</block>
   <block id="4ef5a8fab5153261b52fcf4aa330124b" category="paragraph"><block ref="4ef5a8fab5153261b52fcf4aa330124b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">Informations sur les performances de ONTAP Select 9.6 – stockage SSD haute disponibilité directe premium.</block>
-  <block id="40bfcfb823eef6d953345bec6901d94b" category="doc">Performances d'ONTAP Select 9.6 : stockage SSD premium HA directe</block>
-  <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">Informations sur les performances de la plate-forme de référence.</block>
-  <block id="e4a309f15020053335305c42e7ab8866" category="paragraph">Matériel ONTAP Select 9.6 (Premium XL) (par nœud)</block>
-  <block id="bb0064a43bb00378129d1ac5e83e43bf" category="list-text">FUJITSU PRIMERGY RX2540 M4 :</block>
-  <block id="9dbfeafb0252249e9084dd194033f966" category="list-text">Processeur Intel(R) Xeon(R) Gold 6142b à 2.6 GHz</block>
-  <block id="1412e1f8c4d7128be7fcb48c7ef515ec" category="list-text">32 cœurs physiques (16 x 2 sockets), 64 cœurs logiques</block>
-  <block id="2907b386b6969a2dd1b7d5b358e4ef78" category="list-text">256 GO DE RAM</block>
-  <block id="f47dfc5af3acf2b805371be41d3a8fb8" category="list-text">Disques par hôte : 24 SSD de 960 Go</block>
-  <block id="54b588a0a73b1fd4e80bea0b52b66a5c" category="list-text">ESX 6.5U1</block>
-  <block id="2526f2963a36a530588c55a6e858c9ea" category="paragraph">Matériel client</block>
-  <block id="8b9a96e40ebcda35ce12190b41789b64" category="paragraph">Informations de configuration</block>
-  <block id="644583ef81af3657d263540fe36659df" category="list-text">SW RAID 1 x 9 + 2 RAID-DP (11 lecteurs)</block>
-  <block id="42eab3ef64ce236896a31222c04ddcb1" category="list-text">22+1 RAID-5 (RAID-0 dans ONTAP) / NVRAM de cache RAID</block>
-  <block id="590488d177e2d68396e9e404f0787197" category="cell">ONTAP 9.6 sélectionnez une grande instance avec RAID du logiciel DAS (SSD)</block>
-  <block id="2007f3de4fd76c0e193542767d4effc7" category="cell">2171 MiBps</block>
-  <block id="886d5bb2e31ec3b29b47bde33f33ab35" category="cell">559 MiBps</block>
-  <block id="04b957821e0e9aaeddab7defcb730f2f" category="cell">954 MiBps</block>
-  <block id="33f3d2c18291e3e31d92f624e5d6fc94" category="cell">394 MiBps</block>
-  <block id="e68ffca78bd9ae750e095401b76ab77b" category="cell">564 MiBps</block>
-  <block id="895f2f67b79ae99fa3fe27377f9e4cd0" category="cell">ONTAP 9.6 sélectionnez instance moyenne avec RAID du logiciel DAS (SSD)</block>
-  <block id="90c72b2cc73b17ddc733acde371321d3" category="cell">2090 MiBps</block>
-  <block id="53db68f311ff8fbb9f8fef66f62313e5" category="cell">592 MiBps</block>
-  <block id="7bbb1b1c0cf0b7b3631b2c01d6ddcaf3" category="cell">677 MiBps</block>
-  <block id="51a0447c2e07541855854e57a4fd6609" category="cell">335 MiBps</block>
-  <block id="276f86f46c58000ab83f7a81f3e1ac40" category="cell">441 3MiBps</block>
-  <block id="97ed077967fa6e5c5b243597455454ad" category="cell">ONTAP 9.6 sélectionnez instance moyenne avec RAID matériel DAS (SSD)</block>
-  <block id="6974008be6157ab7da440e5a88cd72d1" category="cell">2038 MiBps</block>
-  <block id="cb52eb73b63cc7f2910e3bfb2b2d354a" category="cell">520 MiBps</block>
-  <block id="9d7e909c3efb2e3288aa3ec2c6d24f71" category="cell">578 MiBps</block>
-  <block id="cdbbaf4862a8ab2f6b371a9be781a4cb" category="cell">325 MiBps</block>
-  <block id="a65e3663e8513b684e6d94125f4e11f5" category="cell">399 MiBps</block>
-  <block id="4af562d52353844c11ed213dc9654510" category="list-text">1 x fichiers par proc ; les fichiers sont de 122 28 Mo chacun</block>
-  <block id="c19f2ae8c94be0ce03b44a63782498a1" category="list-text">1 x fichiers par proc ; les fichiers sont de 8192Mo chacun</block>
-  <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">64 threads SIO proc208 par proc</block>
   <block id="bb3e372088c34ecc97b747d050480dd5" category="summary">Avant d'installer et de gérer le plug-in vCenter Deploy, vous devez procéder à plusieurs opérations.</block>
   <block id="f910ba58d516525e726e115e76febaed" category="section-title">Décider d'utiliser l'interface utilisateur Web de déploiement ou l'interface de ligne de commande</block>
   <block id="7a4501a79d76efb07b5b457970c2db39" category="paragraph">Dans la plupart des cas, l'interface utilisateur Web de déploiement offre l'option la plus pratique pour gérer le plug-in vCenter. C'est l'option décrite dans ce guide. Cependant, vous pouvez également gérer le plug-in à l'aide de l'interface de ligne de commande de déploiement. Pour plus d'informations, saisissez les commandes suivantes à l'invite de l'interface de ligne de commande de déploiement :</block>
@@ -2313,15 +2221,11 @@
   <block id="0fffbf1f49b9c37a392538cc2cb48383" category="summary">Vous pouvez utiliser le script suivant pour ajouter une licence pour un noeud ONTAP Select.</block>
   <block id="2bf177abb469873688866ee6cceff120" category="doc">Script pour ajouter une licence de nœud</block>
   <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">Les performances varient en fonction de la configuration matérielle.</block>
-  <block id="803abb3d8fba33b629c90a24fc1585f8" category="doc">Considérations générales relatives aux performances</block>
-  <block id="e4169e437dafc2dac3f256dc83393811" category="paragraph">Les chiffres de performance décrits dans cette section constituent des estimations approximatives des performances d'un cluster ONTAP Select et ne constituent pas une garantie de performances.</block>
-  <block id="8db2c1339766522ddbe10fc18f14fda4" category="paragraph">Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. En fait, la configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select donnée. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">*Fréquence principale*. En général, une fréquence plus élevée est préférable.</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">*Socket simple contre multisocket*. ONTAP Select n'utilise pas de fonctions multisockets, mais la surcharge de l'hyperviseur pour la prise en charge des configurations multisockets représente un certain écart de performances totales.</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">*Configuration de la carte RAID et pilote d'hyperviseur associé*. Le pilote par défaut fourni par l'hyperviseur peut être remplacé par le pilote du fournisseur de matériel.</block>
   <block id="71408d9f3d3515fa8a651b1604736a6f" category="list-text">*Type de disque et nombre de disques dans le(s) groupe(s) RAID*.</block>
   <block id="f28d3f9b022a76395cd98dbce7787e03" category="list-text">*Version de l'hyperviseur et niveau de patch*.</block>
-  <block id="d98c26215b600e916c38a438cd921e98" category="paragraph">Cette section inclut des comparaisons de performances uniquement lorsque les tests ont été effectués sur le même banc d'essai afin de mettre en évidence l'impact d'une fonctionnalité spécifique. De manière générale, nous documentons l'environnement matériel et exécutons la configuration la plus performante possible sur cette plateforme.</block>
   <block id="9b7d2f090671cf0f165ca48fad944d0c" category="section-title">Gestion des licences</block>
   <block id="135032340b739678e7d11a4dc182011c" category="list-text">Développez l'option *Licenses* et cliquez sur *Capacity Tier* ou *Capacity Pool* pour sélectionner le type de licence.</block>
   <block id="2f71211a5b13795979d370821fc6fdd2" category="paragraph">Les licences actuelles et tout problème s'affichent.</block>
@@ -3039,39 +2943,6 @@
   <block id="ae060de04aca5e325886869d3119eab9" category="paragraph">Vous devez choisir une durée de licence lors de l'acquisition de la licence de stockage auprès de NetApp. Par exemple, une licence peut être valide pour un an.</block>
   <block id="3684db008f18e1ffdeda56bf51708696" category="paragraph">Lorsqu'un nœud ONTAP Select demande un bail de stockage pour un agrégat de données, le Gestionnaire de licences fournit une location pour une durée spécifique en fonction de la configuration du pool de capacité. Vous pouvez configurer la durée du bail pour chaque pool entre une heure et sept jours. La durée du bail par défaut est de 24 heures.</block>
   <block id="987ded954f3b3c95296c03ab6b45ec09" category="paragraph">Vous devez attribuer une adresse IP statique à l'utilitaire d'administration de déploiement lorsque la licence des pools de capacité est utilisée.</block>
-  <block id="1844b667aa3a3552724d4b6f25fdfee0" category="summary">Informations sur les performances de ONTAP Select 9.4 – stockage SSD haute disponibilité directe premium.</block>
-  <block id="7e6ffef2d9e4630a693d27eee2bf092b" category="doc">Performances d'ONTAP Select 9.4 : stockage SSD premium HA directe</block>
-  <block id="62226f401a888e5c673bd197232488a4" category="paragraph">Performances d'ONTAP Select 9.4 avec un stockage SSD premium HA DAS (HA).</block>
-  <block id="7145f73f47761ef03a9ac7fa743946ba" category="paragraph">Matériel ONTAP Select 9.4 (Premium) (par nœud) :</block>
-  <block id="080b55c282b18aff6acbb9b8307e45d7" category="list-text">CISCO UCS C240 M4S2 :</block>
-  <block id="c2d47e9bc55facf5b445ed65b937324d" category="list-text">Processeur Intel Xeon E5-2697 à 2,60 GHz</block>
-  <block id="4fb1dad16b1d444620c31d069252b122" category="list-text">2 sockets ; 14 processeurs par socket</block>
-  <block id="067be87059aca76ce27d2d89d383b1fe" category="list-text">56 processeurs logiques (HT activé)</block>
-  <block id="3b63a934f24699a3abc944472864815f" category="list-text">256 GO DE RAM</block>
-  <block id="a47c0000c2a8c08808a324895ee9f307" category="list-text">Disques par hôte : 24 SSD NetApp 960 Go X371A</block>
-  <block id="2dfe3c2982e9fc1ac8adf6ce6b36e54c" category="list-text">4 clients IBM 3550m4 NFSv3</block>
-  <block id="8b72248fc750c60f5a43e996ad821fe0" category="paragraph">Le tableau ci-dessous répertorie le débit mesuré en ce qui concerne les workloads de lecture/écriture sur une paire HA de nœuds ONTAP Select Premium. Les mesures de performances ont été effectuées à l'aide de l'outil de génération de charge SIO.</block>
-  <block id="b6b524966f971cc1b38cf6c4eded4605" category="paragraph">*Résultats pour un seul nœud (faisant partie d'un cluster ONTAP Select 9.4 à quatre nœuds de taille moyenne) sur DAS (SSD)*</block>
-  <block id="cfde5abdec2f5607a3796be635ad47c8" category="cell">ONTAP 9.4 Select instance moyenne avec DAS (SSD)</block>
-  <block id="1f194e7c72c8d7d14fa3c4f8961be5d9" category="cell">10 16,712 Mbit/s IOPS</block>
-  <block id="28e25559b3ba528fccbc794a3d5acf26" category="cell">25 4016 IOPS</block>
-  <block id="cd1bc5669f6e4b437606af5e53a8b1fa" category="cell">49 2Mo/s 62,912 IOPS</block>
-  <block id="ece20723782dfa056ec3b55e3b24c37e" category="cell">141 Mo ps 18,048 000 IOPS</block>
-  <block id="d75d181c83215266d40487856fd42da7" category="cell">218 Mbit/s 27,840 IOPS</block>
-  <block id="a3aa868c13903be73360a0ca2b15dfec" category="list-text">2 cartes d'interface réseau de données</block>
-  <block id="c877600127e0c10559aaef3fa6f8b340" category="list-text">1 agrégat de données (2 To)</block>
-  <block id="49bbe54cd8eaab8f69a8a97fa376d801" category="list-text">64 volumes, 64 processus/threads d'E/S</block>
-  <block id="4a0db462fd57fced8d7681b289ec4560" category="list-text">32 volumes par nœud (64 au total)</block>
-  <block id="de2926cc8dca4ae82290fb564b1e727a" category="list-text">1 x processus SIO par volume ; 1 x thread SIO par fichier</block>
-  <block id="1ac3559913b9b5236f11c6f5102ad2ef" category="list-text">1 x fichiers par volume ; les fichiers sont de 12000 Mo chacun</block>
-  <block id="be480d1f91e2cdc691aa5d12fca920bc" category="list-text">1 agrégat de données (2 To) :</block>
-  <block id="09316e2030ac2a586bdc8b34957a3f11" category="list-text">64 volumes, 128 processus/threads d'E/S</block>
-  <block id="5c976de35e9bfb7d8dfdc6bc36e9f30b" category="list-text">2 ports SIO par volume ; 1 x thread SIO par fichier</block>
-  <block id="e5f9abaaeb90091b0581ce38df4c2c3b" category="list-text">2 fichiers par volume ; les fichiers sont de 30720 Mo chacun</block>
-  <block id="f2c1316c9ccf02c81ebe9af467c06324" category="list-text">1 x plusieurs procédures d'E/S par volume ; 8 x thread SIO par fichier</block>
-  <block id="e8a52598182d56969b5ab1ca3f51824c" category="list-text">1 x fichiers par volume ; les fichiers sont de 122 28 Mo chacun</block>
-  <block id="e5b92c2ae9138f1aed4a50d59474e5b4" category="list-text">1 x fichiers par volume ; les fichiers sont de 8192Mo chacun</block>
-  <block id="8199bd94478b387253fc671d5de902af" category="list-text">1 x plusieurs procédures d'E/S par volume ; 20 x thread SIO par fichier</block>
   <block id="94c8034605d41dd846d36c99c7168f29" category="summary">Representational State Transfer (REST) est un style qui permet de créer des applications Web distribuées. Lorsqu'il est appliqué à la conception d'une API de services Web, il établit un ensemble de technologies et de meilleures pratiques pour l'exposition des ressources basées sur serveur et la gestion de leurs États. Il utilise des protocoles et des normes courants pour offrir une base flexible pour le déploiement et la gestion des clusters ONTAP Select.</block>
   <block id="8ed6428212b41847f33c5db651c2aa70" category="doc">Base de services Web REST</block>
   <block id="7f5099080bd152e508b14b6ceb0c89d7" category="section-title">Contraintes classiques et architectures</block>
@@ -3483,10 +3354,6 @@
   <block id="7590e9173880f1e9732bf635a6fdd451" category="sidebar">Réplication synchrone et agrégats en miroir</block>
   <block id="4ad4ca6d00f55818bc64af3e5a3ec6fb" category="sidebar">Autres fonctions de haute disponibilité</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="sidebar">Performance</block>
-  <block id="3516c8ba7b35045de92853ce609c11f7" category="sidebar">Considérations générales</block>
-  <block id="51816119234063b73e5a0a75806755ce" category="sidebar">9.4 stockage SSD premium HA DAS (Direct Attached Storage)</block>
-  <block id="1bbc5edfb65abbd74567c968131d62b8" category="sidebar">9.5 stockage SSD premium HA DAS (Direct Attached Storage)</block>
-  <block id="121abb38eefc2bbdbd5ecfe650e612c1" category="sidebar">9.6 stockage SSD premium HA DAS (Direct Attached Storage)</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="sidebar">Pour commencer</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">Présentation</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="sidebar">Architecture</block>
@@ -3650,4 +3517,6 @@
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">Version actuelle de ONTAP Select</block>
   <block id="72c6c134de9cf5ac97e05f3ab4e187b8" category="paragraph-title">Versions précédentes de ONTAP Select</block>
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">À propos de ces tâches</block>
+  <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. La configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select particulière. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :</block>
+  <block id="589ecc96b319d521b89948044a66b27b" category="paragraph">Les détails des tests de performances pour ONTAP Select 9.4, 9.5 et 9.6 sont disponibles dans la section _ONTAP Select Performance_ de<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>.</block>
 </blocks>

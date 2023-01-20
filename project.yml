@@ -184,15 +184,7 @@ sidebar:
       - title: Autres fonctions de haute disponibilité
         url: "/concept_ha_other.html"
     - title: Performance
-      entries:
-      - title: Considérations générales
-        url: "/concept_perf_general.html"
-      - title: 9.4 stockage SSD premium HA DAS (Direct Attached Storage)
-        url: "/concept_perf_premium_ha_direct_ssd_94.html"
-      - title: 9.5 stockage SSD premium HA DAS (Direct Attached Storage)
-        url: "/concept_perf_premium_ha_direct_ssd_95.html"
-      - title: 9.6 stockage SSD premium HA DAS (Direct Attached Storage)
-        url: "/concept_perf_premium_ha_direct_ssd_96.html"
+      url: "/concept_perf_general.html"
   - title: Intégration avec vCenter
     entries:
     - title: Pour commencer

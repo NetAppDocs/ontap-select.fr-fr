@@ -4,7 +4,7 @@ permalink: concept_perf_general.html
 keywords: ontap select, performance 
 summary: Les performances varient en fonction de la configuration matérielle. 
 ---
-= Considérations générales relatives aux performances
+= Performance
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,9 +16,7 @@ summary: Les performances varient en fonction de la configuration matérielle.
 [role="lead"]
 Les performances varient en fonction de la configuration matérielle.
 
-Les chiffres de performance décrits dans cette section constituent des estimations approximatives des performances d'un cluster ONTAP Select et ne constituent pas une garantie de performances.
-
-Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. En fait, la configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select donnée. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :
+Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. La configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select particulière. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :
 
 * *Fréquence principale*. En général, une fréquence plus élevée est préférable.
 * *Socket simple contre multisocket*. ONTAP Select n'utilise pas de fonctions multisockets, mais la surcharge de l'hyperviseur pour la prise en charge des configurations multisockets représente un certain écart de performances totales.
@@ -27,4 +25,4 @@ Les performances d'un cluster ONTAP Select peuvent considérablement varier en f
 * *Version de l'hyperviseur et niveau de patch*.
 
 
-Cette section inclut des comparaisons de performances uniquement lorsque les tests ont été effectués sur le même banc d'essai afin de mettre en évidence l'impact d'une fonctionnalité spécifique. De manière générale, nous documentons l'environnement matériel et exécutons la configuration la plus performante possible sur cette plateforme.
+Les détails des tests de performances pour ONTAP Select 9.4, 9.5 et 9.6 sont disponibles dans la section _ONTAP Select Performance_ de https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
