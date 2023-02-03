@@ -22,8 +22,15 @@ Avant de déployer MetroCluster SDS, vous devez vous assurer que les exigences s
 Chaque nœud doit disposer d'une licence ONTAP Select Premium ou supérieure.
 
 .Plateformes d'hyperviseur
-Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster Notez que KVM n'est plus pris en charge par ONTAP Select 9.10.1 et les versions ultérieures.
+Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster
 
+[NOTE]
+====
+* Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
+* Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
+
+
+====
 .Configuration du réseau
 La connectivité de couche 2 est requise entre les sites participants. 10 GbE et 1 GbE sont pris en charge, y compris les configurations suivantes :
 

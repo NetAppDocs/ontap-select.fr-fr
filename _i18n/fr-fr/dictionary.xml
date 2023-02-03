@@ -56,7 +56,6 @@
   <block id="31b7bb22df4e14e27e8d94676de87687" category="list-text">L'hôte ESXi n'est pas géré par vCenter (hôte autonome)</block>
   <block id="7f99b6195696eb3b2dd6306108e31199" category="list-text">Plusieurs nœuds ou hôtes sont utilisés dans le cluster</block>
   <block id="23792fd2201db7e4a90f1bb62205da33" category="list-text">Le cluster est déployé dans un environnement de production avec une licence achetée</block>
-  <block id="d36f4205c301fa0311580c2426a17881" category="list-text">L'hyperviseur KVM est utilisé au lieu de VMware ESXi (KVM n'est plus pris en charge lors de la création d'un cluster avec ONTAP Select 9.10.1 et versions ultérieures)</block>
   <block id="02a3feeefaee61409aecc3199ba633fd" category="section-title">1. Enregistrer les informations d'identification du serveur vCenter</block>
   <block id="9769928a2568daa5e0ec428f55c04f89" category="paragraph">Lors du déploiement sur un hôte ESXi géré par un serveur vCenter, vous devez ajouter un identifiant avant d'enregistrer l'hôte. L'utilitaire d'administration Deploy peut ensuite utiliser les informations d'identification pour s'authentifier auprès de vCenter.</block>
   <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">Catégorie</block>
@@ -129,7 +128,6 @@
   <block id="c9a9a8f627d1d803e2e94b0b16e265f3" category="section-title">Cluster à un seul nœud sur ESXi</block>
   <block id="70771ca4958d1b97175631c548e5b806" category="section-title">Cluster à un seul nœud sur ESXi à l'aide de vCenter</block>
   <block id="fa7d26728677ccb514c43b50b7837b1f" category="section-title">Cluster à un seul nœud sur KVM</block>
-  <block id="4a2f121824a056475165660b79eefb58" category="admonition">Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors de la création de nouveaux clusters. L'exemple ci-dessous s'applique aux versions antérieures prenant en charge KVM.</block>
   <block id="2c01dc050e34473d6fd4829a0c9dfc67" category="summary">Dans le cadre de la préparation au déploiement d'un cluster ONTAP Select dans un environnement VMware, collectez les informations requises lors de l'utilisation de l'utilitaire d'administration ONTAP Select Deploy pour déployer et configurer le cluster.</block>
   <block id="0a7c0383d497ed0eca1445bad04e443d" category="doc">Informations requises pour l'installation de ONTAP Select</block>
   <block id="60babef3f829c4ee764e1a15dc60db72" category="paragraph">Certaines informations que vous collectez s'appliquent au cluster lui-même, tandis que d'autres informations s'appliquent aux nœuds individuels du cluster.</block>
@@ -644,7 +642,6 @@
   <block id="bac8e85676787adaae3dcc2dd52d64fa" category="paragraph"><block ref="7aee42c90493e9c5d79bbb47b52b690f" prefix="" category="inline-code"></block></block>
   <block id="cda33a034ba882bacd58315a77cc81b3" category="list-text">Vous pouvez également supprimer une image ESXi.</block>
   <block id="19b0df5ac5e7fed3b93ef14a626c1330" category="paragraph">Exemple<block ref="4566367f17484ead8a2e1af12e38465f" prefix=" " category="inline-code"></block></block>
-  <block id="144e136136c9b5e30873de1afe8813d2" category="list-text">Vous pouvez également supprimer une image KVM lorsque vous utilisez une version antérieure à ONTAP Select 9.10.1.</block>
   <block id="acbb93a8e2ab3c3f0b3c4adb7b2094ff" category="paragraph">Exemple<block ref="ee776f2a12a52a2b004b5c490193458b" prefix=" " category="inline-code"></block></block>
   <block id="f39c5431d2026e960c0f380a0c0c4ef9" category="summary">Un processus de flux de travail peut être utilisé pour déployer un cluster ONTAP Select.</block>
   <block id="43b13cac79173588a7f38f74b27f2a09" category="doc">Flux de travail d'installation et de déploiement de ONTAP Select</block>
@@ -1491,7 +1488,6 @@
   <block id="33476e54e425c79d4fbac2f9f1b2b4aa" category="list-text">ONTAP Select et l'utilitaire d'administration ONTAP Select Deploy sont indépendants de l'hyperviseur. Les hyperviseurs suivants sont pris en charge pour les deux.</block>
   <block id="f7eea647714641318ee86fedbbed4691" category="list-text">VMware ESXi</block>
   <block id="c361c20443811fad6f41fa10f5dde140" category="list-text">Machine virtuelle basée sur kernel (KVM)</block>
-  <block id="089ce9e252a6b5d4200f327104cdd7f6" category="admonition">Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors du déploiement d'un nouveau cluster. Vous pouvez toujours utiliser KVM avec une version prise en charge antérieure.</block>
   <block id="a2fdc01936e7294727af3355cc284843" category="paragraph">Pour plus de détails sur les plates-formes prises en charge, reportez-vous aux informations de planification spécifiques à l'hyperviseur et aux notes de version.</block>
   <block id="ea51f3ae402e2a34b5af47d7dcc3dbb7" category="list-text">Hyperviseur pour nœuds ONTAP Select et utilitaire d'administration</block>
   <block id="1cc3032009578783bd053fa9e9aafa64" category="list-text">L'utilitaire d'administration de déploiement et les nœuds ONTAP Select s'exécutent en tant que machines virtuelles. L'hyperviseur que vous choisissez pour l'utilitaire de déploiement est indépendant de l'hyperviseur que vous choisissez pour les nœuds ONTAP Select. Vous disposez d'une souplesse totale lors de l'association des deux éléments :</block>
@@ -2395,7 +2391,6 @@
   <block id="f71bd299279ae929e22ae20c531b3f74" category="list-text">Utilisez un module de support commun le module de support commun _Deploy_Requests.py_ contient une seule classe. Il est importé et utilisé par chacun des scripts.</block>
   <block id="b64e2f96d46281df4a5271bb1d831855" category="section-title">Création d'un cluster</block>
   <block id="760f03544eb4b2b91f56abddab79a76a" category="paragraph">Vous pouvez créer un cluster ONTAP Select à l'aide du script cluster.py. En fonction des paramètres de l'interface de ligne de commande et du contenu du fichier d'entrée JSON, vous pouvez modifier le script dans votre environnement de déploiement comme suit :</block>
-  <block id="0ec7f2d003cb42f9464107b0ad854843" category="admonition">Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors du déploiement d'un nouveau cluster ONTAP Select. Vous pouvez toujours utiliser KVM avec une version prise en charge antérieure.</block>
   <block id="9230331b34c3673c82d4b22760bb266d" category="list-text">Hyperviseur que vous pouvez déployer sur ESXI ou KVM (selon la version de déploiement). Lors du déploiement de VMware ESXi, l'hyperviseur peut être géré par vCenter ou être un hôte autonome.</block>
   <block id="cedae47753ff0de17bdaf98b12774e30" category="list-text">Taille du cluster vous pouvez déployer un cluster à un ou plusieurs nœuds.</block>
   <block id="d27666ce040cf738c8c777bc858da479" category="list-text">Évaluation ou licence de production vous pouvez déployer un cluster avec une licence d'évaluation ou achetée pour la production.</block>
@@ -2925,7 +2920,6 @@
   <block id="f32f31f3f65cf8fd06f0af930a71a5a1" category="paragraph">MetroCluster SDS est une option de configuration lors de la création d'un cluster ONTAP Select à deux nœuds. Il est similaire au déploiement d'un bureau distant/d'une succursale, mais la distance entre les deux nœuds peut atteindre 10 km Ce déploiement amélioré à deux nœuds fournit des cas d'utilisation supplémentaires. Dans le cadre de la préparation au déploiement du SDS de MetroCluster, vous devez connaître les exigences et les restrictions.</block>
   <block id="dc3b343f8493bde82e3e8299e83f6138" category="paragraph">Avant de déployer MetroCluster SDS, vous devez vous assurer que les exigences suivantes sont respectées.</block>
   <block id="b06ea299e97a88792e784ae5e265bc85" category="paragraph">Chaque nœud doit disposer d'une licence ONTAP Select Premium ou supérieure.</block>
-  <block id="b25679a7bebb3b9795d3926792d8c9a9" category="paragraph">Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster Notez que KVM n'est plus pris en charge par ONTAP Select 9.10.1 et les versions ultérieures.</block>
   <block id="f2f4f127985b8989606d460ea282483e" category="paragraph">La connectivité de couche 2 est requise entre les sites participants. 10 GbE et 1 GbE sont pris en charge, y compris les configurations suivantes :</block>
   <block id="e7fea67b35768c83fc1eee5ad2800c96" category="list-text">1 x 10 GbE</block>
   <block id="6d65990d18745957b36e9a7d3e937d03" category="list-text">4 x 1 GbE</block>
@@ -3397,17 +3391,13 @@
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">Versions antérieures</block>
   <block id="bc8028393dfe2dad42a885ee42952937" category="inline-link-macro">Nouveautés de cette version</block>
   <block id="81f4b69f6b074a0894dc780d0c5fe22f" category="list-text"><block ref="81f4b69f6b074a0894dc780d0c5fe22f" category="inline-link-macro-rx"></block></block>
-  <block id="2648230546014b2ae69624070a44ec60" category="admonition">Depuis ONTAP Select la version 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM. Avec ONTAP Select 9.11.1 et les versions ultérieures, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de suppression et de mise hors ligne.</block>
   <block id="14f3d38ecd199a3a7efaea74103df87f" category="paragraph">ONTAP Select 9.12.1 peut être déployé sur VMware ESXi. Ce site contient de la documentation sur ONTAP Select 9.12.1, 9.11.1, 9.10.1, 9.9.1, 9.8 et 9.7 fonctionnant sur VMware ESXi, ainsi que la documentation indépendante de l'hyperviseur (par exemple, l'API REST).</block>
   <block id="b3a281a86bd3818b168900985a901d99" category="inline-link-macro">Notification relative à ONTAP Select 9.12.1</block>
   <block id="ee6f7d910b278ad714ca5e935fc4ef34" category="list-text"><block ref="ee6f7d910b278ad714ca5e935fc4ef34" category="inline-link-macro-rx"></block></block>
   <block id="f35dd9a9dbe889bc05b23cec8774b252" category="inline-link">Notes de version de ONTAP Select 9.12.1</block>
   <block id="b3075927414c52e4bd4c7e822453d175" category="paragraph">Vous pouvez accéder au<block ref="3ec17b33e7ccb0ff402fc289d09bfa2b" category="inline-link-rx"></block> pour afficher les détails de la version actuelle.</block>
-  <block id="252f0e043f3f30bf9b9641c26a9f3d25" category="admonition">Depuis ONTAP Select la version 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM. Avec ONTAP Select 9.11.1 et les versions ultérieures, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de suppression et de mise hors ligne. Les questions concernant KVM ne s'appliquent qu'aux versions antérieures qui prennent en charge KVM.</block>
   <block id="81884c993fa720d5bc8ac8f0f7c6dbda" category="summary">La version actuelle n'inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.</block>
   <block id="afa5543a0b0f6f0ebaeb44f21a75df52" category="doc">Quoi de neuf dans cette version</block>
-  <block id="626a7cbe056796bcb1c158b143866230" category="section-title">Notes de version de ONTAP</block>
-  <block id="ee7c32e022645197b08ad79344b7cea5" category="paragraph">ONTAP Select tire parti de la plupart des nouveautés de la version actuelle du produit ONTAP. Reportez-vous à la<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block> Pour plus d'informations sur les nouvelles fonctionnalités ou les améliorations apportées à chaque version d'ONTAP 9.</block>
   <block id="abdc6cb968cabcf935a49935cb3457a8" category="paragraph">Les déploiements NAS virtuels ONTAP Select (vNAS) avec VSAN 100 % Flash ou les baies Flash génériques doivent suivre les bonnes pratiques pour ONTAP Select avec stockage DAS non SSD.</block>
   <block id="56d7a71de46feea406be8535cec9562b" category="paragraph">La personnalisation du système AFF est automatiquement activée sur les nouvelles installations, à condition que vous disposiez d'un stockage DAS avec disques SSD et d'une licence Premium.</block>
   <block id="c9f8761a361c6711a9ed57ab4856d50e" category="admonition">Pour les mises à niveau ONTAP Select à partir de la version 9.6 et ultérieures, vous devez installer ONTAP Select sur un stockage SSD DAS avec une licence Premium. De plus, vous devez cocher la case *Activer l'efficacité du stockage* lors de l'installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.</block>
@@ -3519,4 +3509,46 @@
   <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">À propos de ces tâches</block>
   <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. La configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select particulière. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :</block>
   <block id="589ecc96b319d521b89948044a66b27b" category="paragraph">Les détails des tests de performances pour ONTAP Select 9.4, 9.5 et 9.6 sont disponibles dans la section _ONTAP Select Performance_ de<block ref="cb5f99da02919ecb4f37316e8fd1134a" category="inline-link-rx"></block>.</block>
+  <block id="3a7c41ad2e6168ef513e210afc4be8f6" category="admonition">Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors du déploiement d'un nouveau cluster. Vous pouvez toujours utiliser KVM avec une version prise en charge antérieure.</block>
+  <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.</block>
+  <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.</block>
+  <block id="1af8cafe7ba409845ae1075c9a509547" category="paragraph">NetApp met régulièrement à jour ONTAP Select afin de vous apporter de nouvelles fonctionnalités et améliorations.</block>
+  <block id="77e5d3b8719596b41c77222a6711e69b" category="section-title">ONTAP Select 9.12.1</block>
+  <block id="05dd50ebf48db80deadf4c9a847c2ce4" category="paragraph">ONTAP Select 9.12.1 bénéficie de la plupart des nouveautés de la version actuelle du produit principal ONTAP. Elle n'inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.</block>
+  <block id="7802fb8cc2dd2205ca511b49141235e0" category="section-title">ONTAP Select 9.11.1</block>
+  <block id="719b97afa778e32343849808db915b66" category="paragraph">ONTAP Select 9.11.1 inclut un certain nombre de nouvelles fonctionnalités et améliorations.</block>
+  <block id="aacb1ad8ec74092a13074108a4e20c02" category="list-text">Prise en charge améliorée de VMware ESXi</block>
+  <block id="aa46a81eb495f6cb92e19c98c6d7383a" category="list-text">ONTAP Select 9.11.1 inclut la prise en charge de VMware ESXi 7.0 U3C.</block>
+  <block id="5986999240906508e3084d84dd2552d8" category="list-text">Prise en charge de VMware NSX-T</block>
+  <block id="1092b73fb287a831beb00918cbde5b6b" category="list-text">ONTAP Select 9.10.1 et versions ultérieures ont été qualifiés pour VMware NSX-T version 3.1.2. Il n'y a pas de problèmes fonctionnels ni de défaillances lors de l'utilisation de NSX-T avec un cluster à nœud unique ONTAP Select déployé avec un fichier OVA et l'utilitaire d'administration ONTAP Select Deploy. Cependant, lorsque vous utilisez NSX-T avec un cluster multinœud ONTAP Select, nous vous conseillons de prendre en compte les restrictions suivantes concernant ONTAP Select 9.11.1 :</block>
+  <block id="97ba2ef50ca50de240503a53bf0d9347" category="list-text">Vérificateur de connectivité réseau</block>
+  <block id="9272e0dade1877b24e5ef4ad453f2c08" category="paragraph">Le vérificateur de connectivité réseau disponible via la CLI de déploiement échoue lorsqu'il est exécuté sur un réseau basé sur NSX-T.</block>
+  <block id="51e3f7647537ef4a51cd74ad4edcb9c6" category="list-text">L'hyperviseur KVM n'est plus pris en charge</block>
+  <block id="d2cc16162b6d3a24dc4a4501cf469cb0" category="inline-link">Avis de fin de disponibilité</block>
+  <block id="5370055608d6cbcb7f0776601a776aed" category="paragraph">NetApp recommande fortement aux clients de planifier et d'exécuter une migration complète de données depuis ONTAP Select pour KVM vers toute autre plateforme ONTAP, y compris ONTAP Select pour ESXi. Pour plus d'informations, reportez-vous à la section<block ref="e7f4803e65543a8054dff75dc9e1166a" category="inline-link-rx"></block></block>
+  <block id="bdcccc9d04bbc9b8540a1fbdebef3b93" category="section-title">ONTAP Select 9.10.1</block>
+  <block id="d7e7eb95caecb5dfc702a5f7d3cb0071" category="paragraph">ONTAP Select 9.10.1 inclut un certain nombre de nouvelles fonctionnalités et améliorations.</block>
+  <block id="4774053cb57a95a02a834cf823224b16" category="list-text">ONTAP Select 9.10.1 a été qualifié pour VMware NSX-T version 3.1.2. Il n'y a pas de problèmes fonctionnels ni de défaillances lors de l'utilisation de NSX-T avec un cluster à nœud unique ONTAP Select déployé avec un fichier OVA et l'utilitaire d'administration ONTAP Select Deploy. Cependant, lorsque vous utilisez NSX-T avec un cluster multinœud ONTAP Select, nous vous recommandons de prendre en compte les exigences et restrictions suivantes :</block>
+  <block id="ad136d3e5fb5acdd03500618ef8e1a95" category="paragraph">Vous devez ajuster manuellement la taille de MTU du cluster à 8800 avant de déployer le cluster pour tenir compte de la surcharge supplémentaire. Les conseils de VMware sont de permettre la création d'un tampon de 200 octets lors de l'utilisation de NSX-T.</block>
+  <block id="be4edc608044981ff1193ab01e2a80a8" category="list-text">Configuration réseau 4x10 Gb</block>
+  <block id="e3f9b3ee4bd0f7a9715c1acd839cb82b" category="paragraph">Pour les déploiements ONTAP Select sur un hôte VMware ESXi configuré avec quatre cartes réseau, l'utilitaire de déploiement vous invite à suivre les meilleures pratiques de répartition du trafic interne entre deux groupes de ports différents et du trafic externe entre deux groupes de ports différents. Toutefois, lorsque vous utilisez un réseau de superposition, cette configuration ne fonctionne pas et vous devez ignorer la recommandation. Dans ce cas, vous ne devez utiliser qu'un seul groupe de ports interne et un seul groupe de ports externe.</block>
+  <block id="2380ad5ce6796e080b2fcb896e8b4d72" category="list-text">Depuis ONTAP Select la version 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM. Cependant, si vous mettez à niveau un cluster d'une version précédente vers 9.10.1, vous pouvez toujours utiliser l'utilitaire de déploiement pour gérer le cluster.</block>
+  <block id="5321c0bf4db2c41a876a8455e4fd3037" category="section-title">ONTAP Select 9.9.1</block>
+  <block id="2dc4c31981db6194573548002505f01d" category="paragraph">ONTAP Select 9.9.1 inclut un certain nombre de nouvelles fonctionnalités et améliorations.</block>
+  <block id="c92580bf4d34ad8667b38f18db6e63e5" category="list-text">Prise en charge de la famille de processeurs</block>
+  <block id="49cffca69c2495abd2b6646948ffc778" category="list-text">À partir de ONTAP Select 9.9.1, seuls les modèles de CPU Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge par ONTAP Select.</block>
+  <block id="5f4c6121d4f63aaa5d6daebc2a2effee" category="list-text">Prise en charge de VMware ESXi mise à jour</block>
+  <block id="94f6b8f3b96f83ead9cf8f1fff27c5ba" category="list-text">La prise en charge de VMware ESXi a été améliorée avec ONTAP Select 9.9.1. Les versions suivantes sont désormais prises en charge :</block>
+  <block id="2a75a4bfd68197cf6684d89c95157677" category="list-text">ESXi 7.0 U2</block>
+  <block id="aa3bb437d4c9050ad360819d6231b58e" category="list-text">ESXi 7.0 U1</block>
+  <block id="c4537e24714e3ee09d3a03a894db75f4" category="section-title">ONTAP Select 9.8</block>
+  <block id="00ba796063aa024015a8e3a32ba25b3d" category="paragraph">ONTAP Select 9.8 inclut plusieurs fonctionnalités nouvelles et modifiées.</block>
+  <block id="db16d4c1e494c28301de7f652ab007e8" category="list-text">Interface haut débit</block>
+  <block id="a15ac8498d522b4bdcfac7e79ef2e02f" category="list-text">La fonction d'interface haut débit améliore la connectivité réseau en offrant une option pour les réseaux 25G (25GbE) et 40G (40GbE). Pour obtenir les meilleures performances lors de l'utilisation de ces vitesses élevées, vous devez respecter les meilleures pratiques en matière de configurations de mappage des ports, comme décrit dans la documentation ONTAP Select.</block>
+  <block id="420170376a4067e246c6c8ab8f967e8c" category="list-text">Deux changements ont été apportés à ONTAP Select 9.8 concernant la prise en charge de VMware ESXi.</block>
+  <block id="9f4c0a8e21510ca1633a5494406686bc" category="list-text">ESXi 7.0 est pris en charge (GA Build 15843807 et versions ultérieures)</block>
+  <block id="75907379a71ad8ffa5e06073ace36e0d" category="list-text">ESXi 6.0 n'est plus pris en charge</block>
+  <block id="34e4360ab412f7aa9e3c95f9f9415b6f" category="list-text">L'hyperviseur KVM est utilisé à la place de VMware ESXi</block>
+  <block id="cb8338f0bc7e868c1dca9f89ef69705a" category="paragraph">Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que celui pris en charge par un cluster à deux nœuds dans un environnement ROBO. MetroCluster</block>
+  <block id="e5a37d3922c90b1192e2c159354c1e1d" category="list-text">Vous pouvez également supprimer une image KVM lorsque vous utilisez une version antérieure à ONTAP Select 9.10.1.</block>
 </blocks>

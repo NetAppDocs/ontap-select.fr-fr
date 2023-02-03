@@ -21,7 +21,15 @@ Le workflow de création de cluster diffère dans les cas suivants :
 * L'hôte ESXi n'est pas géré par vCenter (hôte autonome)
 * Plusieurs nœuds ou hôtes sont utilisés dans le cluster
 * Le cluster est déployé dans un environnement de production avec une licence achetée
-* L'hyperviseur KVM est utilisé au lieu de VMware ESXi (KVM n'est plus pris en charge lors de la création d'un cluster avec ONTAP Select 9.10.1 et versions ultérieures)
+* L'hyperviseur KVM est utilisé à la place de VMware ESXi
++
+[NOTE]
+====
+** Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
+** Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
+
+
+====
 
 
 
@@ -42,7 +50,7 @@ Gondolage::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step01 'https://10.21.191.150/api/security/credentials'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step01 'https://10.21.191.150/api/security/credentials'
 ----
 Entrée JSON (étape 01)::
 
@@ -85,7 +93,7 @@ Gondolage::
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step02 'https://10.21.191.150/api/hosts'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step02 'https://10.21.191.150/api/hosts'
 ----
 Entrée JSON (step02)::
 
@@ -131,7 +139,7 @@ Gondolage:: Le paramètre de requête node_count doit être défini sur 1 pour u
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step03 'https://10.21.191.150/api/clusters? node_count=1'
 ----
 Entrée JSON (étape03)::
 
@@ -170,7 +178,7 @@ Gondolage:: Vous devez fournir l'ID de cluster.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step04 'https://10.21.191.150/api/clusters/CLUSTERID'
 ----
 Entrée JSON (step04)::
 
@@ -211,7 +219,7 @@ Gondolage:: Vous devez fournir l'ID de cluster.
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/clusters/CLUSTERID/nodes?fields=id,name'
 ----
 Type de traitement:: Synchrone
 Sortie::
@@ -241,7 +249,7 @@ Gondolage:: Vous devez fournir l'ID de cluster et l'ID de nœud.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step06 'https://10.21.191.150/api/clusters/CLUSTERID/nodes/NODEID'
 ----
 Entrée JSON (étape 06):: Vous devez fournir l'ID d'hôte sur lequel le nœud ONTAP Select sera exécuté.
 
@@ -279,7 +287,7 @@ Gondolage:: Vous devez fournir l'ID de cluster et l'ID de nœud.
 
 [source, curl]
 ----
-curl -iX GET -u admin:admin123 -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
+curl -iX GET -u admin:<password> -k 'https://10.21.191.150/api/ clusters/CLUSTERID/nodes/NODEID/networks?fields=id,purpose'
 ----
 Type de traitement:: Synchrone
 Sortie::
@@ -312,7 +320,7 @@ Gondolage:: Vous devez fournir l'ID de cluster, l'ID de nœud et l'ID réseau.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step08 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID/networks/NETWORKID'
 ----
 Entrée JSON (étape 08):: Vous devez indiquer le nom du réseau.
 
@@ -345,7 +353,7 @@ Gondolage:: Vous devez fournir l'ID de cluster, l'ID de nœud et l'ID réseau.
 
 [source, curl]
 ----
-curl -iX PATCH -H 'Content-Type: application/json' -u admin:admin123 -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
+curl -iX PATCH -H 'Content-Type: application/json' -u admin:<password> -k -d @step09 'https://10.21.191.150/api/clusters/ CLUSTERID/nodes/NODEID'
 ----
 Entrée JSON (par étape 09):: La capacité du pool est de 2 To.
 
@@ -383,7 +391,7 @@ Gondolage:: Vous devez fournir l'ID de cluster.
 
 [source, curl]
 ----
-curl -iX POST -H 'Content-Type: application/json' -u admin:admin123 -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
+curl -iX POST -H 'Content-Type: application/json' -u admin:<password> -k -d @step10 'https://10.21.191.150/api/clusters/CLUSTERID/deploy'
 ----
 Entrée JSON (step10):: Vous devez fournir le mot de passe pour le compte d'administrateur ONTAP.
 

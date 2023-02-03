@@ -167,9 +167,13 @@ Lors de la création ou la suppression d'un cluster ONTAP Select à l'aide d'exe
 
 == Cluster à un seul nœud sur KVM
 
+[NOTE]
+====
+* Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
+* Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
 
-NOTE: Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors de la création de nouveaux clusters. L'exemple ci-dessous s'applique aux versions antérieures prenant en charge KVM.
 
+====
 [source, json]
 ----
 {

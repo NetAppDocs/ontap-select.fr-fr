@@ -16,9 +16,13 @@ summary: Trouvez les réponses aux questions les plus fréquentes sur ONTAP Sele
 [role="lead"]
 Vous trouverez des réponses aux questions fréquemment posées à propos de ONTAP Select.
 
+[NOTE]
+====
+* Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
+* Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
 
-NOTE: Depuis ONTAP Select la version 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM. Avec ONTAP Select 9.11.1 et les versions ultérieures, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de suppression et de mise hors ligne. Les questions concernant KVM ne s'appliquent qu'aux versions antérieures qui prennent en charge KVM.
 
+====
 
 
 == Généralités
