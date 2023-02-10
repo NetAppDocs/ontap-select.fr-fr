@@ -93,6 +93,7 @@ ONTAP Select ne prend pas en charge plusieurs fonctionnalités ONTAP. Dans la pl
 * Propriétés du port ONTAP la modification des propriétés des ports ONTAP, y compris la vitesse, le duplex et le contrôle de flux, n'est pas prise en charge.
 * Les processeurs de service
 * Disques NetApp Storage Encryption
+* Protection autonome contre les ransomwares (ARP)
 
 
 .Informations associées

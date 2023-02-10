@@ -81,7 +81,7 @@ Indiquez le mot de passe du compte administrateur lorsque vous y êtes invité.
 
 
 
-== Ajout d'hôtes de l'hyperviseur ESXi
+== Ajout d'hôtes d'hyperviseur ESXi
 
 Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Select sera exécuté. Dans le cadre de cette opération, l'utilitaire d'administration Deploy s'authentifie auprès du serveur vCenter gérant l'hôte ou directement vers l'hôte autonome ESXi.
 
@@ -106,7 +106,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** Enregistrez un hôte autonome non géré par vCenter :
 `host register -name <FQDN|IP> -hypervisor-type ESX -username ESX_USERNAME`
 ** Enregistrez un hôte géré par vCenter :
-`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN| IP>`
+`host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
 Exemple
 

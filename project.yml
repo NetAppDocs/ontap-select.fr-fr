@@ -13,7 +13,11 @@ sidebar:
   - title: Documentation ONTAP Select
     url: "/index.html"
   - title: Notes de version
-    url: "/reference_release_notes.html"
+    entries:
+    - title: Notes de version de ONTAP Select
+      url: "/reference_release_notes.html"
+    - title: Quoi de neuf
+      url: "/reference_new_ots.html"
   - title: Concepts
     entries:
     - title: Présentation du produit
@@ -294,6 +298,8 @@ sidebar:
       entries:
       - title: Mise à niveau d'ESXi vers la version 6.5 ou ultérieure
         url: "/task_cli_upgrade_esxi65.html"
+      - title: Modifier un serveur de gestion des hôtes
+        url: "/reference_host_modify_command.html"
     - title: Utilitaire de déploiement
       entries:
       - title: Mettre à niveau une instance de déploiement
