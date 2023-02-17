@@ -32,7 +32,6 @@ Les fonctionnalités suivantes sont incluses dans ONTAP Select et sous licence p
 * SnapVault
 * FlexClone
 * SnapRestore
-* NetApp Volume Encryption
 * La déduplication et la compression
 * Fonctionnalité de colocation ONTAP
 * ONTAP S3
