@@ -98,7 +98,7 @@ Lorsque chaque hôte inclut deux ports 10 Gbits, vous devez configurer le vSwitc
 
 * Configurer un vSwitch et attribuer les deux ports au vSwitch. Créez une équipe NIC à l'aide des deux ports.
 * Définissez la règle d'équilibrage de charge sur « route basée sur l'ID de port virtuel d'origine ».
-* Marquer les deux adaptateurs comme "actifs".
+* Marquer les deux adaptateurs comme "actifs" ou marquer un adaptateur comme "actif" et l'autre comme "veille".
 * Définissez le paramètre "Retour arrière" sur "Oui".image:CHK_04.jpg["Propriétés vSwitch)"]
 * Configurer le vSwitch pour utiliser des trames jumbo (9000 MTU).
 * Configurer un port group sur le vSwitch pour le trafic interne (ONTAP-interne) :
