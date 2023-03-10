@@ -155,3 +155,9 @@ La mise à niveau de licence d'un cluster peut prendre plusieurs minutes. Laisse
 
 .Une fois que vous avez terminé
 Les numéros de série de nœud de 20 chiffres initialement attribués à chaque nœud pour le déploiement d'évaluation sont remplacés par les numéros de série à neuf chiffres des licences de production utilisées pour la mise à niveau.
+
+
+
+== Gestion d'une licence de pool de capacité expirée
+
+En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.

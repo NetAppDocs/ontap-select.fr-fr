@@ -3639,4 +3639,6 @@
   <block id="5e9d95d213033fcb57aae50adca56cb0" category="list-text">64 threads SIO proc208 par proc</block>
   <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">Présentation des performances</block>
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">Performances ONTAP Select 9.6</block>
+  <block id="31ecb65d48d53f60c89a54adee2acf00" category="section-title">Gestion d'une licence de pool de capacité expirée</block>
+  <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.</block>
 </blocks>
