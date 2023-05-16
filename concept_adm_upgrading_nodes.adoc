@@ -27,17 +27,17 @@ Procédez comme suit pour mettre à niveau un nœud ONTAP Select existant.
 
 . Accédez à la page de téléchargements du site de support NetApp.
 +
-https://mysupport.netapp.com/site/downloads["Téléchargements de support NetApp"^]
+https://["Téléchargements de support NetApp"^]
 
 . Cliquez sur *mise à niveau du nœud ONTAP Select*.
 . Sélectionnez et téléchargez l'image de mise à niveau appropriée répondant à toutes les invites, le cas échéant.
 . Consultez les notes de version pour obtenir des informations supplémentaires et connaître les procédures nécessaires avant de mettre à niveau un nœud ONTAP Select. Vous pouvez accéder aux notes de version de votre version de ONTAP Select sur la page de la bibliothèque de produits.
 +
-https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62293["Bibliothèque de produits ONTAP Select"^]
+https://["Bibliothèque de produits ONTAP Select"^]
 
 . Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select.
 +
-https://docs.netapp.com/us-en/ontap/["Documentation sur ONTAP 9"^]
+https://["Documentation sur ONTAP 9"^]
 
 
 

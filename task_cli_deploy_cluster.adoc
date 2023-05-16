@@ -34,7 +34,7 @@ Si vous utilisez RAID logiciel, vous devez créer un pool de stockage pour les d
 
 === Versions ONTAP Select disponibles
 
-L'utilitaire d'administration Deploy contient une version unique de ONTAP Select. Si vous souhaitez déployer des clusters à l'aide d'une version antérieure de ONTAP Select, vous devez d'abord ajouter l'image ONTAP Select à votre instance de déploiement. Voir link:task_adm_deploy_image_add.html["Ajout d'une image ONTAP Select à déployer"] pour en savoir plus.
+L'utilitaire d'administration Deploy contient une version unique de ONTAP Select. Si vous souhaitez déployer des clusters à l'aide d'une version antérieure de ONTAP Select, vous devez d'abord ajouter l'image ONTAP Select à votre instance de déploiement. Voir link:task_cli_deploy_image_add.html["Ajout d'une image ONTAP Select à déployer"] pour en savoir plus.
 
 
 

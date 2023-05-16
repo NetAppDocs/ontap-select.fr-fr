@@ -46,7 +46,7 @@ L'hyperviseur KVM n'est plus pris en charge::
 * Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
 * Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
 +
-NetApp recommande fortement aux clients de planifier et d'exécuter une migration complète de données depuis ONTAP Select pour KVM vers toute autre plateforme ONTAP, y compris ONTAP Select pour ESXi. Pour plus d'informations, reportez-vous à la section https://mysupport.netapp.com/info/communications/ECMLP2877451.html["Avis de fin de disponibilité"^]
+NetApp recommande fortement aux clients de planifier et d'exécuter une migration complète de données depuis ONTAP Select pour KVM vers toute autre plateforme ONTAP, y compris ONTAP Select pour ESXi. Pour plus d'informations, reportez-vous à la section https://["Avis de fin de disponibilité"^]
 
 
 

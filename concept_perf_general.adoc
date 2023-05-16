@@ -25,4 +25,4 @@ Les performances d'un cluster ONTAP Select peuvent considérablement varier en f
 * *Version de l'hyperviseur et niveau de patch*.
 
 
-Les détails des tests de performances pour ONTAP Select 9.4, 9.5 et 9.6 sont disponibles dans la section _ONTAP Select Performance_ de https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
+Les détails des tests de performances pour ONTAP Select 9.4, 9.5 et 9.6 sont disponibles dans la section _ONTAP Select Performance_ de https://["TR-4517"^].

@@ -66,7 +66,7 @@ L'hôte de l'hyperviseur physique dans lequel vous déployez ONTAP Select doit r
 
 NOTE: À partir de ONTAP Select 9.9.1, seuls les modèles de CPU basés sur Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge.
 
-Reportez-vous à la https://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp,window=_blank"] pour en savoir plus.
+Reportez-vous à la https://["Matrice d'interopérabilité NetApp,window=_blank"] pour en savoir plus.
 
 
 

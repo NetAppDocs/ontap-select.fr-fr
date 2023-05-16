@@ -57,7 +57,7 @@ Cross Volume Background Deduplication:  true
 NOTE: Pour les mises à niveau ONTAP Select à partir de la version 9.6 et ultérieures, vous devez installer ONTAP Select sur un stockage SSD DAS avec une licence Premium. De plus, vous devez cocher la case *Activer l'efficacité du stockage* lors de l'installation initiale du cluster avec ONTAP Deploy. Pour activer la mise à niveau post-ONTAP de type AFF lorsque les conditions précédentes ne sont pas respectées, il est nécessaire de créer manuellement un argument de démarrage et de redémarrer un nœud. Contactez le support technique pour plus de détails.
 
 .Configurations d'efficacité du stockage ONTAP Select
-Le tableau suivant récapitule les différentes options d'efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction du type de support et des licences logicielles. Les informations du tableau suivant s'appliquent aux versions ONTAP Select 9.6 et ultérieures. Pour les versions antérieures, reportez-vous à la section _prise en charge de l'efficacité du stockage ONTAP Select_ du https://www.netapp.com/media/10662-tr4517.pdf["TR-4517"^].
+Le tableau suivant récapitule les différentes options d'efficacité du stockage disponibles, activées par défaut ou non par défaut mais recommandées, en fonction du type de support et des licences logicielles. Les informations du tableau suivant s'appliquent aux versions ONTAP Select 9.6 et ultérieures. Pour les versions antérieures, reportez-vous à la section _prise en charge de l'efficacité du stockage ONTAP Select_ du https://["TR-4517"^].
 
 [cols="4"]
 |===
