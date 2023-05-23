@@ -20,7 +20,7 @@ Representational State Transfer (REST) est un style qui permet de créer des app
 
 == Contraintes classiques et architectures
 
-REST a été formellement articulé par Roy Fielding dans son doctorat https://["thèse"] À UC Irvine en 2000. Il définit un style architectural à travers un ensemble de contraintes, qui ont collectivement amélioré les applications basées sur le Web et les protocoles sous-jacents. Ces contraintes créent une application de services web RESTful basée sur une architecture client/serveur utilisant un protocole de communication sans état.
+REST a été formellement articulé par Roy Fielding dans son doctorat https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["thèse"] À UC Irvine en 2000. Il définit un style architectural à travers un ensemble de contraintes, qui ont collectivement amélioré les applications basées sur le Web et les protocoles sous-jacents. Ces contraintes créent une application de services web RESTful basée sur une architecture client/serveur utilisant un protocole de communication sans état.
 
 
 
