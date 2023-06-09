@@ -23,6 +23,9 @@ Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en 
 Assurez-vous que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Vous devriez voir les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire de déploiement.
 
 
+NOTE: Si une instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, envisagez de mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mise à niveau des nœuds ONTAP Select"^] pour plus d'informations.
+
+
 
 == Téléchargement du package de mise à niveau
 
@@ -54,15 +57,13 @@ Le fichier de mise à niveau doit être disponible sur votre poste de travail lo
 Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle de déploiement. D'autres options peuvent être plus adaptées à votre environnement.
 
 .Étapes
-. Dans un shell de commande sur votre poste de travail local, utilisez l'utilitaire sftp pour télécharger le fichier image sur la machine virtuelle de déploiement.
+. Dans un shell de commande de votre poste de travail local, utilisez l'utilitaire scp pour télécharger le fichier image sur la machine virtuelle de déploiement.
 +
 Exemple
 
 +
 ....
-sftp admin@10.234.81.101 (provide password when prompted)
-put ONTAPdeploy2.12_upgrade.tar.gz
-exit
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
 
 
@@ -89,8 +90,7 @@ Exemple
 
 +
 ....
-deploy upgrade -package-path /home/admin/
-ONTAPdeploy2.12_upgrade.tar.gz
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 ....
 
 
