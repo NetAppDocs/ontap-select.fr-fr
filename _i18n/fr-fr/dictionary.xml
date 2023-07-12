@@ -2412,7 +2412,6 @@
   <block id="87f55f3b9d86ff28fa332ac74ae68458" category="paragraph"><block ref="87f55f3b9d86ff28fa332ac74ae68458" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9f8405ace72665fee032686e586d5366" category="summary">Une fois le cluster ONTAP Select déployé, vous pouvez mettre à niveau le type d'instance d'hyperviseur des nœuds à l'aide de l'utilitaire d'administration Deploy.</block>
   <block id="a81401e9911e6ba18e35f42e304aeafc" category="doc">Redimensionnement des nœuds du cluster ONTAP Select</block>
-  <block id="da8c60eda9de027a78518654141ef28e" category="admonition">Vous ne pouvez effectuer l'opération de redimensionnement des nœuds de cluster que lorsque vous utilisez le modèle de licence des niveaux de capacité. Impossible de redimensionner les nœuds ONTAP Select dotés d'une licence de pools de capacité.</block>
   <block id="c491351d31e9a04b74d8cf6b5f75e570" category="paragraph">Le cluster doit être défini sur l'état en ligne.</block>
   <block id="090def24fea0489fb8d3e01bab4bd447" category="paragraph">Cette tâche explique comment utiliser l'interface utilisateur Web de déploiement. Vous pouvez également utiliser l'interface de ligne de commande déployer pour redimensionner l'instance. Quelle que soit l'interface que vous utilisez, le temps nécessaire à l'opération de redimensionnement peut varier considérablement en fonction de plusieurs facteurs et peut prendre un temps plus long à réaliser. Vous ne pouvez redimensionner un nœud que si sa taille est supérieure.</block>
   <block id="0a34214ca44126aa0cdfec7af4a58c66" category="list-text">Cliquez sur l'onglet *Cluster* en haut de la page et sélectionnez le cluster souhaité dans la liste.</block>
@@ -3646,4 +3645,7 @@ Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppr
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Copies Snapshot inviolables</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">Migration de SVM</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
+  <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">Vous pouvez effectuer l'opération de redimensionnement des nœuds de cluster lorsque vous utilisez le modèle de licence des niveaux de capacité et le modèle de licence des pools de capacité.</block>
+  <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">Échec de l'actualisation du cluster de déploiement OTS avec erreur</block>
+  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">La restriction des rôles et des autorisations pour le compte d'administrateur ONTAP peut limiter la capacité de ONTAP Select Deploy à gérer le cluster. Pour plus d'informations, consultez l'article de la base de connaissances <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>.</block>
 </blocks>

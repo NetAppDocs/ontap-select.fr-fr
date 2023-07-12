@@ -17,7 +17,7 @@ summary: 'Une fois le cluster ONTAP Select déployé, vous pouvez mettre à nive
 Une fois le cluster ONTAP Select déployé, vous pouvez mettre à niveau le type d'instance d'hyperviseur des nœuds à l'aide de l'utilitaire d'administration Deploy.
 
 
-NOTE: Vous ne pouvez effectuer l'opération de redimensionnement des nœuds de cluster que lorsque vous utilisez le modèle de licence des niveaux de capacité. Impossible de redimensionner les nœuds ONTAP Select dotés d'une licence de pools de capacité.
+NOTE: Vous pouvez effectuer l'opération de redimensionnement des nœuds de cluster lorsque vous utilisez le modèle de licence des niveaux de capacité et le modèle de licence des pools de capacité.
 
 .Avant de commencer
 Le cluster doit être défini sur l'état en ligne.
