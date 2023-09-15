@@ -17,6 +17,9 @@ summary: Vous devez tenir compte de plusieurs problèmes de planification liés 
 Vous devez tenir compte de plusieurs problèmes de planification liés au stockage hôte ONTAP Select.
 
 
+NOTE: Les informations relatives à la prise en charge du stockage externe sont décrites dans le link:reference_plan_ots_vnas.html["Exigences ONTAP Select vNAS"].
+
+
 
 == Configuration matérielle du contrôleur RAID
 
@@ -60,12 +63,7 @@ Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur VMware ESXi, vo
 
 L'environnement pour un déploiement RAID logiciel sur VMware ESXi doit répondre aux exigences principales suivantes :
 
-* Version de VMware ESXi :
-+
-** ESXi 6.5 U2 (build 8294253) ou version ultérieure
-** ESXi 6.7 GA (version 8169922) ou ultérieure
-
-
+* VMware ESXi 7.0 GA (build 15843807) ou version ultérieure
 * ONTAP Select 9.5 ou version ultérieure
 * ONTAP Select Deploy 2.10 ou version ultérieure
 * Les nouveaux clusters ONTAP Select uniquement

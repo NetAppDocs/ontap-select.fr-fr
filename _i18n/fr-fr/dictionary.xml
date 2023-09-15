@@ -437,7 +437,6 @@
   <block id="b87008505cc6fe630b46cc1e948e36f1" category="list-text">Mise en route de la page de lancement</block>
   <block id="8a8160f2e850747bb7fabd6819906b08" category="list-text">La page initiale *mise en route avec ONTAP Select Deploy* vous guide tout au long du processus en plusieurs étapes de création d'un cluster. Il y a cinq étapes principales, notamment :</block>
   <block id="fb98e8390277794afc419e842f4bccd9" category="list-text">Ajoutez des licences</block>
-  <block id="d60f56bb9d55a941e09cc5c959de9a36" category="list-text">Ajouter hôte à l'inventaire</block>
   <block id="f1783cedf199ea90c1cf0ff538262716" category="list-text">Création d'un cluster</block>
   <block id="7b8833fb04a6b84fadcfe679b52ce68b" category="list-text">Vérification préalable du réseau</block>
   <block id="caed535f5a1e318fff54ea6d8139100c" category="list-text">Déployer le cluster</block>
@@ -447,9 +446,6 @@
   <block id="4680945aec88d9bcced06d39ec485a67" category="list-text">Après le déploiement d'un cluster</block>
   <block id="a1b2fc65ee3382a95ecb29d66110e2ad" category="list-text">Il est conseillé de sauvegarder les données de configuration de ONTAP Select Deploy.</block>
   <block id="1457153d67772d3f9c4bf60a210172dc" category="section-title">Création d'un cluster à un seul nœud</block>
-  <block id="3a4abd9eeeda413a4bf9956a7ec34228" category="paragraph">Vous pouvez utiliser l'interface utilisateur Web de déploiement de ONTAP Select pour déployer un cluster ONTAP Select à un seul nœud.</block>
-  <block id="5f3026f83f6c32eec05d90d578a5e7ea" category="paragraph">Voir <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> pour préparer le déploiement du cluster. L'administration Deploy doit être installée et configurée au départ (mot de passe, AutoSupport, vCenter).</block>
-  <block id="25ba26f357a31d39960ce1746018e712" category="paragraph">Un cluster ONTAP Select avec un nœud est créé pour le déploiement de production.</block>
   <block id="55e9b658bcd6b4ca65de5ed9557f68db" category="list-text">Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte administrateur (admin).</block>
   <block id="f419e9f320490f02ec41e0cead19dc2a" category="list-text">Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, confirmez que vous avez rempli les conditions préalables à la configuration et cliquez sur *OK*.</block>
   <block id="ba7cc5d6bb74cdd0aaa5fe5a9bc4b4d3" category="list-text">Si la page de lancement du cluster *pour commencer* n'est pas affichée, cliquez sur <block ref="597586a3d1dcebe6ad038a4dde446a9e" category="inline-image-macro-rx" type="image"></block> En haut de la page, cliquez sur *pour commencer*.</block>
@@ -474,8 +470,6 @@
   <block id="18c27fdda3b31de582a5c418705a0eab" category="paragraph">La création du cluster peut prendre jusqu'à 30 minutes.</block>
   <block id="aa28e7538205e834e26c77f5630f8893" category="list-text">Contrôlez le processus de création en plusieurs étapes du cluster pour confirmer sa création.</block>
   <block id="037cb8cf634438a48c4a376dd2eaecea" category="paragraph">La page est automatiquement actualisée à intervalles réguliers.</block>
-  <block id="e1fdfbd988f463b21214e88021ddf580" category="admonition">Si l'opération de création de cluster est initiée mais que le processus n'a pas réussi, le mot de passe d'administration ONTAP que vous avez défini peut ne pas être enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe _changeme123_ du compte admin.</block>
-  <block id="d409594d71c1119a8e70a3f177e882c0" category="paragraph">Vous devez vérifier que la fonctionnalité ONTAP Select AutoSupport est configurée et sauvegarder les données de configuration de ONTAP Select Deploy.</block>
   <block id="ce78ffc97df7b01d036f243f07839070" category="summary">ONTAP Deploy peut être utilisé pour ajouter et obtenir une licence de stockage supplémentaire pour chaque nœud d'un cluster ONTAP Select.</block>
   <block id="9d9a4fa3f8bc822652ce73f5ccc63a4e" category="paragraph">La fonctionnalité d'ajout de stockage de ONTAP Deploy est la seule façon d'augmenter la gestion du stockage, et la modification directe de la machine virtuelle ONTAP Select n'est pas prise en charge. La figure suivante montre l'icône "+" qui lance l'assistant d'ajout de stockage.</block>
   <block id="c3a3966f7642611a1f29ac32ece5424a" category="inline-image-macro">Détails sur le cluster et les nœuds</block>
@@ -3110,9 +3104,6 @@
   <block id="2e47d1812c96cee9e86c118c72c7c736" category="paragraph">Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur VMware ESXi, vous pouvez utiliser la capacité RAID logicielle fournie par ONTAP Select au lieu d'un contrôleur RAID matériel local. Vous devez connaître plusieurs conditions et restrictions avant de déployer un cluster à l'aide du logiciel RAID.</block>
   <block id="a1a264e616e24563d4b8f8b5795ea403" category="section-title">Exigences générales</block>
   <block id="724e52bc94bfb8a8a2ac7b6bc981655c" category="paragraph">L'environnement pour un déploiement RAID logiciel sur VMware ESXi doit répondre aux exigences principales suivantes :</block>
-  <block id="935b367303b47c19b9b62a47057f5d6c" category="list-text">Version de VMware ESXi :</block>
-  <block id="0ac68f79bc5b55360d35600434d8da5f" category="list-text">ESXi 6.5 U2 (build 8294253) ou version ultérieure</block>
-  <block id="69322b2256be20f40d4399494e6e5d1d" category="list-text">ESXi 6.7 GA (version 8169922) ou ultérieure</block>
   <block id="7d92dddf3cdeb831e5c777dcd6e3edb1" category="list-text">ONTAP Select 9.5 ou version ultérieure</block>
   <block id="cfc85f4f7df067874a4ebae923cfada5" category="list-text">ONTAP Select Deploy 2.10 ou version ultérieure</block>
   <block id="2e5d3e181c7fbda932e522084a6325f4" category="list-text">Les nouveaux clusters ONTAP Select uniquement</block>
@@ -3649,4 +3640,27 @@ Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppr
   <block id="95e5f2861efdf3db12f1838f4cf18a88" category="doc">Configuration du vSwitch VMware vSphere</block>
   <block id="ced1d13b7a0a78acdbaf6a002e0e0063" category="paragraph">Les fournisseurs de serveurs savent que les clients ont des besoins différents et qu'ils ont un choix stratégique. Par conséquent, lors de l'achat d'un serveur physique, de nombreuses options sont disponibles pour les décisions de connectivité réseau. La plupart des systèmes de base sont fournis avec différentes options de carte réseau, qui proposent des options à un ou plusieurs ports et présentent différentes permutations de vitesse et de débit. À partir de ONTAP Select 9.8, les adaptateurs réseau de 25 Gbit/s et 40 Gbit/s sont pris en charge par VMware ESX.</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">Configuration VMware vSphere vSwitch</block>
+  <block id="8562cdbdbba76b21c630f16efd9cf0cd" category="list-text">Ajouter des hôtes à l'inventaire</block>
+  <block id="747777855f9e01e88df9a2f37da41753" category="section-title">Création d'un cluster à un ou plusieurs nœuds</block>
+  <block id="dd2d1f8e815a8070f320c0a14ed24f71" category="paragraph">Vous pouvez utiliser l'interface utilisateur Web de ONTAP Select Deploy pour déployer un cluster ONTAP Select à un ou plusieurs nœuds.</block>
+  <block id="5287736167b026a88e404d8ebf5a4615" category="paragraph">Voir <block ref="6dd97e1bd4c3fafba8bd8a1033c5617c" category="inline-link-macro-rx"></block> pour préparer le déploiement du cluster. L'administration de déploiement doit être installée et configurée initialement (mot de passe, AutoSupport et vCenter).</block>
+  <block id="3c67dfd58666f1caf15b0490aaa8b0fc" category="paragraph">Un cluster ONTAP Select avec un ou plusieurs nœuds est créé pour un déploiement de production.</block>
+  <block id="688b22352a3e9f8c2d13a096f7e721fb" category="paragraph">La procédure à suivre varie selon que vous souhaitez créer un cluster à un ou plusieurs nœuds.</block>
+  <block id="d4f87fedecd0cb118e567859f3b4f8b0" category="admonition">Si l'opération de création du cluster est lancée, mais que son exécution échoue, le mot de passe d'administration ONTAP que vous définissez risque de ne pas être enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe _changeme123_ du compte admin.</block>
+  <block id="c29c0fa60d66b44a13904899d8712c68" category="open-title">Cluster multinœud</block>
+  <block id="1c9615c8466b4b5438d388b4200a58b4" category="list-text">Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez que vous avez rempli les conditions préalables à la configuration et cliquez sur *OK*.</block>
+  <block id="736cb4ef7019568859d8e044e044c906" category="list-text">Sur la page *pour commencer*, cliquez sur *Télécharger* et sélectionnez une licence sur votre poste de travail local et cliquez sur *Ouvrir* pour télécharger la licence. Répétez l'opération pour ajouter une deuxième licence.</block>
+  <block id="663e3ab8cb2a9c950e625cc8e58cc007" category="list-text">Cliquez sur *Refresh* et confirmez que les licences ont été ajoutées.</block>
+  <block id="390100b77c52acdfcd83e4a92be2c51f" category="list-text">Cliquez sur *Suivant* pour ajouter deux hôtes d'hyperviseur, puis cliquez sur *Ajouter*.</block>
+  <block id="a25302f443f60fa8f7aef0d5c122b11f" category="paragraph">Vous pouvez ajouter les hôtes ESXi directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.</block>
+  <block id="6c5e52865ab96c25cdda81fff9412d0f" category="list-text">Dans la section *Cluster Details*, sélectionnez *2 node cluster* pour *Cluster Size*, fournissez toutes les informations requises décrivant les clusters et cliquez sur *Done*.</block>
+  <block id="87f7f104547967da3e1d18965e33ecbe" category="list-text">Sous *Node Setup*, indiquez les adresses IP de gestion des nœuds et sélectionnez les licences pour chaque nœud ; vous pouvez télécharger une nouvelle licence si nécessaire. Vous pouvez également modifier les noms des nœuds si nécessaire.</block>
+  <block id="c2ec94d47c341f2cb886dfa96e0ac4bb" category="paragraph">Il existe trois configurations de nœuds qui définissent la taille de la machine virtuelle et l'ensemble de fonctions disponibles. Ces types d'instances sont pris en charge par les offres standard, Premium et Premium XL de la licence d'achat, respectivement. La licence que vous sélectionnez pour les nœuds doit correspondre ou dépasser le type d'instance.</block>
+  <block id="5bcde1d421c75145a52950096b7fb58f" category="paragraph">Sélectionnez les hôtes d'hyperviseur ainsi que les réseaux de gestion, de données et internes.</block>
+  <block id="48c8bfc451162cecf207d3586032c355" category="list-text">Cliquez sur *Suivant* et exécutez le contrôle préalable du réseau en cliquant sur *Exécuter*. Ceci permet de vérifier que le réseau interne sélectionné pour le trafic du cluster ONTAP fonctionne correctement.</block>
+  <block id="5ca1e08722935cc52d1e20fcea7b5428" category="paragraph">La création du cluster peut prendre jusqu'à 45 minutes.</block>
+  <block id="8e8ec233d7d8b1670dc404b61b73a0b1" category="list-text">Contrôlez le processus de création de cluster en plusieurs étapes pour vérifier que le cluster a bien été créé.</block>
+  <block id="d92261c550ee327019eb3a3ca7a78e30" category="paragraph">Vérifiez que la fonction ONTAP Select AutoSupport est configurée, puis sauvegardez les données de configuration de ONTAP Select Deploy.</block>
+  <block id="7284a07b58626766b72ec946cfd845c9" category="admonition">Les informations relatives à la prise en charge du stockage externe sont décrites dans le <block ref="e339e9377e7bf65a8e1fae3dee4b8697" category="inline-link-macro-rx"></block>.</block>
+  <block id="8542ad0a9f97f96320929367de2b74cc" category="list-text">VMware ESXi 7.0 GA (build 15843807) ou version ultérieure</block>
 </blocks>
