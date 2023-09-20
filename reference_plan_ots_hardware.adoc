@@ -37,13 +37,16 @@ Pour déployer un cluster ONTAP Select, votre entreprise doit disposer d'une lic
 
 ONTAP Select peut être déployé sur les hyperviseurs suivants :
 
-* VMware ESXi 6.5 U2 (build 8294253 ou ultérieure)
-* VMware ESXi 6.7 GA (version 8169922 ou ultérieure), dont 6.7 U1, U2 et U3
 * VMware ESXi 7.0 GA (version 15843807 ou ultérieure), dont 7.0 U1, U2 et U3C
+* VMware ESXi 8.0 GA (build 20513097)
+* VMware ESXi 8.0 U1 (build 21495797)
 
 
 
 NOTE: NetApp prend en charge ONTAP Select sur les versions identifiées de ESXi tant que VMware continue également à prendre en charge les mêmes versions.
+
+
+NOTE: ESXi 6.5 GA et ESXi 6.7 GA atteignent l'état de fin de disponibilité. Si vous disposez de clusters ONTAP Select avec ces versions, vous devez effectuer une mise à niveau vers les versions prises en charge conformément à la https://mysupport.netapp.com/matrix["Matrice d'interopérabilité (IMT)"^].
 
 
 

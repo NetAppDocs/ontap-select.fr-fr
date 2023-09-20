@@ -18,7 +18,7 @@ Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utilis
 
 
 
-== Téléchargement de l'image de la machine virtuelle
+== Téléchargez l'image de la machine virtuelle
 
 Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.
 
@@ -37,7 +37,51 @@ L'utilitaire d'administration ONTAP Select Deploy est proposé en tant que machi
 
 
 
-== Déploiement de la machine virtuelle
+== Vérifiez la signature OVA de déploiement ONTAP Select
+
+Vous devez vérifier la signature OVA (ONTAP Select Open Virtualization Appliance) avant d'installer le package d'installation.
+
+.Avant de commencer
+Vérifiez que votre système répond aux exigences suivantes :
+
+* OpenSSL versions 1.0.2 à 3.0 pour la vérification de base
+* Accès Internet public pour la vérification du protocole OCSP (Online Certificate Status Protocol)
+
+
+.Étapes
+. Vous pouvez obtenir les fichiers suivants sur la page de téléchargement du produit sur le site de support NetApp :
++
+[cols="2*"]
+|===
+| Fichier | Description 
+
+
+| `ONTAP-Select-Deploy-Production.pub` | Clé publique utilisée pour vérifier la signature. 
+
+
+| `csc-prod-chain-ONTAP-Select-Deploy.pem` | La chaîne de confiance de l'autorité publique de certification (AC). 
+
+
+| `csc-prod-ONTAP-Select-Deploy.pem` | Certificat utilisé pour générer la clé. 
+
+
+| `ONTAPdeploy.ova` | Exécutable d'installation du produit pour ONTAP Select 9.13.1. 
+
+
+| `ONTAPdeploy.ova.sig` | L'algorithme SHA-256 est écrasé, puis signé par l'agent RSA (Remote support Agent) à l'aide du `csc-prod` clé et signature pour l'installateur. 
+|===
+. Vérifiez que le `ONTAPdeploy.ova.sig` le fichier utilise les certificats et les commandes de validation associés.
+. Vérifiez la signature à l'aide de la commande suivante :
++
+[listing]
+----
+openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
+----
+
+
+
+
+== Déployer la machine virtuelle
 
 Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de la machine virtuelle OVF. Dans le cadre du processus d'installation, vous devez configurer l'interface réseau pour utiliser DHCP ou une configuration IP statique.
 
@@ -94,7 +138,7 @@ Utiliser DHCP pour définir les informations de mise en réseau ? [n] :
 
 
 
-== Connexion à l'interface Web de déploiement
+== Connectez-vous à l'interface Web de déploiement
 
 Vous devez vous connecter à l'interface utilisateur Web pour confirmer que l'utilitaire de déploiement est disponible et effectuer la configuration initiale.
 

@@ -25,6 +25,7 @@ NOTE: Les fonctionnalités ONTAP qui dépendent matériel ne sont généralement
 
 Les fonctionnalités suivantes sont incluses dans ONTAP Select et sous licence par défaut :
 
+* NVMe over TCP
 * NFS
 * CIFS
 * ISCSI

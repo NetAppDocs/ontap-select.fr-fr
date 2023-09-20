@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_cli_upgrade_esxi65.html 
 keywords: administer, administering, cli, esxi, upgrade, esxi 6.5 
-summary: 'Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi à partir d"une version prise en charge antérieure vers ESXi 6.5 ou 6.7. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée.' 
+summary: Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi depuis une version antérieure prise en charge vers ESXi 7.0 ou version ultérieure. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée. 
 ---
-= Mise à niveau de VMware ESXi vers la version 6.5 et ultérieure
+= Mise à niveau de VMware ESXi vers la version 7.0 ou ultérieure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à 
 
 
 [role="lead"]
-Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi à partir d'une version prise en charge antérieure vers ESXi 6.5 ou 6.7. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée.
+Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi depuis une version antérieure prise en charge vers ESXi 7.0 ou version ultérieure. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée.
 
 
 
@@ -44,7 +44,7 @@ Plusieurs procédures de mise à niveau sont disponibles. Vous devez sélectionn
 
 TIP: Vous devez sélectionner une procédure de mise à niveau qui utilise l'utilitaire d'administration de déploiement.
 
-L'exécution d'une mise à niveau ESXi à l'aide de l'utilitaire d'administration Deploy est l'option la plus générale et la plus résiliente. Toutefois, il peut y avoir des cas où le déploiement n'est pas disponible ou ne peut pas être utilisé. Par exemple, la mise à niveau vers ESXi 6.5 n'est pas prise en charge avec les versions antérieures de ONTAP Select et l'utilitaire d'administration de déploiement.
+L'exécution d'une mise à niveau ESXi à l'aide de l'utilitaire d'administration Deploy est l'option la plus générale et la plus résiliente. Toutefois, il peut y avoir des cas où le déploiement n'est pas disponible ou ne peut pas être utilisé. Par exemple, la mise à niveau vers ESXi 7.0 n'est pas prise en charge avec les versions antérieures de ONTAP Select et l'utilitaire d'administration de déploiement.
 
 Si vous utilisez ces versions précédentes et tentez une mise à niveau, la machine virtuelle ONTAP Select peut rester dans un état où elle ne peut pas être démarrée. Dans ce cas, vous devez sélectionner une procédure de mise à niveau qui n'utilise pas le déploiement. Reportez-vous à *1172198* pour plus d'informations.
 
@@ -76,7 +76,7 @@ Vous devez utiliser la version de déploiement 2.5 ou ultérieure.
 Exemple
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Mettez à niveau l'hôte de l'hyperviseur où ONTAP Select s'exécute vers ESXi 6.5 ou 6.7 en suivant la procédure fournie par VMware.
+. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section _avant de commencer_.
 
@@ -120,7 +120,7 @@ Vous devez effectuer cette procédure de mise à niveau pour chaque nœud du clu
 Exemple
 `node stop --cluster-name <CLUSTERNAME> --node-name <NODENAME>`
 
-. Mettez à niveau l'hôte de l'hyperviseur où ONTAP Select s'exécute vers ESXi 6.5 ou 6.7 en suivant la procédure fournie par VMware.
+. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section préparation de la mise à niveau de VMware ESXi.
 
@@ -163,7 +163,7 @@ Vous pouvez mettre à niveau l'hyperviseur VMware ESXi qui héberge un cluster �
 .Étapes
 . Connectez-vous à l'interface de ligne de commande ONTAP et arrêtez le nœud.
 . Avec VMware vSphere, vérifiez que la machine virtuelle ONTAP Select est hors tension.
-. Mettez à niveau l'hôte de l'hyperviseur où ONTAP Select s'exécute vers ESXi 6.5 ou 6.7 en suivant la procédure fournie par VMware.
+. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section préparation de la mise à niveau de VMware ESXi.
 
@@ -201,7 +201,7 @@ Vous devez effectuer cette procédure de mise à niveau pour chaque nœud du clu
 .Étapes
 . Connectez-vous à l'interface de ligne de commande ONTAP et arrêtez le nœud.
 . Avec VMware vSphere, vérifiez que la machine virtuelle ONTAP Select est hors tension.
-. Mettez à niveau l'hôte de l'hyperviseur où ONTAP Select s'exécute vers ESXi 6.5 ou 6.7 en suivant la procédure fournie par VMware.
+. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section _avant de commencer_.
 

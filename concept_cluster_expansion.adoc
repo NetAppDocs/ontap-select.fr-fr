@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: concept_cluster_expansion.html 
+keywords: cluster, expand, expansion, single, two, node deployment workflow, workflow, deployment steps 
+summary: Étendez un cluster à un seul nœud en configurant les deux nœuds en tant que paire haute disponibilité. 
+---
+= Développez le cluster
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+À partir de ONTAP 9.13.1, vous pouvez développer un cluster existant à un seul nœud vers un cluster à deux nœuds en configurant les deux nœuds en tant que paire haute disponibilité. L'extension à un cluster HA à deux nœuds offre une haute disponibilité, ce qui vous protège de l'impact d'une interruption de nœud sur la capacité d'un cluster à transmettre des données.
+
+La procédure est automatisée et initiée à partir de ONTAP Select Deploy à l'aide de l'interface de ligne de commande ou de l'interface web. Il s'agit d'une procédure perturbatrice.
+
+.Conditions préalables à l'extension du cluster
+Avant de lancer la procédure d'extension du cluster, vérifiez que vous répondez aux conditions préalables suivantes :
+
+* Le nœud existant est sous tension.
+* Vous avez réussi à actualiser le cluster sur le nœud existant.
+* Les hôtes ESX des nœuds existants et nouveaux ont la même configuration.
+* Vous avez exécuté avec succès le vérificateur de connectivité réseau entre les hôtes ESX pour les nœuds existants et nouveaux.
+* Pour pouvoir utiliser la procédure d'extension de cluster de ONTAP Select Deploy, vous devez disposer d'une licence d'évaluation (90 jours) et d'une licence de production (niveau de capacité ou pool de capacité). Vérifiez que vous répondez aux exigences de licence suivantes :
++
+--
+** Vous disposez de la licence de niveau de capacité ou de pool de capacité nécessaire pour le nouveau nœud.
++
+
+NOTE: Pour une licence de pool de capacité, vous pouvez utiliser la capacité inutilisée dans un pool existant. Si nécessaire, vous pouvez augmenter la capacité en mettant à niveau la licence.
+
+** Si les deux nœuds disposent d'une licence de pool de capacité, ils appartiennent au même pool de capacité.
+** Vous avez appliqué le même type de licence aux deux nœuds.
+
+
+--
++
+Les exigences en licence pour chaque nœud (existant et nouveau) dans un cluster à deux nœuds sont deux fois plus nombreuses que pour un cluster à un seul nœud :
+
++
+--
+** Pour un cluster à un seul nœud, la licence complète est disponible pour les agrégats de données. Par exemple, un nœud unique avec une licence de 1 To peut héberger 1 To d'agrégats de données.
+** Dans le cas d'un cluster à deux nœuds, la moitié de la capacité de licence est utilisée pour les agrégats de données sur chaque nœud, tandis que l'autre moitié est utilisée par les disques en miroir des agrégats de données pour le nœud partenaire correspondant. Par exemple, deux nœuds avec un hôte de licence de 2 To hébergeant chacun des agrégats de données, offrant chacun 2 To de capacité totale disponible combinée pour les agrégats de données, et 2 To pour héberger les disques miroir des agrégats.
+
+
+--
++
+Pour plus d'informations sur les licences, reportez-vous au link:concept_lic_evaluation.html["Licence"] section.
+
+* Les datastores associés aux nœuds répondent aux critères suivants :
++
+** Les datastores du nœud existant doivent être du même type, par exemple, VMware Virtual machine File System (VMFS)-5, VMFS-6 ou NFS.
+** Le datastore rattaché au nouveau nœud doit être du même type que le datastore par défaut du nœud existant.
+** L'espace libre des datastores du nœud existant doit être égal ou supérieur à l'espace utilisé sur le nœud.
+** L'espace libre sur le datastore connecté au nouveau nœud doit être le double de l'espace total occupé sur le nœud existant.
+
+
+* Les deux nœuds ONTAP Select sont du même type d'instance.
+
+
+.Configuration matérielle et logicielle requise
+Les nœuds nouveaux et existants doivent répondre à plusieurs exigences matérielles et logicielles :
+
+* Le cluster existant à un seul nœud exécute ONTAP 9.13.1 ou une version ultérieure.
+* Les hôtes ESX des nœuds existants et nouveaux répondent aux critères suivants :
++
+** Ils prennent en charge vCenter Server 7.0 Update 3 ou version ultérieure. NetApp recommande également vCenter Server 7.0 ou version ultérieure.
+** Ils disposent d'un réseau interne pour la connexion intercluster.
+
+
+* Le nœud existant et le nouveau nœud sont des types RAID matériels.
+* Pour un type d'instance de petite taille, le nœud dispose d'un minimum de 16 Go de RAM et de quatre processeurs. Pour un type d'instance de grande taille, le nœud dispose d'un maximum de 128 Go de RAM et de 16 processeurs.
+
+
+.Limites de l'extension du cluster
+Pour toute extension de cluster ONTAP Select, notez les limitations suivantes :
+
+* La procédure ne prend en charge que l'extension d'un cluster à un seul nœud à un cluster à deux nœuds.
+* L'extension est limitée à la capacité totale des datastores de 64 To ; la capacité de stockage de données est de 32 To et l'espace supplémentaire de 32 To restant est destiné à la mise en miroir des données.
+* L'extension de cluster n'est prise en charge que pour les types de nœuds et de clusters RAID matériels. L'extension à des types RAID logiciels et matériels mixtes n'est pas prise en charge.
+
+
+La figure ci-dessous illustre la configuration à un seul nœud avant l'extension, ainsi que la configuration à deux paires HA à la suite de l'extension.
+image:cluster_expansion_two_node.PNG["diagramme d'extension de cluster à un ou deux nœuds"]
+
+.Démarrez la procédure d'extension du cluster
+Pour lancer ONTAP Select Deploy afin d'exécuter la procédure d'extension du cluster, exécutez les commandes suivantes à partir de l'interface de ligne de commande :
+
+. `node add -cluster-name <cluster_name> -nodes <2nd_node_name>`
+. `node modify -cluster-name <cluster_name> -name <1st_node_name> -internal-networks ONTAP-Internal`
+. `node modify -cluster-name <cluster_name> -name <2nd_node_name> -mgmt-ip <node_ip> -host-name <host_name> -management-networks ONTAP-Management -internal-networks ONTAP-Internal -data-networks ONTAP-External -passthrough-disks false`
+. `node storage pool attach -cluster-name <cluster_name> -node-name <2nd_node_name> -name <storage_pool_name> -capacity-limit <capacity>`
+. `cluster expand -name <cluster_name>`
++
+Lorsque vous y êtes invité, entrez votre mot de passe d'administrateur ONTAP.
+
+
