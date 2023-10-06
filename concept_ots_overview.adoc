@@ -98,6 +98,7 @@ Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppr
 * Copies Snapshot inviolables
 * Migration de SVM
 * VMware HCX
+* Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 
 
 .Informations associées

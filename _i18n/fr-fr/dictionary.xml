@@ -3800,4 +3800,5 @@ Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppr
   <block id="094a1a8c17c096d2758f951380aa7b77" category="list-text">Connectez-vous à l'interface de ligne de commande de déploiement à l'aide du compte d'administrateur.</block>
   <block id="ec2c1e6f88e6b7ce28d7e80767289832" category="list-text">Exécutez le<block ref="2348285222a19e68a4a4aa4df3c90622" prefix=" " category="inline-code"></block> commande.</block>
   <block id="4963c2f56ac00df8be35eec047756e7b" category="list-text">L'administrateur peut supprimer la clé publique avec :<block ref="6edcef67fdbd494b424b5b6fe6ff3c33" prefix=" " category="inline-code"></block></block>
+  <block id="306a97cf9f5c4fb1198deb28baf7cf94" category="list-text">Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)</block>
 </blocks>
