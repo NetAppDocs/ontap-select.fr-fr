@@ -117,13 +117,13 @@ Pour optimiser l'expérience utilisateur, le déploiement de ONTAP provisionne a
 
 NOTE: Le type de groupe RAID de l'agrégat racine dépend du nombre de disques disponibles. Le déploiement de ONTAP sélectionne le type de groupe RAID approprié. S'il dispose de suffisamment de disques alloués au nœud, il utilise RAID-DP, sinon il crée un agrégat racine RAID-4.
 
-Lorsque vous ajoutez de la capacité à une machine virtuelle ONTAP Select via la technologie RAID logicielle, l'administrateur doit tenir compte de la taille du disque physique et du nombre de disques requis. Pour plus de détails, reportez-vous à la section link:concept_stor_capacity_inc.html["Augmentation de la capacité de stockage"].
+Lorsque vous ajoutez de la capacité à une machine virtuelle ONTAP Select via la technologie RAID logicielle, l'administrateur doit tenir compte de la taille du disque physique et du nombre de disques requis. Pour plus de détails, reportez-vous à la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"].
 
 À l'instar des systèmes FAS et AFF, seuls les disques de capacité égale ou supérieure peuvent être ajoutés à un groupe RAID existant. Les disques de grande capacité sont de la taille appropriée. Si vous créez de nouveaux groupes RAID, la taille du groupe RAID doit correspondre à celle du groupe RAID existant pour garantir que les performances globales de l'agrégat ne se détériorent pas.
 
 
 
-== Correspondance d'un disque ONTAP Select avec le disque ESX correspondant
+== Faites correspondre un disque ONTAP Select au disque ESX correspondant
 
 Les disques ONTAP Select sont généralement étiquetés NET x.y Vous pouvez utiliser la commande ONTAP suivante pour obtenir l'UUID du disque :
 

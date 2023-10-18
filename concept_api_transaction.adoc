@@ -45,7 +45,7 @@ Le contenu du corps de la demande varie en fonction de l'appel spécifique. Le c
 
 
 
-=== Filtrage d'objets
+=== Filtrer les objets
 
 Lors de l'émission d'un appel API utilisant GET, vous pouvez limiter ou filtrer les objets renvoyés en fonction de n'importe quel attribut. Par exemple, vous pouvez spécifier une valeur exacte à associer :
 
@@ -99,7 +99,7 @@ TIP: Vous devez toujours identifier les champs spécifiques que vous souhaitez. 
 
 
 
-=== Tri des objets dans le jeu de sortie
+=== Trier les objets dans le jeu de sortie
 
 Les enregistrements d'une collection de ressources sont renvoyés dans l'ordre par défaut défini par l'objet. Vous pouvez modifier l'ordre à l'aide du paramètre de requête order_by avec le nom de champ et la direction de tri comme suit :
 `order_by=<field name> asc|desc`
@@ -123,7 +123,7 @@ Vous pouvez émettre plusieurs requêtes à la page via les événements (ou tou
 
 
 
-== Interprétation d'une réponse API
+== Interpréter une réponse API
 
 Chaque requête d'API génère une réponse au client. Vous pouvez examiner la réponse pour déterminer si elle a réussi et récupérer des données supplémentaires si nécessaire.
 

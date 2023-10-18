@@ -32,7 +32,7 @@ Il existe plusieurs façons d'afficher les ressources VMware utilisées par un c
 
 
 
-== Affichage des ressources VMware d'un cluster via le plug-in
+== Affichez les ressources VMware d'un cluster via le plug-in
 
 Vous pouvez afficher les ressources VMware affectées à un cluster ONTAP Select via le plug-in de déploiement.
 
@@ -46,7 +46,7 @@ Vous pouvez afficher les ressources VMware affectées à un cluster ONTAP Select
 
 
 
-== Affichage des clusters ONTAP Select via une machine virtuelle ESXi
+== Afficher les clusters ONTAP Select via une machine virtuelle ESXi
 
 Vous pouvez afficher le cluster ONTAP Select et les ressources associées en accédant à une machine virtuelle VMware.
 
@@ -60,7 +60,7 @@ Vous pouvez afficher le cluster ONTAP Select et les ressources associées en acc
 
 
 
-== Création d'un cluster à un seul nœud sur un hôte ESXI
+== Créez un cluster à un seul nœud sur un hôte ESXI
 
 Vous pouvez sélectionner un hôte d'hyperviseur ESXI via l'interface vSphere et déployer un cluster ONTAP Select à un seul nœud.
 
@@ -68,5 +68,5 @@ Vous pouvez sélectionner un hôte d'hyperviseur ESXI via l'interface vSphere et
 . Connectez-vous au serveur vCenter via vSphere HTML5 à l'aide d'un navigateur.
 . Cliquez sur *Menu* en haut, puis sur *hôtes et clusters*.
 . Cliquez avec le bouton droit de la souris sur l'hôte de l'hyperviseur souhaité à gauche, sélectionnez *ONTAP Select*, puis cliquez sur *Nouveau ONTAP Select*.
-. Terminez le processus de déploiement en suivant les étapes de la section link:task_deploy_cluster.html["Déploiement d'un cluster ONTAP Select"].
+. Terminez le processus de déploiement en suivant les étapes de la section link:task_deploy_cluster.html["Déployer un cluster ONTAP Select"].
 

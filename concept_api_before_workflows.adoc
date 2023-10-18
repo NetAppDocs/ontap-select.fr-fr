@@ -18,7 +18,7 @@ Vous devez vous préparer à revoir et à utiliser les processus de flux de trav
 
 
 
-== Présentation des appels API utilisés dans les workflows
+== Comprendre les appels d'API utilisés dans les workflows
 
 La page de documentation en ligne de ONTAP Select comprend les détails de chaque appel d'API REST. Au lieu de répéter ces détails ici, chaque appel d'API utilisé dans les exemples de flux de travail comprend uniquement les informations dont vous avez besoin pour localiser l'appel sur la page de documentation. Après avoir localisé un appel API spécifique, vous pouvez vérifier les détails complets de l'appel, y compris les paramètres d'entrée, les formats de sortie, les codes d'état HTTP et le type de traitement de la demande.
 
@@ -31,7 +31,7 @@ Les informations suivantes sont incluses pour chaque appel d'API au sein d'un fl
 
 
 
-== Construction d'une URL pour accéder directement à l'API REST
+== Créez une URL pour accéder directement à l'API REST
 
 En plus de la page de documentation ONTAP Select, vous pouvez également accéder à l'API REST de déploiement directement via un langage de programmation comme Python. Dans ce cas, l'URL principale est légèrement différente de l'URL utilisée lors de l'accès à la page de documentation en ligne. Lorsque vous accédez directement à l'API, vous devez ajouter /api au domaine et à la chaîne de port. Par exemple :
 `\http://deploy.mycompany.com/api`

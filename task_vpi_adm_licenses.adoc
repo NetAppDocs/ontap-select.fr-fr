@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches associées dans le cadre de l'administra
 
 
 
-== Gestion des licences
+== Gérer les licences
 
 Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité ONTAP Select selon vos besoins.
 

@@ -47,7 +47,7 @@ perfstat8 –i N,m -t <sample time in minutes> --verbose --nodes=<filer IP> --di
 http://<Deploy-IP-Address/api/ui
 ----
 
-NOTE: La version API v3 n'est pas rétrocompatible avec la version précédente de l'API. Un nouveau guide API est disponible sur le https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"].
+NOTE: La version API v3 n'est pas rétrocompatible avec la version précédente de l'API. Une nouvelle procédure API est disponible sur le https://library.netapp.com/ecm/ecm_download_file/ECMLP2845694["Field Portal"^].
 
 .La machine virtuelle ONTAP Select peut-elle être sauvegardée avec VMware ou d'autres snapshots tiers ?
 Non La machine virtuelle ONTAP Select utilise des disques persistants indépendants, exclus des snapshots basés sur VMware. La seule méthode de sauvegarde de ONTAP Select prise en charge est SnapMirror ou SnapVault.

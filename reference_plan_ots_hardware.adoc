@@ -90,7 +90,7 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 |===
 
 
-| Taille du cluster | Configuration minimale requise | Recommandation 
+| Taille du cluster | Configuration minimale requise | Exigences recommandées 
 
 
 | Cluster à un seul nœud | 2 x 1 GbE | 2 x 10 GbE 
@@ -107,7 +107,7 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 
 Il y a plusieurs autres exigences matérielles en fonction du type d'instance de nœud.
 
-Reportez-vous à la section link:concept_lic_platforms.html["Comprendre les offres de licences de plateforme"] pour en savoir plus.
+Reportez-vous à la section link:concept_lic_platforms.html["Comprendre les offres de licences de plate-forme"] pour en savoir plus.
 
 .Petit
 * Cœurs de processeurs six cœurs physiques ou plus, avec quatre réservés pour ONTAP Select.

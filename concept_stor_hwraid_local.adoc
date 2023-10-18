@@ -106,7 +106,7 @@ Plusieurs extensions du système de fichiers peuvent être utilisées pour crée
 
 Vous pouvez également commencer par créer un datastore unique sur une LUN. Lorsque de l'espace supplémentaire requiert une licence de capacité ONTAP Select supérieure, cet espace peut être ajouté au même datastore dans une certaine mesure, dans la limite de la taille maximale du datastore. Une fois la taille maximale atteinte, de nouveaux datastores peuvent être créés et ajoutés à ONTAP Select. Les deux types d'opérations d'extension de la capacité sont pris en charge et peuvent être obtenus à l'aide de la fonctionnalité d'ajout de stockage de ONTAP. Chaque nœud ONTAP Select peut être configuré pour prendre en charge jusqu'à 400 To de stockage. Le provisionnement des capacités depuis plusieurs datastores requiert un processus en deux étapes.
 
-La création initiale du cluster peut être utilisée pour créer un cluster ONTAP Select qui consomme une partie ou l'intégralité de l'espace dans le datastore initial. Une deuxième étape consiste à effectuer une ou plusieurs opérations d'ajout de capacité en utilisant des datastores supplémentaires jusqu'à ce que la capacité totale souhaitée soit atteinte. Cette fonctionnalité est détaillée dans la section link:concept_stor_capacity_inc.html["Augmentation de la capacité de stockage"].
+La création initiale du cluster peut être utilisée pour créer un cluster ONTAP Select qui consomme une partie ou l'intégralité de l'espace dans le datastore initial. Une deuxième étape consiste à effectuer une ou plusieurs opérations d'ajout de capacité en utilisant des datastores supplémentaires jusqu'à ce que la capacité totale souhaitée soit atteinte. Cette fonctionnalité est détaillée dans la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"].
 
 
 NOTE: La surcharge VMFS n'est pas nulle (voir link:https://kb.vmware.com/s/article/1001618["VMware KB 1001618"]), et la tentative d'utilisation de l'espace entier signalé comme libre par un datastore a entraîné des erreurs fallacieuses au cours des opérations de création du cluster.
@@ -147,7 +147,7 @@ ONTAP Select divise le stockage NAS sous-jacent en disques virtuels de taille é
 Par exemple, un ONTAP Select peut attribuer un datastore ou une LUN de 31 To (l'espace restant après le déploiement de la machine virtuelle et le provisionnement du système et des disques racine). Ensuite, quatre environ 7,75 To de disques virtuels sont créés et affectés au plex ONTAP local et miroir approprié.
 
 
-NOTE: L'ajout de capacité à une machine virtuelle ONTAP Select entraîne probablement des VMDK de différentes tailles. Pour plus de détails, reportez-vous à la section link:concept_stor_capacity_inc.html["Augmentation de la capacité de stockage"]. Contrairement aux systèmes FAS, des VMDK de différentes tailles peuvent exister dans le même agrégat. ONTAP Select utilise une bande RAID 0 sur ces VMDK, ce qui permet d'exploiter pleinement l'ensemble de l'espace de chaque VMDK, quelle que soit sa taille.
+NOTE: L'ajout de capacité à une machine virtuelle ONTAP Select entraîne probablement des VMDK de différentes tailles. Pour plus de détails, reportez-vous à la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"]. Contrairement aux systèmes FAS, des VMDK de différentes tailles peuvent exister dans le même agrégat. ONTAP Select utilise une bande RAID 0 sur ces VMDK, ce qui permet d'exploiter pleinement l'ensemble de l'espace de chaque VMDK, quelle que soit sa taille.
 
 
 

@@ -93,14 +93,14 @@ Les configurations vNAS par défaut activent une fonctionnalité d'optimisation 
 --
 Mise à jour du cluster:: Une fois le cluster créé, vous pouvez modifier la configuration du cluster ou de la machine virtuelle en dehors de l'utilitaire de déploiement à l'aide des outils d'administration ONTAP ou de l'hyperviseur. Vous pouvez également migrer une machine virtuelle qui modifie la configuration. Lorsque ces modifications se produisent, l'utilitaire Deploy n'est pas mis à jour automatiquement et peut devenir désynchronisé avec l'état du cluster. Vous pouvez utiliser la fonction d'actualisation du cluster pour mettre à jour la base de données de configuration de déploiement. La mise à jour du cluster est disponible via l'interface utilisateur Web de déploiement, le shell de gestion de l'interface de ligne de commandes et l'API REST.
 RAID logiciel:: Lors de l'utilisation du stockage DAS, les fonctionnalités RAID sont généralement fournies par l'intermédiaire d'un contrôleur RAID matériel local. Vous pouvez à la place configurer un nœud pour utiliser _Software RAID_ où le nœud ONTAP Select fournit la fonctionnalité RAID. Si vous utilisez le RAID logiciel, un contrôleur RAID matériel n'est plus nécessaire.
-Installation de l'image ONTAP Select:: Depuis ONTAP Select Deploy 2.8, l'utilitaire d'administration Deploy ne contient qu'une seule version de ONTAP Select. La version incluse est la version la plus récente disponible au moment de la publication. Par exemple, Deploy 2.8 contient ONTAP Select 9.4. La fonctionnalité d'installation d'images ONTAP Select vous permet d'ajouter des versions antérieures de ONTAP Select à votre instance de l'utilitaire de déploiement. Vous pouvez ensuite les utiliser lors du déploiement d'un cluster ONTAP Select. Voir link:task_cli_deploy_image_add.html["Ajoutez des images ONTAP Select pour plus d'informations"].
+Installation de l'image ONTAP Select:: Depuis ONTAP Select Deploy 2.8, l'utilitaire d'administration Deploy ne contient qu'une seule version de ONTAP Select. La version incluse est la version la plus récente disponible au moment de la publication. La fonctionnalité d'installation d'images ONTAP Select vous permet d'ajouter des versions antérieures de ONTAP Select à votre instance de l'utilitaire de déploiement. Vous pouvez ensuite les utiliser lors du déploiement d'un cluster ONTAP Select. Voir link:task_cli_deploy_image_add.html["Ajoutez des images ONTAP Select pour plus d'informations"].
 
 
 
-NOTE: Vous ne devez ajouter qu'une image ONTAP Select avec une version antérieure à la version d'origine incluse avec votre instance de déploiement. L'ajout de versions ultérieures d'ONTAP Select dès leur disponibilité n'est pas pris en charge.
+NOTE: Vous ne devez ajouter qu'une image ONTAP Select avec une version antérieure à la version d'origine incluse avec votre instance de déploiement. L'ajout de versions ultérieures de ONTAP Select sans mise à jour du déploiement n'est pas pris en charge.
 
 Administration d'un cluster ONTAP Select après son déploiement:: Une fois que vous avez déployé un cluster ONTAP Select, vous pouvez le configurer comme s'il s'agit d'un cluster ONTAP matériel. Par exemple, vous pouvez configurer un cluster ONTAP Select à l'aide de System Manager ou de l'interface de ligne de commandes ONTAP standard.
 
 
 .Informations associées
-link:task_cli_deploy_image_add.html["Ajout d'une image ONTAP Select à déployer"]
+link:task_cli_deploy_image_add.html["Ajoutez une image ONTAP Select à déployer"]

@@ -21,7 +21,7 @@ Optimisation de l'efficacité des données grâce au pass-through en E/S VMDirec
 .Avant de commencer
 Vérifiez que votre environnement de déploiement répond aux exigences minimales suivantes :
 
-* ONTAP Select 9.7 ou version ultérieure avec l'utilitaire d'administration de déploiement associé
+* ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
 * VMware ESXi version 6.7 ou ultérieure
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
@@ -37,7 +37,7 @@ Cette procédure est conçue avant de créer un nouveau cluster ONTAP Select. Vo
 * Un cluster à un seul nœud entraîne des temps d'indisponibilité.
 
 
-Voir link:concept_stor_capacity_inc.html["Augmentation de la capacité de stockage"] pour plus d'informations.
+Voir link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"] pour plus d'informations.
 
 .Étapes
 . Accédez au menu *configuration du BIOS* sur l'hôte pour activer la prise en charge de la virtualisation des E/S.

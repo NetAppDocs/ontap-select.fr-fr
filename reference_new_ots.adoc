@@ -17,6 +17,13 @@ summary: 'La version actuelle n"inclut aucune nouvelle fonctionnalité ni améli
 [role="lead"]
 NetApp met régulièrement à jour ONTAP Select afin de vous apporter de nouvelles fonctionnalités et améliorations.
 
+[NOTE]
+====
+* Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
+* Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
+
+
+====
 
 
 == ONTAP Select 9.13.1
@@ -96,7 +103,7 @@ L'hyperviseur KVM n'est plus pris en charge:: Depuis ONTAP Select la version 9.1
 
 ONTAP Select 9.9.1 inclut un certain nombre de nouvelles fonctionnalités et améliorations.
 
-Prise en charge de la famille de processeurs:: À partir de ONTAP Select 9.9.1, seuls les modèles de CPU Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge par ONTAP Select.
+Prise en charge de la famille de processeurs:: À partir de ONTAP Select 9.9.1, seuls les modèles de processeurs Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge pour ONTAP Select.
 Prise en charge de VMware ESXi mise à jour:: La prise en charge de VMware ESXi a été améliorée avec ONTAP Select 9.9.1. Les versions suivantes sont désormais prises en charge :
 +
 --

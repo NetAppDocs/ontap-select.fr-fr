@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches liées à l'administration d'un cluster 
 
 
 
-== Déplacement d'un cluster ONTAP Select vers l'état hors ligne et en ligne
+== Déplacez un cluster ONTAP Select vers l'état hors ligne et en ligne
 
 Une fois le cluster créé, vous pouvez le mettre hors ligne ou en ligne selon vos besoins.
 
@@ -30,7 +30,7 @@ Une fois le cluster créé, vous pouvez le mettre hors ligne ou en ligne selon v
 
 
 
-== Suppression d'un cluster ONTAP Select
+== Supprimez un cluster ONTAP Select
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.
 

@@ -92,13 +92,13 @@ L'option de déploiement ONTAP Select équivaut à peu près aux onglets *Hyperv
 |===
 
 
-== Comparaison du plug-in vCenter avec l'interface utilisateur de déploiement natif
+== Comparez le plug-in vCenter à l'interface utilisateur de déploiement natif
 
 Les fonctionnalités fournies avec le plug-in vCenter via vSphere sont équivalentes à l'interface utilisateur de déploiement natif. Cependant, certaines fonctionnalités ne sont pas fournies avec le plug-in et sont uniquement disponibles avec l'interface utilisateur de déploiement.
 
 
 
-=== Gestion du plug-in vCenter
+=== Gérer le plug-in vCenter
 
 Vous ne pouvez pas installer, mettre à jour, supprimer ou vérifier le plug-in vCenter à l'aide du plug-in vCenter. Vous devez effectuer ces tâches de gestion via l'interface utilisateur de déploiement natif.
 

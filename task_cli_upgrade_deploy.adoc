@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: 'Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en place à l"aide de l"interface de ligne de commande.' 
 ---
-= Mise à niveau d'une instance de déploiement
+= Mettre à niveau une instance de déploiement
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -23,11 +23,11 @@ Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en 
 Assurez-vous que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Vous devriez voir les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire de déploiement.
 
 
-NOTE: Si une instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, envisagez de mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mise à niveau des nœuds ONTAP Select"^] pour plus d'informations.
+NOTE: Si une ancienne instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, vous devez mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus d'informations.
 
 
 
-== Téléchargement du package de mise à niveau
+== Téléchargez le package de mise à niveau
 
 Pour commencer le processus de mise à niveau, vous devez télécharger le fichier de mise à niveau de machine virtuelle de déploiement approprié depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.
 
@@ -46,7 +46,7 @@ link:https://mysupport.netapp.com["Support NetApp"^]
 
 
 
-== Téléchargement du package sur la machine virtuelle de déploiement
+== Téléchargez le package sur la machine virtuelle de déploiement
 
 Après l'acquisition du package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle de déploiement.
 
@@ -72,7 +72,7 @@ Le fichier de mise à niveau est stocké dans le répertoire personnel de l'util
 
 
 
-== Application du package de mise à niveau
+== Appliquez le package de mise à niveau
 
 Une fois le fichier de mise à niveau téléchargé sur la machine virtuelle de déploiement, vous pouvez appliquer la mise à niveau.
 

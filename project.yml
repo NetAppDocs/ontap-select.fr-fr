@@ -141,9 +141,9 @@ sidebar:
       entries:
       - title: Console vidéo VM
         url: "/task_adm_video_console.html"
-      - title: Redimensionnement des nœuds du cluster
+      - title: Redimensionner les nœuds du cluster
         url: "/task_adm_resize.html"
-      - title: Remplacement des lecteurs RAID logiciels défectueux
+      - title: Remplacez les disques RAID logiciels défectueux
         url: "/task_adm_replace_drives_swraid.html"
       - title: Mise à niveau vers VMFS6
         url: "/task_adm_upgrade_vmfs6.html"
@@ -161,7 +161,7 @@ sidebar:
         url: "/concept_stor_swraid_local.html"
       - title: Configurations de baies externes et VSAN
         url: "/concept_stor_vsan_external.html"
-      - title: Augmentation de la capacité de stockage
+      - title: Augmenter la capacité de stockage
         url: "/concept_stor_capacity_inc.html"
       - title: Prise en charge de l'efficacité du stockage
         url: "/concept_stor_eff_support.html"
@@ -197,7 +197,7 @@ sidebar:
         url: "/concept_perf_premium_ha_direct_ssd_96.html"
   - title: Intégration avec vCenter
     entries:
-    - title: Pour commencer
+    - title: Commencez
       entries:
       - title: Présentation
         url: "/concept_vpi_overview.html"
@@ -255,19 +255,19 @@ sidebar:
         url: "/concept_api_before_browser.html"
       - title: Accédez à la page doc
         url: "/task_api_access_doc_page.html"
-      - title: Présentation d'un appel API
+      - title: Comprendre un appel d'API
         url: "/task_api_understanding_call.html"
     - title: Processus de flux de travail
       entries:
       - title: Avant de commencer
         url: "/concept_api_before_workflows.html"
-      - title: Flux de travail 1 création d'un cluster
+      - title: Workflow 1 Créez un cluster
         url: "/reference_api_workflow01.html"
     - title: Accès avec Python
       entries:
       - title: Avant de commencer
         url: "/concept_api_before_python.html"
-      - title: Présentation des scripts
+      - title: Comprendre les scripts
         url: "/concept_api_understanding_scripts.html"
     - title: Exemples de code Python
       entries:
@@ -287,8 +287,6 @@ sidebar:
     url: "/concept_automate_ansible.html"
   - title: Utiliser l'interface de ligne de commande
     entries:
-    - title: Avant de commencer
-      url: "/concept_cli_before.html"
     - title: Connectez-vous à l'aide de SSH
       url: "/task_cli_signing_in.html"
     - title: Déployer un cluster
@@ -319,9 +317,5 @@ sidebar:
         url: "/task_cli_deploy_recover_two_node.html"
   - title: FAQ
     url: "/reference_faq.html"
-  - title: En savoir plus
-    url: "/reference_additional_info.html"
-  - title: Versions antérieures
-    url: "/reference_earlier_versions.html"
   - title: Mentions légales
     url: "/reference_legal_notices.html"

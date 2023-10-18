@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches de diagnostic et de support associées d
 
 
 
-== Configuration du système de déploiement
+== Configurer le système de déploiement
 
 Vous devez définir les paramètres de configuration système de base qui affectent le fonctionnement de l'utilitaire de déploiement.
 
@@ -42,7 +42,7 @@ Exemple
 
 
 
-== Affichage des messages d'événement de déploiement ONTAP Select
+== Affiche les messages d'événement ONTAP Select Deploy
 
 L'utilitaire ONTAP Select Deploy comprend une fonction de journalisation des événements qui fournit des informations sur l'activité du système. Vous devez afficher le contenu du journal des événements pour déboguer tout problème ou lorsque le support vous le demande.
 
@@ -66,7 +66,7 @@ Vous pouvez filtrer la liste des messages d'événement en fonction de plusieurs
 
 
 
-== Activation d'AutoSupport
+== Activez AutoSupport
 
 Vous pouvez activer et désactiver la fonction AutoSupport si nécessaire.
 
@@ -82,7 +82,7 @@ AutoSupport est le principal outil de dépannage utilisé par NetApp pour prendr
 
 
 
-== Génération et téléchargement d'un pack AutoSupport
+== Générez et téléchargez un package AutoSupport
 
 ONTAP Select permet de générer un pack AutoSupport. Vous devez générer un package pour déboguer tout problème ou lorsque vous y êtes invité par le support.
 

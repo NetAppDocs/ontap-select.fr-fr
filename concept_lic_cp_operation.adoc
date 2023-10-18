@@ -20,7 +20,7 @@ Le modèle de licence des pools de capacité est différent du modèle des nivea
 
 == Gestionnaire de licences
 
-Le Gestionnaire de licences est un composant logiciel introduit avec ONTAP Select 9.5 à l'aide de ONTAP Select Deploy 2.10. LM s'exécute comme un processus distinct dans chaque instance de l'utilitaire d'administration de déploiement. Certaines des fonctions fournies par LM incluent :
+Le Gestionnaire de licences s'exécute comme un processus distinct au sein de chaque instance de l'utilitaire d'administration de déploiement. Certaines des fonctions fournies par LM incluent :
 
 * Générez un numéro de série à vingt chiffres unique pour chaque nœud en fonction du numéro de série de la licence du pool de capacité
 * Créez des locations de capacité à partir des pools de capacité partagée, en fonction des demandes des nœuds ONTAP Select
@@ -68,7 +68,7 @@ Un nœud ONTAP Select doit trouver ou demander une location de capacité valide 
 
 
 
-== Permet de renvoyer la capacité de stockage à un pool de capacité
+== Renvoyer la capacité de stockage vers un pool de capacité
 
 La capacité de stockage est allouée à partir d'un pool de capacité selon les besoins et chaque nouvelle demande peut réduire le stockage disponible dans le pool. La capacité de stockage est renvoyée dans le pool dans plusieurs situations, notamment :
 

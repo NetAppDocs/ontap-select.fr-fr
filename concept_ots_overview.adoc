@@ -45,7 +45,7 @@ Un cluster ONTAP Select se compose d'un, deux, quatre, six ou huit nœuds. Chaqu
 L'utilitaire d'administration Deploy est conditionné et installé en tant que machine virtuelle Linux distincte. Vous devez utiliser l'utilitaire pour déployer des clusters ONTAP Select dans un environnement de production. Une version actuelle de l'image de noeud ONTAP Select est fournie avec l'utilitaire de déploiement.
 
 
-NOTE: Depuis ONTAP Select 9.7, l'utilitaire d'administration de déploiement n'a plus de numéro de version distinct. Le numéro de version du déploiement est identique à celui de la version ONTAP Select associée. Cependant, chaque mise à jour de l'utilitaire de déploiement dans une version ONTAP Select spécifique dispose d'un numéro de version unique.
+NOTE: L'utilitaire d'administration de déploiement n'a pas de numéro de version distinct. Le numéro de version du déploiement est identique à celui de la version ONTAP Select associée. Cependant, chaque mise à jour de l'utilitaire de déploiement dans une version ONTAP Select spécifique dispose d'un numéro de version unique.
 
 
 
@@ -57,7 +57,7 @@ image:ots_architecture.png["La illustre un cluster ONTAP Select à quatre nœuds
 
 
 
-== Comparatif ONTAP Select/ONTAP 9
+== Comparez ONTAP Select et ONTAP 9
 
 ONTAP et ONTAP Select basés sur le matériel proposent tous deux des solutions de stockage haute performance. Cependant, leur conception et leur mise en œuvre différemment, chacun peut répondre à différents besoins métier et scénarios d'utilisation. Avant de planifier un déploiement ONTAP Select, vous devez vous familiariser avec les principales différences entre les plateformes.
 

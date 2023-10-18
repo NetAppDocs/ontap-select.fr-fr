@@ -34,7 +34,7 @@ CAUTION: Si vous disposez d'un ou de plusieurs clusters à deux nœuds actifs, O
 .Emplacement du service cluster et médiateur
 Les clusters à deux nœuds sont généralement déployés dans des bureaux distants ou des succursales. Ils peuvent ainsi être distants du data Center de l'entreprise et l'utilitaire de déploiement assurant une prise en charge administrative. Avec cette configuration, le trafic de gestion entre l'utilitaire de déploiement et le cluster transite par le WAN. Consultez les notes de version pour plus d'informations sur les limites et les restrictions.
 
-.Sauvegarde des données de configuration de déploiement
+.Sauvegarder les données de configuration de déploiement
 Il est recommandé de sauvegarder régulièrement les données de configuration de déploiement, notamment après la création d'un cluster. Cette importance s'avère particulièrement importante dans les clusters à deux nœuds car les données de configuration de médiateur sont incluses dans la sauvegarde.
 
 .Adresse IP statique attribuée au déploiement

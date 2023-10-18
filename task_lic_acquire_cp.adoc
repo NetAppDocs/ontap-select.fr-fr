@@ -4,7 +4,7 @@ permalink: task_lic_acquire_cp.html
 keywords: license, licensing, acquire, capacity pools 
 summary: 'Vous devez acquérir un fichier de licence pour chaque pool de capacité utilisé par les nœuds ONTAP Select. Le fichier de licence définit la capacité de stockage et l"expiration du pool. Il est verrouillé pour le Gestionnaire de licences par une combinaison du numéro de série de licence unique attribué par NetApp et de l"ID de verrouillage de licence associé à l"instance de déploiement.' 
 ---
-= Acquisition d'une licence de pool de capacité
+= Acquérir une licence de pool de capacité
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

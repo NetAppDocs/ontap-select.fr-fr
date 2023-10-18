@@ -60,7 +60,7 @@ volume efficiency stop -all true -vserver * -volume * (all volumes in the affect
 ----
 
 
-== Localisation en cas d'utilisation de vNAS des nœuds ONTAP Select
+== Colocaliser les nœuds ONTAP Select avec vNAS
 
 ONTAP Select prend également en charge les clusters ONTAP Select multinœuds sur le stockage partagé. ONTAP Deploy permet la configuration de plusieurs nœuds ONTAP Select sur le même hôte ESX tant que ces nœuds ne font pas partie du même cluster. Notez que cette configuration n'est valide que pour les environnements VNAS (datastores partagés). En cas d'utilisation du stockage DAS, plusieurs instances ONTAP Select par hôte ne sont pas prises en charge, car ces instances se disputent le même contrôleur RAID matériel.
 

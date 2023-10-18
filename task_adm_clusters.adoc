@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches liées à l'administration d'un cluster 
 
 
 
-== Déplacement d'un cluster ONTAP Select hors ligne et en ligne
+== Déplacez un cluster ONTAP Select hors ligne et en ligne
 
 Une fois que vous avez créé un cluster, vous pouvez le déplacer hors ligne et en ligne selon vos besoins.
 
@@ -40,7 +40,7 @@ Si l'option hors ligne n'est pas disponible, le cluster est déjà à l'état ho
 
 
 
-== Suppression d'un cluster ONTAP Select
+== Supprimez un cluster ONTAP Select
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.
 
@@ -59,7 +59,7 @@ Si l'option de suppression n'est pas disponible, le cluster n'est pas à l'état
 
 
 
-== Actualisation de la configuration du cluster de déploiement
+== Actualisez la configuration de déploiement du cluster
 
 Une fois que vous avez créé un cluster ONTAP Select, vous pouvez modifier le cluster ou la configuration du serveur virtuel en dehors de l'utilitaire de déploiement à l'aide des outils d'administration de ONTAP ou d'hyperviseur. La configuration d'un ordinateur virtuel peut également être modifiée après la migration.
 

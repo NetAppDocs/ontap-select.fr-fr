@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 'Vous pouvez migrer une instance existante de l"utilitaire d"administration de déploiement vers une nouvelle machine virtuelle à l"aide de l"interface de ligne de commande.' 
 ---
-= Migration d'une instance de déploiement vers une nouvelle machine virtuelle
+= Migrer une instance de déploiement vers une nouvelle machine virtuelle
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,7 +20,7 @@ Cette procédure est basée sur la création d'une nouvelle machine virtuelle qu
 
 
 
-== Sauvegarde des données de configuration de déploiement
+== Sauvegarder les données de configuration de déploiement
 
 Vous devez créer une sauvegarde des données de configuration de déploiement dans le cadre de la migration de la machine virtuelle. Vous devez également créer une sauvegarde après le déploiement d'un cluster ONTAP Select. Les données sont enregistrées dans un seul fichier crypté que vous pouvez télécharger sur votre poste de travail local.
 
@@ -53,7 +53,7 @@ Vous pouvez accéder au fichier de sauvegarde via l'URL.
 
 
 
-== Installation d'une nouvelle instance de la machine virtuelle de déploiement
+== Installez une nouvelle instance de la machine virtuelle de déploiement
 
 Vous devez créer une nouvelle instance de la machine virtuelle de déploiement que vous pouvez mettre à jour avec les données de configuration de la machine virtuelle d'origine.
 
@@ -74,11 +74,11 @@ Cette tâche est décrite à un niveau élevé.
 
 
 .Informations associées
-link:task_install_deploy.html["Installation de ONTAP Select Deploy"]
+link:task_install_deploy.html["Installez ONTAP Select Deploy"]
 
 
 
-== Restauration des données de configuration de déploiement sur la nouvelle machine virtuelle
+== Restaurez les données de configuration de déploiement sur la nouvelle machine virtuelle
 
 Vous devez restaurer les données de configuration de la machine virtuelle d'origine de l'utilitaire de déploiement vers la nouvelle machine virtuelle. Les données se trouvent dans un seul fichier que vous devez télécharger à partir de votre poste de travail local.
 

@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches de diagnostic et de support associées d
 
 
 
-== Affichage des paramètres système
+== Affiche les paramètres système
 
 Vous pouvez afficher les paramètres de base de l'utilitaire d'administration de déploiement via le plug-in vCenter.
 
@@ -31,7 +31,7 @@ Vous pouvez afficher les paramètres de base de l'utilitaire d'administration de
 
 
 
-== Affichage des messages d'événement
+== Affiche les messages d'événement
 
 L'utilitaire d'administration Deploy comprend une fonction de consignation des événements qui fournit des informations sur l'activité du système. Vous pouvez afficher le contenu du journal des événements via le plug-in de déploiement pour déboguer n'importe quel problème ou lorsque vous y êtes invité par le support.
 
@@ -53,7 +53,7 @@ Vous pouvez filtrer la liste des messages d'événement en fonction de plusieurs
 
 
 
-== Activation d'AutoSupport
+== Activez AutoSupport
 
 AutoSupport est le principal outil de dépannage utilisé par NetApp pour prendre en charge ONTAP Select. Vous pouvez activer ou désactiver la fonction AutoSupport si nécessaire.
 
@@ -69,7 +69,7 @@ Une fois le nouveau cluster déployé, vérifiez que AutoSupport est activé. Vo
 
 
 
-== Génération d'un pack AutoSupport
+== Générez un package AutoSupport
 
 Le plug-in vCenter Deploy comprend la possibilité de générer un package AutoSupport. Vous devez générer un package pour déboguer des problèmes ou lorsque vous y êtes invité par le support.
 

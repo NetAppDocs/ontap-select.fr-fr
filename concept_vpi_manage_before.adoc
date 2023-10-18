@@ -18,9 +18,9 @@ Avant d'installer et de gérer le plug-in vCenter Deploy, vous devez procéder �
 
 
 
-== Décider d'utiliser l'interface utilisateur Web de déploiement ou l'interface de ligne de commande
+== Décidez si vous souhaitez utiliser l'interface utilisateur Web de déploiement ou l'interface de ligne de commande
 
-Dans la plupart des cas, l'interface utilisateur Web de déploiement offre l'option la plus pratique pour gérer le plug-in vCenter. C'est l'option décrite dans ce guide. Cependant, vous pouvez également gérer le plug-in à l'aide de l'interface de ligne de commande de déploiement. Pour plus d'informations, saisissez les commandes suivantes à l'invite de l'interface de ligne de commande de déploiement :
+Dans la plupart des cas, l'interface utilisateur Web de déploiement constitue l'option la plus pratique pour gérer le plug-in vCenter. Il s'agit de l'option décrite dans cette procédure. Cependant, vous pouvez également gérer le plug-in à l'aide de l'interface de ligne de commande de déploiement. Pour plus d'informations, saisissez les commandes suivantes à l'invite de l'interface de ligne de commande de déploiement :
 
 * `deploy plugin ?` (Les sous-commandes incluent : installation, suppression, affichage et mise à jour)
 * `deploy plugin-packages show`
@@ -33,7 +33,8 @@ Dans la plupart des cas, l'interface utilisateur Web de déploiement offre l'opt
 Vous devez suivre plusieurs étapes, quelle que soit la tâche de gestion. La préparation commune comprend :
 
 * Lecture de la section mise en route pour se familiariser avec le plug-in de déploiement vCenter.
-* S'assurer que l'utilitaire d'administration de déploiement ONTAP Select est installé et en cours d'exécution. Consultez le Guide d'installation et de déploiement des clusters pour VMware pour plus d'informations.
+* S'assurer que l'utilitaire d'administration de déploiement ONTAP Select est installé et en cours d'exécution.
+Pour plus d'informations, consultez la documentation relative à l'installation et au déploiement de clusters pour VMware.
 * Acquisition des informations d'identification du compte :
 +
 ** Déployer un compte administrateur
@@ -47,13 +48,13 @@ Une préparation supplémentaire peut être nécessaire en fonction de la tâche
 
 
 
-== Préparation des comptes de serveur vCenter
+== Préparez les comptes de serveur vCenter
 
 Avant d'installer et d'utiliser le plug-in de déploiement, vous devez créer les comptes vCenter avec les privilèges requis. Vous pouvez créer un compte unique avec tous les privilèges nécessaires ou créer plusieurs comptes avec un seul privilège. Dans un souci de simplicité, l'exemple suivant distribue les privilèges vCenter dans trois rôles distincts qui peuvent ensuite être attribués aux trois comptes correspondants.
 
 
 
-=== Validation de l'accès de l'utilisateur final au plug-in
+=== Validez l'accès utilisateur au plug-in
 
 Vous devez disposer d'un compte pour valider l'accès au plug-in via vSphere. Le compte doit disposer du privilège vCenter suivant : sessions.validate.session. Une fois le compte créé dans vCenter, vous devez le définir dans l'utilitaire d'administration de déploiement. Dans l'interface utilisateur Web de déploiement, cliquez sur l'onglet Administration, puis sur informations d'identification pour indiquer l'emplacement et les informations d'identification du serveur vCenter.
 
@@ -84,7 +85,7 @@ Vous pouvez créer un seul rôle et un seul compte avec les trois privilèges ou
 
 
 
-=== Accès au plug-in
+=== Accédez au plug-in
 
 Les utilisateurs finaux peuvent accéder au plug-in via vSphere. Vous devez attribuer le privilège suivant aux comptes qui utiliseront le plug-in :
 

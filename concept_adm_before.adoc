@@ -16,14 +16,10 @@ summary: 'Une fois que vous avez créé un cluster ONTAP Select, vous pouvez pre
 [role="lead"]
 Une fois que vous avez créé un cluster ONTAP Select, vous pouvez prendre en charge le déploiement en effectuant diverses tâches administratives. Il y a quelques considérations d'ordre général à prendre en compte.
 
-
-
-== Avant de commencer
-
 En général, les procédures que vous pouvez effectuer à l'aide de l'interface Web de déploiement sont réparties en trois catégories.
 
 .Déployer un cluster ONTAP Select
-Vous pouvez déployer un cluster à un ou plusieurs nœuds. Voir link:task_deploy_cluster.html["Déploiement d'un cluster ONTAP Select"] pour en savoir plus.
+Vous pouvez déployer un cluster à un ou plusieurs nœuds. Voir link:task_deploy_cluster.html["Déployer un cluster ONTAP Select"] pour en savoir plus.
 
 .Exécutez une procédure sur un cluster ONTAP Select existant
 Les procédures administratives sont organisées en différentes catégories, telles que _Security_ et _clusters_.
@@ -33,32 +29,31 @@ Plusieurs procédures sont spécifiques au déploiement (par exemple, la modific
 
 
 
-== Administration d'ONTAP Select
+== Administrer ONTAP Select
 
-De nombreuses procédures administratives sont disponibles dans le cadre de la prise en charge de ONTAP Select. En outre, il existe des procédures spécifiques à l'utilitaire d'administration de déploiement. Le plus important de ces procédures est présenté ci-dessous. En général, tous utilisent l'interface utilisateur Web de déploiement. Un processus administratif peut être composé d'une seule tâche étape par étape ou d'une séquence de tâches multiples.
-
-
-NOTE: Vous pouvez également gérer ONTAP Select à l'aide de l'interface de ligne de commandes. Voir la section _utilisation de la CLI_ pour plus d'informations.
+De nombreuses procédures administratives sont disponibles dans le cadre de la prise en charge de ONTAP Select. En outre, il existe des procédures spécifiques à l'utilitaire d'administration de déploiement. Le plus important de ces procédures est présenté ci-dessous. En général, tous utilisent l'interface utilisateur Web de déploiement.
 
 
+NOTE: Vous pouvez également link:https://docs.netapp.com/us-en/ontap-select/task_cli_signing_in.html["utilisez l'interface de ligne de commande"] Pour administrer ONTAP Select.
 
-== Réaliser une configuration ONTAP supplémentaire
 
-Une fois un cluster ONTAP Select déployé, vous pouvez configurer et gérer le cluster comme vous le feriez avec un système ONTAP matériel. Par exemple, vous pouvez utiliser OnCommand System Manager ou l'interface de ligne de commandes de ONTAP pour configurer le cluster ONTAP Select.
+
+== Effectuer une configuration ONTAP supplémentaire
+
+Une fois un cluster ONTAP Select déployé, vous pouvez configurer et gérer le cluster comme vous le feriez avec un système ONTAP matériel. Par exemple, vous pouvez utiliser ONTAP System Manager ou l'interface de ligne de commandes ONTAP pour configurer le cluster ONTAP Select.
 
 .Logiciels client NetApp
 Vous pouvez vous connecter à ONTAP Select à l'aide du logiciel client NetApp pris en charge suivant :
 
-* OnCommand System Manager
-* OnCommand Unified Manager
-* OnCommand Performance Manager
+* ONTAP System Manager
+* Active IQ Unified Manager
 * OnCommand Insight
 * OnCommand Workflow Automation
 * SnapCenter
 * Virtual Storage Console pour VMware vSphere
 
 
-Pour identifier les versions prises en charge du logiciel client, consultez la _NetApp Interoperability Matrix Tool_. Si le logiciel client prend en charge ONTAP 9, la même version est également prise en charge avec ONTAP Select.
+Pour identifier les versions prises en charge du logiciel client, consultez le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité NetApp"^]. Si le logiciel client prend en charge ONTAP 9, la même version est également prise en charge avec ONTAP Select.
 
 
 NOTE: L'utilisation de SnapCenter et des plug-ins correspondants nécessite des licences basées sur serveur. Les licences des plug-ins SnapCenter ne sont pas prises en charge pour le moment avec ONTAP Select pour les systèmes de stockage.
@@ -70,7 +65,7 @@ Plusieurs options sont disponibles lors de la configuration du cluster, y compri
 
 * Création de la configuration réseau
 * Mise en place des agrégats
-* Création des SVM (Data Storage Virtual machines)
+* Création des machines virtuelles de stockage des données (SVM)
 
 
 .Licences achetées avec capacité de stockage

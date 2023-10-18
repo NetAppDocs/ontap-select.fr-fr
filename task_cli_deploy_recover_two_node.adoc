@@ -4,7 +4,7 @@ permalink: task_cli_deploy_recover_two_node.html
 keywords: administer, administering, cli, two node cluster, recover, recovering 
 summary: 'Si l"utilitaire ONTAP Select Deploy tombe en panne ou si vous êtes indisponible pour une raison quelconque, vous ne pouvez plus gérer les nœuds et les clusters ONTAP Select. Par ailleurs, tous les clusters à deux nœuds perdent de la capacité HA, car le service de médiateur inclus dans le déploiement est indisponible. En cas de défaillance irrécupérable, vous devez restaurer l"instance de l"utilitaire Deploy pour restaurer les fonctionnalités d"administration et de haute disponibilité.' 
 ---
-= Récupération de l'utilitaire de déploiement pour un cluster à deux nœuds
+= Restaurez l'utilitaire de déploiement sur un cluster à deux nœuds
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -51,14 +51,14 @@ Vous devez décider de la procédure à utiliser lors de la récupération d'une
 | Avez-vous une sauvegarde à déployer contenant le cluster à deux nœuds ? | Procédure de récupération à utiliser 
 
 
-| Oui. | Restauration d'une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration 
+| Oui. | Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration 
 
 
-| Non | Reconfiguration et récupération d'une instance d'utilitaire de déploiement 
+| Non | Reconfigurer et restaurer une instance d'utilitaire de déploiement 
 |===
 
 
-== Restauration d'une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration
+== Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration
 
 Si vous disposez d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous pouvez restaurer les données de configuration dans la nouvelle instance de déploiement de machine virtuelle. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
 
@@ -119,7 +119,7 @@ Si vous utilisez les licences de pools de capacité, vous devez réinstaller cha
 
 
 
-== Reconfiguration et récupération d'une instance d'utilitaire de déploiement
+== Reconfigurer et restaurer une instance d'utilitaire de déploiement
 
 Si vous ne disposez pas d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous devez configurer la cible iSCSI médiateur et la boîte aux lettres dans la nouvelle machine virtuelle de déploiement. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
 
@@ -210,7 +210,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Pour plus d'informations, reportez-vous à la section réinstallation d'une licence de pool de capacité.
 
 .Informations associées
-* link:task_install_deploy.html["Installation de ONTAP Select Deploy"]
-* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Restauration des données de configuration de déploiement sur la nouvelle machine virtuelle"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Réinstallation d'une licence de pool de capacité"]
+* link:task_install_deploy.html["Installez ONTAP Select Deploy"]
+* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Restaurez les données de configuration de déploiement sur la nouvelle machine virtuelle"]
+* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Réinstallez une licence de pool de capacité"]
 

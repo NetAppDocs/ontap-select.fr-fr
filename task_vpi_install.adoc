@@ -4,7 +4,7 @@ permalink: task_vpi_install.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, install, installing 
 summary: 'Le plug-in vCenter Deploy est inclus avec l"utilitaire d"administration de ONTAP Select Deploy. Vous pouvez utiliser l"interface utilisateur Web de déploiement de ONTAP Select pour installer et enregistrer le plug-in sur le serveur vCenter.' 
 ---
-= Installation du plug-in de déploiement vCenter
+= Installez le plug-in vCenter Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -31,7 +31,7 @@ Le plug-in vCenter Deploy est inclus avec l'utilitaire d'administration de ONTAP
 
 
 .Description de la tâche
-Il est supposé que le serveur de gestion vCenter a déjà été ajouté au déploiement. Si le serveur vCenter n'a pas été ajouté, reportez-vous à la section link:task_adm_security.html["Ajout d'un compte de serveur de gestion"] pour en savoir plus.
+Il est supposé que le serveur de gestion vCenter a déjà été ajouté au déploiement. Si le serveur vCenter n'a pas été ajouté, reportez-vous à la section link:task_adm_security.html["Ajoutez un compte de serveur de gestion"] pour en savoir plus.
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.

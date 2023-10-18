@@ -64,14 +64,6 @@ Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur VMware ESXi, vo
 L'environnement pour un déploiement RAID logiciel sur VMware ESXi doit répondre aux exigences principales suivantes :
 
 * VMware ESXi 7.0 GA (build 15843807) ou version ultérieure
-* ONTAP Select 9.5 ou version ultérieure
-* ONTAP Select Deploy 2.10 ou version ultérieure
-* Les nouveaux clusters ONTAP Select uniquement
-
-
-
-NOTE: Vous devez déployer un nouveau cluster avec ONTAP Select 9.5 ou version ultérieure à l'aide de l'utilitaire d'administration Deploy. Vous ne pouvez pas utiliser la fonction RAID logicielle avec un nœud existant mis à niveau d'une version précédente vers ONTAP Select 9.5.
-
 * Licence ONTAP Select Premium ou version supérieure
 * Disques SSD locaux uniquement
 * Séparation des disques système de la racine et des agrégats de données
@@ -82,6 +74,7 @@ NOTE: Vous devez déployer un nouveau cluster avec ONTAP Select 9.5 ou version u
 NOTE: Si un contrôleur RAID matériel est présent, voir link:concept_stor_concepts_chars.html["Stockage de plongée en profondeur"] pour connaître les exigences de configuration supplémentaires.
 
 * VMware VMotion, HA et DRS ne sont pas pris en charge
+* Vous ne pouvez pas utiliser le RAID logiciel avec un nœud qui a été mis à niveau à partir de ONTAP Select 9.4 ou d'une version antérieure. Dans ce cas, vous devez créer un nouveau nœud pour le déploiement RAID logiciel.
 
 
 
@@ -100,14 +93,14 @@ Vous devez configurer chaque nœud ONTAP Select et chaque hôte d'hyperviseur de
 
 Dans le cadre de la planification d'un déploiement ONTAP Select, vous devez connaître les restrictions liées à l'allocation et à l'utilisation du stockage.
 
-Les restrictions les plus importantes en matière de stockage sont présentées ci-dessous. Consultez également la matrice d'interopérabilité NetApp pour plus d'informations.
+Les restrictions les plus importantes en matière de stockage sont présentées ci-dessous. Vous devez également consulter le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité NetApp"^] pour plus d'informations.
 
 
-TIP: ONTAP Select applique plusieurs restrictions liées à l'allocation et à l'utilisation du stockage. Avant de déployer un cluster ONTAP Select ou d'acheter une licence, vous devez vous familiariser avec ces restrictions. Pour plus d'informations, reportez-vous à la section _License_.
+TIP: ONTAP Select applique plusieurs restrictions liées à l'allocation et à l'utilisation du stockage. Avant de déployer un cluster ONTAP Select ou d'acheter une licence, vous devez vous familiariser avec ces restrictions. Voir la link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Licence"] pour plus d'informations.
 
 
 
-=== Calcul de la capacité de stockage brute
+=== Calculer la capacité de stockage brute
 
 La capacité de stockage ONTAP Select correspond à la taille totale autorisée des données virtuelles et des disques root rattachés à la machine virtuelle ONTAP Select. Vous devez tenir compte de ce point lors de l'allocation de la capacité.
 
@@ -163,7 +156,7 @@ Avec VMware VSAN, un datastore peut être supérieur à 64 To. Toutefois, vous n
 
 Voici les recommandations concernant le matériel principal de l'hyperviseur :
 
-* Tous les disques d'un seul agrégat ONTAP Select doivent être du même type. Par exemple, vous ne devez pas combiner des disques HDD et SSD dans le même agrégat.
+* Tous les disques d'un agrégat ONTAP Select unique doivent être du même type. Par exemple, vous ne devez pas combiner des disques HDD et SSD dans le même agrégat.
 
 
 
@@ -199,10 +192,10 @@ NOTE: La technologie RAID logicielle avec disques DAS locaux est prise en charge
 
 Vous pouvez configurer les services RAID logiciels pour utiliser les disques SSD NVMe. Votre environnement doit répondre aux exigences suivantes :
 
-* ONTAP Select 9.7 ou version ultérieure avec l'utilitaire d'administration de déploiement associé
+* ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
 * VMware ESXi version 6.7 ou ultérieure
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
 
 
-Vous devez configurer manuellement les disques NVMe avant de les utiliser. Voir link:task_chk_nvme_configure.html["Configuration d'un hôte pour utiliser des disques NVMe"] pour en savoir plus.
+Vous devez configurer manuellement les disques NVMe avant de les utiliser. Voir link:task_chk_nvme_configure.html["Configurez un hôte pour qu'il utilise des disques NVMe"] pour en savoir plus.

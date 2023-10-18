@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches liées à l'administration d'un cluster 
 
 
 
-== Suppression d'un cluster ONTAP Select
+== Supprimer un cluster ONTAP Select
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire à l'aide de l'interface de ligne de commandes.
 

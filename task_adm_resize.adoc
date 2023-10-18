@@ -4,7 +4,7 @@ permalink: task_adm_resize.html
 keywords: administer, administering, web, resizing nodes, resizing 
 summary: 'Une fois le cluster ONTAP Select déployé, vous pouvez mettre à niveau le type d"instance d"hyperviseur des nœuds à l"aide de l"utilitaire d"administration Deploy.' 
 ---
-= Redimensionnement des nœuds du cluster ONTAP Select
+= Redimensionnez les nœuds de cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

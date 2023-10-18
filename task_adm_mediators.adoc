@@ -18,7 +18,7 @@ Chaque cluster ONTAP Select à deux nœuds est surveillé par le service de méd
 
 
 
-== Affichage de l'état du service médiateur
+== Afficher l'état du service médiateur
 
 Vous pouvez afficher l'état du service médiateur par rapport à chacun des clusters à deux nœuds définis dans l'utilitaire ONTAP Select Deploy.
 

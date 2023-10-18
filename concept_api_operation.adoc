@@ -49,7 +49,7 @@ Il existe deux méthodes principales pour qu'un serveur exécute une requête HT
 
 
 
-== Confirmation de l'achèvement d'une tâche longue durée
+== Confirmez la fin d'une tâche en cours d'exécution
 
 De manière générale, toute opération qui peut prendre un certain temps est traitée de manière asynchrone à l'aide d'une tâche d'arrière-plan sur le serveur. Avec l'API REST de déploiement, chaque tâche d'arrière-plan est ancrée par un objet Job qui suit la tâche et fournit des informations, telles que l'état actuel. Un objet Job, y compris son identifiant unique, est renvoyé dans la réponse HTTP après la création d'une tâche d'arrière-plan.
 

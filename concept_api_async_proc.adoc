@@ -27,7 +27,7 @@ NOTE: Reportez-vous à la page de documentation en ligne de ONTAP Select Deploy 
 
 
 
-== Interrogation de l'objet travail associé à une requête API
+== Interroger l'objet travail associé à une demande API
 
 L'objet travail renvoyé dans la réponse HTTP contient plusieurs propriétés. Vous pouvez interroger la propriété d'état pour déterminer si la demande a bien été effectuée. Un objet travail peut être dans l'un des États suivants :
 

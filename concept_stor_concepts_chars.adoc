@@ -116,7 +116,7 @@ Vous devez vous assurer que les pools de stockage sont correctement créés dans
 
 
 
-=== Gestion des disques virtuels
+=== Gérer les disques virtuels
 
 Dans le cadre de la préparation au déploiement de ONTAP Select, vous devez connaître plusieurs problèmes liés aux disques virtuels.
 
@@ -167,7 +167,7 @@ image:ST_02.jpg["Cluster ESXi"]
 Vous pouvez créer un datastore VMFS résidant sur une baie de stockage externe. Le stockage est accessible via l'un des nombreux protocoles réseau différents. La figure suivante illustre un datastore VMFS sur une baie de stockage externe accessible à l'aide du protocole iSCSI.
 
 
-NOTE: ONTAP Select prend en charge toutes les baies de stockage externes décrites dans le Guide de compatibilité stockage SAN/VMware, notamment iSCSI, Fibre Channel et Fibre Channel over Ethernet.
+NOTE: ONTAP Select prend en charge toutes les baies de stockage externes décrites dans la documentation sur la compatibilité SAN/stockage VMware, y compris iSCSI, Fibre Channel et Fibre Channel over Ethernet.
 
 image:ST_03.jpg["Hôte de l'hyperviseur ESXi"]
 

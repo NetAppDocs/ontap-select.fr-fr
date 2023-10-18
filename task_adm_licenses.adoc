@@ -18,7 +18,7 @@ Vous pouvez effectuer plusieurs tâches associées dans le cadre de l'administra
 
 
 
-== Gestion des licences des tiers de capacité
+== Gérez les licences de Tier de capacité
 
 Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité ONTAP Select selon vos besoins.
 
@@ -33,7 +33,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité O
 
 
 
-== Gestion des licences du pool de capacité
+== Gérer les licences de pool de capacité
 
 Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONTAP Select selon vos besoins.
 
@@ -62,7 +62,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONT
 
 
 
-== Réinstallation d'une licence de pool de capacité
+== Réinstallez une licence de pool de capacité
 
 Chaque licence de pool de capacité active est verrouillée à une instance spécifique du Gestionnaire de licences, contenue dans une instance de l'utilitaire d'administration de déploiement. Si vous utilisez une licence de pool de capacité puis restaurez ou récupérez l'instance de déploiement, la licence d'origine n'est plus valide. Vous devez générer un nouveau fichier de licence de capacité, puis installer la licence sur la nouvelle instance de déploiement.
 
@@ -80,7 +80,7 @@ Chaque licence de pool de capacité active est verrouillée à une instance spé
 . Contactez le support NetApp et bénéficiez de toutes les licences de pool de capacité pour l'instance de déploiement initiale sans limites ou non.
 . Obtenez et téléchargez un nouveau fichier de licence pour chacune des licences du pool de capacité.
 +
-Voir link:task_lic_acquire_cp.html["Acquisition d'une licence de pool de capacité"] pour en savoir plus.
+Voir link:task_lic_acquire_cp.html["Acquérir une licence de pool de capacité"] pour en savoir plus.
 
 . Installez les licences du pool de capacité sur la nouvelle instance de déploiement :
 +
@@ -126,12 +126,11 @@ Voir link:task_lic_acquire_cp.html["Acquisition d'une licence de pool de capacit
 
 
 
-== Conversion d'une licence d'évaluation en licence de production
+== Convertir une licence d'évaluation en licence de production
 
 Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de niveau de capacité de production avec l'utilitaire d'administration Deploy.
 
 .Avant de commencer
-* Vous devez utiliser ONTAP Select 9.5P1 avec Deploy 2.11 ou version ultérieure
 * Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production.
 * Vous devez disposer de licences de niveau de capacité pour chaque nœud du cluster d'évaluation.
 
@@ -158,6 +157,6 @@ Les numéros de série de nœud de 20 chiffres initialement attribués à chaque
 
 
 
-== Gestion d'une licence de pool de capacité expirée
+== Gérer une licence de pool de capacité expirée
 
 En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.

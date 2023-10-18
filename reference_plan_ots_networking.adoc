@@ -29,10 +29,7 @@ NOTE: Pour plus d'informations sur la configuration d'un vSwitch sur un hôte d'
 
 == Mise à niveau vers VMXNET3
 
-Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select existant vers la version 9.5 ou ultérieure, le pilote n'est pas automatiquement mis à niveau.
-
-
-NOTE: La mise à niveau vers VMXNET3 n'est pas requise pour le moment. Toutefois, si vous choisissez de mettre à niveau le pilote, vous devez effectuer la mise à niveau manuellement. Dans ce cas, contactez le support NetApp pour obtenir de l'aide.
+Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select plus ancien vers la version 9.5 ou ultérieure, le pilote n'est pas automatiquement mis à niveau.
 
 
 

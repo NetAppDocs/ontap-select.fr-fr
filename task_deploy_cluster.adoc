@@ -4,7 +4,7 @@ permalink: task_deploy_cluster.html
 keywords: install, installing, deploy ontap select cluster, create cluster 
 summary: 'Vous pouvez utiliser l"interface utilisateur Web fournie avec l"utilitaire d"administration ONTAP Select Deploy pour déployer un cluster ONTAP Select à un ou plusieurs nœuds.' 
 ---
-= Déploiement d'un cluster ONTAP Select
+= Déployer un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ Vous pouvez utiliser l'interface utilisateur Web fournie avec l'utilitaire d'adm
 Lorsque vous créez un cluster ONTAP Select à l'aide de l'interface Web de l'utilitaire de déploiement, vous suivez une séquence d'étapes spécifique. Le processus exact varie selon que vous déployez un cluster à un ou plusieurs nœuds.
 
 
-TIP: Vous pouvez également déployer des clusters ONTAP Select à l'aide de l'interface de ligne de commande de l'utilitaire Deploy.
+TIP: Vous pouvez également link:https://docs.netapp.com/us-en/ontap-select/task_cli_deploy_cluster.html["Déployez des clusters ONTAP Select à l'aide de l'interface de ligne de commande de Deploy Utility"].
 
 
 
@@ -49,8 +49,8 @@ Préparation de l'hôte:: Vous devez préparer les hôtes de l'hyperviseur où l
 
 --
 Fichiers de licence:: Si vous prévoyez de déployer le cluster dans un environnement de production, vous devez acquérir les fichiers de licence de stockage en fonction de votre modèle de licence.
-Déploiement de l'installation et des identifiants du compte:: Vous devez installer l'utilitaire d'administration de déploiement et effectuer la configuration initiale. Voir link:task_install_deploy.html["Installation de ONTAP Select Deploy"] pour en savoir plus. Vous devez disposer du mot de passe du compte administrateur de déploiement configuré dans le cadre du processus d'installation.
-Installation d'images de nœud ONTAP Select antérieures:: Par défaut, l'utilitaire d'administration Deploy contient la version la plus récente de ONTAP Select au moment de la publication. Pour déployer des clusters à l'aide d'une version antérieure de ONTAP Select, vous devez ajouter l'image ONTAP Select à votre instance de déploiement. Voir link:task_cli_deploy_image_add.html["Ajout d'une image ONTAP Select à déployer"] pour en savoir plus.
+Déploiement de l'installation et des identifiants du compte:: Vous devez installer l'utilitaire d'administration de déploiement et effectuer la configuration initiale. Voir link:task_install_deploy.html["Installez ONTAP Select Deploy"] pour en savoir plus. Vous devez disposer du mot de passe du compte administrateur de déploiement configuré dans le cadre du processus d'installation.
+Installation d'images de nœud ONTAP Select antérieures:: Par défaut, l'utilitaire d'administration Deploy contient la version la plus récente de ONTAP Select au moment de la publication. Pour déployer des clusters à l'aide d'une version antérieure de ONTAP Select, vous devez ajouter l'image ONTAP Select à votre instance de déploiement. Voir link:task_cli_deploy_image_add.html["Ajoutez une image ONTAP Select à déployer"] pour en savoir plus.
 Mise en route de la page de lancement:: La page initiale *mise en route avec ONTAP Select Deploy* vous guide tout au long du processus en plusieurs étapes de création d'un cluster. Il y a cinq étapes principales, notamment :
 +
 --
@@ -73,7 +73,7 @@ Après le déploiement d'un cluster:: Il est conseillé de sauvegarder les donn�
 
 
 
-== Création d'un cluster à un ou plusieurs nœuds
+== Créez un cluster à un ou plusieurs nœuds
 
 Vous pouvez utiliser l'interface utilisateur Web de ONTAP Select Deploy pour déployer un cluster ONTAP Select à un ou plusieurs nœuds.
 

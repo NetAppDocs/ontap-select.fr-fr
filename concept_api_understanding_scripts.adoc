@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: 'Les exemples de scripts Python vous permettent d"effectuer plusieurs tâches différentes. Vous devez comprendre les scripts avant de les utiliser dans une instance de déploiement actif.' 
 ---
-= Présentation des scripts Python
+= Comprendre les scripts Python
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -56,7 +56,7 @@ Les paramètres d'entrée CLI pour le script incluent :
 
 
 
-== Ajout d'une licence de nœud
+== Ajouter une licence de nœud
 
 Si vous choisissez de déployer un cluster de production, vous devez ajouter une licence pour chaque nœud à l'aide du script _add_license.py_. Vous pouvez ajouter la licence avant ou après le déploiement du cluster.
 
@@ -71,7 +71,7 @@ Les paramètres d'entrée CLI pour le script incluent :
 
 
 
-== Suppression d'un cluster
+== Supprime un cluster
 
 Vous pouvez supprimer un cluster ONTAP Select existant à l'aide du script _delete_cluster.py_.
 

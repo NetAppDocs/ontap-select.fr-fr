@@ -4,7 +4,7 @@ permalink: task_vpi_adm_network.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, administer, administering, network, networking 
 summary: Il existe plusieurs aspects du réseau que vous pouvez explorer et afficher. 
 ---
-= Confirmation de la connectivité réseau
+= Vérifiez la connectivité réseau
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ Il existe plusieurs aspects du réseau que vous pouvez explorer et afficher.
 
 
 
-== Confirmation de la connectivité réseau
+== Vérifiez la connectivité réseau
 
 Vous pouvez tester la connectivité réseau entre deux nœuds ONTAP Select ou plus sur le réseau de clusters interne. Vous devez généralement exécuter ce test avant le déploiement d'un cluster multinœud afin de détecter les problèmes susceptibles d'entraîner l'échec de l'opération. Vous pouvez également exécuter le test de connectivité après le déploiement et la mise en ligne d'un cluster.
 
@@ -37,7 +37,7 @@ Le test est toujours exécuté en mode rapide qui effectue un test sans interrup
 
 
 
-== Affichage de l'état du service médiateur
+== Afficher l'état du service médiateur
 
 Chaque cluster ONTAP Select à deux nœuds est surveillé par le service de médiateur, qui facilite la gestion de la capacité haute disponibilité partagée par les nœuds. Vous pouvez afficher l'état du service médiateur pour chacun des clusters à deux nœuds définis dans l'utilitaire d'administration Deploy.
 

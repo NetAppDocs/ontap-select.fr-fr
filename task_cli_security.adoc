@@ -18,7 +18,7 @@ Dans le cadre de la sécurisation d'un déploiement ONTAP Select, vous pouvez ef
 
 
 
-= Modification du mot de passe administrateur de déploiement
+= Modifiez le mot de passe administrateur de déploiement
 
 Vous pouvez modifier le mot de passe du compte administrateur de la machine virtuelle de déploiement selon vos besoins à l'aide de l'interface de ligne de commande.
 

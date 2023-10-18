@@ -4,7 +4,7 @@ permalink: task_adm_replace_drives_swraid.html
 keywords: administer, administering, web, software raid, replace drive 
 summary: 'Lorsqu"un disque tombe en panne avec le RAID logiciel, ONTAP Select utilise un disque de rechange (si un disque est disponible) et démarre le processus de reconstruction automatiquement. Cela est similaire au fonctionnement d"ONTAP sur FAS et AFF. Toutefois, si aucun disque de spare n"est disponible, vous devez en ajouter un au nœud ONTAP Select.' 
 ---
-= Remplacement d'un lecteur défectueux lors de l'utilisation de SW RAID
+= Remplacez un disque défectueux lors de l'utilisation du RAID logiciel
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

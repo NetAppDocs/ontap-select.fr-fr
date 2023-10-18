@@ -4,7 +4,7 @@ permalink: task_vpi_deploy_cluster.html
 keywords: vcenter, plug-in, vcenter plug-in, deploy plug-in, deploy cluster, deploying cluster, create cluster, creating cluster 
 summary: 'Vous pouvez utiliser le plug-in vCenter de déploiement via l"interface utilisateur Web vSphere pour déployer des clusters ONTAP Select.' 
 ---
-= Déploiement d'un cluster ONTAP Select
+= Déployer un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -51,7 +51,7 @@ Outre la préparation commune, vous devez vous familiariser avec le vérificateu
 
 
 
-== Ajout d'un hôte hyperviseur
+== Ajouter un hôte hyperviseur
 
 Vous pouvez ajouter des hôtes hyperviseurs à l'utilitaire de déploiement sur lequel les nœuds ONTAP Select s'exécutent avant de déployer un cluster. Si nécessaire, vous pouvez à la place ajouter les hôtes dans la boîte de dialogue de création du cluster.
 
@@ -71,7 +71,7 @@ Vous pouvez ajouter un ou plusieurs hôtes en fonction de la taille du cluster.
 
 
 
-== Création d'un cluster à un seul nœud
+== Créez un cluster à un seul nœud
 
 Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé d'un nœud unique.
 
@@ -121,7 +121,7 @@ TIP: Si l'opération de création de cluster est initiée mais que l'opération 
 
 
 
-== Création d'un cluster multinœud
+== Créez un cluster à plusieurs nœuds
 
 Vous pouvez utiliser le plug-in VMware vCenter via le client web vSphere pour déployer un cluster ONTAP Select composé de plusieurs nœuds.
 

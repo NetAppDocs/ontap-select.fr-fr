@@ -4,7 +4,7 @@ permalink: concept_stor_capacity_inc.html
 keywords: ontap select, deploy, increase storage 
 summary: 'ONTAP Deploy peut être utilisé pour ajouter et obtenir une licence de stockage supplémentaire pour chaque nœud d"un cluster ONTAP Select.' 
 ---
-= Augmentation de la capacité de stockage
+= Augmenter la capacité de stockage
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -54,7 +54,7 @@ La taille maximale de VMDK utilisée lors des opérations d'ajout de capacité e
 
 
 
-== Augmentation de la capacité du ONTAP Select avec le RAID logiciel
+== Augmentez la capacité du système ONTAP Select avec le RAID logiciel
 
 De la même manière, l'assistant d'ajout de stockage permet d'augmenter la capacité de gestion des nœuds ONTAP Select grâce au RAID logiciel. L'assistant ne présente que les disques SSD DAS disponibles et peut être mappé en tant que RDM à la machine virtuelle ONTAP Select.
 
