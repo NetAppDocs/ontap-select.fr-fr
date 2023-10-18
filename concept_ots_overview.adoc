@@ -85,20 +85,22 @@ Chaque nœud d'un cluster ONTAP Select dispose automatiquement d'une licence pou
 
 ONTAP Select ne prend pas en charge plusieurs fonctionnalités ONTAP. Dans la plupart des cas, ces fonctionnalités nécessitent un matériel spécifique non disponible dans l'environnement ONTAP Select virtualisé.
 
-* Les solutions Fibre Channel et Fibre Channel over Ethernet ne sont pas prises en charge.
-* Groupes d'interface les groupes d'interface (IFGRP) ne sont pas pris en charge.
-* Contrôle de l'état : la surveillance classique de l'état utilisée avec un déploiement matériel ONTAP est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
-* Prise en charge de la décharge des cartes réseau en raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement des cartes réseau n'est pas prise en charge.
+* Protection autonome contre les ransomwares (ARP)
 * IPspace cluster
 Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppression de ports, de réseaux locaux virtuels (VLAN) ou de groupes d'agrégation de liens, n'est pas prise en charge.
+* Les solutions Fibre Channel et Fibre Channel over Ethernet ne sont pas prises en charge.
+* Contrôle de l'état : la surveillance classique de l'état utilisée avec un déploiement matériel ONTAP est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
+* Groupes d'interface
+Les groupes d'interface ne sont pas pris en charge.
+* Prise en charge de la décharge des cartes réseau en raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement des cartes réseau n'est pas prise en charge.
+* Disques NetApp Storage Encryption
 * Propriétés du port ONTAP la modification des propriétés des ports ONTAP, y compris la vitesse, le duplex et le contrôle de flux, n'est pas prise en charge.
 * Les processeurs de service
-* Disques NetApp Storage Encryption
-* Protection autonome contre les ransomwares (ARP)
-* Copies Snapshot inviolables
 * Migration de SVM
-* VMware HCX
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
+* Conformité SnapLock
+* Copies Snapshot inviolables
+* VMware HCX
 
 
 .Informations associées
