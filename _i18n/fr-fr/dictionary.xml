@@ -727,7 +727,6 @@
   <block id="eea1cec828c419810e082867558ec301" category="list-text">Cliquez sur *mise à niveau du nœud ONTAP Select*.</block>
   <block id="a864f71b844955db4e27746202712f1b" category="list-text">Sélectionnez et téléchargez l'image de mise à niveau appropriée répondant à toutes les invites, le cas échéant.</block>
   <block id="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="paragraph"><block ref="f1dfdf3ad3b4debf7b9ee14f56bcdf31" category="inline-link-rx"></block></block>
-  <block id="202772c1f92d500b0765ed04693d11e5" category="list-text">Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select.</block>
   <block id="c09b5be4c2da04f4040eef1878f258aa" category="inline-link">Documentation sur ONTAP 9</block>
   <block id="6fad90e28618e0a28b3096e32fc10067" category="summary">Lorsque vous utilisez des licences de niveaux de capacité, vous devez acheter un fichier de licence pour chaque nœud ONTAP Select. Le fichier de licence définit la capacité de stockage du nœud et est verrouillé pour ce nœud via le numéro de série à neuf chiffres unique attribué par NetApp.</block>
   <block id="6d1a0d7c1d5f3f225d0b6d9969fd7d36" category="doc">L'acquisition d'une licence de niveau de capacité</block>
@@ -2062,9 +2061,6 @@
   <block id="c9732055d20960435002cec722852b3e" category="summary">Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en place à l'aide de l'interface de ligne de commande.</block>
   <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">Assurez-vous que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Vous devriez voir les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire de déploiement.</block>
   <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">Pour commencer le processus de mise à niveau, vous devez télécharger le fichier de mise à niveau de machine virtuelle de déploiement approprié depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.</block>
-  <block id="bccf3e76ee48d8e82f2ceba72b62d7af" category="list-text">Faites défiler et cliquez sur *ONTAP Select Deploy Upgrade*.</block>
-  <block id="09ea0908fbfc4cde85bf416e35dc55c8" category="inline-link-macro">Support NetApp</block>
-  <block id="256b9e5b7f511be2eea8558649199f73" category="paragraph"><block ref="256b9e5b7f511be2eea8558649199f73" category="inline-link-macro-rx"></block></block>
   <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">Après l'acquisition du package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle de déploiement.</block>
   <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">Le fichier de mise à niveau doit être disponible sur votre poste de travail local. Vous devez également disposer du mot de passe pour le compte utilisateur administrateur.</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">Le fichier de mise à niveau est stocké dans le répertoire personnel de l'utilisateur admin.</block>
@@ -2072,7 +2068,6 @@
   <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">Vous devez savoir dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire de déploiement. Assurez-vous également que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Effectuez la mise à niveau à l'aide du chemin de répertoire et du nom de fichier appropriés :</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
-  <block id="150fc0d33877571bc7e496a88e0dcdb5" category="paragraph">Une fois la procédure de mise à niveau terminée, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle de déploiement. Vous devez également effacer le cache du navigateur pour pouvoir afficher les nouvelles pages de déploiement.</block>
   <block id="8e18eb8cd4ab44854a5b30a491abc11b" category="summary">Vous devez configurer le réseau de l'hyperviseur correctement avant de déployer ONTAP Select.</block>
   <block id="44a7bba009f406b43fe0bf78279bd691" category="doc">Considérations relatives à la mise en réseau</block>
   <block id="75e93aaa8b7d5677986d65d277ddcb62" category="section-title">Options de commutateurs virtuels</block>
@@ -3526,7 +3521,6 @@ Les groupes d'interface ne sont pas pris en charge.</block>
   <block id="f300769ad7ade3ee1597c88f58750b97" category="doc">Mettez à niveau les nœuds ONTAP Select</block>
   <block id="2e17a67d810d937603511ac8eb9044c5" category="paragraph">Consultez les notes de version pour obtenir des informations supplémentaires et connaître les procédures nécessaires avant de mettre à niveau un nœud ONTAP Select.</block>
   <block id="2a883d1fe3d932e9f2fc25c99deaa4b9" category="inline-link-macro">Présentation de la mise à niveau ONTAP</block>
-  <block id="c6747590f95713e2f203d616751eb4ea" category="paragraph"><block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block></block>
   <block id="46928a27773a23230df6e5bda4c3aeb9" category="section-title">Restaurez un nœud ONTAP Select</block>
   <block id="140182c4500e816e4313b2abddef452d" category="paragraph">Vous ne pouvez pas rétablir une version antérieure à celle sur laquelle un nœud ONTAP Select a été installé à l'origine. Par exemple :</block>
   <block id="f02e36d55b7d949e1003748824aa7ec6" category="list-text">ONTAP Select 9.7 est initialement installé</block>
@@ -3708,4 +3702,10 @@ Pour plus d'informations, consultez la documentation relative à l'installation 
   <block id="ba0ae169498601730046cfffe2523387" category="sidebar">Comprendre un appel d'API</block>
   <block id="20f67f07ed859b317730c48838666bb5" category="sidebar">Workflow 1 Créez un cluster</block>
   <block id="d95d85ec027f0d5da378060fe690a4ec" category="sidebar">Comprendre les scripts</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link-macro">Site de support NetApp</block>
+  <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">Accédez au <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> À l'aide d'un navigateur Web, choisissez *Téléchargements* dans le menu Téléchargements.</block>
+  <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Faites défiler vers le bas et sélectionnez *mise à niveau de déploiement ONTAP Select*.</block>
+  <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.</block>
+  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de déploiement de machine virtuelle. Vous devez également effacer le cache du navigateur pour pouvoir afficher les pages de déploiement nouvellement créées.</block>
+  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select. Voir <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> pour la procédure de mise à niveau détaillée.</block>
 </blocks>

@@ -32,17 +32,12 @@ NOTE: Si une ancienne instance de l'utilitaire d'administration de ONTAP Select 
 Pour commencer le processus de mise à niveau, vous devez télécharger le fichier de mise à niveau de machine virtuelle de déploiement approprié depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.
 
 .Étapes
-. Accédez au site de support NetApp à l'aide d'un navigateur Web et cliquez sur *Liens rapides de support*.
-. Cliquez sur *Télécharger le logiciel* sous *Top Tasks* et connectez-vous.
-. Cliquez sur *Rechercher votre produit*.
-. Faites défiler et cliquez sur *ONTAP Select Deploy Upgrade*.
+. Accédez au link:https://mysupport.netapp.com/site/["Site de support NetApp"^] À l'aide d'un navigateur Web, choisissez *Téléchargements* dans le menu Téléchargements.
+. Faites défiler vers le bas et sélectionnez *mise à niveau de déploiement ONTAP Select*.
 . Sélectionnez la version souhaitée du progiciel de mise à niveau.
-. Lisez le contrat de licence utilisateur final (CLUF) et cliquez sur *Accept & continue*.
+. Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.
 . Sélectionnez et téléchargez le pack approprié en répondant à toutes les invites de votre environnement.
 
-
-.Informations associées
-link:https://mysupport.netapp.com["Support NetApp"^]
 
 
 
@@ -95,4 +90,4 @@ deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 
 
 .Une fois que vous avez terminé
-Une fois la procédure de mise à niveau terminée, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle de déploiement. Vous devez également effacer le cache du navigateur pour pouvoir afficher les nouvelles pages de déploiement.
+Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de déploiement de machine virtuelle. Vous devez également effacer le cache du navigateur pour pouvoir afficher les pages de déploiement nouvellement créées.
