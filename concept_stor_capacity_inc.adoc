@@ -26,7 +26,7 @@ Si la capacité supplémentaire est ajoutée à un agrégat ONTAP Select existan
 
 Si du stockage connecté localement est ajouté à un système afin de fournir des pools de stockage locaux (DAS) supplémentaires, vous devez créer un groupe RAID et une LUN (ou LUN) supplémentaires. Tout comme pour les systèmes FAS, il convient de s'assurer que les performances du nouveau groupe RAID sont similaires à celles du groupe RAID d'origine si vous ajoutez de l'espace au même agrégat. Si vous créez un nouvel agrégat, la nouvelle disposition des groupes RAID peut être différente si l'on comprend parfaitement les implications de performances du nouvel agrégat.
 
-Le nouvel espace peut être ajouté au même datastore, dans la mesure où la taille totale du datastore ne dépasse pas la taille maximale du datastore prise en charge par ESX. L'ajout d'une extension au datastore dans lequel ONTAP Select est déjà installé peut s'effectuer de façon dynamique et n'affecte pas les opérations du nœud ONTAP Select.
+Le nouvel espace peut être ajouté à ce même magasin de données en tant qu'extension si la taille totale du magasin de données ne dépasse pas la taille maximale du magasin de données prise en charge. L'ajout d'une extension du magasin de données dans lequel ONTAP Select est déjà installé peut être effectué de façon dynamique sans affecter les opérations du nœud ONTAP Select.
 
 Si le nœud ONTAP Select fait partie d'une paire HA, d'autres problèmes doivent être pris en compte.
 

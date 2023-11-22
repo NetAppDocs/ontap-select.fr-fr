@@ -4,7 +4,7 @@ permalink: reference_plan_dep_vmware.html
 keywords: plan, planning, ontap select deploy, vmware requirements 
 summary: 'Il existe plusieurs conditions et restrictions spécifiques à l"environnement VMware à prendre en compte avant d"installer l"utilitaire ONTAP Select Deploy dans un environnement VMware.' 
 ---
-= Environnement d'hyper-viseur VMware
+= Considérations relatives aux hôtes hyperviseurs
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,61 @@ summary: 'Il existe plusieurs conditions et restrictions spécifiques à l"envir
 
 
 [role="lead"]
+Vous devez tenir compte de plusieurs problèmes de planification liés à l'hôte de l'hyperviseur.
+
+
+CAUTION: Vous ne devez pas modifier directement la configuration d'une machine virtuelle ONTAP Select, sauf en y faisant appel par le support NetApp. Une machine virtuelle ne doit être configurée et modifiée que par l'intermédiaire de l'utilitaire d'administration de déploiement. Si des modifications apportées à une machine virtuelle ONTAP Select ne sont pas à l'utilitaire de déploiement, le support NetApp risque de provoquer une défaillance de la machine virtuelle et de le rendre inutilisable.
+
+
+
+== Indépendant de l'hyperviseur
+
+ONTAP Select et l'utilitaire d'administration de ONTAP Select Deploy sont tous deux indépendants de l'hyperviseur.
+
+Les hyperviseurs suivants sont pris en charge à la fois pour l'administration de ONTAP Select et de ONTAP Select Deploy :
+
+* VMware ESXi
+* Machine virtuelle basée sur kernel (KVM)
+
+
+
+NOTE: Pour plus de détails sur les plates-formes prises en charge, reportez-vous aux informations de planification spécifiques à l'hyperviseur et aux notes de version.
+
+.Hyperviseur pour nœuds ONTAP Select et utilitaire d'administration
+L'utilitaire d'administration de déploiement et les nœuds ONTAP Select s'exécutent tous deux en tant que machines virtuelles. L'hyperviseur que vous choisissez pour l'utilitaire de déploiement est indépendant de l'hyperviseur que vous choisissez pour les nœuds ONTAP Select. Vous disposez d'une souplesse totale lors de l'association des deux éléments :
+
+* Déployez l'utilitaire exécuté sur VMware ESXi peut créer et gérer des clusters ONTAP Select sur VMware ESXi ou KVM
+* Déployez l'utilitaire exécuté sur KVM permet de créer et de gérer des clusters ONTAP Select sur VMware ESXi ou KVM
+
+
+.Une ou plusieurs instances de nœud ONTAP Select par hôte
+Chaque nœud ONTAP Select s'exécute en tant que machine virtuelle dédiée. Vous pouvez créer plusieurs nœuds sur le même hôte d'hyperviseur, avec les restrictions suivantes :
+
+* Plusieurs nœuds d'un même cluster ONTAP Select ne peuvent pas s'exécuter sur le même hôte. Tous les nœuds d'un hôte spécifique doivent partir de différents clusters ONTAP Select.
+* Vous devez utiliser un stockage externe.
+* Si vous utilisez le RAID logiciel, vous ne pouvez déployer qu'un seul nœud ONTAP Select sur l'hôte.
+
+
+.Cohérence de l'hyperviseur pour les nœuds dans un cluster
+Tous les hôtes d'un cluster ONTAP Select doivent s'exécuter sur la même version et le même logiciel de l'hyperviseur.
+
+.Nombre de ports physiques sur chaque hôte
+Vous devez configurer chaque hôte pour qu'il utilise un, deux ou quatre ports physiques. Bien que vous ayez une certaine flexibilité lors de la configuration des ports réseau, vous devez suivre les recommandations suivantes dans la mesure du possible :
+
+* Un hôte situé dans un cluster à un seul nœud doit avoir deux ports physiques.
+* Chaque hôte d'un cluster multinœud doit avoir quatre ports physiques
+
+
+.Intégrez ONTAP Select à un cluster matériel ONTAP
+Vous ne pouvez pas ajouter un nœud ONTAP Select directement à un cluster basé sur du matériel ONTAP. Toutefois, vous pouvez établir une relation de peering de cluster entre un cluster ONTAP Select et un cluster ONTAP basé sur le matériel.
+
+
+
+== Environnement d'hyper-viseur VMware
+
 Il existe plusieurs conditions et restrictions spécifiques à l'environnement VMware à prendre en compte avant d'installer l'utilitaire ONTAP Select Deploy dans un environnement VMware.
 
-
-
-== Configuration matérielle requise pour le serveur hôte ESXi
-
+.Configuration matérielle requise pour le serveur hôte ESXi
 Plusieurs ressources minimum sont requises pour que votre hôte d'hyperviseur ESXi soit conforme. Vérifiez que les hôtes sur lesquels ONTAP Select est déployé répondent aux exigences de base suivantes :
 
 * Serveur ESXi :
@@ -34,10 +83,7 @@ Plusieurs ressources minimum sont requises pour que votre hôte d'hyperviseur ES
 * DHCP activé (peut également attribuer une adresse IP statique)
 
 
-
-
-== Connectivité réseau
-
+.Connectivité réseau
 Vous devez vous assurer que l'interface réseau de la machine virtuelle ONTAP Select Deploy est configurée et que sa adresse IP de gestion est unique. Vous pouvez utiliser DHCP pour attribuer dynamiquement une adresse IP ou configurer manuellement une adresse IP statique.
 
 Selon vos décisions de déploiement, la machine virtuelle déployée doit être capable de se connecter au serveur vCenter, aux hôtes d'hyperviseur ESXi et aux nœuds ONTAP Select qu'elle gère. Vous devez configurer vos pare-feu pour autoriser le trafic requis.
@@ -51,18 +97,12 @@ Le déploiement doit également pouvoir communiquer avec les adresses IP de gest
 * SSL (port 443)
 
 
-
-
-== Prise en charge de IP version 4
-
+.Prise en charge de IP version 4
 Le déploiement de ONTAP Select prend uniquement en charge IP version 4 (IPv4). La version IP 6 (IPv6) n'est pas prise en charge. Cette restriction affecte ONTAP Select de l'une des manières suivantes :
 
 * Vous devez attribuer une adresse IPv4 à la LIF de gestion de la machine virtuelle de déploiement.
 * Le déploiement ne peut pas créer de nœuds ONTAP Select configurés pour utiliser IPv6 sur les LIF ONTAP.
 
 
-
-
-== Restriction de langue VMware vCenter
-
+.Restriction de langue VMware vCenter
 Si vous utilisez ONTAP Select Deploy pour créer un cluster exécuté sur ESXi avec vCenter sur un serveur Windows, vous devez utiliser une version anglaise. ONTAP Select Deploy ne prend pas en charge vCenter dans les versions non anglaises de Windows.

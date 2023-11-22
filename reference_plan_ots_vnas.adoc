@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas 
-summary: 'Il existe plusieurs problèmes de planification liés à l"utilisation de ONTAP Select vNAS.' 
+keywords: plan, planning, vnas, vmware esxi, 
+summary: 'Vous devez prendre en compte plusieurs problèmes de planification liés à l"utilisation de VMware ESXi.' 
 ---
-= Exigences ONTAP Select vNAS
+= Configuration requise pour VMware ESXi
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Il existe plusieurs problèmes de planification liés à l"utilisation
 
 
 [role="lead"]
-ONTAP Select vNAS est une solution qui permet aux datastores ONTAP Select d'être externes à l'hôte de l'hyperviseur où la machine virtuelle ONTAP Select s'exécute. Ces datastores distants sont accessibles via VMware VSAN ou une baie de stockage externe générique.
+ONTAP Select vNAS est une solution qui permet aux datastores ONTAP Select d'être externes à l'hôte de l'hyperviseur ESXi sur lequel la machine virtuelle ONTAP Select s'exécute. Ces magasins de données distants sont accessibles via VMware VSAN ou une baie de stockage externe générique.
 
 
 

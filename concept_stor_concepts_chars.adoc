@@ -116,7 +116,7 @@ Vous devez vous assurer que les pools de stockage sont correctement créés dans
 
 
 
-=== Gérer les disques virtuels
+=== Gérer les disques virtuels sur ESXi
 
 Dans le cadre de la préparation au déploiement de ONTAP Select, vous devez connaître plusieurs problèmes liés aux disques virtuels.
 
@@ -141,7 +141,7 @@ Les disques virtuels sont gérés par ONTAP Select. Ils sont créés automatique
 
 
 
-== Illustration de l'environnement de stockage externe
+== Illustration de l'environnement de stockage externe sur ESXi
 
 La solution ONTAP Select vNAS permet à ONTAP Select d'utiliser des datastores résidant sur une infrastructure de stockage externe à l'hôte de l'hyperviseur. Les datastores sont accessibles via le réseau à l'aide de VMware VSAN ou directement sur une baie de stockage externe.
 

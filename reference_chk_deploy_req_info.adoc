@@ -14,7 +14,7 @@ summary: 'Avant d"installer l"utilitaire d"administration de déploiement dans u
 
 
 [role="lead"]
-Avant d'installer l'utilitaire d'administration de déploiement dans un environnement VMware, consultez les informations de configuration requises et les informations de configuration réseau facultatives pour vous préparer à un déploiement réussi.
+Avant d'installer l'utilitaire d'administration de déploiement dans un environnement d'hyperviseur, vérifiez les informations de configuration requises et les informations de configuration réseau facultatives afin de vous préparer à un déploiement réussi.
 
 
 
@@ -30,10 +30,10 @@ Dans le cadre de la planification de votre déploiement, vous devez déterminer 
 | Nom de la machine virtuelle déployée | Identificateur à utiliser pour la machine virtuelle. 
 
 
-| Nom de l'hôte ESXi | Identifiant de l'hôte VMware ESXi sur lequel l'utilitaire de déploiement est installé. 
+| Nom de l'hôte hyperviseur | Identificateur de l'hôte de l'hyperviseur VMware ESXi ou KVM sur lequel l'utilitaire de déploiement est installé. 
 
 
-| Nom du datastore | Identifiant du datastore VMware contenant les fichiers de la machine virtuelle (environ 40 Go sont requis). 
+| Nom du magasin de données | Identificateur du datastore de l'hyperviseur contenant les fichiers de la machine virtuelle (environ 40 Go sont requis). 
 
 
 | Réseau de la machine virtuelle | Identifiant du réseau sur lequel la machine virtuelle de déploiement est connectée. 

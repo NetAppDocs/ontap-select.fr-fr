@@ -23,7 +23,7 @@ Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utilis
 Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.
 
 .Description de la tâche
-L'utilitaire d'administration ONTAP Select Deploy est proposé en tant que machine virtuelle basée sur le format OVF (Open Virtualization format). Le suffixe du fichier compressé unique `ova`.
+L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur la norme OVF (Open Virtualization format). Le suffixe du fichier compressé unique `ova`.
 
 .Étapes
 . Accédez au site de support NetApp à l'aide d'un navigateur Web et cliquez sur *Liens rapides de support*.
@@ -83,18 +83,18 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 == Déployer la machine virtuelle
 
-Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de la machine virtuelle OVF. Dans le cadre du processus d'installation, vous devez configurer l'interface réseau pour utiliser DHCP ou une configuration IP statique.
+Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de machine virtuelle OVF. Dans le cadre du processus d'installation, vous configurez l'interface réseau pour qu'elle utilise DHCP ou une configuration IP statique.
 
 .Avant de commencer
-Vous devez préparer le déploiement de la machine virtuelle ONTAP Select Deploy :
+Dans le cas d'un hyperviseur ESXi, vous devez préparer le déploiement de la VM de déploiement ONTAP Select :
 
 * Activez la fonctionnalité OVF dans votre navigateur en installant le plug-in d'intégration client VMware ou en effectuant une configuration similaire, si nécessaire
-* Activé DHCP dans l'environnement VMware si vous affectez dynamiquement une adresse IP à la machine virtuelle de déploiement
+* Activez le protocole DHCP dans l'environnement VMware si vous attribuez une adresse IP de manière dynamique à la machine virtuelle de déploiement
 
 
-Vous devez disposer des informations de configuration à utiliser lors de la création de la machine virtuelle, notamment le nom de la machine virtuelle, du réseau externe et du nom d'hôte. Lors de la définition d'une configuration de réseau statique, vous avez besoin des informations supplémentaires suivantes :
+Pour les hyperviseurs ESXi et KVM, vous devez disposer des informations de configuration à utiliser lors de la création de la machine virtuelle, y compris le nom de la machine virtuelle, du réseau externe et du nom d'hôte. Lors de la définition d'une configuration de réseau statique, vous avez besoin des informations supplémentaires suivantes :
 
-* Adresse IP de la machine virtuelle déployée
+* Adresse IP de la machine virtuelle de déploiement
 * Masque de réseau
 * Adresse IP de la passerelle (routeur)
 * Adresse IP du serveur DNS principal
@@ -103,16 +103,22 @@ Vous devez disposer des informations de configuration à utiliser lors de la cr�
 
 
 .Description de la tâche
-Si vous utilisez vSphere, l'assistant déployer le modèle OVF comprend un formulaire pour fournir toutes les informations de configuration de déploiement, y compris la configuration du réseau. Toutefois, si vous choisissez de ne pas utiliser ce formulaire, vous pouvez utiliser la console de la machine virtuelle de déploiement pour configurer le réseau à la place.
+Si vous utilisez vSphere, l'assistant déployer le modèle OVF comprend un formulaire pour fournir toutes les informations de configuration de déploiement, y compris la configuration du réseau. Toutefois, si vous choisissez de ne pas utiliser ce formulaire, vous pouvez utiliser la console de la machine virtuelle de déploiement pour configurer le réseau.
 
 .Étapes
+Les étapes à suivre dépendent de l'utilisation ou non d'un hyperviseur ESXi ou KVM.
+
+[role="tabbed-block"]
+====
+.VMware ESXi
+--
 . Accédez au client vSphere et connectez-vous.
 . Naviguez jusqu'à l'emplacement approprié dans la hiérarchie et sélectionnez *déployer le modèle OVF*.
 . Sélectionnez le fichier OVA et remplissez l'assistant déployer modèle OVF en sélectionnant les options appropriées à votre environnement.
 +
 Vous devez définir le mot de passe du compte administrateur. Vous devez fournir ce mot de passe lors de votre connexion à l'utilitaire de déploiement.
 
-. Une fois la machine virtuelle déployée, sélectionnez la nouvelle machine virtuelle et mettez-la sous tension si elle n'est pas déjà mise sous tension en fonction de vos données fournies à l'assistant de déploiement.
+. Une fois la machine virtuelle déployée, sélectionnez-la et mettez-la sous tension si elle n'est pas déjà sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement.
 . Si nécessaire, vous pouvez configurer le réseau de déploiement à l'aide de la console de la machine virtuelle :
 +
 .. Cliquez sur l'onglet *Console* pour accéder au shell de configuration de l'hôte VMware ESXi et surveiller le processus de mise sous tension.
@@ -130,12 +136,65 @@ Saisissez un mot de passe pour l'utilisateur admin :
 +
 Utiliser DHCP pour définir les informations de mise en réseau ? [n] :
 
-.. Tapez *n* pour définir une configuration IP statique ou y pour utiliser DHCP, puis appuyez sur *entrée*.
+.. Tapez *n* pour définir une configuration IP statique ou *y* pour utiliser DHCP, puis sélectionnez *entrée*.
 .. Si vous choisissez une configuration statique, fournissez toutes les informations de configuration réseau nécessaires.
 
 
 
 
+--
+.KVM
+--
+. Connectez-vous à l'interface de ligne de commande sur le serveur Linux :
++
+[listing]
+----
+ssh root@<ip_address>
+----
+. Créer un nouveau répertoire et extraire l'image brute de la machine virtuelle :
++
+[listing]
+----
+mkdir /home/select_deploy25
+cd /home/select_deploy25
+mv /root/<file_name> .
+tar -xzvf <file_name>
+----
+. Créez et démarrez la machine virtuelle KVM en exécutant l'utilitaire d'administration de déploiement :
++
+[listing]
+----
+virt-install --name=select-deploy --vcpus=2 --ram=4096 --os-variant=debian10 --controller=scsi,model=virtio-scsi --disk path=/home/deploy/ONTAPdeploy.raw,device=disk,bus=scsi,format=raw --network "type=bridge,source=ontap-br,model=virtio,virtualport_type=openvswitch" --console=pty --import --noautoconsole
+----
+. Si nécessaire, vous pouvez configurer le réseau de déploiement à l'aide de la console de la machine virtuelle :
++
+.. Se connecter à la console VM :
++
+[listing]
+----
+virsh console <vm_name>
+----
+.. Attendez l'invite suivante :
++
+[listing]
+----
+Host name :
+----
+.. Tapez le nom d'hôte et sélectionnez *entrée*.
+.. Attendez l'invite suivante :
++
+[listing]
+----
+Use DHCP to set networking information? [n]:
+----
+.. Tapez *n* pour définir une configuration IP statique ou *y* pour utiliser DHCP, puis sélectionnez *entrée*.
+.. Si vous choisissez une configuration statique, fournissez toutes les informations de configuration réseau nécessaires.
+
+
+
+
+--
+====
 
 
 == Connectez-vous à l'interface Web de déploiement

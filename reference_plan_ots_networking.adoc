@@ -27,7 +27,7 @@ NOTE: Pour plus d'informations sur la configuration d'un vSwitch sur un hôte d'
 
 
 
-== Mise à niveau vers VMXNET3
+== Mise à niveau vers VMXNET3 (ESXi uniquement)
 
 Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select plus ancien vers la version 9.5 ou ultérieure, le pilote n'est pas automatiquement mis à niveau.
 
@@ -49,7 +49,7 @@ NOTE: Vous pouvez définir manuellement la valeur MTU du cluster si nécessaire,
 
 
 
-== Hôte à deux cartes NIC avec vSwitch standard
+== Hôte à deux cartes réseau avec vSwitch standard (ESXi uniquement)
 
 Afin d'améliorer les performances ONTAP Select dans une configuration à deux cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de deux groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
 
@@ -76,7 +76,7 @@ Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau
 
 
 
-== Hôte à quatre NIC avec vSwitch standard
+== Hôte à quatre cartes réseau avec vSwitch standard (ESXi uniquement)
 
 Afin d'améliorer les performances ONTAP Select dans une configuration à quatre cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de quatre groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
 
@@ -123,8 +123,10 @@ Vous devez vous assurer que vos pare-feu sont correctement configurés pour perm
 Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'un déploiement ONTAP Select. Elles sont introduites, puis utilisées dans la description récapitulative des besoins en trafic réseau.
 
 * Déployez l'utilitaire d'administration ONTAP Select Deploy
-* VSphere/ESXi soit un serveur vSphere soit un hôte ESXi, selon la manière dont l'hôte est géré dans le déploiement du cluster
-* Hôte de l'hyperviseur ESXi du serveur de l'hyperviseur
+* VSphere (ESXi uniquement)
+Serveur vSphere ou hôte ESXi, selon la façon dont l'hôte est géré dans le déploiement du cluster
+* Serveur hyperviseur
+Hôte hyperviseur ESXi ou hôte KVM Linux
 * Nœud OTS et nœud ONTAP Select
 * Cluster OTS et cluster ONTAP Select
 * Station de travail d'administration locale WS Admin
@@ -133,31 +135,34 @@ Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'
 .Récapitulatif des besoins en trafic réseau
 Le tableau suivant décrit les exigences en termes de trafic réseau pour un déploiement ONTAP Select.
 
-[cols="20,45,35"]
+[cols="20,20,35,25"]
 |===
-| Protocole / port | Direction | Description 
+| Protocole / port | ESXi/KVM | Direction | Description 
 
 
-| TLS (443) | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
+| TLS (443) | VMware ESXi | Déploiement sur un serveur vCenter (géré) ou ESXi (géré ou non géré) | VMware VIX API 
 
 
-| 902 | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
+| 902 | VMware ESXi | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
 
 
-| ICMP | Déploiement sur un serveur d'hyperviseur | Ping 
+| ICMP | ESXi ou KVM | Déploiement sur un serveur d'hyperviseur | Ping 
 
 
-| ICMP | Déploiement sur chaque nœud OTS | Ping 
+| ICMP | ESXi ou KVM | Déploiement sur chaque nœud OTS | Ping 
 
 
-| SSH (22) | Admin WS à chaque nœud OTS | L'administration 
+| SSH (22) | ESXi ou KVM | Admin WS à chaque nœud OTS | L'administration 
 
 
-| TLS (443) | Déploiement sur les nœuds et les clusters OTS | Accédez à ONTAP 
+| SSH (22) | KVM | Déploiement sur les nœuds de serveur d'hyperviseur | Accès au serveur hyperviseur 
 
 
-| TLS (443) | Chaque nœud OTS à déployer | Accès déployé 
+| TLS (443) | ESXi ou KVM | Déploiement sur les nœuds et les clusters OTS | Accédez à ONTAP 
 
 
-| ISCSI (3260) | Chaque nœud OTS à déployer | Disque médiateur/boîte aux lettres 
+| TLS (443) | ESXi ou KVM | Chaque nœud OTS à déployer | Déploiement des accès (licences de pools de capacité) 
+
+
+| ISCSI (3260) | ESXi ou KVM | Chaque nœud OTS à déployer | Disque médiateur/boîte aux lettres 
 |===

@@ -48,8 +48,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 == Source ouverte
 
-Le fichier de notification fournit des informations sur les droits d'auteur et les licences tierces utilisées par le logiciel NetApp.
+Le fichier de notification fournit des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2885796["Avis pour ONTAP Select 9.13.1"^]
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2884813["Notification relative à ONTAP Select 9.12.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886734["Avis pour ONTAP Select 9.14.1"^]
 

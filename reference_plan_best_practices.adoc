@@ -30,6 +30,17 @@ Les déploiements ONTAP Select de NAS virtuel (vNAS) avec VSAN 100 % Flash ou le
 
 
 
+=== Stockage externe
+
+Vous devez respecter les recommandations suivantes :
+
+* Définissez les ports réseau dédiés, la bande passante et les configurations vSwitch pour les réseaux ONTAP Select et le stockage externe
+* Configuration de l'option Capacity pour limiter l'utilisation du stockage (la ONTAP Select ne peut pas consommer la totalité de la capacité d'un pool de stockage externe)
+* Vérifiez que toutes les baies de stockage externes utilisent autant que possible les fonctionnalités de redondance et de haute disponibilité
+
+
+
+
 === Matériel central de l'hyperviseur
 
 Tous les disques d'un seul agrégat ONTAP Select doivent être du même type. Par exemple, vous ne devez pas combiner des disques HDD et SSD dans le même agrégat.
@@ -97,6 +108,12 @@ Le cluster à deux nœuds ONTAP Select doit être soigneusement surveillé pour 
 
 
 
+=== Latence entre les nœuds
+
+Le réseau entre les deux nœuds doit prendre en charge une latence moyenne de 5 ms avec une gigue périodique supplémentaire de 5 ms. Avant de déployer le cluster, tester le réseau en suivant la procédure décrite dans le rapport technique Architecture des produits et meilleures pratiques de ONTAP Select.
+
+
+
 === Équilibrage de la charge
 
 Pour optimiser l'équilibrage de la charge sur les réseaux ONTAP Select internes et externes, utilisez le routage en fonction de la stratégie d'équilibrage de la charge du port virtuel d'origine.
@@ -112,6 +129,14 @@ Si le trafic de données couvre plusieurs réseaux de couche 2 et que vous devez
 === Configuration physique des commutateurs
 
 VMware recommande de définir le protocole STP sur PortFast sur les ports de commutateur connectés aux hôtes ESXi. Le fait de ne pas définir le protocole STP sur le port Fast sur les ports du commutateur peut affecter la capacité de ONTAP Select à tolérer les défaillances de liaisons ascendantes. Si vous utilisez LACP, le minuteur LACP doit être défini sur FAST (1 seconde). La stratégie d'équilibrage de charge doit être définie sur route en fonction du hachage IP sur le groupe de ports et sur l'adresse IP source et de destination, ainsi que sur le port TCP/UDP et le VLAN sur le LAG.
+
+
+
+=== Options de commutateur virtuel pour KVM
+
+Vous devez configurer un switch virtuel sur chacun des hôtes ONTAP Select pour prendre en charge le réseau externe et le réseau interne (clusters multi-nœuds uniquement). Dans le cadre du déploiement d'un cluster multinœud, vous devez tester la connectivité réseau sur le réseau interne du cluster.
+
+Pour en savoir plus sur la configuration d'un Open vSwitch sur un hôte hyperviseur, reportez-vous au link:https://www.netapp.com/media/13134-tr4613.pdf["Architecture des produits ONTAP Select sur KVM et meilleures pratiques"^] rapport technique.
 
 
 

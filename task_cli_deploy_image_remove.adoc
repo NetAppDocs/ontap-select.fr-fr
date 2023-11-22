@@ -39,14 +39,23 @@ Notez le numéro de version et la plateforme d'hyperviseur dans chaque cas.
 +
 `ls -lh /opt/netapp/images`
 
-. Vous pouvez également supprimer une image ESXi.
+. Vous pouvez également supprimer l'image ONTAP Select avec l'hôte de l'hyperviseur.
 +
-Exemple
-`rm -r /opt/netapp/images/DataONTAPv-9.3RC1-vidconsole-esx.ova`
-
-. Vous pouvez également supprimer une image KVM lorsque vous utilisez une version antérieure à ONTAP Select 9.10.1.
-+
-Exemple
-`rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar`
-
+[role="tabbed-block"]
+====
+.Exemple ESXi
+--
+[source, asciidoc]
+----
+rm -r /opt/netapp/images/DataONTAPv-9.3RC1-vidconsole-esx.ova
+----
+--
+.Exemple KVM
+--
+[source, asciidoc]
+----
+rm -r /opt/netapp/images/DataONTAPv-9.3RC1-serialconsole-kvm.raw.tar
+----
+--
+====
 

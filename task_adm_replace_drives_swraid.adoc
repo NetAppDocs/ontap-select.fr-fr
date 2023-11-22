@@ -25,6 +25,50 @@ NOTE: Le retrait du disque défectueux et l'ajout d'un nouveau disque (marqué c
 
 Lorsqu'un disque tombe en panne, vous devez utiliser l'interface de ligne de commandes de ONTAP pour identifier le disque défectueux.
 
+[role="tabbed-block"]
+====
+.KVM
+--
+.Avant de commencer
+Vous devez disposer de l'ID de la machine virtuelle ONTAP Select, ainsi que des informations d'identification du compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+
+.Description de la tâche
+Vous ne devez utiliser cette procédure que lorsque le nœud ONTAP Select s'exécute sur KVM et est configuré pour utiliser le RAID logiciel.
+
+.Étapes
+. Sur l'interface de ligne de commandes de ONTAP Select, identifier le disque à remplacer :
++
+.. Identifiez le disque par numéro de série, UUID ou adresse cible dans la machine virtuelle.
++
+[listing]
+----
+disk show -fields serial,vmdisk-target-address,uuid
+----
+.. Vous pouvez également afficher une liste complète de la capacité de disque disponible avec les disques partitionnés.
+l'agrégat de stockage affiche les disques-spare
+
+
+. Dans l'interface de ligne de commande Linux, localisez le disque.
++
+.. Examinez les périphériques système en recherchant le numéro de série ou l'UUID (nom du disque) :
++
+[listing]
+----
+find /dev/disk/by-id/<SN|ID>
+----
+.. Examinez la configuration de la machine virtuelle en recherchant l'adresse cible :
++
+[listing]
+----
+virsh dumpxml VMID
+----
+
+
+
+
+--
+.VMware ESXi
+--
 .Étapes
 . Connectez-vous à l'interface de ligne de commande de ONTAP à l'aide du compte d'administrateur.
 . Identifiez le lecteur de disque défectueux.
@@ -39,27 +83,122 @@ NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
 ----
 
 
+--
+====
 
 
 == Retirez le disque défectueux
 
 Après avoir identifié le lecteur défectueux, retirez le disque.
 
+[role="tabbed-block"]
+====
+.KVM à l'aide de Deploy
+--
+Vous pouvez détacher un disque d'un hôte KVM lors du remplacement du disque ou lorsqu'il n'est plus nécessaire.
+
+.Avant de commencer
+Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
++
+Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
+
+. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
+. Désélectionnez les disques à détacher du nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
+. Sélectionnez *Oui* pour confirmer l'avertissement dans la fenêtre contextuelle.
+. Sélectionnez l'onglet *Events* du cluster à surveiller et confirmez l'opération de détachement.
++
+Vous pouvez retirer le disque physique de l'hôte s'il n'est plus nécessaire.
+
+
+
+--
+.KVM à l'aide de la CLI
+--
+Après avoir identifié le disque, suivez les étapes ci-dessous.
+
+.Étapes
+. Détachez le disque de la machine virtuelle :
++
+.. Vide la configuration.
++
+[listing]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. Modifiez le fichier et supprimez tout sauf le disque à détacher de la machine virtuelle.
++
+L'adresse cible du disque doit correspondre au champ adresse-cible-disque vmdisk dans ONTAP.
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. Détachez le disque.
++
+[listing]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. Remplacez le disque physique :
++
+Vous pouvez utiliser un utilitaire tel que `ledctl locate=` pour localiser le disque physique si nécessaire.
+
++
+.. Retirez le disque de l'hôte.
+.. Sélectionnez un nouveau disque et installez-le dans l'hôte si nécessaire.
+
+
+. Modifiez le fichier de configuration du disque d'origine et ajoutez le nouveau disque.
++
+Vous devez mettre à jour le chemin d'accès au disque et toutes les autres informations de configuration si nécessaire.
+
++
+[listing]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
+.VMware ESXi
+--
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* et sélectionnez le cluster approprié.
+. Sélectionnez l'onglet *clusters* et sélectionnez le cluster approprié.
 +
 image:ST_22.jpg["Détails du nœud"]
 
-. Cliquez sur *+* pour développer la vue de stockage.
+. Sélectionnez *+* pour développer la vue de stockage.
 +
 image:ST_23.jpg["Modifier le stockage de nœud"]
 
-. Cliquez sur *Modifier* pour modifier les disques connectés et décochez le disque défectueux.
+. Sélectionnez *Modifier* pour apporter des modifications aux disques connectés et décochez le disque défectueux.
 +
 image:ST_24.jpg["Détails du disque de stockage"]
 
-. Indiquez les informations d'identification du cluster et cliquez sur *Modifier le stockage*.
+. Indiquez les informations d'identification du cluster et sélectionnez *Modifier le stockage*.
 +
 image:ST_25.jpg["Identifiants ONTAP"]
 
@@ -69,27 +208,77 @@ image:ST_26.jpg["Avertissement"]
 
 
 
+--
+====
 
 
 == Ajoutez le nouveau lecteur de rechange
 
 Après avoir retiré le disque défectueux, ajoutez le disque de réserve.
 
+[role="tabbed-block"]
+====
+.KVM à l'aide de Deploy
+--
+.Connexion d'un disque à l'aide du déploiement
+Vous pouvez connecter un disque à un hôte KVM dans le cadre du remplacement d'un disque ou pour augmenter la capacité de stockage.
+
+.Avant de commencer
+Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+
+Le nouveau disque doit être installé physiquement sur l'hôte KVM Linux.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
++
+Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
+
+. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
+. Sélectionnez les disques à joindre au nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
+. Sélectionnez l'onglet *Events* pour surveiller et confirmer l'opération de rattachement.
+. Examinez la configuration de stockage du nœud pour vérifier que le disque est connecté.
+
+
+--
+.KVM à l'aide de la CLI
+--
+Une fois que vous avez identifié et retiré le disque défectueux, vous pouvez connecter un nouveau disque.
+
+.Étapes
+. Reliez le nouveau disque à la machine virtuelle.
++
+[listing]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.Résultats
+Le disque est affecté en tant que disque de secours et est disponible pour ONTAP Select. La mise à disposition du disque peut prendre une minute ou plus.
+
+.Une fois que vous avez terminé
+Étant donné que la configuration du nœud a changé, vous devez effectuer une opération d'actualisation du cluster à l'aide de l'utilitaire d'administration de déploiement.
+
+--
+.VMware ESXi
+--
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* et sélectionnez le cluster approprié.
+. Sélectionnez l'onglet *clusters* et sélectionnez le cluster approprié.
 +
 image:ST_27.jpg["Paire HA"]
 
-. Cliquez sur *+* pour développer la vue de stockage.
+. Sélectionnez *+* pour développer la vue de stockage.
 +
 image:ST_28.jpg["Modifier le stockage de nœud"]
 
-. Cliquez sur *Modifier* et confirmez que le nouveau lecteur est disponible et sélectionnez-le.
+. Sélectionnez *Modifier* et confirmez que le nouveau lecteur est disponible et sélectionnez-le.
 +
 image:ST_29.jpg["Détails du disque de stockage"]
 
-. Indiquez les informations d'identification du cluster et cliquez sur *Modifier le stockage*.
+. Indiquez les informations d'identification du cluster et sélectionnez *Modifier le stockage*.
 +
 image:ST_30.jpg["Détails du disque de stockage"]
 
@@ -98,3 +287,6 @@ image:ST_30.jpg["Détails du disque de stockage"]
 image:ST_31.jpg["Détails du disque de stockage"]
 
 
+
+--
+====

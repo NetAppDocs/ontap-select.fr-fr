@@ -16,7 +16,7 @@ summary: 'Dans le cadre de la planification d"un déploiement ONTAP Select, vous
 [role="lead"]
 MetroCluster SDS est une option de configuration lors de la création d'un cluster ONTAP Select à deux nœuds. Il est similaire au déploiement d'un bureau distant/d'une succursale, mais la distance entre les deux nœuds peut atteindre 10 km Ce déploiement amélioré à deux nœuds fournit des cas d'utilisation supplémentaires. Dans le cadre de la préparation au déploiement du SDS de MetroCluster, vous devez connaître les exigences et les restrictions.
 
-Avant de déployer MetroCluster SDS, vous devez vous assurer que les exigences suivantes sont respectées.
+Avant de déployer MetroCluster SDS, vérifiez que les conditions suivantes sont remplies.
 
 .Licences
 Chaque nœud doit disposer d'une licence ONTAP Select Premium ou supérieure.
@@ -26,9 +26,7 @@ Le SDS peut être déployé sur les mêmes hyperviseurs VMware ESXi et KVM que c
 
 [NOTE]
 ====
-* Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
-* Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
-
+Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 
 ====
 .Configuration du réseau

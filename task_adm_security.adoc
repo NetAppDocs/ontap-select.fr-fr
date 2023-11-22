@@ -56,11 +56,9 @@ Vous devez connaître les types d'identifiants requis et connaître leur utilisa
 
 | Mot de passe | Entrez le mot de passe du nom d'utilisateur associé. 
 |===
-. Vous pouvez éventuellement enregistrer (installer) le plug-in vCenter de déploiement.
 . Une fois le nouveau serveur de gestion ajouté, vous pouvez, si vous le souhaitez, cliquer sur image:icon_kebab.gif["Options"] et sélectionnez l'une des options suivantes :
 +
 ** Mettre à jour les informations d'identification
-** Enregistrez-vous en tant que plug-in
 ** Vérifiez les informations d'identification
 ** Supprimer le serveur de gestion
 

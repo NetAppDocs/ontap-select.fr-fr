@@ -20,7 +20,7 @@ Vous pouvez utiliser l'interface de ligne de commande fournie avec l'utilitaire 
 
 == Avant de commencer
 
-Avant de créer un cluster ONTAP Select sur ESXi, il est important de bien comprendre la préparation requise.
+Avant de créer un cluster ONTAP Select sur un hyperviseur, veillez à bien comprendre la préparation requise.
 
 
 
@@ -57,7 +57,7 @@ Vous devez disposer du mot de passe pour le compte utilisateur admin.
 .Étapes
 . Dans un shell de commande sur votre poste de travail local, utilisez l'utilitaire sftp pour télécharger le fichier de licence sur la machine virtuelle de déploiement.
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -81,9 +81,58 @@ Indiquez le mot de passe du compte administrateur lorsque vous y êtes invité.
 
 
 
-== Ajoutez des hôtes hyperviseurs ESXi
+== Ajouter des hôtes hyperviseurs
 
-Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Select sera exécuté. Dans le cadre de cette opération, l'utilitaire d'administration Deploy s'authentifie auprès du serveur vCenter gérant l'hôte ou directement vers l'hôte autonome ESXi.
+Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Select sera exécuté.
+
+[role="tabbed-block"]
+====
+.KVM
+--
+Vous devez enregistrer un hôte d'hyperviseur sur lequel le nœud ONTAP Select sera exécuté. Dans ce cadre, l'utilitaire d'administration de déploiement s'authentifie auprès de l'hôte KVM.
+
+.Description de la tâche
+Si plusieurs hôtes d'hyperviseur sont nécessaires, utilisez cette procédure pour ajouter chaque hôte.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
+. Enregistrez l'hôte :
++
+[source, asciidoc]
+----
+`host register -name <FQDN|IP> -hypervisor-type KVM -username KVM_USERNAME`
+----
++
+Exemple de sortie
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+Entrez le mot de passe du compte hôte lorsque vous y êtes invité.
+
+. Afficher l'état de l'hôte et confirmer qu'il est authentifié :
++
+[source, asciidoc]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+Exemple de sortie
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
+
+
+--
+.VMware ESXi
+--
+Dans le cadre de cette opération, l'utilitaire d'administration Deploy s'authentifie auprès du serveur vCenter gérant l'hôte ou directement vers l'hôte autonome ESXi.
 
 .Description de la tâche
 Avant d'enregistrer un hôte géré par vCenter, vous devez ajouter un compte de serveur de gestion pour le serveur vCenter. Si l'hôte n'est pas géré par vCenter, vous pouvez fournir les informations d'identification de l'hôte dans le cadre de l'enregistrement de l'hôte. Cette procédure doit être utilisée pour ajouter chaque hôte.
@@ -95,7 +144,7 @@ Avant d'enregistrer un hôte géré par vCenter, vous devez ajouter un compte de
 `credential add -hostname <FQDN|IP> -type vcenter -username VCENTER_USERNAME`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -108,7 +157,7 @@ credential add -hostname vc.select.company-demo.com -type vcenter -username admi
 ** Enregistrez un hôte géré par vCenter :
 `host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>`
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -121,7 +170,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 `host show -name <FQDN|IP> -detailed`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -129,6 +178,8 @@ host show -name 10.234.81.14 -detailed
 ....
 
 
+--
+====
 
 
 == Création et configuration d'un cluster ONTAP Select
@@ -148,7 +199,7 @@ Lorsque vous créez un cluster ONTAP Select, l'utilitaire Deploy génère automa
 `cluster create -name CLUSTERNAME -node-count NODES`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -159,7 +210,7 @@ cluster create -name test-cluster -node-count 1
 `cluster modify -name CLUSTERNAME -mgmt-ip IP_ADDRESS -netmask NETMASK -gateway IP_ADDRESS -dns-servers <FQDN|IP>_LIST -dns-domains DOMAIN_LIST`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -193,7 +244,7 @@ Vous devez utiliser cette procédure pour configurer chaque nœud. Une licence d
 . Sélectionner le nœud et effectuer la configuration de base :
 `node modify -name NODENAME -cluster-name CLUSTERNAME -host-name <FQDN|IP> -license-serial-number NUMBER -instance-type TYPE -passthrough-disks false`
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -211,7 +262,7 @@ Une licence de niveau de capacité est utilisée pour le nœud ONTAP Select.
 `host network show -host-name <FQDN|IP> -detailed`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -225,7 +276,7 @@ host network show -host-name 10.234.81.14 -detailed
 Lors du déploiement d'un cluster à un seul nœud, vous n'avez pas besoin d'un réseau interne et devez supprimer -interne-réseau.
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -237,7 +288,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 `node show -name NODENAME -cluster-name CLUSTERNAME -detailed`
 
 +
-Exemple
+Exemple de sortie
 
 +
 ....
@@ -264,7 +315,7 @@ Lorsque vous utilisez un contrôleur RAID matériel local, vous devez effectuer 
 `host storage pool show -host-name <FQDN|IP>`
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]
@@ -282,7 +333,7 @@ Vous pouvez également obtenir les pools de stockage disponibles via VMware vSph
 Si vous incluez le paramètre -Capacity-limit, spécifiez la valeur en GB ou TB.
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]
@@ -295,7 +346,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 `node storage pool show -cluster-name CLUSTERNAME -node-name NODENAME`
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]
@@ -307,7 +358,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 `node storage disk attach -node-name NODENAME -cluster-name CLUSTERNAME -disks LIST_OF_DRIVES`
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]
@@ -319,7 +370,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 `node storage disk show -node-name NODENAME -cluster-name CLUSTERNAME`
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]
@@ -344,7 +395,7 @@ Avant de déployer un cluster multinœud, vous devez exécuter le vérificateur 
 `cluster deploy -name CLUSTERNAME`
 
 +
-Exemple
+Exemple de sortie
 
 +
 [listing]

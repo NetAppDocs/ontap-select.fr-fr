@@ -97,7 +97,7 @@ La procédure à suivre varie selon que vous souhaitez créer un cluster à un o
 . Cliquez sur *Actualiser* et confirmez que la licence a été ajoutée.
 . Cliquez sur *Suivant* pour ajouter un hôte d'hyperviseur, puis cliquez sur *Ajouter*.
 +
-Vous pouvez ajouter l'hôte ESXi directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
+Vous pouvez ajouter l'hôte de l'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
 . Cliquez sur *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
 +
@@ -146,7 +146,7 @@ TIP: Si l'opération de création du cluster est lancée, mais que son exécutio
 . Cliquez sur *Refresh* et confirmez que les licences ont été ajoutées.
 . Cliquez sur *Suivant* pour ajouter deux hôtes d'hyperviseur, puis cliquez sur *Ajouter*.
 +
-Vous pouvez ajouter les hôtes ESXi directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
+Vous pouvez ajouter les hôtes d'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
 . Cliquez sur *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
 +

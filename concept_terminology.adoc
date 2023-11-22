@@ -17,6 +17,7 @@ summary: Lorsque vous commencez à explorer ONTAP Select et à planifier un dép
 Lorsque vous commencez à explorer ONTAP Select et à planifier un déploiement, il est utile de vous familiariser avec la terminologie et les concepts clés.
 
 Déploiement de ONTAP Select:: ONTAP Select Deploy est l'utilitaire d'administration que vous utilisez pour déployer les clusters ONTAP Select. L'utilitaire de déploiement s'exécute sur une machine virtuelle Linux dédiée. Vous pouvez accéder à l'utilitaire de déploiement via l'interface utilisateur Web, le shell de gestion de la CLI et l'API REST.
+Serveur virtuel basé sur Kernel:: KVM (Kernel-based Virtual machine) est une fonction de virtualisation du noyau Linux, qui lui permet d'agir comme une plate-forme d'hyperviseur. Une large gamme de systèmes d'exploitation invités est prise en charge.
 Hôte de l'hyperviseur ou nœud ONTAP Select:: Un _hyperviseur host_ est la plate-forme matérielle principale qui héberge une machine virtuelle ONTAP Select. Lorsqu'une machine virtuelle ONTAP Select est déployée et active sur un hôte hyperviseur, elle est considérée comme un _nœud ONTAP Select_.
 Cluster ONTAP Select:: Vous pouvez créer un cluster _ONTAP Select_ composé d'un, deux, quatre, six ou huit nœuds. Les clusters à plusieurs nœuds contiennent toujours une ou plusieurs paires haute disponibilité. Par exemple, un cluster à quatre nœuds se compose de deux paires HA. Aucun cluster à un seul nœud n'offre la fonctionnalité haute disponibilité.
 Préparation de l'environnement hôte de l'hyperviseur:: Avant d'utiliser l'utilitaire d'administration de déploiement pour déployer un cluster ONTAP Select, vous devez préparer les hôtes d'hyperviseur où ONTAP Select sera exécuté, y compris les environnements de stockage et de réseau. La préconfiguration de l'hôte s'effectue en dehors du produit ONTAP Select selon les exigences et les limites actuelles.
@@ -59,7 +60,7 @@ ONTAP Select vNAS:: La solution ONTAP Select vNAS permet à un nœud ONTAP Selec
 
 Dans les deux cas, le stockage externe doit être configuré avant de créer un cluster ONTAP Select ou d'étendre la capacité de stockage d'un nœud existant.
 
-Réhébergement de nœuds:: Lorsque vous déployez un cluster qui utilise un stockage externe disponible via la solution ONTAP Select vNAS (VMware VSAN ou une baie de stockage externe générique), le serveur virtuel ESXi hébergeant le nœud ONTAP Select peut être déplacé via des actions utilisant les fonctionnalités VMware suivantes :
+Réhébergement de nœuds sur la machine virtuelle ESXi:: Lorsque vous déployez un cluster qui utilise un stockage externe disponible via la solution ONTAP Select vNAS (VMware VSAN ou une baie de stockage externe générique), le serveur virtuel ESXi hébergeant le nœud ONTAP Select peut être déplacé via des actions utilisant les fonctionnalités VMware suivantes :
 +
 --
 * VMotion
@@ -77,6 +78,7 @@ Lorsqu'une machine virtuelle est déplacée, l'utilitaire de déploiement met à
 
 
 --
+Ouvrez vSwitch pour KVM:: Open vSwitch (OVS) est une implémentation logicielle d'un commutateur virtuel prenant en charge plusieurs protocoles réseau. OVS est open source et disponible selon la licence Apache 2.0.
 Service médiateur:: L'utilitaire ONTAP Select Deploy comprend un service de médiateur qui se connecte aux nœuds des clusters à deux nœuds actifs. Ce service surveille chaque paire haute disponibilité et aide à gérer les défaillances.
 
 

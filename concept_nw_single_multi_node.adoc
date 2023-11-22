@@ -26,6 +26,10 @@ Contrairement à la version multinœud du produit ONTAP Select, chaque VM ONTAP 
 
 Ces ports sont utilisés pour assurer les services suivants : gestion, données et LIF intercluster.
 
+.KVM
+ONTAP Select peut être déployé comme un cluster à un seul nœud. L'hôte de l'hyperviseur comprend un commutateur virtuel qui permet d'accéder au réseau externe.
+
+.VMware ESXi
 La relation entre ces ports et les adaptateurs physiques sous-jacents est visible dans la figure suivante, qui représente un nœud de cluster ONTAP Select sur l'hyperviseur ESX.
 
 *Configuration réseau du cluster ONTAP Select à un seul nœud*

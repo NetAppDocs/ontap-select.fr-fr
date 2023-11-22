@@ -18,6 +18,49 @@ Dans le cadre de la planification d'un déploiement ONTAP Select, vous devez ten
 
 
 
+== Connaissances et compétences Linux requises pour KVM
+
+Linux avec hyperviseur KVM est un environnement complexe à utiliser. Avant de déployer ONTAP Select sur KVM, vous devez disposer des connaissances et des compétences nécessaires.
+
+Distribution de serveurs Linux:: Vous devez avoir de l'expérience avec la distribution Linux spécifique à utiliser pour votre déploiement ONTAP Select. Plus précisément, vous devez être en mesure d'effectuer les tâches suivantes :
++
+--
+* Installez la distribution Linux
+* Configurez le système à l'aide de l'interface de ligne de commande
+* Ajoutez des packages logiciels ainsi que des dépendances
+
+
+--
+
+
+Pour plus d'informations sur la préparation de votre serveur Linux, y compris la configuration requise et les progiciels, consultez la liste de contrôle de la configuration de l'hôte. Reportez-vous à la configuration requise pour l'hyperviseur pour les distributions Linux actuellement prises en charge.
+
+Déploiement et administration de KVM:: Vous devez connaître les concepts généraux de virtualisation. En outre, vous devez utiliser plusieurs commandes CLI Linux dans le cadre de l'installation et de l'administration de ONTAP Select dans un environnement KVM :
++
+--
+* `virt-install`
+* `virsh`
+* `lsblk`
+* `lvs`
+* `vgs`
+* `pvs`
+
+
+--
+Configuration réseau et Open vSwitch:: Vous devez connaître les concepts de mise en réseau et la configuration des commutateurs réseau. En outre, vous devriez avoir de l'expérience avec Open vSwitch. Vous devez utiliser les commandes réseau suivantes dans le cadre de la configuration du réseau ONTAP Select dans un environnement KVM :
++
+--
+* `ovs-vsctl`
+* `ip`
+* `ip link`
+* `systemctl`
+
+
+--
+
+
+
+
 == Considérations relatives à la taille du cluster et à ses considérations associées
 
 Vous devez tenir compte de plusieurs problèmes de planification liés à la taille du cluster.
@@ -28,7 +71,7 @@ Dédiée ou colocalisé:: Selon le type d'application, vous devez déterminer si
 
 
 
-== Hôtes hyperviseurs
+== Considérations relatives aux hôtes hyperviseurs
 
 Vous devez tenir compte de plusieurs problèmes de planification liés à l'hôte de l'hyperviseur.
 
@@ -46,7 +89,7 @@ Indépendant de l'hyperviseur:: ONTAP Select et l'utilitaire d'administration ON
 
 
 
-NOTE: Depuis la version ONTAP Select 9.10.1, l'hyperviseur KVM n'est plus pris en charge lors du déploiement d'un nouveau cluster. Vous pouvez toujours utiliser KVM avec une version prise en charge antérieure.
+NOTE: Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 
 Pour plus de détails sur les plates-formes prises en charge, reportez-vous aux informations de planification spécifiques à l'hyperviseur et aux notes de version.
 
@@ -81,7 +124,7 @@ Intégration de ONTAP Select à un cluster matériel ONTAP:: Vous ne pouvez pas 
 
 
 
-== Stockage
+== Considérations relatives au stockage
 
 Vous devez tenir compte de plusieurs problèmes de planification liés au stockage hôte.
 
@@ -109,6 +152,32 @@ Estimation du stockage requis:: Déterminez la quantité de stockage requise pou
 NOTE: La capacité de stockage ONTAP Select correspond à la taille totale autorisée des disques de données connectés à la machine virtuelle ONTAP Select.
 
 Modèle de licence pour le déploiement en production:: Vous devez sélectionner les niveaux de capacité ou le modèle de licence de pools de capacité pour chaque cluster ONTAP Select déployé dans un environnement de production. Consultez la section _License_ pour plus d'informations.
+
+
+
+
+== Authentification à l'aide du magasin d'informations d'identification
+
+Le magasin d'informations d'identification de ONTAP Select Deploy est une base de données contenant les informations de compte. Le déploiement utilise les identifiants de compte pour effectuer l'authentification hôte dans le cadre de la création et de la gestion du cluster. Vous devez savoir comment le magasin d'informations d'identification est utilisé dans le cadre de la planification d'un déploiement ONTAP Select.
+
+
+NOTE: Les informations de compte sont stockées en toute sécurité dans la base de données à l'aide de l'algorithme de cryptage AES (Advanced Encryption Standard) et de l'algorithme de hachage SHA-256.
+
+Types d'informations d'identification:: Les types d'informations d'identification suivants sont pris en charge :
++
+--
+* hôte
++
+Les informations d'identification *host* sont utilisées pour authentifier un hôte hyperviseur dans le cadre du déploiement d'un nœud ONTAP Select directement sur ESXi ou KVM.
+
+* vcenter
++
+Les informations d'identification *vcenter* sont utilisées pour authentifier un serveur vCenter dans le cadre du déploiement d'un nœud ONTAP Select sur ESXi lorsque l'hôte est géré par VMware vCenter.
+
+
+
+--
+L'accès:: Le magasin d'informations d'identification est accessible en interne dans le cadre de l'exécution de tâches administratives normales à l'aide de Deploy, telles que l'ajout d'un hôte d'hyperviseur. Vous pouvez également gérer le magasin d'informations d'identification directement via l'interface utilisateur Web de déploiement et l'interface de ligne de commande.
 
 
 .Informations associées
