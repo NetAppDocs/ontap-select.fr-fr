@@ -169,9 +169,15 @@ La taille minimale du pool de stockage alloué pour chaque nœud d'un cluster à
 
 L'allocation minimale pour un déploiement de production se compose de 2 To pour les données utilisateur, plus environ 266 Go utilisés par divers processus internes ONTAP Select, considérés comme une surcharge requise.
 
+[NOTE]
+====
+Chaque nœud d'une paire HA doit disposer de la même capacité de stockage.
 
-NOTE: Chaque nœud d'une paire HA doit disposer de la même capacité de stockage.
+Lors de l'estimation de la quantité de stockage d'une paire haute disponibilité, vous devez tenir compte du fait que tous les agrégats (racine et données) sont mis en miroir. Par conséquent, chaque plex de l'agrégat consomme une quantité égale de stockage.
 
+Par exemple, lorsqu'un agrégat de 2 To est créé, il alloue 2 To à deux instances plex (2 To pour plexes 0 et 2 To pour plexes 1) ou 4 To du volume total de stockage sous licence.
+
+====
 
 
 === Capacité de stockage et pools de stockage multiples

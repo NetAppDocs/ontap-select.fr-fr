@@ -30,5 +30,26 @@ Le tableau suivant compare les deux modèles de licence de production pris en ch
 | Durée de la licence | Pérennité (aucun renouvellement requis) | Durée fixe basée sur l'achat (renouvelée requis) 
 
 
-| Durée du bail pour agrégat de données | Non applicable d'une heure à sept jours | Numéro de série du nœud 
+| Durée du bail pour agrégat de données | Sans objet | D'une heure à sept jours 
+
+
+| Numéro de série du nœud | Neuf chiffres et égal au numéro de série de licence | Vingt chiffres et générés par le Gestionnaire de licences 
+
+
+| Assistance | Add-on et avec du temps limité | Inclus et co-qualifié 
+
+
+| Types de licence | De série, haut de gamme, haut de gamme XL | De série, haut de gamme, haut de gamme XL 
+
+
+| Licence d'évaluation disponible | Oui. | Oui. 
+
+
+| Mise à niveau de l'évaluation à la production | Oui. | Non 
+
+
+| Redimensionnement des machines virtuelles ONTAP Select (de petite à moyenne taille, de moyenne à grande taille) | Oui. | Oui. 
+
+
+| Application : la licence a expiré | S/O | Oui (pas de délai de grâce) 
 |===
