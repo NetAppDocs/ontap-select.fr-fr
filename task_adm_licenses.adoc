@@ -27,7 +27,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité O
 . Cliquez sur l'onglet *Administration* en haut de la page.
 . Cliquez sur *licences* et sur *niveau de capacité*.
 . Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
-. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante
+. Pour remplacer une licence existante, sélectionnez une licence, cliquez sur image:icon_kebab.gif["Options"], Et sélectionnez *mettre à jour*.
 . Pour ajouter une nouvelle licence, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence dans votre poste de travail local.
 
 
@@ -42,7 +42,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONT
 . Cliquez sur l'onglet *Administration* en haut de la page.
 . Cliquez sur *licences* et sur *pools de capacité*.
 . Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
-. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante
+. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante.
 . Pour ajouter une nouvelle licence ou renouveler une licence existante, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence depuis votre poste de travail local.
 . Pour afficher la liste des pools de capacité :
 +

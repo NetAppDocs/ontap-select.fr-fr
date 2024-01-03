@@ -65,12 +65,12 @@ L'offre Premium offre inclut les fonctionnalités suivantes :
 
 L'offre XL haut de gamme offre les fonctionnalités suivantes :
 
-* Type d'instance petit, moyen ou grand.
-* Disques durs (HDD) ou SSD
-* Contrôleur RAID local ou RAID logiciel.
+* Type d'instance petit, moyen ou grand
+* HDD, SSD ou disques NVMe
+* Contrôleur RAID local ou RAID logiciel
 * VNAS
 * Les SDS dans MetroCluster
 
 
 
-NOTE: Vous pouvez utiliser le type d'instance large (avec la licence Premium XL) pour n'importe quelle configuration, mais il n'est pas pris en charge sur KVM en raison de problèmes de performances.
+NOTE: L'utilisation du type d'instance de grande taille ou des disques NVMe dans une configuration SW-RAID n'est pas prise en charge sur KVM.

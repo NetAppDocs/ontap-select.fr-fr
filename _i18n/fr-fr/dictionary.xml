@@ -729,7 +729,6 @@
   <block id="d1da5ae38aafefba216edae24c73845b" category="list-text">Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.</block>
   <block id="27de07fc9b7f932f0181131e79ec3569" category="list-text">Cliquez sur *licences* et sur *niveau de capacité*.</block>
   <block id="c1a597c101487100214a5f749a6f3e48" category="list-text">Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.</block>
-  <block id="394aecca280e07533a3d7792d8e0bed1" category="list-text">Vous pouvez sélectionner une licence et cliquer sur <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> pour gérer une licence existante</block>
   <block id="6ee0553d617caf0c18d95b731d38d14f" category="list-text">Pour ajouter une nouvelle licence, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence dans votre poste de travail local.</block>
   <block id="2a1af40a05dbd3e59e7040a6aba474e2" category="paragraph">Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONTAP Select selon vos besoins.</block>
   <block id="7be3eed19afb6e3f04dc4fe18d053f2c" category="list-text">Cliquez sur *licences* et sur *pools de capacité*.</block>
@@ -2440,8 +2439,6 @@
   <block id="d598b7c596887c12a7901f81a1798bd3" category="list-text">Disques durs (HDD) ou SSD</block>
   <block id="242993ddd5be1ee9c2b34ac3d6e16525" category="list-text">Contrôleur RAID local ou RAID logiciel</block>
   <block id="3df6de2a26f1404ca45737431d2a4afb" category="paragraph">L'offre XL haut de gamme offre les fonctionnalités suivantes :</block>
-  <block id="5e1e35787d312440de294099e5a73814" category="list-text">Type d'instance petit, moyen ou grand.</block>
-  <block id="d72f431c4274d31e60a80915e200ced0" category="list-text">Contrôleur RAID local ou RAID logiciel.</block>
   <block id="38fe5a7ac0941190856f04300c469ba4" category="summary">Vous devez tenir compte de plusieurs exigences de planification relatives à VMware vCenter.</block>
   <block id="ad09a727e87d60924d41059bc2e3512d" category="paragraph">Vous devez définir un compte de serveur vCenter et l'associer à un rôle contenant les privilèges d'administration nécessaires.</block>
   <block id="6a176bf972e6c312a20100e72c6e9221" category="admonition">Vous avez également besoin du nom de domaine ou de l'adresse IP du serveur vCenter gérant les hôtes de l'hyperviseur ESXi sur lesquels ONTAP Select est déployé.</block>
@@ -3291,7 +3288,6 @@ Hôte hyperviseur ESXi ou hôte KVM Linux</block>
   <block id="27867a85560994e09ee616b37ec585de" category="cell">Déploiement sur les nœuds de serveur d'hyperviseur</block>
   <block id="2d81002b634550a1e266341254a2d597" category="cell">Accès au serveur hyperviseur</block>
   <block id="0c0158fd50f7612ddfb9136e3de8e2be" category="cell">Déploiement des accès (licences de pools de capacité)</block>
-  <block id="577362db3aa99018c35d90bc2a1f3fff" category="admonition">Vous pouvez utiliser le type d'instance large (avec la licence Premium XL) pour n'importe quelle configuration, mais il n'est pas pris en charge sur KVM en raison de problèmes de performances.</block>
   <block id="0777708201aec678f0082eec3aa98c10" category="list-text">Serveur virtuel basé sur Kernel</block>
   <block id="067c35f1ba98a705741486402c1dac18" category="list-text">KVM (Kernel-based Virtual machine) est une fonction de virtualisation du noyau Linux, qui lui permet d'agir comme une plate-forme d'hyperviseur. Une large gamme de systèmes d'exploitation invités est prise en charge.</block>
   <block id="f72371502203ff57c484242dbc67867e" category="list-text">Réhébergement de nœuds sur la machine virtuelle ESXi</block>
@@ -3636,4 +3632,9 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="aae155889087fca42368d9fab8b54ee6" category="list-text">NDMP</block>
+  <block id="1bacbb36e2afde0c7a93da85daa18ef1" category="list-text">Type d'instance petit, moyen ou grand</block>
+  <block id="4241d8a2662be78b68fdfaf8b9daec1a" category="list-text">HDD, SSD ou disques NVMe</block>
+  <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">L'utilisation du type d'instance de grande taille ou des disques NVMe dans une configuration SW-RAID n'est pas prise en charge sur KVM.</block>
+  <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Pour remplacer une licence existante, sélectionnez une licence, cliquez sur <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>, Et sélectionnez *mettre à jour*.</block>
+  <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Vous pouvez sélectionner une licence et cliquer sur <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> pour gérer une licence existante.</block>
 </blocks>
