@@ -160,3 +160,9 @@ Les numéros de série de nœud de 20 chiffres initialement attribués à chaque
 == Gérer une licence de pool de capacité expirée
 
 En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.
+
+
+
+== Gestion des licences add-on
+
+Pour le produit ONTAP Select, les licences d'extension sont appliquées directement dans ONTAP et ne sont pas gérées via ONTAP Select Deploy. Voir link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Gestion des licences Overview (administrateurs du cluster uniquement)"^] et link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["Activation de nouvelles fonctionnalités en ajoutant des clés de licence"^] pour en savoir plus.

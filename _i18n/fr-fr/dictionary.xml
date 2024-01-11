@@ -3637,4 +3637,8 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="884fb5a94a98010f0044edb08adfd51e" category="admonition">L'utilisation du type d'instance de grande taille ou des disques NVMe dans une configuration SW-RAID n'est pas prise en charge sur KVM.</block>
   <block id="4c1cad05d7febe049143598de4b3847d" category="list-text">Pour remplacer une licence existante, sélectionnez une licence, cliquez sur <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block>, Et sélectionnez *mettre à jour*.</block>
   <block id="22296b7841252645a75ccd1c4032738e" category="list-text">Vous pouvez sélectionner une licence et cliquer sur <block ref="8bad975decfb5a8958ec55339559e376" category="inline-image-macro-rx" type="image"></block> pour gérer une licence existante.</block>
+  <block id="6d0db0daccb7db9a59bfff9fe2840721" category="section-title">Gestion des licences add-on</block>
+  <block id="85180b24dbd0c343b9c87bf144ede023" category="inline-link-macro">Gestion des licences Overview (administrateurs du cluster uniquement)</block>
+  <block id="a9a72d6af23763d014760a444a6e414b" category="inline-link-macro">Activation de nouvelles fonctionnalités en ajoutant des clés de licence</block>
+  <block id="9737e258b60b8a3df4f9108391ab5366" category="paragraph">Pour le produit ONTAP Select, les licences d'extension sont appliquées directement dans ONTAP et ne sont pas gérées via ONTAP Select Deploy. Voir <block ref="ce1ae1f692dcc386afa95c6f51ac8788" category="inline-link-macro-rx"></block> et <block ref="63870a99c743eac4250d67a3b291ca39" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
 </blocks>
