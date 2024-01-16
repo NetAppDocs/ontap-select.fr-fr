@@ -14,7 +14,7 @@ summary: 'Les déploiements NAS virtuels (vNAS) prennent en charge les clusters 
 
 
 [role="lead"]
-Les déploiements NAS virtuels (vNAS) prennent en charge les clusters ONTAP Select sur VSAN, certains produits HCI, la technologie NetApp HCI et les types de baies externes de datastores. L'infrastructure sous-jacente de ces configurations apporte la résilience des datastores.
+Les déploiements NAS virtuels (vNAS) prennent en charge les clusters ONTAP Select sur des SAN virtuels (VSAN), certains produits HCI et des types de baies externes de datastores. L'infrastructure sous-jacente de ces configurations apporte la résilience des datastores.
 
 La configuration sous-jacente est au minimum prise en charge par VMware et doit être répertoriée sur les HCLs VMware correspondants.
 
