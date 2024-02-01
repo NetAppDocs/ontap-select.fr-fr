@@ -130,10 +130,6 @@ La création du cluster peut prendre jusqu'à 30 minutes.
 +
 La page est automatiquement actualisée à intervalles réguliers.
 
-+
-
-TIP: Si l'opération de création du cluster est lancée, mais que son exécution échoue, le mot de passe d'administration ONTAP que vous définissez risque de ne pas être enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe _changeme123_ du compte admin.
-
 
 
 --
@@ -180,13 +176,19 @@ La création du cluster peut prendre jusqu'à 45 minutes.
 +
 La page est automatiquement actualisée à intervalles réguliers.
 
-+
-
-TIP: Si l'opération de création du cluster est lancée, mais que son exécution échoue, le mot de passe d'administration ONTAP que vous définissez risque de ne pas être enregistré. Dans ce cas, vous pouvez accéder à l'interface de gestion du cluster ONTAP Select à l'aide du mot de passe _changeme123_ du compte admin.
-
 
 
 --
 ====
 .Une fois que vous avez terminé
 Vérifiez que la fonction ONTAP Select AutoSupport est configurée, puis sauvegardez les données de configuration de ONTAP Select Deploy.
+
+[TIP]
+====
+Si l'opération de création du cluster est lancée, mais que son échec se termine, il se peut que le mot de passe d'administration ONTAP que vous définissez ne s'applique pas. Si cela se produit, vous pouvez déterminer le mot de passe d'administration temporaire pour le cluster ONTAP Select à l'aide de la commande CLI suivante :
+
+[listing]
+----
+(ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
+----
+====
