@@ -49,9 +49,12 @@ Vous devez acheter une licence distincte pour toute fonctionnalité ONTAP non ac
 
 * Service de disponibilité des données
 * FabricPool
-* FlexCache (aucun coût)
 * MetroCluster SDS (offre de licence ONTAP Select Premium)
 * SnapLock Enterprise (la conformité SnapLock n'est pas prise en charge pour ONTAP Select)
++
+** Copies Snapshot inviolables
+
+
 * SyncMirror (aucun coût)
 
 

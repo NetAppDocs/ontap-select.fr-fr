@@ -99,7 +99,6 @@ Les groupes d'interface ne sont pas pris en charge.
 * Migration de SVM
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 * Conformité SnapLock
-* Copies Snapshot inviolables
 * VMware HCX
 
 
