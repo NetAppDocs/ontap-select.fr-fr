@@ -94,6 +94,35 @@ NOTE: La modification de l'adresse IP de la machine virtuelle de déploiement ON
 
 La mise à niveau vers ONTAP Select Deploy 2.6 permet la prise en charge de ces modifications dans tout cluster ONTAP Select déjà déployé, mais sa configuration d'origine n'a pas été modifiée. En d'autres termes, si les propriétés du cluster ONTAP Select mentionnées ci-dessus ont été modifiées à l'aide de System Manager ou de vCenter, la mise à niveau vers ONTAP Select Deploy 2.6 ne corrige pas ces incohérences. Les modifications de la propriété ONTAP Select doivent d'abord être annulées pour que le déploiement d'ONTAP Select ajoute ses métadonnées uniques à chaque machine virtuelle d'ONTAP Select.
 
+.Comment Deploy détecte-t-il que les licences ONTAP Select sont renouvelées ?
+La méthode est la même pour toutes les licences, bien que les spécificités varient selon qu'il s'agit d'une licence de niveau de capacité ou de pool de capacité.
+
+* ONTAP Select Deploy détecte si les licences et les contrats de support sont renouvelés à l'achat d'un fichier de licence mis à jour auprès de NetApp. Le fichier de licence (.NLF) comprend les dates de capacité, de début et de fin ; et est généré sur le link:https://mysupport.netapp.com/site/["Site de support NetApp"^], Puis mis à jour sur le serveur de déploiement.
++
+
+NOTE: Vous pouvez charger le NLF dans le serveur de déploiement en utilisant les fonctions *Ajouter* et *mettre à jour*. *Ajouter* ajoute de nouvelles licences au serveur et *mettre à jour* met à jour les fichiers existants avec des informations telles que la capacité, la licence de nœud (standard, Premium, Premium XL), les dates de début et de fin du support (licence de niveau de capacité) ou les dates de début et de fin de l'abonnement (licence de pool de capacité).
+
++
+
+CAUTION: Ne tentez pas de modifier le fichier de licence. Cela invalide la clé de sécurité et rend la licence non valide.
+
+* Une *licence de niveau de capacité* est une licence permanente par nœud liée au numéro de série du nœud ONTAP Select. Il est vendu avec un contrat de support distinct. Pendant que la licence est permanente, le contrat de support doit être renouvelé pour accéder aux mises à niveau ONTAP Select et bénéficier de l'assistance du support technique NetApp. Un contrat de support en cours de validité est également requis pour modifier les paramètres de licence, tels que la capacité ou la taille du nœud.
++
+L'achat d'une mise à jour de licence de niveau de capacité, d'une modification de paramètre ou d'un renouvellement de contrat de support nécessite le numéro de série du nœud dans le cadre de la commande. Les numéros de série des nœuds de niveau de capacité comportent neuf chiffres et commencent par le numéro « 32 ».
+
++
+Une fois l'achat terminé et le fichier de licence généré, il est téléchargé sur le serveur de déploiement à l'aide de la fonction *Update*.
+
+* Une *licence de pool de capacité* est un abonnement permettant d'utiliser un pool de capacité et une taille de nœud spécifiques (standard, Premium, Premium XL) pour déployer un ou plusieurs clusters. L'abonnement comprend le droit d'utiliser une licence et un support pour une durée spécifiée. Le droit d'utiliser une licence et le contrat de support ont des dates de début et de fin spécifiées.
+
+
+.Comment le déploiement détecte-t-il si les nœuds ont renouvelé des licences ou un contrat de support ?
+L'achat, la génération et le téléchargement d'un fichier de licence mis à jour permettent à Deploy de détecter les licences et les contrats de support renouvelés.
+
+Si la date de fin d'un contrat de support pour le niveau de capacité est dépassée, le nœud peut rester en cours d'exécution, mais vous ne pouvez pas télécharger et installer les mises à jour de ONTAP, ou bien appeler le support technique NetApp pour obtenir de l'aide sans mettre à jour au préalable le contrat de support.
+
+Si un abonnement au pool de capacité expire, le système vous avertit d'abord mais après 30 jours, si le système s'arrête, il ne redémarre pas tant qu'un abonnement mis à jour n'est pas installé sur le serveur de déploiement.
+
 
 
 == Stockage

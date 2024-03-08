@@ -161,6 +161,8 @@ Les numéros de série de nœud de 20 chiffres initialement attribués à chaque
 
 En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.
 
+Pour plus d'informations sur ONTAP Select et le renouvellement de licence, reportez-vous à la section licences, installation, mises à niveau et restauration du link:https://docs.netapp.com/us-en/ontap-select/reference_faq.html#licenses-installation-upgrades-and-reverts["FAQ"].
+
 
 
 == Gestion des licences add-on
