@@ -76,7 +76,7 @@ Oui, la procédure de restauration d'un cluster ONTAP Select est quasiment ident
 .ONTAP MetroCluster SDS a-t-il besoin d'une licence Premium au moins ?
 Oui.
 
-.Est-il possible de modifier les adresses IP des clusters et nœuds ONTAP Select Deploy et de la gestion ONTAP Select après l'installation ?
+.Est-il possible de modifier la configuration réseau du cluster ONTAP Select après l'installation ?
 Les modifications apportées aux propriétés de cluster ONTAP Select suivantes sont reconnues par ONTAP Select Deploy à l'aide de l'opération de mise à jour du cluster disponible via l'interface graphique, l'interface de ligne de commandes ou l'API REST :
 
 * Configuration du réseau (adresses IP, DNS, NTP, masque de réseau et passerelle)
@@ -89,10 +89,10 @@ Les modifications suivantes du serveur virtuel ONTAP Select sont également reco
 * Modifications du nom du réseau de l'hôte et du nom du pool de stockage
 
 
-
-NOTE: La modification de l'adresse IP de la machine virtuelle de déploiement ONTAP Select n'est pas prise en charge.
-
 La mise à niveau vers ONTAP Select Deploy 2.6 permet la prise en charge de ces modifications dans tout cluster ONTAP Select déjà déployé, mais sa configuration d'origine n'a pas été modifiée. En d'autres termes, si les propriétés du cluster ONTAP Select mentionnées ci-dessus ont été modifiées à l'aide de System Manager ou de vCenter, la mise à niveau vers ONTAP Select Deploy 2.6 ne corrige pas ces incohérences. Les modifications de la propriété ONTAP Select doivent d'abord être annulées pour que le déploiement d'ONTAP Select ajoute ses métadonnées uniques à chaque machine virtuelle d'ONTAP Select.
+
+.Est-il possible de modifier la configuration réseau de ONTAP Select Deploy après l'installation ?
+La modification des détails de mise en réseau de l'instance de déploiement après son exécution dans un environnement n'est pas prise en charge. Pour plus d'informations, reportez-vous à la section link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Article de la base de connaissances - modification de la configuration DNS de l'instance de déploiement ONTAP"^].
 
 .Comment Deploy détecte-t-il que les licences ONTAP Select sont renouvelées ?
 La méthode est la même pour toutes les licences, bien que les spécificités varient selon qu'il s'agit d'une licence de niveau de capacité ou de pool de capacité.

@@ -1586,7 +1586,6 @@
   <block id="2512f4a6ef0d48270b57d0cdb82d209d" category="paragraph">Les modifications suivantes du serveur virtuel ONTAP Select sont également reconnues :</block>
   <block id="b9da6bd39757894ad2e3c186e8c36ea3" category="list-text">Modifications du nom et de l'état du serveur virtuel ONTAP Select (par exemple, en ligne ou hors ligne)</block>
   <block id="8aa44dba68f081d2ac92bd3c8bd38375" category="list-text">Modifications du nom du réseau de l'hôte et du nom du pool de stockage</block>
-  <block id="0505613d75e769b75ece38e7cd9acbeb" category="admonition">La modification de l'adresse IP de la machine virtuelle de déploiement ONTAP Select n'est pas prise en charge.</block>
   <block id="1c1b6371821b57c0181e5ac9c60110dd" category="paragraph">La mise à niveau vers ONTAP Select Deploy 2.6 permet la prise en charge de ces modifications dans tout cluster ONTAP Select déjà déployé, mais sa configuration d'origine n'a pas été modifiée. En d'autres termes, si les propriétés du cluster ONTAP Select mentionnées ci-dessus ont été modifiées à l'aide de System Manager ou de vCenter, la mise à niveau vers ONTAP Select Deploy 2.6 ne corrige pas ces incohérences. Les modifications de la propriété ONTAP Select doivent d'abord être annulées pour que le déploiement d'ONTAP Select ajoute ses métadonnées uniques à chaque machine virtuelle d'ONTAP Select.</block>
   <block id="ceed3431e832bcc4ed7abd4ee42953a3" category="paragraph">Plusieurs questions et réponses concernant le stockage sont à poser.</block>
   <block id="19e3b046872155951a88cbd2e790b7e6" category="paragraph">Oui. ONTAP Select Deploy peut être installé sur KVM ou ESX, et les deux installations peuvent créer des clusters ONTAP Select sur l'un ou l'autre des hyperviseurs.</block>
@@ -2794,7 +2793,6 @@
   <block id="ab7351a7aeb835a8c5a54bc22957dc89" category="paragraph-title">ONTAP Select peut-il être mis à niveau à l'aide de la même procédure qu'un cluster FAS ?</block>
   <block id="a16c0a0ef72a1eb743acb4bc099a7f63" category="paragraph-title">Est-il possible de rétablir ONTAP Select avec la même procédure que celle d'un cluster FAS ?</block>
   <block id="6c934076f6916c570e1e192badaff0f6" category="paragraph-title">ONTAP MetroCluster SDS a-t-il besoin d'une licence Premium au moins ?</block>
-  <block id="d2ff884cc30a8e5431e7b9a592afafd4" category="paragraph-title">Est-il possible de modifier les adresses IP des clusters et nœuds ONTAP Select Deploy et de la gestion ONTAP Select après l'installation ?</block>
   <block id="635eb068c84d97fe678e1459fc684023" category="paragraph-title">Une seule instance ONTAP Select peut-elle créer des clusters sur ESX et KVM ?</block>
   <block id="e5f0aa18f251bcf3fa0e3a7d649aefb9" category="paragraph-title">VCenter est-il requis pour ONTAP Select sur ESX ?</block>
   <block id="3690bfca39d229721656be52d6e38df1" category="paragraph-title">Qu'est-ce que le RAID logiciel ?</block>
@@ -3656,4 +3654,8 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="79416550309ddcac023464218d55a23d" category="paragraph">Si la date de fin d'un contrat de support pour le niveau de capacité est dépassée, le nœud peut rester en cours d'exécution, mais vous ne pouvez pas télécharger et installer les mises à jour de ONTAP, ou bien appeler le support technique NetApp pour obtenir de l'aide sans mettre à jour au préalable le contrat de support.</block>
   <block id="9b9568babf180c232b393ba5f95ff4c3" category="paragraph">Si un abonnement au pool de capacité expire, le système vous avertit d'abord mais après 30 jours, si le système s'arrête, il ne redémarre pas tant qu'un abonnement mis à jour n'est pas installé sur le serveur de déploiement.</block>
   <block id="666ca9627e87a2f5ba354cdf9f1b35dd" category="paragraph">Pour plus d'informations sur ONTAP Select et le renouvellement de licence, reportez-vous à la section licences, installation, mises à niveau et restauration du <block ref="7219e755fcbad1744f8ee5b6bd1c51b6" category="inline-link-macro-rx"></block>.</block>
+  <block id="e9bea8d0b42d385115a0325044f2d402" category="paragraph-title">Est-il possible de modifier la configuration réseau du cluster ONTAP Select après l'installation ?</block>
+  <block id="6ffb75b64cf302e3f2f57c74d51f319d" category="paragraph-title">Est-il possible de modifier la configuration réseau de ONTAP Select Deploy après l'installation ?</block>
+  <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">Article de la base de connaissances - modification de la configuration DNS de l'instance de déploiement ONTAP</block>
+  <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">La modification des détails de mise en réseau de l'instance de déploiement après son exécution dans un environnement n'est pas prise en charge. Pour plus d'informations, reportez-vous à la section <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>.</block>
 </blocks>
