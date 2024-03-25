@@ -97,7 +97,6 @@ Les groupes d'interface ne sont pas pris en charge.
 * Propriétés du port ONTAP la modification des propriétés des ports ONTAP, y compris la vitesse, le duplex et le contrôle de flux, n'est pas prise en charge.
 * Les processeurs de service
 * Migration de SVM
-* Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 * Conformité SnapLock
 * VMware HCX
 
