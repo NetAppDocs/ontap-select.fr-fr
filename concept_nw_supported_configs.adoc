@@ -36,6 +36,9 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 
 | cluster à 4 ou 6/8 nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
 |===
+
+NOTE: La conversion entre les topologies à liaison unique et à liaisons multiples sur un cluster en cours d'exécution n'est pas prise en charge car il est possible qu'il soit nécessaire de convertir les différentes configurations de regroupement de cartes réseau requises pour chaque topologie.
+
 .Configuration du réseau avec plusieurs commutateurs physiques
 Lorsqu'un matériel suffisant est disponible, NetApp recommande d'utiliser la configuration multiswitch illustrée dans la figure suivante, en raison de la protection supplémentaire contre les défaillances physiques des commutateurs.
 

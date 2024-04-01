@@ -1454,8 +1454,6 @@
   <block id="e8cda75e7e5da3e0963e9bf30c7fe4c4" category="paragraph"><block ref="3a0777c5ec542894d5b1cc3bf338da69" prefix="" category="inline-code"></block></block>
   <block id="2e872cc50863e55fb4478e06d9231f07" category="summary">Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utiliser l'utilitaire afin de créer un cluster ONTAP Select.</block>
   <block id="4457cc766e233dbf5bfec7006eded349" category="paragraph">Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.</block>
-  <block id="97cb0dfea21cc934eab612152be86e44" category="list-text">Accédez au site de support NetApp à l'aide d'un navigateur Web et cliquez sur *Liens rapides de support*.</block>
-  <block id="966c758e5fd0e52652aa5afbd8f22a24" category="list-text">Cliquez sur *Télécharger le logiciel* sous *Top Tasks* et connectez-vous.</block>
   <block id="d687fa799cb928d61ab8f8c42c50439d" category="list-text">Cliquez sur *Rechercher votre produit*.</block>
   <block id="da5ed6f3275aa7228f65de977570f140" category="list-text">Faites défiler vers le bas et cliquez sur *ONTAP Select*.</block>
   <block id="49f3378bb78e3d9783ddf1d56b07097e" category="list-text">Sélectionnez la version souhaitée du package.</block>
@@ -1483,7 +1481,6 @@
   <block id="32be4d152f2326423c990dde583d8768" category="list-text">Pointez votre navigateur vers l'utilitaire de déploiement à l'aide de l'adresse IP ou du nom de domaine :</block>
   <block id="cc0e719d3ebda123b94502d26d56a7eb" category="paragraph"><block ref="5ecf8b6869afd2efb46edbb07a649207" prefix="" category="inline-code"></block></block>
   <block id="533f8108cde4f7f1af2f1fb435cc4710" category="list-text">Indiquez le nom et le mot de passe du compte administrateur (admin) et connectez-vous.</block>
-  <block id="001ba89c3853493a35f9ab59f150b2d6" category="list-text">Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez les conditions préalables et cliquez sur *OK* pour continuer.</block>
   <block id="0dd298d83de1b2c4259299d711cefb70" category="list-text">AutoSupport (en option)</block>
   <block id="3b08ef3085886d9469e1dc839034e127" category="list-text">Serveur vCenter avec identifiants de compte (facultatif)</block>
   <block id="6738f098cd2bba79a1109b07a6b3a4e3" category="summary">Vous pouvez ajouter une image ONTAP Select à votre instance de l'utilitaire d'administration de déploiement. Une fois l'image installée, vous pouvez l'utiliser lors du déploiement d'un cluster ONTAP Select.</block>
@@ -3263,7 +3260,6 @@ Les groupes d'interface ne sont pas pris en charge.</block>
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Faites défiler vers le bas et sélectionnez *mise à niveau de déploiement ONTAP Select*.</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.</block>
   <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de déploiement de machine virtuelle. Vous devez également effacer le cache du navigateur pour pouvoir afficher les pages de déploiement nouvellement créées.</block>
-  <block id="cb09c1543f3641ccb98ebd45cc63490d" category="list-text">Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select. Voir <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block> pour la procédure de mise à niveau détaillée.</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">Vous pouvez accéder à la console vidéo de la machine virtuelle de l'hyperviseur sur laquelle ONTAP Select est exécuté.</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">Vous pouvez également supprimer l'image ONTAP Select avec l'hôte de l'hyperviseur.</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">Exemple ESXi</block>
@@ -3475,7 +3471,6 @@ Hôte hyperviseur ESXi ou hôte KVM Linux</block>
   <block id="d337df11b3ebf63c5a2171392491798f" category="cell">Identificateur de l'hôte de l'hyperviseur VMware ESXi ou KVM sur lequel l'utilitaire de déploiement est installé.</block>
   <block id="e827723eb84c3ca87c21fd4dbca2ccda" category="cell">Nom du magasin de données</block>
   <block id="d8ca36c2c2dd21202d873bdf26e7ec79" category="cell">Identificateur du datastore de l'hyperviseur contenant les fichiers de la machine virtuelle (environ 40 Go sont requis).</block>
-  <block id="27c85ffe05d0705505febd16e11d1146" category="paragraph">L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur la norme OVF (Open Virtualization format). Le suffixe du fichier compressé unique<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>.</block>
   <block id="1eadabe4e39cf3ae5ce71caf6ddc8447" category="paragraph">Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de machine virtuelle OVF. Dans le cadre du processus d'installation, vous configurez l'interface réseau pour qu'elle utilise DHCP ou une configuration IP statique.</block>
   <block id="a295d719442375039396c1ff541e8a8f" category="paragraph">Dans le cas d'un hyperviseur ESXi, vous devez préparer le déploiement de la VM de déploiement ONTAP Select :</block>
   <block id="171890587c5a7811013eb0e4f687968f" category="list-text">Activez le protocole DHCP dans l'environnement VMware si vous attribuez une adresse IP de manière dynamique à la machine virtuelle de déploiement</block>
@@ -3659,4 +3654,13 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="7d43503b6c7e842cf0609c80d607e71e" category="inline-link-macro">Article de la base de connaissances - modification de la configuration DNS de l'instance de déploiement ONTAP</block>
   <block id="f749fbe2e5bf0cebd2b21a449646f930" category="paragraph">La modification des détails de mise en réseau de l'instance de déploiement après son exécution dans un environnement n'est pas prise en charge. Pour plus d'informations, reportez-vous à la section <block ref="46ce5e00458e90fd9337d10a66b64599" category="inline-link-macro-rx"></block>.</block>
   <block id="8e59a8dddb8fd9611be1f2b3aca8c4fa" category="admonition">ONTAP Select 9.12.1 et versions ultérieures prennent désormais en charge le SVM DR comme source avec un maximum de 16 relations. La prise en charge de SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2, telles que 9.12.1 à 9.14.1.</block>
+  <block id="53e646b7dd5ddb95bd47f8626f05f330" category="paragraph">L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur la norme OVF (Open Virtualization format). Le suffixe du fichier compressé unique<block ref="f81b21fb4e12a0e6917f955a9a305553" prefix=" " category="inline-code"></block>. La machine virtuelle fournit le serveur de déploiement et les images d'installation pour les nœuds ONTAP Select.</block>
+  <block id="a8b083480f6b19e605e4aaa8bd3425f1" category="list-text">Accédez au <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> à l'aide d'un navigateur web et connectez-vous.</block>
+  <block id="cc97556611cf17d7a90f16087052f93b" category="list-text">Sélectionnez *Téléchargements* dans le menu, puis sélectionnez *Téléchargements* dans le menu déroulant.</block>
+  <block id="ab0ffe542101d39137dce2c19869d545" category="list-text">Sur la page Téléchargements, sous tous les produits A-Z, sélectionnez la lettre *O*.</block>
+  <block id="a896447aac9deddba0f8b7bc142c079f" category="list-text">Faites défiler vers le bas et sélectionnez *ONTAP Select*.</block>
+  <block id="b41a57a870dbb2988a82d37df74541fa" category="list-text">Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez les conditions préalables et sélectionnez *OK* pour continuer.</block>
+  <block id="044e8c7d609a0b31483ad9c6588ccd58" category="admonition">Le redimensionnement avec le type d'instance large est uniquement pris en charge sur ESXi.</block>
+  <block id="afc299163ecc817c9d73bc5033f67218" category="admonition">La conversion entre les topologies à liaison unique et à liaisons multiples sur un cluster en cours d'exécution n'est pas prise en charge car il est possible qu'il soit nécessaire de convertir les différentes configurations de regroupement de cartes réseau requises pour chaque topologie.</block>
+  <block id="8d3f7bf7a16e08794393171ba82658c1" category="list-text">Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select. Pour plus d'informations sur la procédure de mise à niveau de ONTAP, notamment sur les chemins de mise à niveau pris en charge, reportez-vous au <block ref="c6747590f95713e2f203d616751eb4ea" category="inline-link-macro-rx"></block>.</block>
 </blocks>
