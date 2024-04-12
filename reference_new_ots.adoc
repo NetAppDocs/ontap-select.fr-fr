@@ -25,6 +25,7 @@ ONTAP Select 9.14.1 inclut plusieurs nouvelles fonctionnalités et amélioration
 
 Prise en charge de l'hyperviseur KVM:: Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 Le plug-in Deploy VMware vCenter n'est plus pris en charge:: À partir de ONTAP Select 9.14.1, le plug-in de déploiement de VMware vCenter n'est plus pris en charge.
+Prise en charge de ONTAP Select Deploy mise à jour:: Si vous exécutez une version de ONTAP Select Deploy 9.14.1 antérieure à 9.14.1P2, vous devez mettre à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 
 
 
@@ -35,6 +36,7 @@ ONTAP Select 9.13.1 inclut plusieurs nouvelles fonctionnalités et amélioration
 
 Prise en charge de NVMe over TCP:: Lorsque vous effectuez une mise à niveau vers ONTAP Select 9.13.1, vous devez disposer de la nouvelle licence pour prendre en charge NVMe over TCP. Cette licence est automatiquement incluse lorsque vous déployez ONTAP Select pour la première fois à partir de la version 9.13.1.
 Prise en charge de VMware ESXi mise à jour:: À partir de ONTAP 9.13.1, VMware ESXi 8.0 GA (build 20513097) est pris en charge avec la version matérielle 4 et les versions ultérieures.
+Prise en charge de ONTAP Select Deploy mise à jour:: Depuis avril 2024, ONTAP Select Deploy 9.13.1 n'est plus disponible sur le site de support NetApp. Si vous exécutez ONTAP Select Deploy 9.13.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 
 
 
@@ -42,6 +44,8 @@ Prise en charge de VMware ESXi mise à jour:: À partir de ONTAP 9.13.1, VMware 
 == ONTAP Select 9.12.1
 
 ONTAP Select 9.12.1 bénéficie de la plupart des nouveautés de la version actuelle du produit principal ONTAP. Elle n'inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.
+
+Depuis avril 2024, ONTAP Select Deploy 9.12.1 n'est plus disponible sur le site de support NetApp. Si vous exécutez ONTAP Select Deploy 9.12.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 
 
 
