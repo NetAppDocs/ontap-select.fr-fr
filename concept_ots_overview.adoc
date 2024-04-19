@@ -92,6 +92,7 @@ Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppr
 * Contrôle de l'état : la surveillance classique de l'état utilisée avec un déploiement matériel ONTAP est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
 * Groupes d'interface
 Les groupes d'interface ne sont pas pris en charge.
+* Gestionnaire de clés multitenant (MTKM)
 * Prise en charge de la décharge des cartes réseau en raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement des cartes réseau n'est pas prise en charge.
 * Disques NetApp Storage Encryption
 * Propriétés du port ONTAP la modification des propriétés des ports ONTAP, y compris la vitesse, le duplex et le contrôle de flux, n'est pas prise en charge.
