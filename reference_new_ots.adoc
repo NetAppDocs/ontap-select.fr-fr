@@ -2,8 +2,7 @@
 sidebar: sidebar 
 permalink: reference_new_ots.html 
 keywords: new features 
-// summary: The current release includes several new features and improvements specific to ONTAP Select. 
-summary: 'La version actuelle n"inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.' 
+summary: La version actuelle inclut plusieurs nouvelles fonctionnalités ou améliorations spécifiques à ONTAP Select. 
 ---
 = Quoi de neuf dans cette version
 :hardbreaks:
@@ -16,6 +15,31 @@ summary: 'La version actuelle n"inclut aucune nouvelle fonctionnalité ni améli
 
 [role="lead"]
 NetApp met régulièrement à jour ONTAP Select afin de vous apporter de nouvelles fonctionnalités et améliorations.
+
+
+
+== ONTAP Select 9.15.1
+
+ONTAP Select 9.15.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
+
+Prise en charge de l'extension et de la réduction des clusters:: Depuis ONTAP Select 9.15.1, l'extension et la réduction des clusters sont prises en charge.
++
+--
+* Extension des clusters à six nœuds à huit nœuds
++
+Vous pouvez augmenter la taille du cluster d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster. link:task_cluster_expansion_contraction.html#expand-the-cluster["En savoir plus >>"].
+
+* Contraction des clusters de huit nœuds à six nœuds
++
+Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce à la fonctionnalité de contraction de cluster. link:task_cluster_expansion_contraction.html#contract-the-cluster["En savoir plus >>"].
+
+
+
+--
+
+
+
+NOTE: La prise en charge de l'extension et de la réduction des clusters est limitée aux clusters ESX uniquement.
 
 
 
