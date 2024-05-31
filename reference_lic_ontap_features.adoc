@@ -42,7 +42,7 @@ Les fonctionnalités suivantes sont incluses dans ONTAP Select et sous licence p
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 +
 
-NOTE: ONTAP Select 9.12.1 et versions ultérieures prennent désormais en charge le SVM DR comme source avec un maximum de 16 relations. La prise en charge de SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2, telles que 9.12.1 à 9.14.1.
+NOTE: ONTAP Select 9.12.1 et versions ultérieures prennent désormais en charge SVM DR comme source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.
 
 
 
