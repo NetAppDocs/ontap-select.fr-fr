@@ -2274,8 +2274,6 @@
   <block id="db88ef4d05292b05026992fe3ca193af" category="paragraph">Le déploiement de ONTAP Select prend uniquement en charge IP version 4 (IPv4). La version IP 6 (IPv6) n'est pas prise en charge. Cette restriction affecte ONTAP Select de l'une des manières suivantes :</block>
   <block id="a808fd43c31372cb5ef7ac1ac9224c52" category="list-text">Vous devez attribuer une adresse IPv4 à la LIF de gestion de la machine virtuelle de déploiement.</block>
   <block id="b3a288a6973caafe5e4ff191758f8b98" category="list-text">Le déploiement ne peut pas créer de nœuds ONTAP Select configurés pour utiliser IPv6 sur les LIF ONTAP.</block>
-  <block id="8d0030231ca098991021200ebed892e9" category="section-title">Restriction de langue VMware vCenter</block>
-  <block id="f3723501df4dfade0c26ca5e04290d9e" category="paragraph">Si vous utilisez ONTAP Select Deploy pour créer un cluster exécuté sur ESXi avec vCenter sur un serveur Windows, vous devez utiliser une version anglaise. ONTAP Select Deploy ne prend pas en charge vCenter dans les versions non anglaises de Windows.</block>
   <block id="c17dae9b9d3b729444b86ade708fe369" category="summary">Vous devez vous préparer à revoir et à utiliser les processus de flux de travail.</block>
   <block id="356a4d5d9ecf4143d145e008bc71423d" category="doc">Avant d'utiliser les workflows API</block>
   <block id="0224e614246b594584218c9734c56792" category="paragraph">La page de documentation en ligne de ONTAP Select comprend les détails de chaque appel d'API REST. Au lieu de répéter ces détails ici, chaque appel d'API utilisé dans les exemples de flux de travail comprend uniquement les informations dont vous avez besoin pour localiser l'appel sur la page de documentation. Après avoir localisé un appel API spécifique, vous pouvez vérifier les détails complets de l'appel, y compris les paramètres d'entrée, les formats de sortie, les codes d'état HTTP et le type de traitement de la demande.</block>
@@ -3727,4 +3725,5 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="ab88e927f8e0951fd63eee470e63e5db" category="list-text">Surveillez le processus de contraction de cluster en plusieurs étapes pour vérifier que le cluster a bien été contracté.</block>
   <block id="526263eea2f04c1872d7038c1d10f65d" category="sidebar">Documents relatifs à ONTAP Select 9.15.1</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 et versions ultérieures prennent désormais en charge SVM DR comme source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.</block>
+  <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select prend en charge un maximum de quatre vmnics.</block>
 </blocks>

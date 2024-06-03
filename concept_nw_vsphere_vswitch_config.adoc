@@ -34,6 +34,9 @@ Pour les clusters à un seul nœud, ONTAP déploie la machine virtuelle ONTAP Se
 Pour les clusters à plusieurs nœuds, ONTAP Deploy configure chaque serveur virtuel ONTAP Select afin qu'il utilise un ou deux groupes de ports pour le réseau interne et, séparément, un ou deux groupes de ports pour le réseau externe. Le trafic de gestion du cluster et des nœuds peut utiliser le même groupe de ports que le trafic externe, ou un autre groupe de ports. Le trafic cluster et node management ne peut pas partager le même port group avec le trafic interne.
 
 
+NOTE: ONTAP Select prend en charge un maximum de quatre vmnics.
+
+
 
 == VSwitch standard ou distribué et quatre ports physiques par nœud
 

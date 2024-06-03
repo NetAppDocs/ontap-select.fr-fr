@@ -103,6 +103,3 @@ Le déploiement de ONTAP Select prend uniquement en charge IP version 4 (IPv4). 
 * Vous devez attribuer une adresse IPv4 à la LIF de gestion de la machine virtuelle de déploiement.
 * Le déploiement ne peut pas créer de nœuds ONTAP Select configurés pour utiliser IPv6 sur les LIF ONTAP.
 
-
-.Restriction de langue VMware vCenter
-Si vous utilisez ONTAP Select Deploy pour créer un cluster exécuté sur ESXi avec vCenter sur un serveur Windows, vous devez utiliser une version anglaise. ONTAP Select Deploy ne prend pas en charge vCenter dans les versions non anglaises de Windows.
