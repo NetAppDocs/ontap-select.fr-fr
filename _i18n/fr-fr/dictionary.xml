@@ -1220,7 +1220,6 @@
   <block id="82ef718f4ebe0c276814ee3d51e33361" category="list-text">SnapRestore</block>
   <block id="37f51edec96ed159381e4d3d076a8787" category="list-text">La déduplication et la compression</block>
   <block id="1effda8a28add2fb64ed5a7d4d67deae" category="list-text">Fonctionnalité de colocation ONTAP</block>
-  <block id="1716834171e243de0f898a67621b6624" category="list-text">ONTAP S3</block>
   <block id="f8f58e06b7004f2c9a02a8875d2bd10d" category="list-text">Chiffrement de volume NetApp (pays sans restriction uniquement)</block>
   <block id="a56a12489213d10b531398efee448f95" category="section-title">Fonctionnalités ONTAP sous licence séparée</block>
   <block id="585f4a038bba40a29999437c007446e9" category="paragraph">Vous devez acheter une licence distincte pour toute fonctionnalité ONTAP non activée par défaut, notamment :</block>
@@ -3724,4 +3723,7 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="f99bb666310fb365b4d0029c161a384b" category="admonition">ONTAP Select 9.12.1 et versions ultérieures prennent désormais en charge SVM DR comme source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.</block>
   <block id="55c2a90a9fb6113abeb7e76c6cb0bfb0" category="admonition">ONTAP Select prend en charge un maximum de quatre vmnics.</block>
   <block id="28986937787872c11df39e20ca126e8d" category="admonition">ESXi 6.5 GA et ESXi 6.7 GA ont atteint l'état de fin de disponibilité. Si vous disposez de clusters ONTAP Select avec ces versions, vous devez effectuer une mise à niveau vers les versions prises en charge conformément à la<block ref="2b761b14db6e131ceb5a9ee87e5e085a" category="inline-link-rx"></block>.</block>
+  <block id="e1a514cdffca7e72189bc1b4d2b14cb1" category="list-text">ONTAP S3 (coût nul)</block>
+  <block id="ffa1963f0d0a25dfc04554dbe791a3b1" category="inline-link-macro">Clés de licence principales pour ONTAP NetApp</block>
+  <block id="16f9dd2af311dfdedd3814899d379c54" category="list-text"><block ref="16f9dd2af311dfdedd3814899d379c54" category="inline-link-macro-rx"></block></block>
 </blocks>
