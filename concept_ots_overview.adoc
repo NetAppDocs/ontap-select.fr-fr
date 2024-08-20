@@ -88,6 +88,7 @@ ONTAP Select ne prend pas en charge plusieurs fonctionnalités ONTAP. Dans la pl
 * Protection autonome contre les ransomwares (ARP)
 * IPspace cluster
 Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppression de ports, de réseaux locaux virtuels (VLAN) ou de groupes d'agrégation de liens, n'est pas prise en charge.
+* ESXi 8.0 U3
 * Les solutions Fibre Channel et Fibre Channel over Ethernet ne sont pas prises en charge.
 * Contrôle de l'état : la surveillance classique de l'état utilisée avec un déploiement matériel ONTAP est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
 * Groupes d'interface
