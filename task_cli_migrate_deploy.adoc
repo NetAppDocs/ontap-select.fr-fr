@@ -25,7 +25,13 @@ Cette procédure est basée sur la création d'une nouvelle machine virtuelle qu
 Vous devez créer une sauvegarde des données de configuration de déploiement dans le cadre de la migration de la machine virtuelle. Vous devez également créer une sauvegarde après le déploiement d'un cluster ONTAP Select. Les données sont enregistrées dans un seul fichier crypté que vous pouvez télécharger sur votre poste de travail local.
 
 .Avant de commencer
-Assurez-vous que le déploiement n'exécute pas d'autres tâches au cours de l'opération de sauvegarde.
+* Assurez-vous que le déploiement n'exécute pas d'autres tâches au cours de l'opération de sauvegarde.
+* Enregistrez l'image de la machine virtuelle de déploiement d'origine.
++
+
+CAUTION: L'image d'origine de la machine virtuelle de déploiement est requise plus tard dans cette procédure lorsque vous restaurez les données de configuration de déploiement de l'original vers la nouvelle machine virtuelle.
+
+
 
 .Description de la tâche
 Le fichier de sauvegarde que vous créez capture toutes les données de configuration de la machine virtuelle. Ces données décrit des aspects de votre environnement de déploiement, y compris les clusters ONTAP Select.

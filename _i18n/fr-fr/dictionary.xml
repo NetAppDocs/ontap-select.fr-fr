@@ -3730,4 +3730,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0.2.</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">À partir de ONTAP 9.13.1, VMware ESXi 8.0.1 GA (build 20513097) est pris en charge par la version matérielle 4 et ultérieure.</block>
+  <block id="066308395ea593f82277b09bef1304dc" category="list-text">Enregistrez l'image de la machine virtuelle de déploiement d'origine.</block>
+  <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">L'image d'origine de la machine virtuelle de déploiement est requise plus tard dans cette procédure lorsque vous restaurez les données de configuration de déploiement de l'original vers la nouvelle machine virtuelle.</block>
 </blocks>
