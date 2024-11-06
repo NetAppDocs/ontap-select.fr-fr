@@ -20,7 +20,7 @@ La procédure est initiée à partir de ONTAP Select Deploy à l'aide de l'inter
 
 
 
-== Exigences matérielles et de stockage
+== Considérations relatives au matériel et au stockage
 
 Les fonctionnalités d'extension et de réduction du cluster sont restreintes des manières suivantes :
 
@@ -33,8 +33,12 @@ Les fonctionnalités d'extension et de réduction du cluster sont restreintes de
 ** ESXi 7.0
 
 
-* L'extension n'est possible que depuis des clusters à six nœuds vers des clusters à huit nœuds.
-* La contraction n'est possible que depuis des clusters à huit nœuds vers des clusters à six nœuds.
+
+
+Les expansions et contractions de cluster suivantes ne sont actuellement pas prises en charge :
+
+* Extensions des clusters à un, deux ou quatre nœuds aux clusters à six ou huit nœuds.
+* Contractions de clusters à six ou huit nœuds à des clusters à un, deux ou quatre nœuds.
 
 
 

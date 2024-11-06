@@ -3627,9 +3627,7 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="e84b565f766d2b63406ea62dbdd12c66" category="list-text">Depuis ONTAP Select 9.15.1, l'extension et la réduction des clusters sont prises en charge.</block>
   <block id="d535a23dc4caf42819a2764f917df8d4" category="list-text">Extension des clusters à six nœuds à huit nœuds</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">En savoir plus &gt;&gt;</block>
-  <block id="46784c9ba69d72d62e5ff719f2e75e3f" category="paragraph">Vous pouvez augmenter la taille du cluster d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster. <block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>.</block>
   <block id="5638b273dc7505c1415d93d081293984" category="list-text">Contraction des clusters de huit nœuds à six nœuds</block>
-  <block id="3fa352640216b35ee8eded7e2c07ca96" category="paragraph">Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce à la fonctionnalité de contraction de cluster. <block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>.</block>
   <block id="e1ecf9e1ce05084dbe89253dda1abf54" category="admonition">La prise en charge de l'extension et de la réduction des clusters est limitée aux clusters ESX uniquement.</block>
   <block id="e967860b1a40b9dcdb66b252a950a240" category="inline-link">Notes de mise à jour de ONTAP Select 9.15.1</block>
   <block id="5eb820f5a922021204972230d9d4d93d" category="paragraph">Vous pouvez accéder au<block ref="a879f440894cff34b3d87053560dcd34" category="inline-link-rx"></block> pour afficher les détails de la version actuelle.</block>
@@ -3637,7 +3635,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="c5f80e69da9019e045ae59cca1c9ae22" category="doc">Développer ou réduire le cluster</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d'un cluster de six à huit nœuds et réduire la taille de cluster de huit à six nœuds. Aucun autre scénario d'extension ou de réduction des clusters n'est pris en charge.</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">La procédure est initiée à partir de ONTAP Select Deploy à l'aide de l'interface de ligne de commande, de l'API ou de l'interface web.</block>
-  <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">Exigences matérielles et de stockage</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">Les fonctionnalités d'extension et de réduction du cluster sont restreintes des manières suivantes :</block>
   <block id="03a645906298706d76817495f4d8708a" category="list-text">La prise en charge est limitée aux clusters créés sur des hôtes hyperviseurs ESX. Les versions ESX suivantes sont compatibles avec ONTAP Select 9.15.1 :</block>
   <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
@@ -3645,8 +3642,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
   <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
-  <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">L'extension n'est possible que depuis des clusters à six nœuds vers des clusters à huit nœuds.</block>
-  <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">La contraction n'est possible que depuis des clusters à huit nœuds vers des clusters à six nœuds.</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">Développez le cluster</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">Vous pouvez augmenter la taille d'un cluster existant d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster.</block>
   <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">En préparation de la procédure d'extension du cluster, de nouveaux hôtes ESX sont ajoutés à l'inventaire et les détails des nouveaux nœuds sont attribués. Avant de démarrer le processus d'extension du cluster, un précontrôle du réseau vérifie le réseau interne sélectionné.</block>
@@ -3698,4 +3693,10 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="be0d4e27d8840d1c72235cf50443fb8d" category="inline-link-macro">informations sur la compatibilité logicielle des hyperviseurs</block>
   <block id="49ea5cb7c3815d4c59fc6dcf8eca3da7" category="paragraph">Vous devez installer le système d'exploitation Red Hat Enterprise Linux (RHEL) à l'aide de l'image ISO. Reportez-vous au <block ref="12b9dc433549f13cfe17d1a83c8c9209" category="inline-link-macro-rx"></block> pour obtenir la liste des versions RHEL prises en charge. Lors de l'installation, vous devez configurer le système comme suit :</block>
   <block id="97864053a66a3401d6a681c00bd2e4e3" category="paragraph">Pour plus d'informations sur les modules nécessaires et les autres configurations requises, reportez-vous au <block ref="8929420574d68b861547fa3bcafe0ff2" category="inline-link-macro-rx"></block>.</block>
+  <block id="d62b4235cf2a29152b9bcb3eb1df59d8" category="paragraph">Vous pouvez augmenter la taille du cluster d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster. L'extension des clusters à partir d'un, deux ou quatre nœuds vers des clusters à six ou huit nœuds n'est pas prise en charge actuellement. <block ref="fdb7564d24c88f6d96b0c17d886f76d8" category="inline-link-macro-rx"></block>.</block>
+  <block id="185acadc91fc3b4d6d7a0f9ab8464c51" category="paragraph">Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce à la fonctionnalité de contraction de cluster. Les contractions de clusters de six ou huit nœuds en clusters à un, deux ou quatre nœuds ne sont pas prises en charge actuellement. <block ref="8a05acf96f393c0e4f159f197b97e2ff" category="inline-link-macro-rx"></block>.</block>
+  <block id="065e8e686a5cc9c043bea6a2b47a6dbc" category="section-title">Considérations relatives au matériel et au stockage</block>
+  <block id="04b2d3e0b04793e1eab99a7ce4905944" category="paragraph">Les expansions et contractions de cluster suivantes ne sont actuellement pas prises en charge :</block>
+  <block id="246664f02679d184f0608a4d7824502b" category="list-text">Extensions des clusters à un, deux ou quatre nœuds aux clusters à six ou huit nœuds.</block>
+  <block id="226d8636aca6bd1bdcac58203b8ddcd2" category="list-text">Contractions de clusters à six ou huit nœuds à des clusters à un, deux ou quatre nœuds.</block>
 </blocks>

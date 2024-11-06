@@ -29,11 +29,11 @@ Prise en charge de l'extension et de la réduction des clusters:: Depuis ONTAP S
 --
 * Extension des clusters à six nœuds à huit nœuds
 +
-Vous pouvez augmenter la taille du cluster d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster. link:task_cluster_expansion_contraction.html#expand-the-cluster["En savoir plus >>"].
+Vous pouvez augmenter la taille du cluster d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster. L'extension des clusters à partir d'un, deux ou quatre nœuds vers des clusters à six ou huit nœuds n'est pas prise en charge actuellement. link:task_cluster_expansion_contraction.html#expand-the-cluster["En savoir plus >>"].
 
 * Contraction des clusters de huit nœuds à six nœuds
 +
-Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce à la fonctionnalité de contraction de cluster. link:task_cluster_expansion_contraction.html#contract-the-cluster["En savoir plus >>"].
+Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce à la fonctionnalité de contraction de cluster. Les contractions de clusters de six ou huit nœuds en clusters à un, deux ou quatre nœuds ne sont pas prises en charge actuellement. link:task_cluster_expansion_contraction.html#contract-the-cluster["En savoir plus >>"].
 
 
 
