@@ -4,7 +4,7 @@ permalink: reference_chk_host_prep.html
 keywords: ontap select, pre-installation checklist, host preparation 
 summary: 'Préparez chacun des hôtes de l"hyperviseur où un nœud ONTAP Select est déployé. Lors de la préparation des hôtes, évaluez minutieusement l"environnement de déploiement afin de s"assurer que les hôtes sont correctement configurés et prêts à prendre en charge le déploiement d"un cluster ONTAP Select.' 
 ---
-= Liste de contrôle de la configuration et de la préparation des hôtes
+= Checklist de préparation et de configuration des hôtes ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

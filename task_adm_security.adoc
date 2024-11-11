@@ -4,7 +4,7 @@ permalink: task_adm_security.html
 keywords: administer, administering, web, security 
 summary: 'Dans le cadre de la sécurisation d"un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.' 
 ---
-= Sécurité
+= Sécurisez un déploiement ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

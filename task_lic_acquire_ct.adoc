@@ -4,7 +4,7 @@ permalink: task_lic_acquire_ct.html
 keywords: license, licensing, acquire, capacity tiers 
 summary: Lorsque vous utilisez des licences de niveaux de capacité, vous devez acheter un fichier de licence pour chaque nœud ONTAP Select. Le fichier de licence définit la capacité de stockage du nœud et est verrouillé pour ce nœud via le numéro de série à neuf chiffres unique attribué par NetApp. 
 ---
-= L'acquisition d'une licence de niveau de capacité
+= Obtenez une licence de niveau de capacité ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

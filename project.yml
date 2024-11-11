@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.15.1
+  - version-number: 9.16.1
     url: "/ontap-select"
+  - version-number: 9.15.1
+    url: "/ontap-select-9151"
   - version-number: 9.14.1
     url: "/ontap-select-9141"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
   - version-number: 9.12.1
     url: "/ontap-select-9121"
-  - version-number: 9.11.1
-    url: "/ontap-select-9111"
   langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es,it-it
 sidebar:
   entries:
-  - title: Documents relatifs à ONTAP Select 9.15.1
+  - title: Documents relatifs à ONTAP Select 9.16.1
     url: "/index.html"
   - title: Notes de version
     entries:
@@ -32,7 +32,7 @@ sidebar:
       url: "/reference_new_ots.html"
   - title: Concepts
     entries:
-    - title: Présentation du produit
+    - title: Présentation de ONTAP Select
       url: "/concept_ots_overview.html"
     - title: Déploiement de ONTAP Select
       url: "/concept_ots_deploy.html"
@@ -142,21 +142,21 @@ sidebar:
       url: "/concept_adm_upgrading_nodes.html"
     - title: Diagnostics et support
       url: "/task_adm_support.html"
-    - title: Sécurité
+    - title: Secure ONTAP Select
       url: "/task_adm_security.html"
-    - title: Connectivité réseau
+    - title: Vérifiez la connectivité réseau
       url: "/task_adm_connectivity.html"
-    - title: Médiateurs
+    - title: Administrer les services de médiateur
       url: "/task_adm_mediators.html"
     - title: Clusters
       entries:
       - title: Clusters ONTAP Select
         url: "/task_adm_clusters.html"
-      - title: Développer ou réduire le cluster
+      - title: Développer ou réduire un cluster
         url: "/task_cluster_expansion_contraction.html"
     - title: Nœuds et hôtes
       entries:
-      - title: Console vidéo VM
+      - title: Accéder à la console vidéo de la machine virtuelle
         url: "/task_adm_video_console.html"
       - title: Redimensionner les nœuds du cluster
         url: "/task_adm_resize.html"
@@ -278,7 +278,7 @@ sidebar:
       url: "/task_cli_clusters.html"
     - title: Nœuds et hôtes
       entries:
-      - title: Mise à niveau d'ESXi vers la version 6.5 ou ultérieure
+      - title: Mettez ESXi à niveau vers la version 6.5 et supérieure
         url: "/task_cli_upgrade_esxi65.html"
       - title: Modifier un serveur de gestion des hôtes
         url: "/reference_host_modify_command.html"

@@ -4,7 +4,7 @@ permalink: concept_nw_concepts_chars.html
 keywords: ontap select, networking concepts, cluster characteristics 
 summary: 'Commencez par vous familiariser avec les concepts généraux de mise en réseau qui s"appliquent à l"environnement ONTAP Select. Explorez ensuite les caractéristiques et les options spécifiques disponibles avec les clusters à un ou plusieurs nœuds.' 
 ---
-= Mise en réseau : concepts et caractéristiques généraux
+= Concepts et caractéristiques de la mise en réseau ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

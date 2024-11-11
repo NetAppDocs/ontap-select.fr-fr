@@ -4,7 +4,7 @@ permalink: concept_nw_physical_switch_config.html
 keywords: ontap select, upstream physical switch configuration 
 summary: Détails de la configuration des commutateurs physiques en amont basés sur des environnements à commutateur unique et à commutateurs multiples. 
 ---
-= Configuration physique des commutateurs
+= Configuration de commutateurs physiques ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

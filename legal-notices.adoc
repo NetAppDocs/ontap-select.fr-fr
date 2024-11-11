@@ -50,5 +50,5 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 Le fichier de notification fournit des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.
 
-* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3318067["Avis pour ONTAP Select 9.15.1"^]
+* link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3330674["Avis pour ONTAP Select 9.16.1"^]
 

@@ -4,7 +4,7 @@ permalink: concept_stor_eff_support.html
 keywords: ontap select, storage efficiency support 
 summary: 'ONTAP Select fournit des options d"efficacité du stockage similaires aux options d"efficacité du stockage présentes sur les baies FAS et AFF.' 
 ---
-= Prise en charge de l'efficacité du stockage
+= Prise en charge de l'efficacité du stockage ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

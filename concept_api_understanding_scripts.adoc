@@ -4,7 +4,7 @@ permalink: concept_api_understanding_scripts.html
 keywords: rest api, deploy rest api, rest, python, python scripts, understanding 
 summary: 'Les exemples de scripts Python vous permettent d"effectuer plusieurs tâches différentes. Vous devez comprendre les scripts avant de les utiliser dans une instance de déploiement actif.' 
 ---
-= Comprendre les scripts Python
+= Comprendre les scripts Python pour ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

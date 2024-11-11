@@ -4,7 +4,7 @@ permalink: task_cli_signing_in.html
 keywords: administer, administering, cli, deploy, sign in, signing in 
 summary: 'Vous devez vous connecter au shell de gestion de déploiement à l"aide de SSH. Une fois connecté, vous pouvez créer un cluster ONTAP Select et effectuer les procédures administratives associées à l"aide des commandes de l"interface de ligne de commande.' 
 ---
-= Connectez-vous pour déployer à l'aide de SSH
+= Connectez-vous à ONTAP Select Deploy à l'aide de SSH
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

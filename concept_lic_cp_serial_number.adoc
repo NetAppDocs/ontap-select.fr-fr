@@ -4,7 +4,7 @@ permalink: concept_lic_cp_serial_number.html
 keywords: license, licensing, capacity pools, node serial numbers 
 summary: Avec le modèle de licence des niveaux de capacité, le numéro de série à neuf chiffres est le même que le numéro de série de licence attribué au nœud. Toutefois, le format des numéros de série attribués aux nœuds qui utilisent le modèle de licence des pools de capacité est différent. 
 ---
-= Numéros de série du nœud
+= Numéros de série des nœuds pour le modèle de licence des pools de capacité ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

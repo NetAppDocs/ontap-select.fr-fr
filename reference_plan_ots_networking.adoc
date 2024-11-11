@@ -4,7 +4,7 @@ permalink: reference_plan_ots_networking.html
 keywords: plan, planning, networking, network, drivers, vmxnet3, cluster mtu, firewall 
 summary: 'Vous devez configurer le réseau de l"hyperviseur correctement avant de déployer ONTAP Select.' 
 ---
-= Considérations relatives à la mise en réseau
+= Considérations relatives à la mise en réseau ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

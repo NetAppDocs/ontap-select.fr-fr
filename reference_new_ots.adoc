@@ -5,7 +5,7 @@ keywords: new features
 // summary: The current release includes several new features and improvements specific to ONTAP Select. 
 summary: La version actuelle inclut plusieurs nouvelles fonctionnalités ou améliorations spécifiques à ONTAP Select. 
 ---
-= Quoi de neuf dans cette version
+= Nouveautés de ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,7 +15,23 @@ summary: La version actuelle inclut plusieurs nouvelles fonctionnalités ou amé
 
 
 [role="lead"]
-NetApp met régulièrement à jour ONTAP Select afin de vous apporter de nouvelles fonctionnalités et améliorations.
+Découvrez les nouvelles fonctionnalités et les améliorations apportées aux versions prises en charge de ONTAP Select.
+
+
+
+== ONTAP Select 9.16.1
+
+ONTAP Select 9.16.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
+
+Mise à jour de la prise en charge des fichiers de licence NetApp:: À partir de ONTAP Select 9.16.1, la prise en charge du fichier de licence NetApp (NLF) est mise à jour. Le nouveau format NLF inclut des licences pour les fonctionnalités ARP, ONTAP S3 et S3 SnapMirror. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus >>"].
++
+--
+Pour un nouveau déploiement ONTAP Select 9.16.1, le nouveau format NLF est automatiquement appliqué. Lorsque vous mettez à niveau un déploiement ONTAP Select existant vers 9.16.1, le nouveau format NLF n'est pas appliqué. Pour obtenir les licences des fonctionnalités ARP, ONTAP S3 et S3 SnapMirror, vous devez télécharger la version NLF mise à jour après la mise à niveau. Si vous revenez à ONTAP Select 9.15.1 ou version antérieure, vous devez réinstaller les licences de fonction que vous aviez avant la mise à niveau.
+
+--
+Prise en charge de la protection anti-ransomware autonome:: ONTAP Select 9.16.1 introduit la prise en charge de la protection anti-ransomware autonome (ARP). ONTAP Select 9.16.1 prend uniquement en charge les mises à jour manuelles pour ARP, les mises à jour automatiques ne sont pas prises en charge. La licence de fonction ARP est incluse dans le fichier NLF pour ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus >>"].
+Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.16.1 inclut la prise en charge de VMware ESXi 8.0 U3.
+
 
 
 

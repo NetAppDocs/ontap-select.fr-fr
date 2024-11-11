@@ -4,7 +4,7 @@ permalink: concept_usecase_mc_sds.html
 keywords: ontap select, metrocluster software defined storage, mc sds storage 
 summary: ONTAP Select MetroCluster SDS offre une protection améliorée et une implémentation à prix attractif. 
 ---
-= Stockage Software-defined MetroCluster
+= Le stockage Software-defined ONTAP Select MetroCluster
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

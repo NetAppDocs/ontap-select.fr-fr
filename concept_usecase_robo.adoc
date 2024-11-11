@@ -4,7 +4,7 @@ permalink: concept_usecase_robo.html
 keywords: ontap select, ROBO, remote office/branch office 
 summary: Déployez ONTAP Select dans des environnements de bureaux distants/succursales pour prendre en charge des bureaux plus petits tout en maintenant une administration et un contrôle centralisés. 
 ---
-= Bureau distant et succursale
+= Utilisez ONTAP Select dans les bureaux distants et les succursales
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

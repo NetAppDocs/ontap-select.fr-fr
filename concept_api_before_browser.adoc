@@ -4,7 +4,7 @@ permalink: concept_api_before_browser.html
 keywords: rest api, deploy rest api, rest, access browser, before you begin 
 summary: 'Vous devez connaître plusieurs éléments avant d"utiliser la page de documentation en ligne de déploiement.' 
 ---
-= Avant d'accéder à l'API avec un navigateur
+= Avant d'accéder à l'API de déploiement ONTAP Select à l'aide d'un navigateur
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_adm_mediators.html
 keywords: administer, administering, web, mediators 
 summary: Chaque cluster ONTAP Select à deux nœuds est surveillé par le service de médiateur, qui facilite la gestion de la capacité haute disponibilité partagée par les nœuds. 
 ---
-= Administration des services de médiateur de déploiement
+= Administrer les services de médiateur ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

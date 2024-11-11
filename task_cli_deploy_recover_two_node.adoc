@@ -4,7 +4,7 @@ permalink: task_cli_deploy_recover_two_node.html
 keywords: administer, administering, cli, two node cluster, recover, recovering 
 summary: 'Si l"utilitaire ONTAP Select Deploy tombe en panne ou si vous êtes indisponible pour une raison quelconque, vous ne pouvez plus gérer les nœuds et les clusters ONTAP Select. Par ailleurs, tous les clusters à deux nœuds perdent de la capacité HA, car le service de médiateur inclus dans le déploiement est indisponible. En cas de défaillance irrécupérable, vous devez restaurer l"instance de l"utilitaire Deploy pour restaurer les fonctionnalités d"administration et de haute disponibilité.' 
 ---
-= Restaurez l'utilitaire de déploiement sur un cluster à deux nœuds
+= Restaurez l'utilitaire ONTAP Select Deploy sur un cluster à deux nœuds
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

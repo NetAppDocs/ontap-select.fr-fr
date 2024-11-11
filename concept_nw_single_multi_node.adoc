@@ -4,7 +4,7 @@ permalink: concept_nw_single_multi_node.html
 keywords: ontap select, single node network configuration, multinode network configuration 
 summary: ONTAP Select prend en charge les configurations réseau à un ou plusieurs nœuds. 
 ---
-= Configurations réseau à un ou plusieurs nœuds
+= Les configurations réseau ONTAP Select à un ou plusieurs nœuds
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

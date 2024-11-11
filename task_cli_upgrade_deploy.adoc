@@ -4,7 +4,7 @@ permalink: task_cli_upgrade_deploy.html
 keywords: administer, administering, cli, deploy, upgrade deploy 
 summary: 'Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en place à l"aide de l"interface de ligne de commande.' 
 ---
-= Mettre à niveau une instance de déploiement
+= Mettez à niveau une instance de déploiement ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_api_script_dc.html
 keywords: rest api, deploy rest api, rest, python script, delete cluster 
 summary: Vous pouvez utiliser le script CLI suivant pour supprimer un cluster existant. 
 ---
-= Script pour supprimer un cluster
+= Script permettant de supprimer un cluster ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

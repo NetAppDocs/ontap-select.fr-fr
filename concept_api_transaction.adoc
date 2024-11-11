@@ -4,7 +4,7 @@ permalink: concept_api_transaction.html
 keywords: rest api, deploy rest api, rest, transaction, request, response, headers, input, output 
 summary: 'Chaque appel API de déploiement est exécuté sous forme de requête HTTP vers la machine virtuelle de déploiement, qui génère une réponse associée au client. Cette paire de requête/réponse est considérée comme une transaction API. Avant d"utiliser l"API de déploiement, vous devez connaître les variables d"entrée disponibles pour contrôler une requête et le contenu de la sortie de réponse.' 
 ---
-= Transaction d'API de demande et de réponse
+= Transaction API de demande et de réponse pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

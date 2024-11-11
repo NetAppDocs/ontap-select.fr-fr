@@ -85,18 +85,37 @@ Chaque nœud d'un cluster ONTAP Select dispose automatiquement d'une licence pou
 
 ONTAP Select ne prend pas en charge plusieurs fonctionnalités ONTAP. Dans la plupart des cas, ces fonctionnalités nécessitent un matériel spécifique non disponible dans l'environnement ONTAP Select virtualisé.
 
-* Protection autonome contre les ransomwares (ARP)
+* Mises à jour automatiques pour la protection anti-ransomware autonome (ARP)
++
+
+NOTE: À partir de ONTAP Select 9.16.1, les mises à jour manuelles de ARP sont prises en charge et la licence de fonction ARP est incluse dans le fichier de licence NetApp (NLF).
+
 * IPspace cluster
++
 Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppression de ports, de réseaux locaux virtuels (VLAN) ou de groupes d'agrégation de liens, n'est pas prise en charge.
-* ESXi 8.0 U3
-* Les solutions Fibre Channel et Fibre Channel over Ethernet ne sont pas prises en charge.
-* Contrôle de l'état : la surveillance classique de l'état utilisée avec un déploiement matériel ONTAP est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
+
+* Fibre Channel
++
+Les technologies Fibre Channel et Fibre Channel over Ethernet ne sont pas prises en charge.
+
+* Contrôle de l'état
++
+La surveillance traditionnelle de l'état, utilisée dans le cadre d'un déploiement matériel ONTAP, est spécifique aux composants matériels sous-jacents. Les moniteurs d'état ne sont donc pas actifs en raison de l'environnement virtualisé utilisé avec ONTAP Select.
+
 * Groupes d'interface
++
 Les groupes d'interface ne sont pas pris en charge.
+
 * Gestionnaire de clés multitenant (MTKM)
-* Prise en charge de la décharge des cartes réseau en raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement des cartes réseau n'est pas prise en charge.
+* Prise en charge du déchargement de carte réseau
++
+En raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement de carte réseau n'est pas prise en charge.
+
 * Disques NetApp Storage Encryption
-* Propriétés du port ONTAP la modification des propriétés des ports ONTAP, y compris la vitesse, le duplex et le contrôle de flux, n'est pas prise en charge.
+* Propriétés du port ONTAP
++
+La modification des propriétés des ports ONTAP, notamment la vitesse, le mode duplex et le contrôle de flux, n'est pas prise en charge.
+
 * Les processeurs de service
 * Migration de SVM
 * Conformité SnapLock
@@ -104,5 +123,4 @@ Les groupes d'interface ne sont pas pris en charge.
 
 
 .Informations associées
-* link:reference_lic_ontap_features.html["Fonctionnalités ONTAP activées par défaut"]
-
+link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["Fonctionnalités ONTAP activées par défaut"]

@@ -4,7 +4,7 @@ permalink: concept_nw_internal_external.html
 keywords: ontap select, internal network, external network 
 summary: Caractéristiques des réseaux ONTAP Select internes et externes. 
 ---
-= Réseau interne et externe ONTAP Select
+= Réseaux internes et externes ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

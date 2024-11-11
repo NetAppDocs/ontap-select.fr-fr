@@ -4,7 +4,7 @@ permalink: task_cli_migrate_deploy.html
 keywords: administer, administering, cli, deploy, deploy instance, migrate 
 summary: 'Vous pouvez migrer une instance existante de l"utilitaire d"administration de déploiement vers une nouvelle machine virtuelle à l"aide de l"interface de ligne de commande.' 
 ---
-= Migrer une instance de déploiement vers une nouvelle machine virtuelle
+= Migrer une instance de ONTAP Select Deploy vers une nouvelle machine virtuelle
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

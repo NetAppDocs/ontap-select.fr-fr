@@ -4,7 +4,7 @@ permalink: concept_stor_concepts_chars.html
 keywords: ontap select, storage concepts 
 summary: 'Découvrez les concepts généraux de stockage qui s"appliquent à l"environnement ONTAP Select avant d"explorer les composants de stockage spécifiques.' 
 ---
-= Stockage : concepts et caractéristiques générales
+= Stockage ONTAP Select : concepts et caractéristiques généraux
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference_plan_best_practices.html
 keywords: plan, planning, best practices, recommendations 
 summary: 'Dans le cadre de la planification d"un déploiement ONTAP Select, il existe des meilleures pratiques à prendre en compte.' 
 ---
-= Résumé des meilleures pratiques
+= Résumé des bonnes pratiques de déploiement ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

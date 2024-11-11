@@ -4,7 +4,7 @@ permalink: concept_stor_swraid_local.html
 keywords: ontap select, software raid, local attached storage, protection 
 summary: 'Le RAID logiciel est une couche d"abstraction RAID implémentée dans la pile logicielle ONTAP. Elle fournit les mêmes fonctionnalités que la couche RAID sur une plateforme ONTAP traditionnelle telle que FAS. La couche RAID effectue des calculs de parité des disques et protège contre les pannes de disques individuelles au sein d"un nœud ONTAP Select.' 
 ---
-= Services RAID logiciels pour le stockage local
+= Services de configuration RAID du logiciel ONTAP Select pour le stockage local
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task_chk_nvme_configure.html
 keywords: ontap select, nvme storage, host preparation 
 summary: 'Si vous prévoyez d"utiliser des disques NVMe avec la technologie RAID logicielle, vous devez configurer l"hôte pour qu"il reconnaisse les disques.' 
 ---
-= Configuration d'un hôte pour utiliser des disques NVMe
+= Configurez un hôte ONTAP Select pour qu'il utilise des disques NVMe
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

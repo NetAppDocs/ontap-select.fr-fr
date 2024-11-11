@@ -4,7 +4,7 @@ permalink: reference_plan_ots_robo.html
 keywords: plan, planning, remote and branch office, robo 
 summary: 'Vous pouvez déployer l"ONTAP Select dans un environnement de bureau distant/succursale. Dans le cadre de la planification d"un déploiement ROBO, vous devez sélectionner la configuration à l"appui de vos objectifs.' 
 ---
-= Déploiement dans les succursales et bureaux distants
+= Déploiements ONTAP Select de bureaux distants et de succursales
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

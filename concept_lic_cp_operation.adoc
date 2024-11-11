@@ -4,7 +4,7 @@ permalink: concept_lic_cp_operation.html
 keywords: license, licensing, capacity pools, operation details 
 summary: Le modèle de licence des pools de capacité est différent du modèle des niveaux de capacité. Au lieu de dédier la capacité de stockage à chaque nœud individuel, la capacité de stockage est allouée à un pool et partagée entre plusieurs nœuds. Des composants et des processus supplémentaires ont été créés pour prendre en charge le modèle de pools de capacité. 
 ---
-= Détails opérationnels
+= Détails opérationnels du modèle de licence des pools de capacité ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

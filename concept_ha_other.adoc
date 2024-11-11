@@ -4,7 +4,7 @@ permalink: concept_ha_other.html
 keywords: ontap select, ha, high availability, disk heartbeating, heartbeating, mailbox, failover, giveback 
 summary: 'Battement des disques DE HAUTE DISPONIBILITÉ, boîte aux lettres haute disponibilité, battement des cœur de haute disponibilité, basculement haute disponibilité et rétablissement afin d"améliorer la protection des données.' 
 ---
-= HA de détails supplémentaires
+= ONTAP Select HA renforce la protection des données
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Battement des disques DE HAUTE DISPONIBILITÉ, boîte aux lettres haut
 
 
 [role="lead"]
-Battement des disques DE HAUTE DISPONIBILITÉ, boîte aux lettres haute disponibilité, battement des cœur de haute disponibilité, basculement haute disponibilité et rétablissement afin d'améliorer la protection des données.
+Les disques haute disponibilité (HA) au cœur des systèmes, la messagerie haute disponibilité, les pulsations haute disponibilité, le basculement haute disponibilité et le retour arrière améliorent la protection des données.
 
 
 

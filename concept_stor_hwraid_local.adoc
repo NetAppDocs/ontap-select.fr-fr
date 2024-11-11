@@ -4,7 +4,7 @@ permalink: concept_stor_hwraid_local.html
 keywords: ontap select, hardware raid, performance boost, protection 
 summary: 'Lorsqu"un contrôleur RAID matériel est disponible, ONTAP Select peut déplacer les services RAID vers le contrôleur matériel pour optimiser les performances d"écriture et protéger les contre les défaillances de disques physiques. La protection RAID de tous les nœuds du cluster ONTAP Select est donc assurée par le contrôleur RAID connecté localement et non par le RAID logiciel ONTAP.' 
 ---
-= Services RAID matériels pour stockage local
+= Services RAID matériels pour le stockage ONTAP Select local
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -24,6 +24,9 @@ NOTE: Les agrégats de données ONTAP Select sont configurés pour utiliser RAID
 == Configuration du contrôleur RAID pour le stockage local
 
 Tous les disques connectés localement qui fournissent à ONTAP Select une capacité de stockage secondaire doivent se trouver derrière un contrôleur RAID. La plupart des serveurs génériques sont dotés de plusieurs options de contrôleurs RAID pour différents prix, chacun avec différents niveaux de fonctionnalités. L'objectif est de prendre en charge autant de ces options que possible, en fournissant à ce dernier certaines exigences minimales placées sur le contrôleur.
+
+
+NOTE: Vous ne pouvez pas détacher de machines virtuelles ONTAP Select qui utilisent la configuration RAID matérielle. Le détachement de disques n'est pris en charge que pour les machines virtuelles ONTAP Select qui utilisent la configuration RAID logicielle. Voir link:task_adm_replace_drives_swraid.html["Remplacez un disque défectueux dans une configuration RAID logicielle ONTAP Select"] pour plus d'informations.
 
 Le contrôleur RAID qui gère les disques ONTAP Select doit respecter les conditions suivantes :
 

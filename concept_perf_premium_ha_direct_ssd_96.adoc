@@ -4,7 +4,7 @@ permalink: concept_perf_premium_ha_direct_ssd_96.html
 keywords: ontap select, performance 
 summary: Informations sur les performances de ONTAP Select 9.6 – stockage SSD haute disponibilité directe premium. 
 ---
-= Performances : stockage SSD DAS haute disponibilité premium
+= Performances d'ONTAP Select 9.6 : stockage SSD premium HA directe
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

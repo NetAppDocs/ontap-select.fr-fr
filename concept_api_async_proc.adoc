@@ -4,7 +4,7 @@ permalink: concept_api_async_proc.html
 keywords: rest api, deploy rest api, rest, asynchronous processing, job object 
 summary: 'Certains appels API de déploiement, en particulier ceux qui créent ou modifient une ressource, peuvent prendre plus de temps que d"autres appels. Le déploiement de ONTAP Select traite ces requêtes à long terme de manière asynchrone.' 
 ---
-= Traitement asynchrone à l'aide de l'objet de travail
+= Traitement asynchrone à l'aide de l'objet travail pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

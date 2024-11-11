@@ -4,7 +4,7 @@ permalink: concept_stor_vsan_external.html
 keywords: ontap select, vsan and external array configurations, vnas architecture 
 summary: 'Les déploiements NAS virtuels (vNAS) prennent en charge les clusters ONTAP Select sur VSAN, certains produits HCI, la technologie NetApp HCI et les types de baies externes de datastores. L"infrastructure sous-jacente de ces configurations apporte la résilience des datastores.' 
 ---
-= Configurations de baies externes et VSAN
+= ONTAP Select VSAN et baies externes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

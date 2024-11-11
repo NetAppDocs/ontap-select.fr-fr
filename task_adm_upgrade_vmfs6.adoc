@@ -4,7 +4,7 @@ permalink: task_adm_upgrade_vmfs6.html
 keywords: administer, administering, web, storage vmotion, upgrade vmfs6 
 summary: 'VMware ne prend pas en charge la mise à niveau sans déplacement de VMFS 5 vers VMFS 6. Vous pouvez utiliser Storage vMotion pour effectuer la transition d"un datastore VMFS 5 vers un datastore VMFS 6 pour un nœud ONTAP Select existant.' 
 ---
-= Passez à VMFS6 à l'aide de Storage vMotion
+= Mettez à niveau le nœud ONTAP Select vers VMFS6 à l'aide de Storage vMotion
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

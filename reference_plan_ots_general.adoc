@@ -4,7 +4,7 @@ permalink: reference_plan_ots_general.html
 keywords: plan, planning, general requirements 
 summary: 'Dans le cadre de la planification d"un déploiement ONTAP Select, il existe plusieurs conditions générales à prendre en compte.' 
 ---
-= Exigences générales et considérations de planification
+= Configuration requise et planification du ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

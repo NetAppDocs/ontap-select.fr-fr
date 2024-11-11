@@ -4,7 +4,7 @@ permalink: concept_lic_production.html
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
 summary: Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir entre les niveaux de capacité ou le modèle de licence pour les pools de capacité, ainsi que la capacité de stockage pour chaque déploiement. 
 ---
-= Licences achetées pour les déploiements de production
+= ONTAP Select a acheté des licences pour les déploiements en production
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
