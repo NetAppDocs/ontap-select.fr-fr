@@ -68,7 +68,7 @@ ONTAP Select 9.14.1 inclut plusieurs nouvelles fonctionnalités et amélioration
 Prise en charge de l'hyperviseur KVM:: Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 Le plug-in Deploy VMware vCenter n'est plus pris en charge:: À partir de ONTAP Select 9.14.1, le plug-in de déploiement de VMware vCenter n'est plus pris en charge.
 Prise en charge de ONTAP Select Deploy mise à jour:: Si vous exécutez une version de ONTAP Select Deploy 9.14.1 antérieure à 9.14.1P2, vous devez mettre à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
-Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0.2.
+Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0 U2.
 
 
 

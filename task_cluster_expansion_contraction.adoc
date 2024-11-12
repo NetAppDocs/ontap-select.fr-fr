@@ -26,10 +26,11 @@ Les fonctionnalités d'extension et de réduction du cluster sont restreintes de
 
 * La prise en charge est limitée aux clusters créés sur des hôtes hyperviseurs ESX. Les versions ESX suivantes sont compatibles avec ONTAP Select 9.15.1 et versions ultérieures :
 +
-** ESXi 8.0U2
-** ESXi 8.0U1
+** ESXi 8.0 U3
+** ESXi 8.0 U2
+** ESXi 8.0 U1
 ** ESXi 8.0GA
-** ESXi 7.0U3
+** ESXi 7.0 U3
 ** ESXi 7.0
 
 

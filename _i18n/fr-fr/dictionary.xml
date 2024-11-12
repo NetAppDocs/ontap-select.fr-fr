@@ -3554,10 +3554,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d'un cluster de six à huit nœuds et réduire la taille de cluster de huit à six nœuds. Aucun autre scénario d'extension ou de réduction des clusters n'est pris en charge.</block>
   <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">La procédure est initiée à partir de ONTAP Select Deploy à l'aide de l'interface de ligne de commande, de l'API ou de l'interface web.</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">Les fonctionnalités d'extension et de réduction du cluster sont restreintes des manières suivantes :</block>
-  <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
-  <block id="43629b681eab8f23e6624067ec8d1fde" category="list-text">ESXi 8.0U1</block>
-  <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
-  <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">Développez le cluster</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">Vous pouvez augmenter la taille d'un cluster existant d'un cluster de six nœuds à un cluster de huit nœuds grâce à la fonction d'extension de cluster.</block>
@@ -3598,7 +3594,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="bb64c7ceeafd189f9c0a2a7f1c32a914" category="list-text">À partir de ONTAP Select 9.15.1, l'hyperviseur KVM (Kernel-based Virtual machine) est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.4 et Rocky Linux 9.4.</block>
   <block id="8719161a4dfa5d820c98457ce5ca446a" category="list-text">KVM sur Red Hat Enterprise Linux 8.6, 8.7, 8.8, 9.0, 9.1, 9.2 et 9.4</block>
   <block id="50ebec14d8a39fd9e4b4813019110499" category="list-text">KVM sur Rocky Linux 8.6, 8.7, 8.8, 8.9, 9.0, 9.1, 9.2, 9.3 et 9.4</block>
-  <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0.2.</block>
   <block id="2908aba1afb68c480565ae68ebe3508c" category="list-text">À partir de ONTAP 9.13.1, VMware ESXi 8.0.1 GA (build 20513097) est pris en charge par la version matérielle 4 et ultérieure.</block>
   <block id="066308395ea593f82277b09bef1304dc" category="list-text">Enregistrez l'image de la machine virtuelle de déploiement d'origine.</block>
   <block id="f3d42eb73da0b3db6a0beb04d2f78c68" category="admonition">L'image d'origine de la machine virtuelle de déploiement est requise plus tard dans cette procédure lorsque vous restaurez les données de configuration de déploiement de l'original vers la nouvelle machine virtuelle.</block>
@@ -3725,7 +3720,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="744c7aceadded1b7d2f7dbabcbe794a8" category="doc">Serveur VMware vCenter ONTAP Select sur ESXi</block>
   <block id="634920e565b06acb85fcaff73d20a15d" category="doc">Configuration requise pour ONTAP Select VMware ESXi</block>
   <block id="0edc199faf78056856f9f042ee780e07" category="inline-link">Notes de mise à jour de ONTAP Select 9.16.1</block>
-  <block id="a1fe17f34ab508f2ef781ee6a7c0421b" category="paragraph">Vous pouvez accéder au<block ref="dcda9204a0d7995e0d0246096082b5ee" category="inline-link-rx"></block> pour afficher les détails de la version actuelle.</block>
   <block id="023deab3a8c9b82a9bfd452c0b68af9b" category="doc">Vérifiez la connectivité entre les nœuds ONTAP Select</block>
   <block id="8a96228950f9c48cb7f24c3b98404d49" category="doc">Administrer les services de médiateur ONTAP Select Deploy</block>
   <block id="d2bdabf740cddb35328041a6ee746b12" category="doc">Remplacez les disques RAID logiciels défectueux pour ONTAP Select</block>
@@ -3753,4 +3747,11 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="9cc3c3055efc6fc5a45cfce6ac3eda87" category="sidebar">Accéder à la console vidéo de la machine virtuelle</block>
   <block id="5a3a053ae34a79fb35028f001babbf25" category="sidebar">Remplacez les disques RAID logiciels défectueux</block>
   <block id="e2e19484d2146649c758acb6e826707f" category="sidebar">Mettez ESXi à niveau vers la version 6.5 et supérieure</block>
+  <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0 U2.</block>
+  <block id="b7d2c3ffb4e7ab988d8422ff889440b1" category="paragraph">Vous pouvez accéder au <block ref="cf1ab4e8632efa681982f5c2d85eebd4" category="inline-link-macro-rx"></block> pour afficher les détails de la version actuelle.</block>
+  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
+  <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2</block>
+  <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
+  <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
+  <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3</block>
 </blocks>
