@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task_quick_start_for_ovf_template_deployments.html 
+keywords: ontap select, ovf, template, deployment, evaluation, license 
+summary: 'Vous pouvez déployer rapidement une instance d"évaluation de 90 jours d"un cluster ONTAP Select à un seul nœud à l"aide d"un modèle OVF sur VMware ESXi.' 
+---
+= Démarrage rapide de ONTAP Select pour les déploiements de modèles OVF
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez utiliser le démarrage rapide pour les déploiements de modèles OVF (Open Virtualization format) pour déployer rapidement une instance d'évaluation de 90 jours d'un cluster ONTAP Select à un seul nœud à l'aide d'un modèle OVF sur VMware ESXi.
+
+.Description de la tâche
+* Inutile d'obtenir un numéro de série ou une licence de capacité de stockage auprès de NetApp.
+* Vous pouvez allouer la même quantité de stockage aux données utilisateur qu'une licence achetée.
+* Vous ne pouvez pas mettre à niveau le nœud d'une licence d'évaluation vers une licence achetée.
+* Vous pouvez uniquement utiliser un compte vCenter pour déployer le modèle OVF. L'installation directe sur un hôte ESXi n'est actuellement pas prise en charge.
+* Vous devez installer le modèle OVF (contenu dans un fichier ova) à l'aide du client autonome vSphere ou du client Web vSphere (la seule option pour ESXi 6.5 et versions ultérieures). Vous n'utilisez pas l'utilitaire d'administration de ONTAP Select Deploy.
+
+
+
+
+== Préparez l'hôte de cluster ONTAP Select
+
+Utilisez les conditions suivantes pour préparer l'hôte VMware ESXi sur lequel le cluster ONTAP Select est déployé. La description de la plate-forme est basée sur la configuration standard ou de petite instance avec stockage DAS local formaté en utilisant le système de fichiers VMFS-5 ou VMFS-6.
+
+image:prepare_ESXi_host_requirements.png["Configuration requise pour la préparation de l'hôte ESXi"]
+
+Pour plus d'informations sur les options de configuration de l'hôte, reportez-vous au link:reference_chk_host_prep.html["Documentation d'installation de ONTAP Select"].
+
+
+
+== Déployez un cluster ONTAP Select à un seul nœud à l'aide d'un modèle OVF
+
+Procédez comme suit sur un serveur hôte ESXi 64 bits pris en charge.
+
+.Étapes
+. Rendez-vous sur la page Programme des produits d'évaluation NetApp et sélectionnez *ONTAP Select* pour télécharger le modèle OVF ONTAP Select sur votre poste de travail local.
+. Connectez-vous au client Web VMware vSphere à l'aide d'un compte doté de Privileges d'administration.
+. Sélectionnez l'hôte à l'aide de l'une des options suivantes :
++
+** Sélectionnez *fichier* > *déployer le modèle OVF*.
+** Sélectionnez *Datacenter*. Cliquez ensuite avec le bouton droit de la souris et sélectionnez *déployer le modèle OVF*.
+
+
+. Sélectionnez le fichier OVA source ONTAP Select sur votre poste de travail local, puis sélectionnez *Suivant*.
+. Passez en revue les détails du modèle OVF et sélectionnez *Suivant*.
+. Vérifiez les détails du CLUF et sélectionnez *accepter*. Sélectionnez ensuite *Suivant*.
+. Tapez le nom de la nouvelle machine virtuelle et sélectionnez *Suivant*.
+. Si plusieurs datastores sont disponibles, sélectionnez-les et sélectionnez *Suivant*.
+. Sélectionnez *Thick Provision Lazy Zeroed*, puis sélectionnez *Next*.
+. Sélectionnez les réseaux de données et de gestion, puis sélectionnez *Suivant*.
+. Sur la page *Propriétés*, indiquez toutes les valeurs requises et sélectionnez *Suivant*.
+. Consultez les détails du déploiement et sélectionnez *mise sous tension après le déploiement*.
+. Sélectionnez *Terminer* pour commencer le processus de déploiement.
+. Une fois le cluster ONTAP Select déployé, vous pouvez le configurer à l'aide de System Manager ou de l'interface de ligne de commande. Vous devez affecter le disque à l'aide de l'opération ONTAP *disk ASSIGN* standard.
+
+
+.Informations associées
+link:http://mysupport.netapp.com/matrix["Matrice d'interopérabilité NetApp"^]

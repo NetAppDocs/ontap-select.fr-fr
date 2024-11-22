@@ -81,6 +81,9 @@ Les microprocesseurs pris en charge incluent les composants suivants :
 * Processeurs Intel Xeon pour serveur (voir link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processeurs Intel Xeon,window=_blank"] pour en savoir plus)
 
 
+
+NOTE: Les processeurs AMD (Advanced micro Devices) ne sont pas pris en charge par ONTAP Select.
+
 .Configuration Ethernet
 Il existe plusieurs configurations Ethernet prises en charge en fonction de la taille du cluster.
 

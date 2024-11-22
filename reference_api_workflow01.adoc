@@ -22,14 +22,6 @@ Le workflow de création de cluster diffère dans les cas suivants :
 * Plusieurs nœuds ou hôtes sont utilisés dans le cluster
 * Le cluster est déployé dans un environnement de production avec une licence achetée
 * L'hyperviseur KVM est utilisé à la place de VMware ESXi
-+
-[NOTE]
-====
-** Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
-** Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
-
-
-====
 
 
 
@@ -413,3 +405,6 @@ Sortie::
 
 --
 
+
+.Informations associées
+link:task_quick_start_for_ovf_template_deployments.html["Démarrage rapide de ONTAP Select pour les déploiements de modèles OVF"]
