@@ -28,8 +28,8 @@ indexpage:
       url: "/concept_adm_before.html"
     - title: Utilisez l'API REST
       url: "/concept_api_how_access.html"
-    - title: Démarrage rapide pour les déploiements de modèles OVF
-      url: "/task_quick_start_for_ovf_template_deployments.html"
+    - title: Déployez une instance d'évaluation de 90 jours d'un cluster
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: Ressources supplémentaires
     links:
     - title: Bibliothèque de produits ONTAP Select
