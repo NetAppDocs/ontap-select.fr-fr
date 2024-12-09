@@ -42,9 +42,9 @@ Préparation de l'hôte:: Vous devez préparer les hôtes de l'hyperviseur où l
 +
 --
 . Connectez-vous à l'interface utilisateur Web de déploiement.
-. Cliquez sur image:icon_question_mark.gif["Point d'interrogation"] en haut de la page.
-. Cliquez sur *prérequis*.
-. Faites défiler vers le bas pour consulter les exigences et cliquez sur *OK*.
+. Sélectionnez image:icon_question_mark.gif["Point d'interrogation"] en haut de la page.
+. Sélectionnez *Conditions préalables*.
+. Faites défiler vers le bas pour revoir les exigences et sélectionnez *OK*.
 
 
 --
@@ -65,7 +65,7 @@ Mise en route de la page de lancement:: La page initiale *mise en route avec ONT
 
 
 
-NOTE: Vous pouvez effectuer les mêmes étapes de manière indépendante en cliquant sur les onglets en haut de la page (clusters, hôtes hyperviseurs, Administration).
+NOTE: Vous pouvez effectuer les mêmes étapes indépendamment en sélectionnant les onglets en haut de la page (clusters, hôtes d'hyperviseur, Administration).
 
 Vérificateur de réseau:: Si vous allez déployer un cluster multinœud, vous devez vous familiariser avec le vérificateur de réseau.
 Après le déploiement d'un cluster:: Il est conseillé de sauvegarder les données de configuration de ONTAP Select Deploy.
@@ -84,27 +84,27 @@ Voir link:task_deploy_cluster.html#before-you-begin["Avant de commencer"] pour p
 Un cluster ONTAP Select avec un ou plusieurs nœuds est créé pour un déploiement de production.
 
 .Étapes
-La procédure à suivre varie selon que vous souhaitez créer un cluster à un ou plusieurs nœuds.
+La procédure à suivre varie selon que vous souhaitez créer un cluster à un ou plusieurs nœuds. Un cluster à plusieurs nœuds peut avoir deux, quatre, six ou huit nœuds.
 
 [role="tabbed-block"]
 ====
 .Cluster à un seul nœud
 --
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte administrateur (admin).
-. Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, confirmez que vous avez rempli les conditions préalables à la configuration et cliquez sur *OK*.
-. Si la page de lancement du cluster *pour commencer* n'est pas affichée, cliquez sur image:icon_question_mark.gif["Point d'interrogation"] En haut de la page, cliquez sur *pour commencer*.
-. Sur la page *pour commencer*, cliquez sur *Télécharger* et sélectionnez une licence sur votre poste de travail local et cliquez sur *Ouvrir* pour télécharger la licence.
-. Cliquez sur *Actualiser* et confirmez que la licence a été ajoutée.
-. Cliquez sur *Suivant* pour ajouter un hôte d'hyperviseur, puis cliquez sur *Ajouter*.
+. Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez que vous avez rempli les conditions préalables à la configuration et sélectionnez *OK*.
+. Si la page de lancement du cluster *mise en route* n'est pas affichée, sélectionnez image:icon_question_mark.gif["Point d'interrogation"] en haut de la page et sélectionnez *mise en route*.
+. Sur la page *mise en route*, sélectionnez *Télécharger*, puis sélectionnez une licence sur votre poste de travail local et sélectionnez *Ouvrir* pour télécharger la licence.
+. Sélectionnez *Refresh* et confirmez que la licence a été ajoutée.
+. Sélectionnez *Suivant* pour ajouter un hôte d'hyperviseur, puis sélectionnez *Ajouter*.
 +
 Vous pouvez ajouter l'hôte de l'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
-. Cliquez sur *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
+. Sélectionnez *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
 +
 Toutes les informations d'identification de compte que vous fournissez sont ajoutées à la base de données déployer les informations d'identification.
 
-. Cliquez sur *Suivant* pour lancer le processus de création du cluster.
-. Dans la section *Cluster Details*, indiquez toutes les informations requises décrivant le cluster et cliquez sur *Done*.
+. Sélectionnez *Suivant* pour lancer le processus de création de cluster.
+. Dans la section *Détails du cluster*, fournissez toutes les informations requises décrivant le cluster et sélectionnez *terminé*.
 . Sous *Configuration de nœud*, indiquez l'adresse IP de gestion de nœud et sélectionnez la licence pour le nœud ; vous pouvez télécharger une nouvelle licence si nécessaire. Vous pouvez également modifier le nom du nœud si nécessaire.
 . Fournir la configuration *hyperviseur* et *réseau*.
 +
@@ -113,16 +113,16 @@ Il existe trois configurations de nœuds qui définissent la taille de la machin
 +
 Sélectionnez l'hôte de l'hyperviseur ainsi que les réseaux de gestion et de données.
 
-. Indiquez la configuration *Storage* et cliquez sur *Done*.
+. Indiquez la configuration *Storage* et sélectionnez *Done*.
 +
 Vous pouvez sélectionner les lecteurs en fonction du niveau de licence de votre plate-forme et de la configuration de l'hôte.
 
 . Examiner et confirmer la configuration du cluster.
 +
-Vous pouvez modifier la configuration en cliquant sur image:icon_pencil.gif["Modifier"] dans la section applicable.
+Vous pouvez modifier la configuration en sélectionnant image:icon_pencil.gif["Modifier"] dans la section applicable.
 
-. Cliquez sur *Suivant* et indiquez le mot de passe administrateur ONTAP.
-. Cliquez sur *Créer un cluster* pour lancer le processus de création du cluster, puis cliquez sur *OK* dans la fenêtre contextuelle.
+. Sélectionnez *Suivant* et entrez le mot de passe de l'administrateur ONTAP.
+. Sélectionnez *Créer un cluster* pour lancer le processus de création du cluster, puis sélectionnez *OK* dans la fenêtre contextuelle.
 +
 La création du cluster peut prendre jusqu'à 30 minutes.
 
@@ -136,20 +136,20 @@ La page est automatiquement actualisée à intervalles réguliers.
 .Cluster multinœud
 --
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte administrateur (admin).
-. Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez que vous avez rempli les conditions préalables à la configuration et cliquez sur *OK*.
-. Si la page de lancement du cluster *pour commencer* n'est pas affichée, cliquez sur image:icon_question_mark.gif["Point d'interrogation"] En haut de la page, cliquez sur *pour commencer*.
-. Sur la page *pour commencer*, cliquez sur *Télécharger* et sélectionnez une licence sur votre poste de travail local et cliquez sur *Ouvrir* pour télécharger la licence. Répétez l'opération pour ajouter une deuxième licence.
-. Cliquez sur *Refresh* et confirmez que les licences ont été ajoutées.
-. Cliquez sur *Suivant* pour ajouter deux hôtes d'hyperviseur, puis cliquez sur *Ajouter*.
+. Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez que vous avez rempli les conditions préalables à la configuration et sélectionnez *OK*.
+. Si la page de lancement du cluster *mise en route* n'est pas affichée, sélectionnez image:icon_question_mark.gif["Point d'interrogation"] en haut de la page et sélectionnez *mise en route*.
+. Sur la page *mise en route*, sélectionnez *Télécharger*, sélectionnez une licence sur votre poste de travail local et sélectionnez *Ouvrir* pour télécharger la licence. Répétez l'opération pour ajouter des licences supplémentaires.
+. Sélectionnez *Refresh* et confirmez que les licences ont été ajoutées.
+. Sélectionnez *Suivant* pour ajouter tous les hôtes d'hyperviseur, puis sélectionnez *Ajouter*.
 +
 Vous pouvez ajouter les hôtes d'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
-. Cliquez sur *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
+. Sélectionnez *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
 +
 Toutes les informations d'identification de compte que vous fournissez sont ajoutées à la base de données déployer les informations d'identification.
 
-. Cliquez sur *Suivant* pour lancer le processus de création du cluster.
-. Dans la section *Cluster Details*, sélectionnez *2 node cluster* pour *Cluster Size*, fournissez toutes les informations requises décrivant les clusters et cliquez sur *Done*.
+. Sélectionnez *Suivant* pour lancer le processus de création de cluster.
+. Dans la section *Détails du cluster*, sélectionnez la *taille du cluster* souhaitée, fournissez toutes les informations requises décrivant les clusters et sélectionnez *terminé*.
 . Sous *Node Setup*, indiquez les adresses IP de gestion des nœuds et sélectionnez les licences pour chaque nœud ; vous pouvez télécharger une nouvelle licence si nécessaire. Vous pouvez également modifier les noms des nœuds si nécessaire.
 . Fournir la configuration *hyperviseur* et *réseau*.
 +
@@ -158,17 +158,17 @@ Il existe trois configurations de nœuds qui définissent la taille de la machin
 +
 Sélectionnez les hôtes d'hyperviseur ainsi que les réseaux de gestion, de données et internes.
 
-. Indiquez la configuration *Storage* et cliquez sur *Done*.
+. Indiquez la configuration *Storage* et sélectionnez *Done*.
 +
 Vous pouvez sélectionner les lecteurs en fonction du niveau de licence de votre plate-forme et de la configuration de l'hôte.
 
 . Examiner et confirmer la configuration du cluster.
 +
-Vous pouvez modifier la configuration en cliquant sur image:icon_pencil.gif["Modifier"] dans la section applicable.
+Vous pouvez modifier la configuration en sélectionnant image:icon_pencil.gif["Modifier"] dans la section applicable.
 
-. Cliquez sur *Suivant* et exécutez le contrôle préalable du réseau en cliquant sur *Exécuter*. Ceci permet de vérifier que le réseau interne sélectionné pour le trafic du cluster ONTAP fonctionne correctement.
-. Cliquez sur *Suivant* et indiquez le mot de passe administrateur ONTAP.
-. Cliquez sur *Créer un cluster* pour lancer le processus de création du cluster, puis cliquez sur *OK* dans la fenêtre contextuelle.
+. Sélectionnez *Suivant* et exécutez le contrôle préalable du réseau en sélectionnant *Exécuter*. Ceci permet de vérifier que le réseau interne sélectionné pour le trafic du cluster ONTAP fonctionne correctement.
+. Sélectionnez *Suivant* et entrez le mot de passe de l'administrateur ONTAP.
+. Sélectionnez *Créer un cluster* pour lancer le processus de création du cluster, puis sélectionnez *OK* dans la fenêtre contextuelle.
 +
 La création du cluster peut prendre jusqu'à 45 minutes.
 

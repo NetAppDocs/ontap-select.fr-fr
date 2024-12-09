@@ -72,4 +72,7 @@ Plusieurs options sont disponibles lors de la configuration du cluster, y compri
 Si vous décidez de ne pas installer les fichiers de licence ayant une capacité de stockage dans le cadre du déploiement du cluster ONTAP Select, vous devez acquérir et installer les fichiers de licence avant que ce délai expire pour les clusters exécutant une licence achetée.
 
 .Agrégats en miroir
-Des disques de spare de données sont créés par l'utilitaire d'administration Deploy sur chaque nœud ONTAP Select à partir de l'espace de datastore utilisable (par exemple, pool0 et Pool1). Pour mettre en œuvre la haute disponibilité des données dans un cluster multinœud, vous devez créer un agrégat en miroir à l'aide de ces unités.
+L'utilitaire d'administration deploy crée des disques de secours sur chaque nœud ONTAP Select à partir de l'espace de datastore utilisable (par exemple, pool0 et pool1). Pour mettre en œuvre la haute disponibilité des données dans un cluster multinœud, vous devez créer un agrégat en miroir à l'aide de ces unités.
+
+
+NOTE: Le basculement haute disponibilité est pris en charge uniquement lorsque les agrégats de données sont configurés en tant qu'agrégats en miroir.
