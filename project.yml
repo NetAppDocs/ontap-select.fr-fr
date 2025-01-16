@@ -262,8 +262,6 @@ sidebar:
         url: "/reference_api_script_common.html"
       - title: Redimensionner les nœuds du cluster
         url: "/reference_api_script_resize.html"
-  - title: Automatisez avec Ansible
-    url: "/concept_automate_ansible.html"
   - title: Utiliser l'interface de ligne de commande
     entries:
     - title: Connectez-vous à l'aide de SSH

@@ -28,12 +28,19 @@ Deux types de LIF spécifiées par le client sont attribués :
 * Gestion des nœuds (un par nœud)
 
 
+
+NOTE: Un cluster multi-nœuds possède un réseau interne avec des LIFs générées automatiquement.
+
 .SVM
-Deux SVM d'administration sont actifs :
+Trois SVM sont actifs :
 
-* SVM par défaut
-* SVM cluster
+* SVM d'administration
+* SVM du nœud
+* SVM système (cluster
 
+
+
+NOTE: Les SVM de données ne sont pas créés dans le cadre du déploiement des clusters ONTAP Select. Ils doivent être créés par l'administrateur du cluster après le déploiement. Pour plus d'informations, voir https://docs.netapp.com/us-en/ontap/nfs-config/create-svms-data-access-task.html["Créer un SVM"^].
 
 .64 bits
 L'agrégat root est créé.
@@ -41,9 +48,7 @@ L'agrégat root est créé.
 .Caractéristiques
 Toutes les fonctionnalités sont disponibles sous licence. SnapLock et FabricPool requièrent deux licences distinctes.
 
-
-NOTE: Aucun SVM de données n'est créé. De plus, le cluster multinœud dispose d'un réseau interne avec des LIF basées automatiquement.
-
 .Informations associées
+* link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Types de SVM contenus dans un cluster"^]
 * link:reference_lic_ontap_features.html["Fonctionnalités ONTAP activées par défaut"]
 

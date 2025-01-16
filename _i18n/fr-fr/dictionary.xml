@@ -1089,41 +1089,8 @@
   <block id="8b8ad71cb1f021d9c60ac3546c84a309" category="list-text">Définir des ports réseau dédiés, la bande passante et le vSwitch pour les réseaux ONTAP Select et le stockage externe (VMware VSAN et le trafic générique de la baie de stockage lors de l'utilisation d'iSCSI ou NFS)</block>
   <block id="eba94fc119b6edab65f52db7f8979bcc" category="list-text">Configurer l'option de capacité pour restreindre l'utilisation du stockage (ONTAP Select ne peut pas consommer la totalité de la capacité d'un datastore externe vNAS)</block>
   <block id="3a667d8f4f3502af8cd1055a07e547aa" category="list-text">Assurez-vous que toutes les baies de stockage externes génériques utilisent, lorsque cela est possible, les fonctionnalités de redondance et de haute disponibilité disponibles</block>
-  <block id="c32e557727d87dabd26419e2d74fd541" category="summary">Utilisez les rôles Ansible pour automatiser les déploiements ONTAP Select.</block>
-  <block id="6a7bceb6d2b5ceedce475be4f9b01f70" category="doc">Automatisez les déploiements ONTAP Select avec Ansible</block>
-  <block id="ef4813ca7c0fc0ff31c081f95744fca3" category="paragraph">Utilisez des rôles et des playbooks Ansible pour automatiser les déploiements ONTAP Select.</block>
-  <block id="53e3f47e6ca445e9be6f8424cc405d08" category="paragraph">Un rôle Ansible est un ensemble logique de tâches, de modèles, de gestionnaires et de variables dans une structure de fichiers standardisée. Utilisez ces rôles pour faciliter, réutiliser et modulaiser les fonctionnalités qui peuvent être utilisées indépendamment. Incluez les rôles, et la liste des hôtes dans lesquels vous souhaitez les exécuter, dans un manuel de vente pour l'exécution. Une fois que vous avez installé Ansible, mis à jour les modules nécessaires et comprendre les playbooks, vous êtes prêt à télécharger des rôles ONTAP Select (OTS) de NetApp GitHub pour créer et exécuter votre propre PlayBook pour déployer les clusters ONTAP Select.</block>
-  <block id="a5cd3ed116608dac017f14c046ea56bf" category="section-title">Rôles</block>
-  <block id="826d466edf75a6e091340a11b737b650" category="paragraph">Deux rôles sont disponibles pour ONTAP Select :</block>
-  <block id="efd9faa12026d5475636db4e69b74c88" category="section-title">na_ots_deploy</block>
-  <block id="43240aa487d9e87740e23d626da1a362" category="paragraph">Ce rôle télécharge le fichier d'installation de ONTAP Select Deploy sur un hôte vCenter ou ESXi. Il crée ensuite et exécute la machine virtuelle déployée.</block>
-  <block id="295abdb722ec58f88548a860f1de3615" category="paragraph">Ce rôle utilise les valeurs d'entrée suivantes :</block>
-  <block id="ce32e2e59fbccdfecf9783e364821344" category="list-text">Identifiants d'hôte vCenter ou ESXi</block>
-  <block id="bcac6351d7ffa20621625e884ac48eef" category="list-text">Déployer la création de machines virtuelles, notamment les informations suivantes :</block>
-  <block id="75ba8d70e3692ba200f0e0df37b4d2ae" category="list-text">Adresse IP</block>
-  <block id="99dea78007133396a7b8ed70578ac6ae" category="list-text">Connexion</block>
   <block id="8a5227cc82d14862956938caffc1acf2" category="list-text">Datastore</block>
   <block id="eec89088ee408b80387155272b113256" category="list-text">Le réseau</block>
-  <block id="53c3b66ec700ff4dc91986d0dd8b16ac" category="list-text">Chemin d'accès local au fichier OVA</block>
-  <block id="a494e509586e66c9858cd2b0032bbb59" category="paragraph">Assurez-vous que le fichier d'installation est disponible avant d'exécuter le PlayBook, y compris le rôle.</block>
-  <block id="67b626a26e85af31687eb59b04a92d36" category="admonition">La façon la plus simple de fournir ces valeurs d'entrée est par le biais d'un fichier de variables globales au format YML. Passez ce fichier YML dans le PlayBook.</block>
-  <block id="62f436a0c8a1102605e3a87bed8fb9bb" category="paragraph">Le rôle a une seule tâche qui importe le fichier OVA déployé sur l'hôte, crée la VM et l'exécute. Vous pouvez accéder à ce rôle et le télécharger à partir de NetApp Ansible GitHub ici : <block ref="76046f5222ce385c10b6d73a03e82ba7" category="inline-link-macro-rx"></block></block>
-  <block id="844c277ee2d3a4ab83ef1f113352e100" category="section-title">na_ots_cluster</block>
-  <block id="7fd297e1f0beaa7151bd9285d7dff546" category="paragraph">Ce rôle utilise les API de déploiement ONTAP Select pour créer et déployer le cluster ONTAP Select. Elle suppose que la machine virtuelle déployée a été créée et qu'elle est opérationnelle manuellement ou en utilisant le rôle *na_ots_Deploy*. Par ailleurs, le rôle part du principe que les hôtes Select sont correctement configurés avec le réseau et le stockage requis pour le cluster ONTAP Select.</block>
-  <block id="f0257515d53312c2d8028409069c5d84" category="paragraph">Le rôle utilise les valeurs d'entrée des identifiants vCenter ou ESXI, et déploie les identifiants de la machine virtuelle pour accéder aux API et toutes les informations nécessaires à la création du cluster ONTAP Select et de la machine virtuelle de nœud.</block>
-  <block id="ea6e2b68eae559d20093f0d7eae85fb8" category="paragraph">Le rôle effectue les tâches suivantes :</block>
-  <block id="de939cf4d4a045633c8a520b501bb40e" category="list-text">Ajout d'identifiants d'hôte (vcenter ou esxi</block>
-  <block id="0b67a16a8394599f4eecf8683ef0d301" category="list-text">Obtention et enregistrement des ID d'hôte</block>
-  <block id="fa8c1aa26c03157b5e62997fd0fdaa14" category="list-text">Validation du réseau interne (pour les clusters multinœuds)</block>
-  <block id="d7494ab1ca8800562b8faee8d3a4984e" category="list-text">Création du cluster</block>
-  <block id="073dd452840b7a9881432728f959cd2c" category="list-text">Configuration des nœuds</block>
-  <block id="5b6e8147fdc6caa0b27d7fc75489608f" category="list-text">Configuration du réseau et du pool de stockage</block>
-  <block id="b6877b94a1e530ab0fc6b8d1545fd166" category="list-text">Déploiement du cluster</block>
-  <block id="f8cac4cf1b1201d6a9386323183ca9c8" category="paragraph">Par conséquent, le rôle complète la machine virtuelle du cluster en cours d'exécution et le cluster ONTAP Select entièrement déployé. Vous pouvez accéder à ce rôle et le télécharger à partir de NetApp Ansible GitHub ici : <block ref="56a4d28e5b01605b6b865a56dead08da" category="inline-link-macro-rx"></block></block>
-  <block id="043194e296799e8dbefda7f37d0e101e" category="section-title">Exemple de manuel de vente</block>
-  <block id="483b9ffc2547d862835719e69821ce3e" category="paragraph">Voici un exemple de PlayBook qui indique les deux rôles ONTAP Select. Notez que les variables d'entrée sont définies dans les fichiers YML et transmises via "var_Files". Vous trouverez plus de détails dans les fichiers README dans chacun des rôles.</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">ici</block>
-  <block id="006a0a02171a296bf3a320f8991be24a" category="paragraph">Une fois le cluster ONTAP Select créé et exécuté avec les rôles ci-dessus, vous pouvez utiliser l'ensemble complet de rôles ONTAP Ansible disponibles pour automatiser davantage les fonctionnalités de ONTAP. Les rôles ONTAP disponibles sont accessibles <block ref="4d400bdda09fce7a6e9e1a49c64cce9d" category="inline-link-macro-rx"></block>. En résumé, les rôles ONTAP Select Ansible et les rôles ONTAP vous permettent d'automatiser entièrement votre workflow de bout en bout pour gérer votre stockage avec ONTAP Select.</block>
   <block id="79bcd6ba5f33475a7941fe7ef0f5412c" category="summary">Dans le cadre de la planification d'un déploiement ONTAP Select, il existe plusieurs conditions générales à prendre en compte.</block>
   <block id="640eb7f22428d70b36554194cebe2ea9" category="paragraph">Dans le cadre de la planification d'un déploiement ONTAP Select, vous devez tenir compte de plusieurs exigences générales.</block>
   <block id="4682505b28ef1baba1c84e29e768fa89" category="section-title">Considérations relatives à la taille du cluster et à ses considérations associées</block>
@@ -1501,12 +1468,8 @@
   <block id="e6d9b928e48b5e5a2538b2bcdc515c95" category="paragraph">Deux types de LIF spécifiées par le client sont attribués :</block>
   <block id="7e8ceade9e54e9a912c6f9a52ea87658" category="list-text">Gestion du cluster (un par cluster)</block>
   <block id="5e3a8851b34912653fbf0e9bbf3fc9d0" category="list-text">Gestion des nœuds (un par nœud)</block>
-  <block id="3013e63917da83ac89d317625e960fa3" category="paragraph">Deux SVM d'administration sont actifs :</block>
-  <block id="38cd25d85c8a7e96abb2aaf9d4009eb2" category="list-text">SVM par défaut</block>
-  <block id="c6117cdbee2307d85ed57db8a195f4f8" category="list-text">SVM cluster</block>
   <block id="ebeedb9721ef0e0966825fecfef52bb5" category="paragraph">L'agrégat root est créé.</block>
   <block id="d5daa4c0e0a3988a633eb5273b984697" category="paragraph">Toutes les fonctionnalités sont disponibles sous licence. SnapLock et FabricPool requièrent deux licences distinctes.</block>
-  <block id="076515078e25047da0c60bc6f27e2c68" category="admonition">Aucun SVM de données n'est créé. De plus, le cluster multinœud dispose d'un réseau interne avec des LIF basées automatiquement.</block>
   <block id="7e4d14e940ca34d72bbdbc88f17285ad" category="inline-link-macro">Fonctionnalités ONTAP activées par défaut</block>
   <block id="48bd47a31dab80aa978f949db8e14bb2" category="list-text"><block ref="48bd47a31dab80aa978f949db8e14bb2" category="inline-link-macro-rx"></block></block>
   <block id="ca91eb0ffb4e943653e46e9be3d1522e" category="summary">Tous les scripts Python utilisent une classe Python commune dans un seul module.</block>
@@ -2651,7 +2614,6 @@
   <block id="eff97b5f2d2c83f1ed5631ba2caad4b3" category="sidebar">Ajouter une licence de nœud</block>
   <block id="17a06a80e87a37d4e1892e8c0528b857" category="sidebar">Supprime un cluster</block>
   <block id="1ca48c398b8c739a9815d44011185388" category="sidebar">Redimensionner les nœuds du cluster</block>
-  <block id="46fc1cf655dd8158b6b58910cf88e653" category="sidebar">Automatisez avec Ansible</block>
   <block id="8a9e0f8224695e94f0988f444488877b" category="sidebar">Utiliser l'interface de ligne de commande</block>
   <block id="89c5ba6f9355d2da97bb00bdf0ec66e5" category="sidebar">Connectez-vous à l'aide de SSH</block>
   <block id="8c45b8a7e3dd4094586773bc09fc8842" category="sidebar">Utilitaire de déploiement</block>
@@ -2894,7 +2856,6 @@
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
   <block id="c87ac723a8ad54443fb95ff969ba10fa" category="admonition">Vous pouvez effectuer l'opération de redimensionnement des nœuds de cluster lorsque vous utilisez le modèle de licence des niveaux de capacité et le modèle de licence des pools de capacité.</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">Échec de l'actualisation du cluster de déploiement OTS avec erreur</block>
-  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">La restriction des rôles et des autorisations pour le compte d'administrateur ONTAP peut limiter la capacité de ONTAP Select Deploy à gérer le cluster. Pour plus d'informations, consultez l'article de la base de connaissances <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>.</block>
   <block id="65af935cd1eb18bdc5fd96837e0ae492" category="paragraph">Bien que l'existence de l'agrégat mis en miroir soit nécessaire pour fournir une copie à jour (RPO 0) de l'agrégat primaire, veiller à ce que l'agrégat primaire ne manque pas d'espace disponible. Une condition de faible espace dans l'agrégat primaire peut entraîner la suppression de la copie Snapshot commune utilisée comme base pour le rétablissement du stockage par ONTAP. Cela fonctionne comme pour les écritures client. Cependant, en l'absence de copie Snapshot commune en cas de restauration, le nœud ONTAP Select doit effectuer une base complète à partir de l'agrégat en miroir. Cette opération peut prendre beaucoup de temps dans un environnement sans partage.</block>
   <block id="6aa8a3e3c7b01a983d682bcf568533c1" category="paragraph">Le SDS MetroCluster est une fonctionnalité Premium qui nécessite une licence Premium ou une licence Premium XL. La licence Premium prend en charge la création d'ordinateurs virtuels de petite et moyenne taille ainsi que de disques durs et SSD. La licence Premium XL prend également en charge la création de disques NVMe.</block>
   <block id="0bbe8377b151cc2455792bb1798d4907" category="sidebar">Configuration VMware vSphere vSwitch</block>
@@ -3386,7 +3347,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="f778b020848c4bce334b26593dd9cc1f" category="paragraph">Le disque est affecté en tant que disque de secours et est disponible pour ONTAP Select. La mise à disposition du disque peut prendre une minute ou plus.</block>
   <block id="a743fc9c91bd7ab650676dc7bcff7cbe" category="paragraph">Étant donné que la configuration du nœud a changé, vous devez effectuer une opération d'actualisation du cluster à l'aide de l'utilitaire d'administration de déploiement.</block>
   <block id="2e34b681cc534c1f05dd05873a67719f" category="list-text">Sélectionnez *Modifier* et confirmez que le nouveau lecteur est disponible et sélectionnez-le.</block>
-  <block id="33693ff3a7d631ea880e109dfc69ea97" category="paragraph">Le fichier de notification fournit des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.</block>
   <block id="f371e1e74365e433f105f30c886225bf" category="inline-link">Notes de mise à jour de ONTAP Select 9.14.1</block>
   <block id="6e0dedd1d494cddc9086f77fa36f54a0" category="paragraph">ONTAP Select peut être déployé comme un cluster à un seul nœud. L'hôte de l'hyperviseur comprend un commutateur virtuel qui permet d'accéder au réseau externe.</block>
   <block id="6615bf96d027d0ff485c1b1838661527" category="admonition">Un hôte sur lequel ONTAP Select s'exécute nécessite des disques physiques locaux lors de l'utilisation d'un contrôleur RAID matériel ou de la fonctionnalité RAID logicielle fournie avec ONTAP Select. Si vous utilisez la solution ONTAP Select vNAS pour accéder au stockage externe, aucun contrôleur RAID local et la fonctionnalité RAID logicielle ne sont pas utilisés.</block>
@@ -3646,7 +3606,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="567999f9c71634f001a831b733088bbc" category="doc">Utilisez ONTAP Select dans les bureaux distants et les succursales</block>
   <block id="ecef17057a10f9337620a1aee67c110f" category="summary">NetApp ONTAP Select est un dispositif de stockage Software-defined que vous pouvez déployer sur divers serveurs matériels génériques exécutant l'hyperviseur VMware ESXi ou KVM (Kernel-based Virtual machine). Elle vous apporte l'agilité dont vous avez besoin pour concevoir une infrastructure de cloud privé flexible et évolutive. Ce site contient la documentation de ONTAP Select 9.16.1.</block>
   <block id="b38f50fa2d7eac1d0761ec2b46339f62" category="inline-link-macro">Avis pour ONTAP Select 9.16.1</block>
-  <block id="561a04c4081432fad02b159522e1d02c" category="list-text"><block ref="561a04c4081432fad02b159522e1d02c" category="inline-link-macro-rx"></block></block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON pour le script permettant de créer un cluster ONTAP Select</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">Script pour ajouter une licence de nœud ONTAP Select</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">Script pour créer un cluster ONTAP Select</block>
@@ -3790,4 +3749,16 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="944a1b1080e2860bd56c15282a8e476e" category="list-text">Dans la section *Détails du cluster*, sélectionnez la *taille du cluster* souhaitée, fournissez toutes les informations requises décrivant les clusters et sélectionnez *terminé*.</block>
   <block id="8b5ceafca01d3a14f09a0d742cbb2cfb" category="list-text">Sélectionnez *Suivant* et exécutez le contrôle préalable du réseau en sélectionnant *Exécuter*. Ceci permet de vérifier que le réseau interne sélectionné pour le trafic du cluster ONTAP fonctionne correctement.</block>
   <block id="2735f745a89477a2abc1f435e606bde3" category="list-text">Sélectionnez *Créer un cluster* pour lancer le processus de création du cluster, puis sélectionnez *OK* dans la fenêtre contextuelle.</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">Les fichiers de notification fournissent des informations sur les droits d'auteur et les licences de tiers utilisés dans le logiciel NetApp.</block>
+  <block id="4d5e19ca322ec82f576cffa70356d45b" category="paragraph"><block ref="4d5e19ca322ec82f576cffa70356d45b" category="inline-link-rx"></block></block>
+  <block id="dba6192da7444fc9e5fd32119193b12b" category="admonition">La restriction des rôles et des autorisations pour le compte d'administrateur ONTAP peut limiter la capacité de ONTAP Select Deploy à gérer le cluster. Pour plus d'informations, consultez l'article de la base de connaissances <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>.</block>
+  <block id="a97a40851f37ebfbf5db3d3bf28da58b" category="admonition">Un cluster multi-nœuds possède un réseau interne avec des LIFs générées automatiquement.</block>
+  <block id="0f1007666fd5cc7934baffbdef1287d0" category="paragraph">Trois SVM sont actifs :</block>
+  <block id="070848ec049722b444235c5db132a1bb" category="list-text">SVM d'administration</block>
+  <block id="9392c5507686114a0bba1e8e0b5be096" category="list-text">SVM du nœud</block>
+  <block id="d78477ac5628a6dd2fb8c046564b2227" category="list-text">SVM système (cluster</block>
+  <block id="93b1520005778e826c33efa7132d61c9" category="inline-link">Créer un SVM</block>
+  <block id="e0d52f0658828de62020550252885d55" category="admonition">Les SVM de données ne sont pas créés dans le cadre du déploiement des clusters ONTAP Select. Ils doivent être créés par l'administrateur du cluster après le déploiement. Pour plus d'informations, voir<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>.</block>
+  <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">Types de SVM contenus dans un cluster</block>
+  <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
 </blocks>
