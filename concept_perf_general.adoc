@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_perf_general.html 
 keywords: ontap select, performance 
-summary: Les performances varient en fonction de la configuration matérielle. 
+summary: 'Les performances d"un cluster ONTAP Select peuvent varier en fonction de la configuration matérielle.' 
 ---
 = Présentation des performances ONTAP Select
 :hardbreaks:
@@ -14,8 +14,6 @@ summary: Les performances varient en fonction de la configuration matérielle.
 
 
 [role="lead"]
-Les performances varient en fonction de la configuration matérielle.
-
 Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. La configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select particulière. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :
 
 * *Fréquence principale*. En général, une fréquence plus élevée est préférable.

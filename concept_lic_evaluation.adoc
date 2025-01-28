@@ -4,7 +4,7 @@ permalink: concept_lic_evaluation.html
 keywords: license, licensing, evaluation, upgrade license 
 summary: 'Vous pouvez utiliser une licence d"évaluation si vous souhaitez évaluer ONTAP Select avant de prendre la décision d"achat. La licence d"évaluation est incluse à l"utilitaire d"administration ONTAP Select Deploy et s"applique automatiquement à chaque nœud ONTAP Select dans le cadre d"un déploiement d"évaluation.' 
 ---
-= Licences d'évaluation
+= Licences d'évaluation pour les déploiements ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,6 +16,15 @@ summary: 'Vous pouvez utiliser une licence d"évaluation si vous souhaitez éval
 [role="lead"]
 Vous pouvez déployer ONTAP Select avec une licence d'évaluation ou une licence achetée. La licence que vous choisissez doit s'appliquer à chacun des nœuds du cluster ONTAP Select et donc à l'ensemble du cluster. Vous pouvez utiliser une licence d'évaluation si vous souhaitez évaluer ONTAP Select avant de prendre la décision d'achat. La licence d'évaluation est incluse à l'utilitaire d'administration ONTAP Select Deploy et s'applique automatiquement à chaque nœud ONTAP Select dans le cadre d'un déploiement d'évaluation.
 
+[NOTE]
+====
+Pour télécharger l'utilitaire d'administration de ONTAP Select Deploy, vous avez besoin des éléments suivants :
+
+* Un compte enregistré sur le site de support NetApp. Si vous n'avez pas de compte, reportez-vous àla section https://mysupport.netapp.com/site/user/registration["Enregistrement de l'utilisateur"^].
+* Pour https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["Acceptez le contrat de licence de l'utilisateur final"^] un déploiement ONTAP Select avec une licence d'évaluation.
+
+
+====
 Plusieurs considérations sont à prendre en compte lors du déploiement et de la prise en charge d'un cluster d'évaluation :
 
 * Vous ne pouvez utiliser le cluster qu'à des fins d'évaluation. Vous ne devez pas utiliser de cluster avec une licence d'évaluation dans un environnement de production.
@@ -36,7 +45,7 @@ La licence d'évaluation ONTAP Select présente les caractéristiques suivantes 
 * Aucune licence de production avec capacité de stockage n'est requise
 * Le numéro de série du nœud est composé de 20 chiffres et automatiquement généré par ONTAP Select Deploy
 +
-(Vous ne l'achetez pas directement auprès de NetApp)
+(Vous ne l'obtenez pas directement auprès de NetApp)
 
 * La période d'évaluation fournie par la licence peut aller jusqu'à 90 jours
 * Le stockage maximal alloué par chaque nœud est le même que pour une licence de production

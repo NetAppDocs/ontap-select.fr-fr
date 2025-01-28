@@ -1588,7 +1588,6 @@
   <block id="440776946e3349ff3266a8cf25bef605" category="section-title">Utilitaire d'administration ONTAP Select Deploy</block>
   <block id="deeb67d546017625d12dfbcf3d817a5c" category="paragraph">L'utilitaire d'administration Deploy est conditionné et installé en tant que machine virtuelle Linux distincte. Vous devez utiliser l'utilitaire pour déployer des clusters ONTAP Select dans un environnement de production. Une version actuelle de l'image de noeud ONTAP Select est fournie avec l'utilitaire de déploiement.</block>
   <block id="d69f8aaae124c9269620ba7ca5678c34" category="section-title">Illustration d'un déploiement typique</block>
-  <block id="60d804a6b011555fd729bcd0c5e206da" category="paragraph">La figure suivante illustre l'utilitaire d'administration ONTAP Select Deploy utilisé pour déployer et prendre en charge un cluster ONTAP Select à quatre nœuds. Les nœuds de l'utilitaire de déploiement et ONTAP Select s'exécutent comme des serveurs virtuels distincts sur des hôtes d'hyperviseur dédiés.</block>
   <block id="3163bfc32e34eb9c2f84e4c7a1535111" category="inline-image-macro">La illustre un cluster ONTAP Select à quatre nœuds créé avec l'utilitaire d'administration Deploy.</block>
   <block id="3e69161d02590dc69114626444a3d815" category="paragraph"><block ref="3e69161d02590dc69114626444a3d815" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f6d0a856320802e878fb73629ca6582d" category="paragraph">ONTAP et ONTAP Select basés sur le matériel proposent tous deux des solutions de stockage haute performance. Cependant, leur conception et leur mise en œuvre différemment, chacun peut répondre à différents besoins métier et scénarios d'utilisation. Avant de planifier un déploiement ONTAP Select, vous devez vous familiariser avec les principales différences entre les plateformes.</block>
@@ -1669,7 +1668,6 @@
   <block id="1e8785eff311926f53d67ca62acdaa7b" category="section-title">Amélioration des mesures d'utilisation</block>
   <block id="c9e41b9dec6359fc66760c0eb4d6fa5f" category="paragraph">L'interface utilisateur Web de déploiement fournit des informations améliorées sur l'utilisation des pools de capacité. Vous pouvez rapidement déterminer la quantité de stockage utilisée et disponible dans un pool de capacité, quels nœuds utilisent le stockage d'un pool et quels pools un cluster alloue de la capacité.</block>
   <block id="0fffbf1f49b9c37a392538cc2cb48383" category="summary">Vous pouvez utiliser le script suivant pour ajouter une licence pour un noeud ONTAP Select.</block>
-  <block id="8b60e6d501896a426a20e22fc6479aec" category="summary">Les performances varient en fonction de la configuration matérielle.</block>
   <block id="5def88536d2a69b4424953a923e823a2" category="list-text">*Fréquence principale*. En général, une fréquence plus élevée est préférable.</block>
   <block id="1f4e4fadae7f6d95c4d2c58cfac9416f" category="list-text">*Socket simple contre multisocket*. ONTAP Select n'utilise pas de fonctions multisockets, mais la surcharge de l'hyperviseur pour la prise en charge des configurations multisockets représente un certain écart de performances totales.</block>
   <block id="3e6023e5f07c1e79e542af89201e0b4a" category="list-text">*Configuration de la carte RAID et pilote d'hyperviseur associé*. Le pilote par défaut fourni par l'hyperviseur peut être remplacé par le pilote du fournisseur de matériel.</block>
@@ -2012,14 +2010,11 @@
   <block id="8b3398557c7fb55b263bf52bece82b68" category="doc">Licences d'évaluation</block>
   <block id="e009f07bc1785009a3ceb83036990929" category="section-title">Caractéristiques des licences</block>
   <block id="11731b987dc6227f75478145446eec49" category="paragraph">La licence d'évaluation ONTAP Select présente les caractéristiques suivantes :</block>
-  <block id="1a722f6211174d2c13dea99241228cdd" category="list-text">Aucune licence de production avec capacité de stockage n'est requise</block>
   <block id="da43be3a437b4b11176af278d2bf65e4" category="list-text">Le numéro de série du nœud est composé de 20 chiffres et automatiquement généré par ONTAP Select Deploy</block>
-  <block id="d81334460101f9ea4e0446684836ab2c" category="paragraph">(Vous ne l'achetez pas directement auprès de NetApp)</block>
   <block id="b8c2c21a1451d44d469c74b3bc603f96" category="list-text">La période d'évaluation fournie par la licence peut aller jusqu'à 90 jours</block>
   <block id="ad49b216aa656d515b04dd8c523873dd" category="list-text">Le stockage maximal alloué par chaque nœud est le même que pour une licence de production</block>
   <block id="238908176e0b205e68cd2d9e0c4972e5" category="paragraph">Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de production. Vous devez connaître les restrictions suivantes :</block>
   <block id="60c8e16d600bd89fdcfca7dd31b63260" category="list-text">Vous devez utiliser l'utilitaire d'administration de déploiement pour effectuer la mise à niveau de la licence</block>
-  <block id="1e2f74556f8f29bf17e0d81fdf7f56ab" category="list-text">Il est possible d'utiliser une licence de niveau de capacité, mais les licences de pools de capacité ne sont pas prises en charge</block>
   <block id="040571bf34446f7204162544612cd237" category="list-text">Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production, en fonction de la taille du cluster</block>
   <block id="0f4f157087aaf0bd28aa76133fd9d2c3" category="summary">ONTAP Select vSwitch : stratégies de configuration et d'équilibrage de la charge pour les configurations à deux cartes réseau et à quatre cartes NIC.</block>
   <block id="96600f2ed0fb970e508d5209faa2adc5" category="paragraph">ONTAP Select prend en charge l'utilisation des configurations vSwitch standard et distribuées. Les vSwitches distribués prennent en charge les constructions d'agrégation de liens (LACP). L'agrégation de liens est une construction réseau commune utilisée pour agréger la bande passante sur plusieurs adaptateurs physiques. LACP est une norme indépendante du fournisseur qui fournit un protocole ouvert pour les terminaux réseau qui regroupe des groupes de ports réseau physiques en un canal logique unique. ONTAP Select peut fonctionner avec des groupes de ports configurés en tant que groupe d'agrégation de liens (LAG). Toutefois, NetApp recommande d'utiliser les ports physiques individuels comme ports de liaison ascendante simples pour éviter la configuration LAG. Dans ce cas, les meilleures pratiques pour les vswitches standard et distribués sont identiques.</block>
@@ -3290,7 +3285,6 @@ Hôte hyperviseur ESXi ou hôte KVM Linux</block>
   <block id="d98fb3ce51b49ee9b9e8ea2645524f08" category="list-text">Adresse IP de la machine virtuelle de déploiement</block>
   <block id="30e58d6b4fce06c690ff3897ae040f55" category="paragraph">Si vous utilisez vSphere, l'assistant déployer le modèle OVF comprend un formulaire pour fournir toutes les informations de configuration de déploiement, y compris la configuration du réseau. Toutefois, si vous choisissez de ne pas utiliser ce formulaire, vous pouvez utiliser la console de la machine virtuelle de déploiement pour configurer le réseau.</block>
   <block id="922bafb0938c68773e29242e2675f0b9" category="paragraph">Les étapes à suivre dépendent de l'utilisation ou non d'un hyperviseur ESXi ou KVM.</block>
-  <block id="41c929e54fb793fb7a784130ebd7c7b1" category="list-text">Une fois la machine virtuelle déployée, sélectionnez-la et mettez-la sous tension si elle n'est pas déjà sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement.</block>
   <block id="1c2f49da17d54e224e8288edcb35fd8b" category="list-text">Si nécessaire, vous pouvez configurer le réseau de déploiement à l'aide de la console de la machine virtuelle :</block>
   <block id="e24d94772b7fb552cdad8786d3972fe1" category="list-text">Tapez *n* pour définir une configuration IP statique ou *y* pour utiliser DHCP, puis sélectionnez *entrée*.</block>
   <block id="64c8e1a4f8f739423fd7163b603a4b32" category="list-text">Connectez-vous à l'interface de ligne de commande sur le serveur Linux :</block>
@@ -3561,7 +3555,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="38a6a854a485660aa1ba2f3d554e2bfe" category="paragraph">Plusieurs considérations sont à prendre en compte lors du déploiement et de la prise en charge d'un cluster d'évaluation :</block>
   <block id="9ccdbbc209e0eddfaf9f0b5a4154a78d" category="list-text">Vous ne pouvez utiliser le cluster qu'à des fins d'évaluation. Vous ne devez pas utiliser de cluster avec une licence d'évaluation dans un environnement de production.</block>
   <block id="b559f8a2bbcf90e70f60847fb3cce85f" category="list-text">Vous devez utiliser l'utilitaire d'administration de ONTAP Select Deploy comme suit lors de la configuration de chaque hôte :</block>
-  <block id="1b2bebf50d8caf7cae03b0a936752188" category="list-text">Ne fournissez pas de numéro de série</block>
   <block id="f5010a0b3197d474a3b4618b60c0fd03" category="list-text">Configurer pour utiliser une licence d'évaluation</block>
   <block id="21f27b191f1f034aa81e5f786bf9829c" category="doc">Découvrez les offres de licences de plateforme pour ONTAP Select</block>
   <block id="1b1ede8baae6a15d3ba60611103509a4" category="doc">ONTAP Select a acheté des licences pour les déploiements en production</block>
@@ -3609,7 +3602,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="de0887504497c1f3eb64ac5f23488612" category="doc">JSON pour le script permettant de créer un cluster ONTAP Select</block>
   <block id="79ebef96ee386ef1a7dba01d303ce759" category="doc">Script pour ajouter une licence de nœud ONTAP Select</block>
   <block id="be1f2ab308d7f936426d71ac4b257096" category="doc">Script pour créer un cluster ONTAP Select</block>
-  <block id="41cfd9e48a1b6c66998391efe14f06f2" category="doc">Prise en charge commune du module ONTAP Select Python</block>
   <block id="d066221405020e2f85c198e0b44e228b" category="doc">Script permettant de supprimer un cluster ONTAP Select</block>
   <block id="3a029b8899590dc6c31883e4d8b049d0" category="doc">Script de redimensionnement des nœuds de cluster ONTAP Select</block>
   <block id="f2b54f29c4af2bc66f70b4a5a52b0e2b" category="doc">Workflow 1 : créez un cluster d'évaluation ONTAP Select à un seul nœud sur ESXi</block>
@@ -3761,4 +3753,22 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="e0d52f0658828de62020550252885d55" category="admonition">Les SVM de données ne sont pas créés dans le cadre du déploiement des clusters ONTAP Select. Ils doivent être créés par l'administrateur du cluster après le déploiement. Pour plus d'informations, voir<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>.</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">Types de SVM contenus dans un cluster</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
+  <block id="c19cab121a967e7d4e145437fee16c02" category="doc">Licences d'évaluation pour les déploiements ONTAP Select</block>
+  <block id="3ad47d20affd564b7db18fcaa67fb9ca" category="paragraph">Pour télécharger l'utilitaire d'administration de ONTAP Select Deploy, vous avez besoin des éléments suivants :</block>
+  <block id="f2fd759d6c3aedc384b758263e96be4b" category="inline-link">Enregistrement de l'utilisateur</block>
+  <block id="ee071d378f5b3ec57e4eda0d66300334" category="list-text">Un compte enregistré sur le site de support NetApp. Si vous n'avez pas de compte, reportez-vous àla section<block ref="b0f5d39de7f85d20bb3da6a76b3c4368" category="inline-link-rx"></block>.</block>
+  <block id="4c38e9c9635f62bc0c98a4fc0dbf6f04" category="inline-link">Acceptez le contrat de licence de l'utilisateur final</block>
+  <block id="bcb0a8f0933f79963f8da791712307a2" category="list-text">Pour<block ref="b36a96015925128ab0074fda8004c795" category="inline-link-rx"></block> un déploiement ONTAP Select avec une licence d'évaluation.</block>
+  <block id="76be33f6608866426ecccffc5acd6be8" category="list-text">Ne fournissez pas de numéro de série</block>
+  <block id="2fcd5d5ae3d245e3d2870429d2c9381d" category="list-text">Aucune licence de production avec capacité de stockage n'est requise</block>
+  <block id="695af2710450ef107be1555e59f22b01" category="paragraph">(Vous ne l'obtenez pas directement auprès de NetApp)</block>
+  <block id="0fa0a315c1605e80221e4ae40cfaac60" category="list-text">Il est possible d'utiliser une licence de niveau de capacité, mais les licences de pools de capacité ne sont pas prises en charge</block>
+  <block id="d480e694d74a85a8bf679cab5063c9f1" category="paragraph">La figure suivante illustre l'utilitaire d'administration NetApp ONTAP Select Deploy utilisé pour déployer et prendre en charge un cluster ONTAP Select à quatre nœuds. Les nœuds de l'utilitaire de déploiement et ONTAP Select s'exécutent comme des serveurs virtuels distincts sur des hôtes d'hyperviseur dédiés.</block>
+  <block id="54d1b8efd5a74820db5617b48f538671" category="summary">Les performances d'un cluster ONTAP Select peuvent varier en fonction de la configuration matérielle.</block>
+  <block id="123521c98d5a32b10ae4a2d5e59ed719" category="doc">Module Python de support commun pour ONTAP Select</block>
+  <block id="b7a30ea4f45797fa98b43f64e7be11b9" category="doc">Gérer les licences ONTAP Select</block>
+  <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">Vous possédez un compte sur le site de support NetApp</block>
+  <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>.</block>
+  <block id="6e0cb8704cabb0eb79ea7580ba166b3e" category="list-text">Une fois la machine virtuelle déployée, sélectionnez la nouvelle machine virtuelle. S'il n'est pas encore sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement, mettez-le sous tension manuellement.</block>
+  <block id="28258323eaa4732b0beafbc8b083a5ab" category="list-text">S'il s'agit de la première fois que vous vous connectez et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :</block>
 </blocks>

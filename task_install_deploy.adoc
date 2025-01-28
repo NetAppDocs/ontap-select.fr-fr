@@ -22,6 +22,9 @@ Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utilis
 
 Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.
 
+.Avant de commencer
+https://mysupport.netapp.com/site/user/registration["Vous possédez un compte sur le site de support NetApp"^].
+
 .Description de la tâche
 L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur la norme OVF (Open Virtualization format). Le suffixe du fichier compressé unique `ova`. La machine virtuelle fournit le serveur de déploiement et les images d'installation pour les nœuds ONTAP Select.
 
@@ -118,7 +121,7 @@ Les étapes à suivre dépendent de l'utilisation ou non d'un hyperviseur ESXi o
 +
 Vous devez définir le mot de passe du compte administrateur. Vous devez fournir ce mot de passe lors de votre connexion à l'utilitaire de déploiement.
 
-. Une fois la machine virtuelle déployée, sélectionnez-la et mettez-la sous tension si elle n'est pas déjà sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement.
+. Une fois la machine virtuelle déployée, sélectionnez la nouvelle machine virtuelle. S'il n'est pas encore sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement, mettez-le sous tension manuellement.
 . Si nécessaire, vous pouvez configurer le réseau de déploiement à l'aide de la console de la machine virtuelle :
 +
 .. Cliquez sur l'onglet *Console* pour accéder au shell de configuration de l'hôte VMware ESXi et surveiller le processus de mise sous tension.
@@ -208,7 +211,7 @@ Vous devez vous connecter à l'interface utilisateur Web pour confirmer que l'ut
 
 . Indiquez le nom et le mot de passe du compte administrateur (admin) et connectez-vous.
 . Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez les conditions préalables et sélectionnez *OK* pour continuer.
-. Si c'est la première fois que vous vous êtes connecté et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :
+. S'il s'agit de la première fois que vous vous connectez et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :
 +
 ** Nouveau mot de passe pour le compte administrateur (obligatoire)
 ** AutoSupport (en option)

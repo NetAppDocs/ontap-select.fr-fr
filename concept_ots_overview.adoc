@@ -51,7 +51,7 @@ NOTE: L'utilitaire d'administration de déploiement n'a pas de numéro de versio
 
 == Illustration d'un déploiement typique
 
-La figure suivante illustre l'utilitaire d'administration ONTAP Select Deploy utilisé pour déployer et prendre en charge un cluster ONTAP Select à quatre nœuds. Les nœuds de l'utilitaire de déploiement et ONTAP Select s'exécutent comme des serveurs virtuels distincts sur des hôtes d'hyperviseur dédiés.
+La figure suivante illustre l'utilitaire d'administration NetApp ONTAP Select Deploy utilisé pour déployer et prendre en charge un cluster ONTAP Select à quatre nœuds. Les nœuds de l'utilitaire de déploiement et ONTAP Select s'exécutent comme des serveurs virtuels distincts sur des hôtes d'hyperviseur dédiés.
 
 image:ots_architecture.png["La illustre un cluster ONTAP Select à quatre nœuds créé avec l'utilitaire d'administration Deploy."]
 
