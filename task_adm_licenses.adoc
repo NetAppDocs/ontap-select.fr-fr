@@ -24,11 +24,11 @@ Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité O
 
 .Étapes
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *licences* et sur *niveau de capacité*.
-. Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
-. Pour remplacer une licence existante, sélectionnez une licence, cliquez sur image:icon_kebab.gif["Options"], Et sélectionnez *mettre à jour*.
-. Pour ajouter une nouvelle licence, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence dans votre poste de travail local.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *licences* et sélectionnez *niveau de capacité*.
+. Vous pouvez sélectionner *Filter* et limiter les licences affichées.
+. Pour remplacer une licence existante, sélectionnez une licence, sélectionnez image:icon_kebab.gif["Options"], puis sélectionnez *mettre à jour*.
+. Pour ajouter une nouvelle licence, sélectionnez *Add* en haut de la page, puis sélectionnez *Upload License(s)* et sélectionnez un fichier de licence sur votre poste de travail local.
 
 
 
@@ -39,14 +39,33 @@ Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONT
 
 .Étapes
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *licences* et sur *pools de capacité*.
-. Vous pouvez également cliquer sur *Filter* et limiter les licences affichées.
-. Vous pouvez sélectionner une licence et cliquer sur image:icon_kebab.gif["Options"] pour gérer une licence existante.
-. Pour ajouter une nouvelle licence ou renouveler une licence existante, cliquez sur *Ajouter* en haut de la page, puis cliquez sur *Télécharger une ou plusieurs licences* et sélectionnez un fichier de licence depuis votre poste de travail local.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *licences* et sélectionnez *pools de capacité*.
+. Si vous le souhaitez, sélectionnez *Filter* et pour limiter les licences affichées.
+. Si vous le souhaitez, sélectionnez une licence et choisissez image:icon_kebab.gif["Options"] de gérer une licence existante.
+. Ajouter une nouvelle licence ou renouveler une licence existante :
++
+[role="tabbed-block"]
+====
+.Ajouter une nouvelle licence
+--
+Pour ajouter une nouvelle licence, sélectionnez *Ajouter* en haut de la page.
+
+--
+.Renouveler la licence existante
+--
+Pour renouveler une licence existante :
+
+.. Sélectionnez image:icon_kebab.gif["Options"] sur une licence existante.
+.. Sélectionnez *Télécharger licence(s)*.
+.. Sélectionnez un fichier de licence sur votre poste de travail local.
+
+
+--
+====
 . Pour afficher la liste des pools de capacité :
 +
-.. Cliquez sur *Résumé*.
+.. Sélectionnez *Résumé*.
 .. Sélectionnez et développez un pool pour voir les clusters et les nœuds qui louent le stockage du pool.
 .. Afficher l'état actuel de la licence sous *informations de licence*.
 .. Vous pouvez modifier la durée des contrats de location émis pour le pool en vertu de l'expiration du bail.
@@ -54,7 +73,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONT
 
 . Pour afficher la liste des clusters :
 +
-.. Cliquez sur *Détails*.
+.. Sélectionnez *Détails*.
 .. Sélectionnez et développez le cluster pour voir l'utilisation du stockage.
 
 
@@ -85,9 +104,9 @@ Voir link:task_lic_acquire_cp.html["Acquérir une licence de pool de capacité"]
 . Installez les licences du pool de capacité sur la nouvelle instance de déploiement :
 +
 .. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-.. Cliquez sur l'onglet *Administration* en haut de la page.
-.. Cliquez sur *licences*, puis sur *Pool de capacité*.
-.. Cliquez sur *Ajouter*, puis sur *Télécharger les licences* pour sélectionner et télécharger les licences.
+.. Sélectionnez l'onglet *Administration* en haut de la page.
+.. Sélectionnez *licences*, puis *Pool de capacité*.
+.. Sélectionnez *Ajouter*, puis *Télécharger la ou les licences* pour sélectionner et télécharger les licences.
 
 
 . Si vous avez créé la nouvelle instance de déploiement sans restaurer une sauvegarde, ou si vous avez utilisé une sauvegarde qui n'était pas à jour et à jour, vous devez mettre à jour le numéro de séquence de série :
@@ -140,13 +159,13 @@ La modification de la licence de cluster pour un cluster à un seul nœud entra�
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité.
-. En haut de la page des détails du cluster, cliquez sur *cliquez ici* pour modifier la licence du cluster.
+. Sélectionnez l'onglet *clusters* a en haut de la page et sélectionnez le cluster souhaité.
+. En haut de la page de détails du cluster, sélectionnez *cliquez ici* pour modifier la licence du cluster.
 +
-Vous pouvez également cliquer sur *Modifier* en regard de la licence d'évaluation dans la section *Détails du cluster*.
+Vous pouvez également sélectionner *Modifier* en regard de licence d'évaluation dans la section *Détails du cluster*.
 
 . Sélectionnez une licence de production disponible pour chaque nœud, ou téléchargez des licences supplémentaires selon les besoins.
-. Indiquez les informations d'identification ONTAP et cliquez sur *Modifier*.
+. Indiquez les informations d'identification ONTAP et sélectionnez *Modifier*.
 +
 La mise à niveau de licence d'un cluster peut prendre plusieurs minutes. Laissez le processus se terminer avant de quitter la page ou d'apporter d'autres modifications.
 
