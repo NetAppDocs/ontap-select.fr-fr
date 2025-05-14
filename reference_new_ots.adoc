@@ -31,6 +31,7 @@ Pour un nouveau déploiement ONTAP Select 9.16.1, le nouveau format NLF est auto
 --
 Prise en charge de la protection anti-ransomware autonome:: ONTAP Select 9.16.1 introduit la prise en charge de la protection anti-ransomware autonome (ARP). ONTAP Select 9.16.1 prend uniquement en charge les mises à jour manuelles pour ARP, les mises à jour automatiques ne sont pas prises en charge. La licence de fonction ARP est incluse dans le fichier NLF pour ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus >>"].
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.16.1 inclut la prise en charge de VMware ESXi 8.0 U3.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.16.1, l'hyperviseur KVM (Kernel-based Virtual machine) est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.5 et Rocky Linux 9.5.
 
 
 
@@ -39,7 +40,7 @@ Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.16.1 inclut la prise
 
 ONTAP Select 9.15.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
 
-Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.15.1, l'hyperviseur KVM (Kernel-based Virtual machine) est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.4 et Rocky Linux 9.4.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.15.1, l'hyperviseur KVM (Kernel-based Virtual machine) est pris en charge sur RHEL 9.4 et Rocky Linux 9.4.
 Prise en charge de l'extension et de la réduction des clusters:: Depuis ONTAP Select 9.15.1, l'extension et la réduction des clusters sont prises en charge.
 +
 --

@@ -40,7 +40,7 @@ L'utilitaire d'administration Deploy contient une version unique de ONTAP Select
 
 === Licence ONTAP Select pour un déploiement de production
 
-Avant de déployer un cluster ONTAP Select dans un environnement de production, vous devez acheter une licence de capacité de stockage et télécharger le fichier de licence associé. Vous pouvez obtenir une licence pour le stockage de chaque nœud à l'aide du modèle _Capacity tiers_ ou d'une licence pour un pool partagé à l'aide du modèle _Capacity pools_.
+Avant de déployer un cluster ONTAP Select dans un environnement de production, vous devez acheter une licence de capacité de stockage et télécharger le fichier de licence associé. Vous pouvez obtenir une licence pour le stockage sur chaque nœud à l'aide du modèle _Capacity tiers_ ou obtenir une licence pour un pool partagé à l'aide du modèle _Capacity pools_.
 
 
 
@@ -230,10 +230,10 @@ cluster modify -name test-cluster -mgmt-ip 10.234.81.20 -netmask 255.255.255.192
 Vous devez configurer chacun des nœuds du cluster ONTAP Select.
 
 .Avant de commencer
-Vous devez disposer des informations de configuration pour le nœud. Le fichier de licence du niveau de capacité doit être téléchargé et installé à l'aide de l'utilitaire de déploiement.
+Vous devez disposer des informations de configuration pour le nœud. Le fichier de licence de niveau de capacité doit être téléchargé et installé dans l'utilitaire de déploiement.
 
 .Description de la tâche
-Vous devez utiliser cette procédure pour configurer chaque nœud. Une licence de niveau de capacité est appliquée au nœud dans cet exemple.
+Vous devez utiliser cette procédure pour configurer chaque nœud. Dans cet exemple, une licence de niveau de capacité est appliquée au nœud.
 
 .Étapes
 . Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.

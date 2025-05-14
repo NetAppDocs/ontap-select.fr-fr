@@ -134,7 +134,7 @@ Vous devez configurer chaque nœud ONTAP Select et chaque hôte d'hyperviseur de
 
 Dans le cadre de la planification d'un déploiement ONTAP Select, vous devez connaître les restrictions liées à l'allocation et à l'utilisation du stockage.
 
-Les restrictions les plus importantes en matière de stockage sont présentées ci-dessous. Vous devez également consulter le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité NetApp"^] pour plus d'informations.
+Les restrictions les plus importantes en matière de stockage sont présentées ci-dessous. Consultez également le  pour obtenir des link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité"^]informations plus détaillées.
 
 
 TIP: ONTAP Select applique plusieurs restrictions liées à l'allocation et à l'utilisation du stockage. Avant de déployer un cluster ONTAP Select ou d'acheter une licence, vous devez vous familiariser avec ces restrictions. Voir la link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Licence"] pour plus d'informations.

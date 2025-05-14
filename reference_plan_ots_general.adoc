@@ -151,7 +151,7 @@ Estimation du stockage requis:: Déterminez la quantité de stockage requise pou
 
 NOTE: La capacité de stockage ONTAP Select correspond à la taille totale autorisée des disques de données connectés à la machine virtuelle ONTAP Select.
 
-Modèle de licence pour le déploiement en production:: Vous devez sélectionner les niveaux de capacité ou le modèle de licence de pools de capacité pour chaque cluster ONTAP Select déployé dans un environnement de production. Consultez la section _License_ pour plus d'informations.
+Modèle de licence pour le déploiement en production:: Vous devez sélectionner le modèle de licence niveaux de capacité ou pools de capacité pour chaque cluster ONTAP Select déployé dans un environnement de production. Consultez la section _License_ pour plus d'informations.
 
 
 

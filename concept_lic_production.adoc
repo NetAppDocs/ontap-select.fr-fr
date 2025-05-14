@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_lic_production.html 
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
-summary: Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir entre les niveaux de capacité ou le modèle de licence pour les pools de capacité, ainsi que la capacité de stockage pour chaque déploiement. 
+summary: Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir le modèle de licence niveaux de capacité ou pools de capacité, ainsi que la capacité de stockage pour chaque déploiement. 
 ---
 = ONTAP Select a acheté des licences pour les déploiements en production
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: Après avoir déterminé que ONTAP Select convient à votre entreprise,
 
 
 [role="lead"]
-Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir entre les niveaux de capacité ou le modèle de licence pour les pools de capacité, ainsi que la capacité de stockage pour chaque déploiement.
+Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir le modèle de licence niveaux de capacité ou pools de capacité, ainsi que la capacité de stockage pour chaque déploiement.
 
 
 
 == Caractéristiques communes des licences
 
-Les modèles de licence _niveaux de capacité_ et _pools_ sont très différents à plusieurs égards. Toutefois, les deux modèles de licence partagent plusieurs caractéristiques communes, notamment :
+Les modèles de licence _Capacity tiers_ et _Capacity pools_ sont très différents à plusieurs égards. Toutefois, les deux modèles de licence partagent plusieurs caractéristiques communes, notamment :
 
 * Vous devez acheter une ou plusieurs licences selon vos besoins lors du déploiement de ONTAP Select dans un environnement de production.
 * La capacité de stockage d'une licence est allouée par incréments de 1 To.
@@ -35,9 +35,9 @@ Les modèles de licence _niveaux de capacité_ et _pools_ sont très différents
 
 
 
-== Modèle de licence pour les niveaux de capacité
+== Modèle de licence des niveaux de capacité
 
-Le modèle de licence pour les niveaux de capacité est spécifique à plusieurs caractéristiques :
+Il existe plusieurs caractéristiques propres au modèle de licence niveaux de capacité :
 
 * Vous devez acheter une licence pour chaque nœud ONTAP Select.
 * La quantité minimale que vous pouvez acheter est de 1 To.
@@ -52,15 +52,15 @@ Le modèle de licence pour les niveaux de capacité est spécifique à plusieurs
 
 == Modèle de licence pour les pools de capacité
 
-Le modèle de licence des pools de capacité est unique en son genre, à savoir :
+Il existe plusieurs caractéristiques propres au modèle de licence des pools de capacité, notamment :
 
-* Vous devez acheter une licence pour chaque pool de capacité partagée.
+* Vous devez acheter une licence pour chaque pool de capacité partagé.
 * La quantité minimale que vous pouvez acheter est de 2 To.
-* Chaque licence de pool de capacité dispose d'une capacité de stockage et est verrouillée à une instance spécifique de License Manager.
+* Chaque licence de pool de capacité dispose d'une capacité de stockage et est verrouillée à une instance de License Manager spécifique.
 * Un numéro de série de licence à neuf chiffres est généré par NetApp pour chaque pool de capacité.
-* Le stockage alloué à un pool de capacité est valide uniquement pour une période spécifique en fonction de l'achat (renouvellement requis).
+* Le stockage alloué à un pool de capacité n'est valide que pour une période spécifique basée sur l'achat (renouvellement requis).
 * Le numéro de série du nœud est composé de vingt chiffres et est généré par le Gestionnaire de licences en fonction du numéro de série de la licence du pool de capacité.
-* Chaque nœud loue automatiquement la capacité de stockage pour ses agrégats de données locaux à partir d'un pool de capacité partagée.
+* Chaque nœud loue automatiquement la capacité de stockage de ses agrégats de données locaux à partir d'un pool de capacité partagé.
 
 
-Pour plus de détails sur le modèle de licence des pools de capacité, consultez le modèle de licence _Capacity pools_ pour plus d'informations.
+Pour plus d'informations sur le modèle de licence des pools de capacité, reportez-vous au _modèle de licence des pools de capacité_ pour plus d'informations.

@@ -53,7 +53,7 @@ Vous pouvez vous connecter à ONTAP Select à l'aide du logiciel client NetApp p
 * Virtual Storage Console pour VMware vSphere
 
 
-Pour identifier les versions prises en charge du logiciel client, consultez le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité NetApp"^]. Si le logiciel client prend en charge ONTAP 9, la même version est également prise en charge avec ONTAP Select.
+Pour identifier les versions prises en charge du logiciel client, consultez le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité"^]. Si le logiciel client prend en charge ONTAP 9, la même version est également prise en charge avec ONTAP Select.
 
 
 NOTE: L'utilisation de SnapCenter et des plug-ins correspondants nécessite des licences basées sur serveur. Les licences des plug-ins SnapCenter ne sont pas prises en charge pour le moment avec ONTAP Select pour les systèmes de stockage.

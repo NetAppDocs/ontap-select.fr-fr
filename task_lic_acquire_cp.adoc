@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_lic_acquire_cp.html 
-keywords: license, licensing, acquire, capacity pools 
+keywords: license, licensing, acquire, Capacity Pools 
 summary: 'Vous devez acquérir un fichier de licence pour chaque pool de capacité utilisé par les nœuds ONTAP Select. Le fichier de licence définit la capacité de stockage et l"expiration du pool. Il est verrouillé pour le Gestionnaire de licences par une combinaison du numéro de série de licence unique attribué par NetApp et de l"ID de verrouillage de licence associé à l"instance de déploiement.' 
 ---
-= Obtenez une licence de pool de capacité ONTAP Select
+= Obtenez une licence ONTAP Select Capacity Pool
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,10 +17,10 @@ summary: 'Vous devez acquérir un fichier de licence pour chaque pool de capacit
 Vous devez acquérir un fichier de licence pour chaque pool de capacité utilisé par les nœuds ONTAP Select. Le fichier de licence définit la capacité de stockage et l'expiration du pool. Il est verrouillé pour le Gestionnaire de licences par une combinaison du numéro de série de licence unique attribué par NetApp et de l'ID de verrouillage de licence associé à l'instance de déploiement.
 
 .Avant de commencer
-Vous devez disposer du numéro de série de licence à neuf chiffres attribué par NetApp au pool de capacité. Avant de tenter d'acquérir un fichier de licence, vous devez attendre au moins vingt quatre heures après la date d'expédition de votre bon de commande.
+Vous devez attribuer le numéro de série de licence à neuf chiffres au pool de capacité par NetApp. Avant de tenter d'acquérir un fichier de licence, vous devez attendre au moins vingt quatre heures après la date d'expédition de votre bon de commande.
 
 .Description de la tâche
-Cette tâche doit être effectuée pour chaque pool de capacité utilisé par les nœuds ONTAP Select.
+Vous devez effectuer cette tâche pour chaque pool de capacité utilisé par les nœuds ONTAP Select.
 
 .Étapes
 . Accédez au site de support NetApp à l'aide d'un navigateur Web et connectez-vous.
@@ -34,4 +34,4 @@ Cette tâche doit être effectuée pour chaque pool de capacité utilisé par le
 
 
 .Une fois que vous avez terminé
-Vous devez charger le fichier de licence dans l'utilitaire d'administration Deploy avant que le pool de capacité puisse être utilisé par un nœud ONTAP Select.
+Vous devez télécharger le fichier de licence dans l'utilitaire d'administration de déploiement pour que le pool de capacité puisse être utilisé par un nœud ONTAP Select.

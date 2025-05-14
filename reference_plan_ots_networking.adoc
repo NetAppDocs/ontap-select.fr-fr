@@ -161,7 +161,7 @@ Le tableau suivant décrit les exigences en termes de trafic réseau pour un dé
 | TLS (443) | ESXi ou KVM | Déploiement sur les nœuds et les clusters OTS | Accédez à ONTAP 
 
 
-| TLS (443) | ESXi ou KVM | Chaque nœud OTS à déployer | Déploiement des accès (licences de pools de capacité) 
+| TLS (443) | ESXi ou KVM | Chaque nœud OTS à déployer | Déploiement d'accès (licences de pools de capacité) 
 
 
 | ISCSI (3260) | ESXi ou KVM | Chaque nœud OTS à déployer | Disque médiateur/boîte aux lettres 

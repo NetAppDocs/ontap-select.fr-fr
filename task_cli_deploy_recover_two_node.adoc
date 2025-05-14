@@ -41,7 +41,7 @@ Vous devriez pouvoir restaurer une sauvegarde des données de configuration de d
 Vous devez connaître l'adresse IP de la machine virtuelle d'origine de l'utilitaire de déploiement qui a échoué.
 
 .Licences de capacité de stockage
-Vous devez déterminer si les pools de capacité ou les niveaux de capacité utilisent des licences. Si vous utilisez la licence de pools de capacité, vous devez réinstaller chaque licence de pool de capacité après avoir restauré ou restauré l'instance de déploiement.
+Vous devez déterminer si les licences des pools de capacité ou des niveaux de capacité sont utilisées. Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool après avoir récupéré ou restauré l'instance de déploiement.
 
 .Décider de la procédure de récupération à utiliser
 Vous devez décider de la procédure à utiliser lors de la récupération d'une instance de l'utilitaire ONTAP Select Deploy. Votre décision est basée sur la sauvegarde des données de configuration à partir de l'utilitaire de déploiement initial qui contient le cluster ONTAP Select à deux nœuds.
@@ -115,7 +115,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Une fois que vous avez terminé
-Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Voir _réinstallation d'une licence de pool de capacité_ pour plus de détails.
+Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool. Voir _réinstallation d'une licence de pool de capacité_ pour plus de détails.
 
 
 
@@ -207,7 +207,7 @@ disk assign -disk <mediator-disk2-name> -owner <node2-name>
 
 
 .Une fois que vous avez terminé
-Si vous utilisez les licences de pools de capacité, vous devez réinstaller chaque licence de pool de capacité. Pour plus d'informations, reportez-vous à la section réinstallation d'une licence de pool de capacité.
+Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool. Pour plus d'informations, reportez-vous à la section réinstallation d'une licence de pool de capacité.
 
 .Informations associées
 * link:task_install_deploy.html["Installez ONTAP Select Deploy"]

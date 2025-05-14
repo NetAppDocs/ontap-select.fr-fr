@@ -54,5 +54,4 @@ ONTAP Select 9.8 est initialement installé:: Vous ne pouvez pas revenir à la v
 VMXNET3 est le pilote réseau par défaut inclus dans les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select existant exécutant ONTAP Select 9.4 ou une version antérieure, le pilote réseau n'est pas automatiquement mis à niveau. Vous devez effectuer une mise à niveau manuelle vers VMXNET3. Vous devez contacter le support NetApp pour obtenir de l'aide concernant la mise à niveau.
 
 .Informations associées
-* link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Présentation de la mise à niveau ONTAP"^]
-
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["Présentation de la mise à niveau ONTAP"^]

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
-keywords: license, licensing, capacity pools, capacity tiers, comparing 
-summary: Il existe de nombreuses différences entre les modèles de licence pour les pools de capacité et les niveaux de capacité. 
+keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
+summary: Il existe plusieurs différences entre les modèles de licence des pools de capacité et des tiers de capacité. 
 ---
-= Comparez les pools de capacité ONTAP Select et les licences de niveaux de capacité
+= Comparer les licences de pools de capacité et de niveaux de capacité ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,10 +18,10 @@ Le tableau suivant compare les deux modèles de licence de production pris en ch
 
 [cols="20,40,40"]
 |===
-|  | Des tiers de capacité | Pools de capacité 
+|  | Tiers de capacité | Pools de capacité 
 
 
-| Numéro de série de la licence | Neuf chiffres générés par NetApp et attribués à un nœud | Neuf chiffres générés par NetApp et attribués à un pool de capacité 
+| Numéro de série de la licence | Neuf chiffres générés par NetApp et attribués à un nœud | Neuf chiffres générés par NetApp et affectés à un pool de capacité 
 
 
 | Verrouillage de licence | Verrouillé sur le nœud ONTAP Select | Verrouillé à l'instance du Gestionnaire de licences 

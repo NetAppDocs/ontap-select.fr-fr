@@ -58,7 +58,7 @@ La licence d'évaluation ONTAP Select présente les caractéristiques suivantes 
 Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de production. Vous devez connaître les restrictions suivantes :
 
 * Vous devez utiliser l'utilitaire d'administration de déploiement pour effectuer la mise à niveau de la licence
-* Il est possible d'utiliser une licence de niveau de capacité, mais les licences de pools de capacité ne sont pas prises en charge
+* Vous pouvez utiliser une licence de niveau de capacité, mais les licences de pools de capacité ne sont pas prises en charge
 * Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production, en fonction de la taille du cluster
 
 

@@ -18,9 +18,9 @@ Vous pouvez effectuer plusieurs tâches associées dans le cadre de l'administra
 
 
 
-== Gérez les licences de Tier de capacité
+== Gérer les licences Capacity Tier
 
-Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité ONTAP Select selon vos besoins.
+Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité ONTAP Select en fonction des besoins.
 
 .Étapes
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
@@ -33,7 +33,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité O
 
 
 
-== Gérer les licences de pool de capacité
+== Gérer les licences du pool de capacité
 
 Vous pouvez ajouter, modifier et supprimer des licences de pool de capacité ONTAP Select selon vos besoins.
 
@@ -83,7 +83,7 @@ Pour renouveler une licence existante :
 
 == Réinstallez une licence de pool de capacité
 
-Chaque licence de pool de capacité active est verrouillée à une instance spécifique du Gestionnaire de licences, contenue dans une instance de l'utilitaire d'administration de déploiement. Si vous utilisez une licence de pool de capacité puis restaurez ou récupérez l'instance de déploiement, la licence d'origine n'est plus valide. Vous devez générer un nouveau fichier de licence de capacité, puis installer la licence sur la nouvelle instance de déploiement.
+Chaque licence de pool de capacité active est verrouillée à une instance de Gestionnaire de licences spécifique, qui est contenue dans une instance de l'utilitaire d'administration de déploiement. Si vous utilisez une licence Capacity Pool, puis restaurez ou restaurez l'instance de déploiement, la licence d'origine n'est plus valide. Vous devez générer un nouveau fichier de licence de capacité, puis installer la licence sur la nouvelle instance de déploiement.
 
 .Avant de commencer
 * Déterminez toutes les licences de pool de capacité utilisées par l'instance de déploiement d'origine.
@@ -96,12 +96,12 @@ Chaque licence de pool de capacité active est verrouillée à une instance spé
 À un niveau élevé, cette tâche est composée de trois parties. Vous devez régénérer et installer toutes les licences de pool de capacité utilisées par l'instance de déploiement. Une fois que toutes les licences ont été réinstallées sur la nouvelle instance de déploiement, vous pouvez réinitialiser le numéro de séquence de série si nécessaire. Enfin, si l'adresse IP de déploiement a changé, vous devez mettre à jour chaque nœud ONTAP Select qui utilise une licence de pools de capacité.
 
 .Étapes
-. Contactez le support NetApp et bénéficiez de toutes les licences de pool de capacité pour l'instance de déploiement initiale sans limites ou non.
-. Obtenez et téléchargez un nouveau fichier de licence pour chacune des licences du pool de capacité.
+. Contactez le support NetApp et disposez de toutes les licences de pool de capacité pour l'instance de déploiement d'origine non liées et non enregistrées.
+. Acquérir et télécharger un nouveau fichier de licence pour chacune des licences de pool de capacité.
 +
-Voir link:task_lic_acquire_cp.html["Acquérir une licence de pool de capacité"] pour en savoir plus.
+Voir link:task_lic_acquire_cp.html["Acquérir une licence Capacity Pool"] pour plus d'informations.
 
-. Installez les licences du pool de capacité sur la nouvelle instance de déploiement :
+. Installez les licences de pool de capacité sur la nouvelle instance de déploiement :
 +
 .. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
 .. Sélectionnez l'onglet *Administration* en haut de la page.
@@ -124,7 +124,7 @@ Voir link:task_lic_acquire_cp.html["Acquérir une licence de pool de capacité"]
 
 
 
-. Si l'adresse IP attribuée à la nouvelle instance de déploiement est différente de celle de l'instance de déploiement d'origine, vous devez mettre à jour l'adresse IP sur chaque nœud ONTAP Select qui utilise une licence de pools de capacité :
+. Si l'adresse IP attribuée à la nouvelle instance de déploiement est différente de l'adresse IP de l'instance de déploiement d'origine, vous devez mettre à jour l'adresse IP de chaque nœud ONTAP Select qui utilise une licence de pools de capacité :
 +
 .. Connectez-vous à l'interface de ligne de commande ONTAP du nœud ONTAP Select.
 .. Entrer en mode de privilège avancé :
@@ -147,7 +147,7 @@ Voir link:task_lic_acquire_cp.html["Acquérir une licence de pool de capacité"]
 
 == Convertir une licence d'évaluation en licence de production
 
-Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de niveau de capacité de production avec l'utilitaire d'administration Deploy.
+Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select pour utiliser une licence de niveau de capacité de production avec l'utilitaire d'administration Deploy.
 
 .Avant de commencer
 * Chaque nœud doit disposer de suffisamment de stockage alloué pour prendre en charge le minimum requis pour une licence de production.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_restrictions.html 
-keywords: license, licensing, capacity pools, restrictions 
+keywords: license, licensing, Capacity Pools, restrictions 
 summary: 'Les restrictions qui s"appliquent lors de l"utilisation du modèle de licence de pool de capacité sont présentées ci-dessous.' 
 ---
 = Restrictions de déploiement pour les licences de pools de capacité ONTAP Select
@@ -17,22 +17,22 @@ summary: 'Les restrictions qui s"appliquent lors de l"utilisation du modèle de 
 Les restrictions qui s'appliquent lors de l'utilisation du modèle de licence de pool de capacité sont présentées ci-dessous.
 
 .Modèle de licence cohérent pour chaque cluster
-Tous les nœuds d'un cluster ONTAP Select unique doivent utiliser le même modèle de licence, qu'il s'agisse de tiers de capacité ou de pools de capacité. Vous ne pouvez pas combiner les types de licence des nœuds dans un même cluster.
+Tous les nœuds d'un cluster ONTAP Select doivent utiliser le même modèle de licence : tiers de capacité ou pools de capacité. Vous ne pouvez pas combiner les types de licence des nœuds dans un même cluster.
 
 .Tous les nœuds d'un cluster utilisent la même instance de Gestionnaire de licences
-Tous les nœuds avec une licence de pool de capacité dans un cluster ONTAP Select doivent utiliser la même instance License Manager. Comme il y a une instance de License Manager dans chaque instance de déploiement, cette restriction est une nouvelle instruction de l'exigence existante que tous les nœuds d'un cluster doivent être gérés par la même instance de déploiement.
+Tous les nœuds disposant d'une licence de pool de capacité dans un cluster ONTAP Select doivent utiliser la même instance de Gestionnaire de licences. Comme il y a une instance de License Manager dans chaque instance de déploiement, cette restriction est une nouvelle instruction de l'exigence existante que tous les nœuds d'un cluster doivent être gérés par la même instance de déploiement.
 
 .Un pool de capacité par nœud
-Chaque nœud peut louer du stockage depuis un pool de capacité précis. Un nœud ne peut pas utiliser deux pools ou plus.
+Chaque nœud peut louer du stockage à partir d'un seul pool de capacité. Un nœud ne peut pas utiliser deux pools ou plus.
 
 .Même pool pour les nœuds d'une paire haute disponibilité
-Les deux nœuds d'une seule paire haute disponibilité doivent louer du stockage du même pool de capacité. Cependant, différentes paires haute disponibilité au sein d'un même cluster peuvent louer du stockage à partir de différents pools gérés par le même Gestionnaire de licences.
+Les deux nœuds d'une seule paire haute disponibilité doivent louer du stockage à partir du même pool de capacité. Cependant, différentes paires haute disponibilité au sein d'un même cluster peuvent louer du stockage à partir de différents pools gérés par le même Gestionnaire de licences.
 
 .Durée de la licence de stockage
 Vous devez choisir une durée de licence lors de l'acquisition de la licence de stockage auprès de NetApp. Par exemple, une licence peut être valide pour un an.
 
 .Durée totale du bail
-Lorsqu'un nœud ONTAP Select demande un bail de stockage pour un agrégat de données, le Gestionnaire de licences fournit une location pour une durée spécifique en fonction de la configuration du pool de capacité. Vous pouvez configurer la durée du bail pour chaque pool entre une heure et sept jours. La durée du bail par défaut est de 24 heures.
+Lorsqu'un nœud ONTAP Select demande un bail de stockage pour un agrégat de données, le Gestionnaire de licences offre un bail pour une durée spécifique en fonction de la configuration du pool de capacité. Vous pouvez configurer la durée du bail pour chaque pool entre une heure et sept jours. La durée du bail par défaut est de 24 heures.
 
 .Adresse IP statique attribuée au déploiement
-Vous devez attribuer une adresse IP statique à l'utilitaire d'administration de déploiement lorsque la licence des pools de capacité est utilisée.
+Vous devez attribuer une adresse IP statique à l'utilitaire d'administration de déploiement lorsque la licence Capacity pools est utilisée.

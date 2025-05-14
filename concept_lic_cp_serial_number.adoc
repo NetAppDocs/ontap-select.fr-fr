@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_lic_cp_serial_number.html 
-keywords: license, licensing, capacity pools, node serial numbers 
-summary: Avec le modèle de licence des niveaux de capacité, le numéro de série à neuf chiffres est le même que le numéro de série de licence attribué au nœud. Toutefois, le format des numéros de série attribués aux nœuds qui utilisent le modèle de licence des pools de capacité est différent. 
+keywords: license, licensing, Capacity Pools, node serial numbers 
+summary: Avec le modèle de licence Capacity tiers, le numéro de série du nœud à neuf chiffres est identique au numéro de série de licence attribué au nœud. Cependant, le format des numéros de série attribués aux nœuds utilisant le modèle de licence des pools de capacité est différent. 
 ---
-= Numéros de série des nœuds pour le modèle de licence des pools de capacité ONTAP Select
+= Numéros de série des nœuds pour le modèle de licence ONTAP Select Capacity pools
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: Avec le modèle de licence des niveaux de capacité, le numéro de sér
 
 
 [role="lead"]
-Avec le modèle de licence des niveaux de capacité, le numéro de série à neuf chiffres est le même que le numéro de série de licence attribué au nœud. Toutefois, le format des numéros de série attribués aux nœuds qui utilisent le modèle de licence des pools de capacité est différent.
+Avec le modèle de licence Capacity tiers, le numéro de série du nœud à neuf chiffres est identique au numéro de série de licence attribué au nœud. Cependant, le format des numéros de série attribués aux nœuds utilisant le modèle de licence des pools de capacité est différent.
 
-Le format suivant est le numéro de série d'un nœud utilisant une licence pour les pools de capacité :
+Le numéro de série d'un nœud utilisant une licence Capacity pools a le format suivant :
 
 `999 ppppppppp nnnnnnnn`
 
@@ -33,10 +33,10 @@ Chaque section du numéro de série du nœud est décrite dans le tableau suivan
 | « 999 » | Valeur à trois chiffres constante réservée par NetApp. 
 
 
-| ppppp | Numéro de série de licence à neuf chiffres variable attribué par NetApp au pool de capacité 
+| ppppp | Numéro de série de licence variable à neuf chiffres attribué au pool de capacité par NetApp 
 
 
-| nnnnnnnn | Valeur à huit chiffres de la variable générée par le Gestionnaire de licences pour chaque nœud utilisant le pool de capacités 
+| nnnnnnnn | Valeur variable à huit chiffres générée par le Gestionnaire de licences pour chaque nœud utilisant le pool de capacité 
 |===
 
-NOTE: Attention : lors de l'ouverture d'un dossier auprès du support NetApp impliquant un nœud qui utilise une licence de pool de capacité, vous ne pouvez pas fournir le numéro de série de nœud à vingt chiffres complet. Vous devez plutôt fournir le numéro de série de la licence de pool de capacité à neuf chiffres. Vous pouvez obtenir le numéro de série de la licence à partir du numéro de série de nœud, comme indiqué ci-dessus. Ignorez les trois premiers chiffres du numéro de série du nœud ('999') et extrayez les neuf chiffres suivants (ppppp).
+NOTE: Attention : lors de l'ouverture d'un dossier avec prise en charge NetApp impliquant un nœud qui utilise une licence de pool de capacité, vous ne pouvez pas fournir le numéro de série de nœud complet à vingt chiffres. Vous devez plutôt fournir le numéro de série de la licence de pool de capacité à neuf chiffres. Vous pouvez obtenir le numéro de série de la licence à partir du numéro de série de nœud, comme indiqué ci-dessus. Ignorez les trois premiers chiffres du numéro de série du nœud ('999') et extrayez les neuf chiffres suivants (ppppp).
