@@ -23,62 +23,76 @@ TIP: Vous pouvez également link:https://docs.netapp.com/us-en/ontap-select/task
 
 
 
-== Avant de commencer
+== Étape 1 : Préparer le déploiement
 
-Vous devez préparer le déploiement pour assurer sa réussite.
+Préparez le déploiement pour vous assurer qu'il sera réussi.
 
-Planification initiale:: Passez en revue les sections _Plan_ et _License_ de la documentation. Vous pouvez ainsi prendre des décisions sur le cluster, notamment :
+.Étapes
+. Planification initiale.
 +
---
-* Hyperviseur
-* Nombre de nœuds
-* Type de licence
-* Taille de la plateforme (type d'instance)
-* Version ONTAP Select
+Passez en revue le link:concept_workflow_deploy.html["Planification"] et link:concept_lic_evaluation.html["Licence"] sections. Sur la base de cet examen, vous pouvez prendre des décisions concernant le cluster, notamment :
 
-
---
-Préparation de l'hôte:: Vous devez préparer les hôtes de l'hyperviseur où les nœuds ONTAP Select s'exécutent et disposer des fichiers de licence de stockage requis en fonction de votre modèle de licence. Pour consulter les conditions de préparation :
 +
---
-. Connectez-vous à l'interface utilisateur Web de déploiement.
-. Sélectionnez image:icon_question_mark.gif["Point d'interrogation"] en haut de la page.
-. Sélectionnez *Conditions préalables*.
-. Faites défiler vers le bas pour revoir les exigences et sélectionnez *OK*.
+** Hyperviseur
+** Nombre de nœuds
+** Type de licence
+** Taille de la plateforme (type d'instance)
+** Version ONTAP Select
 
 
---
-Fichiers de licence:: Si vous prévoyez de déployer le cluster dans un environnement de production, vous devez acquérir les fichiers de licence de stockage en fonction de votre modèle de licence.
-Déploiement de l'installation et des identifiants du compte:: Vous devez installer l'utilitaire d'administration de déploiement et effectuer la configuration initiale. Voir link:task_install_deploy.html["Installez ONTAP Select Deploy"] pour en savoir plus. Vous devez disposer du mot de passe du compte administrateur de déploiement configuré dans le cadre du processus d'installation.
-Installation d'images de nœud ONTAP Select antérieures:: Par défaut, l'utilitaire d'administration Deploy contient la version la plus récente de ONTAP Select au moment de la publication. Pour déployer des clusters à l'aide d'une version antérieure de ONTAP Select, vous devez ajouter l'image ONTAP Select à votre instance de déploiement. Voir link:task_cli_deploy_image_add.html["Ajoutez une image ONTAP Select à déployer"] pour en savoir plus.
-Mise en route de la page de lancement:: La page initiale *mise en route avec ONTAP Select Deploy* vous guide tout au long du processus en plusieurs étapes de création d'un cluster. Il y a cinq étapes principales, notamment :
+. Préparez l'hôte.
 +
---
-* Ajoutez des licences
-* Ajouter des hôtes à l'inventaire
-* Création d'un cluster
-* Vérification préalable du réseau
-* Déployer le cluster
+Vous devez préparer les hôtes de l'hyperviseur où les nœuds ONTAP Select s'exécutent et disposer des fichiers de licence de stockage requis en fonction de votre modèle de licence. Pour consulter les conditions de préparation :
+
++
+.. Connectez-vous à l'interface utilisateur Web de déploiement.
+.. Sélectionnez image:icon_question_mark.gif["Point d'interrogation"] en haut de la page.
+.. Sélectionnez *Conditions préalables*.
+.. Faites défiler vers le bas pour revoir les exigences et sélectionnez *OK*.
 
 
---
+. Acquérir les fichiers de licence.
++
+Si vous prévoyez de déployer le cluster dans un environnement de production, vous devez acquérir les fichiers de licence de stockage en fonction de votre modèle de licence.
 
+. Déployer l'installation et les informations d'identification du compte.
++
+link:task_install_deploy.html["Installez l'utilitaire d'administration Deploy et effectuez la configuration initiale"]. Vous devez disposer du mot de passe du compte administrateur de déploiement configuré dans le cadre du processus d'installation.
 
+. Vous pouvez également installer des images de nœud ONTAP Select antérieures.
++
+Par défaut, l'utilitaire d'administration Deploy contient la version la plus récente de ONTAP Select au moment de la publication. Si vous souhaitez déployer des clusters à l’aide d’une version antérieure d’ ONTAP Select, vous devez link:task_cli_deploy_image_add.html["ajoutez l'image ONTAP Select à votre instance Deploy"] .
+
+. Découvrez la page de lancement « Mise en route ».
++
+La page initiale *mise en route avec ONTAP Select Deploy* vous guide tout au long du processus en plusieurs étapes de création d'un cluster. Il y a cinq étapes principales, notamment :
+
++
+** Ajoutez des licences
+** Ajouter des hôtes à l'inventaire
+** Création d'un cluster
+** Vérification préalable du réseau
+** Déployer le cluster
++
 
 NOTE: Vous pouvez effectuer les mêmes étapes indépendamment en sélectionnant les onglets en haut de la page (clusters, hôtes d'hyperviseur, Administration).
 
-Vérificateur de réseau:: Si vous allez déployer un cluster multinœud, vous devez vous familiariser avec le vérificateur de réseau.
-Après le déploiement d'un cluster:: Il est conseillé de sauvegarder les données de configuration de ONTAP Select Deploy.
+
+
+. Vérifiez le vérificateur de réseau.
++
+Si vous déployez un cluster multi-nœuds, vous devez être familiarisé avec le vérificateur de réseau. Vous pouvez exécuter le vérificateur de connectivité réseau à l'aide de l'outil link:task_adm_connectivity.html["interface Web"] ou le link:task_cli_connectivity.html["CLI"] .
 
 
 
 
-== Créez un cluster à un ou plusieurs nœuds
+
+== Étape 2 : Créer un cluster à nœud unique ou à nœuds multiples
 
 Vous pouvez utiliser l'interface utilisateur Web de ONTAP Select Deploy pour déployer un cluster ONTAP Select à un ou plusieurs nœuds.
 
 .Avant de commencer
-Voir link:task_deploy_cluster.html#before-you-begin["Avant de commencer"] pour préparer le déploiement du cluster. L'administration de déploiement doit être installée et configurée initialement (mot de passe, AutoSupport et vCenter).
+Vérifiez que vous avez installé l’administration Deploy et terminé la configuration initiale (mot de passe, AutoSupport et vCenter).
 
 .Description de la tâche
 Un cluster ONTAP Select avec un ou plusieurs nœuds est créé pour un déploiement de production.
@@ -99,7 +113,7 @@ La procédure à suivre varie selon que vous souhaitez créer un cluster à un o
 +
 Vous pouvez ajouter l'hôte de l'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
-. Sélectionnez *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
+. Sélectionnez *Actualiser* et confirmez que la valeur *Type* pour l'hôte est *ESX* ou *KVM*.
 +
 Toutes les informations d'identification de compte que vous fournissez sont ajoutées à la base de données déployer les informations d'identification.
 
@@ -144,7 +158,7 @@ La page est automatiquement actualisée à intervalles réguliers.
 +
 Vous pouvez ajouter les hôtes d'hyperviseur directement ou en vous connectant à un serveur vCenter. Fournissez les informations d'identification et les détails d'hôte appropriés, le cas échéant.
 
-. Sélectionnez *Refresh* et confirmez que la valeur *Type* de l'hôte est *ESX*.
+. Sélectionnez *Actualiser* et confirmez que la valeur *Type* pour l'hôte est *ESX* ou *KVM*.
 +
 Toutes les informations d'identification de compte que vous fournissez sont ajoutées à la base de données déployer les informations d'identification.
 
@@ -180,7 +194,10 @@ La page est automatiquement actualisée à intervalles réguliers.
 
 --
 ====
-.Une fois que vous avez terminé
+
+
+== Étape 3 : Une fois que vous avez terminé
+
 Vérifiez que la fonction ONTAP Select AutoSupport est configurée, puis sauvegardez les données de configuration de ONTAP Select Deploy.
 
 [TIP]

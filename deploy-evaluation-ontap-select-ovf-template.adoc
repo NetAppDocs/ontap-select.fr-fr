@@ -32,7 +32,7 @@ Utilisez les conditions suivantes pour préparer l'hôte VMware ESXi sur lequel 
 
 image:prepare_ESXi_host_requirements.png["Configuration requise pour la préparation de l'hôte ESXi"]
 
-Pour plus d'informations sur les options de configuration de l'hôte, reportez-vous au link:reference_chk_host_prep.html["Documentation d'installation de ONTAP Select"].
+Pour plus d'informations sur les options de configuration de l'hôte, reportez-vous au link:esxi-host-configuration-and-preparation-checklist.html["Documentation d'installation de ONTAP Select"].
 
 
 

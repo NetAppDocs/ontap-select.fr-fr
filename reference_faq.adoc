@@ -244,7 +244,7 @@ Il existe plusieurs questions et réponses concernant les paires haute disponibi
 À la différence des clusters à quatre nœuds, à six nœuds et à huit nœuds dans lesquels ONTAP Select déploie la machine virtuelle est principalement utilisée pour créer le cluster, un cluster à deux nœuds utilise en continu la machine virtuelle de déploiement ONTAP Select pour assurer le quorum haute disponibilité. Si la machine virtuelle ONTAP Select Deploy n'est pas disponible, les services de basculement sont désactivés.
 
 .Qu'est-ce que le SDS MetroCluster ?
-MetroCluster SDS est une option de réplication synchrone à moindre coût appartenant au secteur des solutions de continuité de l'activité MetroCluster. Elle est disponible uniquement avec ONTAP Select, contrairement à NetApp MetroCluster, et est disponible sur les technologies Flash hybrides FAS, AFF, NetApp Private Storage pour le cloud et NetApp FlexArray®.
+MetroCluster SDS est une option de réplication synchrone à moindre coût appartenant au secteur des solutions de continuité de l'activité MetroCluster. Il est disponible uniquement avec ONTAP Select, contrairement à NetApp MetroCluster qui est disponible sur FAS Hybrid Flash, AFF et NetApp Private Storage for Cloud.
 
 .En quoi le SDS de MetroCluster est-il différent de celui de NetApp MetroCluster ?
 MetroCluster SDS est une solution de réplication synchrone proposée sous la forme de solutions NetApp MetroCluster. Toutefois, les distances prises en charge (~10 km contre 300 km) et le type de connectivité (seuls les réseaux IP sont pris en charge par les protocoles FC et IP).

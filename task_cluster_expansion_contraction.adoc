@@ -14,9 +14,24 @@ summary: 'À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d"un
 
 
 [role="lead"]
-À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d'un cluster de six à huit nœuds et réduire la taille de cluster de huit à six nœuds. Aucun autre scénario d'extension ou de réduction des clusters n'est pris en charge.
+À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d'un cluster de six à huit nœuds et réduire la taille de cluster de huit à six nœuds.
 
-La procédure est initiée à partir de ONTAP Select Deploy à l'aide de l'interface de ligne de commande, de l'API ou de l'interface web.
+Les extensions et contractions de cluster suivantes ne sont pas prises en charge :
+
+* Extensions des clusters à un, deux ou quatre nœuds aux clusters à six ou huit nœuds.
+* Contractions de clusters à six ou huit nœuds à des clusters à un, deux ou quatre nœuds.
+
+
+[NOTE]
+====
+Pour modifier le nombre de nœuds dans un cluster à une taille qui n'est pas prise en charge par l'extension ou la contraction du cluster, vous devez effectuer les tâches suivantes :
+
+. Déployez un nouveau cluster multi-nœuds en utilisant le link:task_cli_deploy_cluster.html["CLI"] ou le link:task_deploy_cluster.html["interface Web"] fourni avec l'utilitaire d'administration ONTAP Select Deploy.
+. Le cas échéant, migrez les données vers le nouveau cluster en utilisant link:https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-disaster-recovery-concept.html["Réplication SnapMirror"^] .
+
+
+====
+Vous lancez les procédures d’extension et de contraction du cluster à partir d’ ONTAP Select Deploy à l’aide de l’interface CLI, de l’API ou de l’interface Web.
 
 
 
@@ -36,12 +51,6 @@ Les fonctionnalités d'extension et de réduction du cluster sont restreintes de
 
 
 
-Les expansions et contractions de cluster suivantes ne sont actuellement pas prises en charge :
-
-* Extensions des clusters à un, deux ou quatre nœuds aux clusters à six ou huit nœuds.
-* Contractions de clusters à six ou huit nœuds à des clusters à un, deux ou quatre nœuds.
-
-
 
 
 == Développez le cluster
@@ -52,7 +61,7 @@ Vous pouvez augmenter la taille d'un cluster existant d'un cluster de six nœuds
 En préparation de la procédure d'extension du cluster, de nouveaux hôtes ESX sont ajoutés à l'inventaire et les détails des nouveaux nœuds sont attribués. Avant de démarrer le processus d'extension du cluster, un précontrôle du réseau vérifie le réseau interne sélectionné.
 
 .Avant de commencer
-* Lors du déploiement d'un cluster à plusieurs nœuds, vous devez connaître le link:https://docs.netapp.com/us-en/ontap-select/task_adm_connectivity.html["vérificateur de connectivité réseau"].
+* Lors du déploiement d'un cluster multi-nœuds, vous devez vous familiariser avec le vérificateur de connectivité réseau. Vous pouvez l'exécuter à l'aide de l'outil link:task_adm_connectivity.html["interface Web"] ou le link:task_cli_connectivity.html["CLI"] .
 * Vérifiez que vous disposez des informations de licence pour les nouveaux nœuds.
 
 

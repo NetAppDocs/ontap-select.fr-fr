@@ -121,7 +121,11 @@ sidebar:
     - title: Liste de contrôle de pré-installation
       entries:
       - title: Checklist de préparation des hôtes
-        url: "/reference_chk_host_prep.html"
+        entries:
+        - title: Liste de contrôle de l'hôte KVM
+          url: "/kvm-host-configuration-and-preparation-checklist.html"
+        - title: Liste de contrôle de l'hôte ESXi
+          url: "/esxi-host-configuration-and-preparation-checklist.html"
       - title: Déployer les informations requises de l'utilitaire
         url: "/reference_chk_deploy_req_info.html"
       - title: Informations requises pour ONTAP Select

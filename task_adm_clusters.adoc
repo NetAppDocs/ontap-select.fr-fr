@@ -4,7 +4,7 @@ permalink: task_adm_clusters.html
 keywords: administer, administering, web, clusters 
 summary: 'Vous pouvez effectuer plusieurs tâches liées à l"administration d"un cluster ONTAP Select.' 
 ---
-= Clusters ONTAP Select
+= Gérer les clusters ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

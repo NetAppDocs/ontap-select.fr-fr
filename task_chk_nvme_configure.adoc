@@ -27,7 +27,7 @@ Vérifiez que votre environnement de déploiement répond aux exigences minimale
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
 
 
-Suivez le link:reference_chk_host_prep.html["checklist de préparation des hôtes"], passez en revue le link:reference_chk_deploy_req_info.html["Informations requises pour l'installation de l'utilitaire de déploiement"], et le link:reference_chk_select_req_info.html["Informations requises pour l'installation de ONTAP Select"] pour en savoir plus.
+Pour plus d'informationslink:kvm-host-configuration-and-preparation-checklist.html["checklist de préparation des hôtes"], reportez-vous aux rubriqueslink:reference_chk_deploy_req_info.html["Informations requises pour l'installation de l'utilitaire de déploiement"] , et link:reference_chk_select_req_info.html["Informations requises pour l'installation de ONTAP Select"].
 
 .Description de la tâche
 Cette procédure est conçue avant de créer un nouveau cluster ONTAP Select. Vous pouvez également effectuer la procédure de configuration de disques NVMe supplémentaires pour un cluster NVMe SW-RAID existant. Dans ce cas, une fois les disques configurés, vous devez les ajouter via le déploiement, en tant que disques SSD supplémentaires. La principale différence est que le déploiement détecte les disques NVMe et redémarre les nœuds. Lorsque vous ajoutez des disques NVMe à un cluster existant, notez les informations suivantes concernant le processus de redémarrage :
