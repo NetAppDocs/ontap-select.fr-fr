@@ -37,8 +37,9 @@ ONTAP Select prend en charge les fonctionnalités ONTAP suivantes sous licence p
 * NVMe over TCP
 * Fonctionnalité de colocation ONTAP
 * ONTAP S3
-* SnapMirror
 * SnapMirror S3
+* SnapMirror
+* Nuage SnapMirror
 * SnapRestore
 * SnapVault
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)

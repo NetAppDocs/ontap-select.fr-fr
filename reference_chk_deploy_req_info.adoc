@@ -1,5 +1,5 @@
 ---
-bar: sidebar 
+sidebar: sidebar 
 permalink: reference_chk_deploy_req_info.html 
 keywords: ontap select, deploy, pre-installation, vmware 
 summary: 'Avant d"installer l"utilitaire d"administration de déploiement dans un environnement VMware, vérifiez les conditions de base requises et préparez-vous à un déploiement réussi.' 

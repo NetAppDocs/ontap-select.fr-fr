@@ -73,7 +73,7 @@ L'offre XL haut de gamme offre les fonctionnalités suivantes :
 
 
 
-NOTE: L'utilisation de disques NVMe ou de type d'instance de grande taille dans une configuration SW-RAID n'est pas prise en charge par KVM (Kernel-Based Virtual machine).
+NOTE: L'utilisation du type d'instance volumineuse dans une configuration RAID logicielle n'est pas prise en charge sur une machine virtuelle basée sur le noyau (KVM).
 
 
 
@@ -170,10 +170,10 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 2+| Type de logiciel 3+| Description 
 
 
-2+| Hyperviseur (VMware) 3+| VMware vSphere 7.0GA et mises à jour 1 à 3C VMware vSphere 8.0GA et mises à jour 1 à 3 
+2+| Hyperviseur (VMware) 3+| VMware vSphere 8.0GA et mises à jour 1 à 3 VMware vSphere 7.0GA et mises à jour 1 à 3C 
 
 
-2+| Hyperviseur (KVM) 3+| Redhat Enterprise Linux 64 bits (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 Rocky Linux (KVM) 9 et 8 
+2+| Hyperviseur (KVM) 3+| Red Hat Enterprise Linux 64 bits (KVM) 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 et 8.6 Rocky Linux (KVM) 9.6 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 
 
 
 2+| Logiciel de gestion 3+| Suite de gestion NetApp Active IQ Unified Manager ONTAP Select Deploy Utility SnapCenter (en option) 

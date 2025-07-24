@@ -52,6 +52,18 @@ NOTE: Certains des packages requis peuvent déjà être installés si vous avez 
 +
 Pour plus d'informations sur les modules nécessaires et les autres configurations requises, reportez-vous au link:https://imt.netapp.com/matrix/#welcome["Matrice d'interopérabilité"^].
 
+. Configurer le relais PCI pour les disques NVMe.
++
+Si vous utilisez des disques NVMe dans votre configuration, vous devez configurer le relais PCI (DirectPath IO) pour permettre à l'hôte KVM d'accéder directement aux disques NVMe connectés localement dans le cluster ONTAP Select . Cet accès direct est nécessaire pour effectuer les tâches suivantes :
+
++
+** link:task_chk_nvme_configure.html["Configurer l'hôte KVM pour utiliser les lecteurs NVMe"]
+** link:concept_stor_swraid_local.html["Utiliser le RAID logiciel après avoir déployé le cluster"]
+
+
++
+Voir le link:https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/virtualization/chap-virtualization-pci_passthrough#sect-Virtualization-PCI_passthrough-AI_device_to_a_host["Documentation Red Hat"^] pour obtenir des instructions sur la configuration du relais PCI (DirectPath IO) pour un hyperviseur KVM.
+
 . Configurer les pools de stockage.
 +
 Un pool de stockage ONTAP Select est un conteneur de données logiques qui extrait le stockage physique sous-jacent. Vous devez gérer les pools de stockage sur les hôtes KVM sur lesquels ONTAP Select est déployé.

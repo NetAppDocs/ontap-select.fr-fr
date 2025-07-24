@@ -74,7 +74,7 @@ ONTAP Select ne reçoit aucune amélioration en termes de performances en augmen
 NetApp recommande d'utiliser ESX 6.5 U2 ou version ultérieure et un disque NVMe pour le datastore hébergeant les disques système. Cette configuration offre les meilleures performances pour la partition NVRAM.
 
 
-NOTE: Lors de l'installation sur ESX 6.5 U2 et versions ultérieures, ONTAP Select utilise le pilote vNVME, que le disque système réside sur un disque SSD ou sur un disque NVMe. Le matériel des machines virtuelles est ainsi défini sur 13, qui est compatible avec ESX 6.5 et versions ultérieures.
+NOTE: Lors de l'installation sur ESX 6.5 U2 et versions ultérieures, ONTAP Select utilise le pilote vNVMEe, que le disque système soit un SSD ou un disque NVMe. Cela définit le niveau matériel de la machine virtuelle sur 13, ce qui est compatible avec ESX 6.5 et versions ultérieures.
 
 Définir des configurations de ports réseau dédiés, de bande passante et de vSwitch pour les réseaux ONTAP Select et le stockage externe (VMware VSAN et le trafic générique de la baie de stockage lors de l'utilisation d'iSCSI ou NFS).
 

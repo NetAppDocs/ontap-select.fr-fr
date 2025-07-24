@@ -14,23 +14,49 @@ summary: 'Si vous prévoyez d"utiliser des disques NVMe avec la technologie RAID
 
 
 [role="lead"]
-Si vous prévoyez d'utiliser des disques NVMe avec la technologie RAID logicielle, vous devez configurer l'hôte pour qu'il reconnaisse les disques.
+Si vous prévoyez d’utiliser des disques NVMe avec RAID logiciel, vous devez configurer l’hôte ESXi ou KVM pour reconnaître les disques.
 
 Optimisation de l'efficacité des données grâce au pass-through en E/S VMDirectPath sur les périphériques NVMe. Ce paramètre expose les lecteurs à la machine virtuelle ONTAP Select, ce qui permet à ONTAP d'avoir un accès PCI direct au périphérique.
 
 .Avant de commencer
 Vérifiez que votre environnement de déploiement répond aux exigences minimales suivantes :
 
-* ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
+* Pour un hôte ESX, ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
+* Pour un hôte KVM, ONTAP Select 9.17.1 avec un utilitaire d'administration de déploiement pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
-* VMware ESXi version 6.7 ou ultérieure
+* L'hôte ESXi ou KVM exécute une version d'hyperviseur prise en charge :
++
+[role="tabbed-block"]
+====
+.VMware ESXi
+--
+ESXi est pris en charge sur les versions d'hyperviseur suivantes :
+
+** VMware ESXi 8.0 U3
+** VMware ESXi 8.0 U2
+** VMware ESXi 8.0 U1 (build 21495797)
+** VMware ESXi 8.0 GA (build 20513097)
+** VMware ESXi 7.0 GA (build 15843807 ou supérieur), y compris 7.0 U1, U2 et U3C
+
+
+--
+.KVM
+--
+KVM est pris en charge sur les versions d'hyperviseur suivantes :
+
+** Red Hat Enterprise Linux 9.6, 9.5, 9.4, 9.2, 9.1, 9.0, 8.8, 8.7 et 8.6
+** Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6
+
+
+--
+====
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
 
 
-Pour plus d'informationslink:kvm-host-configuration-and-preparation-checklist.html["checklist de préparation des hôtes"], reportez-vous aux rubriqueslink:reference_chk_deploy_req_info.html["Informations requises pour l'installation de l'utilitaire de déploiement"] , et link:reference_chk_select_req_info.html["Informations requises pour l'installation de ONTAP Select"].
+Suivez le link:kvm-host-configuration-and-preparation-checklist["checklist de préparation des hôtes"] , et examinez les informations requises pour le link:reference_chk_deploy_req_info.html["déployer l'installation de l'utilitaire"] et le link:reference_chk_select_req_info.html["Installation ONTAP Select"] pour plus d'informations.
 
 .Description de la tâche
-Cette procédure est conçue avant de créer un nouveau cluster ONTAP Select. Vous pouvez également effectuer la procédure de configuration de disques NVMe supplémentaires pour un cluster NVMe SW-RAID existant. Dans ce cas, une fois les disques configurés, vous devez les ajouter via le déploiement, en tant que disques SSD supplémentaires. La principale différence est que le déploiement détecte les disques NVMe et redémarre les nœuds. Lorsque vous ajoutez des disques NVMe à un cluster existant, notez les informations suivantes concernant le processus de redémarrage :
+Vous devez effectuer cette procédure avant de créer un cluster ONTAP Select . Vous pouvez également effectuer cette procédure pour configurer des disques NVMe supplémentaires pour un cluster NVMe RAID logiciel existant. Dans ce cas, après avoir configuré les disques, vous devez les ajouter via Deploy, comme vous le feriez pour des disques SSD supplémentaires. La principale différence est que Deploy détecte les disques NVMe et redémarre les nœuds. Lors de l'ajout de disques NVMe à un cluster existant, veuillez noter les points suivants concernant le processus de redémarrage :
 
 * Le déploiement se charge de l'orchestration du redémarrage.
 * Le basculement et le retour HAUTE DISPONIBILITÉ sont effectués de manière ordonnée, mais la resynchronisation des agrégats peut prendre du temps.
@@ -41,18 +67,21 @@ Voir link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"] p
 
 .Étapes
 . Accédez au menu *configuration du BIOS* sur l'hôte pour activer la prise en charge de la virtualisation des E/S.
-. Activez le paramètre *Intel(R) VT pour les E/S dirigées (VT-d)*.
+. Activez le paramètre *Intel VT pour E/S dirigées (VT-d)*.
 +
 image:nvme_01.png["Configuration de socket"]
 
-. Certains serveurs prennent en charge *Intel Volume Management Device (Intel VMD)*. Lorsqu'elle est activée, les périphériques NVMe disponibles sont invisibles pour l'hyperviseur ESXi. Désactivez cette option avant de continuer.
+. Certains serveurs prennent en charge Intel Volume Management Device (Intel VMD). Une fois activé, les périphériques NVMe disponibles sont invisibles pour l'hyperviseur ESXi ou KVM ; désactivez cette option avant de continuer.
 +
 image:nvme_07.png["Configuration de socket, VMD"]
 
 . Configurer les disques NVMe pour le pass-through vers les machines virtuelles.
 +
-.. Dans vSphere, ouvrez la vue hôte *Configure* et cliquez sur *Edit* sous *Hardware: PCI Devices*.
+.. Dans vSphere, ouvrez la vue *Configurer* de l'hôte et sélectionnez *Modifier* sous *Matériel : Périphériques PCI*.
 .. Sélectionnez les disques NVMe que vous souhaitez utiliser pour ONTAP Select.
++
+L'exemple de sortie suivant montre les lecteurs disponibles pour un hôte ESXi :
+
 +
 image:nvme_02.png["Modifier la disponibilité des périphériques PCI"]
 
@@ -60,20 +89,25 @@ image:nvme_02.png["Modifier la disponibilité des périphériques PCI"]
 
 NOTE: Vous avez besoin d'un datastore VMFS également sauvegardé par un périphérique NVMe pour héberger les disques système de machine virtuelle ONTAP Select et la NVRAM virtuelle. Laissez au moins un disque NVMe disponible à cette fin lors de la configuration des autres disques pour une passerelle PCI.
 
-.. Cliquez sur *OK*. Les périphériques sélectionnés indiquent *disponible (en attente)*.
+.. Sélectionnez *OK*. Les appareils sélectionnés indiquent *Disponible (en attente)*.
 
 
-. Cliquez sur *redémarrer l'hôte*.
+. Sélectionnez *Redémarrer cet hôte*.
++
+L'exemple de sortie suivant concerne un hôte ESXi :
+
 +
 image:nvme_03.png["Redémarrez cet hôte"]
 
 
 
 .Une fois que vous avez terminé
-Une fois les hôtes prêts, vous pouvez installer l'utilitaire ONTAP Select Deploy. Déployez des guides pour créer des clusters de stockage ONTAP Select sur vos hôtes nouvellement préparés. Au cours de ce processus, le déploiement détecte la présence des disques NVMe configurés pour le pass-through et les sélectionne automatiquement pour une utilisation comme disques de données ONTAP. Vous pouvez régler la sélection par défaut si nécessaire.
+Une fois les hôtes préparés, vous pouvez installer l'utilitaire ONTAP Select Deploy. Deploy vous guide dans la création de clusters de stockage ONTAP Select sur vos hôtes nouvellement préparés. Deploy détecte la présence des disques NVMe configurés pour le transfert et les sélectionne automatiquement pour les utiliser comme disques de données ONTAP . Vous pouvez ajuster la sélection par défaut si nécessaire.
 
 
 NOTE: Chaque nœud ONTAP Select prend en charge un maximum de 14 périphériques NVMe.
+
+L'exemple de sortie suivant concerne un hôte ESXi :
 
 image:nvme_04.png["ONTAP Select déployer des clusters"]
 

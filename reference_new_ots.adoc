@@ -19,6 +19,47 @@ Découvrez les nouvelles fonctionnalités et les améliorations apportées aux v
 
 
 
+== ONTAP Select 9.17.1
+
+ONTAP Select 9.17.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
+
+Prise en charge RAID logicielle pour les disques NVMe connectés localement sur les hôtes KVM:: ONTAP Select 9.17.1 introduit la prise en charge RAID logicielle pour les disques NVMe ONTAP Select connectés localement sur un hôte hyperviseur de machine virtuelle basée sur le noyau (KVM).
++
+--
+Pour utiliser le RAID logiciel pour les disques NVMe connectés localement, vous devez link:kvm-host-configuration-and-preparation-checklist.html["configurer le relais PCI (DirectPath IO)"] Lors de la préparation de l'hôte KVM, celui-ci accède directement aux disques NVMe connectés localement, ce qui est nécessaire pour les tâches suivantes :
+
+* Configuration de l'hôte KVM pour utiliser des lecteurs NVMe
+* Utilisation du RAID logiciel après le déploiement du cluster
+
+
+link:concept_stor_swraid_local.html["En savoir plus sur les services de configuration RAID logiciels pour le stockage local connecté"] .
+
+--
+Prise en charge de l'extension et de la contraction des clusters sur les hôtes KVM:: À partir d' ONTAP Select 9.17.1, la fonctionnalité d'extension et de contraction de cluster est prise en charge pour les machines virtuelles basées sur le noyau (KVM) et les hôtes hyperviseurs ESXi. Pour ONTAP Select 9.16.1 et 9.15.1, l'extension et la contraction de cluster sont uniquement prises en charge pour les hôtes hyperviseurs ESXi.
++
+--
+Vous pouvez utiliser la fonctionnalité d'extension et de contraction de cluster sur un cluster ONTAP Select existant pour augmenter la taille d'un cluster à six nœuds à un cluster à huit nœuds ou réduire la taille d'un cluster à huit nœuds à un cluster à six nœuds.
+
+link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
+
+--
+Prise en charge du cloud SnapMirror:: À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
++
+--
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["En savoir plus sur les sauvegardes cloud SnapMirror vers le stockage d'objets"^] .
+
+--
+Prise en charge du pilote NDA mise à jour:: À partir d' ONTAP Select 9.17.1, le pilote de périphérique FreeBSD NDA (NVMe Direct Access) remplace le pilote NVD (NVMe Express Disk Driver). Ce pilote prend en charge les périphériques à accès direct en implémentant le protocole de commande NVMe. Lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1, le pilote FreeBSD est démarré par défaut lors de la configuration des périphériques NVMe.
++
+--
+Pour ONTAP Select 9.16.1 et les versions antérieures, le NVD continue de fournir la prise en charge des périphériques NVMe dans votre déploiement ONTAP Select .
+
+--
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir d' ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.6 et Rocky Linux 9.6.
+
+
+
+
 == ONTAP Select 9.16.1
 
 ONTAP Select 9.16.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -31,7 +72,7 @@ Pour un nouveau déploiement ONTAP Select 9.16.1, le nouveau format NLF est auto
 --
 Prise en charge de la protection anti-ransomware autonome:: ONTAP Select 9.16.1 introduit la prise en charge de la protection anti-ransomware autonome (ARP). ONTAP Select 9.16.1 prend uniquement en charge les mises à jour manuelles pour ARP, les mises à jour automatiques ne sont pas prises en charge. La licence de fonction ARP est incluse dans le fichier NLF pour ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus >>"].
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.16.1 inclut la prise en charge de VMware ESXi 8.0 U3.
-Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.16.1, l'hyperviseur KVM (Kernel-based Virtual machine) est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.5 et Rocky Linux 9.5.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir d' ONTAP Select 9.16.1, l'hyperviseur KVM est pris en charge sur RHEL 9.5 et Rocky Linux 9.5.
 
 
 

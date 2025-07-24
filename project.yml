@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.16.1
+  - version-number: 9.17.1
     url: "/ontap-select"
+  - version-number: 9.16.1
+    url: "/ontap-select-9161"
   - version-number: 9.15.1
     url: "/ontap-select-9151"
   - version-number: 9.14.1
     url: "/ontap-select-9141"
   - version-number: 9.13.1
     url: "/ontap-select-9131"
-  - version-number: 9.12.1
-    url: "/ontap-select-9121"
   langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: Documents relatifs à ONTAP Select 9.16.1
+  - title: Documentation d' ONTAP Select 9.17.1
     url: "/index.html"
   - title: Notes de version
     entries:
