@@ -73,7 +73,7 @@ L'offre XL haut de gamme offre les fonctionnalités suivantes :
 
 
 
-NOTE: L'utilisation du type d'instance volumineuse dans une configuration RAID logicielle n'est pas prise en charge sur une machine virtuelle basée sur le noyau (KVM).
+NOTE: L'utilisation du type d'instance volumineuse n'est pas prise en charge sur une machine virtuelle basée sur le noyau (KVM).
 
 
 
