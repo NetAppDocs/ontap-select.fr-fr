@@ -1500,13 +1500,7 @@
   <block id="71408d9f3d3515fa8a651b1604736a6f" category="list-text">*Type de disque et nombre de disques dans le(s) groupe(s) RAID*.</block>
   <block id="f28d3f9b022a76395cd98dbce7787e03" category="list-text">*Version de l'hyperviseur et niveau de patch*.</block>
   <block id="c9732055d20960435002cec722852b3e" category="summary">Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en place à l'aide de l'interface de ligne de commande.</block>
-  <block id="a0352e441ba04fb28d070a715c9d2ff2" category="paragraph">Assurez-vous que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Vous devriez voir les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire de déploiement.</block>
-  <block id="eb75a7c0dc84d14c47a84e436b8082cc" category="paragraph">Pour commencer le processus de mise à niveau, vous devez télécharger le fichier de mise à niveau de machine virtuelle de déploiement approprié depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.</block>
-  <block id="e1592123d1df946558bd9bf257720d21" category="paragraph">Après l'acquisition du package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle de déploiement.</block>
-  <block id="d5d592c7eaf2cef1bd79103f367e703c" category="paragraph">Le fichier de mise à niveau doit être disponible sur votre poste de travail local. Vous devez également disposer du mot de passe pour le compte utilisateur administrateur.</block>
   <block id="4d31142bb7c8f427942e83be227bb1f0" category="paragraph">Le fichier de mise à niveau est stocké dans le répertoire personnel de l'utilisateur admin.</block>
-  <block id="baa4f96e18f8e9fced4eec3f5a81a23a" category="paragraph">Une fois le fichier de mise à niveau téléchargé sur la machine virtuelle de déploiement, vous pouvez appliquer la mise à niveau.</block>
-  <block id="dbb14ca7f13323519486701e4b502763" category="paragraph">Vous devez savoir dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire de déploiement. Assurez-vous également que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.</block>
   <block id="ddd583d223b6cdfc7284a7d618756d41" category="list-text">Effectuez la mise à niveau à l'aide du chemin de répertoire et du nom de fichier appropriés :</block>
   <block id="f5fb71abd32be9bc904db11637b6b903" category="paragraph"><block ref="1299ca75bdbf03e068a6eb77561752df" prefix="" category="inline-code"></block></block>
   <block id="8e18eb8cd4ab44854a5b30a491abc11b" category="summary">Vous devez configurer le réseau de l'hyperviseur correctement avant de déployer ONTAP Select.</block>
@@ -2509,7 +2503,6 @@
   <block id="58af1c2597d085d648724676529071f9" category="paragraph-title">Plateformes d'hyperviseur</block>
   <block id="ef85c9b02f4296b633e43a4931df8c2f" category="paragraph-title">Latence entre les nœuds</block>
   <block id="9c62f110f4b589aa5470f4d43f3a8d6a" category="paragraph-title">Version actuelle de ONTAP Select</block>
-  <block id="f331fac6e9cf90cf6a3bc3b228554302" category="paragraph-title">À propos de ces tâches</block>
   <block id="d6f9f41f5e5cb8dcf5b3ce01b74d17e5" category="paragraph">Les performances d'un cluster ONTAP Select peuvent considérablement varier en fonction des caractéristiques du matériel et de la configuration sous-jacents. La configuration matérielle spécifique est le principal facteur de performances d'une instance ONTAP Select particulière. Voici certains facteurs qui affectent les performances d'une instance ONTAP Select spécifique :</block>
   <block id="507f8233cb2eb908786a8439f415fee2" category="list-text">Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.</block>
   <block id="93ffd34ce676a00f4a126c465fc48130" category="list-text">Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.</block>
@@ -2638,7 +2631,6 @@
   <block id="f264455563ca8b26d0daffb627e42c00" category="sidebar">Présentation des performances</block>
   <block id="651f22f695c187057a5de6dca3a72108" category="sidebar">Performances ONTAP Select 9.6</block>
   <block id="724b8ee7bdeb6d5c74de82dc7e6c2e83" category="paragraph">En général, lorsqu'une licence expire, rien ne se passe. Cependant, vous ne pouvez pas installer une autre licence car les nœuds sont associés à la licence expirée. Tant que vous n'avez pas renouvelé la licence, vous devez _ne_ faire rien qui mettrait l'agrégat hors ligne, comme une opération de redémarrage ou de basculement. L'action recommandée est d'accélérer le renouvellement de la licence.</block>
-  <block id="92cbe224b663d28b8dd457992abcd653" category="list-text">Dans un shell de commande de votre poste de travail local, utilisez l'utilitaire scp pour télécharger le fichier image sur la machine virtuelle de déploiement.</block>
   <block id="690f3dfc132299176ff75952d43e8d9d" category="list-text">Copies Snapshot inviolables</block>
   <block id="363ac709cba54fea743eb36bb06d23c7" category="list-text">Migration de SVM</block>
   <block id="b7e93a737ead6d7716c8af57ebde241a" category="list-text">VMware HCX</block>
@@ -2816,9 +2808,6 @@
   <block id="a576bfb8d18800b15b695bc702167ec1" category="admonition">Vous ne devez ajouter qu'une image ONTAP Select avec une version antérieure à la version d'origine incluse avec votre instance de déploiement. L'ajout de versions ultérieures de ONTAP Select sans mise à jour du déploiement n'est pas pris en charge.</block>
   <block id="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="paragraph"><block ref="2d7ef53b88b3d50ad2fb9bc27da95ee9" category="inline-link-macro-rx"></block></block>
   <block id="298707edb3b539391aec5a5a89670001" category="admonition">Si une ancienne instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, vous devez mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir <block ref="fb380fde33185400cd8ee6587621860d" category="inline-link-macro-rx"></block> pour plus d'informations.</block>
-  <block id="dded0118bab7e4547129d9826a3a53bf" category="section-title">Téléchargez le package de mise à niveau</block>
-  <block id="295a9acceaedaed57f5a69a9e9479d14" category="section-title">Téléchargez le package sur la machine virtuelle de déploiement</block>
-  <block id="89a9fa7a63f2114c1852ebceaf021995" category="section-title">Appliquez le package de mise à niveau</block>
   <block id="4d0baad02721160fc108f9d6af73fec0" category="doc">Accéder à la console vidéo ONTAP Select</block>
   <block id="ae8d825236a3f7c43af8b7a2dcd40918" category="doc">Vérifiez la connectivité réseau entre les nœuds ONTAP Select</block>
   <block id="b58c5f0cafd2de6e2a43174f49b5fb62" category="paragraph">La création initiale du cluster peut être utilisée pour créer un cluster ONTAP Select qui consomme une partie ou l'intégralité de l'espace dans le datastore initial. Une deuxième étape consiste à effectuer une ou plusieurs opérations d'ajout de capacité en utilisant des datastores supplémentaires jusqu'à ce que la capacité totale souhaitée soit atteinte. Cette fonctionnalité est détaillée dans la section <block ref="707976c9d65fe867eaf11be0a6ab721e" category="inline-link-macro-rx"></block>.</block>
@@ -2878,7 +2867,6 @@
   <block id="0f0e87daa63b5587a3d3f02aefb73403" category="list-text">Accédez au <block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> À l'aide d'un navigateur Web, choisissez *Téléchargements* dans le menu Téléchargements.</block>
   <block id="dce12db5fd853ebf9ecc2b9677234aa6" category="list-text">Faites défiler vers le bas et sélectionnez *mise à niveau de déploiement ONTAP Select*.</block>
   <block id="d3a9739a4d6cf4fc9efd4b7704905c48" category="list-text">Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.</block>
-  <block id="3b21e87e0ddc0bee4fd0ebb1cd063173" category="paragraph">Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de déploiement de machine virtuelle. Vous devez également effacer le cache du navigateur pour pouvoir afficher les pages de déploiement nouvellement créées.</block>
   <block id="3a2bb6601ae9e99d12a365a40b604d74" category="paragraph">Vous pouvez accéder à la console vidéo de la machine virtuelle de l'hyperviseur sur laquelle ONTAP Select est exécuté.</block>
   <block id="decbc79b694df69cef4879e861d5bbe4" category="list-text">Vous pouvez également supprimer l'image ONTAP Select avec l'hôte de l'hyperviseur.</block>
   <block id="7460f05e2350b8a56240561f0787e129" category="open-title">Exemple ESXi</block>
@@ -3906,4 +3894,21 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="e6ed9ac65d6ce64c42573257cebe103e" category="paragraph">Utilisez la fonction de contraction de cluster pour réduire la taille d’un cluster existant de huit nœuds à six nœuds.</block>
   <block id="7cf2e3fec3d1629805de3aab60343896" category="sidebar">Documentation d' ONTAP Select 9.17.1</block>
   <block id="968414ab46d3b1a79f89163fe1c9a955" category="admonition">L'utilisation du type d'instance volumineuse n'est pas prise en charge sur une machine virtuelle basée sur le noyau (KVM).</block>
+  <block id="aee852b160915b647628e7eef82ecf7e" category="paragraph">Vous pouvez mettre à niveau une machine virtuelle utilitaire ONTAP Select Deploy existante sur place à l'aide de l'interface de ligne de commande de l'utilitaire ONTAP Select Deploy.</block>
+  <block id="37d4c938e6c31c7ec9166448ac3458f3" category="paragraph">Assurez-vous que ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.  Consultez les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire ONTAP Select Deploy.</block>
+  <block id="a59e9f814fd25c07ec74e51d966be96f" category="paragraph">Vous pouvez mettre à niveau ONTAP Select Deploy 9.17.1 à partir d' ONTAP Select Deploy 9.16.1 ou 9.15.1.  Pour effectuer une mise à niveau à partir d' ONTAP Select Deploy 9.14.1 ou d'une version antérieure, consultez les notes de version de votre version ONTAP Select .</block>
+  <block id="db1b7c6bff7b0da47260c4e758478bf5" category="section-title">Étape 1 : Télécharger le package</block>
+  <block id="c81ba5c62604d6722d8975fb55e13972" category="paragraph">Pour commencer le processus de mise à niveau, téléchargez le fichier de mise à niveau de la machine virtuelle ONTAP Select Deploy approprié à partir du<block ref="a42716fdd3c80ae75cadfb8024b65de0" category="inline-link-macro-rx"></block> . Le package de mise à niveau est formaté dans un fichier compressé unique.</block>
+  <block id="1bd278b7a759195dc2c65f644c38efc6" category="section-title">Étape 2 : Téléchargez le package sur la machine virtuelle ONTAP Select Deploy</block>
+  <block id="58d35d75d5ec4b24d42607d4bf519bb0" category="paragraph">Après avoir téléchargé le package, vous devez télécharger le fichier sur la machine virtuelle ONTAP Select Deploy.</block>
+  <block id="f210391b7941f9a4198928bc79fcba09" category="paragraph">Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle ONTAP Select Deploy.  Il existe peut-être d’autres options plus adaptées à votre environnement.</block>
+  <block id="c99ab6326cfb96cafe5cf69a39bf5e79" category="list-text">Vérifiez que le fichier de mise à niveau est disponible sur votre poste de travail local.</block>
+  <block id="e2a672c847bad2863e57f277c323553c" category="list-text">Vérifiez que vous disposez du mot de passe du compte utilisateur administrateur.</block>
+  <block id="e60c1aa35e0fea0a6ef96ddaa4b018f8" category="list-text">Dans un shell de commande sur votre poste de travail local, utilisez le<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> Utilitaire (Secure Copy Protocol) pour télécharger le fichier image sur la machine virtuelle ONTAP Select Deploy.</block>
+  <block id="fc979b5c6d5eef1f824052719f508095" category="section-title">Étape 3 : Appliquer le package de mise à niveau</block>
+  <block id="8b24796d99b30623379a77021195b47e" category="paragraph">Après avoir téléchargé le fichier de mise à niveau sur la machine virtuelle ONTAP Select Deploy, vous pouvez appliquer la mise à niveau.</block>
+  <block id="91aa908b0f2003054a80626907b7d18a" category="list-text">Vérifiez dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire ONTAP Select Deploy.</block>
+  <block id="b2fb3f45f259e44e136bed021ae55392" category="list-text">Vérifiez qu'ONTAP ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.</block>
+  <block id="abb9205c97b7f267bd63f25baa86e729" category="list-text">Sign in à l'interface de ligne de commande de l'utilitaire ONTAP Select Deploy à l'aide de SSH avec le compte administrateur.</block>
+  <block id="87a5212e058c62281b89455df9a32603" category="paragraph">Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle ONTAP Select Deploy.  Vous devez également vider le cache du navigateur afin de pouvoir afficher les pages ONTAP Select Deploy nouvellement créées.</block>
 </blocks>

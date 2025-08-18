@@ -14,22 +14,23 @@ summary: 'Vous pouvez mettre à niveau une machine virtuelle de déploiement exi
 
 
 [role="lead"]
-Vous pouvez mettre à niveau une machine virtuelle de déploiement existante en place à l'aide de l'interface de ligne de commande.
+Vous pouvez mettre à niveau une machine virtuelle utilitaire ONTAP Select Deploy existante sur place à l'aide de l'interface de ligne de commande de l'utilitaire ONTAP Select Deploy.
+
+.Avant de commencer
+Assurez-vous que ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.  Consultez les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire ONTAP Select Deploy.
+
+[NOTE]
+====
+Si une ancienne instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, vous devez mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus d'informations.
+
+Vous pouvez mettre à niveau ONTAP Select Deploy 9.17.1 à partir d' ONTAP Select Deploy 9.16.1 ou 9.15.1.  Pour effectuer une mise à niveau à partir d' ONTAP Select Deploy 9.14.1 ou d'une version antérieure, consultez les notes de version de votre version ONTAP Select .
+
+====
 
 
+== Étape 1 : Télécharger le package
 
-== Avant de commencer
-
-Assurez-vous que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Vous devriez voir les notes de version actuelles pour obtenir des informations et des restrictions sur la mise à niveau de l'utilitaire de déploiement.
-
-
-NOTE: Si une ancienne instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, vous devez mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus d'informations.
-
-
-
-== Téléchargez le package de mise à niveau
-
-Pour commencer le processus de mise à niveau, vous devez télécharger le fichier de mise à niveau de machine virtuelle de déploiement approprié depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.
+Pour commencer le processus de mise à niveau, téléchargez le fichier de mise à niveau de la machine virtuelle ONTAP Select Deploy approprié à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] . Le package de mise à niveau est formaté dans un fichier compressé unique.
 
 .Étapes
 . Accédez au link:https://mysupport.netapp.com/site/["Site de support NetApp"^] À l'aide d'un navigateur Web, choisissez *Téléchargements* dans le menu Téléchargements.
@@ -41,21 +42,20 @@ Pour commencer le processus de mise à niveau, vous devez télécharger le fichi
 
 
 
-== Téléchargez le package sur la machine virtuelle de déploiement
+== Étape 2 : Téléchargez le package sur la machine virtuelle ONTAP Select Deploy
 
-Après l'acquisition du package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle de déploiement.
+Après avoir téléchargé le package, vous devez télécharger le fichier sur la machine virtuelle ONTAP Select Deploy.
+
+.Description de la tâche
+Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle ONTAP Select Deploy.  Il existe peut-être d’autres options plus adaptées à votre environnement.
 
 .Avant de commencer
-Le fichier de mise à niveau doit être disponible sur votre poste de travail local. Vous devez également disposer du mot de passe pour le compte utilisateur administrateur.
+* Vérifiez que le fichier de mise à niveau est disponible sur votre poste de travail local.
+* Vérifiez que vous disposez du mot de passe du compte utilisateur administrateur.
 
-.À propos de ces tâches
-Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle de déploiement. D'autres options peuvent être plus adaptées à votre environnement.
 
 .Étapes
-. Dans un shell de commande de votre poste de travail local, utilisez l'utilitaire scp pour télécharger le fichier image sur la machine virtuelle de déploiement.
-+
-Exemple
-
+. Dans un shell de commande sur votre poste de travail local, utilisez le `scp` Utilitaire (Secure Copy Protocol) pour télécharger le fichier image sur la machine virtuelle ONTAP Select Deploy.
 +
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
@@ -67,21 +67,20 @@ Le fichier de mise à niveau est stocké dans le répertoire personnel de l'util
 
 
 
-== Appliquez le package de mise à niveau
+== Étape 3 : Appliquer le package de mise à niveau
 
-Une fois le fichier de mise à niveau téléchargé sur la machine virtuelle de déploiement, vous pouvez appliquer la mise à niveau.
+Après avoir téléchargé le fichier de mise à niveau sur la machine virtuelle ONTAP Select Deploy, vous pouvez appliquer la mise à niveau.
 
 .Avant de commencer
-Vous devez savoir dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire de déploiement. Assurez-vous également que le déploiement n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.
+* Vérifiez dans quel répertoire le fichier de mise à niveau a été placé sur la machine virtuelle de l'utilitaire ONTAP Select Deploy.
+* Vérifiez qu'ONTAP ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.
+
 
 .Étapes
-. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
+. Sign in à l'interface de ligne de commande de l'utilitaire ONTAP Select Deploy à l'aide de SSH avec le compte administrateur.
 . Effectuez la mise à niveau à l'aide du chemin de répertoire et du nom de fichier appropriés :
 +
 `deploy upgrade -package-path FILEPATH`
-
-+
-Exemple
 
 +
 ....
@@ -90,4 +89,4 @@ deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
 
 
 .Une fois que vous avez terminé
-Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de déploiement de machine virtuelle. Vous devez également effacer le cache du navigateur pour pouvoir afficher les pages de déploiement nouvellement créées.
+Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle ONTAP Select Deploy.  Vous devez également vider le cache du navigateur afin de pouvoir afficher les pages ONTAP Select Deploy nouvellement créées.
