@@ -4,7 +4,7 @@ permalink: task_cluster_expansion_contraction.html
 keywords: cluster, expand, expansion, contract, contraction, six, eight, node deployment workflow, workflow, deployment steps 
 summary: 'À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d"un cluster de six à huit nœuds et réduire la taille de cluster de huit à six nœuds.' 
 ---
-= Développez ou réduisez un cluster ONTAP Select
+= Développer ou réduire un cluster ONTAP Select ESXi ou KVM
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 'À partir de ONTAP Select 9.15.1, vous pouvez augmenter la taille d"un
 
 
 [role="lead"]
-Vous pouvez augmenter la taille du cluster d'un cluster ONTAP Select existant d'un cluster à six nœuds à un cluster à huit nœuds et réduire la taille d'un cluster à huit nœuds à un cluster à six nœuds
+Vous pouvez augmenter la taille du cluster d'un cluster ONTAP Select existant pour les hôtes d'hyperviseur ESXi et KVM.  Pour les hôtes KVM, vous pouvez augmenter la taille du cluster de six à huit nœuds et réduire la taille de huit à six nœuds.  Pour les hôtes ESXi, vous augmentez et diminuez la taille du cluster par incréments compris entre six et douze nœuds.
 
-Les extensions et contractions de cluster suivantes ne sont pas prises en charge :
+Les extensions et contractions de cluster suivantes ne sont pas prises en charge pour les hôtes ESXi et KVM :
 
 * Extensions des clusters à un, deux ou quatre nœuds aux clusters à six ou huit nœuds.
 * Contractions de clusters à six ou huit nœuds à des clusters à un, deux ou quatre nœuds.
@@ -37,21 +37,10 @@ Vous lancez les procédures d’extension et de contraction du cluster à partir
 
 == Considérations relatives au matériel et au stockage
 
-La fonctionnalité d’extension et de contraction de cluster est prise en charge sur les hôtes hyperviseurs KVM et ESXi.
+La fonctionnalité d’extension et de contraction de cluster est prise en charge sur les hôtes d’hyperviseur KVM et ESXi suivants.
 
 [role="tabbed-block"]
 ====
-.KVM
---
-À partir d' ONTAP Select 9.17.1, l'extension et la contraction des clusters sont prises en charge sur les hôtes hyperviseurs KVM.
-
-L'extension et la contraction des clusters sont prises en charge pour les versions d'hyperviseur KVM suivantes :
-
-* Red Hat Enterprise Linux 64 bits 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 et 8.6
-* Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6
-
-
---
 .VMware ESXi
 --
 À partir d’ ONTAP Select 9.15.1, l’extension et la contraction des clusters sont prises en charge sur les hôtes hyperviseurs ESXi.
@@ -67,13 +56,42 @@ L'extension et la contraction des clusters sont prises en charge pour les versio
 
 
 --
+.KVM
+--
+À partir d' ONTAP Select 9.17.1, l'extension et la contraction des clusters sont prises en charge sur les hôtes hyperviseurs KVM.
+
+L'extension et la contraction des clusters sont prises en charge pour les versions d'hyperviseur KVM suivantes :
+
+* Red Hat Enterprise Linux 64 bits 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 et 8.6
+* Rocky Linux 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6
+
+
+--
 ====
 
 
 == Développez le cluster
 
-Utilisez la fonction d’extension de cluster pour augmenter la taille d’un cluster existant de six à huit nœuds.
+Utilisez la fonction d’extension de cluster pour augmenter la taille d’un cluster ESXi ou KVM existant.
 
+[role="tabbed-block"]
+====
+.VMware ESXi
+--
+Vous pouvez augmenter la taille d’un cluster ESXi existant selon les incréments suivants :
+
+* De six nœuds à huit, dix ou douze nœuds
+* De huit nœuds à dix ou douze nœuds
+* De dix à douze nœuds
+
+
+--
+.KVM
+--
+Vous pouvez augmenter la taille d’un cluster KVM existant de six à huit nœuds.
+
+--
+====
 .Description de la tâche
 En prévision de l'extension du cluster, de nouveaux hôtes ESXi et KVM sont ajoutés à l'inventaire et les détails des nouveaux nœuds sont attribués. Avant de lancer l'extension du cluster, une pré-vérification du réseau interne est effectuée.
 
@@ -119,8 +137,26 @@ Une fois le cluster étendu, vous devez sauvegarder les données de configuratio
 
 == Contrat du cluster
 
-Utilisez la fonction de contraction de cluster pour réduire la taille d’un cluster existant de huit nœuds à six nœuds.
+Utilisez la fonction de contraction de cluster pour réduire la taille d’un cluster ESXi ou KVM existant.
 
+[role="tabbed-block"]
+====
+.VMware ESXi
+--
+Vous pouvez réduire la taille d’un cluster ESXi existant selon les incréments suivants :
+
+* De douze nœuds à dix, huit ou six nœuds
+* De dix nœuds à huit ou six nœuds
+* De huit à six nœuds
+
+
+--
+.KVM
+--
+Vous pouvez réduire la taille d’un cluster existant de huit à six nœuds.
+
+--
+====
 .Description de la tâche
 La paire HA de nœuds souhaitée dans le cluster est sélectionnée pour préparer la contraction du cluster pendant la procédure.
 

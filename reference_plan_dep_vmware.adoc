@@ -103,3 +103,24 @@ Le déploiement de ONTAP Select prend uniquement en charge IP version 4 (IPv4). 
 * Vous devez attribuer une adresse IPv4 à la LIF de gestion de la machine virtuelle de déploiement.
 * Le déploiement ne peut pas créer de nœuds ONTAP Select configurés pour utiliser IPv6 sur les LIF ONTAP.
 
+
+
+
+== Considérations relatives au déploiement du serveur VMware vCenter dans ONTAP Select
+
+
+
+=== Privilèges VMware vSphere pour ESA
+
+La liste suivante répertorie les privilèges spécifiques pour la bibliothèque de contenu vSphere dont vous avez besoin pour créer et gérer l'architecture de stockage vSAN Express (ESA) dans vCenter :
+
+* Ajouter un élément de bibliothèque
+* Créer une bibliothèque locale
+* Supprimer un élément de la bibliothèque
+* Supprimer la bibliothèque locale
+* Stockage de lecture
+* Mettre à jour les fichiers
+* Mettre à jour la bibliothèque
+* Mettre à jour l'élément de la bibliothèque
+* Mettre à jour la bibliothèque locale
+

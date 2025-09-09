@@ -43,11 +43,59 @@ Vous pouvez utiliser la fonctionnalité d'extension et de contraction de cluster
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
-Prise en charge du cloud SnapMirror:: À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
+Prise en charge améliorée de l'extension et de la contraction des clusters sur les hôtes ESXi:: À partir d' ONTAP Select 9.17.1, l'extension et la contraction des clusters sont prises en charge pour les clusters de six à douze nœuds sur les hôtes ESXi :
 +
 --
+--
+Vous pouvez augmenter la taille du cluster pour un cluster ESXi existant selon les incréments suivants :
+
+* De six nœuds à huit, dix ou douze nœuds
+* De huit nœuds à dix ou douze nœuds
+* De dix à douze nœuds
+
+
+Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon les incréments suivants :
+
+* De douze nœuds à dix, huit ou six nœuds
+* De dix nœuds à huit ou six nœuds
+* De huit à six nœuds
+
+
+--
+link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
+
+--
+Prise en charge des fonctionnalités ONTAP:: À partir d' ONTAP Select 9.17.1, les fonctionnalités ONTAP sous licence suivantes sont prises en charge avec ONTAP Select:
++
+--
+* SnapLock Select
++
+À partir d' ONTAP Select 9.17.1, les nouveaux déploiements bénéficieront automatiquement d'une licence SnapLock Select.  Pour les mises à niveau d' ONTAP Select 9.16.1 et versions antérieures, vous devrez télécharger la licence SnapLock Select à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l'appliquer manuellement.
+
+* Nuage SnapMirror
++
+À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
+
++
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["En savoir plus sur les sauvegardes cloud SnapMirror vers le stockage d'objets"^] .
 
+
+
+--
+Prise en charge de vSAN ESA sur les clusters multi-nœuds:: À partir d' ONTAP Select 9.17.1, la prise en charge de l'architecture de stockage vSAN Express (ESA) est étendue pour déployer des clusters multi-nœuds.  Cette amélioration vous permet de déployer des configurations vSAN ESA.
++
+--
+vSAN ESA est une configuration spécifique à ESX et une nouvelle architecture pour VMware vSAN introduite dans vSphere 8. vSAN ESA est conçu pour offrir une efficacité, une évolutivité et des performances améliorées, en particulier lors de l'utilisation de périphériques flash TLC basés sur NVMe.
+
+ONTAP Select Deploy et ONTAP Select pour ESX prennent en charge la configuration d'un cluster ONTAP Select à nœud unique et à nœuds multiples, à l'aide d'un vSAN ou d'un type de baie de données externe pour son pool de stockage.
+
+[NOTE]
+====
+Pour effectuer des opérations de bibliothèque de contenu, vous aurez besoin d'accéder à des niveaux d'autorisation supplémentaires.  Ceci est requis pour les déploiements vSAN ESA si vous travaillez avec des rôles restreints.
+
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html["En savoir plus sur l'accès aux niveaux d'autorisation pour les opérations de la bibliothèque de contenu"^] .
+
+====
 --
 Prise en charge du pilote NDA mise à jour:: À partir d' ONTAP Select 9.17.1, le pilote de périphérique FreeBSD NDA (NVMe Direct Access) remplace le pilote NVD (NVMe Express Disk Driver). Ce pilote prend en charge les périphériques à accès direct en implémentant le protocole de commande NVMe. Lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1, le pilote FreeBSD est démarré par défaut lors de la configuration des périphériques NVMe.
 +
