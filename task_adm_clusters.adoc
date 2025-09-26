@@ -83,7 +83,7 @@ Après une migration de machines virtuelles:: Après la migration d'une machine 
 Vous pouvez actualiser le cluster pour mettre à jour la base de données de configuration de déploiement à l'aide de l'interface utilisateur Web.
 
 
-NOTE: Au lieu d'utiliser l'interface graphique de déploiement, vous pouvez utiliser la commande cluster Refresh dans le shell de l'interface de ligne de commande de déploiement pour actualiser un cluster.
+NOTE: Au lieu d’utiliser l’interface utilisateur de déploiement, vous pouvez utiliser la commande d’actualisation du cluster dans le shell CLI de déploiement pour actualiser un cluster.
 
 Configuration en clusters et de serveurs virtuels:: Voici quelques-unes des valeurs de configuration pouvant être modifiées et entraîner la désynchronisation de la base de données de déploiement :
 +

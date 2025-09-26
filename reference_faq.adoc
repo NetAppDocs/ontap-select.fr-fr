@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference_faq.html 
 keywords: faq, frequently asked questions 
-summary: Trouvez les réponses aux questions les plus fréquentes sur ONTAP Select. 
+summary: Trouvez des réponses aux questions courantes sur ONTAP Select. 
 ---
-= Foire aux questions sur ONTAP Select
+= FAQ pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -70,14 +70,14 @@ Oui, la procédure de restauration d'un cluster ONTAP Select est quasiment ident
 
 * Seules les instances mises à niveau de ONTAP Select peuvent être rétablies et seulement jusqu'à la version d'installation d'origine. Les nouvelles installations ne peuvent pas être rétablies dans une ancienne version de code, même si ONTAP Select en général prend en charge cette ancienne version.
 * Pour ONTAP Select (KVM) et ONTAP Select (ESX) utilisant RAID logiciel, il n'est pas possible de revenir à une version antérieure qui ne prend pas en charge le RAID logiciel. En outre, une nouvelle installation de ONTAP Select 9.5 ou version ultérieure sur ESX utilise les pilotes réseau VMXNET3 et, si possible, le pilote vNMVE. Ces nouvelles installations ne peuvent pas être rétablies dans des versions antérieures de ONTAP Select.
-* Si la machine virtuelle ONTAP Select a également été mise à niveau vers une instance importante (avec la licence Premium XL), le rétablissement vers une version antérieure à la version 9.6 n'est pas pris en charge, car la fonctionnalité d'instance importante n'est pas disponible dans les versions précédentes.
+* Si la machine virtuelle ONTAP Select a également été mise à niveau vers une grande instance (à l'aide de la licence Premium XL), le retour à une version antérieure à 9.6 n'est pas pris en charge, car la fonctionnalité Grande instance n'est pas disponible dans les versions antérieures.
 
 
 .ONTAP MetroCluster SDS a-t-il besoin d'une licence Premium au moins ?
 Oui.
 
 .Est-il possible de modifier la configuration réseau du cluster ONTAP Select après l'installation ?
-Les modifications apportées aux propriétés de cluster ONTAP Select suivantes sont reconnues par ONTAP Select Deploy à l'aide de l'opération de mise à jour du cluster disponible via l'interface graphique, l'interface de ligne de commandes ou l'API REST :
+Les modifications apportées aux propriétés de cluster ONTAP Select suivantes sont reconnues par ONTAP Select Deploy à l'aide de l'opération d'actualisation de cluster disponible via l'interface utilisateur, la CLI ou l'API REST :
 
 * Configuration du réseau (adresses IP, DNS, NTP, masque de réseau et passerelle)
 * Cluster ONTAP Select, nom du nœud et version
@@ -92,7 +92,7 @@ Les modifications suivantes du serveur virtuel ONTAP Select sont également reco
 La mise à niveau vers ONTAP Select Deploy 2.6 permet la prise en charge de ces modifications dans tout cluster ONTAP Select déjà déployé, mais sa configuration d'origine n'a pas été modifiée. En d'autres termes, si les propriétés du cluster ONTAP Select mentionnées ci-dessus ont été modifiées à l'aide de System Manager ou de vCenter, la mise à niveau vers ONTAP Select Deploy 2.6 ne corrige pas ces incohérences. Les modifications de la propriété ONTAP Select doivent d'abord être annulées pour que le déploiement d'ONTAP Select ajoute ses métadonnées uniques à chaque machine virtuelle d'ONTAP Select.
 
 .Est-il possible de modifier la configuration réseau de ONTAP Select Deploy après l'installation ?
-La modification des détails de mise en réseau de l'instance de déploiement après son exécution dans un environnement n'est pas prise en charge. Pour plus d'informations, reportez-vous à la section link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Article de la base de connaissances - modification de la configuration DNS de l'instance de déploiement ONTAP"^].
+La modification des informations réseau de l'instance Deploy après son exécution dans un environnement n'est pas prise en charge. Pour plus d'informations, consultez l'article de la base de connaissances. link:https://kb.netapp.com/onprem/ontap/ONTAP_Select/Modifying_DNS_configuration_of_ONTAP_Deploy_instance["Modification de la configuration DNS de l'instance ONTAP Deploy"^] .
 
 .Comment Deploy détecte-t-il que les licences ONTAP Select sont renouvelées ?
 La méthode est la même pour toutes les licences, bien que les caractéristiques spécifiques varient selon qu'il s'agit d'une licence Capacity Tier ou Capacity Pool.
@@ -166,7 +166,10 @@ Lors de l'utilisation d'un contrôleur RAID matériel, ONTAP Select ignore large
 
 Vous devez utiliser au moins deux cartes réseau physiques pour éviter un point de défaillance unique au niveau de la couche réseau. NetApp recommande que les groupes de ports internes, de gestion et de données disposent de cartes réseau et d'une liaison montante ou plus dans l'équipe ou le lien. Cette configuration garantit que, en cas de défaillance de la liaison montante, le commutateur virtuel déplace le trafic de la liaison montante défaillante vers une liaison montante saine dans l'équipe NIC. Pour plus de détails sur la configuration réseau recommandée, reportez-vous à la section link:reference_plan_best_practices.html#networking["Résumé des meilleures pratiques : la mise en réseau"].
 
-Toutes les autres erreurs sont gérées par ONTAP HA dans le cas d'un cluster à deux ou à quatre nœuds. Si le serveur d'hyperviseur doit être remplacé et que le cluster ONTAP Select doit être reconstitué avec un nouveau serveur, contactez le support technique NetApp.
+Toutes les autres erreurs sont gérées par ONTAP HA dans le cas d'un cluster à deux ou quatre nœuds. Si le serveur hyperviseur doit être remplacé et que le cluster ONTAP Select doit être reconstitué avec un nouveau serveur, reportez-vous à _Puis-je récupérer un nœud ONTAP Select ?_.
+
+.Puis-je récupérer un nœud ONTAP Select ?
+Contactez le support technique NetApp si vous devez récupérer un nœud ONTAP Select , par exemple, si une machine virtuelle ou un hôte ONTAP Select est complètement perdu ou si un cluster à nœud unique est supprimé accidentellement. Pour plus d'informations, consultez l'article de la base de connaissances. link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-KBs/ONTAP_Select_node_VM_recovery_in_case_of_disaster["Récupération de la machine virtuelle du nœud ONTAP Select en cas de sinistre"^] .
 
 .Quelle est la taille maximale des datastores ONTAP Select prise en charge ?
 Toutes les configurations, y compris VSAN, prennent en charge 400 To de stockage par nœud ONTAP Select.
@@ -188,7 +191,7 @@ Les clusters haute disponibilité à plusieurs nœuds sur un système de stockag
 .ONTAP Select prend-il en charge les clusters à plusieurs nœuds sur VSAN ou tout autre stockage externe partagé incluant certaines piles HCI ?
 Les clusters à plusieurs nœuds qui utilisent un stockage externe (multinœud vNAS) sont pris en charge pour ESX et KVM. Le mélange d'hyperviseurs dans le même cluster n'est pas pris en charge. Une architecture haute disponibilité sur stockage partagé implique toujours que chaque nœud d'une paire haute disponibilité possède une copie en miroir de ses données partenaires. Toutefois, un cluster à plusieurs nœuds tire parti des avantages de la continuité de l'activité de ONTAP, contrairement à un cluster à un seul nœud qui repose sur VMware HA ou KVM Live Motion.
 
-Bien que le déploiement ONTAP Select permet de prendre en charge plusieurs machines virtuelles ONTAP Select sur le même hôte, il n'autorise pas ces instances à faire partie du même cluster ONTAP Select lors de la création du cluster. Pour les environnements ESX, NetApp recommande de créer des règles d'anti-affinité des machines virtuelles afin que VMware HA ne tente pas de migrer plusieurs machines virtuelles ONTAP Select depuis le même cluster ONTAP Select vers un hôte ESX unique. De plus, si ONTAP Select Deploy détecte qu'une migration de vMotion ou en direct d'une machine virtuelle ONTAP Select se sont traduites par une violation de nos meilleures pratiques, telles que deux nœuds ONTAP Select se terminant sur le même hôte physique, ONTAP Select Deploy envoie une alerte dans l'interface graphique de déploiement et le journal. La seule façon dont ONTAP Select déploie l'emplacement des machines virtuelles ONTAP Select est suite à une opération manuelle de mise à jour de clusters qui doit être effectuée par l'administrateur du déploiement ONTAP Select. Aucune fonctionnalité du déploiement ONTAP Select n'active la surveillance proactive, et l'alerte n'est visible que via l'interface graphique ou le journal du déploiement. En d'autres termes, cette alerte ne peut pas être transmise à une infrastructure de surveillance centralisée.
+Bien qu'ONTAP ONTAP Select Deploy prenne en charge plusieurs machines virtuelles ONTAP Select sur le même hôte, ces instances ne peuvent pas faire partie du même cluster ONTAP Select lors de sa création. Pour les environnements ESX, NetApp recommande de créer des règles d'anti-affinité de machines virtuelles afin que VMware HA ne tente pas de migrer plusieurs machines virtuelles ONTAP Select du même cluster ONTAP Select vers un seul hôte ESX. De plus, si ONTAP Select Deploy détecte qu'une migration vMotion administrative (initiée par l'utilisateur) ou une migration en direct d'une machine virtuelle ONTAP Select a entraîné une violation de nos meilleures pratiques, comme le fait que deux nœuds ONTAP Select se retrouvent sur le même hôte physique, ONTAP Select Deploy publie une alerte dans l'interface utilisateur de déploiement et le journal. ONTAP Select Deploy ne peut connaître l'emplacement de la machine virtuelle ONTAP Select que par une actualisation du cluster, une opération manuelle que l'administrateur ONTAP Select Deploy doit lancer.  Il n'existe aucune fonctionnalité dans ONTAP Select Deploy permettant une surveillance proactive, et l'alerte n'est visible que via l'interface utilisateur de déploiement ou le journal. Autrement dit, elle ne peut pas être transmise à une infrastructure de surveillance centralisée.
 
 .ONTAP Select prend-il en charge NSX VXLAN de VMware ?
 Les groupes de ports NSX-V VXLAN sont pris en charge. Pour la haute disponibilité multinœud, y compris ONTAP MetroCluster SDS, assurez-vous de configurer la MTU du réseau interne entre 7500 et 8900 (au lieu de 9000) afin d'adapter la surcharge VXLAN. La MTU du réseau interne peut être configurée avec ONTAP Select Deploy lors du déploiement d'un cluster.
@@ -218,7 +221,7 @@ Vous devez installer et exécuter des composants open source CLVM et Pacemaker (
 Il existe plusieurs questions et réponses concernant VMware vCenter.
 
 .Comment ONTAP Select déploie-t-il la communication avec vCenter et quels ports de pare-feu doivent être ouverts ?
-ONTAP Select Deploy utilise l'API VMware VIX pour communiquer avec le vCenter et/ou l'hôte ESX. La documentation VMware indique que la connexion initiale à un serveur vCenter ou à un hôte ESX se fait à l'aide de HTTPS/SOAP sur le port TCP 443. Il s'agit du port pour la sécurisation de HTTP via TLS/SSL. Ensuite, une connexion à l'hôte ESX est ouverte sur un socket situé sur le port TCP 902. Les données passant par cette connexion sont cryptées avec SSL. De plus, ONTAP Select déploie les problèmes a `PING` Commande pour vérifier qu'un hôte ESX répond à l'adresse IP que vous avez spécifiée.
+ONTAP Select Deploy utilise l'API VMware VIX pour communiquer avec vCenter, l'hôte ESX ou les deux. La documentation VMware indique que la connexion initiale à un serveur vCenter ou à un hôte ESX s'effectue via HTTPS/SOAP sur le port TCP 443. Il s'agit du port HTTP sécurisé sur TLS/SSL. Ensuite, une connexion à l'hôte ESX est établie sur un socket du port TCP 902. Les données transitant par cette connexion sont chiffrées via SSL. De plus, ONTAP Select Deploy émet un  `PING` commande pour vérifier qu'il existe un hôte ESX répondant à l'adresse IP que vous avez spécifiée.
 
 ONTAP Select Deploy doit pouvoir communiquer avec les adresses IP de gestion du cluster et du nœud ONTAP Select comme suit :
 

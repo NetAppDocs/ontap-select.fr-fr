@@ -66,7 +66,7 @@ L'ordre des ports dans la liste de secours est important. Le tableau suivant fou
 
 | Veille 3 | vmnic3 | vmnic2 | vmnic1 | vmnic0 
 |===
-Les figures suivantes illustrent la configuration des groupes de ports réseau externes à partir de l'interface utilisateur graphique vCenter (ONTAP-External et ONTAP-External2). Notez que les cartes actives proviennent de différentes cartes réseau. Dans cette configuration, vmnic 4 et vmnic 5 sont des ports doubles sur la même carte réseau physique, tandis que vmnic 6 et vminc 7 sont de même des ports doubles sur une carte réseau séparée (les vnmacs 0 à 3 ne sont pas utilisés dans cet exemple). L'ordre des cartes de secours fournit un basculement hiérarchique avec les ports du réseau interne en dernier. L'ordre des ports internes dans la liste de secours est également intervertie entre les deux groupes de ports externes.
+Les figures suivantes montrent les configurations des groupes de ports réseau externes à partir de l'interface utilisateur vCenter (ONTAP-External et ONTAP-External2). Notez que les adaptateurs actifs proviennent de cartes réseau différentes. Dans cette configuration, vmnic 4 et vmnic 5 sont des ports doubles sur la même carte réseau physique, tandis que vmnic 6 et vminc 7 sont également des ports doubles sur une carte réseau distincte (les vnmic 0 à 3 ne sont pas utilisés dans cet exemple). L'ordre des adaptateurs de secours permet un basculement hiérarchique, les ports du réseau interne étant les derniers. L'ordre des ports internes dans la liste de secours est également inversé entre les deux groupes de ports externes.
 
 *Partie 1 : configurations de groupes de ports externes ONTAP Select*
 

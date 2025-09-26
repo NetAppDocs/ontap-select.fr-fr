@@ -41,7 +41,7 @@ Plusieurs options sont disponibles lors de l'accès à l'utilitaire d'administra
 
 === Interface utilisateur graphique Web
 
-Vous pouvez accéder à l'utilitaire de déploiement à l'aide d'un navigateur Web moderne. L'interface graphique Web fournit une interface intuitive et facile à utiliser, et dans la plupart des cas, il s'agit de votre interface principale lorsque vous utilisez l'utilitaire.
+Vous pouvez accéder à l'utilitaire Deploy via un navigateur web moderne. L'interface Web fournit une interface intuitive et facile à utiliser et, dans la plupart des cas, sera votre interface principale lors de l'utilisation de l'utilitaire.
 
 
 
