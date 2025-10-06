@@ -20,7 +20,7 @@ Vous pouvez acheter une licence ONTAP Select Capacity Tier ou Capacity Pool de n
 
 == Avantages de l'offre de licence de plateforme
 
-Une offre de licence spécifique définit et limite les fonctionnalités de l'hôte hyperviseur dans deux domaines :
+Une offre de licence spécifique détermine les capacités de l'hôte hyperviseur dans deux domaines :
 
 * Type d'instance (processeur, mémoire)
 * Ou des caractéristiques supplémentaires
@@ -28,52 +28,44 @@ Une offre de licence spécifique définit et limite les fonctionnalités de l'h�
 
 Les offres de licences sont classées dans un ordre croissant de capacités allant de la version standard à la version Premium XL. En général, l'option de licence que vous choisissez vous accorde les capacités de ce niveau et de tous les niveaux inférieurs. Par exemple, le niveau Premium fournit les capacités de Premium et de Standard.
 
+Le tableau suivant compare les fonctionnalités des offres de licence standard, premium et premium XL.
+
+[cols="25,25,25,25,25"]
+|===
+2+| La licence prend en charge ... | Standard | Premium | XL haut de gamme 
 
 
-== Offres de licences de plateforme
-
-Trois offres de licences de plateforme sont disponibles.
+2+| Type d'instance | Petit seulement | Petit ou moyen | Petit, moyen ou grand 
 
 
-
-=== Standard
-
-L'offre standard offre les fonctionnalités suivantes :
-
-* Type d'instance de petite taille uniquement
-* Disques durs (HDD) uniquement
-* Contrôleur RAID matériel local uniquement
-* VNAS
+.2+| Disques durs (HDD) dans un ... | Configuration RAID matérielle | Oui. | Oui. | Oui. 
 
 
+| Configuration vNAS | Oui. | Oui. | Oui. 
 
 
-=== Premium
-
-L'offre Premium offre inclut les fonctionnalités suivantes :
-
-* Type d'instance petit ou moyen
-* Disques durs ou SSD
-* Contrôleur RAID local ou RAID logiciel
-* VNAS
-* Les SDS dans MetroCluster
+.3+| Disques SSD (Solid State Drives) dans un ... | Configuration RAID matérielle | Non | Oui. | Oui. 
 
 
+| Configuration RAID logicielle | Non | Oui. | Oui. 
 
 
-=== XL haut de gamme
-
-L'offre XL haut de gamme offre les fonctionnalités suivantes :
-
-* Types d'instances petites, moyennes ou grandes
-* HDD, SSD ou disques NVMe
-* Contrôleur RAID local ou RAID logiciel
-* VNAS
-* Les SDS dans MetroCluster
+| Configuration vNAS | Oui. | Oui. | Oui. 
 
 
+.3+| Disques NVMe dans un ... | Configuration RAID matérielle | Non | Non | Oui. 
 
-NOTE: L'utilisation du type d'instance volumineuse n'est pas prise en charge sur une machine virtuelle basée sur le noyau (KVM).
+
+| Configuration RAID logicielle | Non | Non | Oui. 
+
+
+| Configuration vNAS | Oui. | Oui. | Oui. 
+
+
+2+| Les SDS dans MetroCluster | Non | Oui. | Oui. 
+|===
+
+NOTE: Les machines virtuelles basées sur le noyau (KVM) ne prennent pas en charge le type d'instance volumineuse.
 
 
 

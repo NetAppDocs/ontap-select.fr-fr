@@ -14,7 +14,7 @@ summary: 'ONTAP Select prend en charge la plupart des fonctionnalités ONTAP. La
 
 
 [role="lead"]
-ONTAP Select prend en charge la plupart des fonctionnalités ONTAP. La licence de nombreuses fonctionnalités de ONTAP est automatique pour chaque nœud lors du déploiement d'un cluster. Toutefois, certaines fonctionnalités requièrent une licence distincte.
+ONTAP Select prend en charge la plupart des fonctionnalités ONTAP . De nombreuses fonctionnalités ONTAP sont automatiquement concédées sous licence pour chaque nœud lors du déploiement d'un cluster. Cependant, certaines fonctionnalités nécessitent une licence distincte.
 
 
 NOTE: Les fonctionnalités ONTAP qui dépendent matériel ne sont généralement pas prises en charge par ONTAP Select.
@@ -53,25 +53,20 @@ NOTE: ONTAP Select prend en charge SVM DR en tant que source et destination avec
 
 == Fonctionnalités ONTAP sous licence séparée
 
-Vous devez acheter une licence distincte pour toute fonctionnalité ONTAP non activée par défaut, notamment :
+Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui n'est pas activée par défaut, notamment :
 
 * FabricPool
 * MetroCluster SDS (offre de licence ONTAP Select Premium)
-* SnapLock Enterprise pour ONTAP Select 9.16.1 et versions antérieures (disponibles sur lelink:https://mysupport.netapp.com/site/["Site de support NetApp"^] )
-+
-
-NOTE: La SnapLock Compliance n'est pas prise en charge pour ONTAP Select.
-
-+
-** Copies Snapshot inviolables
 
 
-* SnapLock Select
+[NOTE]
+====
+* Pour ONTAP Select 9.16.1 et versions antérieures, SnapLock Select Enterprise (y compris le verrouillage inviolable des snapshots) est disponible à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] .
+* La SnapLock Compliance n'est pas prise en charge pour ONTAP Select.
+* Vous n'avez pas besoin d'une licence FabricPool lorsque vous utilisez StorageGRID.
 
 
-
-NOTE: Vous n'avez pas besoin d'une licence FabricPool lorsque vous utilisez StorageGRID.
-
+====
 .Informations associées
 * link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Comparatif ONTAP Select/ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Clés de licence principales pour ONTAP NetApp"^]

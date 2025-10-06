@@ -132,4 +132,6 @@ La modification des propriétés des ports ONTAP, notamment la vitesse, le mode 
 
 
 .Informations associées
-link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus sur les fonctionnalités ONTAP activées par défaut"] link:concept_lic_evaluation.html["En savoir plus sur les options de licence ONTAP Select"]
+* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus sur les fonctionnalités ONTAP activées par défaut"]
+* link:concept_lic_evaluation.html["En savoir plus sur les options de licence ONTAP Select"]
+

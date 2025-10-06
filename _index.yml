@@ -1,5 +1,6 @@
 ---
 indexpage:
+  title: Documentation ONTAP Select
   lead: NetApp ONTAP Select est une appliance de stockage logicielle (SSD) déployable
     sur divers serveurs matériels standard exécutant VMware ESXi ou l'hyperviseur
     KVM (Kernel-based Virtual Machine). Elle offre l'agilité nécessaire pour créer

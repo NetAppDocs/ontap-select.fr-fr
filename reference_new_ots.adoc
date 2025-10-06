@@ -65,23 +65,13 @@ Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon le
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
-Prise en charge des fonctionnalités ONTAP:: À partir d' ONTAP Select 9.17.1, les fonctionnalités ONTAP sous licence suivantes sont prises en charge avec ONTAP Select:
+Prise en charge du cloud SnapMirror:: À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
 +
 --
-* SnapLock Select
-+
-À partir d' ONTAP Select 9.17.1, les nouveaux déploiements bénéficieront automatiquement d'une licence SnapLock Select.  Pour les mises à niveau d' ONTAP Select 9.16.1 et versions antérieures, vous devrez télécharger la licence SnapLock Select à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l'appliquer manuellement.
-
-* Nuage SnapMirror
-+
-À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
-
-+
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["En savoir plus sur les sauvegardes cloud SnapMirror vers le stockage d'objets"^] .
 
-
-
 --
+Prise en charge de SnapLock Select Enterprise:: À partir d' ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement d'une licence SnapLock Select Enterprise (y compris le verrouillage inviolable des snapshots).  Pour les mises à niveau d' ONTAP Select 9.16.1 et versions antérieures, vous devez télécharger la licence SnapLock Select à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l'appliquer manuellement.
 Prise en charge de vSAN ESA sur les clusters multi-nœuds:: À partir d' ONTAP Select 9.17.1, la prise en charge de l'architecture de stockage vSAN Express (ESA) est étendue pour déployer des clusters multi-nœuds.  Cette amélioration vous permet de déployer des configurations vSAN ESA.
 +
 --
