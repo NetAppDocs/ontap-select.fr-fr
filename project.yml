@@ -224,8 +224,6 @@ sidebar:
         url: "/concept_api_rest.html"
       - title: Accédez à l'API de déploiement
         url: "/concept_api_how_access.html"
-      - title: Déploiement des versions d'API
-        url: "/concept_api_versions.html"
       - title: Fonctionnement de base
         url: "/concept_api_operation.html"
       - title: Transaction de demande et de réponse

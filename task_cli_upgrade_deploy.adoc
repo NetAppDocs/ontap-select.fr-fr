@@ -23,7 +23,7 @@ Assurez-vous que ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres 
 ====
 Si une ancienne instance de l'utilitaire d'administration de ONTAP Select Deploy est installée, vous devez mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus d'informations.
 
-Vous pouvez mettre à niveau ONTAP Select Deploy 9.17.1 à partir d' ONTAP Select Deploy 9.16.1 ou 9.15.1.  Pour effectuer une mise à niveau à partir d' ONTAP Select Deploy 9.14.1 ou d'une version antérieure, consultez les notes de version de votre version ONTAP Select .
+Vous pouvez effectuer une mise à niveau directe vers ONTAP Select Deploy 9.17.1 à partir d' ONTAP Select Deploy 9.16.1 ou 9.15.1. Pour effectuer une mise à niveau à partir d' ONTAP Select Deploy 9.14.1 ou d'une version antérieure, consultez les notes de version de votre version ONTAP Select .
 
 ====
 

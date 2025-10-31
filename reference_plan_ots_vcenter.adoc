@@ -81,3 +81,6 @@ Provisionnement:: Tous les privilèges de la catégorie.
 === VApp
 
 Tous les privilèges de la catégorie.
+
+.Informations associées
+link:https://docs.netapp.com/us-en/ontap-select/reference_plan_dep_vmware.html#ontap-select-deploy-vmware-vcenter-server-considerations["En savoir plus sur les privilèges VMware vSphere pour vSAN ESA dans vCenter"]

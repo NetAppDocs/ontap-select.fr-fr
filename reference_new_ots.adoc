@@ -94,6 +94,7 @@ Pour ONTAP Select 9.16.1 et les versions antérieures, le NVD continue de fourni
 
 --
 Prise en charge de l'hyperviseur KVM mise à jour:: À partir d' ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 9.6 et Rocky Linux 9.6.
+Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.17.1 inclut la prise en charge de VMware ESXi 9.0.
 
 
 

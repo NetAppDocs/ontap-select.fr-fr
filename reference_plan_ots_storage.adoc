@@ -239,7 +239,7 @@ NOTE: La technologie RAID logicielle avec disques DAS locaux est prise en charge
 
 Vous pouvez configurer les services RAID logiciels pour utiliser les disques SSD NVMe. Votre environnement doit répondre aux exigences suivantes :
 
-* ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
+* ONTAP Select avec un utilitaire d'administration Deploy pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
 * VMware ESXi version 6.7 ou ultérieure
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure

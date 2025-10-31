@@ -162,7 +162,7 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 2+| Type de logiciel 3+| Description 
 
 
-2+| Hyperviseur (VMware) 3+| VMware vSphere 8.0GA et mises à jour 1 à 3 VMware vSphere 7.0GA et mises à jour 1 à 3C 
+2+| Hyperviseur (VMware) 3+| VMware vSphere 9.0, VMware vSphere 8.0GA et mises à jour 1 à 3, VMware vSphere 7.0GA et mises à jour 1 à 3C 
 
 
 2+| Hyperviseur (KVM) 3+| Red Hat Enterprise Linux 64 bits (KVM) 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.8, 8.7 et 8.6 Rocky Linux (KVM) 9.6 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 

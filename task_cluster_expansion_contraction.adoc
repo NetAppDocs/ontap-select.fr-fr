@@ -47,6 +47,7 @@ La fonctionnalité d’extension et de contraction de cluster est prise en charg
 
 L'extension et la contraction des clusters sont prises en charge pour les versions d'hyperviseur ESXi suivantes :
 
+* ESXi 9.0
 * ESXi 8.0 U3
 * ESXi 8.0 U2
 * ESXi 8.0 U1
@@ -131,7 +132,7 @@ L'extension du cluster peut prendre jusqu'à 45 minutes.
 
 
 .Une fois que vous avez terminé
-Une fois le cluster étendu, vous devez sauvegarder les données de configuration de ONTAP Select Deploy.
+link:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"].
 
 
 

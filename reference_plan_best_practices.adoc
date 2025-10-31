@@ -148,9 +148,9 @@ Pour la haute disponibilité, nous vous recommandons de tenir compte des meilleu
 
 === Déploiement des sauvegardes
 
-Il est recommandé de sauvegarder régulièrement les données de configuration de déploiement, notamment après la création d'un cluster. Cette étape est particulièrement importante dans les clusters à deux nœuds, car les données de configuration de médiateur sont incluses dans la sauvegarde.
+Il est recommandé de sauvegarder régulièrement les données de configuration de Deploy, y compris après la création d'un cluster. Ceci est particulièrement important avec les clusters à deux nœuds, car les données de configuration du médiateur sont incluses dans la sauvegarde.
 
-Après avoir créé ou déployé un cluster, il est préférable de sauvegarder les données de configuration de ONTAP Select Deploy.
+Après avoir créé ou déployé un cluster, vous devezlink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] .
 
 
 

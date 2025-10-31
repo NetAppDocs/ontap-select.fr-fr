@@ -23,7 +23,7 @@ Il existe plusieurs problèmes matériels à prendre en compte et à planifier l
 Il existe plusieurs exigences relatives à l'hyperviseur dans lequel ONTAP Select s'exécute.
 
 
-NOTE: Consultez les notes de mise à jour de votre version de ONTAP Select pour connaître les restrictions ou limitations connues supplémentaires.
+NOTE: Vous devriez revoir lelink:reference_release_notes.html["Notes de version de ONTAP Select"] pour toute autre restriction ou limitation connue.
 
 
 
@@ -52,6 +52,7 @@ ONTAP Select prend en charge les versions d'hyperviseur KVM suivantes :
 --
 ONTAP Select prend en charge les versions d'hyperviseur ESXi suivantes :
 
+* VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 (build 21495797)
@@ -80,7 +81,7 @@ Si un hôte d'hyperviseur ESXi est géré par un serveur vCenter, vous devez enr
 L'hôte de l'hyperviseur physique dans lequel vous déployez ONTAP Select doit respecter plusieurs exigences matérielles. Vous pouvez choisir n'importe quelle plateforme pour l'hôte de l'hyperviseur, tant qu'elle respecte les exigences matérielles minimales. Les fournisseurs suivants proposent des plateformes matérielles prises en charge : Cisco, Dell, HP, Fujitsu, Lenovo, Et Supermicro.
 
 
-NOTE: À partir de ONTAP Select 9.9.1, seuls les modèles de CPU basés sur Intel Xeon Sandy Bridge ou version ultérieure sont pris en charge.
+NOTE: À partir d' ONTAP Select 9.9.1, seuls les modèles de processeur basés sur Intel Xeon Sandy Bridge ou ultérieurs sont pris en charge.
 
 Pour plus d'informations, reportez-vous au https://mysupport.netapp.com/matrix["Matrice d'interopérabilité, fenêtre=_blank"].
 
@@ -110,7 +111,7 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 | Cluster à deux nœuds ou MetroCluster SDS | 4 x 1 GbE ou 1 x 10 GbE | 2 x 10 GbE 
 
 
-| cluster à 4 ou 6/8 nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
+| cluster à quatre, six ou huit nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
 |===
 
 

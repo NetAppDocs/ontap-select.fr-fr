@@ -29,13 +29,12 @@ Vous pouvez déployer un cluster à deux nœuds à l'aide de n'importe quelle li
 Lorsqu'un cluster se compose de deux nœuds, il n'est pas possible d'obtenir le quorum nécessaire lorsqu'un nœud tombe en panne ou perd la communication. Pour résoudre ces types de situations split-brain, chaque instance de l'utilitaire ONTAP Select Deploy comprend un service médiateur. Ce service se connecte à chaque nœud des clusters actifs à deux nœuds pour surveiller les paires haute disponibilité et faciliter la gestion des défaillances. Le service médiateur conserve les informations d'état HA à une cible iSCSI dédiée associée à chaque cluster à deux nœuds.
 
 
-CAUTION: Si vous disposez d'un ou de plusieurs clusters à deux nœuds actifs, ONTAP Select déploie une machine virtuelle gérant les clusters doit être en cours d'exécution en permanence. Si la machine virtuelle déployée est arrêtée ou en panne, le service de médiateur est indisponible et la capacité haute disponibilité est perdue pour les clusters à deux nœuds.
+CAUTION: Si vous disposez d'un ou plusieurs clusters à deux nœuds actifs, la machine virtuelle ONTAP Select Deploy qui administre les clusters doit être active en permanence. Si la machine virtuelle ONTAP Select Deploy est arrêtée ou tombe en panne, le service de médiation est indisponible et la capacité de haute disponibilité est perdue pour les clusters à deux nœuds.
 
 .Emplacement du service cluster et médiateur
-Les clusters à deux nœuds sont généralement déployés dans des bureaux distants ou des succursales. Ils peuvent ainsi être distants du data Center de l'entreprise et l'utilitaire de déploiement assurant une prise en charge administrative. Avec cette configuration, le trafic de gestion entre l'utilitaire de déploiement et le cluster transite par le WAN. Consultez les notes de version pour plus d'informations sur les limites et les restrictions.
+Étant donné que les clusters à deux nœuds sont généralement déployés dans un bureau distant ou une succursale, ils peuvent être éloignés du centre de données de l'entreprise et de l'utilitaire ONTAP Select Deploy qui fournit le support administratif.  Avec cette configuration, le trafic de gestion entre l'utilitaire ONTAP Select Deploy et le cluster transite par le WAN. Consultez les notes de version pour plus d'informations sur les limitations et les restrictions.
 
-.Sauvegarder les données de configuration de déploiement
-Il est recommandé de sauvegarder régulièrement les données de configuration de déploiement, notamment après la création d'un cluster. Cette importance s'avère particulièrement importante dans les clusters à deux nœuds car les données de configuration de médiateur sont incluses dans la sauvegarde.
+. Adresse IP statique attribuée à ONTAP Select Deploy
 
-.Adresse IP statique attribuée au déploiement
-Vous devez affecter une adresse IP statique à l'utilitaire d'administration de déploiement. Elle s'applique à toutes les instances de déploiement qui gèrent un ou plusieurs clusters ONTAP Select à deux nœuds.
+
+Vous devez attribuer une adresse IP statique à l'utilitaire d'administration ONTAP Select Deploy.  Cette exigence s'applique à toutes les instances ONTAP Select Deploy qui gèrent un ou plusieurs clusters ONTAP Select à deux nœuds.

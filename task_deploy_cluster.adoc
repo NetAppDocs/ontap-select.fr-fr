@@ -196,15 +196,15 @@ La page est automatiquement actualisée à intervalles réguliers.
 ====
 
 
-== Étape 3 : Une fois que vous avez terminé
+== Étape 3 : Finaliser le déploiement
 
-Vérifiez que la fonction ONTAP Select AutoSupport est configurée, puis sauvegardez les données de configuration de ONTAP Select Deploy.
+Après le déploiement du cluster, vérifiez que la fonctionnalité ONTAP Select AutoSupport est configurée, puislink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] .
 
 [TIP]
 ====
 Si l'opération de création du cluster est lancée, mais que son échec se termine, il se peut que le mot de passe d'administration ONTAP que vous définissez ne s'applique pas. Si cela se produit, vous pouvez déterminer le mot de passe d'administration temporaire pour le cluster ONTAP Select à l'aide de la commande CLI suivante :
 
-[listing]
+[source, cli]
 ----
 (ONTAPdeploy) !/opt/netapp/tools/get_cluster_temp_credentials --cluster-name my_cluster
 ----
