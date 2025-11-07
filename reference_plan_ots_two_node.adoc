@@ -34,7 +34,8 @@ CAUTION: Si vous disposez d'un ou plusieurs clusters à deux nœuds actifs, la m
 .Emplacement du service cluster et médiateur
 Étant donné que les clusters à deux nœuds sont généralement déployés dans un bureau distant ou une succursale, ils peuvent être éloignés du centre de données de l'entreprise et de l'utilitaire ONTAP Select Deploy qui fournit le support administratif.  Avec cette configuration, le trafic de gestion entre l'utilitaire ONTAP Select Deploy et le cluster transite par le WAN. Consultez les notes de version pour plus d'informations sur les limitations et les restrictions.
 
-. Adresse IP statique attribuée à ONTAP Select Deploy
+.Sauvegarder les données de configuration de déploiement
+Il est recommandé delink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] de manière régulière, y compris après la création d'un cluster. Ceci est particulièrement important avec les clusters à deux nœuds, en raison des données de configuration du médiateur incluses dans la sauvegarde.
 
-
+.Adresse IP statique attribuée au déploiement
 Vous devez attribuer une adresse IP statique à l'utilitaire d'administration ONTAP Select Deploy.  Cette exigence s'applique à toutes les instances ONTAP Select Deploy qui gèrent un ou plusieurs clusters ONTAP Select à deux nœuds.

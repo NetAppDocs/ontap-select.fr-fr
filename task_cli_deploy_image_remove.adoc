@@ -26,19 +26,25 @@ Vous pouvez supprimer les anciennes images ONTAP Select qui ne sont pas actuelle
 . Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte administrateur (admin).
 . Affichez les clusters gérés par le déploiement et l'enregistrement des images ONTAP utilisées :
 +
-`cluster show`
-
+[source, cli]
+----
+cluster show
+----
 +
 Notez le numéro de version et la plateforme d'hyperviseur dans chaque cas.
 
 . Démarrer la coque de Bash :
 +
-`shell bash`
-
+[source, cli]
+----
+shell bash
+----
 . Afficher toutes les images ONTAP Select disponibles :
 +
-`ls -lh /opt/netapp/images`
-
+[source, cli]
+----
+ls -lh /opt/netapp/images
+----
 . Vous pouvez également supprimer l'image ONTAP Select avec l'hôte de l'hyperviseur.
 +
 [role="tabbed-block"]

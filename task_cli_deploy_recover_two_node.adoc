@@ -18,44 +18,37 @@ Si l'utilitaire ONTAP Select Deploy tombe en panne ou si vous êtes indisponible
 
 
 
-== Avant de commencer
+== Préparez-vous à récupérer l'utilitaire de déploiement
 
-Vous devez vous préparer avant de tenter de récupérer une instance de l'utilitaire de déploiement pour garantir la réussite de l'opération.
+Vous devez vous préparer avant de tenter de récupérer une instance de l'utilitaire Deploy pour garantir le succès.  Vous devez connaître plusieurs procédures administratives et disposer des informations requises.
 
-.Compétences et informations requises
-Vous devez connaître plusieurs procédures administratives et disposer des informations requises.
+.Étapes
+. Vérifiez que vous pouvez installer une nouvelle instance de l'utilitaire ONTAP Select Deploy dans votre environnement d'hyperviseur.
++
+link:task_install_deploy.html["Découvrez comment installer l'utilitaire ONTAP Select Deploy"]
 
-.Installation de la machine virtuelle de déploiement
-Vous devez pouvoir installer une nouvelle instance de l'utilitaire ONTAP Select Deploy dans votre environnement d'hyperviseur.
+. Vérifiez que vous pouvez vous connecter au cluster ONTAP Select et accéder à l'interface de ligne de commande (CLI) du cluster ONTAP .
+. Vérifiez si vous disposez d'une sauvegarde des données de configuration de l'instance de l'utilitaire Deploy défaillante qui contient le cluster à deux nœuds ONTAP Select . Il est possible que votre sauvegarde ne contienne pas le cluster.
+. Vérifiez que vous pouvez restaurer une sauvegarde des données de configuration de Deploy, en fonction de la procédure de récupération utilisée.
++
+link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-to-the-new-virtual-machine["Découvrez comment restaurer les données de configuration de Deploy sur la nouvelle machine virtuelle."]
 
-.Interface de ligne de commande ONTAP
-Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster ONTAP Select et utiliser l'interface Shell.
-
-.Disponibilité de la sauvegarde de configuration de l'utilitaire de déploiement
-Vous devez déterminer si vous disposez d'une sauvegarde des données de configuration à partir de l'instance d'utilitaire de déploiement défaillant qui contient le cluster à deux nœuds ONTAP Select. Il se peut que vous ayez une sauvegarde qui ne contienne pas le cluster.
-
-.Restauration d'une sauvegarde de la configuration de déploiement
-Vous devriez pouvoir restaurer une sauvegarde des données de configuration de déploiement, en fonction de la procédure de récupération utilisée.
-
-.Adresse IP de la machine virtuelle de déploiement d'origine
-Vous devez connaître l'adresse IP de la machine virtuelle d'origine de l'utilitaire de déploiement qui a échoué.
-
-.Licences de capacité de stockage
-Vous devez déterminer si les licences des pools de capacité ou des niveaux de capacité sont utilisées. Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool après avoir récupéré ou restauré l'instance de déploiement.
-
-.Décider de la procédure de récupération à utiliser
-Vous devez décider de la procédure à utiliser lors de la récupération d'une instance de l'utilitaire ONTAP Select Deploy. Votre décision est basée sur la sauvegarde des données de configuration à partir de l'utilitaire de déploiement initial qui contient le cluster ONTAP Select à deux nœuds.
-
+. Vous disposez de l'adresse IP de la machine virtuelle de l'utilitaire de déploiement d'origine qui a échoué.
+. Déterminez si le système de licences utilisé est celui des pools de capacité ou des niveaux de capacité. Si vous utilisez une licence par pools de capacité, vous devez réinstaller chaque licence de pool de capacité après la récupération ou la restauration de l'instance Deploy.
+. Déterminez la procédure à utiliser pour récupérer une instance de l'utilitaire ONTAP Select Deploy. Votre décision dépend de la présence ou non d'une sauvegarde des données de configuration de l'utilitaire Deploy d'origine, défaillant, contenant le cluster à deux nœuds ONTAP Select .
++
 [cols="35,65"]
 |===
-| Avez-vous une sauvegarde à déployer contenant le cluster à deux nœuds ? | Procédure de récupération à utiliser 
+| Avez-vous une sauvegarde à déployer contenant le cluster à deux nœuds ? | Utilisez la procédure de récupération... 
 
 
-| Oui. | Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration 
+| Oui. | <<restore-deploy-backup,Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration>> 
 
 
-| Non | Reconfigurer et restaurer une instance d'utilitaire de déploiement 
+| Non | <<restore-and-recover-deploy,Reconfigurer et restaurer une instance d'utilitaire de déploiement>> 
 |===
+
+
 
 
 == Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration
@@ -63,7 +56,7 @@ Vous devez décider de la procédure à utiliser lors de la récupération d'une
 Si vous disposez d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous pouvez restaurer les données de configuration dans la nouvelle instance de déploiement de machine virtuelle. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
 
 .Avant de commencer
-Vous devez disposer d'une sauvegarde des données de configuration à partir de la machine virtuelle de déploiement d'origine défaillante qui contient le cluster à deux nœuds. Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
+Sauvegardez les données de configuration de la machine virtuelle Deploy d'origine qui a échoué et qui contient le cluster à deux nœuds. Vous devez pouvoir vous connecter à l'interface de ligne de commande ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
 
 .Description de la tâche
 Étant donné que la sauvegarde de configuration que vous restaurez contient le cluster à deux nœuds, les cibles iSCSI du médiateur et les boîtes aux lettres sont recréées dans la nouvelle machine virtuelle de l'utilitaire de déploiement.
@@ -81,17 +74,26 @@ Pour plus d'informations sur les procédures d'installation et de restauration, 
 . Connectez-vous à l'interface de ligne de commande ONTAP du cluster à deux nœuds ONTAP Select.
 . Entrer en mode de privilège avancé :
 +
-`set adv`
-
-. Si l'adresse IP de la nouvelle machine virtuelle déployée est différente de celle de la machine virtuelle déployée d'origine, vous devez supprimer les anciennes cibles iSCSI médiateur et ajouter de nouvelles cibles :
+[source, cli]
+----
+set adv
+----
+. Si l'adresse IP de la nouvelle machine virtuelle Deploy est différente de celle de la machine virtuelle Deploy d'origine, supprimez les anciennes cibles iSCSI du médiateur et ajoutez de nouvelles cibles :
 +
-....
+[source, cli]
+----
 storage iscsi-initiator remove-target -node * -target-type mailbox
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node2_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-....
+----
 +
 Le `<ip_address>` Paramètre est l'adresse IP de la nouvelle machine virtuelle de déploiement.
 
@@ -100,31 +102,37 @@ Ces commandes permettent aux nœuds ONTAP Select de détecter les disques de bo�
 
 . Déterminer les noms des disques médiateurs :
 +
-`disk show -container-type mediator`
-
+[source, cli]
+----
+disk show -container-type mediator
+----
 . Affectez les disques de boîte aux lettres aux deux nœuds :
 +
-....
+[source, cli]
+----
 disk assign -disk <mediator-disk1-name> -owner <node1-name>
+
 disk assign -disk <mediator-disk2-name> -owner <node2-name>
-....
+----
 . Vérifiez que le basculement du stockage est activé :
 +
-`storage failover show`
-
+[source, cli]
+----
+storage failover show
+----
 
 
 .Une fois que vous avez terminé
-Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool. Voir _réinstallation d'une licence de pool de capacité_ pour plus de détails.
+Si vous utilisez des licences Capacity Pools, réinstallez chaque licence Capacity Pool.  Voirlink:task_adm_licenses.html#reinstall-a-capacity-pool-license["Réinstallez une licence de pool de capacité"] pour plus de détails.
 
 
 
 == Reconfigurer et restaurer une instance d'utilitaire de déploiement
 
-Si vous ne disposez pas d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous devez configurer la cible iSCSI médiateur et la boîte aux lettres dans la nouvelle machine virtuelle de déploiement. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
+Si vous ne disposez pas d'une sauvegarde de l'instance de l'utilitaire Deploy défaillante contenant le cluster à deux nœuds, configurez la cible iSCSI du médiateur et la boîte aux lettres dans la nouvelle machine virtuelle Deploy.  Vous terminez ensuite la récupération en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select .
 
 .Avant de commencer
-Vous devez avoir le nom de la cible du médiateur pour la nouvelle instance de l'utilitaire de déploiement. Vous devez pouvoir vous connecter à l'interface de ligne de commandes ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
+Vérifiez que vous disposez du nom de la cible du médiateur pour la nouvelle instance de l'utilitaire de déploiement. Vous devez pouvoir vous connecter à l'interface de ligne de commande ONTAP du cluster à deux nœuds et connaître les noms ONTAP des deux nœuds.
 
 .Description de la tâche
 Vous pouvez également restaurer une sauvegarde de configuration vers le nouveau serveur virtuel déployé, même s'il ne contient pas le cluster à deux nœuds. Étant donné que le cluster à deux nœuds n'est pas recréé avec la restauration, vous devez ajouter manuellement la cible et la boîte aux lettres du médiateur iSCSI à la nouvelle instance de l'utilitaire de déploiement via la page Web de documentation en ligne ONTAP Select du déploiement. Vous devez pouvoir vous connecter au cluster à deux nœuds et connaître les noms de ONTAP des deux nœuds.
@@ -145,12 +153,16 @@ Si vous restaurez une sauvegarde précédente, la nouvelle instance de déploiem
 . Connectez-vous à l'interface de ligne de commande ONTAP du cluster à deux nœuds ONTAP Select.
 . Passer en mode privilégié avancé :
 +
-`set adv`
-
+[source, cli]
+----
+set adv
+----
 . Obtenir le nom de la cible iSCSI du médiateur :
 +
-`storage iscsi-initiator show -target-type mailbox`
-
+[source, cli]
+----
+storage iscsi-initiator show -target-type mailbox
+----
 . Accédez à la page Web de la documentation en ligne à partir de la nouvelle machine virtuelle de l'utilitaire de déploiement et connectez-vous à l'aide du compte admin :
 +
 `\http://<ip_address>/api/ui`
@@ -158,59 +170,64 @@ Si vous restaurez une sauvegarde précédente, la nouvelle instance de déploiem
 +
 Vous devez utiliser l'adresse IP de votre machine virtuelle de déploiement.
 
-. Cliquez sur *Médiateur*, puis sur *LIRE /médiateurs*.
-. Cliquez sur *essayez!* pour afficher la liste des médiateurs gérés par Deploy.
+. Sélectionnez *Médicien* puis *GET /médiateurs*.
+. Sélectionnez *Essayez-le !* pour afficher une liste des médiateurs gérés par Deploy.
 +
 Notez l'ID de l'instance de médiateur souhaitée.
 
-. Cliquez sur *Mediator*, puis sur *POST*.
+. Sélectionnez *Médiateur* puis *POST*.
 . Indiquez la valeur pour médiateur_ID
-. Cliquez sur *modèle* en regard de `iscsi_target` et complétez la valeur du nom.
+. Sélectionnez le *modèle* à côté de `iscsi_target` et complétez la valeur du nom.
 +
 Utilisez le nom cible pour le paramètre iqn_NAME.
 
-. Cliquez sur *essayez !* pour créer la cible iSCSI du médiateur.
+. Sélectionnez *Essayez-le !* pour créer la cible iSCSI du médiateur.
 +
 Si la demande est réussie, vous recevrez le code d'état HTTP 200.
 
 . Si l'adresse IP de la nouvelle machine virtuelle déployée est différente de celle de la machine virtuelle déployée d'origine, vous devez utiliser l'interface de ligne de commande ONTAP pour supprimer les anciennes cibles iSCSI de médiateur et ajouter de nouvelles cibles :
 +
-....
+[source, cli]
+----
 storage iscsi-initiator remove-target -node * -target-type mailbox
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node1_name> -label mediator -target-type mailbox -target-portal <ip_address> -target-name <target>
-
+----
++
+[source, cli]
+----
 storage iscsi-initiator add-target -node <node2_name> -label mediator-target-type mailbox -target-portal <ip_address> -target-name <target>
-....
+----
 +
 Le `<ip_address>` Paramètre est l'adresse IP de la nouvelle machine virtuelle de déploiement.
 
-
-
++
 Ces commandes permettent aux nœuds ONTAP Select de détecter les disques de boîte aux lettres sur la nouvelle machine virtuelle de l'utilitaire de déploiement.
 
 . Déterminer les noms des disques médiateurs :
 +
-`disk show -container-type mediator`
-
+[source, cli]
+----
+disk show -container-type mediator
+----
 . Affectez les disques de boîte aux lettres aux deux nœuds :
 +
-....
+[source, cli]
+----
 disk assign -disk <mediator-disk1-name> -owner <node1-name>
 
 disk assign -disk <mediator-disk2-name> -owner <node2-name>
-....
+----
 . Vérifiez que le basculement du stockage est activé :
 +
-`storage failover show`
-
+[source, cli]
+----
+storage failover show
+----
 
 
 .Une fois que vous avez terminé
-Si vous utilisez une licence Capacity pools, vous devez réinstaller chaque licence Capacity Pool. Pour plus d'informations, reportez-vous à la section réinstallation d'une licence de pool de capacité.
-
-.Informations associées
-* link:task_install_deploy.html["Installez ONTAP Select Deploy"]
-* link:task_cli_migrate_deploy.html#restoring-the-deploy-configuration-data-to-the-new-virtual-machine["Restaurez les données de configuration de déploiement sur la nouvelle machine virtuelle"]
-* link:task_adm_licenses.html#reinstalling-a-capacity-pool-license["Réinstallez une licence de pool de capacité"]
-
+Si vous utilisez des licences Capacity Pools, réinstallez chaque licence Capacity Pool.  Voirlink:task_adm_licenses.html#reinstall-a-capacity-pool-license["Réinstallez une licence de pool de capacité"] pour plus de détails.

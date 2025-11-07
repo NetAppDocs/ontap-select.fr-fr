@@ -68,6 +68,6 @@ Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui 
 
 ====
 .Informations associées
-* link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Comparatif ONTAP Select/ONTAP 9"]
+* link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Comparatif ONTAP Select/ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Clés de licence principales pour ONTAP NetApp"^]
 

@@ -29,12 +29,12 @@ Avant de créer un cluster ONTAP Select sur un hyperviseur, veillez à bien comp
 ====
 .RAID matériel
 --
-Si vous utilisez un contrôleur RAID matériel local, vous devez créer au moins une banque de données (ESX) ou une link:reference_chk_host_prep.html#create-storage-pool["pool de stockage (KVM)"] à chaque nœud pour les données système ainsi que les agrégats racines et de données. Vous devez connecter le pool de stockage dans le cadre de la configuration du nœud ONTAP Select.
+Si vous utilisez un contrôleur RAID matériel local, vous devez créer au moins un datastore (ESX) ou unlink:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["pool de stockage (KVM)"] à chaque nœud pour les données système ainsi que pour la racine et les agrégats de données. Vous devez attacher le pool de stockage lors de la configuration du nœud ONTAP Select .
 
 --
 .RAID logiciel
 --
-Si vous utilisez un RAID logiciel, vous devez créer au moins une banque de données (ESX) ou une link:reference_chk_host_prep.html#create-storage-pool["pool de stockage (KVM)"] pour les données système et assurez-vous que les disques SSD sont disponibles pour la racine et les agrégats de données. Vous devez connecter le pool de stockage et les disques dans le cadre de la configuration du noeud ONTAP Select.
+Si vous utilisez un RAID logiciel, vous devez créer au moins un datastore (ESX) ou unlink:kvm-host-configuration-and-preparation-checklist.html#step-2-create-a-storage-pool["pool de stockage (KVM)"] pour les données système et assurez-vous que les disques SSD sont disponibles pour la racine et les agrégats de données. Vous devez connecter le pool de stockage et les disques lors de la configuration du nœud ONTAP Select .
 
 --
 ====

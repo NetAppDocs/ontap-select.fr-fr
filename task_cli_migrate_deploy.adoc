@@ -40,16 +40,20 @@ Le fichier de sauvegarde que vous créez capture toutes les données de configur
 . Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
 . Créez une sauvegarde des données de configuration de déploiement, qui sont stockées dans un répertoire interne sur le serveur de déploiement :
 +
-`deploy backup create`
-
+[source, cli]
+----
+deploy backup create
+----
 . Indiquez un mot de passe pour la sauvegarde lorsque vous y êtes invité.
 +
 Le fichier de sauvegarde est crypté en fonction du mot de passe.
 
 . Afficher les sauvegardes disponibles dans le système :
 +
-`deploy backup show -detailed`
-
+[source, cli]
+----
+deploy backup show -detailed
+----
 . Sélectionnez votre fichier de sauvegarde en fonction de la date dans le champ *created* et enregistrez la valeur *Download URL*.
 +
 Vous pouvez accéder au fichier de sauvegarde via l'URL.
@@ -92,10 +96,7 @@ Vous devez restaurer les données de configuration de la machine virtuelle d'ori
 Vous devez disposer des données de configuration d'une sauvegarde précédente. Les données sont contenues dans un seul fichier et doivent être disponibles sur votre poste de travail local.
 
 .Étapes
-. Dans un shell de commande sur votre poste de travail local, utilisez l'utilitaire sftp pour charger le fichier de sauvegarde sur la machine virtuelle de déploiement.
-+
-Exemple
-
+. Dans une invite de commandes sur votre poste de travail local, utilisez l'utilitaire sftp pour transférer le fichier de sauvegarde vers la machine virtuelle Deploy, comme indiqué dans l'exemple suivant :
 +
 ....
 sftp admin@10.234.81.101 (provide password when prompted)
@@ -103,12 +104,14 @@ put deploy_backup_20190601162151.tar.gz
 exit
 ....
 . Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
-. Restaurez les données de configuration.
+. Restaurez les données de configuration :
 +
-`deploy backup restore -path PATHNAME -filename FILENAME`
-
+[source, cli]
+----
+deploy backup restore -path <path_name> -filename <file_name>
+----
 +
-Exemple
+Exemple de commande
 
 +
 `deploy backup restore -path /home/admin -filename deploy_backup_20180601162151.tar.gz`

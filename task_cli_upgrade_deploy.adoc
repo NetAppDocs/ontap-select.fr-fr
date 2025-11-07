@@ -55,7 +55,7 @@ Cette tâche décrit une méthode de téléchargement du fichier sur la machine 
 
 
 .Étapes
-. Dans un shell de commande sur votre poste de travail local, utilisez le `scp` Utilitaire (Secure Copy Protocol) pour télécharger le fichier image sur la machine virtuelle ONTAP Select Deploy.
+. Dans une invite de commandes sur votre poste de travail local, utilisez le `scp` Utilisez l'utilitaire (Secure Copy Protocol) pour charger le fichier image sur la machine virtuelle ONTAP Select Deploy, comme illustré dans l'exemple suivant :
 +
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
@@ -80,7 +80,12 @@ Après avoir téléchargé le fichier de mise à niveau sur la machine virtuelle
 . Sign in à l'interface de ligne de commande de l'utilitaire ONTAP Select Deploy à l'aide de SSH avec le compte administrateur.
 . Effectuez la mise à niveau à l'aide du chemin de répertoire et du nom de fichier appropriés :
 +
-`deploy upgrade -package-path FILEPATH`
+[source, cli]
+----
+deploy upgrade -package-path <file_path>
+----
++
+Exemple de commande :
 
 +
 ....

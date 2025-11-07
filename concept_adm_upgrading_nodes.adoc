@@ -44,7 +44,7 @@ Consultez les notes de version pour obtenir des informations supplémentaires et
 Vous ne pouvez pas rétablir une version antérieure à celle sur laquelle un nœud ONTAP Select a été installé à l'origine. Par exemple :
 
 ONTAP Select 9.16.1 est installé par défaut.:: Vous pouvez mettre à niveau le nœud vers la version 9.17.1, puis revenir à la version 9.16.1 si nécessaire.
-ONTAP Select 9.17.1 est installé par défaut.:: La restauration du système est impossible car aucune version antérieure n'était installée.
+ONTAP Select 9.17.1 est installé par défaut.:: Le retour à une version antérieure est impossible car aucune version précédente n'était installée.
 
 
 

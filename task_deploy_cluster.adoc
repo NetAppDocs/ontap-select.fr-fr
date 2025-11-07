@@ -198,7 +198,7 @@ La page est automatiquement actualisée à intervalles réguliers.
 
 == Étape 3 : Finaliser le déploiement
 
-Après le déploiement du cluster, vérifiez que la fonctionnalité ONTAP Select AutoSupport est configurée, puislink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] .
+Après le déploiement du cluster,link:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["Vérifiez que la fonction AutoSupport ONTAP Select est configurée."^] et puislink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] .
 
 [TIP]
 ====
