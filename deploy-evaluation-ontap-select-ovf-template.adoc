@@ -21,7 +21,7 @@ Vous pouvez déployer rapidement une instance d'évaluation de 90 jours d'un clu
 * Vous pouvez allouer la même quantité de stockage aux données utilisateur qu'une licence achetée.
 * Vous ne pouvez pas mettre à niveau le nœud d'une licence d'évaluation vers une licence achetée.
 * Vous pouvez uniquement utiliser un compte vCenter pour déployer le modèle OVF. L'installation directe sur un hôte ESXi n'est actuellement pas prise en charge.
-* Vous devez installer le modèle OVF (contenu dans un fichier ova) à l'aide du client autonome vSphere ou du client Web vSphere (la seule option pour ESXi 6.5 et versions ultérieures). Vous n'utilisez pas l'utilitaire d'administration de ONTAP Select Deploy.
+* Vous devez installer le modèle OVF (contenu dans un fichier .ova) à l'aide du client autonome vSphere ou du client Web vSphere (seule option pour ESXi 8.0 et versions ultérieures). N'utilisez pas l'utilitaire d'administration ONTAP Select Deploy.
 
 
 

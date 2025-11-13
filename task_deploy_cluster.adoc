@@ -98,7 +98,7 @@ Vérifiez que vous avez installé l’administration Deploy et terminé la confi
 Un cluster ONTAP Select avec un ou plusieurs nœuds est créé pour un déploiement de production.
 
 .Étapes
-La procédure à suivre varie selon que vous souhaitez créer un cluster à un ou plusieurs nœuds. Un cluster à plusieurs nœuds peut avoir deux, quatre, six ou huit nœuds.
+Les étapes à suivre varient selon que vous souhaitez créer un cluster à nœud unique ou à nœuds multiples. Un cluster multi-nœuds peut comporter deux, quatre, six, huit, dix ou douze nœuds.
 
 [role="tabbed-block"]
 ====

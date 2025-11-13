@@ -57,14 +57,13 @@ ONTAP Select prend en charge les versions d'hyperviseur ESXi suivantes :
 * VMware ESXi 8.0 U2
 * VMware ESXi 8.0 U1 (build 21495797)
 * VMware ESXi 8.0 GA (build 20513097)
-* VMware ESXi 7.0 GA (build 15843807 ou supérieur) incluant 7.0 U3C, U2 et U1
 
 
 
 NOTE: NetApp prend en charge ONTAP Select sur les versions identifiées de ESXi tant que VMware continue également à prendre en charge les mêmes versions.
 
 
-NOTE: ESXi 6.5 GA et ESXi 6.7 GA ont atteint l'état de fin de disponibilité. Si vous disposez de clusters ONTAP Select avec ces versions, vous devez effectuer une mise à niveau vers les versions prises en charge conformément à la https://mysupport.netapp.com/matrix["Matrice d'interopérabilité (IMT)"^].
+NOTE: ESXi 7.0 GA a atteint la fin de sa disponibilité.  Si vous disposez de clusters ONTAP Select avec cette version, vous devez effectuer une mise à niveau vers les versions prises en charge conformément à la documentation. https://mysupport.netapp.com/matrix["Matrice d'interopérabilité (IMT)"^] .
 
 --
 ====
@@ -111,7 +110,7 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 | Cluster à deux nœuds ou MetroCluster SDS | 4 x 1 GbE ou 1 x 10 GbE | 2 x 10 GbE 
 
 
-| cluster à quatre, six ou huit nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
+| cluster de quatre, six, huit, dix ou douze nœuds | 2 x 10 GbE | 4 x 10 GbE ou 2 x 25 GbE 
 |===
 
 

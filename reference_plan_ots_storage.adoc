@@ -63,7 +63,7 @@ Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur, vous pouvez ut
 
 L'environnement d'un déploiement RAID logiciel doit répondre aux principales exigences suivantes :
 
-* VMware ESXi 7.0 GA (build 15843807) ou version ultérieure
+* VMware ESXi 8.0 GA (build 20513097) ou version ultérieure
 * Licence ONTAP Select Premium ou version supérieure
 * Disques SSD locaux uniquement
 * Séparation des disques système de la racine et des agrégats de données
@@ -77,7 +77,7 @@ NOTE: Si un contrôleur RAID matériel est présent, voir link:concept_stor_conc
 
 === Exigences spécifiques à ESXi
 
-* VMware ESXi 7.0 GA (build 15843807) ou version ultérieure
+* VMware ESXi 8.0 GA (build 20513097) ou version ultérieure
 * VMware VMotion, HA et DRS ne sont pas pris en charge
 * Vous ne pouvez pas utiliser le RAID logiciel avec un nœud qui a été mis à niveau à partir de ONTAP Select 9.4 ou d'une version antérieure. Dans ce cas, vous devez créer un nouveau nœud pour le déploiement RAID logiciel.
 
@@ -241,7 +241,7 @@ Vous pouvez configurer les services RAID logiciels pour utiliser les disques SSD
 
 * ONTAP Select avec un utilitaire d'administration Deploy pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
-* VMware ESXi version 6.7 ou ultérieure
+* VMware ESXi version 8.0 ou ultérieure
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
 
 

@@ -67,7 +67,7 @@ La configuration réseau multinœud ONTAP Select se compose de deux réseaux.
 
 Il s'agit d'un réseau interne qui fournit des services de réplication interne et de cluster, ainsi qu'un réseau externe chargé de fournir des services d'accès et de gestion des données. L'isolation de bout en bout du trafic qui circule au sein de ces deux réseaux est extrêmement importante pour vous permettre de créer un environnement adapté à la résilience du cluster.
 
-Ces réseaux sont représentés dans la figure suivante, qui montre un cluster ONTAP Select à quatre nœuds exécuté sur une plateforme VMware vSphere. Les clusters à six et huit nœuds disposent d'une disposition réseau similaire.
+Ces réseaux sont représentés dans la figure suivante, qui montre un cluster ONTAP Select à quatre nœuds exécuté sur une plateforme VMware vSphere. Les clusters à six, huit, dix et douze nœuds ont une configuration réseau similaire.
 
 
 NOTE: Chaque instance ONTAP Select réside sur un serveur physique distinct. Le trafic interne et externe est isolé à l'aide de groupes de ports réseau distincts, qui sont attribués à chaque interface réseau virtuelle et permettent aux nœuds de cluster de partager la même infrastructure de switch physique.
@@ -135,7 +135,7 @@ Les ports ONTAP e0c et e0d sont délégués comme ports de base pour les interfa
 
 NOTE: Ces interfaces ne peuvent pas se voir attribuer des adresses IP statiques et des interfaces de cluster supplémentaires ne doivent pas être créées.
 
-Le trafic du réseau en cluster doit circuler via un réseau de couche 2 à faible latence non routé. Compte tenu des exigences de débit et de latence du cluster, le cluster ONTAP Select doit se trouver physiquement à proximité (par exemple, plusieurs packs, un data Center unique). Il n'est pas pris en charge de construire des configurations de clusters étendus à quatre, six ou huit nœuds en séparant les nœuds HA sur un WAN ou sur des distances géographiques importantes. Une configuration à deux nœuds étirée avec un médiateur est prise en charge.
+Le trafic réseau du cluster doit transiter par un réseau de couche 2 non routé et à faible latence. En raison des exigences de débit et de latence du cluster, le cluster ONTAP Select doit être physiquement situé à proximité (par exemple, dans un cluster multipack ou un centre de données unique).  La création de configurations de clusters étendus à quatre, six, huit, dix ou douze nœuds en séparant les nœuds HA sur un WAN ou sur des distances géographiques importantes n'est pas prise en charge. Une configuration étendue à deux nœuds avec un médiateur est prise en charge.
 
 Pour plus de détails, reportez-vous à la section link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Les bonnes pratiques de la HA étendue à deux nœuds (MetroCluster SDS)"].
 

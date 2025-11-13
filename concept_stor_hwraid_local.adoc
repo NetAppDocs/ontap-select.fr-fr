@@ -160,7 +160,7 @@ En général, les systèmes FAS de NetApp sont équipés d'une carte PCI NVRAM p
 
 Les systèmes de produits de base ne sont généralement pas équipés de ce type d'équipement. La fonctionnalité de cette carte NVRAM a donc été virtualisée et placée dans une partition sur le disque de démarrage du système ONTAP Select. C'est pour cette raison que le placement du disque virtuel système de l'instance est extrêmement important. C'est pourquoi le produit exige la présence d'un contrôleur RAID physique avec un cache résilient pour les configurations de stockage local.
 
-La mémoire NVRAM est placée sur son propre VMDK. Le fractionnement de la mémoire NVRAM dans son propre VMDK permet à la machine virtuelle ONTAP Select d'utiliser le pilote vNVMe pour communiquer avec son VMDK NVRAM. La machine virtuelle ONTAP Select utilise également la version 13 du matériel compatible avec ESX 6.5 et les versions ultérieures.
+La NVRAM est placée sur son propre VMDK. Le fractionnement de la NVRAM dans son propre VMDK permet à la VM ONTAP Select d'utiliser le pilote vNVMe pour communiquer avec son VMDK NVRAM . Il est également nécessaire que la machine virtuelle ONTAP Select utilise la version matérielle 13, compatible avec ESX 8.0 et versions ultérieures.
 
 
 
@@ -184,4 +184,4 @@ NOTE: Bien que les blocs modifiés sur le VMDK NVRAM soient mis en cache dans le
 image:ST_13.jpg["Écriture entrante sur la machine virtuelle ONTAP Select"]
 
 
-NOTE: La partition NVRAM est séparée sur son propre VMDK. Ce VMDK est attaché à l'aide du pilote vNVME disponible dans les versions ESX de 6.5 ou ultérieure. Ce changement est particulièrement important pour les installations ONTAP Select avec RAID logiciel, qui ne bénéficient pas du cache du contrôleur RAID.
+NOTE: La partition NVRAM est séparée sur son propre VMDK. Ce VMDK est connecté via le pilote vNVME disponible dans les versions ESX 8.0 et ultérieures. Ce changement est particulièrement important pour les installations ONTAP Select avec RAID logiciel, qui ne bénéficient pas du cache du contrôleur RAID.

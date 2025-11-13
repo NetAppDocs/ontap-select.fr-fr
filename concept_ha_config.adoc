@@ -23,7 +23,7 @@ Une grande partie du marché du SDS est basée sur la notion de stockage sans pa
 
 NOTE: Dans un cluster ONTAP Select, la fonctionnalité de réplication synchrone fait partie de l'implémentation HA, et non pas à la place des moteurs de réplication asynchrone SnapMirror ou SnapVault. La réplication synchrone ne peut pas être utilisée indépendamment de la haute disponibilité.
 
-Il existe deux modèles de déploiement haute disponibilité ONTAP Select : les clusters multinœuds (quatre, six ou huit nœuds) et les clusters à deux nœuds. La fonction utile d'un cluster ONTAP Select à deux nœuds est l'utilisation d'un service de médiateur externe afin de résoudre des scénarios split-brain. ONTAP Deploy VM sert de médiateur par défaut dans toutes les paires HA à deux nœuds qu'elle configure.
+Il existe deux modèles de déploiement ONTAP Select HA : les clusters multinœuds (quatre, six, huit, dix ou douze nœuds) et les clusters à deux nœuds. La principale caractéristique d'un cluster ONTAP Select à deux nœuds est l'utilisation d'un service de médiation externe pour résoudre les scénarios de split-brain.  La machine virtuelle ONTAP Deploy sert de médiateur par défaut pour toutes les paires HA à deux nœuds qu'elle configure.
 
 Les deux architectures sont représentées dans les figures suivantes.
 
@@ -36,7 +36,7 @@ NOTE: Le cluster ONTAP Select à deux nœuds se compose d'une paire HA et d'un m
 
 *Cluster ONTAP Select à quatre nœuds utilisant un stockage local*image:DDHA_02.jpg["Cluster ONTAP Select à quatre nœuds avec stockage local"]
 
-* Le cluster ONTAP Select à quatre nœuds se compose de deux paires haute disponibilité. Les clusters à six nœuds et à huit nœuds sont composés respectivement de trois et quatre paires HA. Au sein de chaque paire haute disponibilité, les agrégats de données sur chaque nœud du cluster sont mis en miroir de manière synchrone. En cas de basculement, il n'y a aucune perte de données.
+* Le cluster ONTAP Select à quatre nœuds est composé de deux paires HA. Les clusters à six, huit, dix et douze nœuds sont composés respectivement de trois, quatre, cinq et six paires HA. Au sein de chaque paire HA, les agrégats de données de chaque nœud sont mis en miroir de manière synchrone, ce qui évite toute perte de données en cas de basculement.
 * Une seule instance ONTAP Select peut être présente sur un serveur physique lors de l'utilisation du stockage DAS. ONTAP Select nécessite un accès non partagé au contrôleur RAID local du système et est conçu pour gérer les disques connectés localement, ce qui serait impossible sans connectivité physique au stockage.
 
 

@@ -32,10 +32,10 @@ Pour commencer à ajouter une image ONTAP Select à une instance de l'utilitaire
 . Accédez au site d'assistance NetApp à l'aide d'un navigateur Web et sélectionnez *Liens rapides d'assistance*.
 . Sélectionnez *Télécharger le logiciel* sous *Tâches principales* et connectez-vous au site.
 . Sélectionnez *Trouver votre produit*.
-. Faites défiler vers le bas et sélectionnez *ONTAP Select*.
+. Faites défiler vers le bas et cliquez sur * ONTAP Select*.
 . Sous *Autres logiciels disponibles*, sélectionnez *Déploiement, mise à niveau du nœud, installation d'image*.
 . Sélectionnez la version souhaitée du progiciel de mise à niveau.
-. Lisez le contrat de licence utilisateur final (CLUF) et cliquez sur *Accept & continue*.
+. Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.
 . Sélectionnez et téléchargez le pack approprié en répondant à toutes les invites de votre environnement.
 
 
@@ -80,9 +80,8 @@ Vous devez savoir dans quel répertoire le fichier image d'installation a été 
 .Étapes
 . Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte administrateur (admin).
 . Démarrer la coque de Bash :
-
-
-[listing]
++
+[source, cli]
 ----
 shell bash
 ----

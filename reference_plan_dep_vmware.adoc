@@ -118,9 +118,11 @@ La liste suivante répertorie les privilèges spécifiques pour la bibliothèque
 * Créer une bibliothèque locale
 * Supprimer un élément de la bibliothèque
 * Supprimer la bibliothèque locale
+* Télécharger les fichiers
 * Stockage de lecture
 * Mettre à jour les fichiers
 * Mettre à jour la bibliothèque
 * Mettre à jour l'élément de la bibliothèque
 * Mettre à jour la bibliothèque locale
+* Afficher les paramètres de configuration
 

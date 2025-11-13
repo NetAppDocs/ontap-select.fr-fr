@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: cli-upgrade-esxi.html 
-keywords: administer, administering, cli, esxi, upgrade, esxi 7.0 
-summary: Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi depuis une version antérieure prise en charge vers ESXi 7.0 ou version ultérieure. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée. 
+keywords: administer, administering, cli, esxi, upgrade, esxi 8.0 
+summary: 'Si vous utilisez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi d"une version antérieure prise en charge vers ESXi 8.0 ou une version ultérieure. Avant la mise à niveau, il est important de comprendre le processus et de sélectionner la procédure appropriée.' 
 ---
-= Mettez à niveau votre solution ONTAP Select vers VMware ESXi 7.0 ou une version ultérieure.
+= Mettez à niveau votre solution ONTAP Select vers VMware ESXi 8.0 ou une version ultérieure.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à n
 
 
 [role="lead"]
-Si vous exécutez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi depuis une version antérieure prise en charge vers ESXi 7.0 ou version ultérieure. Avant de procéder à la mise à niveau, vous devez comprendre le processus et sélectionner la procédure de mise à niveau appropriée.
+Si vous utilisez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le logiciel ESXi d'une version antérieure prise en charge vers ESXi 8.0 ou une version ultérieure. Avant la mise à niveau, il est important de comprendre le processus et de sélectionner la procédure appropriée.
 
 
 
@@ -32,7 +32,10 @@ La mise à niveau du logiciel ESXi est un processus décrit et pris en charge pa
 Plusieurs procédures de mise à niveau sont disponibles. Vous devez sélectionner la procédure applicable en fonction des critères suivants :
 
 +
-** La taille de cluster ONTAP Select est prise en charge par les clusters à un ou plusieurs nœuds.
+** ONTAP Select la taille du cluster
++
+Les clusters à nœud unique et à nœuds multiples sont tous deux pris en charge.
+
 ** Utilisation de ONTAP Select Deploy
 +
 La mise à niveau est possible avec ou sans l'utilitaire Deploy.
@@ -42,7 +45,7 @@ La mise à niveau est possible avec ou sans l'utilitaire Deploy.
 TIP: Vous devez sélectionner une procédure de mise à niveau qui utilise l'utilitaire d'administration de déploiement.
 
 +
-Effectuer une mise à niveau ESXi à l'aide de l'utilitaire d'administration Deploy est l'option la plus générale et la plus résiliente. Toutefois, il peut arriver que la fonction Deploy soit indisponible ou ne puisse pas être utilisée. Par exemple, la mise à niveau vers ESXi 7.0 n'est pas prise en charge avec les versions antérieures d' ONTAP Select et de l'utilitaire d'administration Deploy.
+Effectuer une mise à niveau ESXi à l'aide de l'utilitaire d'administration Deploy est l'option la plus générale et la plus résiliente. Toutefois, il peut arriver que la fonction Deploy soit indisponible ou ne puisse pas être utilisée. Par exemple, la mise à niveau vers ESXi 8.0 n'est pas prise en charge avec les versions antérieures d' ONTAP Select et de l'utilitaire d'administration Deploy.
 
 +
 Si vous utilisez ces versions précédentes et tentez une mise à niveau, la machine virtuelle ONTAP Select peut rester dans un état où elle ne peut pas être démarrée. Dans ce cas, vous devez sélectionner une procédure de mise à niveau qui n'utilise pas le déploiement. Reportez-vous à la section link:https://mysupport.netapp.com/site/bugs-online/product/ONTAPSELECT/BURT/1172198["1172198"^] pour en savoir plus.
@@ -73,7 +76,7 @@ Vous pouvez utiliser l'utilitaire d'administration Deploy dans le cadre de la pr
 ----
 node stop --cluster-name <cluster_name> --node-name <node_name>
 ----
-. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
+. Mettez à niveau l’hôte hyperviseur sur lequel ONTAP Select s’exécute vers ESXi 8.0 ou version ultérieure à l’aide de la procédure fournie par VMware.
 . Déplacer le nœud vers l'état en ligne :
 +
 [source, cli]
@@ -113,7 +116,7 @@ Vous devez effectuer cette procédure de mise à niveau pour chaque nœud du clu
 ----
 node stop --cluster-name <cluster_name> --node-name <node_name>
 ----
-. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
+. Mettez à niveau l’hôte hyperviseur sur lequel ONTAP Select s’exécute vers ESXi 8.0 ou version ultérieure à l’aide de la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section préparation de la mise à niveau de VMware ESXi.
 
@@ -159,7 +162,7 @@ Vous pouvez mettre à niveau l'hyperviseur VMware ESXi qui héberge un cluster �
 .Étapes
 . Connectez-vous à l'interface de ligne de commande ONTAP et arrêtez le nœud.
 . Avec VMware vSphere, vérifiez que la machine virtuelle ONTAP Select est hors tension.
-. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
+. Mettez à niveau l’hôte hyperviseur sur lequel ONTAP Select s’exécute vers ESXi 8.0 ou version ultérieure à l’aide de la procédure fournie par VMware.
 +
 Pour plus d'informations, reportez-vous à la section préparation de la mise à niveau de VMware ESXi.
 
@@ -198,7 +201,7 @@ Vous devez effectuer cette procédure de mise à niveau pour chaque nœud du clu
 .Étapes
 . Connectez-vous à l'interface de ligne de commande ONTAP et arrêtez le nœud.
 . Avec VMware vSphere, vérifiez que la machine virtuelle ONTAP Select est hors tension.
-. Mettez à niveau l'hôte hyperviseur sur lequel ONTAP Select s'exécute vers ESXi 7.0 ou version ultérieure en suivant la procédure fournie par VMware.
+. Mettez à niveau l’hôte hyperviseur sur lequel ONTAP Select s’exécute vers ESXi 8.0 ou version ultérieure à l’aide de la procédure fournie par VMware.
 . À l'aide de VMware vSphere, accédez à vCenter et effectuez les opérations suivantes :
 +
 .. Ajoutez un lecteur de disquette à la machine virtuelle ONTAP Select.

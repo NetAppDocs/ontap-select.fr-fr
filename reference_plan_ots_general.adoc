@@ -65,7 +65,7 @@ Configuration réseau et Open vSwitch:: Vous devez connaître les concepts de mi
 
 Vous devez tenir compte de plusieurs problèmes de planification liés à la taille du cluster.
 
-Nombre de nœuds dans le cluster:: Un cluster ONTAP Select se compose d'un, deux, quatre, six ou huit nœuds. Vous devez déterminer la taille du cluster en fonction des exigences de l'application. Par exemple, si une fonctionnalité de haute disponibilité est nécessaire pour un déploiement en entreprise, un cluster à plusieurs nœuds doit être utilisé.
+Nombre de nœuds dans le cluster:: Un cluster ONTAP Select est composé d'un, deux, quatre, six, huit, dix ou douze nœuds. La taille du cluster doit être déterminée en fonction des besoins de l'application. Par exemple, si une fonctionnalité haute disponibilité est nécessaire pour un déploiement en entreprise, un cluster multi-nœuds est recommandé.
 Dédiée ou colocalisé:: Selon le type d'application, vous devez déterminer si le déploiement suit le modèle dédié ou en colocation. Il convient de noter que le modèle colocalisé peut être plus complexe en raison de la diversité de la charge de travail et d'une intégration étroite.
 
 

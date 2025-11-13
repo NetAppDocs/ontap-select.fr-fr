@@ -28,7 +28,7 @@ Un cluster à deux nœuds avec un médiateur peut s'étendre sur deux data cente
 
 == Agrégats en miroir
 
-Un cluster ONTAP Select se compose de deux à huit nœuds. Chaque paire haute disponibilité contient deux copies des données utilisateur, mises en miroir de façon synchrone sur les nœuds sur un réseau IP. Cette mise en miroir est transparente pour l'utilisateur, et il s'agit d'une propriété de l'agrégat de données, automatiquement configurée lors du processus de création de l'agrégat de données.
+Un cluster ONTAP Select est composé de deux à douze nœuds. Chaque paire HA contient deux copies des données utilisateur, mises en miroir de manière synchrone entre les nœuds via un réseau IP.  Cette mise en miroir est transparente pour l'utilisateur et constitue une propriété de l'agrégat de données, qui est automatiquement configurée lors du processus de création de l'agrégat de données.
 
 Tous les agrégats d'un cluster ONTAP Select doivent être mis en miroir afin d'assurer la disponibilité des données en cas de basculement d'un nœud et d'éviter ainsi un point de défaillance unique en cas de défaillance matérielle. Les agrégats d'un cluster ONTAP Select sont conçus à partir de disques virtuels fournis depuis chaque nœud de la paire haute disponibilité et utilisent les disques suivants :
 

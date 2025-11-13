@@ -14,7 +14,7 @@ summary: ONTAP Select MetroCluster SDS offre une protection améliorée et une i
 
 
 [role="lead"]
-ONTAP Select repose sur le logiciel de stockage ONTAP qui fournit des services de stockage haute performance de manière efficace, dans une architecture scale-out sans partage et hautement disponible. Vous pouvez déployer une solution avec un, deux, quatre, six ou huit nœuds pouvant atteindre 400 To de capacité brute pour le stockage NFS, SMB/CIFS et iSCSI connecté par nœud. Vous pouvez également exploiter la déduplication et la compression natives pour augmenter la capacité utile et réduire ainsi les coûts du stockage. L'architecture scale-out garantit une haute disponibilité et une mobilité des données sans interruption pour l'équilibrage de la charge ou l'entretien du matériel.
+ONTAP Select s'appuie sur le logiciel de stockage ONTAP pour fournir des services de stockage d'entreprise efficaces grâce à une architecture scale-out hautement disponible et sans partage. Vous pouvez déployer une solution avec un, deux, quatre, six, huit, dix ou douze nœuds avec jusqu'à 400 To de capacité brute pour le stockage connecté NFS, SMB/CIFS et iSCSI par nœud. Vous pouvez exploiter la déduplication et la compression natives pour réduire les coûts de stockage en augmentant votre capacité effective. L'architecture scale-out assure une haute disponibilité et une mobilité des données sans interruption pour l'équilibrage de charge ou la maintenance du matériel.
 
 
 

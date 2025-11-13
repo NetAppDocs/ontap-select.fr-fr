@@ -16,7 +16,7 @@ summary: 'Vous devez préparer l"environnement avant d"exécuter les exemples de
 [role="lead"]
 Vous devez préparer l'environnement avant d'exécuter les exemples de scripts Python.
 
-Avant d'exécuter les scripts Python, assurez-vous que l'environnement est correctement configuré :
+Avant d'exécuter les scripts Python, vous devez vous assurer que l'environnement est correctement configuré :
 
 * La dernière version applicable de Python2 doit être installée. Les codes échantillons ont été testés à l'aide de Python2. Ils devraient également être portables à Python3, mais n'ont pas été testés pour la compatibilité.
 * Les requêtes et les bibliothèques urllib3 doivent être installées. Vous pouvez utiliser pip ou un autre outil de gestion Python, selon les besoins de votre environnement.

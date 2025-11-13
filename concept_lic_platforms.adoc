@@ -87,7 +87,7 @@ Les offres de licences XL standard, Premium et Premium prennent en charge un lar
 2+| Protocoles hôtes 3+| NFS, SMB/CIFS, iSCSI et NVMe over TCP 
 
 
-2+| Options de déploiement 3+| Cluster à un seul nœud, deux nœuds (paire haute disponibilité), cluster à quatre, six ou huit nœuds 
+2+| Options de déploiement 3+| Cluster à nœud unique, cluster à deux nœuds (paire HA), cluster à quatre, six, huit, dix ou douze nœuds 
 
 
 2+| Capacité prise en charge (par nœud) 3+| Jusqu'à 400 To de données brutes (ESXi et KVM) 
@@ -114,7 +114,7 @@ Les offres de licences XL standard, Premium et Premium prennent en charge un lar
 2+| Configuration minimale requise pour le processeur/la mémoire de l'hôte ^1^ | 6 cœurs/24 Go de RAM | 10 cœurs / 72 Go de RAM | 18 cœurs/136 Go de RAM 
 
 
-2+| Réseau (par nœud) 3+| Au moins deux ports 1 GbE pour un cluster à un seul nœud au minimum quatre ports 1 GbE pour un cluster à deux nœuds (paire haute disponibilité) au minimum deux ports 10 GbE pour un cluster à quatre, six ou huit nœuds 
+2+| Réseau (par nœud) 3+| Un cluster à un seul nœud nécessite au minimum deux ports 1 GbE. Un cluster à deux nœuds (paire HA) nécessite au minimum quatre ports 1 GbE. Un cluster à quatre, six, huit, dix ou douze nœuds nécessite au minimum deux ports 10 GbE. 
 |===
 ^1^ Suppose deux cœurs et 8 Go de RAM pour l'hyperviseur.
 
