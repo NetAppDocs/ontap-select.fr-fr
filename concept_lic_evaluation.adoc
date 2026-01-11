@@ -64,7 +64,11 @@ Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière �
 
 Voir link:task_adm_licenses.html["Convertir une licence d'évaluation en licence de production"] pour en savoir plus.
 
+.Quelle est la prochaine étape ?
+* link:access-evaluation-software.html["Accédez au logiciel d'évaluation ONTAP Select"]
+* link:deploy-evaluation-ontap-select-ovf-template.html["Déployez une instance d'évaluation de 90 jours d'un cluster ONTAP Select"]
+
+
 .Informations associées
 * link:concept_lic_production.html["En savoir plus sur les licences pour les déploiements de production"]
-* link:deploy-evaluation-ontap-select-ovf-template.html["Déployez une instance d'évaluation de 90 jours d'un cluster ONTAP Select"]
 

@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: access-evaluation-software.html 
+keywords: ontap select, evaluation, software, register, download, access 
+summary: 'Demander l"accès pour télécharger le logiciel d"évaluation ONTAP Select .' 
+---
+= Accédez au logiciel d'évaluation ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez accéder au link:https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["Logiciel d'évaluation ONTAP Select"^] si vous êtes un client actuel d' ONTAP Select et que vous disposez d'un droit actif ou un partenaire NetApp et que vous souhaitez télécharger une nouvelle licence d'évaluation Capacity Tiers.
+
+Si vous ne correspondez à aucune des catégories ci-dessus et que vous souhaitez essayer ONTAP Select à titre d'évaluation, vous pouvez suivre ces étapes pour demander l'accès au téléchargement du logiciel d'évaluation.
+
+.Description de la tâche
+* Ces instructions s'adressent aux équipes NetApp , aux partenaires et aux prospects de NetApp.
+* Les licences d'évaluation des niveaux de capacité ONTAP Select sont limitées à 90 jours à compter de leur installation.
++
+
+NOTE: Vous ne pouvez pas prolonger une licence d'évaluation. Au terme des 90 jours, la licence n'est plus valide et vous ne pouvez plus accéder aux données associées.
+
+* Le logiciel d'évaluation contient toutes les informations nécessaires pour télécharger l'utilitaire d'administration ONTAP Select Deploy et déployer un cluster.
+
+
+
+
+== Étape 1 : Créer un compte
+
+Complétez l'enregistrement du compte NetApp , si nécessaire, et demandez l'accès prospect.
+
+.Étapes
+. Créez un nouveau compte ou déconnectez-vous d'un compte existant.
++
+[role="tabbed-block"]
+====
+.Créer un nouveau compte
+--
+Inscrivez-vous pour un compte sur le link:https://mysupport.netapp.com/site/user/registration["Site de support NetApp"^] en utilisant votre adresse courriel professionnelle.
+
+
+NOTE: Les comptes de messagerie gratuits tels que Gmail ou Yahoo ne sont pas acceptables.
+
+Assurez-vous de ne pas être connecté avec le compte nouvellement créé.
+
+--
+.Compte existant
+--
+Si vous avez déjà un compte, rendez-vous sur link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et assurez-vous de ne pas être connecté.
+
+--
+====
+. Créez une demande d'assistance non technique pour obtenir un niveau d'accès supérieur à celui de « prospect ».
++
+.. Sélectionnez l'onglet *DOSSIERS*, puis *Créer des dossiers non techniques*.
+.. Sélectionnez *Problème d'inscription utilisateur* comme catégorie de commentaires.
+.. Sélectionnez *Créer un dossier*.
++
+Remplissez tous les champs obligatoires et dans la section commentaires, écrivez : « Mon adresse courriel professionnelle est <votre-adresse-courriel>. Je souhaite donner aux prospects l'accès au téléchargement du logiciel d'évaluation ONTAP Select .
+
++
+Veuillez inclure le nom de votre contact NetApp .
+
+.. Sélectionnez *Soumettre*.
+
+
+
+
+
+
+== Étape 2 : Télécharger le logiciel d’évaluation ONTAP Select
+
+Une fois votre demande d'assistance examinée et approuvée, l'assistance NetApp vous en informe à l'adresse électronique fournie.
+
+.Étape
+. https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["Téléchargez le logiciel d'évaluation ONTAP Select"^].
++
+Le fichier de licence d'évaluation se trouve à l'intérieur du fichier zip.
+
+. Pour vous conformer aux exigences légales, vous devez link:https://mysupport.netapp.com/site/help["ouvrir un ticket d'assistance"^] avant d'y avoir accès. Cela permet à NetApp de maintenir un contrôle et une documentation adéquats tout en vous fournissant le logiciel prêt pour la production dont vous avez besoin.
++
+
+NOTE: NetApp fournit la version « prête pour la production » d' ONTAP Select, qui n'est ni une version open source ni une version alternative. L'assistance n'est disponible que si vous passez à une licence de production.
+
+
+
+.Quelle est la prochaine étape ?
+Une fois le téléchargement du logiciel d'évaluation terminé, suivez les instructions pour télécharger l'utilitaire d'administration ONTAP Select Deploy et déployer un cluster.
+
+.Informations associées
+* link:concept_lic_evaluation.html["Découvrez les licences d'évaluation pour les déploiements ONTAP Select"]
+* link:task_adm_licenses.html#convert-license["Convertir une licence d'évaluation en licence de production"]
+

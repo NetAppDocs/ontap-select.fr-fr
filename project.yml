@@ -294,8 +294,12 @@ sidebar:
         url: "/task_cli_deploy_image_remove.html"
       - title: Restaurez le déploiement pour un cluster à deux nœuds
         url: "/task_cli_deploy_recover_two_node.html"
-  - title: Déployez une instance d'évaluation de 90 jours d'un cluster
-    url: "/deploy-evaluation-ontap-select-ovf-template.html"
+  - title: Essayez ONTAP Select
+    entries:
+    - title: Logiciel d'évaluation d'accès
+      url: "/access-evaluation-software.html"
+    - title: Déployez une instance d'évaluation de 90 jours d'un cluster
+      url: "/deploy-evaluation-ontap-select-ovf-template.html"
   - title: FAQ
     url: "/reference_faq.html"
   - title: Mentions légales

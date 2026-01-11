@@ -18,9 +18,9 @@ Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utilis
 
 
 
-== Téléchargez l'image de la machine virtuelle
+== Étape 1 : Télécharger l'image de la machine virtuelle
 
-Le pack ONTAP Select est téléchargeable depuis le site du support NetApp.
+Téléchargez le package ONTAP Select depuis le site de support NetApp .
 
 .Avant de commencer
 https://mysupport.netapp.com/site/user/registration["Vous possédez un compte sur le site de support NetApp"^].
@@ -40,9 +40,9 @@ L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de ma
 
 
 
-== Vérifiez la signature OVA de déploiement ONTAP Select
+== Étape 2 : Vérifier la signature OVA de déploiement ONTAP Select
 
-Vous devez vérifier la signature OVA (ONTAP Select Open Virtualization Appliance) avant d'installer le package d'installation.
+Vérifiez la signature de l'appliance de virtualisation ouverte ONTAP Select (OVA) avant d'installer le package d'installation.
 
 .Avant de commencer
 Vérifiez que votre système répond aux exigences suivantes :
@@ -84,9 +84,9 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 
 
 
-== Déployer la machine virtuelle
+== Étape 3 : Déployer la machine virtuelle
 
-Vous devez installer et démarrer la machine virtuelle de déploiement ONTAP Select à l'aide de l'image de machine virtuelle OVF. Dans le cadre du processus d'installation, vous configurez l'interface réseau pour qu'elle utilise DHCP ou une configuration IP statique.
+Installez et démarrez la machine virtuelle ONTAP Select Deploy à l'aide de l'image de machine virtuelle OVF. Dans le cadre du processus d'installation, vous configurez l'interface réseau pour utiliser DHCP ou une configuration IP statique.
 
 .Avant de commencer
 Dans le cas d'un hyperviseur ESXi, vous devez préparer le déploiement de la VM de déploiement ONTAP Select :
@@ -200,9 +200,9 @@ Use DHCP to set networking information? [n]:
 ====
 
 
-== Connectez-vous à l'interface Web de déploiement
+== Étape 4 : Sign in à l’interface web de déploiement
 
-Vous devez vous connecter à l'interface utilisateur Web pour confirmer que l'utilitaire de déploiement est disponible et effectuer la configuration initiale.
+Sign in à l'interface utilisateur Web pour confirmer que l'utilitaire Deploy est disponible et effectuez la configuration initiale.
 
 .Étapes
 . Pointez votre navigateur vers l'utilitaire de déploiement à l'aide de l'adresse IP ou du nom de domaine :

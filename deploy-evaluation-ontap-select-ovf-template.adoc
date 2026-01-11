@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: deploy-evaluation-ontap-select-ovf-template.html 
 keywords: ontap, select, ovf, template, deployment, evaluation, license 
-summary: 'Vous pouvez déployer rapidement une instance d"évaluation de 90 jours d"un cluster ONTAP Select à un seul nœud à l"aide d"un modèle OVF sur VMware ESXi.' 
+summary: 'Vous pouvez déployer une instance d"évaluation de 90 jours d"un cluster ONTAP Select à nœud unique.' 
 ---
 = Déployez une instance d'évaluation de 90 jours d'un cluster ONTAP Select
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Vous pouvez déployer rapidement une instance d"évaluation de 90 jour
 
 
 [role="lead"]
-Vous pouvez déployer rapidement une instance d'évaluation de 90 jours d'un cluster ONTAP Select à un seul nœud à l'aide d'un modèle OVF sur VMware ESXi.
+Vous pouvez déployer une instance d'évaluation de 90 jours d'un cluster ONTAP Select dont la taille varie d'un seul nœud à 99 nœuds en utilisant un modèle OVF sur VMware ESXi. Vous pouvez télécharger une licence d'évaluation si vous êtes un client existant ou un nouveau client. Par exemple, vous êtes déjà client et vous souhaitez essayer une nouvelle configuration avant d'acheter une licence.
 
 .Description de la tâche
 * Inutile d'obtenir un numéro de série ou une licence de capacité de stockage auprès de NetApp.
@@ -26,7 +26,7 @@ Vous pouvez déployer rapidement une instance d'évaluation de 90 jours d'un clu
 
 
 
-== Préparez l'hôte de cluster ONTAP Select
+== Étape 1 : Préparer l’hôte du cluster ONTAP Select
 
 Utilisez les conditions suivantes pour préparer l'hôte VMware ESXi sur lequel le cluster ONTAP Select est déployé. La description de la plate-forme est basée sur la configuration standard ou de petite instance avec stockage DAS local formaté en utilisant le système de fichiers VMFS-5 ou VMFS-6.
 
@@ -36,7 +36,7 @@ Pour plus d'informations sur les options de configuration de l'hôte, reportez-v
 
 
 
-== Déployez un cluster ONTAP Select à un seul nœud à l'aide d'un modèle OVF
+== Étape 2 : Déployer un cluster ONTAP Select à nœud unique à l’aide d’un modèle OVF
 
 Procédez comme suit sur un serveur hôte ESXi 64 bits pris en charge.
 
@@ -63,4 +63,6 @@ Procédez comme suit sur un serveur hôte ESXi 64 bits pris en charge.
 
 
 .Informations associées
-link:http://mysupport.netapp.com/matrix["Matrice d'interopérabilité"^]
+* link:concept_lic_evaluation.html["Découvrez les licences d'évaluation pour les déploiements ONTAP Select"]
+* link:http://mysupport.netapp.com/matrix["Matrice d'interopérabilité"^]
+
