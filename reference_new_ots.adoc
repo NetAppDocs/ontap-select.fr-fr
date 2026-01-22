@@ -121,12 +121,12 @@ Prise en charge du pilote NDA mise à jour:: À partir d' ONTAP Select 9.17.1, l
 Pour ONTAP Select 9.16.1 et les versions antérieures, le NVD continue de fournir la prise en charge des périphériques NVMe dans votre déploiement ONTAP Select .
 
 --
-Prise en charge de l'hyperviseur KVM mise à jour:: À partir d' ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.0 et 9.6 et Rocky Linux 10.0 et 9.6.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir d'ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 et 9.6 et Rocky Linux 10.0 et 9.6.
 +
 --
 [NOTE]
 ====
-Il existe des limitations de flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.0 et Rocky Linux 10.0. Pour plus d'informations, consultez les articles suivants de la base de connaissances :
+Il existe des limitations concernant le flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.1 et 10.0 et Rocky Linux 10.0. Pour plus d'informations, consultez les articles suivants de la Knowledge Base :
 
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020 : ONTAP Select Deploy : Message d’avertissement lors de la création du cluster HWR sous RHEL 10 et ROCKY 10"^]
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025 : ONTAP Select DeployGUI : Les pools de stockage et les disques de stockage ne sont pas visibles pour SWR sur la page de création de cluster sur les hôtes RHEL10/Rocky 10"^]
