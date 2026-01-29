@@ -71,7 +71,7 @@ NOTE: Les machines virtuelles basées sur le noyau (KVM) ne prennent pas en char
 
 == Comparez les offres de licences de plate-forme prises en charge par le matériel
 
-Les offres de licences XL standard, Premium et Premium prennent en charge un large éventail de matériels et de logiciels. Pour obtenir des informations à jour sur les versions matérielles et logicielles, reportez-vous au link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité"^].
+Les licences standard, premium et premium XL sont compatibles avec une large gamme de matériels et de logiciels. Pour des informations à jour sur les versions matérielles et logicielles, consultez le link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité"^].
 
 [role="tabbed-block"]
 ====
@@ -182,6 +182,5 @@ Rocky Linux (KVM) 10.0, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6
 |===
 --
 ====
-.Informations associées
-* link:concept_lic_production.html["En savoir plus sur les types de licence de niveau de capacité et de pool de capacité"]
-
+.Quelle est la prochaine étape ?
+link:concept_lic_workflow.html["Découvrez comment acheter une licence ONTAP Select"]

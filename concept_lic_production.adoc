@@ -4,7 +4,7 @@ permalink: concept_lic_production.html
 keywords: license, licensing, production, purchased, standard, premium, premium xl 
 summary: Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir le modèle de licence niveaux de capacité ou pools de capacité, ainsi que la capacité de stockage pour chaque déploiement. 
 ---
-= ONTAP Select a acheté des licences pour les déploiements en production
+= Découvrez les licences ONTAP Select achetées pour les déploiements en production
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,22 +14,20 @@ summary: Après avoir déterminé que ONTAP Select convient à votre entreprise,
 
 
 [role="lead"]
-Après avoir déterminé que ONTAP Select convient à votre entreprise, vous pouvez acheter les licences nécessaires pour prendre en charge le déploiement de production. Vous devez choisir le modèle de licence niveaux de capacité ou pools de capacité, ainsi que la capacité de stockage pour chaque déploiement.
+Une fois que vous avez déterminé que ONTAP Select convient à votre organisation, vous pouvez acheter les licences nécessaires à un déploiement en production. Vous devez choisir soit le modèle de licence Capacity Pools, soit le modèle Capacity Tiers, ainsi que la capacité de stockage pour chaque déploiement.
 
 
 
 == Caractéristiques communes des licences
 
-Les modèles de licence _Capacity tiers_ et _Capacity pools_ sont très différents à plusieurs égards. Toutefois, les deux modèles de licence partagent plusieurs caractéristiques communes, notamment :
+Les modèles de licences _Capacity Pools_ et _Capacity Tiers_ diffèrent considérablement à plusieurs égards. Cependant, les deux modèles de licences partagent plusieurs caractéristiques communes, notamment :
 
 * Vous devez acheter une ou plusieurs licences selon vos besoins lors du déploiement de ONTAP Select dans un environnement de production.
 * La capacité de stockage d'une licence est allouée par incréments de 1 To.
-* La capacité de stockage identifie la capacité brute et correspond à la taille totale autorisée des disques de données disponibles pour la machine virtuelle ONTAP Select.
-* Toutes les offres de licences de plateforme sont prises en charge (standard, Premium, Premium XL).
+* Toutes les offres de licences de plateforme sont prises en charge (standard, premium et premium XL).
 * Pour obtenir de l'aide concernant l'acquisition des licences nécessaires, contactez l'équipe NetApp en charge de votre compte ou votre partenaire.
 * Vous devez télécharger les fichiers de licence dans l'utilitaire d'administration de déploiement, qui applique ensuite les licences en fonction du modèle de licence.
 * Après l'installation et l'application d'une licence, vous pouvez augmenter la capacité en contactant l'équipe de votre compte ou votre partenaire NetApp pour obtenir une licence mise à jour.
-* Les deux nœuds d'une paire haute disponibilité doivent disposer de la même capacité de stockage et de licence.
 * Un nœud ONTAP Select déployé initialement avec une licence achetée ne peut pas être converti en licence d'évaluation.
 
 
@@ -42,8 +40,10 @@ Il existe plusieurs caractéristiques propres au modèle de licence niveaux de c
 * Vous devez acheter une licence pour chaque nœud ONTAP Select.
 * La quantité minimale que vous pouvez acheter est de 1 To.
 * Chaque licence de niveau de capacité dispose d'une capacité de stockage et est verrouillée sur un nœud spécifique.
-* Un numéro de série de licence à 9 chiffres est généré par NetApp pour chaque nœud ONTAP Select.
-* Le stockage alloué à un nœud est perpétuel (pas de renouvellement requis).
+* La capacité de stockage identifie la capacité brute et correspond à la taille totale autorisée des disques de données disponibles pour la machine virtuelle ONTAP Select.
+* NetApp génère un numéro de série de licence à neuf chiffres pour chaque nœud ONTAP Select.
+* L'espace de stockage alloué à un nœud est perpétuel (aucun renouvellement requis), mais vous devez renouveler le contrat de support associé à la licence.
+* Chaque nœud ONTAP Select d'une paire haute disponibilité (HA) nécessite une licence au moins aussi grande que le stockage brut connecté au nœud.
 * Le numéro de série du nœud est composé de neuf chiffres qui correspondent au numéro de série de la licence.
 * Vous pouvez appliquer le fichier de licence lors du déploiement du cluster ou dans les 30 jours suivant la création d'un cluster.
 
@@ -56,11 +56,16 @@ Il existe plusieurs caractéristiques propres au modèle de licence des pools de
 
 * Vous devez acheter une licence pour chaque pool de capacité partagé.
 * La quantité minimale que vous pouvez acheter est de 2 To.
-* Chaque licence de pool de capacité dispose d'une capacité de stockage et est verrouillée à une instance de License Manager spécifique.
+* Chaque licence de Capacity Pool possède une capacité de stockage et est liée à une instance spécifique de License Manager au sein d'un utilitaire d'administration Deploy.
+* La capacité de stockage identifie la capacité brute et correspond à la taille totale autorisée des agrégats de données que vous pouvez créer dans la machine virtuelle ONTAP Select.
 * Un numéro de série de licence à neuf chiffres est généré par NetApp pour chaque pool de capacité.
 * Le stockage alloué à un pool de capacité n'est valide que pour une période spécifique basée sur l'achat (renouvellement requis).
-* Le numéro de série du nœud est composé de vingt chiffres et est généré par le Gestionnaire de licences en fonction du numéro de série de la licence du pool de capacité.
+* Le License Manager génère un numéro de série de nœud à vingt chiffres basé sur le numéro de série de la licence Capacity Pool.
+* Tous les nœuds ONTAP Select d'un cluster partagent la même capacité de licence. Cela signifie que la licence doit être suffisamment grande pour couvrir le stockage alloué à tous les nœuds du cluster.
 * Chaque nœud loue automatiquement la capacité de stockage de ses agrégats de données locaux à partir d'un pool de capacité partagé.
 
 
-Pour plus d'informations sur le modèle de licence des pools de capacité, reportez-vous au _modèle de licence des pools de capacité_ pour plus d'informations.
+.Quelle est la prochaine étape ?
+* link:concept_lic_platforms.html["Découvrez les offres de licences de plateforme pour ONTAP Select"]
+* link:concept_lic_cp_operation.html["En savoir plus sur le modèle de licence ONTAP Select Capacity Pools"]
+

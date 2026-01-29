@@ -23,7 +23,7 @@ Le numéro de série d'un nœud utilisant une licence Capacity pools a le format
 
 NOTE: Des espaces ont été ajoutés pour plus de clarté, mais ne font pas partie du numéro de série réel.
 
-Chaque section du numéro de série du nœud est décrite dans le tableau suivant, de gauche à droite.
+Le tableau suivant décrit chaque section du numéro de série du nœud de gauche à droite.
 
 [cols="15,85"]
 |===
@@ -39,4 +39,4 @@ Chaque section du numéro de série du nœud est décrite dans le tableau suivan
 | nnnnnnnn | Valeur variable à huit chiffres générée par le Gestionnaire de licences pour chaque nœud utilisant le pool de capacité 
 |===
 
-NOTE: Attention : lors de l'ouverture d'un dossier avec prise en charge NetApp impliquant un nœud qui utilise une licence de pool de capacité, vous ne pouvez pas fournir le numéro de série de nœud complet à vingt chiffres. Vous devez plutôt fournir le numéro de série de la licence de pool de capacité à neuf chiffres. Vous pouvez obtenir le numéro de série de la licence à partir du numéro de série de nœud, comme indiqué ci-dessus. Ignorez les trois premiers chiffres du numéro de série du nœud ('999') et extrayez les neuf chiffres suivants (ppppp).
+CAUTION: Lors de l'ouverture d'un ticket auprès du support NetApp concernant un nœud utilisant une licence Capacity Pool, vous devez fournir le numéro de série à neuf chiffres de la licence Capacity Pool. Vous ne pouvez pas fournir le numéro de série complet du nœud à vingt chiffres. Vous pouvez obtenir le numéro de série de la licence à partir du numéro de série du nœud en ignorant les trois premiers chiffres (« 999 ») et en extrayant les neuf chiffres suivants (ppppppppp).

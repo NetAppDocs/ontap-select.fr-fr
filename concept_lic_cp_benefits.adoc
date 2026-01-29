@@ -22,7 +22,7 @@ L'utilisation du modèle de licence pools de capacité présente plusieurs avant
 
 Lorsque vous utilisez une licence de niveaux de capacité, vous allouez une capacité de stockage fixe à chaque nœud. Tout espace inutilisé ne peut être partagé avec les autres nœuds et est réellement gaspillé. Avec les licences Capacity pools, chaque nœud consomme uniquement la capacité dont il a besoin, en fonction de la taille des agrégats de données.
 
-Et comme la capacité est ancrée dans un pool central, elle peut être partagée entre de nombreux nœuds de votre organisation.
+La capacité est ancrée dans un pool central où elle peut être partagée entre de nombreux nœuds de votre organisation.
 
 
 

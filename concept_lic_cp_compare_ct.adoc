@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_lic_cp_compare_ct.html 
 keywords: license, licensing, Capacity Pools, Capacity Tiers, comparing 
-summary: Il existe plusieurs différences entre les modèles de licence des pools de capacité et des tiers de capacité. 
+summary: Il existe plusieurs différences entre les modèles de licence Capacity Tiers et Capacity Pools. 
 ---
-= Comparer les licences de pools de capacité et de niveaux de capacité ONTAP Select
+= Comparer les licences des niveaux de capacité et des pools de capacité ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -21,13 +21,13 @@ Le tableau suivant compare les deux modèles de licence de production pris en ch
 |  | Tiers de capacité | Pools de capacité 
 
 
-| Numéro de série de la licence | Neuf chiffres générés par NetApp et attribués à un nœud | Neuf chiffres générés par NetApp et affectés à un pool de capacité 
+| Numéro de série de la licence | NetApp génère neuf chiffres et les attribue à un nœud | NetApp génère neuf chiffres et les attribue à un pool de capacité 
 
 
 | Verrouillage de licence | Verrouillé sur le nœud ONTAP Select | Verrouillé à l'instance du Gestionnaire de licences 
 
 
-| Durée de la licence | Pérennité (aucun renouvellement requis) | Durée fixe basée sur l'achat (renouvelée requis) 
+| Durée de la licence | Pérennité (aucun renouvellement requis) | Durée fixe basée sur l'achat (renouvellement requis) 
 
 
 | Durée du bail pour agrégat de données | Sans objet | D'une heure à sept jours 
@@ -52,4 +52,10 @@ Le tableau suivant compare les deux modèles de licence de production pris en ch
 
 
 | Application : la licence a expiré | S/O | Oui (pas de délai de grâce) 
+
+
+| Licence minimale | 1 Tio | 2 Tio 
+
+
+| Espace géré maximal | 400 TiB par nœud | 400 TiB par nœud 
 |===

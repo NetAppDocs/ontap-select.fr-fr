@@ -17,23 +17,26 @@ summary: Lorsque vous utilisez une licence de niveaux de capacité, vous devez a
 Lorsque vous utilisez une licence de niveaux de capacité, vous devez acquérir un fichier de licence pour chaque nœud ONTAP Select. Le fichier de licence définit la capacité de stockage du nœud et est verrouillé pour ce nœud via le numéro de série à neuf chiffres unique attribué par NetApp.
 
 .Avant de commencer
-Vous devez disposer du numéro de série de licence à neuf chiffres attribué au nœud par NetApp. Avant de tenter d'acquérir un fichier de licence, vous devez attendre au moins vingt quatre heures après la date d'expédition de votre bon de commande.
+* Vous devez disposer du numéro de série de licence à neuf chiffres attribué au nœud ONTAP Select par NetApp.
+* Vous devez attendre au moins 24 heures après la date d'expédition de votre commande avant d'acquérir un fichier de licence.
+* Vous avez examiné le link:sizing-capacity-tier-license.html["considérations pour le dimensionnement d'une licence Capacity Tiers"].
+
 
 .Description de la tâche
-Vous devez effectuer cette tâche pour chaque nœud ONTAP Select nécessitant une licence de niveau de capacité.
+Vous devez effectuer cette tâche pour chaque nœud ONTAP Select nécessitant une licence Capacity Tiers.
 
 .Étapes
-. Accédez au site des licences ONTAP Select à l'aide d'un navigateur Web :
-+
-`https://register.netapp.com/register/getlicensefile`
-
+. link:https://register.netapp.com/register/getlicensefile["Accédez au site de licences ONTAP Select"^].
 . Connectez-vous à l'aide de vos identifiants de compte NetApp.
 . Sur la page *License Generator*, sélectionnez l'offre de licence souhaitée dans la liste déroulante.
-. Remplissez les champs restants de la même page, y compris le *N° de série de produit*, qui est le numéro de série du nœud ONTAP Select.
-. Cliquez sur *soumettre*.
+. Remplissez les champs restants sur la page *License Generator*, y compris le *Product Serial #*.
++
+Le « numéro de série du produit » est le numéro de série du nœud ONTAP Select.
+
+. Sélectionnez *Soumettre*.
 . Une fois la demande validée, sélectionnez le mode de livraison de la licence.
 +
-Vous pouvez cliquer sur *Download License* ou *Email License*.
+Vous pouvez sélectionner soit *Télécharger la licence* soit *Envoyer la licence par e-mail*.
 
 . Confirmez que vous avez reçu le fichier de licence en fonction du mode de livraison choisi.
 

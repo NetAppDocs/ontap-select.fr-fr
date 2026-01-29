@@ -33,10 +33,22 @@ Le Gestionnaire de licences s'exécute comme un processus distinct au sein de ch
 
 Le stockage alloué à chaque agrégat de données au niveau d'un nœud utilisant une licence Capacity Pool doit être associé à un bail. Le nœud demande un bail de stockage et, si la capacité est disponible, le Gestionnaire de licences répond par un bail. Chaque bail comporte les attributs explicites ou implicites suivants :
 
-* Gestionnaire de licences chaque nœud ONTAP Select est associé à une instance du Gestionnaire de licences
-* Pool de capacité chaque nœud ONTAP Select est associé à un pool de capacité
-* Allocation de stockage une valeur de capacité spécifique est attribuée au bail
-* La date et l'heure d'expiration des contrats de location ont une durée comprise entre une heure et sept jours, selon la configuration de l'utilisateur.
+* Gestionnaire de licences
++
+Chaque nœud ONTAP Select est associé à une instance de License Manager
+
+* Pool de capacité
++
+Chaque nœud ONTAP Select est associé à un pool de capacité
+
+* Allocation de stockage
++
+Une valeur de capacité spécifique est attribuée dans le bail
+
+* Date et heure d'expiration
++
+Les baux ont une durée comprise entre une heure et sept jours selon la configuration de l'utilisateur.
+
 
 
 
@@ -47,15 +59,20 @@ Chaque instance du Gestionnaire de licences, et donc chaque instance d'utilitair
 
 Vous pouvez déterminer l'ID de verrouillage de licence de votre instance de déploiement à l'aide de l'interface utilisateur Web de la manière suivante :
 
-* Page de démarrage cette page s'affiche lorsque vous vous connectez pour la première fois au déploiement. Vous pouvez également afficher la page en cliquant sur la liste déroulante en haut à droite de la page et en sélectionnant mise en route. Le LLID s'affiche dans la section Ajouter des licences.
-* Administration cliquez sur l’onglet *Administration* en haut de la page, puis cliquez sur *systèmes* et *Paramètres*.
+* Page de démarrage
++
+Deploy affiche cette page lors de votre première connexion. Vous pouvez également ouvrir le menu déroulant en haut à droite de la page et sélectionner *Getting Started* pour afficher cette page. Le LLID s'affiche dans la section Ajouter des licences.
+
++
+Sélectionnez l'onglet *Administration* en haut de la page, puis sélectionnez *Systems* et *Settings*.
+
 
 
 
 
 == Opérations de location de base
 
-Un nœud ONTAP Select doit trouver ou demander une location de capacité valide à chaque fois qu'un agrégat de données est créé, étendu ou modifié. Un bail obtenu à partir d'une demande antérieure toujours valide peut être utilisé, ou un nouveau bail peut être demandé si nécessaire. Les étapes suivantes sont effectuées par le nœud ONTAP Select pour localiser un bail de pool de capacité :
+Un nœud ONTAP Select doit localiser ou demander un bail de capacité valide chaque fois qu'un agrégat de données est créé, étendu ou modifié. Vous pouvez utiliser un bail obtenu lors d'une demande précédente qui est toujours valide, ou vous pouvez demander un nouveau bail si nécessaire. Les étapes suivantes sont effectuées par le nœud ONTAP Select pour localiser un bail de Capacity Pool :
 
 . Si un bail existant est situé au niveau du nœud, il est utilisé tant que tous les éléments suivants sont vrais :
 +

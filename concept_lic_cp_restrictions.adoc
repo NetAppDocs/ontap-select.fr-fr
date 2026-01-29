@@ -20,7 +20,7 @@ Les restrictions qui s'appliquent lors de l'utilisation du modèle de licence de
 Tous les nœuds d'un cluster ONTAP Select doivent utiliser le même modèle de licence : tiers de capacité ou pools de capacité. Vous ne pouvez pas combiner les types de licence des nœuds dans un même cluster.
 
 .Tous les nœuds d'un cluster utilisent la même instance de Gestionnaire de licences
-Tous les nœuds disposant d'une licence de pool de capacité dans un cluster ONTAP Select doivent utiliser la même instance de Gestionnaire de licences. Comme il y a une instance de License Manager dans chaque instance de déploiement, cette restriction est une nouvelle instruction de l'exigence existante que tous les nœuds d'un cluster doivent être gérés par la même instance de déploiement.
+Tous les nœuds disposant d'une licence Capacity Pool dans un cluster ONTAP Select doivent utiliser la même instance de License Manager. Étant donné qu'il existe une instance de License Manager au sein de chaque instance Deploy, cette restriction est une reformulation de l'exigence existante selon laquelle la même instance Deploy doit gérer tous les nœuds d'un cluster.
 
 .Un pool de capacité par nœud
 Chaque nœud peut louer du stockage à partir d'un seul pool de capacité. Un nœud ne peut pas utiliser deux pools ou plus.

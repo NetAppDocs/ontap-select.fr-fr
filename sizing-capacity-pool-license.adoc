@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: sizing-capacity-pool-license.html 
+keywords: license, licensing, Capacity Tiers, usable, space 
+summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacente gérée par chaque nœud, et non sur la capacité utilisable du nœud, de la paire haute disponibilité ou du cluster. Chaque licence Capacity Tiers est attribuée à un numéro de série de nœud individuel pour une capacité spécifiée et nécessite un contrat de support associé. 
+---
+= Considérations relatives au dimensionnement d'une licence ONTAP Select Capacity Pools
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La capacité souscrite pour une licence Capacity Pool est exprimée en TiB entiers, avec un minimum de 2 TiB. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à nœuds multiples (basé sur une paire haute disponibilité) :
+
+* Le facteur de surcharge pour les clusters à nœud unique est de 1,13
+* Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
+
+
+Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer d'en avoir suffisamment pour votre déploiement.
+
+[cols="25,30,45"]
+|===
+| Description | Nœud unique | paire haute disponibilité ou mélange de paire haute disponibilité et de nœud unique 
+
+
+| Espace utilisable | 20 TiB | 10 Tio par cluster à nœud unique 20 Tio par paire haute disponibilité 
+
+
+| Espace sous licence | 23 TiB (20 x 1,13 = 22,6, arrondir au TiB entier supérieur) | 54 TiB (20 x 2,67 = 53,4, arrondir au TiB entier supérieur) 
+
+
+| Espace utilisable maximal par nœud *Remarque* : L’espace géré maximal par nœud ou paire haute disponibilité est de 400 TiB | 353 Tio (400 / 1,13)  a| 
+Par cluster à nœud unique :
+
+74 Tio [(400 / 2) / 2,67]
+
+Par paire haute disponibilité :
+
+148 Tio (2 x 74)
+
+|===
+.Et ensuite
+link:task_lic_acquire_cp.html["Acquérir une licence Capacity Pools pour ONTAP Select"]

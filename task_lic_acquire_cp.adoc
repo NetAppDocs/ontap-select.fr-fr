@@ -17,21 +17,24 @@ summary: 'Vous devez acquérir un fichier de licence pour chaque pool de capacit
 Vous devez acquérir un fichier de licence pour chaque pool de capacité utilisé par les nœuds ONTAP Select. Le fichier de licence définit la capacité de stockage et l'expiration du pool. Il est verrouillé pour le Gestionnaire de licences par une combinaison du numéro de série de licence unique attribué par NetApp et de l'ID de verrouillage de licence associé à l'instance de déploiement.
 
 .Avant de commencer
-Vous devez attribuer le numéro de série de licence à neuf chiffres au pool de capacité par NetApp. Avant de tenter d'acquérir un fichier de licence, vous devez attendre au moins vingt quatre heures après la date d'expédition de votre bon de commande.
+* Vous devez disposer du numéro de série de licence à neuf chiffres attribué au pool de capacité par NetApp.
+* Vous devez attendre au moins 24 heures après la date d'expédition de votre commande avant d'acquérir un fichier de licence.
+* Vous avez examiné le link:sizing-capacity-pool-license.html["considérations relatives au dimensionnement d'une licence Capacity Pools"].
+
 
 .Description de la tâche
 Vous devez effectuer cette tâche pour chaque pool de capacité utilisé par les nœuds ONTAP Select.
 
 .Étapes
-. Accédez au site de support NetApp à l'aide d'un navigateur Web et connectez-vous.
-. Cliquez sur *systèmes* en haut, puis sur *licences logicielles*.
-. Saisissez le numéro de série de la licence pour le pool de capacité et cliquez sur *Go!*.
+. Connectez-vous au link:https://mysupport.netapp.com/site/["Site de support NetApp"^].
+. Sélectionnez *Systems* > *Software Licenses*.
+. Saisissez le numéro de série de la licence du pool de capacité et sélectionnez *Go!*.
 . Sur la page des détails de licence, accédez à la colonne *Détails du produit*.
-. Cliquez sur *obtenir le fichier de licence NetApp* sur la ligne appropriée.
-. Saisissez l'ID de verrouillage de licence de votre instance de déploiement ONTAP Select et cliquez sur *Envoyer*.
-. Sélectionnez la méthode de livraison appropriée et cliquez sur *Envoyer*.
-. Cliquez sur *OK* dans la fenêtre de confirmation de livraison.
+. Sélectionnez *Get NetApp License File* sur la ligne appropriée.
+. Saisissez l'ID de verrouillage de licence pour votre instance ONTAP Select Deploy et sélectionnez *Soumettre*.
+. Sélectionnez le mode de livraison approprié et sélectionnez *Submit*.
+. Sélectionnez *OK* sur la fenêtre de confirmation de livraison.
 
 
 .Une fois que vous avez terminé
-Vous devez télécharger le fichier de licence dans l'utilitaire d'administration de déploiement pour que le pool de capacité puisse être utilisé par un nœud ONTAP Select.
+Vous devez télécharger le fichier de licence dans l'utilitaire d'administration Deploy avant qu'un nœud ONTAP Select puisse utiliser le pool de capacité.
