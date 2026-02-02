@@ -26,16 +26,14 @@ Téléchargez le package ONTAP Select depuis le site de support NetApp .
 https://mysupport.netapp.com/site/user/registration["Vous possédez un compte sur le site de support NetApp"^].
 
 .Description de la tâche
-L'utilitaire d'administration de ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur la norme OVF (Open Virtualization format). Le suffixe du fichier compressé unique `ova`. La machine virtuelle fournit le serveur de déploiement et les images d'installation pour les nœuds ONTAP Select.
+L'utilitaire d'administration ONTAP Select Deploy est fourni sous forme de machine virtuelle (VM) basée sur le standard Open Virtualization Format (OVF). Le fichier compressé unique a le suffixe `OVA` pour les hôtes ESXi et `TGZ` pour les hôtes KVM. La VM fournit le serveur Deploy et les images d'installation pour les nœuds ONTAP Select.
 
 .Étapes
-. Accédez au link:https://mysupport.netapp.com/site/["Site de support NetApp"^] à l'aide d'un navigateur web et connectez-vous.
-. Sélectionnez *Téléchargements* dans le menu, puis sélectionnez *Téléchargements* dans le menu déroulant.
-. Sur la page Téléchargements, sous tous les produits A-Z, sélectionnez la lettre *O*.
-. Faites défiler vers le bas et sélectionnez *ONTAP Select*.
-. Sélectionnez la version souhaitée du package.
+. Accédez à la page link:https://mysupport.netapp.com/site/downloads/["NetApp Support Site téléchargements"^].
+. Faites défiler vers le bas et sélectionnez *ONTAP Select Deploy*.
+. Sélectionnez la version ONTAP Select souhaitée.
 . Consultez le contrat de licence de l'utilisateur final (CLUF) et sélectionnez *accepter et continuer*.
-. Sélectionnez et téléchargez le pack approprié en répondant à toutes les invites.
+. Sélectionnez et téléchargez le package *ONTAP Select Deploy Install* approprié. Répondez à toutes les invites si nécessaire.
 
 
 
@@ -52,7 +50,7 @@ Vérifiez que votre système répond aux exigences suivantes :
 
 
 .Étapes
-. Vous pouvez obtenir les fichiers suivants sur la page de téléchargement du produit sur le site de support NetApp :
+. Obtenez les fichiers suivants à partir de la page de téléchargement du produit sur le site d'assistance NetApp :
 +
 [cols="2*"]
 |===
@@ -74,9 +72,9 @@ Vérifiez que votre système répond aux exigences suivantes :
 | `ONTAPdeploy.ova.sig` | L'algorithme SHA-256 est écrasé, puis signé par l'agent RSA (Remote support Agent) à l'aide du `csc-prod` clé et signature pour l'installateur. 
 |===
 . Vérifiez que le `ONTAPdeploy.ova.sig` le fichier utilise les certificats et les commandes de validation associés.
-. Vérifiez la signature à l'aide de la commande suivante :
+. Vérifiez la signature:
 +
-[listing]
+[source, cli]
 ----
 openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTAPdeploy.ova.sig  ONTAPdeploy.ova
 ----
@@ -117,14 +115,14 @@ Les étapes à suivre dépendent de l'utilisation ou non d'un hyperviseur ESXi o
 --
 . Accédez au client vSphere et connectez-vous.
 . Naviguez jusqu'à l'emplacement approprié dans la hiérarchie et sélectionnez *déployer le modèle OVF*.
-. Sélectionnez le fichier OVA et remplissez l'assistant déployer modèle OVF en sélectionnant les options appropriées à votre environnement.
+. Sélectionnez le fichier OVA et terminez l'assistant de déploiement du modèle OVF. Sélectionnez les options appropriées pour votre environnement.
 +
 Vous devez définir le mot de passe du compte administrateur. Vous devez fournir ce mot de passe lors de votre connexion à l'utilitaire de déploiement.
 
 . Une fois la machine virtuelle déployée, sélectionnez la nouvelle machine virtuelle. S'il n'est pas encore sous tension en fonction des informations que vous avez saisies dans l'assistant de déploiement, mettez-le sous tension manuellement.
 . Si nécessaire, vous pouvez configurer le réseau de déploiement à l'aide de la console de la machine virtuelle :
 +
-.. Cliquez sur l'onglet *Console* pour accéder au shell de configuration de l'hôte VMware ESXi et surveiller le processus de mise sous tension.
+.. Sélectionnez l'onglet *Console* pour accéder au shell de configuration de l'hôte ESXi et surveiller le processus de mise sous tension.
 .. Attendez l'invite suivante :
 +
 Nom d'hôte :
@@ -140,7 +138,7 @@ Saisissez un mot de passe pour l'utilisateur admin :
 Utiliser DHCP pour définir les informations de mise en réseau ? [n] :
 
 .. Tapez *n* pour définir une configuration IP statique ou *y* pour utiliser DHCP, puis sélectionnez *entrée*.
-.. Si vous choisissez une configuration statique, fournissez toutes les informations de configuration réseau nécessaires.
+.. Si vous choisissez une configuration statique, fournissez toutes les informations de configuration réseau requises.
 
 
 
@@ -202,7 +200,7 @@ Use DHCP to set networking information? [n]:
 
 == Étape 4 : Sign in à l’interface web de déploiement
 
-Sign in à l'interface utilisateur Web pour confirmer que l'utilitaire Deploy est disponible et effectuez la configuration initiale.
+Sign in à l'interface utilisateur web pour confirmer que l'utilitaire Deploy est disponible et effectuer la configuration initiale.
 
 .Étapes
 . Pointez votre navigateur vers l'utilitaire de déploiement à l'aide de l'adresse IP ou du nom de domaine :
@@ -211,7 +209,7 @@ Sign in à l'interface utilisateur Web pour confirmer que l'utilitaire Deploy es
 
 . Indiquez le nom et le mot de passe du compte administrateur (admin) et connectez-vous.
 . Si la fenêtre contextuelle *Bienvenue dans ONTAP Select* s'affiche, vérifiez les conditions préalables et sélectionnez *OK* pour continuer.
-. S'il s'agit de la première fois que vous vous connectez et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :
+. Si c'est la première fois que vous vous êtes connecté et que vous n'avez pas installé le déploiement à l'aide de l'assistant disponible avec vCenter, fournissez les informations de configuration suivantes lorsque vous y êtes invité :
 +
 ** Nouveau mot de passe pour le compte administrateur (obligatoire)
 ** AutoSupport (en option)
@@ -220,7 +218,10 @@ Sign in à l'interface utilisateur Web pour confirmer que l'utilitaire Deploy es
 
 
 
+.Quelles sont les prochaines étapes :
+link:task_deploy_cluster.html["Déployer un cluster ONTAP Select"]
+
 .Informations associées
-* link:task_cli_signing_in.html["Connectez-vous pour déployer à l'aide de SSH"]
-* link:deploy-evaluation-ontap-select-ovf-template.html["Déployez une instance d'évaluation de 90 jours d'un cluster ONTAP Select"]
+* link:task_cli_signing_in.html["Découvrez comment vous connecter à Deploy à l'aide de SSH"]
+* link:deploy-evaluation-ontap-select-ovf-template.html["Découvrez comment déployer une instance d'évaluation de 90 jours d'un cluster ONTAP Select"]
 

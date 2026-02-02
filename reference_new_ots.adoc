@@ -21,6 +21,29 @@ Découvrez les nouvelles fonctionnalités et les améliorations apportées aux v
 
 == ONTAP Select 9.18.1
 
+Mises à jour des options de téléchargement du produit ONTAP Select:: Les options de téléchargement du produit ONTAP Select sur le site d'assistance NetApp changent avec la sortie d'ONTAP Select 9.18.1 pour devenir *ONTAP Select Deploy* et *ONTAP Select Image*. Ces deux nouvelles options de téléchargement de produit remplacent les quatre précédentes, comme indiqué dans le tableau suivant :
++
+--
+[cols="30,30,40"]
+|===
+| Option de téléchargement du produit précédent | Nouvelle option de téléchargement du produit | Pour plus d'informations, rendez-vous sur.... 
+
+
+| ONTAP Select | Déploiement de ONTAP Select | link:task_install_deploy.html["Installez ONTAP Select Deploy"] 
+
+
+| Installation de l'image ONTAP Select | Image ONTAP Select | link:task_cli_deploy_image_add.html["Ajoutez une image ONTAP Select à déployer"] 
+
+
+| Mise à niveau de ONTAP Select Deploy | Déploiement de ONTAP Select | link:task_cli_upgrade_deploy.html["Mettez à niveau une instance de déploiement ONTAP Select"] 
+
+
+| Mise à niveau du nœud ONTAP Select | Image ONTAP Select | link:concept_adm_upgrading_nodes.html["Mettre à niveau les nœuds ONTAP Select"] 
+|===
+
+NOTE: Les modifications apportées au téléchargement du produit s'appliquent également à ONTAP Select 9.17.1, 9.16.1, 9.15.1 et 9.14.1.
+
+--
 Soutien renforcé à l'expansion et à la contraction des clusters:: À partir d' ONTAP Select 9.18.1, l'extension et la réduction des clusters sont prises en charge entre les clusters ONTAP Select à quatre nœuds et à douze nœuds sur les hôtes hyperviseurs ESXi et KVM.
 +
 --
@@ -121,12 +144,12 @@ Prise en charge du pilote NDA mise à jour:: À partir d' ONTAP Select 9.17.1, l
 Pour ONTAP Select 9.16.1 et les versions antérieures, le NVD continue de fournir la prise en charge des périphériques NVMe dans votre déploiement ONTAP Select .
 
 --
-Prise en charge de l'hyperviseur KVM mise à jour:: À partir d'ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 et 9.6 et Rocky Linux 10.0 et 9.6.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 et 9.6 et Rocky Linux 10.1, 10.0, 9.7 et 9.6.
 +
 --
 [NOTE]
 ====
-Il existe des limitations concernant le flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.1 et 10.0 et Rocky Linux 10.0. Pour plus d'informations, consultez les articles suivants de la Knowledge Base :
+Il existe des limitations concernant le flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.1 et 10.0 et Rocky Linux 10.1 et 10.0. Pour plus d’informations, consultez les articles suivants de la Knowledge Base :
 
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020 : ONTAP Select Deploy : Message d’avertissement lors de la création du cluster HWR sous RHEL 10 et ROCKY 10"^]
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025 : ONTAP Select DeployGUI : Les pools de stockage et les disques de stockage ne sont pas visibles pour SWR sur la page de création de cluster sur les hôtes RHEL10/Rocky 10"^]
@@ -134,8 +157,6 @@ Il existe des limitations concernant le flux de travail RAID logiciel pour les h
 
 ====
 --
-
-
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.17.1 inclut la prise en charge de VMware ESXi 9.0.
 
 
