@@ -40,9 +40,6 @@ Mises à jour des options de téléchargement du produit ONTAP Select:: Les opti
 
 | Mise à niveau du nœud ONTAP Select | Image ONTAP Select | link:concept_adm_upgrading_nodes.html["Mettre à niveau les nœuds ONTAP Select"] 
 |===
-
-NOTE: Les modifications apportées au téléchargement du produit s'appliquent également à ONTAP Select 9.17.1, 9.16.1, 9.15.1 et 9.14.1.
-
 --
 Soutien renforcé à l'expansion et à la contraction des clusters:: À partir d' ONTAP Select 9.18.1, l'extension et la réduction des clusters sont prises en charge entre les clusters ONTAP Select à quatre nœuds et à douze nœuds sur les hôtes hyperviseurs ESXi et KVM.
 +
