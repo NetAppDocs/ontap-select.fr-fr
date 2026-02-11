@@ -4,7 +4,7 @@ permalink: reference_plan_ots_kvm.html
 keywords: plan, planning, vnas, kvm 
 summary: 'Vous devez prendre en compte plusieurs problèmes de planification liés à l"utilisation de l"hyperviseur KVM.' 
 ---
-= Configuration requise pour ONTAP Select KVM
+= Exigences de stockage externe KVM pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,7 +35,7 @@ CAUTION: La capacité de stockage spécifiée doit se trouver dans les limites d
 
 == Et des meilleures pratiques
 
-Vous devez respecter les recommandations suivantes :
+Vous devriez suivre ces bonnes pratiques :
 
 * Définissez les ports réseau dédiés, la bande passante et les configurations vSwitch pour les réseaux ONTAP Select et le stockage externe
 * Configuration de l'option Capacity pour limiter l'utilisation du stockage (la ONTAP Select ne peut pas consommer la totalité de la capacité d'un pool de stockage externe)

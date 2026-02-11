@@ -16,7 +16,7 @@ summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacen
 [role="lead"]
 La licence Capacity Tiers est basée sur la capacité disque sous-jacente gérée par chaque nœud ONTAP Select et non sur la capacité utilisable du nœud, de la paire haute disponibilité ou du cluster. Chaque licence Capacity Tiers est attribuée à un numéro de série de nœud individuel pour une capacité spécifiée et nécessite un contrat de support associé.
 
-La capacité souscrite pour une licence Capacity Tiers est exprimée en TiB entiers, avec un minimum de 1 TiB. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à plusieurs nœuds (basé sur une paire haute disponibilité) :
+La capacité souscrite pour une licence Capacity Tiers est exprimée en téraoctets (To) entiers, avec un minimum de 1 To. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à plusieurs nœuds (basé sur une paire haute disponibilité) :
 
 * Le facteur de surcharge pour les clusters à nœud unique est de 1,13
 * Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
@@ -29,24 +29,24 @@ Calculez la capacité sous licence en fonction de l'espace utilisable afin de vo
 | Description | Nœud unique | Paire HA 
 
 
-| Espace utilisable | 10 Tio | 5 Tio par nœud 10 Tio pour paire haute disponibilité 
+| Espace utilisable | 10 To | 5 To par nœud 10 To pour paire haute disponibilité 
 
 
-| Espace sous licence | 12 TiB (10 x 1,13 = 11,3, arrondir au TiB entier supérieur) | Deux licences de 14 TiB (5 x 2,67 = 13,35, arrondi au TiB entier supérieur) 
+| Espace sous licence | 12 To (10 x 1.13 = 11.3, arrondir au To entier supérieur) | Deux licences de 14 TB (5 x 2.67 = 13.35, arrondi au TB entier supérieur) 
 
 
-| Espace utilisable maximal par nœud *Remarque* : L’espace géré maximal par nœud ou paire haute disponibilité est de 400 TiB | 353 Tio (400 / 1,13)  a| 
+| Espace utilisable maximal par nœud *Remarque* : l’espace géré maximal par nœud ou paire haute disponibilité est de 400 TB | 353 To (400 / 1,13)  a| 
 Par nœud dans une paire haute disponibilité :
 
-* 74 Tio [(400 / 2) / 2,67]
+* 74 To [(400 / 2) / 2,67]
 
 
 Par paire haute disponibilité dans un cluster à plusieurs nœuds :
 
-* Deux nœuds : 148 TiB (2 x 74)
-* Quatre nœuds : 296 TiB (4 x 74)
-* Six-node : 444 TiB (6 x 74)
-* Huit nœuds : 592 TiB (8 x 74)
+* Deux nœuds : 148 To (2 x 74)
+* Quatre nœuds : 296 To (4 x 74)
+* Six-node : 444 To (6 x 74)
+* Huit nœuds : 592 To (8 x 74)
 
 
 |===

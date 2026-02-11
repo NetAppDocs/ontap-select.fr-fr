@@ -20,7 +20,7 @@ Caractéristiques des réseaux internes et externes ONTAP Select.
 
 == Réseau interne ONTAP Select
 
-Le réseau ONTAP Select interne, qui n'est présent que dans la variante à plusieurs nœuds du produit, est chargé de fournir au cluster ONTAP Select des services de communication en cluster, d'interconnexion haute disponibilité et de réplication synchrone. Ce réseau comprend les ports et interfaces suivants :
+Le réseau interne ONTAP Select, présent uniquement dans la variante multi-nœuds du produit, est responsable de fournir au cluster ONTAP Select la communication de cluster, l’interconnexion haute disponibilité et les services de réplication synchrone. Ce réseau comprend les ports et interfaces suivants :
 
 * *E0c, e0d.* Hosting cluster network LIFs
 * *E0e.* Hébergement de la LIF RSM
@@ -41,7 +41,7 @@ Les paquets réseau traversant le réseau interne doivent se trouver sur un rés
 Dans tous les cas, le balisage VLAN pour le trafic réseau interne est effectué en dehors du VM ONTAP Select.
 
 
-NOTE: Seuls les vswitches ESX standard et distribués sont pris en charge. Les autres commutateurs virtuels ou la connectivité directe entre les hôtes ESX ne sont pas pris en charge. Le réseau interne doit être entièrement ouvert ; les NAT ou les pare-feu ne sont pas pris en charge.
+NOTE: Seuls les vSwitches standard et distribués ESXi sont pris en charge. Les autres commutateurs virtuels ou la connectivité directe entre hôtes ESXi ne sont pas pris en charge. Le réseau interne doit être entièrement ouvert ; les NAT ou les pare-feu ne sont pas pris en charge.
 
 Au sein d'un cluster ONTAP Select , le trafic interne et le trafic externe sont séparés par des objets réseau virtuels de couche 2, appelés groupes de ports. L'attribution correcte des groupes de ports aux vSwitch est extrêmement importante, en particulier pour le réseau interne, qui est responsable de la fourniture des services de cluster, d'interconnexion HA et de réplication en miroir. Une bande passante réseau insuffisante vers ces ports peut entraîner une dégradation des performances, voire affecter la stabilité du nœud du cluster.  Par conséquent, les clusters à quatre, six, huit, dix et douze nœuds nécessitent que le réseau interne ONTAP Select utilise une connectivité de 10 Gb ; les cartes réseau de 1 Gb ne sont pas prises en charge.  Des compromis peuvent toutefois être faits au niveau du réseau externe, car la limitation du flux de données entrantes vers un cluster ONTAP Select n'affecte pas sa capacité à fonctionner de manière fiable.
 
@@ -51,7 +51,7 @@ Un cluster à deux nœuds peut utiliser quatre ports 1 Gbit pour le trafic inter
 
 === Validation et dépannage du réseau interne
 
-Le réseau interne d'un cluster multinœud peut être validé à l'aide de la fonctionnalité de vérification de la connectivité réseau. Cette fonction peut être invoquée à partir de la CLI de déploiement exécutant le `network connectivity-check start` commande.
+Le réseau interne d'un cluster multi-nœuds peut être validé à l'aide de la fonctionnalité de vérification de la connectivité réseau. Cette fonction peut être appelée depuis l'interface de ligne de commande de déploiement en exécutant la commande  `network connectivity-check start`.
 
 Lancer la commande suivante pour afficher les valeurs de sortie du test :
 
@@ -59,9 +59,9 @@ Lancer la commande suivante pour afficher les valeurs de sortie du test :
 ----
 network connectivity-check show --run-id X (X is a number)
 ----
-Cet outil n'est utile que pour le dépannage du réseau interne dans un cluster multinœud Select. Cet outil ne doit pas être utilisé pour résoudre les problèmes de clusters à un seul nœud (y compris les configurations vNAS), de connectivité ONTAP déployée sur ONTAP Select ou de connectivité côté client.
+Cet outil est uniquement utile pour le dépannage du réseau interne d'un cluster Select multinœud. L'outil ne doit pas être utilisé pour le dépannage des clusters mononœud (y compris les configurations vNAS), la connectivité entre ONTAP Deploy et ONTAP Select, ni les problèmes de connectivité côté client.
 
-L'assistant de création de cluster (qui fait partie de l'interface utilisateur ONTAP Deploy) inclut le vérificateur de réseau interne comme étape facultative disponible lors de la création de clusters multinœuds. Compte tenu du rôle important du réseau interne dans les clusters multinœuds, l'intégration de cette étape au workflow de création de cluster améliore le taux de réussite des opérations de création.
+L'assistant de création de cluster (faisant partie de l'interface utilisateur ONTAP Deploy) inclut le vérificateur de réseau interne comme étape optionnelle disponible lors de la création de clusters multi-nœuds. Étant donné le rôle important que le réseau interne joue dans les clusters multi-nœuds, faire de cette étape une partie du flux de travail de création de cluster améliore le taux de réussite des opérations de création de cluster.
 
 Depuis ONTAP Deploy 2.10, la taille de MTU utilisée par le réseau interne peut être définie entre 7,500 et 9,000. Le vérificateur de connectivité réseau peut également être utilisé pour tester la taille de MTU entre 7,500 et 9,000. La valeur MTU par défaut est définie sur la valeur du commutateur réseau virtuel. Cette valeur par défaut doit être remplacée par une valeur plus petite si une superposition réseau comme VXLAN est présente dans l'environnement.
 
@@ -69,7 +69,7 @@ Depuis ONTAP Deploy 2.10, la taille de MTU utilisée par le réseau interne peut
 
 == Réseau externe ONTAP Select
 
-Le réseau externe ONTAP Select est responsable de toutes les communications sortantes effectuées par le cluster. Il est donc présent sur les configurations à nœud unique et multinœud. Bien que ce réseau ne présente pas les exigences de débit strictement définies du réseau interne, l'administrateur doit veiller à ne pas créer de goulets d'étranglement entre le client et la machine virtuelle ONTAP, car des problèmes de performances pourraient se caractériser par un problème de ONTAP Select.
+Le réseau externe ONTAP Select est responsable de toutes les communications sortantes du cluster et, par conséquent, est présent dans les configurations à nœud unique et à nœuds multiples. Bien que ce réseau ne soit pas soumis aux mêmes exigences de débit strictes que le réseau interne, l'administrateur doit veiller à ne pas créer de goulots d'étranglement réseau entre le client et la machine virtuelle ONTAP, car des problèmes de performance pourraient être à tort considérés comme des problèmes ONTAP Select.
 
 
 NOTE: D'une manière similaire au trafic interne, le trafic externe peut être balisé au niveau de la couche vSwitch (VST) et au niveau de la couche est (commutateur externe). De plus, le trafic externe peut être balisé par la machine virtuelle ONTAP Select elle-même dans un processus appelé VGT. Voir la section link:concept_nw_data_mgmt_separation.html["Séparation du trafic de données et de gestion"] pour plus d'informations.

@@ -37,15 +37,18 @@ ONTAP Select prend en charge les fonctionnalités ONTAP suivantes sous licence p
 * NVMe over TCP
 * Fonctionnalité de colocation ONTAP
 * ONTAP S3
+* SnapLock Select
++
+SnapLock Select est l'implémentation de ONTAP SnapLock conçue pour ONTAP Select et inclut SnapLock Enterprise. Elle n'inclut pas SnapLock Compliance. Pour plus d'informations, consultez la link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["Documentation ONTAP SnapLock"^].
+
 * SnapMirror S3
 * SnapMirror
-* Nuage SnapMirror
+* SnapMirror Cloud
 * SnapRestore
 * SnapVault
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 +
-
-NOTE: ONTAP Select prend en charge SVM DR en tant que source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.
+ONTAP Select prend en charge SVM DR en tant que source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.
 
 
 
@@ -56,17 +59,13 @@ NOTE: ONTAP Select prend en charge SVM DR en tant que source et destination avec
 Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui n'est pas activée par défaut, notamment :
 
 * FabricPool
++
+
+NOTE: Vous n'avez pas besoin d'une licence FabricPool lorsque vous utilisez StorageGRID.
+
 * MetroCluster SDS (offre de licence ONTAP Select Premium)
 
 
-[NOTE]
-====
-* Pour ONTAP Select 9.16.1 et versions antérieures, SnapLock Select Enterprise (y compris le verrouillage inviolable des snapshots) est disponible à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] .
-* La SnapLock Compliance n'est pas prise en charge pour ONTAP Select.
-* Vous n'avez pas besoin d'une licence FabricPool lorsque vous utilisez StorageGRID.
-
-
-====
 .Informations associées
 * link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Comparatif ONTAP Select/ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Clés de licence principales pour ONTAP NetApp"^]

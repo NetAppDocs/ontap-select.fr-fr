@@ -113,19 +113,19 @@ Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon le
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
-Prise en charge du cloud SnapMirror:: À partir d' ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence activée par défaut lors du déploiement d'un cluster ONTAP Select 9.17.1 ou de la mise à niveau d'un cluster ONTAP Select existant vers la version 9.17.1.
+Prise en charge de SnapMirror Cloud:: À partir de ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence, activée par défaut lors du déploiement d’un cluster ONTAP Select 9.17.1 ou de la mise à niveau d’un cluster ONTAP Select existant vers la version 9.17.1.
 +
 --
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["En savoir plus sur les sauvegardes cloud SnapMirror vers le stockage d'objets"^] .
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Découvrez les sauvegardes SnapMirror Cloud sur stockage objet"^].
 
 --
-Prise en charge de SnapLock Select Enterprise:: À partir d' ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement d'une licence SnapLock Select Enterprise (y compris le verrouillage inviolable des snapshots).  Pour les mises à niveau d' ONTAP Select 9.16.1 et versions antérieures, vous devez télécharger la licence SnapLock Select à partir dulink:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l'appliquer manuellement.
+Prise en charge de SnapLock Select:: À partir de ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement de SnapLock Select (y compris le verrouillage inviolable des snapshots) sous licence. Pour les mises à niveau depuis ONTAP Select 9.16.1 et versions antérieures, vous pouvez télécharger la licence SnapLock Select gratuitement depuis le link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l’appliquer manuellement. Pour plus d’informations, consultez link:reference_lic_ontap_features.html#enabled-ontap-features["Fonctionnalités ONTAP activées automatiquement par défaut"].
 Prise en charge de vSAN ESA sur les clusters multi-nœuds:: À partir d' ONTAP Select 9.17.1, la prise en charge de l'architecture de stockage vSAN Express (ESA) est étendue pour déployer des clusters multi-nœuds.  Cette amélioration vous permet de déployer des configurations vSAN ESA.
 +
 --
-vSAN ESA est une configuration spécifique à ESX et une nouvelle architecture pour VMware vSAN introduite dans vSphere 8. vSAN ESA est conçu pour offrir une efficacité, une évolutivité et des performances améliorées, en particulier lors de l'utilisation de périphériques flash TLC basés sur NVMe.
+vSAN ESA est une configuration spécifique à ESXi et constitue une nouvelle architecture pour VMware vSAN introduite dans vSphere 8. vSAN ESA est conçu pour offrir une efficacité, une évolutivité et des performances améliorées, notamment lors de l’utilisation de périphériques flash TLC basés sur NVMe.
 
-ONTAP Select Deploy et ONTAP Select pour ESX prennent en charge la configuration d'un cluster ONTAP Select à nœud unique et à nœuds multiples, à l'aide d'un vSAN ou d'un type de baie de données externe pour son pool de stockage.
+ONTAP Select Deploy et ONTAP Select pour ESXi prennent en charge la configuration d'un cluster ONTAP Select à nœud unique et à nœuds multiples, utilisant soit un vSAN, soit un type de datastore externe pour son pool de stockage.
 
 [NOTE]
 ====
@@ -194,7 +194,7 @@ Vous pouvez réduire la taille d'un cluster de huit nœuds à six nœuds grâce 
 
 
 
-NOTE: La prise en charge de l'extension et de la réduction des clusters est limitée aux clusters ESX uniquement.
+NOTE: La prise en charge de l’extension et de la réduction des clusters est limitée aux clusters ESXi uniquement.
 
 
 

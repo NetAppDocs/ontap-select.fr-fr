@@ -27,7 +27,7 @@ Configurez l'hôte ESXi ou KVM pour qu'il reconnaisse les disques.
 .Avant de commencer
 Vérifiez que votre environnement de déploiement répond aux exigences minimales suivantes :
 
-* Pour un hôte ESX, ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
+* Pour un hôte ESXi, ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration Deploy pris en charge
 * Pour un hôte KVM, ONTAP Select 9.17.1 ou version ultérieure avec un utilitaire d'administration Deploy pris en charge
 * Offre de licence Premium XL ou licence d'évaluation de 90 jours
 * L'hôte ESXi ou KVM exécute une version d'hyperviseur prise en charge :

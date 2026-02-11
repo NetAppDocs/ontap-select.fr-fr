@@ -54,8 +54,8 @@ Le tableau suivant compare les deux modèles de licence de production pris en ch
 | Application : la licence a expiré | S/O | Oui (pas de délai de grâce) 
 
 
-| Licence minimale | 1 Tio | 2 Tio 
+| Licence minimale | 1 To | 2 To 
 
 
-| Espace géré maximal | 400 TiB par nœud | 400 TiB par nœud 
+| Espace géré maximal | 400 To par nœud | 400 To par nœud 
 |===

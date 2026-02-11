@@ -69,7 +69,7 @@ Oui, la procédure de mise à niveau pour un cluster Select est identique à la 
 Oui, la procédure de restauration d'un cluster ONTAP Select est quasiment identique à la procédure de restauration d'un cluster FAS. Il y a toutefois quelques différences :
 
 * Seules les instances mises à niveau de ONTAP Select peuvent être rétablies et seulement jusqu'à la version d'installation d'origine. Les nouvelles installations ne peuvent pas être rétablies dans une ancienne version de code, même si ONTAP Select en général prend en charge cette ancienne version.
-* Pour ONTAP Select (KVM) et ONTAP Select (ESX) utilisant RAID logiciel, il n'est pas possible de revenir à une version antérieure qui ne prend pas en charge le RAID logiciel. En outre, une nouvelle installation de ONTAP Select 9.5 ou version ultérieure sur ESX utilise les pilotes réseau VMXNET3 et, si possible, le pilote vNMVE. Ces nouvelles installations ne peuvent pas être rétablies dans des versions antérieures de ONTAP Select.
+* Pour ONTAP Select (KVM) et ONTAP Select (ESX) utilisant le RAID logiciel, il est impossible de revenir à une version antérieure ne prenant pas en charge le RAID logiciel. De plus, une nouvelle installation de ONTAP Select 9.5 ou ultérieure sur ESXi utilise les pilotes réseau VMXNET3 et, lorsque cela est possible, le pilote vNMVE. Ces nouvelles installations ne peuvent pas être restaurées vers des versions antérieures de ONTAP Select.
 * Si la machine virtuelle ONTAP Select a également été mise à niveau vers une grande instance (à l'aide de la licence Premium XL), le retour à une version antérieure à 9.6 n'est pas pris en charge, car la fonctionnalité Grande instance n'est pas disponible dans les versions antérieures.
 
 
@@ -129,11 +129,11 @@ Si un abonnement au pool de capacité expire, le système vous avertit d'abord m
 
 Plusieurs questions et réponses concernant le stockage sont à poser.
 
-.Une seule instance ONTAP Select peut-elle créer des clusters sur ESX et KVM ?
+.Une seule instance ONTAP Select Deploy peut-elle créer des clusters à la fois sur ESXi et KVM ?
 Oui. ONTAP Select Deploy peut être installé sur KVM ou ESX, et les deux installations peuvent créer des clusters ONTAP Select sur l'un ou l'autre des hyperviseurs.
 
 .VCenter est-il requis pour ONTAP Select sur ESX ?
-Si les hôtes ESX sont sous licence appropriée, il est inutile de gérer les hôtes ESX par un serveur vCenter. Toutefois, si les hôtes sont gérés par un serveur vCenter, vous devez configurer le déploiement de ONTAP Select pour utiliser ce serveur vCenter. En d'autres termes, vous ne pouvez pas configurer des hôtes ESX comme autonomes dans ONTAP Select Deploy s'ils sont gérés activement par vCenter Server. Notez que ONTAP Select Deploy VM s'appuie sur vCenter pour suivre toutes les migrations de VM ONTAP Select entre les hôtes ESXi en raison d'un événement vMotion ou VMware HA.
+Si les hôtes ESXi disposent des licences appropriées, il n'est pas nécessaire qu'ils soient gérés par un vCenter Server. En revanche, s'ils sont gérés par un vCenter Server, vous devez configurer ONTAP Select Deploy pour utiliser ce vCenter Server. Autrement dit, vous ne pouvez pas configurer des hôtes ESXi comme autonomes dans ONTAP Select Deploy s'ils sont activement gérés par un vCenter Server. Notez que la machine virtuelle ONTAP Select Deploy s'appuie sur vCenter pour suivre toutes les migrations de machines virtuelles ONTAP Select entre les hôtes ESXi, suite à un événement vMotion ou de haute disponibilité VMware.
 
 .Qu'est-ce que le RAID logiciel ?
 ONTAP Select peut utiliser des serveurs sans contrôleur RAID matériel. Dans ce cas, la fonctionnalité RAID est implémentée dans le logiciel. Avec la technologie RAID logicielle, les disques SSD et NVMe sont pris en charge. Le démarrage ONTAP Select et les disques centraux doivent tout de même résider dans une partition virtualisée (pool de stockage ou datastore). ONTAP Select utilise RD2 (partitionnement données-racines) pour partitionner les disques SSD. La partition racine ONTAP Select réside donc sur les mêmes piles de disques physiques utilisées pour les agrégats de données. Toutefois, l'agrégat racine, l'amorçage et les disques virtualisés centraux ne sont pas pris en compte par rapport à la licence de capacité.
@@ -145,7 +145,7 @@ La technologie RAID logicielle est une couche de la pile logicielle ONTAP. Le lo
 
 Voici quelques-unes des conditions requises pour le RAID logiciel :
 
-* Pris en charge pour ESX et KVM
+* Pris en charge pour ESXi et KVM
 +
 ** Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge de l'hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1.
 
@@ -182,19 +182,19 @@ ONTAP Select Deploy contient un workflow d'ajout de stockage qui prend en charge
 Storage Add prend également en charge le RAID logiciel. Toutefois, dans le cas d'un RAID logiciel, des disques physiques supplémentaires doivent être ajoutés à la machine virtuelle ONTAP Select. L'ajout de stockage est semblable à la gestion d'une baie FAS ou AFF. Vous devez tenir compte des tailles de groupe RAID et des disques lors de l'ajout de stockage à un nœud ONTAP Select à l'aide du logiciel RAID.
 
 .ONTAP Select prend-il en charge les datastores VSAN ou de type baie externe ?
-ONTAP Select Deploy et ONTAP Select for ESX prennent en charge la configuration d'un cluster ONTAP Select à nœud unique en utilisant un VSAN ou un type de baie externe de datastore pour son pool de stockage.
+ONTAP Select Deploy et ONTAP Select pour ESXi prennent en charge la configuration d'un cluster ONTAP Select à nœud unique utilisant soit un datastore de type vSAN, soit une baie externe comme pool de stockage.
 
 ONTAP Select Deploy et ONTAP Select for KVM prennent en charge la configuration d'un cluster ONTAP Select à nœud unique à l'aide d'un type de pool de stockage logique partagé sur les baies externes. Les pools de stockage peuvent être basés sur iSCSI ou FC/FCoE. Les autres types de pools de stockage ne sont pas pris en charge.
 
-Les clusters haute disponibilité à plusieurs nœuds sur un système de stockage partagé sont pris en charge.
+Les clusters haute disponibilité (HA) multi-nœuds sur stockage partagé sont pris en charge.
 
-.ONTAP Select prend-il en charge les clusters à plusieurs nœuds sur VSAN ou tout autre stockage externe partagé incluant certaines piles HCI ?
-Les clusters à plusieurs nœuds qui utilisent un stockage externe (multinœud vNAS) sont pris en charge pour ESX et KVM. Le mélange d'hyperviseurs dans le même cluster n'est pas pris en charge. Une architecture haute disponibilité sur stockage partagé implique toujours que chaque nœud d'une paire haute disponibilité possède une copie en miroir de ses données partenaires. Toutefois, un cluster à plusieurs nœuds tire parti des avantages de la continuité de l'activité de ONTAP, contrairement à un cluster à un seul nœud qui repose sur VMware HA ou KVM Live Motion.
+.ONTAP Select prend-il en charge les clusters multi-nœuds sur vSAN ou d'autres stockages externes partagés, y compris certaines piles HCI ?
+Les clusters multi-nœuds utilisant un stockage externe (vNAS multi-nœuds) sont pris en charge pour ESXi et KVM. La combinaison de plusieurs hyperviseurs au sein d'un même cluster n'est pas prise en charge. Une architecture haute disponibilité sur stockage partagé implique toujours que chaque nœud d'une paire haute disponibilité possède une copie miroir des données de son partenaire. Cependant, un cluster multi-nœuds apporte les avantages des opérations sans interruption d'ONTAP, contrairement à un cluster mono-nœud qui repose sur VMware HA ou KVM Live Motion.
 
-Bien qu'ONTAP ONTAP Select Deploy prenne en charge plusieurs machines virtuelles ONTAP Select sur le même hôte, ces instances ne peuvent pas faire partie du même cluster ONTAP Select lors de sa création. Pour les environnements ESX, NetApp recommande de créer des règles d'anti-affinité de machines virtuelles afin que VMware HA ne tente pas de migrer plusieurs machines virtuelles ONTAP Select du même cluster ONTAP Select vers un seul hôte ESX. De plus, si ONTAP Select Deploy détecte qu'une migration vMotion administrative (initiée par l'utilisateur) ou une migration en direct d'une machine virtuelle ONTAP Select a entraîné une violation de nos meilleures pratiques, comme le fait que deux nœuds ONTAP Select se retrouvent sur le même hôte physique, ONTAP Select Deploy publie une alerte dans l'interface utilisateur de déploiement et le journal. ONTAP Select Deploy ne peut connaître l'emplacement de la machine virtuelle ONTAP Select que par une actualisation du cluster, une opération manuelle que l'administrateur ONTAP Select Deploy doit lancer.  Il n'existe aucune fonctionnalité dans ONTAP Select Deploy permettant une surveillance proactive, et l'alerte n'est visible que via l'interface utilisateur de déploiement ou le journal. Autrement dit, elle ne peut pas être transmise à une infrastructure de surveillance centralisée.
+Bien que ONTAP Select Deploy ajoute la prise en charge de plusieurs machines virtuelles ONTAP Select sur le même hôte, il n'autorise pas ces instances à faire partie du même cluster ONTAP Select lors de la création du cluster. Pour les environnements ESXi, NetApp recommande de créer des règles d'anti-affinité pour les machines virtuelles afin que VMware HA n'essaie pas de migrer plusieurs machines virtuelles ONTAP Select du même cluster ONTAP Select vers un seul hôte ESXi. De plus, si ONTAP Select Deploy détecte qu'une vMotion administrative (initiée par l'utilisateur) ou une migration à chaud d'une machine virtuelle ONTAP Select a entraîné une violation de notre bonne pratique, comme la présence de deux nœuds ONTAP Select sur le même hôte physique, ONTAP Select Deploy affiche une alerte dans l'interface utilisateur Deploy et dans le journal. La seule façon pour ONTAP Select Deploy de connaître l'emplacement de la machine virtuelle ONTAP Select est à la suite d'une opération d'actualisation du cluster, qui est une opération manuelle que l'administrateur ONTAP Select Deploy doit initier. Il n'y a aucune fonctionnalité dans ONTAP Select Deploy permettant une surveillance proactive, et l'alerte n'est visible que via l'interface utilisateur Deploy ou le journal. En d'autres termes, cette alerte ne peut pas être transmise à une infrastructure de surveillance centralisée.
 
 .ONTAP Select prend-il en charge NSX VXLAN de VMware ?
-Les groupes de ports NSX-V VXLAN sont pris en charge. Pour la haute disponibilité multinœud, y compris ONTAP MetroCluster SDS, assurez-vous de configurer la MTU du réseau interne entre 7500 et 8900 (au lieu de 9000) afin d'adapter la surcharge VXLAN. La MTU du réseau interne peut être configurée avec ONTAP Select Deploy lors du déploiement d'un cluster.
+Les groupes de ports VXLAN NSX-V sont pris en charge. Pour la haute disponibilité multi-nœuds, y compris ONTAP MetroCluster SDS, assurez-vous de configurer la MTU du réseau interne entre 7500 et 8900 (au lieu de 9000) pour tenir compte de la surcharge VXLAN. La MTU du réseau interne peut être configurée avec ONTAP Select Deploy lors du déploiement du cluster.
 
 .ONTAP Select prend-il en charge la migration KVM ?
 Les machines virtuelles ONTAP Select exécutées sur des pools de stockage de baies externes prennent en charge les migrations dynamiques de virsh.
@@ -208,8 +208,8 @@ La machine virtuelle Select hérite de la règle de stockage du datastore VSAN e
 .Est-il possible d'exécuter plusieurs nœuds ONTAP Select sur un même hôte s'ils font partie de différents clusters Select ?
 Il est possible de configurer plusieurs nœuds ONTAP Select sur le même hôte pour les configurations vNAS uniquement, tant que ces nœuds ne font pas partie du même cluster ONTAP Select. Cette opération n'est pas prise en charge dans les configurations DAS, car plusieurs nœuds ONTAP Select sur le même hôte physique seraient concurrents en vue de l'accès au contrôleur RAID.
 
-.Peut-on disposer d'un hôte avec un seul port 10GE sur le ONTAP Select. Est-il disponible pour ESX et KVM ?
-Vous pouvez utiliser un seul port 10GE pour la connexion au réseau externe. Cependant, NetApp vous recommande de l'utiliser uniquement dans les environnements de petit format limités. Cette opération est prise en charge par ESX et KVM.
+.Pouvez-vous avoir un hôte avec un seul port 10GE exécutant ONTAP Select, et est-il disponible à la fois pour ESXi et KVM ?
+Vous pouvez utiliser un seul port 10GE pour vous connecter au réseau externe. Cependant, NetApp recommande de n'utiliser cela que dans des environnements à petit facteur de forme et contraints. Ceci est pris en charge avec ESXi et KVM.
 
 .Quels processus supplémentaires devez-vous exécuter pour effectuer une migration en direct sur KVM ?
 Vous devez installer et exécuter des composants open source CLVM et Pacemaker (pcs) sur chaque hôte participant à la migration en direct. Vous devez accéder aux mêmes groupes de volumes sur chaque hôte.
@@ -221,7 +221,7 @@ Vous devez installer et exécuter des composants open source CLVM et Pacemaker (
 Il existe plusieurs questions et réponses concernant VMware vCenter.
 
 .Comment ONTAP Select déploie-t-il la communication avec vCenter et quels ports de pare-feu doivent être ouverts ?
-ONTAP Select Deploy utilise l'API VMware VIX pour communiquer avec vCenter, l'hôte ESX ou les deux. La documentation VMware indique que la connexion initiale à un serveur vCenter ou à un hôte ESX s'effectue via HTTPS/SOAP sur le port TCP 443. Il s'agit du port HTTP sécurisé sur TLS/SSL. Ensuite, une connexion à l'hôte ESX est établie sur un socket du port TCP 902. Les données transitant par cette connexion sont chiffrées via SSL. De plus, ONTAP Select Deploy émet un  `PING` commande pour vérifier qu'il existe un hôte ESX répondant à l'adresse IP que vous avez spécifiée.
+ONTAP Select Deploy utilise l'API VMware VIX pour communiquer avec le vCenter, l'hôte ESXi ou les deux. La documentation VMware indique que la connexion initiale à un vCenter Server ou à un hôte ESXi s'effectue via HTTPS/SOAP sur le port TCP 443. C'est le port pour le protocole HTTP sécurisé via TLS/SSL. Ensuite, une connexion à l'hôte ESXi est ouverte sur un socket du port TCP 902. Les données transitant par cette connexion sont chiffrées avec SSL. De plus, ONTAP Select Deploy émet une  `PING` commande pour vérifier qu'il y a un hôte ESXi répondant à l'adresse IP que vous avez spécifiée.
 
 ONTAP Select Deploy doit pouvoir communiquer avec les adresses IP de gestion du cluster et du nœud ONTAP Select comme suit :
 
@@ -232,7 +232,7 @@ ONTAP Select Deploy doit pouvoir communiquer avec les adresses IP de gestion du 
 
 Pour les clusters à deux nœuds, ONTAP Select déploie les hôtes des boîtes aux lettres du cluster. Chaque nœud ONTAP Select doit pouvoir accéder au déploiement ONTAP Select via iSCSI (port 3260).
 
-Pour les clusters multinœuds, le réseau interne doit être entièrement ouvert (pas de NAT ni de pare-feu).
+Pour les clusters multi-nœuds, le réseau interne doit être entièrement ouvert (pas de NAT ni de pare-feu).
 
 .Quels sont les droits vCenter nécessaires à ONTAP Select Deploy pour créer des clusters ONTAP Select ?
 La liste des droits vCenter requis est disponible ici : link:reference_plan_ots_vcenter.html["Serveur VMware vCenter"].
@@ -284,15 +284,16 @@ Les exigences sont les suivantes :
 Les machines virtuelles ONTAP Select qui s'exécutent sur des datastores VSAN ou sur des baies externes (c'est-à-dire les déploiements vNAS) prennent en charge vMotion, DRS et VMware HA.
 
 .ONTAP Select prend-il en charge Storage vMotion ?
-Storage vMotion est pris en charge dans toutes les configurations, y compris les clusters ONTAP Select à un ou plusieurs nœuds, et le serveur virtuel ONTAP Select Deploy. Storage vMotion peut être utilisé pour migrer ONTAP Select ou ONTAP Select Deploy VM entre différentes versions de VMFS (VMFS 5 à VMFS 6 par exemple), mais cette utilisation n'est pas limitée. Il est recommandé d'arrêter la machine virtuelle avant de lancer une opération Storage vMotion. Le déploiement de ONTAP Select doit lancer l'opération suivante une fois l'opération de stockage vMotion terminée :
+Le stockage vMotion est pris en charge pour toutes les configurations, y compris les clusters ONTAP Select à nœud unique et à nœuds multiples, ainsi que la machine virtuelle ONTAP Select Deploy. Le stockage vMotion peut être utilisé pour migrer ONTAP Select ou la machine virtuelle ONTAP Select Deploy entre différentes versions de VMFS (par exemple, de VMFS 5 à VMFS 6), mais il n'est pas limité à ce cas d'utilisation. La bonne pratique consiste à arrêter la machine virtuelle avant d'initier une opération de stockage vMotion. ONTAP Select Deploy doit exécuter l'opération suivante après la fin de l'opération de stockage vMotion :
 
 [listing]
 ----
 cluster refresh
 ----
-Notez qu'une opération Storage vMotion entre différents types de datastores n'est pas prise en charge. En d'autres termes, les opérations de stockage vMotion entre datastores de type NFS et datastores VMFS ne sont pas prises en charge. En général, les opérations de stockage vMotion entre datastores externes et datastores DAS ne sont pas prises en charge.
 
-.Le trafic haute disponibilité entre les nœuds ONTAP Select peut-il s'exécuter sur un vSwitch différent et/ou des ports physiques séparés et/ou à l'aide de câbles IP point à point entre les hôtes ESX ?
+NOTE: Une opération de stockage vMotion entre différents types de banques de données n'est pas prise en charge. Autrement dit, les opérations de stockage vMotion entre des banques de données de type NFS et des banques de données VMFS ne sont pas prises en charge. De manière générale, les opérations de stockage vMotion entre des banques de données externes et des banques de données DAS ne sont pas prises en charge.
+
+.Le trafic HA entre les nœuds ONTAP Select peut-il transiter par un vSwitch différent et/ou des ports physiques séparés et/ou en utilisant des câbles IP point à point entre les hôtes ESXi ?
 Ces configurations ne sont pas prises en charge. ONTAP Select ne dispose pas de visibilité sur l'état des liaisons montantes du réseau physique transportant le trafic client. Par conséquent, ONTAP Select s'appuie sur le cœur de haute disponibilité pour s'assurer que la VM est accessible en même temps aux clients et à ses homologues. En cas de perte de connectivité physique, la perte du signal de détection haute disponibilité entraîne le basculement automatique vers l'autre nœud, qui est le comportement souhaité.
 
 La segmentation du trafic HA sur une infrastructure physique distincte peut entraîner la communication d'une VM Select avec son homologue, mais pas avec ses clients. Cela empêche le processus haute disponibilité automatique et entraîne une indisponibilité des données jusqu'à ce qu'un basculement manuel soit appelé.

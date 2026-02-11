@@ -74,6 +74,6 @@ Ce paramètre contrôle le comportement des commandes à exécution longue. Si c
  a| 
 `-username _username_`
  a| 
-Nom d'utilisateur ayant accès à cet hôte. Cette opération est requise uniquement si l'hôte n'est pas géré par un serveur de gestion (c'est-à-dire un hôte ESX géré par vCenter).
+Le nom d'utilisateur ayant accès à cet hôte. Ceci est requis uniquement si l'hôte n'est pas géré par un serveur d'administration (c'est-à-dire un hôte ESXi géré par un vCenter).
 
 |===

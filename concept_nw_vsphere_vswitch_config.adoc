@@ -31,7 +31,7 @@ NOTE: Les canaux de ports statiques ne sont pas pris en charge avec ONTAP Select
 
 Pour les clusters à nœud unique, ONTAP Deploy configure la machine virtuelle ONTAP Select pour utiliser un groupe de ports pour le réseau externe et soit le même groupe de ports, soit, en option, un groupe de ports différent pour le trafic de gestion du cluster et des nœuds. Pour les clusters à nœud unique, vous pouvez ajouter le nombre souhaité de ports physiques au groupe de ports externes en tant qu'adaptateurs actifs.
 
-Pour les clusters à plusieurs nœuds, ONTAP Deploy configure chaque serveur virtuel ONTAP Select afin qu'il utilise un ou deux groupes de ports pour le réseau interne et, séparément, un ou deux groupes de ports pour le réseau externe. Le trafic de gestion du cluster et des nœuds peut utiliser le même groupe de ports que le trafic externe, ou un autre groupe de ports. Le trafic cluster et node management ne peut pas partager le même port group avec le trafic interne.
+Pour les clusters multi-nœuds, ONTAP Deploy configure chaque machine virtuelle ONTAP Select pour utiliser un ou deux groupes de ports pour le réseau interne et, séparément, un ou deux groupes de ports pour le réseau externe. Le trafic de gestion du cluster et du nœud peut soit utiliser le même groupe de ports que le trafic externe, soit, en option, un groupe de ports distinct. Le trafic de gestion du cluster et du nœud ne peut pas partager le même groupe de ports que le trafic interne.
 
 
 NOTE: ONTAP Select prend en charge un maximum de quatre vmnics.
@@ -40,7 +40,7 @@ NOTE: ONTAP Select prend en charge un maximum de quatre vmnics.
 
 == VSwitch standard ou distribué et quatre ports physiques par nœud
 
-Vous pouvez attribuer quatre groupes de ports à chaque nœud d'un cluster multinœud. Chaque groupe de ports possède un seul port physique actif et trois ports physiques de secours, comme illustré dans la figure suivante.
+Vous pouvez affecter quatre groupes de ports à chaque nœud dans un cluster multi-nœuds. Chaque groupe de ports dispose d’un port physique actif et de trois ports physiques de secours, comme dans la figure suivante.
 
 *VSwitch avec quatre ports physiques par nœud*
 
@@ -124,9 +124,9 @@ Lors de l'utilisation de deux cartes réseau haut débit (25/40 Gb), la configur
 
 image:DDN_17.jpg["VSwitch avec deux ports physiques haut débit (25 Go) par nœud"]
 
-Lorsque vous utilisez deux ports physiques (10 Go ou moins), chaque port group doit disposer d'un adaptateur actif et d'un adaptateur de secours configuré l'un en face de l'autre. Le réseau interne n'est présent que pour les clusters ONTAP Select à plusieurs nœuds. Dans le cas des clusters à un seul nœud, les deux adaptateurs peuvent être configurés comme actifs dans le port group externe.
+Lors de l'utilisation de deux ports physiques (10Gb ou moins), chaque groupe de ports doit comporter un adaptateur actif et un adaptateur de secours configurés de manière opposée. Le réseau interne est uniquement présent pour les clusters ONTAP Select multi-nœuds. Pour les clusters mono-nœud, les deux adaptateurs peuvent être configurés comme actifs dans le groupe de ports externe.
 
-L'exemple suivant illustre la configuration d'un vSwitch et des deux groupes de ports chargés de gérer les services de communication internes et externes pour un cluster ONTAP Select multinœud. En cas de panne de réseau, le réseau externe peut utiliser la VMNIC du réseau interne car les VMNIC du réseau interne font partie de ce groupe de ports et sont configurées en mode veille. C'est l'inverse pour le réseau externe. L'alternance des VMNIC actives et de secours entre les deux groupes de ports est essentielle pour le bon basculement des VM ONTAP Select lors des pannes de réseau.
+L'exemple suivant montre la configuration d'un vSwitch et des deux groupes de ports responsables de la gestion des services de communication interne et externe pour un cluster ONTAP Select multinœud. Le réseau externe peut utiliser la VMNIC du réseau interne en cas de panne réseau, car les VMNICs du réseau interne font partie de ce groupe de ports et sont configurées en mode veille. L'inverse est vrai pour le réseau interne. L'alternance des VMNIC actives et de secours entre les deux groupes de ports est essentielle pour le basculement correct des machines virtuelles ONTAP Select lors des pannes réseau.
 
 *VSwitch avec deux ports physiques (10 Go ou moins) par nœud*
 

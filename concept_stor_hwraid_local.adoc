@@ -42,7 +42,7 @@ Tous les disques connectés en local qui fournissent à ONTAP Select le stockage
 Les disques NL-SAS et SATA requièrent un ensemble de meilleures pratiques. Pour des raisons de performances, le nombre minimal de disques est toujours huit, mais la taille du groupe RAID ne doit pas être supérieure à 12 disques. NetApp recommande également d'utiliser un disque de secours par groupe RAID. Cependant, il est possible d'utiliser des disques de secours globaux pour tous les groupes RAID. Par exemple, vous pouvez utiliser deux unités de rechange pour trois groupes RAID, chaque groupe RAID composé de huit à 12 disques.
 
 
-NOTE: L'extension et la taille maximales des datastores pour les versions ESX plus anciennes sont de 64 To, ce qui peut affecter le nombre de LUN nécessaires pour prendre en charge la capacité brute totale fournie par ces disques grande capacité.
+NOTE: La taille maximale des volumes et des banques de données pour les anciennes versions d'ESXi est de 64 To, ce qui peut affecter le nombre de LUN nécessaires pour prendre en charge la capacité brute totale fournie par ces disques de grande capacité.
 
 
 
@@ -99,7 +99,7 @@ Dans deux cas, vous devez modifier les configurations single-RAID group/single-L
 
 == Limites du système de fichiers de machines virtuelles VMware vSphere
 
-La taille maximale d'un datastore sur certaines versions d'ESX est de 64 To.
+La taille maximale d'un datastore sur certaines versions d'ESXi est de 64TB.
 
 Si un serveur possède plus de 64 To de stockage connecté, plusieurs LUN peuvent avoir besoin d'être provisionnés, chacun d'être plus petits que 64 To. La création de plusieurs groupes RAID pour améliorer la durée de reconstruction RAID sur les disques SATA/NL-SAS entraîne également le provisionnement de plusieurs LUN.
 
@@ -160,7 +160,7 @@ En général, les systèmes FAS de NetApp sont équipés d'une carte PCI NVRAM p
 
 Les systèmes de produits de base ne sont généralement pas équipés de ce type d'équipement. La fonctionnalité de cette carte NVRAM a donc été virtualisée et placée dans une partition sur le disque de démarrage du système ONTAP Select. C'est pour cette raison que le placement du disque virtuel système de l'instance est extrêmement important. C'est pourquoi le produit exige la présence d'un contrôleur RAID physique avec un cache résilient pour les configurations de stockage local.
 
-La NVRAM est placée sur son propre VMDK. Le fractionnement de la NVRAM dans son propre VMDK permet à la VM ONTAP Select d'utiliser le pilote vNVMe pour communiquer avec son VMDK NVRAM . Il est également nécessaire que la machine virtuelle ONTAP Select utilise la version matérielle 13, compatible avec ESX 8.0 et versions ultérieures.
+La NVRAM est placée sur son propre VMDK. Séparer la NVRAM dans son propre VMDK permet à la machine virtuelle ONTAP Select d'utiliser le pilote vNVMe pour communiquer avec son VMDK NVRAM. Cela nécessite également que la machine virtuelle ONTAP Select utilise la version matérielle 13, qui est compatible avec ESXi 8.0 et versions ultérieures.
 
 
 
@@ -184,4 +184,4 @@ NOTE: Bien que les blocs modifiés sur le VMDK NVRAM soient mis en cache dans le
 image:ST_13.jpg["Écriture entrante sur la machine virtuelle ONTAP Select"]
 
 
-NOTE: La partition NVRAM est séparée sur son propre VMDK. Ce VMDK est connecté via le pilote vNVME disponible dans les versions ESX 8.0 et ultérieures. Ce changement est particulièrement important pour les installations ONTAP Select avec RAID logiciel, qui ne bénéficient pas du cache du contrôleur RAID.
+NOTE: La partition NVRAM est séparée sur son propre VMDK. Ce VMDK est attaché à l'aide du pilote vNVME disponible dans les versions ESXi 8.0 ou ultérieures. Ce changement est particulièrement important pour les installations ONTAP Select avec RAID logiciel, qui ne bénéficient pas du cache du contrôleur RAID.

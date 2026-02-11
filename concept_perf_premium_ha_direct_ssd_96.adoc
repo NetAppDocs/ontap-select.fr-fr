@@ -28,7 +28,7 @@ Matériel ONTAP Select (Premium XL) (par nœud)
 ** 32 cœurs physiques (16 x 2 sockets), 64 cœurs logiques
 ** 256 GO DE RAM
 ** Disques par hôte : 24 SSD de 960 Go
-** ESX 6.5U1
+** ESXi 6.5U1
 
 
 

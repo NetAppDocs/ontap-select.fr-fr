@@ -17,7 +17,7 @@ summary: Vous devez tenir compte de plusieurs problèmes de planification liés 
 Vous devez tenir compte de plusieurs problèmes de planification liés au stockage hôte ONTAP Select.
 
 
-NOTE: Les informations relatives à la prise en charge du stockage externe sont décrites dans le link:reference_plan_ots_vnas.html["Exigences ONTAP Select vNAS"].
+NOTE: Les informations relatives à la prise en charge du stockage externe sont décrites pour les hôtes ESXi et KVM. Pour plus d'informations, consultez link:reference_plan_ots_vnas.html["Exigences VMware ESXi"] et link:reference_plan_ots_kvm.html["exigences KVM"].
 
 
 
@@ -38,15 +38,15 @@ La configuration minimale requise pour le contrôleur RAID est la suivante :
 ** Activation de la stratégie « toujours en lecture anticipée » (si elle est prise en charge)
 
 
-* Tous les disques locaux derrière le contrôleur RAID doivent être configurés en tant que groupe RAID unique ; plusieurs contrôleurs RAID peuvent être utilisés si nécessaire :
+* Tous les disques locaux situés derrière le contrôleur RAID doivent être configurés comme un seul groupe RAID ; utilisez plusieurs contrôleurs RAID si nécessaire :
 +
 ** Désactivez le cache de disque local pour le groupe RAID. Il est fondamental pour préserver l'intégrité des données.
 
 
-* La configuration des LUN doit être effectuée selon les consignes suivantes :
+* Effectuez la configuration LUN selon les directives suivantes :
 +
-** Si la taille du groupe RAID dépasse la taille de LUN maximale de 64 To, vous devez configurer plusieurs LUN de taille égale qui consomment tout le stockage disponible au sein du groupe RAID.
-** Si la taille du groupe RAID est inférieure à la taille maximale de LUN de 64 To, vous devez configurer une LUN qui consomme tout le stockage disponible au sein du groupe RAID.
+** Si la taille du groupe RAID dépasse la taille maximale du LUN de 64TB, configurez plusieurs LUN de taille égale utilisant tout le stockage disponible au sein du groupe RAID.
+** Si la taille du groupe RAID est inférieure à la taille maximale du LUN de 64TB, configurez un LUN utilisant tout le stockage disponible au sein du groupe RAID.
 
 
 
@@ -55,7 +55,7 @@ La configuration minimale requise pour le contrôleur RAID est la suivante :
 
 == Configuration RAID logicielle requise
 
-Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur, vous pouvez utiliser la fonctionnalité RAID logicielle fournie par ONTAP Select à la place d'un contrôleur RAID matériel local. Vous devez connaître plusieurs conditions et restrictions avant de déployer un cluster à l'aide du logiciel RAID.
+Lors du déploiement d'un cluster ONTAP Select sur l'hyperviseur, vous pouvez utiliser la fonctionnalité RAID logiciel fournie par ONTAP Select au lieu d'un contrôleur RAID matériel local. Examinez les exigences et restrictions suivantes avant de déployer un cluster utilisant le RAID logiciel.
 
 
 
@@ -99,7 +99,7 @@ La valeur signalée pour ces commandes doit être « 0 ».
 
 
 
-* Les périphériques doivent être connectés à un HBA ou, dans certains cas, à un contrôleur RAID configuré pour fonctionner en mode JBOD. Lors de l'utilisation d'un contrôleur RAID, la fonction de périphérique doit être transmise à l'hôte sans superposer aucune fonctionnalité RAID. Lorsque vous utilisez un contrôleur RAID en mode JBOD, vous devez consulter la documentation RAID ou contacter le fournisseur si nécessaire pour vous assurer que le périphérique indique la vitesse de rotation « 0 ».
+* Il est prévu que les périphériques soient connectés à un HBA ou, dans certains cas, à un contrôleur RAID configuré pour fonctionner en mode JBOD. Lors de l'utilisation d'un contrôleur RAID, la fonction du périphérique doit être transmise par l'hôte sans superposer aucune fonctionnalité RAID. Lors de l'utilisation d'un contrôleur RAID en mode JBOD, vous devez consulter la documentation RAID ou contacter le fournisseur si nécessaire pour vous assurer que le périphérique indique une vitesse de rotation de '0'.
 * Il existe deux composants de stockage distincts :
 +
 ** Stockage de machines virtuelles
@@ -189,7 +189,7 @@ Vous pouvez configurer chaque nœud ONTAP Select de façon à utiliser jusqu'à 
 
 
 
-NOTE: Un tampon de 2 % reste inutilisé dans chaque pool de stockage et ne nécessite pas de licence de capacité. Ce stockage n'est pas utilisé par ONTAP Select, sauf si un bouchon de capacité est spécifié. Si un plafond de capacité est spécifié, cette quantité de stockage sera utilisée à moins que la quantité spécifiée ne tombe dans la zone tampon de 2 %. La mémoire tampon est nécessaire pour éviter les erreurs occasionnelles qui se produisent lors de la tentative d'allocation de tout l'espace dans un pool de stockage.
+NOTE: Une réserve de 2 % est inutilisée dans chaque pool de stockage et ne nécessite pas de licence de capacité. ONTAP Select n'utilise pas ce stockage sauf si vous spécifiez une limite de capacité. Si vous spécifiez une limite de capacité, alors ONTAP Select utilise cette quantité de stockage, sauf si la quantité spécifiée se situe dans la réserve de 2 %. La réserve est nécessaire pour éviter les erreurs occasionnelles qui surviennent lors de la tentative d'allocation de tout l'espace dans un pool de stockage.
 
 
 

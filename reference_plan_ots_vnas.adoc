@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_plan_ots_vnas.html 
-keywords: plan, planning, vnas, vmware esxi, 
+keywords: plan, planning, vnas, vmware esxi, external storage 
 summary: 'Vous devez prendre en compte plusieurs problèmes de planification liés à l"utilisation de VMware ESXi.' 
 ---
-= Configuration requise pour ONTAP Select VMware ESXi
+= Exigences de stockage externe VMware ESXi pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -53,9 +53,9 @@ CAUTION: Lors de la configuration d'un hôte ou de l'exécution d'une opération
 
 == Et des meilleures pratiques
 
-Consultez la documentation VMware disponible et respectez les meilleures pratiques applicables identifiées pour les hôtes ESXi. Par ailleurs :
+Consultez la documentation VMware et suivez les bonnes pratiques applicables identifiées pour les hôtes ESXi. De plus :
 
 * Définir des ports réseau dédiés, la bande passante et le vSwitch pour les réseaux ONTAP Select et le stockage externe (VMware VSAN et le trafic générique de la baie de stockage lors de l'utilisation d'iSCSI ou NFS)
 * Configurer l'option de capacité pour restreindre l'utilisation du stockage (ONTAP Select ne peut pas consommer la totalité de la capacité d'un datastore externe vNAS)
-* Assurez-vous que toutes les baies de stockage externes génériques utilisent, lorsque cela est possible, les fonctionnalités de redondance et de haute disponibilité disponibles
+* Vérifiez que toutes les baies de stockage externes génériques utilisent les fonctionnalités de redondance et de HA disponibles lorsque cela est possible
 

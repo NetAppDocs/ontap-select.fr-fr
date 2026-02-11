@@ -88,9 +88,9 @@ Chaque disque de données est divisé en trois parties : une petite partition r
 
 image:ST_19.jpg["Partitionnement de disque RDD pour les clusters à un seul nœud"]
 
-*Partitionnement de disque RDD pour les clusters multinœuds (paires HA)*
+*Partitionnement de disque RDD pour les clusters multi-nœuds (paires haute disponibilité)*
 
-image:ST_20.jpg["Partitionnement de disque RDD pour les clusters multinœuds (paires haute disponibilité)"]
+image:ST_20.jpg["Partitionnement de disque RDD pour les clusters multi-nœuds (paires haute disponibilité)"]
 
 Le RAID logiciel ONTAP prend en charge les types RAID suivants : RAID 4, RAID-DP et RAID-TEC. Il s'agit des mêmes structures RAID que celles utilisées par les plateformes FAS et AFF . Pour le provisionnement racine, ONTAP Select prend uniquement en charge RAID 4 et RAID-DP. Lorsque RAID-TEC est utilisé pour l'agrégation de données, la protection globale est RAID-DP. ONTAP Select HA utilise une architecture sans partage qui réplique la configuration de chaque nœud sur l'autre. Cela signifie que chaque nœud doit stocker sa partition racine et une copie de celle de son homologue. Un disque de données possède une seule partition racine. Le nombre minimal de disques de données varie donc selon que le nœud ONTAP Select appartient ou non à une paire HA.
 
@@ -100,7 +100,7 @@ Pour les clusters à un seul nœud, toutes les partitions de données sont utili
 
 == Comparaison entre les périphériques Passthrough (DirectPath IO) et Cartes de périphériques brutes (RDM)
 
-Les hyperviseurs ESX et KVM ne prennent pas en charge les disques NVMe comme cartes de périphériques bruts (RDM). Pour permettre à ONTAP Select de prendre directement le contrôle des disques NVMe, vous devez configurer ces disques comme périphériques de transfert dans ESX ou KVM. La configuration d'un périphérique NVMe comme périphérique de transfert nécessite la prise en charge du BIOS du serveur et un redémarrage de l'hôte peut être nécessaire. De plus, le nombre de périphériques de transfert pouvant être attribués par hôte est limité, et peut varier selon la plateforme. Cependant, ONTAP Deploy limite ce nombre à 14 périphériques NVMe par nœud ONTAP Select . Cela signifie que la configuration NVMe offre une densité d'IOPS très élevée (IOPS/To) au détriment de la capacité totale. Si vous souhaitez une configuration hautes performances avec une capacité de stockage plus importante, nous recommandons une configuration ONTAP Select de grande taille, une carte Intel Optane pour le disque système et un nombre nominal de disques SSD pour le stockage des données.
+Les hyperviseurs ESXi et KVM ne prennent pas en charge les disques NVMe en tant que Raw Device Maps (RDM). Pour permettre à ONTAP Select de prendre le contrôle direct des disques NVMe, vous devez configurer ces disques comme périphériques passthrough au sein d'ESXi ou de KVM. Lors de la configuration d'un périphérique NVMe en tant que périphérique passthrough, cela nécessite la prise en charge du BIOS du serveur et il se peut que vous deviez redémarrer l'hôte. De plus, il existe des limites quant au nombre de périphériques passthrough pouvant être attribués par hôte, qui peuvent varier selon la plateforme. Cependant, ONTAP Deploy limite ce nombre à 14 périphériques NVMe par nœud ONTAP Select. Cela signifie que la configuration NVMe offre une densité d'IOPS (IOPS/To) très élevée, au détriment de la capacité totale. Sinon, si vous souhaitez une configuration haute performance avec une capacité de stockage plus importante, la configuration recommandée est une grande taille de machine virtuelle ONTAP Select, une carte INTEL Optane pour le disque système et un nombre nominal de disques SSD pour le stockage des données.
 
 
 NOTE: Pour exploiter pleinement les performances de NVMe, pensez à la taille importante des machines virtuelles ONTAP Select.
@@ -124,7 +124,7 @@ Comme pour les systèmes FAS et AFF , vous ne pouvez ajouter que des disques de 
 
 
 
-== Associez un disque ONTAP Select au disque ESX ou KVM correspondant
+== Associez un disque ONTAP Select au disque ESXi ou KVM correspondant
 
 Les disques ONTAP Select sont généralement étiquetés NET x.y Vous pouvez utiliser la commande ONTAP suivante pour obtenir l'UUID du disque :
 
@@ -142,7 +142,7 @@ Checksum Compatibility: advanced_zoned
 Aggregate: -
 Plex: -This UID can be matched with the device UID displayed in the ‘storage devices’ tab for the ESX host
 ----
-image:ST_21.jpg["Correspondance d'un disque ONTAP Select avec le disque ESX correspondant"]
+image:ST_21.jpg["Faire correspondre un disque ONTAP Select au disque ESXi correspondant"]
 
 Dans le shell ESXi ou KVM, vous pouvez entrer la commande suivante pour faire clignoter la LED d'un disque physique donné (identifié par son naa.unique-id).
 

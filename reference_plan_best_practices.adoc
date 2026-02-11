@@ -71,10 +71,10 @@ ONTAP Select ne reçoit aucune amélioration en termes de performances en augmen
 
 === Hôtes VMware ESXi
 
-NetApp recommande d'utiliser ESX 8.0 ou une version ultérieure et un disque NVMe pour la banque de données hébergeant les disques système. Cette configuration offre les meilleures performances pour la partition NVRAM .
+NetApp recommande d'utiliser ESXi 8.0 ou une version ultérieure et un disque NVMe pour la banque de données hébergeant les disques système. Cette configuration offre les meilleures performances pour la partition NVRAM.
 
 
-NOTE: Lors de l'installation sur ESX 8.0 ou version ultérieure, ONTAP Select utilise le pilote vNVMEe, que le disque système réside sur un SSD ou sur un disque NVMe. Cela définit le niveau matériel de la machine virtuelle sur 13, ce qui est compatible avec ESX 8.0 et versions ultérieures.
+NOTE: Lors de l'installation sur ESXi 8.0 ou version ultérieure, ONTAP Select utilise le pilote vNVMEe, que le disque système soit un SSD ou un disque NVMe. Cela définit le niveau matériel de la machine virtuelle sur 13, ce qui est compatible avec ESXi 8.0 et versions ultérieures.
 
 Définir des configurations de ports réseau dédiés, de bande passante et de vSwitch pour les réseaux ONTAP Select et le stockage externe (VMware VSAN et le trafic générique de la baie de stockage lors de l'utilisation d'iSCSI ou NFS).
 
@@ -169,7 +169,7 @@ ONTAP Select prend en charge une liaison 10 Gb unique pour les clusters à deux 
 
 Si une carte réseau possède plusieurs circuits intégrés spécifiques aux applications (ASIC), sélectionnez un port réseau à partir de chaque ASIC lorsque vous créez des constructions réseau via le regroupement de cartes réseau pour les réseaux internes et externes.
 
-NetApp recommande que le mode LACP soit actif sur l'ESX et les switchs physiques. De plus, le minuteur LACP doit être défini sur FAST (1 seconde) sur le commutateur physique, les ports, les interfaces de canal de port et sur les vmnics.
+NetApp recommande que le mode LACP soit actif à la fois sur l'ESXi et sur les commutateurs physiques. De plus, le minuteur LACP doit être réglé sur rapide (1 seconde) sur le commutateur physique, les ports, les interfaces de canal de ports et sur les VMNIC.
 
 Lors de l'utilisation d'un vSwitch distribué avec LACP, NetApp vous recommande de configurer la règle d'équilibrage de la charge sur le routage en fonction du hachage IP sur le groupe de ports, l'adresse IP source et de destination, le port TCP/UDP et le VLAN du LAG.
 

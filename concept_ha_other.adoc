@@ -36,7 +36,7 @@ Toutefois, dans l'architecture sans partage d'un cluster ONTAP Select, un nœud 
 Bien que la méthode existante de détection et d'évitement du split-brain ne puisse pas être utilisée, une méthode de médiation est toujours nécessaire, qui s'inscrit dans les contraintes d'un environnement sans partage. ONTAP Select étend encore davantage l'infrastructure de la boîte aux lettres existante, ce qui lui permet d'agir comme une méthode de médiation en cas de partitionnement du réseau. Étant donné que le stockage partagé n'est pas disponible, la médiation est effectuée par l'accès aux disques de boîte aux lettres via NAS. Ces disques sont répartis dans tout le cluster, notamment le médiateur dans un cluster à deux nœuds, à l'aide du protocole iSCSI. Il est donc possible de prendre des décisions intelligentes en matière de basculement par un nœud de cluster en fonction de l'accès à ces disques. Si un nœud peut accéder aux disques de boîte aux lettres d'autres nœuds en dehors de son partenaire de haute disponibilité, il est probable qu'il soit fonctionnel et prêt à être fonctionnement.
 
 
-NOTE: L'architecture de la boîte aux lettres et la méthode de heartbeef basée sur disque pour résoudre les problèmes de quorum du cluster et de split-brain sont les raisons pour lesquelles la variante à plusieurs nœuds de ONTAP Select nécessite quatre nœuds distincts ou un médiateur pour un cluster à deux nœuds.
+NOTE: L'architecture de boîtes aux lettres et la méthode de pulsation basée sur disque pour résoudre les problèmes de quorum de cluster et de split-brain sont les raisons pour lesquelles la variante multi-nœuds d'ONTAP Select nécessite soit quatre nœuds distincts, soit un médiateur pour un cluster à deux nœuds.
 
 
 
