@@ -38,15 +38,17 @@ Calculez la capacité sous licence en fonction de l'espace utilisable afin de vo
 | Espace utilisable maximal par nœud *Remarque* : l’espace géré maximal par nœud ou paire haute disponibilité est de 400 TB | 353 To (400 / 1,13)  a| 
 Par nœud dans une paire haute disponibilité :
 
-* 74 To [(400 / 2) / 2,67]
+* 149 To (400 / 2,67)
 
 
 Par paire haute disponibilité dans un cluster à plusieurs nœuds :
 
-* Deux nœuds : 148 To (2 x 74)
-* Quatre nœuds : 296 To (4 x 74)
-* Six-node : 444 To (6 x 74)
-* Huit nœuds : 592 To (8 x 74)
+* Deux nœuds : 298 To (2 x 149)
+* Quatre nœuds : 596 To (4 x 149)
+* Six-node : 894 To (6 x 149)
+* Huit nœuds : 1,192 To (8 x 149)
+* Dix nœuds : 1,490 To (10 x 149)
+* Douze nœuds : 1 788 To (12 x 149)
 
 
 |===

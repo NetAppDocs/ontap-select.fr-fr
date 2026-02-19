@@ -173,16 +173,6 @@
   <block id="6ead2b5cc2e9a07c3c837cd527eae680" category="section-title">Un seul nœud dans un cluster à quatre nœuds</block>
   <block id="0e17d1b8e444a58b17e21b8d633cf3c9" category="paragraph">La figure suivante illustre la configuration réseau standard d'une machine virtuelle ONTAP Select dans un cluster à quatre nœuds. Il existe deux réseaux distincts : ONTAP interne et ONTAP-externe.</block>
   <block id="ab818ab7a96525155b780ef59003cf8c" category="paragraph"><block ref="ab818ab7a96525155b780ef59003cf8c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c44b5d59bfc3b0196028c522c56aa989" category="paragraph">Le vSwitch est le composant principal de l'hyperviseur utilisé pour prendre en charge la connectivité des réseaux internes et externes. Dans le cadre de la configuration de chaque hyperviseur, vous devez tenir compte de plusieurs éléments.</block>
-  <block id="bfb9321c8431589faff7f47c47138df7" category="list-text">Définissez la règle d'équilibrage de charge sur « route basée sur l'ID de port virtuel d'origine ».</block>
-  <block id="0cc1ebaa405436d568cee576cc2d2503" category="inline-image-macro">Propriétés vSwitch)</block>
-  <block id="0bd1bd6c1c4f8c07bba0ee34ba53b4b3" category="list-text">Configurer le vSwitch pour utiliser des trames jumbo (9000 MTU).</block>
-  <block id="e954024be7362eabbc9a349d62fdd4d4" category="list-text">Configurer un port group sur le vSwitch pour le trafic interne (ONTAP-interne) :</block>
-  <block id="a75b88570c3f7c89c4fc7aa2f4ab0862" category="list-text">Le groupe de ports est attribué aux adaptateurs réseau virtuels ONTAP Select e0c-e0g utilisés pour le trafic de cluster, d'interconnexion haute disponibilité et de mise en miroir.</block>
-  <block id="98a4f6885e7d5c14cf8637949d2c7084" category="list-text">Le groupe de ports doit se trouver sur un VLAN non routable, car ce réseau devrait être privé. Vous devez ajouter la balise VLAN appropriée au groupe de ports pour prendre ceci en compte.</block>
-  <block id="1d73953b34ca84fbbf679a9071108259" category="list-text">Les paramètres d'équilibrage de charge, de retour arrière et d'ordre de basculement du port group doivent être identiques à ceux du vSwitch.</block>
-  <block id="b7760ca7d6bf308d66b54dafb201dee0" category="list-text">Configurer un port group sur le vSwitch pour le trafic externe (ONTAP-externe) :</block>
-  <block id="cc60c471b3f7c93bb39710ddf02f3de5" category="list-text">Le groupe de ports est attribué aux adaptateurs réseau virtuels ONTAP Select e0a-e0c utilisés pour le trafic de données et de gestion.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="doc">Avant de commencer</block>
   <block id="f0b655e3177f05e1818680329f42e14d" category="list-text">Exécutez une procédure sur un cluster ONTAP Select existant</block>
   <block id="dbb69dfed0d5d67f6ab5857dd72da676" category="list-text">Les procédures administratives sont organisées en différentes catégories, telles que _Security_ et _clusters_.</block>
@@ -2298,7 +2288,6 @@
   <block id="90cbb6ff863c3db71ceae9fe55f8e66f" category="paragraph">Ce paramètre contrôle le comportement des commandes à exécution longue. Si cette option est définie, la commande s'exécute au premier plan et les messages d'événement associés à l'opération s'affichent au fur et à mesure qu'ils se produisent.</block>
   <block id="830e3840fa2bc88cc12b99cba76ee4d3" category="paragraph"><block ref="82aa9c15f1551f89eb92d3d4b0470f4c" prefix="" category="inline-code"></block></block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Quoi de neuf</block>
-  <block id="8042c73ffcc0e5ec0c31ae3e4d7b414e" category="list-text">Marquer les deux adaptateurs comme "actifs" ou marquer un adaptateur comme "actif" et l'autre comme "veille".</block>
   <block id="f601b21fb8e0d97eaf4f9b6866a264f6" category="summary">Informations sur les performances de ONTAP Select 9.6 – stockage SSD haute disponibilité directe premium.</block>
   <block id="2d1e1ff5065ae8a1f3c889ed2101b09c" category="paragraph">Informations sur les performances de la plate-forme de référence.</block>
   <block id="e4491605377fcc65eaedf127cb13bb15" category="section-title">Plate-forme de référence</block>
@@ -3307,16 +3296,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="1abfe64fc729ead26726164b794bcc72" category="paragraph">Les figures suivantes illustrent les réseaux ONTAP Select utilisés avec un cluster à nœud unique et un cluster à quatre nœuds.</block>
   <block id="2e5a1a6424ee2d0aa549b427d2f571d2" category="open-title">Cluster à quatre nœuds</block>
   <block id="e6a67192413f528c465842e03f8443e0" category="paragraph">La figure suivante illustre un cluster à quatre nœuds montrant deux réseaux. Le réseau interne permet la communication entre les nœuds qui prennent en charge les services réseau du cluster ONTAP. Le réseau externe supporte le trafic client, de gestion et de réplication entre les clusters (SnapMirror/SnapVault).</block>
-  <block id="c3a20bbad365631eadc5b2dca8f640b3" category="section-title">Étape 3 : Configurer Open vSwitch</block>
-  <block id="d1beebffe274c5b13d29f2fbfaa10b06" category="paragraph">Les étapes suivantes concernent une configuration vSwitch pour un hôte ESXi avec deux ports physiques (2x10 Go) dans un environnement réseau classique.</block>
-  <block id="720708f411d277d77845e1db4cee83de" category="inline-link-macro">Configurer un vSwitch et attribuer les deux ports au vSwitch</block>
-  <block id="f07356480e3047e35b4cb99dbcc748e2" category="list-text"><block ref="2076eeb99e46600240fb1d963411bb31" category="inline-link-macro-rx"></block>.</block>
-  <block id="bf87bb05f214f1b9f8546e218338fb13" category="inline-link-macro">Créer une équipe NIC en utilisant les deux ports</block>
-  <block id="32d6da19d2584fe97eb75d6418af8ca3" category="list-text"><block ref="4d5b30272096305aaf5c4ffdca2a1db5" category="inline-link-macro-rx"></block>.</block>
-  <block id="5a9f02bdaab74c00379f1d1e19fe6c57" category="list-text">Définissez le paramètre "Retour arrière" sur "Oui".</block>
-  <block id="f2456bc45004bdf347023d01536a2379" category="paragraph"><block ref="f2456bc45004bdf347023d01536a2379" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9c0cdffd9a10aa81c87d6972a4d9f884" category="list-text">Le groupe de ports peut se trouver sur un VLAN routable. En fonction de l'environnement réseau, vous devez également ajouter une balise VLAN appropriée ou configurer le groupe de ports pour la jonction VLAN.</block>
-  <block id="fae4bee7c370d0d0391b8ef189079d46" category="list-text">Les paramètres d'équilibrage de charge, de restauration et d'ordre de basculement du groupe de ports doivent être identiques à ceux du vSwitch.</block>
   <block id="9450ade0fc753dddabd4ea63d8bb1187" category="summary">Préparez chaque hôte d'hyperviseur KVM sur lequel un nœud ONTAP Select est déployé. Lors de la préparation des hôtes, évaluez soigneusement l'environnement de déploiement afin de vous assurer qu'ils sont correctement configurés et prêts à prendre en charge le déploiement d'un cluster ONTAP Select .</block>
   <block id="6ca9942b969b8c587ad10afd9e0ef119" category="doc">Liste de contrôle de configuration et de préparation de l'hôte KVM pour ONTAP Select</block>
   <block id="75b870251dc6cf53eee7c05860c964ad" category="paragraph">Préparez chaque hôte hyperviseur KVM sur lequel un nœud ONTAP Select est déployé. Lors de la préparation des hôtes, évaluez soigneusement l'environnement de déploiement afin de vous assurer qu'ils sont correctement configurés et prêts à prendre en charge le déploiement d'un cluster ONTAP Select .</block>
@@ -3799,7 +3778,6 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="1a09fd5b1a162aaf184e47b77eb3825d" category="paragraph">Les baux ont une durée comprise entre une heure et sept jours selon la configuration de l'utilisateur.</block>
   <block id="5c51dc3fcfdd9653809e90fa3948c2f4" category="list-text">Page de démarrage</block>
   <block id="7102680d0af5da00746abf5266571291" category="paragraph">Deploy affiche cette page lors de votre première connexion. Vous pouvez également ouvrir le menu déroulant en haut à droite de la page et sélectionner *Getting Started* pour afficher cette page. Le LLID s'affiche dans la section Ajouter des licences.</block>
-  <block id="ad0f17488057d0a4f5ef95d80d34618e" category="paragraph">Sélectionnez l'onglet *Administration* en haut de la page, puis sélectionnez *Systems* et *Settings*.</block>
   <block id="e4c7778b64e92f4500818df277754f2e" category="paragraph">Un nœud ONTAP Select doit localiser ou demander un bail de capacité valide chaque fois qu'un agrégat de données est créé, étendu ou modifié. Vous pouvez utiliser un bail obtenu lors d'une demande précédente qui est toujours valide, ou vous pouvez demander un nouveau bail si nécessaire. Les étapes suivantes sont effectuées par le nœud ONTAP Select pour localiser un bail de Capacity Pool :</block>
   <block id="891663db017744be89f051ca6f5c115b" category="paragraph">Tous les nœuds disposant d'une licence Capacity Pool dans un cluster ONTAP Select doivent utiliser la même instance de License Manager. Étant donné qu'il existe une instance de License Manager au sein de chaque instance Deploy, cette restriction est une reformulation de l'exigence existante selon laquelle la même instance Deploy doit gérer tous les nœuds d'un cluster.</block>
   <block id="8e3654f44c6cb5c34c098c1ab6d7f533" category="paragraph">Le tableau suivant décrit chaque section du numéro de série du nœud de gauche à droite.</block>
@@ -3834,11 +3812,8 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="50e947c808b914257cb5209da74fa627" category="list-text">Le facteur de surcharge pour les clusters multi-nœuds est de 2,67</block>
   <block id="249a516ff48049712229714792dc7131" category="paragraph">Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer d'en avoir suffisamment pour votre déploiement.</block>
   <block id="3d1317b428299aa3785275ff6eb8e119" category="cell">Nœud unique</block>
-  <block id="4a56ef223b95c874ab12ac4a78def040" category="cell">paire haute disponibilité ou mélange de paire haute disponibilité et de nœud unique</block>
   <block id="ee77295963ed13bed36e924ed72f669e" category="cell">Espace utilisable</block>
   <block id="686d2bd292fa941724920d9f5764926c" category="cell">Espace sous licence</block>
-  <block id="d89ec2e9b51f836e29d4d62e09ac58db" category="paragraph">Par cluster à nœud unique :</block>
-  <block id="bb91092a841534c73b7475d3ab63802a" category="paragraph">Par paire haute disponibilité :</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">Et ensuite</block>
   <block id="336320a7d1fb36ba0e0e250060a962ec" category="inline-link-macro">Acquérir une licence Capacity Pools pour ONTAP Select</block>
   <block id="349097419d01aa81b07916c8f94601e6" category="paragraph"><block ref="349097419d01aa81b07916c8f94601e6" category="inline-link-macro-rx"></block></block>
@@ -4053,16 +4028,22 @@ l'agrégat de stockage affiche les disques-spare</block>
   <block id="598d217f06b9250ad27a8198bb5c2a4b" category="cell">54 To (20 x 2,67 = 53,4, arrondir au To entier supérieur)</block>
   <block id="6694602e4cd7d0b05713de6bd31c888e" category="cell">Espace utilisable maximal par nœud *Remarque* : l’espace géré maximal par nœud ou paire haute disponibilité est de 400 TB</block>
   <block id="0ff836b729a9f331160a37a804c5f502" category="cell">353 To (400 / 1,13)</block>
-  <block id="79a0d4f0660fe4b9a46b19e4fa18a314" category="paragraph">74 To [(400 / 2) / 2,67]</block>
-  <block id="19aeb97207c21df691d50d8d0930aeba" category="paragraph">148 To (2 x 74)</block>
   <block id="9ed860bf7c910e8f72592e603158fb1a" category="paragraph">La capacité souscrite pour une licence Capacity Tiers est exprimée en téraoctets (To) entiers, avec un minimum de 1 To. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à plusieurs nœuds (basé sur une paire haute disponibilité) :</block>
   <block id="1191f788083da9194f8eef9400d10898" category="cell">10 To</block>
   <block id="f515aabc5719e9815156a5bba11b0271" category="cell">5 To par nœud 10 To pour paire haute disponibilité</block>
   <block id="8ef83a850a4c3f98639c08c641ced5a0" category="cell">12 To (10 x 1.13 = 11.3, arrondir au To entier supérieur)</block>
   <block id="5c2813f14ac4d1fdac66648a550ead14" category="cell">Deux licences de 14 TB (5 x 2.67 = 13.35, arrondi au TB entier supérieur)</block>
-  <block id="985b1eaad72a330f5ac66444aa1cc872" category="list-text">Deux nœuds : 148 To (2 x 74)</block>
-  <block id="42d74051003e55f5c33a72399e33ee7c" category="list-text">Quatre nœuds : 296 To (4 x 74)</block>
-  <block id="cb7d5ca5e63133f9c3ddab01857677e1" category="list-text">Six-node : 444 To (6 x 74)</block>
-  <block id="dd0cb9fad81cb887132c37097f5cc87f" category="list-text">Huit nœuds : 592 To (8 x 74)</block>
   <block id="7257bc0e5008e5606e49eb884e2bc425" category="list-text">Pour un hôte ESXi, ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration Deploy pris en charge</block>
+  <block id="eac3eeac664694b6433309da45a1300a" category="list-text">Sélectionnez l’onglet *Administration* en haut de la page, puis sélectionnez *Systèmes &amp; AutoSupport*.</block>
+  <block id="200bbcb887da28e9cd489bc89afc5674" category="cell">paire haute disponibilité ou mélange de paire haute disponibilité et de nœud unique</block>
+  <block id="d1600869d5b424ddbc5e9e6b111e1551" category="paragraph">Par nœud unique dans un cluster :</block>
+  <block id="68fa7b3d2b5fa9a6405ba8b8886e16e6" category="paragraph">149 To (400 / 2,67)</block>
+  <block id="867f936c72e1e7c832aeeeb86dfdad19" category="paragraph">Par paire haute disponibilité dans un cluster :</block>
+  <block id="1ae9306d13e8652cea306cd8e0f2f998" category="paragraph">298 To (2 x 149)</block>
+  <block id="24ebdf5291b487d72a9f72970d82108d" category="list-text">Deux nœuds : 298 To (2 x 149)</block>
+  <block id="483679a22c6b3db76de43d55829178e0" category="list-text">Quatre nœuds : 596 To (4 x 149)</block>
+  <block id="c7ba1f9c0cd7b8c5a7b2c67b9c3e7973" category="list-text">Six-node : 894 To (6 x 149)</block>
+  <block id="4148985b49a3b29db1e703cf43b2866f" category="list-text">Huit nœuds : 1,192 To (8 x 149)</block>
+  <block id="01d09c7a6491e08b12c0b1b76615fe0d" category="list-text">Dix nœuds : 1,490 To (10 x 149)</block>
+  <block id="6c1b0c6ec4484bd2c7186af4f45ae51a" category="list-text">Douze nœuds : 1 788 To (12 x 149)</block>
 </blocks>
