@@ -79,7 +79,7 @@ Une fois le déploiement terminé, les nœuds ONTAP Select peuvent être migrés
 
 NOTE: Les règles anti-affinité exigent que DRS soit activé sur le cluster ESXi.
 
-Consultez l'exemple suivant sur la manière de créer une règle d'anti-affinité pour les machines virtuelles ONTAP Select. Si le cluster ONTAP Select contient plusieurs paires haute disponibilité, tous les nœuds du cluster doivent être inclus dans cette règle.
+Consultez l'exemple suivant pour savoir comment créer une règle d'anti-affinité pour les machines virtuelles ONTAP Select. Si le cluster ONTAP Select contient plus d'une paire haute disponibilité, tous les nœuds du cluster doivent être inclus dans cette règle.
 
 image:ST_15.jpg["Règles VM/hôte"]
 

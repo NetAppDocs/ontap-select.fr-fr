@@ -32,7 +32,7 @@ Les hyperviseurs suivants sont pris en charge à la fois pour l'administration d
 
 
 
-NOTE: Pour plus de détails sur les plates-formes prises en charge, reportez-vous aux informations de planification spécifiques à l'hyperviseur et aux notes de version.
+NOTE: Veuillez vous référer aux informations de planification spécifiques à l'hyperviseur et link:reference_release_notes.html["notes de version"] pour des détails supplémentaires concernant les plateformes prises en charge.
 
 .Hyperviseur pour nœuds ONTAP Select et utilitaire d'administration
 L'utilitaire d'administration de déploiement et les nœuds ONTAP Select s'exécutent tous deux en tant que machines virtuelles. L'hyperviseur que vous choisissez pour l'utilitaire de déploiement est indépendant de l'hyperviseur que vous choisissez pour les nœuds ONTAP Select. Vous disposez d'une souplesse totale lors de l'association des deux éléments :

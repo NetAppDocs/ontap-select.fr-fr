@@ -65,6 +65,7 @@ Vous pouvez réduire la taille d'un cluster existant sur un hôte ESXi ou KVM pa
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.18.1, l'hyperviseur KVM est pris en charge sur Rocky Linux 10.1.
 
 
 
@@ -113,10 +114,10 @@ Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon le
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
-Prise en charge de SnapMirror Cloud:: À partir de ONTAP Select 9.17.1, SnapMirror Cloud est pris en charge avec ONTAP Select. SnapMirror Cloud est une fonctionnalité ONTAP sous licence, activée par défaut lors du déploiement d’un cluster ONTAP Select 9.17.1 ou de la mise à niveau d’un cluster ONTAP Select existant vers la version 9.17.1.
+Prise en charge du SnapMirror cloud:: À partir de ONTAP Select 9.17.1, SnapMirror cloud est pris en charge avec ONTAP Select. SnapMirror cloud est une fonctionnalité ONTAP sous licence qui est activée par défaut lorsque vous déployez un cluster ONTAP Select 9.17.1 ou mettez à niveau un cluster ONTAP Select existant vers la version 9.17.1.
 +
 --
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Découvrez les sauvegardes SnapMirror Cloud sur stockage objet"^].
+https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Découvrez les sauvegardes cloud SnapMirror vers le stockage objet"^].
 
 --
 Prise en charge de SnapLock Select:: À partir de ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement de SnapLock Select (y compris le verrouillage inviolable des snapshots) sous licence. Pour les mises à niveau depuis ONTAP Select 9.16.1 et versions antérieures, vous pouvez télécharger la licence SnapLock Select gratuitement depuis le link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l’appliquer manuellement. Pour plus d’informations, consultez link:reference_lic_ontap_features.html#enabled-ontap-features["Fonctionnalités ONTAP activées automatiquement par défaut"].
@@ -141,12 +142,12 @@ Prise en charge du pilote NDA mise à jour:: À partir d' ONTAP Select 9.17.1, l
 Pour ONTAP Select 9.16.1 et les versions antérieures, le NVD continue de fournir la prise en charge des périphériques NVMe dans votre déploiement ONTAP Select .
 
 --
-Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.17.1, l'hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 et 9.6 et Rocky Linux 10.1, 10.0, 9.7 et 9.6.
+Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.17.1, le hyperviseur KVM est pris en charge sur Red Hat Enterprise Linux (RHEL) 10.1, 10.0, 9.7 et 9.6 ainsi que sur Rocky Linux 10.0, 9.7 et 9.6.
 +
 --
 [NOTE]
 ====
-Il existe des limitations concernant le flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.1 et 10.0 et Rocky Linux 10.1 et 10.0. Pour plus d’informations, consultez les articles suivants de la Knowledge Base :
+Il existe des limitations concernant le flux de travail RAID logiciel pour les hyperviseurs KVM sur les hôtes RHEL 10.1 et 10.0 et Rocky Linux 10.0. Pour plus d’informations, consultez les articles suivants de la Knowledge Base :
 
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4020["CDEPLOY-4020 : ONTAP Select Deploy : Message d’avertissement lors de la création du cluster HWR sous RHEL 10 et ROCKY 10"^]
 * link:https://kb.netapp.com/on-prem/ontap/ontap-select/Select-Issues/CDEPLOY-4025["CDEPLOY-4025 : ONTAP Select DeployGUI : Les pools de stockage et les disques de stockage ne sont pas visibles pour SWR sur la page de création de cluster sur les hôtes RHEL10/Rocky 10"^]
@@ -202,7 +203,7 @@ NOTE: La prise en charge de l’extension et de la réduction des clusters est l
 
 Prise en charge de l'hyperviseur KVM:: Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 Le plug-in Deploy VMware vCenter n'est plus pris en charge:: À partir de ONTAP Select 9.14.1, le plug-in de déploiement de VMware vCenter n'est plus pris en charge.
-Prise en charge de ONTAP Select Deploy mise à jour:: Si vous exécutez une version de ONTAP Select Deploy 9.14.1 antérieure à 9.14.1P2, vous devez mettre à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
+Prise en charge de ONTAP Select Deploy mise à jour:: Si vous utilisez une version de ONTAP Select Deploy 9.14.1 inférieure à 9.14.1P2, vous devez effectuer la mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, consultez la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.14.1 inclut la prise en charge de VMware ESXi 8.0 U2.
 
 
@@ -212,7 +213,7 @@ Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.14.1 inclut la prise
 
 Prise en charge de NVMe over TCP:: Lorsque vous effectuez une mise à niveau vers ONTAP Select 9.13.1, vous devez disposer de la nouvelle licence pour prendre en charge NVMe over TCP. Cette licence est automatiquement incluse lorsque vous déployez ONTAP Select pour la première fois à partir de la version 9.13.1.
 Prise en charge de VMware ESXi mise à jour:: À partir de ONTAP 9.13.1, VMware ESXi 8.0.1 GA (build 20513097) est pris en charge par la version matérielle 4 et ultérieure.
-Prise en charge de ONTAP Select Deploy mise à jour:: Depuis avril 2024, ONTAP Select Deploy 9.13.1 n'est plus disponible sur le site de support NetApp. Si vous exécutez ONTAP Select Deploy 9.13.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
+Prise en charge de ONTAP Select Deploy mise à jour:: À compter d'avril 2024, ONTAP Select Deploy 9.13.1 n'est plus disponible sur le NetApp Support Site. Si vous utilisez ONTAP Select Deploy 9.13.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, consultez la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 
 
 
@@ -221,7 +222,7 @@ Prise en charge de ONTAP Select Deploy mise à jour:: Depuis avril 2024, ONTAP S
 
 ONTAP Select 9.12.1 bénéficie de la plupart des nouveautés de la version actuelle du produit principal ONTAP. Elle n'inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.
 
-Depuis avril 2024, ONTAP Select Deploy 9.12.1 n'est plus disponible sur le site de support NetApp. Si vous exécutez ONTAP Select Deploy 9.12.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, reportez-vous à la section link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
+À compter d'avril 2024, ONTAP Select Deploy 9.12.1 n'est plus disponible sur le site de support NetApp. Si vous utilisez ONTAP Select Deploy 9.12.1, vous devez effectuer une mise à niveau vers ONTAP Select Deploy 9.14.1P2 dès que possible. Pour plus d'informations, consultez la link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2886733["Notes de mise à jour de ONTAP Select 9.14.1"^].
 
 
 
@@ -244,7 +245,7 @@ L'hyperviseur KVM n'est plus pris en charge::
 * Depuis la version ONTAP Select 9.10.1, il n'est plus possible de déployer un nouveau cluster sur l'hyperviseur KVM.
 * Depuis ONTAP Select 9.11.1, toutes les fonctionnalités de gestion ne sont plus disponibles pour les clusters et hôtes KVM existants, à l'exception des fonctions de mise hors ligne et de suppression.
 +
-NetApp recommande fortement aux clients de planifier et d'exécuter une migration complète de données depuis ONTAP Select pour KVM vers toute autre plateforme ONTAP, y compris ONTAP Select pour ESXi. Pour plus d'informations, reportez-vous à la section https://mysupport.netapp.com/info/communications/ECMLP2877451.html["Avis de fin de disponibilité"^]
+NetApp recommande fortement que les clients planifient et exécutent une migration complète des données depuis ONTAP Select for KVM vers toute autre plateforme ONTAP, y compris ONTAP Select for ESXi. Pour plus d'informations, consultez la  https://mysupport.netapp.com/info/communications/ECMLP2877451.html["Avis de fin de disponibilité"^]
 
 
 

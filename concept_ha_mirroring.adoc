@@ -22,7 +22,7 @@ summary: 'Évitez toute perte de données à l"aide de RAID SyncMirror (RSM), de
 
 Le modèle haute disponibilité de ONTAP repose sur le concept de partenaires haute disponibilité. ONTAP Select étend cette architecture à l'univers des serveurs génériques non partagés en utilisant la fonctionnalité RAID SyncMirror (RSM) présente dans ONTAP pour répliquer les blocs de données entre les nœuds du cluster, fournissant deux copies des données utilisateur réparties sur une paire haute disponibilité.
 
-Un cluster à deux nœuds avec un médiateur peut s'étendre sur deux data centers. Pour plus d'informations, reportez-vous à la section link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Les bonnes pratiques de la HA étendue à deux nœuds (MetroCluster SDS)"].
+Un cluster à deux nœuds avec un médiateur peut s'étendre sur deux centres de données. Pour plus d'informations, consultez la section link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Les bonnes pratiques de la HA étendue à deux nœuds (MetroCluster SDS)"].
 
 
 

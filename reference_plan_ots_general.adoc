@@ -33,7 +33,7 @@ Distribution de serveurs Linux:: Vous devez avoir de l'expérience avec la distr
 --
 
 
-Pour plus d'informations sur la préparation de votre serveur Linux, y compris la configuration requise et les progiciels, consultez la liste de contrôle de la configuration de l'hôte. Reportez-vous à la configuration requise pour l'hyperviseur pour les distributions Linux actuellement prises en charge.
+Pour plus d'informations sur la préparation de votre serveur Linux, notamment la configuration requise et les paquets logiciels, consultez la link:kvm-host-configuration-and-preparation-checklist.html["liste de contrôle de configuration de l'hôte"]. Consultez les exigences de l'hyperviseur pour les distributions Linux actuellement prises en charge.
 
 Déploiement et administration de KVM:: Vous devez connaître les concepts généraux de virtualisation. En outre, vous devez utiliser plusieurs commandes CLI Linux dans le cadre de l'installation et de l'administration de ONTAP Select dans un environnement KVM :
 +
@@ -91,7 +91,7 @@ Indépendant de l'hyperviseur:: ONTAP Select et l'utilitaire d'administration ON
 
 NOTE: Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rétablie. Auparavant, la prise en charge du déploiement d'un nouveau cluster sur un hyperviseur KVM a été supprimée dans ONTAP Select 9.10.1 et la prise en charge de la gestion des clusters et des hôtes KVM existants, à l'exception de la mise hors ligne ou de la suppression, a été supprimée dans ONTAP Select 9.11.1.
 
-Pour plus de détails sur les plates-formes prises en charge, reportez-vous aux informations de planification spécifiques à l'hyperviseur et aux notes de version.
+Veuillez vous référer aux informations de planification spécifiques à l'hyperviseur et link:reference_release_notes.html["notes de version"] pour des détails supplémentaires concernant les plateformes prises en charge.
 
 Hyperviseur pour nœuds ONTAP Select et utilitaire d'administration:: L'utilitaire d'administration de déploiement et les nœuds ONTAP Select s'exécutent en tant que machines virtuelles. L'hyperviseur que vous choisissez pour l'utilitaire de déploiement est indépendant de l'hyperviseur que vous choisissez pour les nœuds ONTAP Select. Vous disposez d'une souplesse totale lors de l'association des deux éléments :
 +

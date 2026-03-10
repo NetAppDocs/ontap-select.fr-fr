@@ -23,7 +23,7 @@ Vous devez configurer le réseau de l'hyperviseur correctement avant de déploye
 Vous devez configurer un switch virtuel sur chacun des hôtes ONTAP Select pour prendre en charge le réseau externe et le réseau interne (clusters multi-nœuds uniquement). Dans le cadre du déploiement d'un cluster multinœud, vous devez tester la connectivité réseau sur le réseau interne du cluster.
 
 
-NOTE: Pour plus d'informations sur la configuration d'un vSwitch sur un hôte d'hyperviseur et sur la fonctionnalité d'interface à haut débit, reportez-vous au link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] section.
+NOTE: Pour en savoir plus sur la configuration d'un vSwitch sur un hôte hyperviseur et sur la fonctionnalité d'interface haut débit, reportez-vous à la section link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"].
 
 
 
@@ -72,7 +72,7 @@ Dans cet environnement, vous devez configurer le trafic à l'aide de deux port g
 * NIC2 en mode actif
 
 
-Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] Pour plus d'informations sur les déploiements à deux cartes réseau.
+Consultez la section link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] pour plus d'informations sur les déploiements à deux cartes réseau.
 
 
 
@@ -111,7 +111,7 @@ Dans cet environnement, vous devez configurer le trafic à l'aide de quatre port
 * NIC1, NIC2, NIC3 en veille
 
 
-Voir la link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] Pour plus d'informations sur les déploiements de quatre cartes réseau.
+Consultez la section link:concept_nw_concepts_chars.html["Présentation de la mise en réseau"] pour plus d'informations sur les déploiements à quatre cartes réseau.
 
 
 

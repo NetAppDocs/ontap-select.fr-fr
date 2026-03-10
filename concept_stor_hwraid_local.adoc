@@ -150,7 +150,7 @@ ONTAP Select divise le stockage NAS sous-jacent en disques virtuels de taille é
 Par exemple, un ONTAP Select peut attribuer un datastore ou une LUN de 31 To (l'espace restant après le déploiement de la machine virtuelle et le provisionnement du système et des disques racine). Ensuite, quatre environ 7,75 To de disques virtuels sont créés et affectés au plex ONTAP local et miroir approprié.
 
 
-NOTE: L'ajout de capacité à une machine virtuelle ONTAP Select entraîne probablement des VMDK de différentes tailles. Pour plus de détails, reportez-vous à la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"]. Contrairement aux systèmes FAS, des VMDK de différentes tailles peuvent exister dans le même agrégat. ONTAP Select utilise une bande RAID 0 sur ces VMDK, ce qui permet d'exploiter pleinement l'ensemble de l'espace de chaque VMDK, quelle que soit sa taille.
+NOTE: L'ajout de capacité à une machine virtuelle ONTAP Select peut entraîner la création de VMDK de tailles différentes. Pour plus de détails, consultez la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"]. Contrairement aux systèmes FAS, des VMDK de tailles différentes peuvent exister dans le même agrégat. ONTAP Select utilise une répartition RAID 0 entre ces VMDK, ce qui permet d'utiliser pleinement tout l'espace dans chaque VMDK, quelle que soit sa taille.
 
 
 

@@ -136,7 +136,7 @@ VMware recommande de définir le protocole STP sur PortFast sur les ports de com
 
 Vous devez configurer un switch virtuel sur chacun des hôtes ONTAP Select pour prendre en charge le réseau externe et le réseau interne (clusters multi-nœuds uniquement). Dans le cadre du déploiement d'un cluster multinœud, vous devez tester la connectivité réseau sur le réseau interne du cluster.
 
-Pour en savoir plus sur la configuration d'un Open vSwitch sur un hôte hyperviseur, reportez-vous au link:https://www.netapp.com/media/13134-tr4613.pdf["Architecture des produits ONTAP Select sur KVM et meilleures pratiques"^] rapport technique.
+Pour en savoir plus sur la configuration d'un Open vSwitch sur un hôte hyperviseur, consultez le link:https://www.netapp.com/media/13134-tr4613.pdf["Architecture des produits ONTAP Select sur KVM et meilleures pratiques"^] rapport technique.
 
 
 

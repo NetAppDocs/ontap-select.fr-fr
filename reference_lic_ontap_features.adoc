@@ -37,13 +37,13 @@ ONTAP Select prend en charge les fonctionnalités ONTAP suivantes sous licence p
 * NVMe over TCP
 * Fonctionnalité de colocation ONTAP
 * ONTAP S3
+* SnapMirror S3
 * SnapLock Select
 +
 SnapLock Select est l'implémentation de ONTAP SnapLock conçue pour ONTAP Select et inclut SnapLock Enterprise. Elle n'inclut pas SnapLock Compliance. Pour plus d'informations, consultez la link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["Documentation ONTAP SnapLock"^].
 
-* SnapMirror S3
 * SnapMirror
-* SnapMirror Cloud
+* SnapMirror cloud
 * SnapRestore
 * SnapVault
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)

@@ -71,7 +71,7 @@ L'environnement d'un déploiement RAID logiciel doit répondre aux principales e
 
 
 
-NOTE: Si un contrôleur RAID matériel est présent, voir link:concept_stor_concepts_chars.html["Stockage de plongée en profondeur"] pour connaître les exigences de configuration supplémentaires.
+NOTE: Si un contrôleur RAID matériel est présent, reportez-vous à la section link:concept_stor_concepts_chars.html["Stockage de plongée en profondeur"] pour les exigences de configuration supplémentaires.
 
 
 
@@ -86,7 +86,7 @@ NOTE: Si un contrôleur RAID matériel est présent, voir link:concept_stor_conc
 
 === Configuration requise pour KVM
 
-Il existe également des exigences spécifiques en matière de configuration des progiciels. Voir le link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["préparation du serveur Linux"] étape pour plus d'informations.
+Des exigences spécifiques de configuration logicielle s'appliquent également. Consultez la link:https://docs.netapp.com/us-en/ontap-select/kvm-host-configuration-and-preparation-checklist.html#prepare-linux-server["préparation du serveur Linux"] étape pour plus d'informations.
 
 Attentes des supports pour KVM:: Les périphériques de stockage flash SSD utilisés doivent répondre aux exigences supplémentaires suivantes :
 +
@@ -137,7 +137,7 @@ Dans le cadre de la planification d'un déploiement ONTAP Select, vous devez con
 Les restrictions les plus importantes en matière de stockage sont présentées ci-dessous. Consultez également le  pour obtenir des link:https://mysupport.netapp.com/matrix/["Matrice d'interopérabilité"^]informations plus détaillées.
 
 
-TIP: ONTAP Select applique plusieurs restrictions liées à l'allocation et à l'utilisation du stockage. Avant de déployer un cluster ONTAP Select ou d'acheter une licence, vous devez vous familiariser avec ces restrictions. Voir la link:https://docs.netapp.com/us-en/ontap-select/concept_lic_evaluation.html["Licence"] pour plus d'informations.
+TIP: ONTAP Select impose plusieurs restrictions relatives à l'allocation et à l'utilisation du stockage. Avant de déployer un cluster ONTAP Select ou d'acheter une licence, vous devez prendre connaissance de ces restrictions. Consultez la link:concept_lic_evaluation.html["Licence"] section pour plus d'informations.
 
 
 

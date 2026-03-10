@@ -148,7 +148,7 @@ Dans le shell ESXi ou KVM, vous pouvez entrer la commande suivante pour faire cl
 
 [role="tabbed-block"]
 ====
-.ESX
+.VMware ESXi
 --
 [source, cli]
 ----

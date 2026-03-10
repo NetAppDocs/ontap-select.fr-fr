@@ -34,7 +34,7 @@ Procédez comme suit pour mettre à niveau un nœud ONTAP Select existant.
 +
 Consultez la link:reference_release_notes.html["notes de version"] pour obtenir des informations supplémentaires et connaître les procédures requises avant de mettre à niveau un nœud ONTAP Select.
 
-. Mettez à niveau le nœud ONTAP Select en suivant les procédures standard de mise à niveau de ONTAP avec le fichier de mise à niveau ONTAP Select. Pour plus d'informations sur les chemins de mise à niveau pris en charge, reportez-vous au link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Chemins de mise à niveau ONTAP pris en charge"^].
+. Mettez à niveau le nœud ONTAP Select en utilisant les procédures de mise à niveau ONTAP standard avec le fichier de mise à niveau ONTAP Select. Pour des informations sur les chemins de mise à niveau pris en charge, consultez le link:https://docs.netapp.com/us-en/ontap/upgrade/concept_upgrade_paths.html["Chemins de mise à niveau ONTAP pris en charge"^].
 
 
 
