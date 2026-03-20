@@ -20,7 +20,7 @@ ONTAP Select convertit les disques durs internes, NVMe, SSD ou HDD, ainsi que le
 
 ONTAP Select s'adapte à vos besoins de consommation de capacité avec deux modèles de licence complémentaires : les tiers de capacité et les pools de capacité entièrement flexibles. Les deux modèles de licence vous permettent d'augmenter la capacité par incréments de 1 To à peine. Par exemple, vous pouvez commencer avec quelques téraoctets et ajouter de la capacité de manière dynamique à mesure que votre projet se développe. Si vous utilisez des pools de capacité, vous pouvez redistribuer la capacité comme bon vous semble une fois votre projet terminé.
 
-ONTAP Select est intégré aux frameworks de gestion cloud, tels que VMware vSphere. Cela permet d'accélérer le déploiement de nouveaux projets tels que les services de fichiers, les répertoires locaux, les environnements de développement logiciels et le test d'applications.
+ONTAP Select s'intègre aux frameworks de gestion cloud tels que VMware vSphere et Kernel-based Virtual Machine (KVM). Cela permet d'accélérer le déploiement de nouveaux projets tels que les services de fichiers, les répertoires personnels, les environnements de développement logiciel et les tests d'applications.
 
 Avec le logiciel SnapMirror, vous pouvez déplacer des données entre l'environnement de stockage ONTAP et le cloud hybride. Vous pouvez ainsi accéder facilement à vos données où vous le souhaitez. Par exemple, vous pouvez rapidement mettre en place un environnement pour démontrer une idée. Par la suite, vous pourrez déplacer le projet vers une plateforme de stockage dédiée au déploiement de production ou le rendre plus accessible dans le cloud dans le cadre d'un workflow de développement.
 
@@ -132,6 +132,6 @@ La modification des propriétés des ports ONTAP, notamment la vitesse, le mode 
 
 
 .Informations associées
-* link:reference_lic_ontap_features.html#ontap-features-automatically-enabled-by-default["En savoir plus sur les fonctionnalités ONTAP activées par défaut"]
+* link:reference_lic_ontap_features.html#enabled-ontap-features["En savoir plus sur les fonctionnalités ONTAP activées par défaut"]
 * link:concept_lic_evaluation.html["En savoir plus sur les options de licence ONTAP Select"]
 
