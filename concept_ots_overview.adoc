@@ -65,6 +65,23 @@ image:ots_architecture.png["La illustre un cluster ONTAP Select à quatre nœuds
 
 
 
+== FlexCache write-back avec ONTAP Select
+
+ONTAP Select prend en charge les volumes de cache FlexCache® avec écriture différée. Les performances globales de l'instance ONTAP Select sont comparables à celles d'un système ONTAP d'entrée de gamme.
+
+FlexCache cache volumes avec écriture différée ont les exigences suivantes avec ONTAP Select :
+
+* Utilisez ONTAP Select sur une instance moyenne (8-core) ou grande (16-core).
+* Utilisez des disques SSD NVMe. Le stockage SAS offre des performances inférieures au stockage NVMe pour ONTAP Select.
+* Testez ONTAP Select pour la fonction d'écriture différée FlexCache avant de lancer le déploiement. L'écriture différée FlexCache est déconseillée pour un grand nombre de petits fichiers.
+
+
+ONTAP Select ne prend pas en charge FlexCache cache volumes avec écriture différée sur une instance de petite taille (4 cœurs). De plus, ONTAP Select ne prend pas en charge FlexCache origin volumes avec écriture différée sur les instances de petite, moyenne ou grande taille.
+
+link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-guidelines.html["En savoir plus sur l'écriture différée ONTAP FlexCache®"^]
+
+
+
 == Comparez ONTAP Select et ONTAP 9
 
 ONTAP et ONTAP Select basés sur le matériel proposent tous deux des solutions de stockage haute performance. Cependant, leur conception et leur mise en œuvre différemment, chacun peut répondre à différents besoins métier et scénarios d'utilisation. Avant de planifier un déploiement ONTAP Select, vous devez vous familiariser avec les principales différences entre les plateformes.

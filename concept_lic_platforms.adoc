@@ -44,7 +44,7 @@ Le tableau suivant compare les fonctionnalités des offres de licence standard, 
 | Configuration vNAS | Oui. | Oui. | Oui. 
 
 
-.3+| Disques SSD (Solid State Drives) dans un ... | Configuration RAID matérielle | Non | Oui. | Oui. 
+.3+| Les disques SSD (Solid State Drives) dans un ... | Configuration RAID matérielle | Non | Oui. | Oui. 
 
 
 | Configuration RAID logicielle | Non | Oui. | Oui. 

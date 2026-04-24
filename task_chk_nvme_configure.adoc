@@ -59,7 +59,7 @@ KVM est pris en charge sur les versions d'hyperviseur suivantes :
 * Dispositifs NVMe conformes à la spécification 1.0 ou ultérieure
 
 
-Suivez le link:kvm-host-configuration-and-preparation-checklist["checklist de préparation des hôtes"] , et examinez les informations requises pour le link:reference_chk_deploy_req_info.html["déployer l'installation de l'utilitaire"] et le link:reference_chk_select_req_info.html["Installation ONTAP Select"] pour plus d'informations.
+Suivez le link:kvm-host-configuration-and-preparation-checklist.html["checklist de préparation des hôtes"], et consultez les informations requises pour le link:reference_chk_deploy_req_info.html["déployer l'installation de l'utilitaire"] et le link:reference_chk_select_req_info.html["Installation ONTAP Select"] pour plus d'informations.
 
 .Description de la tâche
 Vous devez effectuer cette procédure avant de créer un cluster ONTAP Select . Vous pouvez également effectuer cette procédure pour configurer des disques NVMe supplémentaires pour un cluster NVMe RAID logiciel existant. Dans ce cas, après avoir configuré les disques, vous devez les ajouter via Deploy, comme vous le feriez pour des disques SSD supplémentaires. La principale différence est que Deploy détecte les disques NVMe et redémarre les nœuds. Lors de l'ajout de disques NVMe à un cluster existant, veuillez noter les points suivants concernant le processus de redémarrage :

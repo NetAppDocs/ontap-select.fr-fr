@@ -63,7 +63,7 @@ Il est possible de stretch un cluster haute disponibilité actif-actif à deux n
 
 Le cluster à deux nœuds est défini comme un cluster pour lequel les deux nœuds sont situés dans le même data Center, à une distance de 300 M. En général, les deux nœuds ont des liaisons montantes vers le même commutateur réseau ou l'ensemble de commutateurs de réseau ISL (interswitch Link).
 
-MetroCluster SDS à deux nœuds est défini comme un cluster dont les nœuds sont physiquement séparés (salles différentes, bâtiments différents et data centers différents) de plus de 300 M. En outre, les connexions ascendantes de chaque nœud sont connectées à des commutateurs réseau distincts. MetroCluster SDS ne nécessite pas de matériel dédié. Toutefois, l'environnement doit respecter les exigences de latence (maximum de 5 ms pour le temps de propagation aller-retour et 5 ms pour la fluctuation, pour un total de 10 ms) et la distance physique (maximum de 10 km).
+Un MetroCluster SDS à deux nœuds est défini comme un cluster dont les nœuds sont physiquement séparés (dans des pièces, des bâtiments ou des centres de données différents) par plus de 300 m. De plus, les liaisons montantes de chaque nœud sont connectées à des commutateurs réseau distincts. Le MetroCluster SDS ne nécessite pas de matériel dédié. Cependant, l’environnement doit respecter les exigences de latence (un maximum de 5 ms pour le RTT et 5 ms pour la gigue, soit un total de 10 ms).
 
 Le SDS MetroCluster est une fonctionnalité Premium qui nécessite une licence Premium ou une licence Premium XL. La licence Premium prend en charge la création d'ordinateurs virtuels de petite et moyenne taille ainsi que de disques durs et SSD. La licence Premium XL prend également en charge la création de disques NVMe.
 
