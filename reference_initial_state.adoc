@@ -50,5 +50,5 @@ Toutes les fonctionnalités sont disponibles sous licence. SnapLock et FabricPoo
 
 .Informations associées
 * link:https://docs.netapp.com/us-en/ontap/system-admin/types-svms-concept.html["Types de SVM contenus dans un cluster"^]
-* link:reference_lic_ontap_features.html["Fonctionnalités ONTAP activées par défaut"]
+* link:reference_lic_ontap_features.html["Fonctionnalités ONTAP concédées sous licence par défaut"]
 

@@ -19,6 +19,19 @@ Découvrez les nouvelles fonctionnalités et les améliorations apportées aux v
 
 
 
+== ONTAP Select 9.19.1
+
+Prise en charge de la gestion des clés externes (KMIP):: À partir de ONTAP Select 9.19.1, ONTAP Select prend en charge la gestion des clés externes à l'aide du protocole Key Management Interoperability Protocol (KMIP). Vous pouvez activer la gestion des clés externes après le déploiement d'un cluster ONTAP Select 9.19.1 ou la mise à niveau d'un cluster existant vers ONTAP Select 9.19.1. La gestion des clés externes est la seule gestion des clés prise en charge par ONTAP Select 9.19.1. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
++
+--
+ONTAP Select ne prend pas en charge les gestionnaires de clés cloud ni le gestionnaire de clés intégré ONTAP.
+
+--
+Prise en charge des processeurs Advanced Micro Devices (AMD):: À compter de ONTAP Select 9.19.1, ONTAP Select prend en charge les processeurs AMD sur les hôtes hyperviseur KVM (Kernel-Based Virtual Machine) et ESXi. Pour plus d'informations, consultez link:reference_plan_ots_hardware.html["Considérations relatives à l'hyperviseur VMware et au matériel"].
+
+
+
+
 == ONTAP Select 9.18.1
 
 Mises à jour des options de téléchargement du produit ONTAP Select:: Les options de téléchargement du produit ONTAP Select sur le site d'assistance NetApp changent avec la sortie d'ONTAP Select 9.18.1 pour devenir *ONTAP Select Deploy* et *ONTAP Select Image*. Ces deux nouvelles options de téléchargement de produit remplacent les quatre précédentes, comme indiqué dans le tableau suivant :
@@ -72,7 +85,7 @@ Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.
 
 == ONTAP Select 9.17.1
 
-Prise en charge RAID logicielle pour les disques NVMe connectés localement sur les hôtes KVM:: ONTAP Select 9.17.1 introduit la prise en charge RAID logicielle pour les disques NVMe ONTAP Select connectés localement sur un hôte hyperviseur de machine virtuelle basée sur le noyau (KVM).
+Prise en charge RAID logicielle pour les disques NVMe connectés localement sur les hôtes KVM:: ONTAP Select 9.17.1 introduit la prise en charge du RAID logiciel pour les disques NVMe connectés localement à ONTAP Select sur un hôte hyperviseur KVM.
 +
 --
 Pour utiliser le RAID logiciel pour les disques NVMe connectés localement, vous devez link:kvm-host-configuration-and-preparation-checklist.html["configurer le relais PCI (DirectPath IO)"] Lors de la préparation de l'hôte KVM, celui-ci accède directement aux disques NVMe connectés localement, ce qui est nécessaire pour les tâches suivantes :
@@ -120,7 +133,7 @@ Prise en charge du SnapMirror cloud:: À partir de ONTAP Select 9.17.1, SnapMirr
 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Découvrez les sauvegardes cloud SnapMirror vers le stockage objet"^].
 
 --
-Prise en charge de SnapLock Select:: À partir de ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement de SnapLock Select (y compris le verrouillage inviolable des snapshots) sous licence. Pour les mises à niveau depuis ONTAP Select 9.16.1 et versions antérieures, vous pouvez télécharger la licence SnapLock Select gratuitement depuis le link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l’appliquer manuellement. Pour plus d’informations, consultez link:reference_lic_ontap_features.html#enabled-ontap-features["Fonctionnalités ONTAP activées automatiquement par défaut"].
+Prise en charge de SnapLock Select:: À partir de ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement de SnapLock Select (y compris le verrouillage inviolable des snapshots) sous licence. Pour les mises à niveau depuis ONTAP Select 9.16.1 et versions antérieures, vous pouvez télécharger la licence SnapLock Select gratuitement depuis le link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l’appliquer manuellement. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
 Prise en charge de vSAN ESA sur les clusters multi-nœuds:: À partir d' ONTAP Select 9.17.1, la prise en charge de l'architecture de stockage vSAN Express (ESA) est étendue pour déployer des clusters multi-nœuds.  Cette amélioration vous permet de déployer des configurations vSAN ESA.
 +
 --
@@ -162,13 +175,13 @@ Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.17.1 inclut la prise
 
 == ONTAP Select 9.16.1
 
-Mise à jour de la prise en charge des fichiers de licence NetApp:: À compter d'ONTAP Select 9.16.1, la prise en charge des fichiers de licence NetApp (NLF) est mise à jour. Le nouveau format NLF inclut les licences pour les fonctionnalités ARP, ONTAP S3 et S3 SnapMirror. link:reference_lic_ontap_features.html#enabled-ontap-features["En savoir plus >>"].
+Mise à jour de la prise en charge des fichiers de licence NetApp:: À compter d'ONTAP Select 9.16.1, la prise en charge des fichiers de licence NetApp (NLF) est mise à jour. Le nouveau format NLF inclut les licences pour les fonctionnalités ARP, ONTAP S3 et S3 SnapMirror. link:reference_lic_ontap_features.html#licensed-ontap-features["En savoir plus >>"].
 +
 --
 Pour un nouveau déploiement ONTAP Select 9.16.1, le nouveau format NLF est automatiquement appliqué. Lorsque vous mettez à niveau un déploiement ONTAP Select existant vers 9.16.1, le nouveau format NLF n'est pas appliqué. Pour obtenir les licences des fonctionnalités ARP, ONTAP S3 et S3 SnapMirror, vous devez télécharger la version NLF mise à jour après la mise à niveau. Si vous revenez à ONTAP Select 9.15.1 ou version antérieure, vous devez réinstaller les licences de fonction que vous aviez avant la mise à niveau.
 
 --
-Prise en charge de la protection anti-ransomware autonome:: ONTAP Select 9.16.1 introduit la prise en charge de la protection autonome contre les ransomwares (ARP). ONTAP Select 9.16.1 prend uniquement en charge les mises à jour manuelles pour ARP, les mises à jour automatiques ne sont pas prises en charge. La licence de la fonctionnalité ARP est incluse dans le NLF pour ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#enabled-ontap-features["En savoir plus >>"].
+Prise en charge de la protection anti-ransomware autonome:: ONTAP Select 9.16.1 introduit la prise en charge de la protection autonome contre les ransomwares (ARP). ONTAP Select 9.16.1 prend uniquement en charge les mises à jour manuelles pour ARP, les mises à jour automatiques ne sont pas prises en charge. La licence de la fonctionnalité ARP est incluse dans le NLF pour ONTAP Select 9.16.1. link:reference_lic_ontap_features.html#licensed-ontap-features["En savoir plus >>"].
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.16.1 inclut la prise en charge de VMware ESXi 8.0 U3.
 Prise en charge de l'hyperviseur KVM mise à jour:: À partir d' ONTAP Select 9.16.1, l'hyperviseur KVM est pris en charge sur RHEL 9.5 et Rocky Linux 9.5.
 

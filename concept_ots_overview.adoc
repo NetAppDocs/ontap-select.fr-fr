@@ -115,6 +115,7 @@ ONTAP Select ne prend pas en charge plusieurs fonctionnalités ONTAP. Dans la pl
 
 NOTE: À partir de ONTAP Select 9.16.1, les mises à jour manuelles de ARP sont prises en charge et la licence de fonction ARP est incluse dans le fichier de licence NetApp (NLF).
 
+* Gestionnaires de clés cloud
 * IPspace cluster
 +
 Toute modification apportée à l'IPspace Cluster, notamment l'ajout ou la suppression de ports, de réseaux locaux virtuels (VLAN) ou de groupes d'agrégation de liens, n'est pas prise en charge.
@@ -131,12 +132,12 @@ La surveillance traditionnelle de l'état, utilisée dans le cadre d'un déploie
 +
 Les groupes d'interface ne sont pas pris en charge.
 
-* Gestionnaire de clés multitenant (MTKM)
 * Prise en charge du déchargement de carte réseau
 +
 En raison de l'environnement virtualisé utilisé avec ONTAP Select, la fonction de déchargement de carte réseau n'est pas prise en charge.
 
 * Disques NetApp Storage Encryption
+* Gestionnaire de clés embarqué
 * Propriétés du port ONTAP
 +
 La modification des propriétés des ports ONTAP, notamment la vitesse, le mode duplex et le contrôle de flux, n'est pas prise en charge.
@@ -149,6 +150,6 @@ La modification des propriétés des ports ONTAP, notamment la vitesse, le mode 
 
 
 .Informations associées
-* link:reference_lic_ontap_features.html#enabled-ontap-features["En savoir plus sur les fonctionnalités ONTAP activées par défaut"]
+* link:reference_lic_ontap_features.html#licensed-ontap-features["Découvrez les fonctionnalités ONTAP sous licence par défaut"]
 * link:concept_lic_evaluation.html["En savoir plus sur les options de licence ONTAP Select"]
 

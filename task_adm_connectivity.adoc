@@ -33,10 +33,10 @@ NOTE: Il est recommandé d'effectuer toujours un test rapide avant de créer un 
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page et cliquez sur *Network Checker*.
-. Cliquez sur *Démarrer Nouvelle exécution* et sélectionnez les hôtes et les réseaux pour la paire HA
+. Sélectionnez l'onglet *Administration* en haut de la page, puis sélectionnez *Network Checker*.
+. Sélectionnez *Démarrer une nouvelle exécution*, puis sélectionnez les hôtes et les réseaux pour la paire haute disponibilité
 +
 Vous pouvez ajouter et configurer des paires haute disponibilité supplémentaires selon vos besoins.
 
-. Cliquez sur *Démarrer* pour lancer le test de connectivité réseau.
+. Sélectionnez *Démarrer* pour lancer le test de connectivité réseau.
 

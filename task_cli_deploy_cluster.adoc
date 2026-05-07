@@ -63,7 +63,7 @@ Vous devez disposer du mot de passe pour le compte utilisateur admin.
 .Étapes
 . Dans un shell de commande sur votre poste de travail local, utilisez l'utilitaire sftp pour télécharger le fichier de licence sur la machine virtuelle de déploiement.
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -113,7 +113,7 @@ Si plusieurs hôtes hyperviseurs sont nécessaires, utilisez cette procédure po
 host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -130,7 +130,7 @@ Entrez le mot de passe du compte hôte lorsque vous y êtes invité.
 host show -name <FQDN|IP> -detailed
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -156,7 +156,7 @@ Avant d'enregistrer un hôte géré par vCenter, vous devez ajouter un compte de
 credential add -hostname <FQDN|IP> -type vcenter -username <vcenter_username>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -177,7 +177,7 @@ host register -name <FQDN|IP> -hypervisor-type ESX -username <esx_username>
 host register -name <FQDN|IP> -hypervisor-type ESX -mgmt-server <FQDN|IP>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -192,7 +192,7 @@ host register -name 10.234.81.14 -hypervisor-type ESX -mgmt-server vc.select.com
 host show -name <FQDN|IP> -detailed
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -223,7 +223,7 @@ Lorsque vous créez un cluster ONTAP Select, l'utilitaire Deploy génère automa
 cluster create -name <cluster_name> -node-count <count>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -236,7 +236,7 @@ cluster create -name test-cluster -node-count 1
 cluster modify -name <cluster_name> -mgmt-ip <IP_address> -netmask <netmask> -gateway <IP_address> -dns-servers <FQDN|IP>_LIST -dns-domains <domain_list>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -280,7 +280,7 @@ node show -cluster-name <cluster_name>
 node modify -name <node_name> -cluster-name <cluster_name> -host-name <FQDN|IP> -license-serial-number <number> -instance-type TYPE -passthrough-disks false
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -300,7 +300,7 @@ Une licence de niveau de capacité est utilisée pour le nœud ONTAP Select.
 host network show -host-name <FQDN|IP> -detailed
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -329,7 +329,7 @@ node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -manageme
 Lors du déploiement d'un cluster à nœud unique, vous n'avez pas besoin d'un réseau interne et devez supprimer « -internal-network ».
 
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -343,7 +343,7 @@ node modify -name test-cluster-01 -cluster-name test-cluster -mgmt-ip 10.234.81.
 node show -name <node_name> -cluster-name <cluster_name> -detailed
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 ....
@@ -372,7 +372,7 @@ Lorsque vous utilisez un contrôleur RAID matériel local, vous devez effectuer 
 host storage pool show -host-name <FQDN|IP>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -392,7 +392,7 @@ node storage pool attach -name <pool_name> -cluster-name <cluster_name> -node-na
 Si vous incluez le paramètre « -capacity-limit », spécifiez la valeur en Go ou en To.
 
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -407,7 +407,7 @@ node-name test-cluster-01 -capacity-limit 500GB
 node storage pool show -cluster-name <cluster_name> -node-name <node_name>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -421,7 +421,7 @@ node storage pool show -cluster-name test-cluster -node-name testcluster-01
 node storage disk attach -node-name <node_name> -cluster-name <cluster_name> -disks <list_of_drives>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -435,7 +435,7 @@ node storage disk attach -node-name NVME_SN-01 -cluster-name NVME_SN -disks 0000
 node storage disk show -node-name <node_name> -cluster-name <cluster_name>`
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]
@@ -462,7 +462,7 @@ Exécutez le vérificateur de connectivité réseau à l'aide de l' link:task_ad
 cluster deploy -name <cluster_name>
 ----
 +
-Exemple de sortie
+Exemple de sortie :
 
 +
 [listing]

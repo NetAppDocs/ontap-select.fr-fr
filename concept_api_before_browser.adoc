@@ -28,8 +28,8 @@ Si vous prévoyez d'émettre des appels d'API dans le cadre de l'exécution de t
 
 Chaque appel d'API est décrit sur la page de documentation à l'aide d'un format cohérent. Le contenu inclut des notes d'implémentation, des paramètres de requête et des codes d'état HTTP. En outre, vous pouvez afficher les détails du fichier JSON utilisé avec les demandes et les réponses de l'API, comme suit :
 
-* Exemple de valeur si vous cliquez sur _example Value_ lors d'un appel API, une structure JSON type pour l'appel s'affiche. Vous pouvez modifier l'exemple selon vos besoins et l'utiliser comme saisie pour votre demande.
-* Modèle si vous cliquez sur _Model_, une liste complète des paramètres JSON s'affiche, avec une description pour chaque paramètre.
+* Exemple de valeur : Si vous sélectionnez _Exemple de valeur_ lors d’un appel API, une structure JSON typique pour l’appel s’affiche. Vous pouvez modifier l’exemple selon vos besoins et l’utiliser comme entrée pour votre requête.
+* Modèle Si vous sélectionnez _Modèle_, une liste complète des paramètres JSON est affichée, avec une description pour chaque paramètre.
 
 
 

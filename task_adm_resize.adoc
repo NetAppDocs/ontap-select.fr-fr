@@ -30,9 +30,9 @@ Cette tâche explique comment utiliser l'interface utilisateur Web de déploieme
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Cluster* en haut de la page et sélectionnez le cluster souhaité dans la liste.
-. Sur la page des détails du cluster, cliquez sur l'icône engrenage à droite de la page et sélectionnez *Redimensionner l'instance*.
-. Sélectionnez *Type d'instance* et indiquez les informations d'identification ONTAP, puis cliquez sur *Modifier*.
+. Sélectionnez l'onglet *Cluster* en haut de la page, puis sélectionnez le cluster souhaité dans la liste.
+. Sur la page de détails du cluster, sélectionnez l'icône d'engrenage à droite de la page et sélectionnez *Redimensionnement de l'instance*.
+. Sélectionnez le *Type d'instance* et fournissez les identifiants ONTAP, puis sélectionnez *Modifier*.
 
 
 .Une fois que vous avez terminé

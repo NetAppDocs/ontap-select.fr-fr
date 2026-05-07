@@ -105,7 +105,19 @@ Les licences standard, premium et premium XL sont compatibles avec une large gam
 2+| Taille de l'instance | Petit | Moyen | Grand 
 
 
-2+| Famille CPU | Intel Xeon E5-26xx v3 (Haswell) ou ultérieur | Intel Xeon E5-26xx v3 (Haswell) ou ultérieur | Intel Xeon E5-26xx v3 (Haswell) ou ultérieur 
+2+| Famille CPU  a| 
+Intel Xeon E5-26xx v3 (Haswell) ou ultérieur
+
+AMD EPYC Embedded 9004 ou version ultérieure et 8004
+ a| 
+Intel Xeon E5-26xx v3 (Haswell) ou ultérieur
+
+AMD EPYC Embedded 9004 ou version ultérieure et 8004
+ a| 
+Intel Xeon E5-26xx v3 (Haswell) ou ultérieur
+
+AMD EPYC Embedded 9004 ou version ultérieure et 8004
+
 
 
 2+| Processeur/mémoire ONTAP Select | 4 processeurs virtuels (vCPU) / 16 Go de RAM | 8 vCPU/64 Go de RAM | 16 vCPU / 128 Go de RAM 
@@ -177,4 +189,4 @@ Rocky Linux (KVM) 10.1, 10.0, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 
 --
 ====
 .Quelle est la prochaine étape ?
-link:concept_lic_workflow.html["Découvrez comment acheter une licence ONTAP Select"]
+Apprenez-en plus sur link:concept_lic_workflow.html["achat d'une licence ONTAP Select"]

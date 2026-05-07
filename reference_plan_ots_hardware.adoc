@@ -79,10 +79,9 @@ Si un hôte d'hyperviseur ESXi est géré par un serveur vCenter, vous devez enr
 
 L'hôte de l'hyperviseur physique dans lequel vous déployez ONTAP Select doit respecter plusieurs exigences matérielles. Vous pouvez choisir n'importe quelle plateforme pour l'hôte de l'hyperviseur, tant qu'elle respecte les exigences matérielles minimales. Les fournisseurs suivants proposent des plateformes matérielles prises en charge : Cisco, Dell, HP, Fujitsu, Lenovo, Et Supermicro.
 
+ONTAP Select prend en charge les modèles de processeurs basés sur Intel Xeon Sandy Bridge et Advanced Micro Devices (AMD).
 
-NOTE: À partir d' ONTAP Select 9.9.1, seuls les modèles de processeur basés sur Intel Xeon Sandy Bridge ou ultérieurs sont pris en charge.
-
-Pour plus d'informations, reportez-vous au https://mysupport.netapp.com/matrix["Matrice d'interopérabilité, fenêtre=_blank"].
+Reportez-vous à la  https://mysupport.netapp.com/matrix["Matrice d'interopérabilité"^] pour plus d'informations.
 
 
 
@@ -91,10 +90,9 @@ Pour plus d'informations, reportez-vous au https://mysupport.netapp.com/matrix["
 Il existe plusieurs exigences matérielles courantes qui s'appliquent à toutes les plateformes, indépendamment du type d'instance de nœud ou de l'offre de licence.
 
 .Processeur
-Les microprocesseurs pris en charge incluent les processeurs Intel Xeon pour serveur, voir link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processeurs Intel Xeon,window=_blank"] pour plus d'informations.
+Les microprocesseurs compatibles incluent les processeurs serveur Intel Xeon et les processeurs AMD.
 
-
-NOTE: Les processeurs AMD (Advanced micro Devices) ne sont pas pris en charge par ONTAP Select.
+Consultez link:https://www.intel.com/content/www/us/en/products/processors/xeon/view-all.html?Processor+Type=1003["Processeurs Intel Xeon"^] et link:https://www.amd.com/en/products/processors/server/epyc.html["Processeurs serveurs AMD EPYC"^] pour plus d’informations.
 
 .Configuration Ethernet
 Il existe plusieurs configurations Ethernet prises en charge en fonction de la taille du cluster.
@@ -118,8 +116,6 @@ Il existe plusieurs configurations Ethernet prises en charge en fonction de la t
 
 Il y a plusieurs autres exigences matérielles en fonction du type d'instance de nœud.
 
-Reportez-vous à la section link:concept_lic_platforms.html["Comprendre les offres de licences de plate-forme"] pour en savoir plus.
-
 [cols="a1,a2,a2,a2"]
 |===
 | Taille du nœud | cœurs de processeur | Mémoire | Offre de licence de plateforme requise 
@@ -135,3 +131,6 @@ Reportez-vous à la section link:concept_lic_platforms.html["Comprendre les offr
 |===
 
 NOTE: Il existe des besoins supplémentaires en termes de disque selon les licences de la plate-forme. Voir link:reference_plan_ots_storage.html["Stockage et RAID"] pour en savoir plus.
+
+.Informations associées
+Apprenez-en plus sur link:concept_lic_platforms.html["les offres de licences de plateforme pour ONTAP Select"]

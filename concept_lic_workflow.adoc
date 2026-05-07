@@ -20,7 +20,7 @@ Le processus exact varie selon que vous utilisez une licence de niveau de capaci
 
 Numéro de série de licence à neuf chiffres:: Le numéro de série s'applique à un nœud (niveaux de capacité) ou à un pool de stockage (pools de capacité)
 ID de verrouillage de licence:: Vous devez disposer de l'ID de verrouillage de licence pour votre instance de déploiement lorsque vous utilisez une licence de pool de capacité
-Site Web de licence:: Vous obtenez une licence de niveau de capacité et de pool de capacité sur différents sites Web
+Site Web de licence:: Vous obtenez une licence de niveau de capacité et une licence de pool de capacité sur des sites web différents.
 
 
 image:purchased_license_workflow.png["Décrit le processus d'achat et d'installation d'une licence de stockage pour un déploiement ONTAP Select de production."]

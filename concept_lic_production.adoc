@@ -64,8 +64,3 @@ Il existe plusieurs caractéristiques propres au modèle de licence des pools de
 * Tous les nœuds ONTAP Select d'un cluster partagent la même capacité de licence. Cela signifie que la licence doit être suffisamment grande pour couvrir le stockage alloué à tous les nœuds du cluster.
 * Chaque nœud loue automatiquement la capacité de stockage de ses agrégats de données locaux à partir d'un pool de capacité partagé.
 
-
-.Quelle est la prochaine étape ?
-* link:concept_lic_platforms.html["Découvrez les offres de licences de plateforme pour ONTAP Select"]
-* link:concept_lic_cp_operation.html["En savoir plus sur le modèle de licence ONTAP Select Capacity Pools"]
-

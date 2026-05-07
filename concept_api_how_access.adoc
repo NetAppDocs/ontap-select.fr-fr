@@ -17,7 +17,7 @@ summary: 'En raison de la flexibilité inhérente des services web REST, l"API d
 En raison de la flexibilité inhérente des services web REST, l'API de déploiement ONTAP Select est accessible de plusieurs façons.
 
 
-NOTE: L'API REST incluse dans ONTAP Select Deploy possède un numéro de version. Ce numéro est indépendant de celui de Deploy. L'utilitaire d'administration ONTAP Select 9.17.1 Deploy inclut la version 3 de l'API REST.
+NOTE: L'API REST incluse dans ONTAP Select Deploy possède un numéro de version. Le numéro de version de l'API est indépendant du numéro de version de Deploy. L'utilitaire d'administration ONTAP Select Deploy 9.19.1 inclut la version 3 de l'API REST.
 
 
 

@@ -144,7 +144,7 @@ NOTE: L'objectif de la procédure de restauration est de restaurer le cluster à
 . Préparez une nouvelle instance de l'utilitaire ONTAP Select Deploy :
 +
 .. Installez une nouvelle machine virtuelle d'utilitaire de déploiement.
-.. Il est également possible de restaurer la configuration de déploiement d'une sauvegarde précédente vers la nouvelle machine virtuelle.
+.. Vous pouvez également restaurer la configuration Deploy à partir d'une sauvegarde précédente sur la nouvelle machine virtuelle.
 +
 Si vous restaurez une sauvegarde précédente, la nouvelle instance de déploiement ne contiendra pas le cluster à deux nœuds. Pour plus d'informations sur les procédures d'installation et de restauration, reportez-vous à la section d'informations connexes.
 

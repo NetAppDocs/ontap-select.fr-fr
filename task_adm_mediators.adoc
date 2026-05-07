@@ -27,6 +27,6 @@ Vous pouvez afficher la configuration de chaque médiateur, notamment l'état ac
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page et cliquez sur *médiateurs*.
-. Vous pouvez également cliquer sur *Filter* pour personnaliser votre vue des clusters à deux nœuds surveillés par le service médiateur.
+. Sélectionnez l'onglet *Administration* en haut de la page, puis sélectionnez *Mediators*.
+. Vous pouvez également sélectionner *Filtre* pour personnaliser l'affichage des clusters à deux nœuds surveillés par le service médiateur.
 

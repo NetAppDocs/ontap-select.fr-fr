@@ -27,15 +27,15 @@ Lorsqu'un cluster est créé, il est initialement défini sur l'état en ligne.
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
-. Cliquez sur image:icon_kebab.gif["Options"] À droite du cluster et sélectionnez *mettre hors ligne*.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez image:icon_kebab.gif["Options"] à droite du cluster et sélectionnez *Mettre hors ligne*.
 +
 Si l'option hors ligne n'est pas disponible, le cluster est déjà à l'état hors ligne.
 
-. Cliquez sur *Oui* dans la fenêtre contextuelle pour confirmer la demande.
-. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est hors ligne.
-. Pour remettre le cluster en ligne, cliquez sur image:icon_kebab.gif["Options"] Et sélectionnez *mettre en ligne*.
-. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est en ligne.
+. Sélectionnez *Oui* dans la fenêtre contextuelle pour confirmer la demande.
+. Sélectionnez *Actualiser* de temps en temps pour confirmer que le cluster est hors ligne.
+. Pour remettre le cluster en ligne, sélectionnez image:icon_kebab.gif["Options"] et sélectionnez *Remettre en ligne*.
+. Sélectionnez *Actualiser* de temps en temps pour confirmer que le cluster est en ligne.
 
 
 
@@ -49,12 +49,12 @@ Le cluster doit être défini sur l'état hors ligne.
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
-. Cliquez sur image:icon_kebab.gif["Options"] À droite du cluster et sélectionnez *Supprimer*.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez image:icon_kebab.gif["Options"] à droite du cluster et sélectionnez *Supprimer*.
 +
 Si l'option de suppression n'est pas disponible, le cluster n'est pas à l'état hors ligne.
 
-. Cliquez occasionnellement sur *Refresh* pour confirmer que le cluster est supprimé de la liste.
+. Sélectionnez *Actualiser* de temps en temps pour confirmer que le cluster est supprimé de la liste.
 
 
 
@@ -109,10 +109,10 @@ Configuration en clusters et de serveurs virtuels:: Voici quelques-unes des vale
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *clusters* en haut à gauche de la page et sélectionnez le cluster souhaité dans la liste.
-. Cliquez sur image:icon_kebab.gif["Options"] Sur le côté droit de la page, sélectionnez *Cluster Refresh*.
+. Sélectionnez l'onglet *Clusters* en haut à gauche de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez image:icon_kebab.gif["Options"] à droite de la page et sélectionnez *Actualisation du cluster*.
 . Sous *informations d'identification du cluster*, indiquez le mot de passe administrateur ONTAP pour le cluster.
-. Cliquez sur *Actualiser*.
+. Sélectionnez *Actualiser*.
 
 
 .Une fois que vous avez terminé

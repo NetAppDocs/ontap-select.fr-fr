@@ -24,7 +24,7 @@ Vous devez disposer des éléments suivants :
 
 
 .Étapes
-. Saisissez l'URL dans votre navigateur et appuyez sur *entrée* :
+. Saisissez l'URL dans votre navigateur et sélectionnez *Entrée* :
 +
 `\https://<ip_address>/api/ui`
 

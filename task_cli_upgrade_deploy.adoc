@@ -16,11 +16,11 @@ summary: 'Vous pouvez mettre à niveau une machine virtuelle de déploiement exi
 [role="lead"]
 Mettez à niveau une machine virtuelle utilitaire ONTAP Select Deploy existante sur place à l'aide de l'interface de ligne de commande ONTAP Select Deploy.
 
-Vous pouvez effectuer une mise à niveau directe vers ONTAP Select Deploy 9.18.1 à partir de ONTAP Select Deploy 9.17.1 ou 9.16.1. Pour effectuer une mise à niveau à partir d'une version antérieure, par exemple ONTAP Select Deploy 9.15.1, vous devez d'abord effectuer une mise à niveau vers ONTAP Select Deploy 9.16.1 ou 9.17.1, puis vers ONTAP Select Deploy 9.18.1.
+Vous pouvez effectuer une mise à niveau directe vers ONTAP Select Deploy 9.19.1 à partir de ONTAP Select Deploy 9.18.1 ou 9.17.1. Pour effectuer une mise à niveau à partir d'une version antérieure, par exemple ONTAP Select Deploy 9.16.1, vous devez d'abord effectuer une mise à niveau vers ONTAP Select Deploy 9.17.1 ou 9.18.1, puis vers ONTAP Select Deploy 9.19.1.
 
 [NOTE]
 ====
-Si vous disposez d'une ancienne instance de l'utilitaire d'administration ONTAP Select Deploy installée, vous devez la mettre à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Reportez-vous à link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus de détails.
+Si vous avez une ancienne instance de l'utilitaire d'administration ONTAP Select Deploy installée, vous devez la mettre à niveau vers la version actuelle. Vous mettez à niveau le nœud ONTAP Select et les composants ONTAP Select Deploy indépendamment. Reportez-vous à link:concept_adm_upgrading_nodes.html["Mettez à niveau les nœuds ONTAP Select"^] pour plus de détails.
 
 ====
 .Avant de commencer
@@ -54,14 +54,12 @@ Cette tâche décrit une méthode de téléchargement du fichier sur la machine 
 * Vérifiez que vous disposez du mot de passe du compte utilisateur administrateur.
 
 
-.Étapes
-. Dans une invite de commandes sur votre poste de travail local, utilisez le `scp` Utilisez l'utilitaire (Secure Copy Protocol) pour charger le fichier image sur la machine virtuelle ONTAP Select Deploy, comme illustré dans l'exemple suivant :
-+
+.Étape
+Dans une invite de commandes sur votre poste de travail local, utilisez le `scp` Utilisez l'utilitaire (Secure Copy Protocol) pour charger le fichier image sur la machine virtuelle ONTAP Select Deploy, comme illustré dans l'exemple suivant :
+
 ....
 scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
 ....
-
-
 .Résultat
 Le fichier de mise à niveau est stocké dans le répertoire personnel de l'utilisateur admin.
 

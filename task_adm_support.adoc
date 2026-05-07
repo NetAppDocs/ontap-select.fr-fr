@@ -27,9 +27,9 @@ Les données de configuration de déploiement sont utilisées par AutoSupport.
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *Paramètres et AutoSupport*, puis sur image:icon_pencil.gif["Modifier"].
-. Indiquez les données de configuration appropriées à votre environnement et cliquez sur *Modifier*.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *Paramètres et AutoSupport*, puis sélectionnez image:icon_pencil.gif["Modifier"].
+. Fournissez les données de configuration appropriées à votre environnement et sélectionnez *Modifier*.
 +
 Si vous utilisez un serveur proxy, vous pouvez configurer l'URL du proxy comme suit :
 `\http://USERNAME:PASSWORD@<FQDN|IP>:PORT`
@@ -59,9 +59,9 @@ Vous pouvez filtrer la liste des messages d'événement en fonction de plusieurs
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *événements et travaux*, puis sur *événements*.
-. Vous pouvez également cliquer sur *Filter* et créer un filtre pour limiter les messages d'événement affichés.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *Événements & emplois*, puis sélectionnez *Événements*.
+. Vous pouvez également sélectionner *Filtre* et créer un filtre pour limiter les messages d'événement affichés.
 
 
 
@@ -75,8 +75,8 @@ AutoSupport est le principal outil de dépannage utilisé par NetApp pour prendr
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *Paramètres et AutoSupport*, puis sur image:icon_kebab.gif["Options"].
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *Paramètres et AutoSupport* puis sélectionnez image:icon_kebab.gif["Options"].
 . Activez ou désactivez la fonctionnalité AutoSupport si nécessaire.
 
 
@@ -96,13 +96,13 @@ Vous pouvez générer les packages AutoSupport suivants sous la direction et les
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *Paramètres et AutoSupport*, puis sur image:icon_kebab.gif["Options"].
-. Cliquez sur *générer*.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *Paramètres et AutoSupport* puis sélectionnez image:icon_kebab.gif["Options"].
+. Sélectionnez *Générer*.
 . Sélectionnez le type et fournissez une description pour le package ; vous pouvez éventuellement fournir un numéro de dossier.
-. Cliquez sur *générer*.
+. Sélectionnez *Générer*.
 +
 Un numéro d'identification de séquence unique est attribué à chaque package AutoSupport.
 
-. Si vous le souhaitez, sous *Historique AutoSupport*, sélectionnez le package correct et cliquez sur l'icône de téléchargement pour enregistrer le fichier AutoSupport sur votre poste de travail local.
+. Vous pouvez également sélectionner le package approprié sous *AutoSupport History*, puis sélectionner l’icône de téléchargement pour enregistrer le fichier AutoSupport sur votre poste de travail local.
 

@@ -45,7 +45,7 @@ shell bash
 ----
 ls -lh /opt/netapp/images
 ----
-. Vous pouvez également supprimer l'image ONTAP Select avec l'hôte de l'hyperviseur.
+. Vous pouvez également supprimer l’image ONTAP Select avec votre hôte hyperviseur.
 +
 [role="tabbed-block"]
 ====

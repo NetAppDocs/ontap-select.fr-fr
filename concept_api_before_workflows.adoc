@@ -24,7 +24,7 @@ La page de documentation en ligne de ONTAP Select comprend les détails de chaqu
 
 Les informations suivantes sont incluses pour chaque appel d'API au sein d'un flux de travail afin de localiser l'appel sur la page de documentation :
 
-* Catégorie les appels API sont organisés sur la page de documentation en zones ou catégories liées aux fonctions. Pour localiser un appel API spécifique, faites défiler la page jusqu'en bas et cliquez sur la catégorie API applicable.
+* Les appels d'API sont organisés sur la page de documentation en domaines ou catégories fonctionnellement liés. Pour trouver un appel d'API spécifique, faites défiler la page jusqu'en bas et sélectionnez la catégorie d'API correspondante.
 * Verbe HTTP le verbe HTTP identifie l'action effectuée sur une ressource. Chaque appel d'API est exécuté via un seul verbe HTTP.
 * Chemin le chemin détermine la ressource spécifique à laquelle l'action s'applique dans le cadre d'un appel. La chaîne de chemin d'accès est ajoutée à l'URL principale pour former l'URL complète identifiant la ressource.
 

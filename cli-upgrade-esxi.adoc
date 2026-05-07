@@ -47,11 +47,10 @@ TIP: Vous devez sélectionner une procédure de mise à niveau qui utilise l'uti
 +
 Effectuer une mise à niveau ESXi à l'aide de l'utilitaire d'administration Deploy est l'option la plus générale et la plus résiliente. Toutefois, il peut arriver que la fonction Deploy soit indisponible ou ne puisse pas être utilisée. Par exemple, la mise à niveau vers ESXi 8.0 n'est pas prise en charge avec les versions antérieures d' ONTAP Select et de l'utilitaire d'administration Deploy.
 
-
-
-
-
++
 Si vous utilisez ces versions antérieures et que vous tentez une mise à niveau, vous pouvez laisser la machine virtuelle ONTAP Select dans un état où elle ne peut pas démarrer. Dans ce cas, vous devez choisir une procédure de mise à niveau qui n'utilise pas Deploy.
+
+
 
 . *Mettez à niveau l'utilitaire d'administration Deploy*
 +

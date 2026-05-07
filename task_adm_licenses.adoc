@@ -26,7 +26,7 @@ Vous pouvez ajouter, modifier et supprimer des licences de niveau de capacité O
 . Connectez-vous à l'utilitaire de déploiement via l'interface Web à l'aide du compte d'administrateur.
 . Sélectionnez l'onglet *Administration* en haut de la page.
 . Sélectionnez *licences* et sélectionnez *niveau de capacité*.
-. Vous pouvez sélectionner *Filter* et limiter les licences affichées.
+. Vous pouvez également sélectionner *Filtrer* pour limiter les licences affichées.
 . Pour remplacer une licence existante, sélectionnez une licence, sélectionnez image:icon_kebab.gif["Options"], puis sélectionnez *mettre à jour*.
 . Pour ajouter une nouvelle licence, sélectionnez *Add* en haut de la page, puis sélectionnez *Upload License(s)* et sélectionnez un fichier de licence sur votre poste de travail local.
 

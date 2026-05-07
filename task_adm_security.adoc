@@ -24,8 +24,8 @@ Vous pouvez modifier le mot de passe du compte administrateur de la machine virt
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'icône figure en haut à droite de la page et sélectionnez *changer mot de passe*.
-. Indiquez le mot de passe actuel et le nouveau mot de passe, comme vous y êtes invité, puis cliquez sur *Submit* (soumettre).
+. Sélectionnez l'icône en forme de silhouette en haut à droite de la page, puis sélectionnez *Changer le mot de passe*.
+. Saisissez le mot de passe actuel et le nouveau mot de passe lorsque vous y êtes invité, puis sélectionnez *Soumettre*.
 
 
 
@@ -39,9 +39,9 @@ Vous devez connaître les types d'identifiants requis et connaître leur utilisa
 
 .Étapes
 . Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Cliquez sur l'onglet *Administration* en haut de la page.
-. Cliquez sur *Management Servers*, puis sur *Add vCenter*.
-. Entrez les informations suivantes et cliquez sur *Ajouter*.
+. Sélectionnez l'onglet *Administration* en haut de la page.
+. Sélectionnez *Serveurs de gestion* > *Ajouter vCenter*.
+. Saisissez les informations suivantes et sélectionnez *Ajouter*.
 +
 [cols="30,70"]
 |===
@@ -56,7 +56,7 @@ Vous devez connaître les types d'identifiants requis et connaître leur utilisa
 
 | Mot de passe | Entrez le mot de passe du nom d'utilisateur associé. 
 |===
-. Une fois le nouveau serveur de gestion ajouté, vous pouvez, si vous le souhaitez, cliquer sur image:icon_kebab.gif["Options"] et sélectionnez l'une des options suivantes :
+. Vous pouvez également sélectionner image:icon_kebab.gif["Options"] après l'ajout du nouveau serveur de gestion, puis sélectionner l'une des options suivantes :
 +
 ** Mettre à jour les informations d'identification
 ** Vérifiez les informations d'identification
@@ -166,7 +166,7 @@ Vous pouvez vous connecter à ONTAP Select Deploy à l'aide de l'authentificatio
 . Connectez-vous à partir de votre appareil avec la clé YubiKey connectée.
 
 
-.Exemple de sortie
+.Exemple de sortie :
 [listing]
 ----
 login as: admin
@@ -194,7 +194,7 @@ Le `ssh-keygen` la commande prend en charge plusieurs algorithmes de clé publiq
 * La taille de la clé est sélectionnée avec le `-b` option
 
 
-.Exemple de sortie
+.Exemple de sortie :
 [listing]
 ----
 ssh-keygen -t ecdsa -b 521

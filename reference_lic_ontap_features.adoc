@@ -21,13 +21,17 @@ NOTE: Les fonctionnalités ONTAP qui dépendent matériel ne sont généralement
 
 
 
-== Fonctionnalités ONTAP activées automatiquement par défaut
+== Fonctionnalités ONTAP concédées sous licence par défaut
 
 ONTAP Select prend en charge les fonctionnalités ONTAP suivantes sous licence par défaut :
 
 * Protection anti-ransomware autonome (ARP) (mises à jour manuelles)
 * CIFS
 * La déduplication et la compression
+* Gestion externe des clés utilisant le protocole d'interopérabilité de gestion des clés (KMIP)
++
+La gestion externe des clés est la seule gestion des clés prise en charge par ONTAP Select. En savoir plus link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["activation et configuration de la gestion des clés externes"^].
+
 * FlexCache
 +
 ONTAP Select prend en charge les volumes de cache FlexCache® avec écriture différée. Les volumes d'origine FlexCache® avec écriture différée ne sont pas pris en charge.
@@ -57,7 +61,7 @@ link:https://docs.netapp.com/us-en/ontap/snaplock/index.html["Découvrez ONTAP S
 * SnapVault
 * Reprise d'activité pour les machines virtuelles de stockage (reprise d'activité SVM)
 +
-ONTAP Select prend en charge SVM DR en tant que source et destination avec un maximum de 16 relations. La prise en charge du SVM DR est limitée à l'utilisation de la version ONTAP source aux versions +2. Par exemple, la source ONTAP Select 9.12.1 peut se connecter à ONTAP de destination versions 9.12.1, 9.13.1 ou 9.14.1.
+ONTAP Select prend en charge SVM DR en tant que source et destination, avec un maximum de 16 relations. La prise en charge de SVM DR est limitée à l'utilisation de la version ONTAP source jusqu'aux versions +2. Par exemple, la source ONTAP Select 9.16.1 peut se connecter aux versions ONTAP de destination 9.16.1, 9.17.1 ou 9.18.1.
 
 
 
@@ -65,7 +69,7 @@ ONTAP Select prend en charge SVM DR en tant que source et destination avec un ma
 
 == Fonctionnalités ONTAP sous licence séparée
 
-Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui n'est pas activée par défaut, notamment :
+Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui n'est pas sous licence par défaut, notamment :
 
 * FabricPool
 +

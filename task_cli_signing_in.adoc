@@ -31,5 +31,5 @@ Vous devez disposer du mot de passe actuel pour le compte administrateur déploi
 ** URL du proxy (facultatif)
 
 
-. Tapez *?* et appuyez sur *entrée* pour afficher la liste des commandes de shell de gestion disponibles.
+. Tapez *?* et sélectionnez *Entrée* pour afficher une liste des commandes shell de gestion disponibles.
 

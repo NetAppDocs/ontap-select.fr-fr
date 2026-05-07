@@ -127,12 +127,12 @@ Vous devez définir le mot de passe du compte administrateur. Vous devez fournir
 +
 Nom d'hôte :
 
-.. Saisissez le nom de l'hôte et appuyez sur *entrée*.
+.. Tapez le nom d'hôte et sélectionnez *entrée*.
 .. Attendez l'invite suivante :
 +
 Saisissez un mot de passe pour l'utilisateur admin :
 
-.. Saisissez le mot de passe et appuyez sur *entrée*.
+.. Saisissez le mot de passe et sélectionnez *Entrée*.
 .. Attendez l'invite suivante :
 +
 Utiliser DHCP pour définir les informations de mise en réseau ? [n] :
