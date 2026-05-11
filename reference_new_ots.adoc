@@ -127,12 +127,7 @@ Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon le
 link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
 
 --
-Prise en charge du SnapMirror cloud:: À partir de ONTAP Select 9.17.1, SnapMirror cloud est pris en charge avec ONTAP Select. SnapMirror cloud est une fonctionnalité ONTAP sous licence qui est activée par défaut lorsque vous déployez un cluster ONTAP Select 9.17.1 ou mettez à niveau un cluster ONTAP Select existant vers la version 9.17.1.
-+
---
-https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["Découvrez les sauvegardes cloud SnapMirror vers le stockage objet"^].
-
---
+Prise en charge du SnapMirror cloud:: À partir de ONTAP Select 9.17.1, SnapMirror cloud est pris en charge avec ONTAP Select. SnapMirror cloud n'est pas licencié par défaut pour ONTAP Select. Lorsque vous déployez un cluster ONTAP Select 9.17.1 ou mettez à niveau un cluster ONTAP Select existant vers la version 9.17.1, vous devez demander une licence SnapMirror cloud. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#other-ontap-features["Fonctionnalités ONTAP sous licence séparée"].
 Prise en charge de SnapLock Select:: À partir de ONTAP Select 9.17.1, les nouveaux déploiements disposent automatiquement de SnapLock Select (y compris le verrouillage inviolable des snapshots) sous licence. Pour les mises à niveau depuis ONTAP Select 9.16.1 et versions antérieures, vous pouvez télécharger la licence SnapLock Select gratuitement depuis le link:https://mysupport.netapp.com/site/["Site de support NetApp"^] et l’appliquer manuellement. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
 Prise en charge de vSAN ESA sur les clusters multi-nœuds:: À partir d' ONTAP Select 9.17.1, la prise en charge de l'architecture de stockage vSAN Express (ESA) est étendue pour déployer des clusters multi-nœuds.  Cette amélioration vous permet de déployer des configurations vSAN ESA.
 +
