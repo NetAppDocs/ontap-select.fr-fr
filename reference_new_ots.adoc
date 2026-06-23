@@ -21,10 +21,10 @@ Découvrez les nouvelles fonctionnalités et les améliorations apportées aux v
 
 == ONTAP Select 9.19.1
 
-Prise en charge de la gestion des clés externes (KMIP):: À partir de ONTAP Select 9.19.1, ONTAP Select prend en charge la gestion des clés externes à l'aide du protocole Key Management Interoperability Protocol (KMIP). Vous pouvez activer la gestion des clés externes après le déploiement d'un cluster ONTAP Select 9.19.1 ou la mise à niveau d'un cluster existant vers ONTAP Select 9.19.1. La gestion des clés externes est la seule gestion des clés prise en charge par ONTAP Select 9.19.1. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
+Prise en charge de la gestion des clés externes (KMIP):: À partir de ONTAP Select 9.19.1, ONTAP Select prend en charge la gestion des clés externes à l'aide du protocole Key Management Interoperability Protocol (KMIP). Vous pouvez activer la gestion des clés externes après le déploiement d'un cluster ONTAP Select 9.19.1 ou la mise à niveau d'un cluster existant vers ONTAP Select 9.19.1. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
 +
 --
-ONTAP Select ne prend pas en charge les gestionnaires de clés cloud ni le gestionnaire de clés intégré ONTAP.
+ONTAP Select ne prend pas en charge les gestionnaires de clés cloud.
 
 --
 Prise en charge des processeurs Advanced Micro Devices (AMD):: À compter de ONTAP Select 9.19.1, ONTAP Select prend en charge les processeurs AMD sur les hôtes hyperviseur KVM (Kernel-Based Virtual Machine) et ESXi. Pour plus d'informations, consultez link:reference_plan_ots_hardware.html["Considérations relatives à l'hyperviseur VMware et au matériel"].

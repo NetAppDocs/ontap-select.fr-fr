@@ -30,7 +30,7 @@ ONTAP Select prend en charge les fonctionnalités ONTAP suivantes sous licence p
 * La déduplication et la compression
 * Gestion externe des clés utilisant le protocole d'interopérabilité de gestion des clés (KMIP)
 +
-La gestion externe des clés est la seule gestion des clés prise en charge par ONTAP Select. En savoir plus link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["activation et configuration de la gestion des clés externes"^].
+En savoir plus link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["activation et configuration de la gestion des clés externes"^].
 
 * FlexCache
 +
