@@ -125,8 +125,8 @@ NOTE: Les informations de compte sont stockées en toute sécurité dans la base
 .Types d'informations d'identification
 Les types d'informations d'identification suivants sont pris en charge :
 
-* Hôte utilisé pour authentifier un hôte d'hyperviseur dans le cadre du déploiement d'un nœud ONTAP Select directement dans VMware ESXi
-* VCenter utilisé pour authentifier un serveur vCenter dans le cadre du déploiement d'un nœud ONTAP Select vers ESXi lorsque l'hôte est géré par VMware vCenter
+* *Hôte* : Utilisé pour authentifier un hôte d’hyperviseur lors du déploiement d’un nœud ONTAP Select directement sur VMware ESXi
+* *vCenter* : Utilisé pour authentifier un serveur vCenter lors du déploiement d’un nœud ONTAP Select sur ESXi lorsque l’hôte est géré par VMware vCenter
 
 
 .L'accès
