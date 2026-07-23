@@ -18,6 +18,7 @@ Le modèle de licence des pools de capacité est différent du modèle des tiers
 
 
 
+[[license-manager]]
 == Gestionnaire de licences
 
 Le Gestionnaire de licences s'exécute comme un processus distinct au sein de chaque instance de l'utilitaire d'administration de déploiement. Certaines des fonctions fournies par LM incluent :
@@ -29,6 +30,7 @@ Le Gestionnaire de licences s'exécute comme un processus distinct au sein de ch
 
 
 
+[[lease-characteristics]]
 == Caractéristiques du bail
 
 Le stockage alloué à chaque agrégat de données au niveau d'un nœud utilisant une licence Capacity Pool doit être associé à un bail. Le nœud demande un bail de stockage et, si la capacité est disponible, le Gestionnaire de licences répond par un bail. Chaque bail comporte les attributs explicites ou implicites suivants :
@@ -53,6 +55,7 @@ Les baux ont une durée comprise entre une heure et sept jours selon la configur
 
 
 
+[[license-lock-id]]
 == ID de verrouillage de licence
 
 Chaque instance du Gestionnaire de licences, et donc chaque instance d'utilitaire de déploiement correspondante, est identifiée par un numéro unique de 128 bits. Ce nombre est combiné au numéro de série de la licence Capacity Pool à neuf chiffres pour verrouiller le pool à une instance de License Manager spécifique (qui est en fait une instance de déploiement). Vous devez fournir les deux valeurs au niveau du site de support NetApp dans le cadre de la génération du fichier de licence NetApp (NLF).
@@ -68,6 +71,7 @@ Deploy affiche cette page lors de votre première connexion. Vous pouvez égalem
 
 
 
+[[basic-lease-operations]]
 == Opérations de location de base
 
 Un nœud ONTAP Select doit localiser ou demander un bail de capacité valide chaque fois qu'un agrégat de données est créé, étendu ou modifié. Vous pouvez utiliser un bail obtenu lors d'une demande précédente qui est toujours valide, ou vous pouvez demander un nouveau bail si nécessaire. Les étapes suivantes sont effectuées par le nœud ONTAP Select pour localiser un bail de Capacity Pool :
@@ -83,6 +87,7 @@ Un nœud ONTAP Select doit localiser ou demander un bail de capacité valide cha
 
 
 
+[[return-storage-capacity-to-a-capacity-pool]]
 == Renvoyer la capacité de stockage vers un pool de capacité
 
 La capacité de stockage est allouée à partir d'un pool de capacité selon les besoins et chaque nouvelle demande peut réduire le stockage disponible dans le pool. La capacité de stockage est renvoyée dans le pool dans plusieurs situations, notamment :

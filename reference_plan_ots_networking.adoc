@@ -18,6 +18,7 @@ Vous devez configurer le réseau de l'hyperviseur correctement avant de déploye
 
 
 
+[[virtual-switch-options]]
 == Options de commutateurs virtuels
 
 Vous devez configurer un switch virtuel sur chacun des hôtes ONTAP Select pour prendre en charge le réseau externe et le réseau interne (clusters multi-nœuds uniquement). Dans le cadre du déploiement d'un cluster multinœud, vous devez tester la connectivité réseau sur le réseau interne du cluster.
@@ -27,12 +28,14 @@ NOTE: Pour en savoir plus sur la configuration d'un vSwitch sur un hôte hypervi
 
 
 
+[[upgrade-to-vmxnet3-esxi-only]]
 == Mise à niveau vers VMXNET3 (ESXi uniquement)
 
 Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par défaut inclus avec les nouveaux déploiements de clusters sur VMware ESXi. Si vous mettez à niveau un nœud ONTAP Select plus ancien vers la version 9.5 ou ultérieure, le pilote n'est pas automatiquement mis à niveau.
 
 
 
+[[cluster-mtu]]
 == MTU du cluster
 
 Un réseau interne distinct est utilisé pour connecter les nœuds ONTAP Select dans un cluster multinœud. La taille de MTU de ce réseau est généralement de 9000. Toutefois, il est parfois difficile de savoir que cette taille de MTU est trop élevée pour le réseau qui connecte les nœuds ONTAP Select. Pour prendre en charge les trames les plus petites, la taille de MTU utilisée par ONTAP Select sur le réseau interne peut être comprise entre 1 7500-9000 octets.
@@ -49,6 +52,7 @@ NOTE: Vous pouvez définir manuellement la valeur MTU du cluster si nécessaire,
 
 
 
+[[two-nic-host-with-standard-vswitch-esxi-only]]
 == Hôte à deux cartes réseau avec vSwitch standard (ESXi uniquement)
 
 Afin d'améliorer les performances ONTAP Select dans une configuration à deux cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de deux groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
@@ -76,6 +80,7 @@ Consultez la section link:concept_nw_concepts_chars.html["Présentation de la mi
 
 
 
+[[four-nic-host-with-standard-vswitch-esxi-only]]
 == Hôte à quatre cartes réseau avec vSwitch standard (ESXi uniquement)
 
 Afin d'améliorer les performances ONTAP Select dans une configuration à quatre cartes réseau, il est conseillé d'isoler le trafic réseau interne et externe à l'aide de quatre groupes de ports. Cette recommandation s'applique à la configuration spécifique suivante :
@@ -115,6 +120,7 @@ Consultez la section link:concept_nw_concepts_chars.html["Présentation de la mi
 
 
 
+[[network-traffic-requirements]]
 == Exigences en matière de trafic réseau
 
 Vous devez vous assurer que vos pare-feu sont correctement configurés pour permettre au trafic réseau de circuler entre les différents participants d'un environnement de déploiement ONTAP Select.

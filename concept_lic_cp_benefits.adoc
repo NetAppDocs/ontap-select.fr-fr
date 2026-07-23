@@ -18,6 +18,7 @@ L'utilisation du modèle de licence pools de capacité présente plusieurs avant
 
 
 
+[[more-efficient-use-of-storage-capacity]]
 == L'utilisation plus efficace de la capacité de stockage
 
 Lorsque vous utilisez une licence de niveaux de capacité, vous allouez une capacité de stockage fixe à chaque nœud. Tout espace inutilisé ne peut être partagé avec les autres nœuds et est réellement gaspillé. Avec les licences Capacity pools, chaque nœud consomme uniquement la capacité dont il a besoin, en fonction de la taille des agrégats de données.
@@ -26,12 +27,14 @@ La capacité est ancrée dans un pool central où elle peut être partagée entr
 
 
 
+[[significantly-reduced-administrative-overhead-resulting-in-lower-cost]]
 == Réduction considérable de la surcharge administrative et donc des coûts
 
 Si vous utilisez des licences Capacity Tier, vous devez obtenir et installer une licence pour chaque nœud. Lorsque vous utilisez des pools de capacité, il existe une licence pour chaque pool partagé. Cela permet de réduire considérablement les frais administratifs et donc les coûts.
 
 
 
+[[improved-usage-metrics]]
 == Amélioration des mesures d'utilisation
 
 L'interface utilisateur Web de déploiement fournit des informations d'utilisation améliorées pour les pools de capacité. Vous pouvez rapidement déterminer la quantité de stockage utilisée et disponible dans un pool de capacité, les nœuds qui utilisent le stockage d'un pool et les pools à partir desquels un cluster alloue la capacité.

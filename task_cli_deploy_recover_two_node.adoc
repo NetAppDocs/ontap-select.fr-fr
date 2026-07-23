@@ -18,6 +18,7 @@ Si l'utilitaire ONTAP Select Deploy tombe en panne ou si vous êtes indisponible
 
 
 
+[[prepare-to-recover-the-deploy-utility]]
 == Préparez-vous à récupérer l'utilitaire de déploiement
 
 Vous devez vous préparer avant de tenter de récupérer une instance de l'utilitaire Deploy pour garantir le succès.  Vous devez connaître plusieurs procédures administratives et disposer des informations requises.
@@ -51,6 +52,8 @@ link:task_cli_migrate_deploy.html#step-3-restore-the-deploy-configuration-data-t
 
 
 
+[[restore-a-deploy-utility-instance-using-a-configuration-backup]]
+[[restore-deploy-backup]]
 == Restaurez une instance d'utilitaire de déploiement à l'aide d'une sauvegarde de configuration
 
 Si vous disposez d'une sauvegarde de l'instance d'utilitaire de déploiement en échec contenant le cluster à deux nœuds, vous pouvez restaurer les données de configuration dans la nouvelle instance de déploiement de machine virtuelle. Vous devez ensuite terminer la restauration en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select.
@@ -127,6 +130,8 @@ Si vous utilisez des licences Capacity Pools, réinstallez chaque licence Capaci
 
 
 
+[[reconfigure-and-recover-a-deploy-utility-instance]]
+[[restore-and-recover-deploy]]
 == Reconfigurer et restaurer une instance d'utilitaire de déploiement
 
 Si vous ne disposez pas d'une sauvegarde de l'instance de l'utilitaire Deploy défaillante contenant le cluster à deux nœuds, configurez la cible iSCSI du médiateur et la boîte aux lettres dans la nouvelle machine virtuelle Deploy.  Vous terminez ensuite la récupération en effectuant une configuration supplémentaire des deux nœuds du cluster ONTAP Select .

@@ -18,6 +18,7 @@ Caractéristiques des réseaux internes et externes ONTAP Select.
 
 
 
+[[ontap-select-internal-network]]
 == Réseau interne ONTAP Select
 
 Le réseau interne ONTAP Select, présent uniquement dans la variante multi-nœuds du produit, est responsable de fournir au cluster ONTAP Select la communication de cluster, l’interconnexion haute disponibilité et les services de réplication synchrone. Ce réseau comprend les ports et interfaces suivants :
@@ -49,6 +50,7 @@ Un cluster à deux nœuds peut utiliser quatre ports 1 Gbit pour le trafic inter
 
 
 
+[[internal-network-validation-and-troubleshooting]]
 === Validation et dépannage du réseau interne
 
 Le réseau interne d'un cluster multi-nœuds peut être validé à l'aide de la fonctionnalité de vérification de la connectivité réseau. Cette fonction peut être appelée depuis l'interface de ligne de commande de déploiement en exécutant la commande  `network connectivity-check start`.
@@ -67,6 +69,7 @@ Depuis ONTAP Deploy 2.10, la taille de MTU utilisée par le réseau interne peut
 
 
 
+[[ontap-select-external-network]]
 == Réseau externe ONTAP Select
 
 Le réseau externe ONTAP Select est responsable de toutes les communications sortantes du cluster et, par conséquent, est présent dans les configurations à nœud unique et à nœuds multiples. Bien que ce réseau ne soit pas soumis aux mêmes exigences de débit strictes que le réseau interne, l'administrateur doit veiller à ne pas créer de goulots d'étranglement réseau entre le client et la machine virtuelle ONTAP, car des problèmes de performance pourraient être à tort considérés comme des problèmes ONTAP Select.
@@ -99,12 +102,14 @@ Le tableau suivant met en évidence les principales différences entre les rése
 |===
 
 
+[[nic-teaming]]
 === Regroupement de cartes réseau
 
 Pour vous assurer que les réseaux internes et externes possèdent à la fois les caractéristiques de bande passante et de résilience requises pour assurer des performances et une tolérance aux pannes élevées, il est recommandé d'utiliser le regroupement des adaptateurs réseau physiques. Les configurations en cluster à 2 nœuds avec une seule liaison 10 Gb sont prises en charge. Cependant, la meilleure pratique recommandée par NetApp consiste à utiliser le regroupement des cartes réseau sur les réseaux internes et externes du cluster ONTAP Select.
 
 
 
+[[mac-address-generation]]
 === Génération d'adresses MAC
 
 Les adresses MAC attribuées à tous les ports réseau ONTAP Select sont générées automatiquement par l'utilitaire de déploiement inclus. La fonction de mise en service utilise un identifiant unique propre à la plateforme propre à l'entreprise (OUI) spécifique à NetApp pour s'assurer qu'il n'y a aucun conflit avec les systèmes FAS. Une copie de cette adresse est ensuite stockée dans une base de données interne au sein de la VM d'installation de ONTAP Select (ONTAP Deploy), afin d'empêcher une réattribution accidentelle lors de futurs déploiements de nœuds. L'administrateur ne doit en aucun cas modifier l'adresse MAC attribuée à un port réseau.

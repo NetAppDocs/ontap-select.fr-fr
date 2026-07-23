@@ -38,6 +38,7 @@ Plusieurs considérations sont à prendre en compte lors du déploiement et de l
 
 
 
+[[licensing-characteristics]]
 == Caractéristiques des licences
 
 La licence d'évaluation ONTAP Select présente les caractéristiques suivantes :
@@ -53,6 +54,7 @@ La licence d'évaluation ONTAP Select présente les caractéristiques suivantes 
 
 
 
+[[upgrade-to-a-production-license]]
 == Mise à niveau vers une licence de production
 
 Vous pouvez mettre à niveau un cluster d'évaluation ONTAP Select de manière à utiliser une licence de production. Vous devez connaître les restrictions suivantes :

@@ -18,6 +18,7 @@ Les disques haute disponibilité (HA) au cœur des systèmes, la messagerie haut
 
 
 
+[[disk-heartbeating]]
 == Les pulsations du disque
 
 Bien que l'architecture ONTAP Select HA tire parti de la plupart des chemins de code utilisés par les baies FAS traditionnelles, il existe quelques exceptions. L'une de ces exceptions est la mise en œuvre d'une méthode de communication sans réseau utilisée par les nœuds de cluster pour empêcher l'isolement du réseau de provoquer un comportement split-brain. Un scénario split-brain est le résultat du partitionnement du cluster, généralement causé par des pannes réseau, où chaque côté estime que l'autre est en panne et tente de reprendre les ressources du cluster.
@@ -40,6 +41,7 @@ NOTE: L'architecture de boîtes aux lettres et la méthode de pulsation basée s
 
 
 
+[[ha-mailbox-posting]]
 == Publication de boîte aux lettres HAUTE DISPONIBILITÉ
 
 L'architecture de la boîte aux lettres haute disponibilité utilise un modèle d'envoi de messages. À intervalles réguliers, les nœuds du cluster publient des messages sur tous les autres disques de boîte aux lettres du cluster, notamment le médiateur, indiquant que le nœud est opérationnel. Dans un cluster sain à tout moment, un seul disque de boîte aux lettres sur un nœud de cluster contient des messages publiés de tous les autres nœuds de cluster.
@@ -48,6 +50,7 @@ Connecté à chaque nœud Select cluster est un disque virtuel utilisé spécifi
 
 
 
+[[ha-heartbeating]]
 == Heartbeef
 
 Comme pour les plateformes NetApp FAS, ONTAP Select envoie régulièrement des messages de signal de détection haute disponibilité sur l'interconnexion haute disponibilité. Dans le cluster ONTAP Select, cette opération s'effectue sur une connexion réseau TCP/IP entre les partenaires haute disponibilité. Par ailleurs, les messages de signal de détection sur disque sont transmis à tous les disques de boîte aux lettres HA, notamment les disques de boîte aux lettres médiateur. Ces messages sont transmis toutes les quelques secondes et lus régulièrement. La fréquence d'envoi et de réception de ces dernières permet au cluster ONTAP Select de détecter les événements de panne haute disponibilité en 15 secondes environ, dans la même fenêtre que sur les plateformes FAS. Lorsque les messages de pulsation ne sont plus lus, un événement de basculement est déclenché.
@@ -61,6 +64,7 @@ NOTE: Les pulsations du réseau sont transmises via l'interconnexion haute dispo
 
 
 
+[[ha-failover-and-giveback]]
 == Basculement et rétablissement HAUTE DISPONIBILITÉ
 
 Lors d'une opération de basculement, le nœud survivant prend en charge le service des données de son nœud homologue à l'aide de la copie locale des données de son partenaire HA. Les E/S client peuvent continuer à être interrompues, mais les modifications apportées à ces données doivent être répliquées à nouveau avant que le rétablissement ne puisse avoir lieu. Notez que ONTAP Select ne prend pas en charge un rétablissement forcé, car cela entraîne la perte des modifications stockées sur le nœud survivant.

@@ -18,6 +18,7 @@ ONTAP Select vNAS est une solution qui permet aux datastores ONTAP Select d'êtr
 
 
 
+[[basic-requirements-and-restrictions]]
 == Exigences et restrictions de base
 
 La solution ONTAP Select vNAS peut être utilisée avec un cluster ONTAP Select de toute taille.
@@ -42,6 +43,7 @@ Les fonctionnalités VMware suivantes ne sont pas prises en charge :
 
 
 
+[[configuration-requirements]]
 == Configuration requise
 
 Si vous prévoyez d'utiliser un datastore VMFS sur une baie de stockage externe (iSCSI, Fibre Channel, Fibre Channel over Ethernet), vous devez créer un pool de stockage VMFS avant de configurer ONTAP Select pour pouvoir utiliser le stockage. Si vous utilisez un datastore NFS, il n'est pas nécessaire de créer un datastore VMFS distinct. Tous les datastores VSAN doivent être définis au sein du même cluster ESXi.
@@ -51,6 +53,7 @@ CAUTION: Lors de la configuration d'un hôte ou de l'exécution d'une opération
 
 
 
+[[best-practices]]
 == Et des meilleures pratiques
 
 Consultez la documentation VMware et suivez les bonnes pratiques applicables identifiées pour les hôtes ESXi. De plus :

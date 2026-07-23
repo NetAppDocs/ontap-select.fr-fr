@@ -18,6 +18,7 @@ ONTAP Select Deploy est l'utilitaire d'administration utilisé pour déployer et
 
 
 
+[[core-functionality]]
 == Fonctionnalité centrale
 
 L'utilitaire d'administration Deploy exécute les fonctions de base suivantes :
@@ -33,18 +34,21 @@ L'utilitaire d'administration Deploy exécute les fonctions de base suivantes :
 
 
 
+[[ways-you-can-access-the-deploy-utility]]
 == Méthodes d'accès à l'utilitaire de déploiement
 
 Plusieurs options sont disponibles lors de l'accès à l'utilitaire d'administration de déploiement. Toutes les interfaces externes sont fonctionnellement équivalentes. Vous devez sélectionner l'option d'accès qui correspond le mieux à vos objectifs et exigences de déploiement spécifiques. Dans tous les cas, vous devez vous connecter à l'aide du compte administrateur avec un mot de passe valide.
 
 
 
+[[web-graphical-user-interface]]
 === Interface utilisateur graphique Web
 
 Vous pouvez accéder à l'utilitaire Deploy via un navigateur web moderne. L'interface Web fournit une interface intuitive et facile à utiliser et, dans la plupart des cas, sera votre interface principale lors de l'utilisation de l'utilitaire.
 
 
 
+[[command-line-interface]]
 === Interface de ligne de commandes
 
 Une interface de ligne de commande texte est disponible via le shell de gestion. Vous pouvez accéder au shell de gestion de la CLI des manières suivantes :
@@ -57,6 +61,7 @@ Vous utilisez généralement la console de la machine virtuelle dans le cadre du
 
 
 
+[[rest-web-services-api]]
 === API de services web REST
 
 L'API de services Web REST exposée aux clients externes fournit une autre option lors de la connexion à l'utilitaire de déploiement. Vous pouvez accéder à l'API à l'aide de n'importe quel langage ou outil de programmation standard prenant en charge les services Web REST. Parmi les choix les plus populaires :
@@ -70,6 +75,7 @@ L'utilisation d'un langage de programmation ou de script permet d'automatiser le
 
 
 
+[[ontap-select-online-documentation-web-page]]
 === Page web de la documentation en ligne de ONTAP Select
 
 L'affichage de la page Web de documentation en ligne sur l'utilitaire de déploiement constitue une alternative pour accéder à l'API de services Web REST. Toutefois, au lieu d'utiliser un langage de programmation, vous accédez à l'API de gestion via la page à l'aide d'un navigateur. Les fonctionnalités suivantes sont fournies :

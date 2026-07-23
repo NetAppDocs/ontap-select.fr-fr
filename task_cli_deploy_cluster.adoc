@@ -18,6 +18,7 @@ Vous pouvez utiliser l'interface de ligne de commande fournie avec l'utilitaire 
 
 
 
+[[step-1-prepare-for-the-deployment]]
 == Étape 1 : Préparer le déploiement
 
 Avant de créer un cluster ONTAP Select sur un hyperviseur, veillez à bien comprendre la préparation requise.
@@ -50,6 +51,7 @@ Avant de déployer un cluster ONTAP Select dans un environnement de production, 
 
 
 
+[[step-2-upload-and-register-a-license-file]]
 == Étape 2 : Télécharger et enregistrer un fichier de licence
 
 Après avoir acquis un fichier de licence avec capacité de stockage, vous devez télécharger le fichier contenant la licence sur la machine virtuelle de déploiement et l'enregistrer.
@@ -91,6 +93,7 @@ license show
 
 
 
+[[step-3-add-hypervisor-hosts]]
 == Étape 3 : Ajouter des hôtes hyperviseurs
 
 Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Select sera exécuté.
@@ -204,6 +207,7 @@ host show -name 10.234.81.14 -detailed
 ====
 
 
+[[step-4-create-and-configure-an-ontap-select-cluster]]
 == Étape 4 : Créer et configurer un cluster ONTAP Select
 
 Vous devez créer, puis configurer le cluster ONTAP Select. Une fois le cluster configuré, vous pouvez configurer chaque nœud.
@@ -253,6 +257,7 @@ cluster show -name <cluster_name> -detailed
 
 
 
+[[step-5-configure-an-ontap-select-node]]
 == Étape 5 : Configurer un nœud ONTAP Select
 
 Vous devez configurer chacun des nœuds du cluster ONTAP Select.
@@ -353,6 +358,7 @@ node show -name test-cluster-01 -cluster-name test-cluster -detailed
 
 
 
+[[step-6-attach-storage-to-the-ontap-select-nodes]]
 == Étape 6 : attacher le stockage aux nœuds ONTAP Select
 
 Configurez le stockage utilisé par chaque nœud du cluster ONTAP Select . Au moins un pool de stockage doit toujours être attribué à chaque nœud. Si vous utilisez un RAID logiciel, chaque nœud doit également être affecté à au moins un disque dur.
@@ -446,6 +452,7 @@ node storage disk show -node-name sdot-smicro-009a -cluster-name NVME
 
 
 
+[[step-7-deploy-an-ontap-select-cluster]]
 == Étape 7 : Déployer un cluster ONTAP Select
 
 Une fois le cluster et les nœuds configurés, vous pouvez déployer le cluster.

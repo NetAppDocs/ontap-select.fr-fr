@@ -18,6 +18,7 @@ Lors de la création ou la suppression d'un cluster ONTAP Select à l'aide d'exe
 
 
 
+[[single-node-cluster-on-esxi]]
 == Cluster à un seul nœud sur ESXi
 
 [source, json]
@@ -89,6 +90,7 @@ Lors de la création ou la suppression d'un cluster ONTAP Select à l'aide d'exe
 ----
 
 
+[[single-node-cluster-on-esxi-using-vcenter]]
 == Cluster à un seul nœud sur ESXi à l'aide de vCenter
 
 [source, json]
@@ -165,6 +167,7 @@ Lors de la création ou la suppression d'un cluster ONTAP Select à l'aide d'exe
 ----
 
 
+[[single-node-cluster-on-kvm]]
 == Cluster à un seul nœud sur KVM
 
 [source, json]

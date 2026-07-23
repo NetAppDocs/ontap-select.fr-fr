@@ -21,12 +21,14 @@ NOTE: Vous avez également besoin du nom de domaine ou de l'adresse IP du serveu
 
 
 
+[[administrative-privileges]]
 == Privilèges administratifs
 
 Les privilèges d'administration minimum requis pour créer et gérer un cluster ONTAP Select sont présentés ci-dessous.
 
 
 
+[[datastore]]
 === Datastore
 
 * Allouez de l'espace
@@ -38,6 +40,7 @@ Les privilèges d'administration minimum requis pour créer et gérer un cluster
 
 
 
+[[host]]
 === Hôte
 
 Configuration::
@@ -61,6 +64,7 @@ Opérations locales::
 
 
 
+[[network]]
 === Le réseau
 
 * Attribuer un réseau
@@ -68,6 +72,7 @@ Opérations locales::
 
 
 
+[[virtual-machine]]
 === Ordinateur virtuel
 
 Configuration:: Tous les privilèges de la catégorie.
@@ -78,6 +83,7 @@ Provisionnement:: Tous les privilèges de la catégorie.
 
 
 
+[[vapp]]
 === VApp
 
 Tous les privilèges de la catégorie.

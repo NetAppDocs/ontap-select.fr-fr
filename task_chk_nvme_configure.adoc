@@ -20,6 +20,7 @@ Optimisation de l'efficacité des données grâce au pass-through en E/S VMDirec
 
 
 
+[[step-1-configure-the-host]]
 == Étape 1 : Configurer l'hôte
 
 Configurez l'hôte ESXi ou KVM pour qu'il reconnaisse les disques.
@@ -109,6 +110,7 @@ image:nvme_03.png["Redémarrez cet hôte"]
 
 
 
+[[step-2-install-the-ontap-select-deploy-utility]]
 == Étape 2 : Installez l’utilitaire ONTAP Select Deploy
 
 Une fois les hôtes préparés, vous pouvez installer l'utilitaire ONTAP Select Deploy. Deploy vous guide dans la création de clusters de stockage ONTAP Select sur vos hôtes nouvellement préparés. Deploy détecte la présence des disques NVMe configurés pour le transfert et les sélectionne automatiquement pour les utiliser comme disques de données ONTAP . Vous pouvez ajuster la sélection par défaut si nécessaire.

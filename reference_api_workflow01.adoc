@@ -26,6 +26,7 @@ Le workflow de création de cluster diffère dans les cas suivants :
 
 
 
+[[1-register-vcenter-server-credential]]
 == 1. Enregistrer les informations d'identification du serveur vCenter
 
 Lors du déploiement sur un hôte ESXi géré par un serveur vCenter, vous devez ajouter un identifiant avant d'enregistrer l'hôte. L'utilitaire d'administration Deploy peut ensuite utiliser les informations d'identification pour s'authentifier auprès de vCenter.
@@ -69,6 +70,7 @@ Sortie::
 
 
 
+[[2-register-a-hypervisor-host]]
 == 2. Enregistrez un hôte d'hyperviseur
 
 Vous devez ajouter un hôte d'hyperviseur où la machine virtuelle contenant le nœud ONTAP Select sera exécutée.
@@ -115,6 +117,7 @@ Sortie::
 
 
 
+[[3-create-a-cluster]]
 == 3. Créez un cluster
 
 Lorsque vous créez un cluster ONTAP Select, la configuration de base du cluster est enregistrée et les noms de nœuds sont automatiquement générés par le déploiement.
@@ -154,6 +157,7 @@ Sortie::
 
 
 
+[[4-configure-the-cluster]]
 == 4. Configurer le cluster
 
 Vous devez fournir plusieurs attributs dans le cadre de la configuration du cluster.
@@ -195,6 +199,7 @@ Sortie:: Aucune
 
 
 
+[[5-retrieve-the-node-name]]
 == 5. Récupérez le nom du nœud
 
 L'utilitaire d'administration Deploy génère automatiquement les noms et identifiants de nœud lors de la création d'un cluster. Avant de pouvoir configurer un nœud, vous devez récupérer l'ID attribué.
@@ -225,6 +230,7 @@ Sortie::
 
 
 
+[[6-configure-the-nodes]]
 == 6. Configurer les nœuds
 
 Vous devez fournir la configuration de base du noeud, qui est le premier des trois appels API utilisés pour configurer un noeud.
@@ -263,6 +269,7 @@ Sortie:: Aucune
 
 
 
+[[7-retrieve-the-node-networks]]
 == 7. Récupérez les réseaux de nœuds
 
 Vous devez identifier les réseaux de gestion et de données utilisés par le nœud dans le cluster à un seul nœud. Le réseau interne n'est pas utilisé avec un cluster à un seul nœud.
@@ -293,6 +300,7 @@ Sortie::
 
 
 
+[[8-configure-the-node-networking]]
 == 8. Configurez la mise en réseau des nœuds
 
 Vous devez configurer les réseaux de données et de gestion. Le réseau interne n'est pas utilisé avec un cluster à un seul nœud.
@@ -329,6 +337,7 @@ Sortie:: Aucune
 
 
 
+[[9-configure-the-node-storage-pool]]
 == 9. Configurez le pool de stockage de nœuds
 
 La dernière étape de la configuration d'un nœud consiste à relier un pool de stockage. Vous pouvez déterminer les pools de stockage disponibles via le client Web vSphere, ou éventuellement via l'API REST de déploiement.
@@ -367,6 +376,7 @@ Sortie:: Aucune
 
 
 
+[[10-deploy-the-cluster]]
 == 10. Déployer le cluster
 
 Une fois le cluster et le nœud configurés, vous pouvez déployer le cluster.

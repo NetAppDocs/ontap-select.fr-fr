@@ -18,6 +18,7 @@ ONTAP Select prend en charge les configurations réseau à nœud unique et à n�
 
 
 
+[[single-node-network-configuration]]
 == Configuration réseau à un seul nœud
 
 Les configurations ONTAP Select à un seul nœud ne nécessitent pas le réseau interne ONTAP, car il n'y a pas de trafic de cluster, de haute disponibilité ou de miroir.
@@ -41,6 +42,7 @@ NOTE: Même si deux cartes sont suffisantes pour un cluster à un seul nœud, le
 
 
 
+[[lif-assignment]]
 === Assignation de LIF
 
 Comme expliqué dans la section relative à l’attribution des LIF multi-nœuds de ce document, ONTAP utilise des espaces IP pour séparer le trafic réseau du cluster du trafic de données et de gestion. La version mono-nœud de cette plateforme ne comporte pas de réseau de cluster. Par conséquent, aucun port n’est présent dans l’espace IP du cluster.
@@ -50,6 +52,7 @@ NOTE: Les LIF de gestion de cluster et de nœud sont créées automatiquement lo
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0c]]
 === LIF de données et de gestion (e0a, e0b et e0c)
 
 Les ports ONTAP e0a, e0b et e0c sont délégués comme ports candidats aux LIF qui portent les types de trafic suivants :
@@ -61,6 +64,7 @@ Les ports ONTAP e0a, e0b et e0c sont délégués comme ports candidats aux LIF q
 
 
 
+[[multi-node-network-configuration]]
 == Configuration réseau multi-nœuds
 
 La configuration réseau multi-nœuds ONTAP Select se compose de deux réseaux.
@@ -102,6 +106,7 @@ NOTE: Les groupes de ports du réseau externe et du réseau interne contiennent 
 
 
 
+[[lif-assignment]]
 === Assignation de LIF
 
 Les rôles de ports ONTAP ont été obsolètes avec l'introduction des IPspaces. Tout comme les baies FAS, les clusters ONTAP Select contiennent à la fois un IPspace par défaut et un cluster IPspace. En plaçant les ports réseau e0a, e0b et e0g dans l'IPspace par défaut et les ports e0c et e0d dans le cluster IPspace, ces ports ont été essentiellement fermés de l'hébergement des LIF qui n'appartiennent pas. Les ports restants du cluster ONTAP Select sont consommés par le biais de l'assignation automatique d'interfaces fournissant les services internes. Ils ne sont pas exposés via le shell ONTAP, comme c'est le cas avec les interfaces d'interconnexion RSM et haute disponibilité.
@@ -113,6 +118,7 @@ Les ports réseau et les LIFs sont expliqués en détail dans les sections suiva
 
 
 
+[[management-and-data-lifs-e0a-e0b-and-e0g]]
 === LIF de données et de gestion (e0a, e0b et e0g)
 
 Les ports ONTAP e0a, e0b et e0g sont délégués comme ports candidats aux LIF qui portent les types de trafic suivants :
@@ -127,6 +133,7 @@ NOTE: Les LIF de gestion de cluster et de nœud sont créées automatiquement lo
 
 
 
+[[cluster-network-lifs-e0c-e0d]]
 === LIF cluster network (e0c, e0d)
 
 Les ports ONTAP e0c et e0d sont délégués comme ports de base pour les interfaces de cluster. Dans chaque nœud de cluster ONTAP Select, deux interfaces de cluster sont automatiquement générées lors de la configuration de ONTAP à l'aide d'adresses IP locales de lien (169.254.x.x).
@@ -143,6 +150,7 @@ NOTE: Pour garantir un débit maximal pour le trafic réseau du cluster, ce port
 
 
 
+[[raid-syncmirror-traffic-e0e]]
 === Trafic RAID SyncMirror (e0e)
 
 La réplication synchrone des blocs entre les nœuds partenaires HA se fait à l'aide d'une interface réseau interne qui réside sur le port réseau e0e. Cette fonctionnalité se produit automatiquement, à l'aide d'interfaces réseau configurées par ONTAP lors de la configuration des clusters, et ne nécessite aucune configuration de la part de l'administrateur.
@@ -152,6 +160,7 @@ NOTE: Le port e0e est réservé par ONTAP pour le trafic de réplication interne
 
 
 
+[[ha-interconnect-e0f]]
 === Interconnexion HAUTE DISPONIBILITÉ (e0f)
 
 Les baies NetApp FAS utilisent du matériel spécialisé pour transmettre des informations entre les paires haute disponibilité d'un cluster ONTAP. Cependant, les environnements Software-defined n'ont pas tendance à disposer de ce type d'équipement (comme les appareils InfiniBand ou iWARP), ce qui signifie qu'il faut donc utiliser une autre solution. Bien que plusieurs possibilités aient été envisagées, les exigences ONTAP placées sur le transport d'interconnexion exigent que cette fonctionnalité soit émulée dans le logiciel. Par conséquent, dans un cluster ONTAP Select, la fonctionnalité de l'interconnexion haute disponibilité (généralement fournie par le matériel) a été conçue pour le système d'exploitation, utilisant l'Ethernet comme mécanisme de transport.

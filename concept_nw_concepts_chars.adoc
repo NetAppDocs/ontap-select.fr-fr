@@ -18,12 +18,14 @@ Commencez par vous familiariser avec les concepts généraux de mise en réseau 
 
 
 
+[[physical-networking]]
 == Mise en réseau physique
 
 Le réseau physique prend en charge le déploiement de clusters ONTAP Select principalement en fournissant l'infrastructure de commutation de couche 2 sous-jacente. La configuration associée au réseau physique inclut à la fois l'hôte de l'hyperviseur et l'environnement réseau commuté plus vaste.
 
 
 
+[[host-nic-options]]
 === Options de carte réseau de l'hôte
 
 Chaque hôte d'hyperviseur ONTAP Select doit être configuré avec deux ou quatre ports physiques. La configuration exacte que vous choisissez dépend de plusieurs facteurs, notamment :
@@ -36,6 +38,7 @@ Chaque hôte d'hyperviseur ONTAP Select doit être configuré avec deux ou quatr
 
 
 
+[[physical-switch-configuration]]
 === Configuration physique des commutateurs
 
 Vous devez vous assurer que la configuration des switchs physiques prend en charge le déploiement ONTAP Select. Ces commutateurs physiques sont intégrés aux commutateurs virtuels basés sur l'hyperviseur. La configuration exacte choisie dépend de plusieurs facteurs. Plusieurs points sont à prendre en compte :
@@ -47,12 +50,14 @@ Vous devez vous assurer que la configuration des switchs physiques prend en char
 
 
 
+[[logical-networking]]
 == Mise en réseau logique
 
 ONTAP Select utilise deux réseaux logiques différents, séparant le trafic par type. Plus précisément, le trafic peut circuler entre les hôtes dans le cluster, ainsi qu'vers les clients de stockage et d'autres machines à l'extérieur du cluster. Les commutateurs virtuels gérés par les hyperviseurs permettent la prise en charge du réseau logique.
 
 
 
+[[internal-network]]
 === Réseau interne
 
 Dans le cas d’un déploiement de cluster à plusieurs nœuds, les nœuds ONTAP Select individuels communiquent à l’aide d’un réseau « interne » isolé. Ce réseau n'est pas exposé ni disponible en dehors des nœuds du cluster ONTAP Select.
@@ -82,6 +87,7 @@ Le réseau interne présente les caractéristiques suivantes :
 
 
 
+[[external-network]]
 === Réseau externe
 
 Le réseau externe traite le trafic entre les nœuds d'un cluster ONTAP Select et les clients de stockage externe, ainsi que les autres ordinateurs. Le réseau externe fait partie intégrante de chaque déploiement de cluster et présente les caractéristiques suivantes :
@@ -111,6 +117,7 @@ Le réseau externe est présent avec des clusters de toutes tailles.
 
 
 
+[[virtual-machine-networking-environment]]
 == Environnement réseau de machines virtuelles
 
 L'hôte de l'hyperviseur fournit plusieurs fonctionnalités réseau.

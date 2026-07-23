@@ -18,6 +18,7 @@ Dans le cadre de la planification de l'installation de l'utilitaire d'administra
 
 
 
+[[pairing-the-deploy-utility-with-the-ontap-select-clusters]]
 == Association de l'utilitaire de déploiement avec les clusters ONTAP Select
 
 Vous disposez de plusieurs options lors du couplage d'une instance de l'utilitaire de déploiement avec les clusters ONTAP Select.
@@ -36,6 +37,7 @@ NOTE: Une instance de l'utilitaire de déploiement peut administrer jusqu'à 400
 
 
 
+[[requirements-related-to-the-kvm-environment]]
 == Configuration requise pour l'environnement KVM
 
 Avant d'installer l'utilitaire d'administration de déploiement dans un environnement d'hyperviseur KVM, vous devez vérifier les exigences de base et vous préparer au déploiement.
@@ -70,6 +72,7 @@ Le déploiement de ONTAP Select prend uniquement en charge IP version 4 (IPv4). 
 
 
 
+[[required-configuration-information]]
 == Informations de configuration requises
 
 Dans le cadre de la planification de votre déploiement, vous devez déterminer les informations de configuration requises avant d'installer l'utilitaire d'administration ONTAP Select Deploy.
@@ -88,6 +91,7 @@ Réseau auquel la VM de déploiement est connectée.
 
 
 
+[[optional-network-configuration-information]]
 == Informations optionnelles sur la configuration du réseau
 
 Par défaut, la machine virtuelle de déploiement est configurée à l'aide du protocole DHCP. Toutefois, si nécessaire, vous pouvez configurer manuellement l'interface réseau de la machine virtuelle.
@@ -115,6 +119,7 @@ Domaines de recherche à utiliser.
 
 
 
+[[authentication-using-the-credential-store]]
 == Authentification à l'aide du magasin d'informations d'identification
 
 Le magasin d'informations d'identification de ONTAP Select Deploy est une base de données contenant les informations de compte. Le déploiement utilise les identifiants de compte pour effectuer l'authentification hôte dans le cadre de la création et de la gestion du cluster. Vous devez savoir comment le magasin d'informations d'identification est utilisé dans le cadre de la planification d'un déploiement ONTAP Select.

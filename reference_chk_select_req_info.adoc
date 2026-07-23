@@ -20,6 +20,7 @@ Certaines informations que vous collectez s'appliquent au cluster lui-même, tan
 
 
 
+[[cluster-level-information]]
 == Informations au niveau du cluster
 
 Vous devez collecter les informations relatives au cluster ONTAP Select.
@@ -39,6 +40,7 @@ Vous devez collecter les informations relatives au cluster ONTAP Select.
 |===
 
 
+[[host-level-information]]
 == Informations au niveau de l'hôte
 
 Vous devez collecter des informations relatives à chacun des nœuds du cluster ONTAP Select.

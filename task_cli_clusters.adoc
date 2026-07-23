@@ -18,6 +18,7 @@ Vous pouvez effectuer plusieurs tâches connexes pour administrer un cluster ONT
 
 
 
+[[back-up-the-ontap-select-deploy-configuration-data]]
 == Sauvegardez les données de configuration de déploiement ONTAP Select
 
 Sauvegarde des données de configuration ONTAP Select Deploy, par exemple après le déploiement d'un cluster. Les données sont enregistrées dans un fichier chiffré unique que vous pouvez télécharger sur votre poste de travail local.
@@ -54,6 +55,7 @@ Vous pouvez accéder au fichier de sauvegarde via l'URL.
 
 
 
+[[delete-an-ontap-select-cluster]]
 == Supprimez un cluster ONTAP Select
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire.

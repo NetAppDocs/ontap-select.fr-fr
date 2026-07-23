@@ -23,6 +23,7 @@ Depuis ONTAP Select 9.14.1, la prise en charge de l'hyperviseur KVM a été rét
 ====
 
 
+[[general]]
 == Généralités
 
 Il y a plusieurs questions générales et réponses.
@@ -55,6 +56,7 @@ Contactez link:mailto:ng-ses-ontap-select@netapp.com["ng-ses-ontap-select@netapp
 
 
 
+[[licenses-installation-upgrades-and-reverts]]
 == Licences, installation, mises à niveau et restauration
 
 Il y a plusieurs questions et réponses concernant les licences, l'installation, les mises à niveau et les reprises.
@@ -125,6 +127,7 @@ Si un abonnement au pool de capacité expire, le système vous avertit d'abord m
 
 
 
+[[storage]]
 == Stockage
 
 Plusieurs questions et réponses concernant le stockage sont à poser.
@@ -216,6 +219,7 @@ Vous devez installer et exécuter des composants open source CLVM et Pacemaker (
 
 
 
+[[vcenter]]
 == VCenter
 
 Il existe plusieurs questions et réponses concernant VMware vCenter.
@@ -239,6 +243,7 @@ La liste des droits vCenter requis est disponible ici : link:reference_plan_ots_
 
 
 
+[[ha-and-clusters]]
 == HAUTE DISPONIBILITÉ et clusters
 
 Il existe plusieurs questions et réponses concernant les paires haute disponibilité et les clusters.
@@ -300,6 +305,7 @@ La segmentation du trafic HA sur une infrastructure physique distincte peut entr
 
 
 
+[[mediator-service]]
 == Service médiateur
 
 Il y a plusieurs questions et réponses concernant le service de médiateur.

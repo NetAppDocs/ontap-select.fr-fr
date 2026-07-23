@@ -18,6 +18,7 @@ Découvrez les concepts généraux de stockage qui s'appliquent à l'environneme
 
 
 
+[[phases-of-storage-configuration]]
 == Phases de la configuration du stockage
 
 Le stockage hôte ONTAP Select comprend les principales phases de configuration suivantes :
@@ -51,12 +52,14 @@ Le stockage hôte ONTAP Select comprend les principales phases de configuration 
 
 
 
+[[managed-versus-unmanaged-storage]]
 == Gestion par rapport au stockage non géré
 
 Le stockage géré est un stockage accessible et directement contrôlé par ONTAP Select. Tout autre stockage sur le même hôte d'hyperviseur n'est pas géré.
 
 
 
+[[homogeneous-physical-storage]]
 === Stockage physique homogène
 
 Tous les disques physiques composant le stockage géré par ONTAP Select doivent être homogènes. En d'autres termes, tout le matériel doit être identique concernant les caractéristiques suivantes :
@@ -67,6 +70,7 @@ Tous les disques physiques composant le stockage géré par ONTAP Select doivent
 
 
 
+[[illustration-of-the-local-storage-environment]]
 == Illustration de l'environnement de stockage local
 
 Chaque hôte hyperviseur contient des disques locaux et d'autres composants de stockage logique qui peuvent être utilisés par ONTAP Select. Ces composants de stockage sont disposés en couches, à partir du disque physique.
@@ -75,6 +79,7 @@ image:ST_01.jpg["environnement de stockage local"]
 
 
 
+[[characteristics-of-the-local-storage-components]]
 === Caractéristiques des composants de stockage local
 
 Plusieurs concepts s'appliquent aux composants de stockage local utilisés dans un environnement ONTAP Select. Avant de préparer un déploiement ONTAP Select, vous devez connaître ces concepts. Ces concepts sont organisés selon la catégorie : groupes RAID et LUN, pools de stockage et disques virtuels.
@@ -99,6 +104,7 @@ Chaque hôte ONTAP Select doit disposer d'un seul contrôleur RAID. Vous devez c
 
 
 
+[[storage-pool-considerations]]
 === Considérations relatives au pool de stockage
 
 Dans le cadre de votre préparation au déploiement de ONTAP Select, vous devez connaître plusieurs problèmes liés aux pools de stockage.
@@ -116,6 +122,7 @@ Vous devez vous assurer que les pools de stockage sont correctement créés dans
 
 
 
+[[manage-the-virtual-disks-on-esxi]]
 === Gérer les disques virtuels sur ESXi
 
 Dans le cadre de la préparation au déploiement de ONTAP Select, vous devez connaître plusieurs problèmes liés aux disques virtuels.
@@ -141,6 +148,7 @@ Les disques virtuels sont gérés par ONTAP Select. Ils sont créés automatique
 
 
 
+[[illustration-of-the-external-storage-environment-on-esxi]]
 == Illustration de l'environnement de stockage externe sur ESXi
 
 La solution ONTAP Select vNAS permet à ONTAP Select d'utiliser des datastores résidant sur une infrastructure de stockage externe à l'hôte de l'hyperviseur. Les datastores sont accessibles via le réseau à l'aide de VMware VSAN ou directement sur une baie de stockage externe.
@@ -154,6 +162,7 @@ ONTAP Select peut être configuré pour utiliser les types suivants de datastore
 
 
 
+[[vsan-datastores]]
 === Datastores VSAN
 
 Chaque hôte ESXi peut avoir un ou plusieurs datastores VMFS locaux. En principe, ces datastores ne sont accessibles qu'à l'hôte local. Cependant, VMware VSAN autorise chacun des hôtes d'un cluster ESXi à partager tous les datastores du cluster comme s'ils étaient locaux. La figure suivante montre comment VSAN crée un pool de datastores partagés entre les hôtes du cluster ESXi.
@@ -162,6 +171,7 @@ image:ST_02.jpg["Cluster ESXi"]
 
 
 
+[[vmfs-datastore-on-external-storage-array]]
 === Datastore VMFS sur une baie de stockage externe
 
 Vous pouvez créer un datastore VMFS résidant sur une baie de stockage externe. Le stockage est accessible via l'un des nombreux protocoles réseau différents. La figure suivante illustre un datastore VMFS sur une baie de stockage externe accessible à l'aide du protocole iSCSI.
@@ -173,6 +183,7 @@ image:ST_03.jpg["Hôte de l'hyperviseur ESXi"]
 
 
 
+[[nfs-datastore-on-external-storage-array]]
 === Datastore NFS sur baie de stockage externe
 
 Vous pouvez créer un datastore NFS résidant sur une baie de stockage externe. Le stockage est accessible à l'aide du protocole réseau NFS. La figure suivante illustre un datastore NFS sur un système de stockage externe accessible via l'appliance de serveur NFS.

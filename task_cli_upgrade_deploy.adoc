@@ -28,6 +28,7 @@ Vérifiez que ONTAP Select Deploy n'est pas utilisé pour effectuer d'autres tâ
 
 
 
+[[step-1-download-the-upgrade-package]]
 == Étape 1 : Téléchargez le package de mise à niveau
 
 Pour commencer le processus de mise à niveau, téléchargez le fichier de mise à niveau ONTAP Select Deploy depuis le site de support NetApp. Le package de mise à niveau est formaté comme un seul fichier compressé.
@@ -42,6 +43,7 @@ Pour commencer le processus de mise à niveau, téléchargez le fichier de mise 
 
 
 
+[[step-2-upload-the-package-to-the-ontap-select-deploy-virtual-machine]]
 == Étape 2 : Téléchargez le package sur la machine virtuelle ONTAP Select Deploy
 
 Après avoir téléchargé le package, vous devez télécharger le fichier sur la machine virtuelle ONTAP Select Deploy.
@@ -65,6 +67,7 @@ Le fichier de mise à niveau est stocké dans le répertoire personnel de l'util
 
 
 
+[[step-3-apply-the-upgrade-package]]
 == Étape 3 : Appliquer le package de mise à niveau
 
 Après avoir téléchargé le fichier de mise à niveau sur la machine virtuelle ONTAP Select Deploy, vous pouvez appliquer la mise à niveau.

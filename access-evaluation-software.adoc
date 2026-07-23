@@ -30,6 +30,7 @@ NOTE: Vous ne pouvez pas prolonger une licence d'évaluation. Au terme des 90 jo
 
 
 
+[[step-1-register-for-an-account]]
 == Étape 1 : Créer un compte
 
 Complétez l'enregistrement du compte NetApp , si nécessaire, et demandez l'accès prospect.
@@ -73,6 +74,7 @@ Veuillez inclure le nom de votre contact NetApp .
 
 
 
+[[step-2-download-ontap-select-evaluation-software]]
 == Étape 2 : Télécharger le logiciel d’évaluation ONTAP Select
 
 Une fois votre demande d'assistance examinée et approuvée, l'assistance NetApp vous en informe à l'adresse électronique fournie.

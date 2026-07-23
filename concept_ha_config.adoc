@@ -42,6 +42,7 @@ NOTE: Le cluster ONTAP Select à deux nœuds se compose d'une paire HA et d'un m
 
 
 
+[[two-node-ha-versus-multi-node-ha]]
 == Configuration HA à 2 nœuds par rapport à une configuration HA à plusieurs nœuds
 
 Contrairement aux baies FAS, les nœuds ONTAP Select d'une paire haute disponibilité communiquent exclusivement via le réseau IP. Cela signifie que le réseau IP constitue un point de défaillance unique (SPOF), et la protection contre les partitions réseau et les scénarios de split-brain devient un aspect important de la conception. Le cluster multinœud peut supporter la défaillance d'un nœud unique parce que le quorum du cluster peut être établi par les trois nœuds survivants ou plus. Le cluster à deux nœuds s'appuie sur le service de médiation hébergé par la VM ONTAP Deploy pour obtenir le même résultat.
@@ -57,6 +58,7 @@ Une action administrative est requise si l'emplacement initial du médiateur doi
 
 
 
+[[two-node-ha-versus-two-node-stretched-ha-metrocluster-sds]]
 == Haute disponibilité à 2 nœuds par rapport à une haute disponibilité étendue à 2 nœuds (MetroCluster SDS)
 
 Il est possible de stretch un cluster haute disponibilité actif-actif à deux nœuds sur de plus grandes distances et de placer chaque nœud dans un data Center différent. La seule distinction entre un cluster à deux nœuds et un cluster étendu à deux nœuds (ou MetroCluster SDS) est la distance de connectivité réseau entre les nœuds.

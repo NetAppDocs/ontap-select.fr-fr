@@ -23,6 +23,8 @@ TIP: Vous pouvez également link:https://docs.netapp.com/us-en/ontap-select/task
 
 
 
+[[step-1-prepare-for-the-deployment]]
+[[prepare-for-deploy]]
 == Étape 1 : Préparer le déploiement
 
 Préparez le déploiement pour vous assurer qu'il sera réussi.
@@ -87,6 +89,8 @@ Si vous déployez un cluster multi-nœuds, vous devez être familiarisé avec le
 
 
 
+[[step-2-create-a-single-node-or-multi-node-cluster]]
+[[create-single-or-multi-node-cluster]]
 == Étape 2 : Créer un cluster à nœud unique ou à nœuds multiples
 
 Vous pouvez utiliser l'interface utilisateur Web de ONTAP Select Deploy pour déployer un cluster ONTAP Select à un ou plusieurs nœuds.
@@ -196,6 +200,7 @@ La page est automatiquement actualisée à intervalles réguliers.
 ====
 
 
+[[step-3-complete-the-deployment]]
 == Étape 3 : Finaliser le déploiement
 
 Après le déploiement du cluster,link:https://docs.netapp.com/us-en/ontap/system-admin/setup-autosupport-task.html["Vérifiez que la fonction AutoSupport ONTAP Select est configurée."^] et puislink:task_cli_clusters.html["Sauvegardez les données de configuration de déploiement ONTAP Select"] .
