@@ -14,13 +14,18 @@ summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacen
 
 
 [role="lead"]
-La capacité souscrite pour une licence Capacity Pool est exprimée en To entiers, avec un minimum de 2 To. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à nœuds multiples (basé sur une paire haute disponibilité).
+La capacité souscrite pour une licence Capacity Pool est exprimée en téraoctets (To) entiers, avec un minimum de 2 To. Vous calculez la capacité souscrite en multipliant l’espace utilisable par le facteur de surcharge. Le facteur de surcharge estime la capacité de surcharge logicielle ONTAP Select à déduire de l’espace utilisable et s’applique à la détermination de la capacité ONTAP Select pour les disques NVMe, SSD, HDD ou virtuels. Le facteur de surcharge diffère entre les clusters à nœud unique et les clusters à nœuds multiples (basés sur des paires haute disponibilité).
 
 * Le facteur de surcharge pour les clusters à nœud unique est de 1,13
 * Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
 
 
-Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer d'en avoir suffisamment pour votre déploiement.
+Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer qu'elle est suffisante pour votre déploiement. Par exemple, si vous souhaitez 20 To de capacité utilisable pour une paire haute disponibilité (10 To par nœud) :
+
+* Avec une paire haute disponibilité, les données sont dupliquées entre les deux nœuds pour assurer la redondance. Ainsi, pour 20 To de données utilisables dans une paire haute disponibilité, vous devez disposer de 20 To par nœud, au cas où l'un des nœuds serait hors ligne.
+* Le facteur de 2,67 double la capacité de chaque nœud et ajoute la capacité de surcharge (0,67) nécessaire au fonctionnement d'ONTAP Select.
+* La capacité de licence par nœud est de 27 To (10 x 2,67 = 26,7). Pour la paire haute disponibilité, vous avez besoin de deux licences de 27 To pour disposer de 20 To de capacité utilisable.
+
 
 [cols="25,30,45"]
 |===

@@ -16,13 +16,18 @@ summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacen
 [role="lead"]
 La licence Capacity Tiers est basée sur la capacité disque sous-jacente gérée par chaque nœud ONTAP Select et non sur la capacité utilisable du nœud, de la paire haute disponibilité ou du cluster. Chaque licence Capacity Tiers est attribuée à un numéro de série de nœud individuel pour une capacité spécifiée et nécessite un contrat de support associé.
 
-La capacité souscrite pour une licence Capacity Tiers est exprimée en téraoctets (To) entiers, avec un minimum de 1 To. Vous calculez la capacité souscrite en multipliant l'espace utilisable par le facteur de surcharge. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à plusieurs nœuds (basé sur une paire haute disponibilité) :
+La capacité souscrite pour une licence Capacity Tiers est exprimée en téraoctets (To), avec un minimum de 1 To. Vous calculez la capacité souscrite en multipliant l’espace utilisable par le facteur de surcharge. Le facteur de surcharge estime la capacité logicielle ONTAP Select à déduire de l’espace utilisable et s’applique à la détermination de la capacité ONTAP Select pour les disques NVMe, SSD, HDD ou virtuels. Le facteur de surcharge diffère entre un cluster à nœud unique et un cluster à nœuds multiples (basé sur une paire haute disponibilité).
 
 * Le facteur de surcharge pour les clusters à nœud unique est de 1,13
 * Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
 
 
-Calculez la capacité sous licence en fonction de l'espace utilisable afin de vous assurer d'en avoir suffisamment pour votre déploiement.
+Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer que vous disposez de suffisamment d'espace pour votre déploiement. Par exemple, vous souhaitez 10 To de capacité utilisable pour une paire haute disponibilité (5 To par nœud) :
+
+* Avec une paire haute disponibilité, les données sont dupliquées entre les deux nœuds pour assurer la redondance. Ainsi, pour 10 To de données utilisables dans une paire haute disponibilité, vous devez disposer de 10 To par nœud, au cas où l’un des nœuds serait hors ligne.
+* Le facteur de 2,67 double la capacité de chaque nœud et ajoute la capacité de surcharge (0,67) nécessaire au fonctionnement d'ONTAP Select.
+* La capacité de licence par nœud est de 14 To (5 x 2,67 = 13,35). Pour la paire haute disponibilité, vous avez besoin de deux licences de 14 To pour disposer de 10 To de capacité utilisable.
+
 
 [cols="25,30,45"]
 |===
