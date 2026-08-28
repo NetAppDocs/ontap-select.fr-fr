@@ -4,7 +4,7 @@ permalink: concept_ots_deploy.html
 keywords: ontap select deploy, deploy administration utility, deploy utility, functionality, accessing 
 summary: 'ONTAP Select Deploy est l"utilitaire d"administration utilisé pour déployer et gérer les clusters ONTAP Select.' 
 ---
-= Déploiement de ONTAP Select
+= Découvrez ONTAP Select Deploy
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

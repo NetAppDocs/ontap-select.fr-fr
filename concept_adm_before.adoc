@@ -4,7 +4,7 @@ permalink: concept_adm_before.html
 keywords: administer, administering, web, before you begin 
 summary: 'Une fois que vous avez créé un cluster ONTAP Select, vous pouvez prendre en charge le déploiement en effectuant diverses tâches administratives. Il y a quelques considérations d"ordre général à prendre en compte.' 
 ---
-= Avant de commencer à gérer ONTAP Select
+= Découvrez comment administrer ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

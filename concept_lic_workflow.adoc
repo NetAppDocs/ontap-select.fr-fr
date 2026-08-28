@@ -4,7 +4,7 @@ permalink: concept_lic_workflow.html
 keywords: license, licensing, purchase, purchasing, workflow 
 summary: Vous pouvez suivre un workflow pour acheter et appliquer une licence pour votre déploiement ONTAP Select. 
 ---
-= Workflow lors de l'achat d'une licence ONTAP Select
+= Processus d'achat de licences pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

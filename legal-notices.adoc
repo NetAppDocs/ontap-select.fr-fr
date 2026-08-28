@@ -4,7 +4,7 @@ permalink: legal-notices.html
 keywords: copyrights, notices, trademarks, patents, privacy 
 summary: Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc. 
 ---
-= Mentions légales
+= Mentions légales pour ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

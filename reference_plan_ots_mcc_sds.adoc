@@ -4,7 +4,7 @@ permalink: reference_plan_ots_mcc_sds.html
 keywords: plan, planning, metrocluster, metrocluster sds 
 summary: 'Vous devez tenir compte de plusieurs exigences pour MetroCluster SDS dans le cadre de la planification d"un déploiement ONTAP Select.' 
 ---
-= Préparez-vous à déployer ONTAP Select MetroCluster SDS
+= Exigences de déploiement ONTAP Select MetroCluster SDS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

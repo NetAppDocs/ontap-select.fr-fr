@@ -4,7 +4,7 @@ permalink: concept_adm_upgrading_nodes.html
 keywords: administer, administering, web, upgrading nodes 
 summary: 'Une fois que vous avez déployé un cluster ONTAP Select, vous pouvez mettre à niveau l"image ONTAP de chaque nœud en fonction des besoins à l"aide de la procédure standard de mise à niveau du logiciel ONTAP.' 
 ---
-= Mettez à niveau les nœuds ONTAP Select
+= Mettre à niveau les nœuds ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
