@@ -16,6 +16,9 @@ summary: 'Vous devez installer l"utilitaire d"administration ONTAP Select Deploy
 [role="lead"]
 Vous devez installer l'utilitaire d'administration ONTAP Select Deploy et utiliser l'utilitaire afin de créer un cluster ONTAP Select.
 
+.Avant de commencer
+Vous avez examiné le link:kvm-host-configuration-and-preparation-checklist.html["liste de contrôle avant installation"].
+
 
 
 [[step-1-download-the-virtual-machine-image]]

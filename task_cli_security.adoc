@@ -14,13 +14,7 @@ summary: 'Dans le cadre de la sécurisation d"un déploiement ONTAP Select, vous
 
 
 [role="lead"]
-Dans le cadre de la sécurisation d'un déploiement ONTAP Select, vous pouvez effectuer plusieurs tâches associées.
-
-
-
-= Modifiez le mot de passe administrateur de déploiement
-
-Vous pouvez modifier le mot de passe du compte administrateur de la machine virtuelle de déploiement selon vos besoins à l'aide de l'interface de ligne de commande.
+Vous pouvez sécuriser un déploiement ONTAP Select en modifiant, si nécessaire, le mot de passe du compte administrateur de la machine virtuelle Deploy à l'aide de la ligne de commandes.
 
 .Étapes
 . Connectez-vous à la CLI de l'utilitaire de déploiement à l'aide du compte administrateur.

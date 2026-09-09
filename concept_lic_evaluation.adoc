@@ -4,7 +4,7 @@ permalink: concept_lic_evaluation.html
 keywords: license, licensing, evaluation, upgrade license 
 summary: 'Vous pouvez utiliser une licence d"évaluation si vous souhaitez évaluer ONTAP Select avant de prendre la décision d"achat. La licence d"évaluation est incluse à l"utilitaire d"administration ONTAP Select Deploy et s"applique automatiquement à chaque nœud ONTAP Select dans le cadre d"un déploiement d"évaluation.' 
 ---
-= Licences d'évaluation pour les déploiements ONTAP Select
+= Découvrez les licences d'évaluation pour les déploiements ONTAP Select
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
