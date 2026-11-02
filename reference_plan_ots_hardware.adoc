@@ -55,6 +55,7 @@ ONTAP Select prend en charge les versions d'hyperviseur KVM suivantes :
 --
 ONTAP Select prend en charge les versions d'hyperviseur ESXi suivantes :
 
+* VMware ESXi 9.1
 * VMware ESXi 9.0
 * VMware ESXi 8.0 U3
 * VMware ESXi 8.0 U2

@@ -93,13 +93,17 @@ openssl dgst  -sha256 -verify ONTAP-Select-Deploy-Production.pub -signature ONTA
 Installez et démarrez la machine virtuelle ONTAP Select Deploy à l'aide de l'image de machine virtuelle OVF. Dans le cadre du processus d'installation, vous configurez l'interface réseau pour utiliser DHCP ou une configuration IP statique.
 
 .Avant de commencer
+[role="tabbed-block"]
+====
+.VMware ESXi
+--
 Dans le cas d'un hyperviseur ESXi, vous devez préparer le déploiement de la VM de déploiement ONTAP Select :
 
 * Activez la fonctionnalité OVF dans votre navigateur en installant le plug-in d'intégration client VMware ou en effectuant une configuration similaire, si nécessaire
 * Activez le protocole DHCP dans l'environnement VMware si vous attribuez une adresse IP de manière dynamique à la machine virtuelle de déploiement
 
 
-Pour les hyperviseurs ESXi et KVM, vous devez disposer des informations de configuration à utiliser lors de la création de la machine virtuelle, y compris le nom de la machine virtuelle, du réseau externe et du nom d'hôte. Lors de la définition d'une configuration de réseau statique, vous avez besoin des informations supplémentaires suivantes :
+Vous devez disposer des informations de configuration à utiliser lors de la création de la machine virtuelle, notamment le nom de la machine virtuelle, le réseau externe et le nom de l'hôte. Lorsque vous définissez une configuration réseau statique, vous avez besoin des informations supplémentaires suivantes :
 
 * Adresse IP de la machine virtuelle de déploiement
 * Masque de réseau
@@ -109,6 +113,21 @@ Pour les hyperviseurs ESXi et KVM, vous devez disposer des informations de confi
 * Domaines de recherche DNS
 
 
+--
+.KVM
+--
+Pour les hyperviseurs KVM, vous devez disposer des informations de configuration à utiliser lors de la création de la machine virtuelle, notamment le nom de la machine virtuelle, le réseau externe et le nom de l'hôte. Lors de la définition d'une configuration réseau statique, vous avez besoin des informations supplémentaires suivantes :
+
+* Adresse IP de la machine virtuelle de déploiement
+* Masque de réseau
+* Adresse IP de la passerelle (routeur)
+* Adresse IP du serveur DNS principal
+* Adresse IP du second serveur DNS
+* Domaines de recherche DNS
+
+
+--
+====
 .Description de la tâche
 Si vous utilisez vSphere, l'assistant déployer le modèle OVF comprend un formulaire pour fournir toutes les informations de configuration de déploiement, y compris la configuration du réseau. Toutefois, si vous choisissez de ne pas utiliser ce formulaire, vous pouvez utiliser la console de la machine virtuelle de déploiement pour configurer le réseau.
 

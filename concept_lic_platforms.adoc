@@ -156,7 +156,10 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 2+| HDD (SAS, NL-SAS ET SATA) | Sans objet | 4 à 60 disques | 4 à 60 disques 
 
 
-2+| SSD (SAS) | Sans objet | 4 à 60 disques (SSD uniquement) | 4 à 60 disques (SSD uniquement) 
+2+| SSD (SAS) | Sans objet | 4 à 60 disques | 4 à 60 disques 
+
+
+2+| NVMe | Sans objet | Sans objet | 4 à 14 disques 
 
 
 2+| DAS local avec RAID logiciel | Sans objet | En vigueur | 4 à 14 disques (NVMe uniquement) 
@@ -176,7 +179,7 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 2+| Type de logiciel 3+| Description 
 
 
-2+| Hyperviseur (VMware) 3+| VMware vSphere 9.0, VMware vSphere 8.0GA et mises à jour 1 à 3, VMware vSphere 7.0GA et mises à jour 1 à 3C 
+2+| Hyperviseur (VMware) 3+| VMware vSphere 9.1, 9.0 VMware vSphere 8.0GA et mises à jour 1 à 3 
 
 
 2+| Hyperviseur (KVM)  a| 

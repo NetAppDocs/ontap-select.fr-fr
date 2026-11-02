@@ -48,6 +48,7 @@ La fonctionnalité d’extension et de contraction de cluster est prise en charg
 
 L'extension et la contraction des clusters sont prises en charge pour les versions d'hyperviseur ESXi suivantes :
 
+* ESXi 9.1
 * ESXi 9.0
 * ESXi 8.0 U3
 * ESXi 8.0 U2
