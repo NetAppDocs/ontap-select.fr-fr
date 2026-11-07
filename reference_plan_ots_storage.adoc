@@ -17,7 +17,7 @@ summary: Vous devez tenir compte de plusieurs problèmes de planification liés 
 Vous devez tenir compte de plusieurs problèmes de planification liés au stockage hôte ONTAP Select.
 
 
-NOTE: Les informations relatives à la prise en charge du stockage externe sont décrites pour les hôtes ESXi et KVM. Pour plus d'informations, consultez link:reference_plan_ots_vnas.html["Exigences VMware ESXi"] et link:reference_plan_ots_kvm.html["exigences KVM"].
+NOTE: Les informations relatives à la prise en charge du stockage sont décrites pour les hôtes ESXi, Hyper-V et KVM. Pour plus d'informations, reportez-vous à link:reference_plan_ots_vnas.html["Exigences de stockage externe de VMware ESXi"], link:plan-ots-hyper-v.html["Exigences de stockage Hyper-V"] et link:reference_plan_ots_kvm.html["Exigences de stockage externe pour KVM"].
 
 
 

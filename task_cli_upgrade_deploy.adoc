@@ -16,7 +16,7 @@ summary: 'Vous pouvez mettre à niveau une machine virtuelle de déploiement exi
 [role="lead"]
 Mettez à niveau une machine virtuelle utilitaire ONTAP Select Deploy existante sur place à l'aide de l'interface de ligne de commande ONTAP Select Deploy.
 
-Vous pouvez effectuer une mise à niveau directe vers ONTAP Select Deploy 9.19.1 à partir de ONTAP Select Deploy 9.18.1 ou 9.17.1. Pour effectuer une mise à niveau à partir d'une version antérieure, par exemple ONTAP Select Deploy 9.16.1, vous devez d'abord effectuer une mise à niveau vers ONTAP Select Deploy 9.17.1 ou 9.18.1, puis vers ONTAP Select Deploy 9.19.1.
+Vous pouvez effectuer une mise à niveau directe vers ONTAP Select Deploy 9.20.1 depuis ONTAP Select Deploy 9.19.1 ou 9.18.1. Pour effectuer une mise à niveau depuis une version antérieure, par exemple ONTAP Select Deploy 9.17.1, vous devez d'abord effectuer une mise à niveau vers ONTAP Select Deploy 9.18.1 ou 9.19.1, puis vers ONTAP Select Deploy 9.20.1.
 
 [NOTE]
 ====

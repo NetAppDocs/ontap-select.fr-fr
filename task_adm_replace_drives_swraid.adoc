@@ -28,10 +28,75 @@ Lorsqu'un disque tombe en panne, vous devez utiliser l'interface de ligne de com
 
 [role="tabbed-block"]
 ====
+.VMware ESXi
+--
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de ONTAP à l'aide du compte d'administrateur.
+. Identifiez le disque défaillant :
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+Usable Disk Container Container
+Disk Size Shelf Bay Type Type Name Owner
+---------------- ---------- ----- --- ------- ----------- --------- --------
+NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
+----
+
+
+--
+.Hyper-V
+--
+.Avant de commencer
+Vous devez disposer du nom de la machine virtuelle (VM) ONTAP Select sur l'hôte Hyper-V, ainsi que des identifiants du compte administrateur ONTAP Select et ONTAP Select Deploy.
+
+.Description de la tâche
+Vous ne devez utiliser cette procédure que lorsque le nœud ONTAP Select s’exécute sur Hyper-V et est configuré pour utiliser le RAID logiciel. Sur Hyper-V, ONTAP Select attribue un numéro de série virtualisé au disque en mode passthrough ; vous devez donc identifier le disque physique par son adresse cible et non par son numéro de série.
+
+.Étapes
+. Connectez-vous à l’interface de ligne de commande CLI de ONTAP Select à l’aide du compte administrateur et identifiez le disque défaillant :
++
+[source, cli]
+----
+<cluster name>::> storage disk show -container-type broken
+----
+. [[record-lun-value]]Afficher l'adresse cible du disque défaillant :
++
+[source, cli]
+----
+<cluster name>::> disk show -fields serial,vmdisk-target-address
+----
++
+Enregistrez la `lun` valeur de la défaillance de disque. Cette `bus` valeur identifie le contrôleur SCSI virtuel qui gère les disques en mode passthrough.
+
+. Affichez éventuellement la capacité des disques de spare ainsi que les disques partitionnés :
++
+[source, cli]
+----
+<cluster name>::> storage aggregate show-spare-disks
+----
+. Sur l’hôte Hyper-V, affichez les disques attachés à la VM ONTAP Select :
++
+[source, cli]
+----
+PS C:\> Get-VMHardDiskDrive -VMName <vm_name>
+----
++
+Les disques en mode passthrough sont les entrées qui indiquent un numéro de disque ; les entrées avec un chemin d'accès sont les disques système. La défaillance de disque est l'entrée dont `ControllerLocation` correspond au . Le `DiskNumber` de la défaillance de disque est le numéro de disque Windows.
+
+. Affichez l'identité physique de la défaillance de disque :
++
+[source, cli]
+----
+PS C:\> Get-PhysicalDisk | Where-Object { [int]$_.DeviceId -eq <disk_number> } | Select-Object FriendlyName, SerialNumber, UniqueId, PhysicalLocation, MediaType, Size, HealthStatus, OperationalStatus
+----
+
+
+--
 .KVM
 --
 .Avant de commencer
-Vous devez disposer de l'ID de la machine virtuelle ONTAP Select, ainsi que des informations d'identification du compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+Vous devez disposer de l’ID de la machine virtuelle ONTAP Select, ainsi que des identifiants des comptes administrateur ONTAP Select et ONTAP Select Deploy.
 
 .Description de la tâche
 Vous ne devez utiliser cette procédure que lorsque le nœud ONTAP Select s'exécute sur KVM et est configuré pour utiliser le RAID logiciel.
@@ -39,9 +104,9 @@ Vous ne devez utiliser cette procédure que lorsque le nœud ONTAP Select s'exé
 .Étapes
 . Sur l'interface de ligne de commandes de ONTAP Select, identifier le disque à remplacer :
 +
-.. Identifiez le disque par numéro de série, UUID ou adresse cible dans la machine virtuelle.
+.. Identifiez le disque par son numéro de série, son UUID ou son adresse cible dans la machine virtuelle :
 +
-[listing]
+[source, cli]
 ----
 disk show -fields serial,vmdisk-target-address,uuid
 ----
@@ -53,35 +118,18 @@ l'agrégat de stockage affiche les disques-spare
 +
 .. Examinez les périphériques système en recherchant le numéro de série ou l'UUID (nom du disque) :
 +
-[listing]
+[source, cli]
 ----
 find /dev/disk/by-id/<SN|ID>
 ----
-.. Examinez la configuration de la machine virtuelle en recherchant l'adresse cible :
+.. Examinez la configuration de la machine virtuelle et recherchez l'adresse cible :
 +
-[listing]
+[source, cli]
 ----
 virsh dumpxml VMID
 ----
 
 
-
-
---
-.VMware ESXi
---
-.Étapes
-. Connectez-vous à l'interface de ligne de commande de ONTAP à l'aide du compte d'administrateur.
-. Identifiez le lecteur de disque défectueux.
-+
-[listing]
-----
-<cluster name>::> storage disk show -container-type broken
-Usable Disk Container Container
-Disk Size Shelf Bay Type Type Name Owner
----------------- ---------- ----- --- ------- ----------- --------- --------
-NET-1.4 893.3GB - - SSD broken - sti-rx2540-346a'
-----
 
 
 --
@@ -95,95 +143,6 @@ Après avoir identifié le lecteur défectueux, retirez le disque.
 
 [role="tabbed-block"]
 ====
-.KVM à l'aide de Deploy
---
-Vous pouvez détacher un disque d'un hôte KVM lors du remplacement du disque ou lorsqu'il n'est plus nécessaire.
-
-.Avant de commencer
-Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
-
-.Étapes
-. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
-. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
-+
-Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
-
-. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
-. Désélectionnez les disques à détacher du nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
-. Sélectionnez *Oui* pour confirmer l'avertissement dans la fenêtre contextuelle.
-. Sélectionnez l'onglet *Events* du cluster à surveiller et confirmez l'opération de détachement.
-+
-Vous pouvez retirer le disque physique de l'hôte s'il n'est plus nécessaire.
-
-
-
---
-.KVM à l'aide de la CLI
---
-Après avoir identifié le disque, suivez les étapes ci-dessous.
-
-.Étapes
-. Détachez le disque de la machine virtuelle :
-+
-.. Vide la configuration.
-+
-[listing]
-----
-virsh dumpxml VMNAME > /PATH/disk.xml
-----
-.. Modifiez le fichier et supprimez tout sauf le disque à détacher de la machine virtuelle.
-+
-L'adresse cible du disque doit correspondre au champ adresse-cible-disque vmdisk dans ONTAP.
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-.. Détachez le disque.
-+
-[listing]
-----
-virsh detach-disk --persistent /PATH/disk.xml
-----
-
-
-. Remplacez le disque physique :
-+
-Vous pouvez utiliser un utilitaire tel que `ledctl locate=` pour localiser le disque physique si nécessaire.
-
-+
-.. Retirez le disque de l'hôte.
-.. Sélectionnez un nouveau disque et installez-le dans l'hôte si nécessaire.
-
-
-. Modifiez le fichier de configuration du disque d'origine et ajoutez le nouveau disque.
-+
-Vous devez mettre à jour le chemin d'accès au disque et toutes les autres informations de configuration si nécessaire.
-
-+
-[listing]
-----
-<disk type='block' device='lun'>
-  <driver name='qemu' type='raw' cache='directsync'/>
-  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
-  <backingStore/>
-  <target dev='sde' bus='scsi'/>
-  <alias name='scsi0-0-0-4'/>
-  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
-</disk>
-----
-
-
---
 .VMware ESXi
 --
 .Étapes
@@ -211,6 +170,95 @@ image:ST_26.jpg["Avertissement"]
 
 
 --
+.Hyper-V ou KVM à l'aide de Deploy
+--
+Vous pouvez détacher un disque d'un hôte Hyper-V ou KVM lors du remplacement du disque ou lorsqu'il n'est plus nécessaire.
+
+.Avant de commencer
+Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
++
+Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
+
+. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
+. Désélectionnez les disques à détacher du nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
+. Sélectionnez *Oui* pour confirmer l'avertissement dans la fenêtre contextuelle.
+. Sélectionnez l'onglet *Events* du cluster à surveiller et confirmez l'opération de détachement.
++
+Vous pouvez retirer le disque physique de l'hôte s'il n'est plus nécessaire.
+
+
+
+--
+.KVM à l'aide de la CLI
+--
+Après avoir identifié le disque, suivez les étapes ci-dessous.
+
+.Étapes
+. Détachez le disque de la machine virtuelle :
++
+.. Affichez la configuration :
++
+[source, cli]
+----
+virsh dumpxml VMNAME > /PATH/disk.xml
+----
+.. Modifiez le fichier et supprimez tout sauf le disque à détacher de la machine virtuelle.
++
+L'adresse cible du disque doit correspondre au champ adresse-cible-disque vmdisk dans ONTAP.
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata- Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+.. Détachez le disque.
++
+[source, cli]
+----
+virsh detach-disk --persistent /PATH/disk.xml
+----
+
+
+. Remplacez le disque physique :
++
+Vous pouvez utiliser un utilitaire tel que `ledctl locate=` pour localiser le disque physique si nécessaire.
+
++
+.. Retirez le disque de l'hôte.
+.. Sélectionnez un nouveau disque et installez-le dans l'hôte si nécessaire.
+
+
+. Modifiez le fichier de configuration du disque d'origine et ajoutez le nouveau disque.
++
+Vous devez mettre à jour le chemin d'accès au disque et toutes les autres informations de configuration si nécessaire.
+
++
+[source, cli]
+----
+<disk type='block' device='lun'>
+  <driver name='qemu' type='raw' cache='directsync'/>
+  <source dev='/dev/disk/by-id/ata-Micron_5100_MTFDDAK960TCC_171616D35277'/>
+  <backingStore/>
+  <target dev='sde' bus='scsi'/>
+  <alias name='scsi0-0-0-4'/>
+  <address type='drive' controller='0' bus='0' target='0' unit='4'/>
+</disk>
+----
+
+
+--
 ====
 
 
@@ -221,50 +269,6 @@ Après avoir retiré le disque défectueux, ajoutez le disque de réserve.
 
 [role="tabbed-block"]
 ====
-.KVM à l'aide de Deploy
---
-.Connexion d'un disque à l'aide du déploiement
-Vous pouvez connecter un disque à un hôte KVM dans le cadre du remplacement d'un disque ou pour augmenter la capacité de stockage.
-
-.Avant de commencer
-Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
-
-Le nouveau disque doit être installé physiquement sur l'hôte KVM Linux.
-
-.Étapes
-. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
-. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
-. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
-+
-Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
-
-. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
-. Sélectionnez les disques à joindre au nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
-. Sélectionnez l'onglet *Events* pour surveiller et confirmer l'opération de rattachement.
-. Examinez la configuration de stockage du nœud pour vérifier que le disque est connecté.
-
-
---
-.KVM à l'aide de la CLI
---
-Une fois que vous avez identifié et retiré le disque défectueux, vous pouvez connecter un nouveau disque.
-
-.Étapes
-. Reliez le nouveau disque à la machine virtuelle.
-+
-[listing]
-----
-virsh attach-disk --persistent /PATH/disk.xml
-----
-
-
-.Résultats
-Le disque est affecté en tant que disque de secours et est disponible pour ONTAP Select. La mise à disposition du disque peut prendre une minute ou plus.
-
-.Une fois que vous avez terminé
-Étant donné que la configuration du nœud a changé, vous devez effectuer une opération d'actualisation du cluster à l'aide de l'utilitaire d'administration de déploiement.
-
---
 .VMware ESXi
 --
 .Étapes
@@ -290,6 +294,50 @@ image:ST_30.jpg["Détails du disque de stockage"]
 image:ST_31.jpg["Détails du disque de stockage"]
 
 
+
+--
+.Hyper-V ou KVM à l'aide de Deploy
+--
+.Connexion d'un disque à l'aide du déploiement
+Vous pouvez connecter un disque à un hôte Hyper-V ou KVM pour remplacer un disque ou ajouter davantage de capacité de stockage.
+
+.Avant de commencer
+Vous devez disposer des informations d'identification de compte d'administrateur ONTAP Select et ONTAP Select Deploy.
+
+Le nouveau disque doit être installé physiquement sur l'hôte KVM Linux.
+
+.Étapes
+. Connectez-vous à l'interface utilisateur Web de l'utilitaire de déploiement à l'aide du compte administrateur.
+. Sélectionnez l'onglet *clusters* en haut de la page et sélectionnez le cluster souhaité dans la liste.
+. Sélectionnez *+* en regard de la paire haute disponibilité ou du nœud souhaité.
++
+Si l'option est désactivée, le déploiement actualise actuellement les informations de stockage.
+
+. Sélectionnez *Modifier le stockage* sur la page *Modifier le stockage de nœud*.
+. Sélectionnez les disques à joindre au nœud, entrez les informations d'identification de l'administrateur ONTAP et sélectionnez *Modifier le stockage* pour appliquer les modifications.
+. Sélectionnez l'onglet *Events* pour surveiller et confirmer l'opération de rattachement.
+. Examinez la configuration de stockage du nœud pour vérifier que le disque est connecté.
+
+
+--
+.KVM à l'aide de la CLI
+--
+Une fois que vous avez identifié et retiré le disque défectueux, vous pouvez connecter un nouveau disque.
+
+.Étapes
+. Attachez le nouveau disque à la machine virtuelle :
++
+[source, cli]
+----
+virsh attach-disk --persistent /PATH/disk.xml
+----
+
+
+.Résultats
+Le disque est affecté en tant que disque de secours et est disponible pour ONTAP Select. La mise à disposition du disque peut prendre une minute ou plus.
+
+.Une fois que vous avez terminé
+Étant donné que la configuration du nœud a changé, vous devez effectuer une opération d'actualisation du cluster à l'aide de l'utilitaire d'administration de déploiement.
 
 --
 ====

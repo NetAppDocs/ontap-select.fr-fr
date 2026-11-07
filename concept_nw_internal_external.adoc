@@ -65,7 +65,7 @@ Cet outil est uniquement utile pour le dépannage du réseau interne d'un cluste
 
 L'assistant de création de cluster (faisant partie de l'interface utilisateur ONTAP Deploy) inclut le vérificateur de réseau interne comme étape optionnelle disponible lors de la création de clusters multi-nœuds. Étant donné le rôle important que le réseau interne joue dans les clusters multi-nœuds, faire de cette étape une partie du flux de travail de création de cluster améliore le taux de réussite des opérations de création de cluster.
 
-Depuis ONTAP Deploy 2.10, la taille de MTU utilisée par le réseau interne peut être définie entre 7,500 et 9,000. Le vérificateur de connectivité réseau peut également être utilisé pour tester la taille de MTU entre 7,500 et 9,000. La valeur MTU par défaut est définie sur la valeur du commutateur réseau virtuel. Cette valeur par défaut doit être remplacée par une valeur plus petite si une superposition réseau comme VXLAN est présente dans l'environnement.
+À partir de ONTAP Deploy 2.10, la taille de l’unité de transmission maximale (MTU) utilisée par le réseau interne peut être définie entre 7 500 et 9 000. L’outil de vérification de la connectivité réseau peut également être utilisé pour tester une taille de MTU comprise entre 7 500 et 9 000. La valeur MTU par défaut est définie sur la valeur du commutateur réseau virtuel. Cette valeur par défaut doit être remplacée par une valeur plus petite si une superposition réseau telle que VXLAN est présente dans l’environnement.
 
 
 

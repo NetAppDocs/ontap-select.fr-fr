@@ -20,7 +20,7 @@ Vous pouvez déployer une instance d'évaluation de 90 jours d'un cluster ONTAP 
 * Inutile d'obtenir un numéro de série ou une licence de capacité de stockage auprès de NetApp.
 * Vous pouvez allouer la même quantité de stockage aux données utilisateur qu'une licence achetée.
 * Vous pouvez uniquement utiliser un compte vCenter pour déployer le modèle OVF. L'installation directe sur un hôte ESXi n'est actuellement pas prise en charge.
-* Vous devez installer le modèle OVF (contenu dans un fichier .ova) à l'aide du client autonome vSphere ou du client Web vSphere (seule option pour ESXi 8.0 et versions ultérieures). N'utilisez pas l'utilitaire d'administration ONTAP Select Deploy.
+* Vous devez installer le modèle OVF (contenu dans un fichier OVA) à l’aide du client autonome vSphere ou du client Web vSphere (la seule option pour ESXi 8.0 et les versions ultérieures). Vous n’utilisez pas l’utilitaire d’administration ONTAP Select Deploy.
 
 
 
@@ -47,7 +47,7 @@ Procédez comme suit sur un serveur hôte ESXi 64 bits pris en charge.
 . Sélectionnez l'hôte à l'aide de l'une des options suivantes :
 +
 ** Sélectionnez *fichier* > *déployer le modèle OVF*.
-** Sélectionnez *Datacenter*. Ensuite, faites un clic droit et sélectionnez *Déployer le modèle OVF*.
+** Sélectionnez *Datacenter*. Ensuite, cliquez avec le bouton droit et sélectionnez *Deploy OVF Template*.
 
 
 . Sélectionnez le fichier OVA source ONTAP Select sur votre poste de travail local, puis sélectionnez *Suivant*.

@@ -27,9 +27,6 @@ Contrairement à la version multi-nœuds du produit ONTAP Select, chaque machine
 
 Ces ports sont utilisés pour assurer les services suivants : gestion, données et LIF intercluster.
 
-.KVM
-Vous pouvez déployer ONTAP Select sous forme de cluster à nœud unique. L’hôte hyperviseur inclut un commutateur virtuel qui permet d’accéder au réseau externe.
-
 .VMware ESXi
 La figure suivante illustre la relation entre ces ports et les adaptateurs physiques sous-jacents. La figure représente un nœud de cluster ONTAP Select sur l'hyperviseur ESXi.
 
@@ -39,6 +36,9 @@ image:DDN_03.jpg["Configuration réseau du cluster ONTAP Select à un seul nœud
 
 
 NOTE: Même si deux cartes sont suffisantes pour un cluster à un seul nœud, le regroupement de cartes réseau est toujours nécessaire.
+
+.Hyper-V et KVM
+Vous pouvez déployer ONTAP Select sous forme de cluster à nœud unique. L’hôte hyperviseur inclut un commutateur virtuel qui permet d’accéder au réseau externe.
 
 
 
@@ -146,7 +146,7 @@ Le trafic réseau du cluster doit transiter par un réseau de couche 2 non rout�
 Pour plus de détails, reportez-vous à la section link:reference_plan_best_practices.html#two-node-stretched-ha-metrocluster-sds-best-practices["Les bonnes pratiques de la HA étendue à deux nœuds (MetroCluster SDS)"].
 
 
-NOTE: Pour garantir un débit maximal pour le trafic réseau du cluster, ce port réseau est configuré pour utiliser des trames jumbo (MTU de 7500 à 9000). Pour un fonctionnement correct du cluster, vérifiez que les trames jumbo sont activées sur tous les commutateurs virtuels et physiques en amont fournissant des services réseau internes aux nœuds de cluster ONTAP Select.
+NOTE: Pour garantir un débit maximal pour le trafic réseau du cluster, ce port réseau est configuré pour utiliser des trames jumbo avec une unité de transmission maximale (MTU) de 7 500 à 9 000 octets. Pour un fonctionnement correct du cluster, vérifiez que les trames jumbo sont activées sur tous les commutateurs virtuels et physiques en amont fournissant des services réseau internes aux nœuds du cluster ONTAP Select.
 
 
 

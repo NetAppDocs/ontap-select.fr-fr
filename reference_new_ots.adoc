@@ -19,6 +19,23 @@ Découvrez les nouvelles fonctionnalités et les améliorations apportées aux v
 
 
 
+[[ontap-select-9-20-1]]
+== ONTAP Select 9.20.1
+
+Prise en charge de l’hyperviseur Hyper-V:: À partir d'ONTAP Select 9.20.1, vous pouvez déployer des clusters ONTAP Select sur des hyperviseurs Microsoft Hyper-V exécutant Windows Server 2025 et Windows Server 2022. Vous pouvez configurer et gérer des clusters à un, deux et quatre nœuds sur des hôtes Hyper-V pris en charge à l'aide de l'utilitaire d'administration ONTAP Select Deploy.
++
+--
+* Découvrez le link:plan-ots-hyper-v.html["Exigences de stockage Hyper-V"]
+* Découvrez le link:hyper-v-host-configuration-and-preparation-checklist.html["Liste de contrôle de configuration et de préparation de l'hôte Hyper-V"]
+* Apprenez-en plus sur link:task_install_deploy.html["Installation de ONTAP Select Deploy sur un hôte Hyper-V"]
+
+
+--
+Prise en charge de NFS sur TLS:: À partir d'ONTAP Select 9.20.1, ONTAP Select prend en charge NFS sur TLS via l'interface de ligne de commande (CLI). System Manager n'est pas pris en charge. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#licensed-ontap-features["Fonctionnalités ONTAP concédées sous licence par défaut"].
+
+
+
+
 [[ontap-select-9-19-1]]
 == ONTAP Select 9.19.1
 
@@ -28,7 +45,7 @@ Prise en charge de la gestion des clés externes (KMIP):: À partir de ONTAP Sel
 ONTAP Select ne prend pas en charge les gestionnaires de clés cloud.
 
 --
-Prise en charge des processeurs Advanced Micro Devices (AMD):: À compter de ONTAP Select 9.19.1, ONTAP Select prend en charge les processeurs AMD sur les hôtes hyperviseur KVM (Kernel-Based Virtual Machine) et ESXi. Pour plus d'informations, consultez link:reference_plan_ots_hardware.html["Considérations relatives à l'hyperviseur VMware et au matériel"].
+Prise en charge des processeurs Advanced Micro Devices (AMD):: À compter de ONTAP Select 9.19.1, ONTAP Select prend en charge les processeurs AMD sur les hôtes d’hyperviseur ESXi et Kernel-Based Virtual Machine (KVM). Pour plus d'informations, consultez link:reference_plan_ots_hardware.html["Considérations relatives à l'hyperviseur VMware et au matériel"].
 Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.19.1 inclut la prise en charge de VMware ESXi 9.1.
 
 
@@ -78,7 +95,7 @@ Vous pouvez réduire la taille d'un cluster existant sur un hôte ESXi ou KVM pa
 
 
 --
-link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
+link:task_cluster_expansion_contraction.html["Découvrez l’extension et la réduction d’un cluster, ainsi que les versions prises en charge des hyperviseurs ESXi et KVM"].
 
 --
 Prise en charge de l'hyperviseur KVM mise à jour:: À partir de ONTAP Select 9.18.1, l'hyperviseur KVM est pris en charge sur Rocky Linux 10.1.
@@ -101,12 +118,12 @@ Pour utiliser le RAID logiciel pour les disques NVMe connectés localement, vous
 link:concept_stor_swraid_local.html["En savoir plus sur les services de configuration RAID logiciels pour le stockage local connecté"] .
 
 --
-Prise en charge de l'extension et de la contraction des clusters sur les hôtes KVM:: À partir d' ONTAP Select 9.17.1, la fonctionnalité d'extension et de contraction de cluster est prise en charge pour les machines virtuelles basées sur le noyau (KVM) et les hôtes hyperviseurs ESXi. Pour ONTAP Select 9.16.1 et 9.15.1, l'extension et la contraction de cluster sont uniquement prises en charge pour les hôtes hyperviseurs ESXi.
+Prise en charge de l'extension et de la contraction des clusters sur les hôtes KVM:: À partir d'ONTAP Select 9.17.1, la fonctionnalité d'extension et de réduction du cluster est prise en charge pour les hôtes hyperviseurs ESXi et KVM (Kernel-Based Virtual Machine). Pour ONTAP Select 9.16.1 et 9.15.1, l'extension et la réduction du cluster sont uniquement prises en charge pour les hôtes hyperviseurs ESXi.
 +
 --
 Vous pouvez utiliser la fonctionnalité d'extension et de contraction de cluster sur un cluster ONTAP Select existant pour augmenter la taille d'un cluster à six nœuds à un cluster à huit nœuds ou réduire la taille d'un cluster à huit nœuds à un cluster à six nœuds.
 
-link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
+link:task_cluster_expansion_contraction.html["Découvrez l’extension et la réduction d’un cluster, ainsi que les versions prises en charge des hyperviseurs ESXi et KVM"].
 
 --
 Prise en charge améliorée de l'extension et de la contraction des clusters sur les hôtes ESXi:: À partir d' ONTAP Select 9.17.1, l'extension et la réduction des clusters sont prises en charge entre les clusters à six nœuds et à douze nœuds sur les hôtes ESXi :
@@ -128,7 +145,7 @@ Vous pouvez réduire la taille du cluster pour un cluster ESXi existant selon le
 
 
 --
-link:task_cluster_expansion_contraction.html["En savoir plus sur l'extension et la contraction des clusters et sur les versions d'hyperviseurs KVM et ESXi prises en charge"] .
+link:task_cluster_expansion_contraction.html["Découvrez l’extension et la réduction d’un cluster, ainsi que les versions prises en charge des hyperviseurs ESXi et KVM"].
 
 --
 Prise en charge du SnapMirror cloud:: À partir de ONTAP Select 9.17.1, SnapMirror cloud est pris en charge avec ONTAP Select. SnapMirror cloud n'est pas licencié par défaut pour ONTAP Select. Lorsque vous déployez un cluster ONTAP Select 9.17.1 ou mettez à niveau un cluster ONTAP Select existant vers la version 9.17.1, vous devez demander une licence SnapMirror cloud. Pour plus d'informations, consultez link:reference_lic_ontap_features.html#other-ontap-features["Fonctionnalités ONTAP sous licence séparée"].
@@ -144,7 +161,7 @@ ONTAP Select Deploy et ONTAP Select pour ESXi prennent en charge la configuratio
 ====
 Pour effectuer des opérations sur la Content Library, vous devez disposer de niveaux d'autorisation supplémentaires. Cet accès est requis pour les déploiements vSAN ESA si vous utilisez des rôles restreints.
 
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["Découvrez comment accéder aux niveaux d'autorisation pour les opérations de la Content Library"].
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["Découvrez comment accéder aux niveaux d'autorisation pour les opérations de la Content Library"].
 
 ====
 --
@@ -280,7 +297,7 @@ Prise en charge de VMware NSX-T:: ONTAP Select 9.10.1 a été qualifié pour VMw
 --
 * MTU du cluster
 +
-Vous devez ajuster manuellement la taille de MTU du cluster à 8800 avant de déployer le cluster pour tenir compte de la surcharge supplémentaire. Les conseils de VMware sont de permettre la création d'un tampon de 200 octets lors de l'utilisation de NSX-T.
+Avant le déploiement du cluster, vous devez ajuster manuellement la taille de l'unité de transmission maximale (MTU) à 8800 afin de compenser la surcharge supplémentaire. VMware recommande de prévoir un tampon de 200 octets lors de l'utilisation de NSX-T.
 
 * Configuration réseau 4x10 Gb
 +

@@ -82,7 +82,7 @@ Le réseau interne présente les caractéristiques suivantes :
 ** Adresse lien-local
 
 
-* La taille de MTU est de 9000 octets par défaut et peut être ajustée dans une plage de 7500-9000 (inclus)
+* La taille de l'unité de transmission maximale (MTU) est de 9000 octets par défaut et peut être ajustée dans une plage de 7500 à 9000 (inclus)
 
 
 
@@ -124,6 +124,6 @@ L'hôte de l'hyperviseur fournit plusieurs fonctionnalités réseau.
 
 ONTAP Select se base sur les capacités suivantes exposées à la machine virtuelle :
 
-Ports de machines virtuelles:: Plusieurs ports sont disponibles pour l'utilisation par ONTAP Select. Ils sont attribués et utilisés en fonction de plusieurs facteurs, dont la taille du cluster.
-Commutateur virtuel:: Le logiciel de commutation virtuelle dans l'environnement de l'hyperviseur, qu'il s'agisse de vSwitch (VMware) ou Open vSwitch (KVM), rejoint les ports exposés par la machine virtuelle par les ports de carte réseau Ethernet physiques. Vous devez configurer un vSwitch pour chaque hôte ONTAP Select, selon le cas de votre environnement.
+Ports de machines virtuelles:: Plusieurs ports sont disponibles pour ONTAP Select. Leur attribution et leur utilisation dépendent de plusieurs facteurs, notamment de la taille du cluster.
+Commutateur virtuel:: Le logiciel de commutation virtuelle au sein de l’environnement de l’hyperviseur, qu’il s’agisse de vSwitch (VMware et Hyper-V) ou d’Open vSwitch (KVM), relie les ports exposés par la machine virtuelle aux ports physiques de la carte réseau Ethernet. Vous devez configurer un vSwitch pour chaque hôte ONTAP Select, selon votre environnement.
 

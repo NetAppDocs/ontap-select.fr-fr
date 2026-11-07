@@ -139,7 +139,7 @@ image:DDN_13.jpg["VSwitch avec deux ports physiques par nœud"]
 [[distributed-vswitch-with-lacp]]
 == VSwitch distribué avec LACP
 
-Lorsque vous utilisez des vswitches distribués dans votre configuration, vous pouvez utiliser LACP (bien qu'il ne s'agisse pas d'une meilleure pratique) pour simplifier la configuration du réseau. La seule configuration LACP prise en charge exige que tous les vmnics se trouvent dans un seul LAG. Le commutateur physique uplink doit prendre en charge une taille MTU comprise entre 7,500 et 9,000 sur tous les ports du canal. Les réseaux ONTAP Select internes et externes doivent être isolés au niveau du port group. Le réseau interne doit utiliser un VLAN non routable (isolé). Le réseau externe peut utiliser VST, est ou VGT.
+Lors de l’utilisation de vSwitches distribués dans votre configuration, LACP peut être utilisé (bien que cela ne soit pas une bonne pratique) afin de simplifier la configuration réseau. La seule configuration LACP prise en charge exige que toutes les VMNIC soient dans un seul LAG. Le commutateur physique de liaison montante doit prendre en charge une taille d’unité de transmission maximale (MTU) comprise entre 7 500 et 9 000 sur tous les ports du canal. Les réseaux internes et externes ONTAP Select doivent être isolés au niveau du groupe de ports. Le réseau interne doit utiliser un VLAN non routable (isolé). Le réseau externe peut utiliser VST, EST ou VGT.
 
 Les exemples suivants montrent la configuration vSwitch distribuée à l'aide de LACP.
 

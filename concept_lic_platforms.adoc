@@ -65,9 +65,13 @@ Le tableau suivant compare les fonctionnalités des offres de licence standard, 
 
 2+| Les SDS dans MetroCluster | Non | Oui. | Oui. 
 |===
+[NOTE]
+====
+Microsoft Hyper-V prend en charge les types d'instance de petite, moyenne et grande taille.
 
-NOTE: Les machines virtuelles basées sur le noyau (KVM) ne prennent pas en charge le type d'instance volumineuse.
+Les machines virtuelles basées sur le noyau (KVM) ne prennent pas en charge le type d'instance volumineuse.
 
+====
 
 
 [[compare-hardware-support-for-platform-license-offerings]]
@@ -92,7 +96,7 @@ Les licences standard, premium et premium XL sont compatibles avec une large gam
 2+| Options de déploiement 3+| Cluster à nœud unique, cluster à deux nœuds (paire HA), cluster à quatre, six, huit, dix ou douze nœuds 
 
 
-2+| Capacité prise en charge (par nœud) 3+| Jusqu'à 400 To de données brutes (ESXi et KVM) 
+2+| Capacité prise en charge (par nœud) 3+| Jusqu'à 400 To de données brutes (ESXi, Hyper-V et KVM) 
 |===
 --
 .Sous-jacent
@@ -165,7 +169,7 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 2+| DAS local avec RAID logiciel | Sans objet | En vigueur | 4 à 14 disques (NVMe uniquement) 
 
 
-2+| Tableaux externes ^1^ 3+| Les datastores hébergés sur baies externes sont connectés via FC, FCoE, iSCSI et NFS (NFS n'est pas pris en charge pour KVM). Ces datastores assurent haute disponibilité et résilience. 
+2+| Tableaux externes ^1^ 3+| Les banques de données hébergées sur des baies externes sont connectées via FC, FCoE et iSCSI pour ESXi, Hyper-V et KVM, et via NFS pour ESXi. NFS n'est pas pris en charge par KVM et Hyper-V. Ces banques de données offrent une haute disponibilité et une grande résilience. 
 |===
 ^1^ la prise en charge du protocole des baies externes reflète la connectivité du stockage en réseau.
 
@@ -180,6 +184,9 @@ Le tableau suivant indique le type de licence minimum requis pour le stockage sp
 
 
 2+| Hyperviseur (VMware) 3+| VMware vSphere 9.1, 9.0 VMware vSphere 8.0GA et mises à jour 1 à 3 
+
+
+2+| Prise en charge de l'hyperviseur (Hyper-V) 3+| Windows Server 2025 et 2022 
 
 
 2+| Hyperviseur (KVM)  a| 

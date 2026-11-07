@@ -38,7 +38,7 @@ Vous lancez les procédures d’extension et de contraction du cluster à partir
 [[hardware-and-storage-considerations]]
 == Considérations relatives au matériel et au stockage
 
-La fonctionnalité d’extension et de contraction de cluster est prise en charge sur les hôtes d’hyperviseur KVM et ESXi suivants.
+La fonctionnalité d'extension et de réduction du cluster est prise en charge sur les hôtes d'hyperviseur ESXi et KVM suivants.
 
 [role="tabbed-block"]
 ====

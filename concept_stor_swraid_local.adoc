@@ -100,8 +100,8 @@ Pour les clusters à un seul nœud, toutes les partitions de données sont utili
 
 
 
-[[passthrough-directpath-io-devices-vs-raw-device-maps-rdms]]
-== Comparaison entre les périphériques Passthrough (DirectPath IO) et Cartes de périphériques brutes (RDM)
+[[passthrough-directpath-io-devices-versus-raw-device-maps-rdms]]
+== Périphériques en mode passthrough (DirectPath IO) versus mappages de périphériques bruts (RDM)
 
 Les hyperviseurs ESXi et KVM ne prennent pas en charge les disques NVMe en tant que Raw Device Maps (RDM). Pour permettre à ONTAP Select de prendre le contrôle direct des disques NVMe, vous devez configurer ces disques comme périphériques passthrough au sein d'ESXi ou de KVM. Lors de la configuration d'un périphérique NVMe en tant que périphérique passthrough, cela nécessite la prise en charge du BIOS du serveur et il se peut que vous deviez redémarrer l'hôte. De plus, il existe des limites quant au nombre de périphériques passthrough pouvant être attribués par hôte, qui peuvent varier selon la plateforme. Cependant, ONTAP Deploy limite ce nombre à 14 périphériques NVMe par nœud ONTAP Select. Cela signifie que la configuration NVMe offre une densité d'IOPS (IOPS/To) très élevée, au détriment de la capacité totale. Sinon, si vous souhaitez une configuration haute performance avec une capacité de stockage plus importante, la configuration recommandée est une grande taille de machine virtuelle ONTAP Select, une carte INTEL Optane pour le disque système et un nombre nominal de disques SSD pour le stockage des données.
 
@@ -109,6 +109,9 @@ Les hyperviseurs ESXi et KVM ne prennent pas en charge les disques NVMe en tant 
 NOTE: Pour exploiter pleinement les performances de NVMe, pensez à la taille importante des machines virtuelles ONTAP Select.
 
 Il existe une différence supplémentaire entre les périphériques de transfert et les RDM. Les RDM peuvent être mappés à une machine virtuelle en cours d'exécution. Les périphériques de transfert nécessitent un redémarrage de la machine virtuelle. Cela signifie que tout remplacement de disque NVMe ou extension de capacité (ajout de disque) nécessite un redémarrage de la machine virtuelle ONTAP Select . Ces opérations sont gérées par un workflow dans ONTAP Deploy. ONTAP Deploy gère le redémarrage ONTAP Select pour les clusters à nœud unique et le basculement/la restauration automatique pour les paires haute disponibilité. Cependant, il est important de noter la différence entre l'utilisation de disques de données SSD (aucun redémarrage/basculement ONTAP Select requis) et l'utilisation de disques de données NVMe (redémarrage/basculement ONTAP Select requis).
+
+
+NOTE: ONTAP Select prend en charge les disques NVMe en tant que disques SCSI sur les hyperviseurs Hyper-V. ONTAP Select ne prend pas en charge les disques NVMe en tant qu'affectations de périphériques discrets (périphériques passthrough) sur les hyperviseurs Hyper-V.
 
 
 
@@ -128,8 +131,8 @@ Comme pour les systèmes FAS et AFF , vous ne pouvez ajouter que des disques de 
 
 
 
-[[match-an-ontap-select-disk-to-the-corresponding-esxi-or-kvm-disk]]
-== Associez un disque ONTAP Select au disque ESXi ou KVM correspondant
+[[match-an-ontap-select-disk-to-the-corresponding-esxi-hyper-v-or-kvm-disk]]
+== Associez un disque ONTAP Select au disque ESXi, Hyper-V ou KVM correspondant
 
 Les disques ONTAP Select sont généralement étiquetés NET x.y Vous pouvez utiliser la commande ONTAP suivante pour obtenir l'UUID du disque :
 
@@ -149,7 +152,7 @@ Plex: -This UID can be matched with the device UID displayed in the ‘storage d
 ----
 image:ST_21.jpg["Faire correspondre un disque ONTAP Select au disque ESXi correspondant"]
 
-Dans le shell ESXi ou KVM, vous pouvez entrer la commande suivante pour faire clignoter la LED d'un disque physique donné (identifié par son naa.unique-id).
+Dans le shell ESXi, Hyper-V ou KVM, vous pouvez saisir la commande suivante pour faire clignoter la LED d’un disque physique donné (identifié par son naa.unique-id).
 
 [role="tabbed-block"]
 ====
@@ -158,6 +161,13 @@ Dans le shell ESXi ou KVM, vous pouvez entrer la commande suivante pour faire cl
 [source, cli]
 ----
 esxcli storage core device set -d <naa_id> -l=locator -L=<seconds>
+----
+--
+.Hyper-V
+--
+[source, cli]
+----
+Enable-PhysicalDiskIdentification -UniqueId <unique_id>
 ----
 --
 .KVM

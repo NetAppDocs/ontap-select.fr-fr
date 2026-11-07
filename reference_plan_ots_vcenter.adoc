@@ -89,4 +89,4 @@ Provisionnement:: Tous les privilèges de la catégorie.
 Tous les privilèges de la catégorie.
 
 .Informations associées
-link:reference_plan_dep_vmware.html#vmware-vcenter-server-considerations["En savoir plus sur les privilèges VMware vSphere pour vSAN ESA dans vCenter"]
+link:plan-deploy-hypervisor.html#vmware-vcenter-server-considerations["En savoir plus sur les privilèges VMware vSphere pour vSAN ESA dans vCenter"]

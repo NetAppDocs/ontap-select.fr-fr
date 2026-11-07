@@ -38,7 +38,7 @@ Depuis ONTAP Select 9.5 utilisant Deploy 2.10, VMXNET3 est le pilote réseau par
 [[cluster-mtu]]
 == MTU du cluster
 
-Un réseau interne distinct est utilisé pour connecter les nœuds ONTAP Select dans un cluster multinœud. La taille de MTU de ce réseau est généralement de 9000. Toutefois, il est parfois difficile de savoir que cette taille de MTU est trop élevée pour le réseau qui connecte les nœuds ONTAP Select. Pour prendre en charge les trames les plus petites, la taille de MTU utilisée par ONTAP Select sur le réseau interne peut être comprise entre 1 7500-9000 octets.
+Un réseau interne distinct est utilisé pour connecter les nœuds ONTAP Select au sein d'un cluster multinœud. Généralement, la taille de l'unité de transmission maximale (MTU) de ce réseau est de 9000. Toutefois, il existe des situations où cette taille de MTU est trop grande pour le réseau connectant les nœuds ONTAP Select. Pour prendre en charge des trames plus petites, la taille de MTU utilisée par ONTAP Select sur le réseau interne peut se situer dans la plage de 7500 à 9000 octets.
 
 La taille MTU s'affiche dans la section Cluster Details de la page de création du cluster. La valeur est déterminée par l'utilitaire d'administration de déploiement comme suit :
 
@@ -123,19 +123,35 @@ Consultez la section link:concept_nw_concepts_chars.html["Présentation de la mi
 [[network-traffic-requirements]]
 == Exigences en matière de trafic réseau
 
-Vous devez vous assurer que vos pare-feu sont correctement configurés pour permettre au trafic réseau de circuler entre les différents participants d'un environnement de déploiement ONTAP Select.
+Vous devez vous assurer que vos pare-feu sont correctement configurés pour permettre la circulation du trafic réseau entre les différents participants dans un environnement de déploiement ONTAP Select.
 
 .Participants
 Plusieurs participants ou entités échangent du trafic réseau dans le cadre d'un déploiement ONTAP Select. Elles sont introduites, puis utilisées dans la description récapitulative des besoins en trafic réseau.
 
-* Déployez l'utilitaire d'administration ONTAP Select Deploy
-* VSphere (ESXi uniquement)
-Serveur vSphere ou hôte ESXi, selon la façon dont l'hôte est géré dans le déploiement du cluster
+* Déployez
++
+Utilitaire d'administration ONTAP Select Deploy
+
+* vSphere (ESXi uniquement)
++
+Soit un serveur vSphere, soit un hôte ESXi, selon la manière dont l'hôte est géré dans votre déploiement de cluster
+
 * Serveur hyperviseur
-Hôte hyperviseur ESXi ou hôte KVM Linux
-* Nœud OTS et nœud ONTAP Select
-* Cluster OTS et cluster ONTAP Select
-* Station de travail d'administration locale WS Admin
++
+hôte hyperviseur ESXi, hôte Microsoft Hyper-V ou hôte Linux KVM
+
+* Nœud ONTAP Select
++
+Un nœud ONTAP Select
+
+* Cluster ONTAP Select
++
+Un cluster ONTAP Select
+
+* WS d'administration
++
+Poste de travail administratif local
+
 
 
 .Récapitulatif des besoins en trafic réseau
@@ -143,7 +159,25 @@ Le tableau suivant décrit les exigences en termes de trafic réseau pour un dé
 
 [cols="20,20,35,25"]
 |===
-| Protocole / port | ESXi/KVM | Direction | Description 
+| Protocole / port | ESXi / Hyper-V / KVM | Direction | Description 
+
+
+| ICMP | ESXi, Hyper-V ou KVM | Déploiement sur un serveur d'hyperviseur | Ping 
+
+
+| ICMP | ESXi, Hyper-V ou KVM | Déployer sur chaque nœud ONTAP Select | Ping 
+
+
+| SSH (22) | ESXi, Hyper-V ou KVM | Admin WS vers chaque nœud ONTAP Select | L'administration 
+
+
+| SSH (22) | KVM | Déploiement sur les nœuds de serveur d'hyperviseur | Accès au serveur hyperviseur 
+
+
+| TLS (443) | ESXi, Hyper-V ou KVM | Déployer sur les nœuds et les clusters ONTAP Select | Accédez à ONTAP 
+
+
+| TLS (443) | ESXi, Hyper-V ou KVM | Chaque nœud ONTAP Select à déployer | Déploiement d'accès (licences de pools de capacité) 
 
 
 | TLS (443) | VMware ESXi | Déploiement sur un serveur vCenter (géré) ou ESXi (géré ou non géré) | VMware VIX API 
@@ -152,23 +186,8 @@ Le tableau suivant décrit les exigences en termes de trafic réseau pour un dé
 | 902 | VMware ESXi | Déploiement sur le serveur vCenter (géré) ou ESXi (non géré) | VMware VIX API 
 
 
-| ICMP | ESXi ou KVM | Déploiement sur un serveur d'hyperviseur | Ping 
+| ISCSI (3260) | ESXi, Hyper-V ou KVM | Chaque nœud ONTAP Select à déployer | Disque médiateur/boîte aux lettres 
 
 
-| ICMP | ESXi ou KVM | Déploiement sur chaque nœud OTS | Ping 
-
-
-| SSH (22) | ESXi ou KVM | Admin WS à chaque nœud OTS | L'administration 
-
-
-| SSH (22) | KVM | Déploiement sur les nœuds de serveur d'hyperviseur | Accès au serveur hyperviseur 
-
-
-| TLS (443) | ESXi ou KVM | Déploiement sur les nœuds et les clusters OTS | Accédez à ONTAP 
-
-
-| TLS (443) | ESXi ou KVM | Chaque nœud OTS à déployer | Déploiement d'accès (licences de pools de capacité) 
-
-
-| ISCSI (3260) | ESXi ou KVM | Chaque nœud OTS à déployer | Disque médiateur/boîte aux lettres 
+| WinRM HTTPS (5986) | Hyper-V | Déploiement sur les nœuds de serveur d'hyperviseur | Accès au serveur hyperviseur 
 |===

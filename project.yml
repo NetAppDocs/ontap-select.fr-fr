@@ -9,20 +9,20 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   versions:
-  - version-number: 9.19.1
+  - version-number: 9.20.1
     url: "/ontap-select"
+  - version-number: 9.19.1
+    url: "/ontap-select-9191"
   - version-number: 9.18.1
     url: "/ontap-select-9181"
   - version-number: 9.17.1
     url: "/ontap-select-9171"
   - version-number: 9.16.1
     url: "/ontap-select-9161"
-  - version-number: 9.15.1
-    url: "/ontap-select-9151"
   langs: fr-fr,us-en,de-de,es-es,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: Documentation ONTAP Select 9.19.1
+  - title: Documentation d'ONTAP Select 9.20.1
     url: "/index.html"
   - title: Notes de version
     entries:
@@ -60,10 +60,12 @@ sidebar:
         url: "/reference_plan_ots_hardware.html"
       - title: Stockage et RAID
         url: "/reference_plan_ots_storage.html"
-      - title: Exigences de stockage externe
+      - title: Exigences de stockage
         entries:
         - title: VMware ESXi
           url: "/reference_plan_ots_vnas.html"
+        - title: Hyper-V
+          url: "/plan-ots-hyper-v.html"
         - title: KVM
           url: "/reference_plan_ots_kvm.html"
       - title: Mise en réseau
@@ -81,7 +83,7 @@ sidebar:
       - title: Exigences générales
         url: "/reference_plan_dep_general.html"
       - title: Environnements hôtes hyperviseur
-        url: "/reference_plan_dep_vmware.html"
+        url: "/plan-deploy-hypervisor.html"
     - title: Et des meilleures pratiques
       url: "/reference_plan_best_practices.html"
   - title: Licence
@@ -132,10 +134,12 @@ sidebar:
       entries:
       - title: Checklist de préparation des hôtes
         entries:
-        - title: Liste de contrôle de l'hôte KVM
-          url: "/kvm-host-configuration-and-preparation-checklist.html"
         - title: Liste de contrôle de l'hôte ESXi
           url: "/esxi-host-configuration-and-preparation-checklist.html"
+        - title: Liste de contrôle de l'hôte Hyper-V
+          url: "/hyper-v-host-configuration-and-preparation-checklist.html"
+        - title: Liste de contrôle de l'hôte KVM
+          url: "/kvm-host-configuration-and-preparation-checklist.html"
       - title: Déployer les informations requises de l'utilitaire
         url: "/reference_chk_deploy_req_info.html"
       - title: Informations requises pour ONTAP Select

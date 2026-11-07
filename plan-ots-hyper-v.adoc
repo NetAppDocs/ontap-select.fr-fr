@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: plan-ots-hyper-v.html 
+keywords: plan, planning, vnas, hyper-v 
+summary: 'Vous devez prendre en compte plusieurs points de planification liés à l"utilisation de l"hyperviseur Hyper-V.' 
+---
+= Exigences de stockage Hyper-V pour ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous configurez ONTAP Select sur un hyperviseur Hyper-V, ONTAP Select stocke la machine virtuelle (VM) et les disques virtuels sur un volume local de l'hôte Hyper-V.
+
+
+
+[[basic-requirements-and-restrictions]]
+== Exigences et restrictions de base
+
+Les exigences et restrictions de configuration suivantes s'appliquent aux pools de stockage ONTAP Select sur un hôte Hyper-V :
+
+* Le pool de stockage doit être un volume NTFS ou ReFS auquel une lettre de lecteur a été attribuée. L'utilitaire Deploy identifie le pool de stockage par sa lettre de lecteur.
+* Les Cluster Shared Volumes ne sont pas pris en charge en tant que pools de stockage.
+* Les partages de fichiers réseau et les chemins UNC distants, tels que SMB 3.0, ne sont pas pris en charge en tant que pools de stockage.
+* ONTAP Select ne détecte pas un volume monté uniquement sur un chemin de dossier, car ce volume n’a pas de lettre de lecteur.
+* ONTAP Select peut utiliser un LUN sur une baie de stockage externe via FC, FCoE ou iSCSI si l'hôte Hyper-V formate le LUN en NTFS ou ReFS et lui attribue une lettre de lecteur. ONTAP Select traite ce volume comme un stockage hôte local. Le modèle vNAS de ONTAP Select utilisé avec ESXi ne s'applique pas à Hyper-V.
+* Un disque virtuel Storage Spaces peut contenir un pool de stockage s'il est formaté en NTFS ou ReFS et qu'une lettre de lecteur lui est attribuée. Cependant, le RAID logiciel ne peut pas utiliser les disques physiques appartenant à un pool Storage Spaces.
+* Une configuration Hyper-V ne reconnaît pas le stockage à provisionnement fin. ONTAP Select utilise la capacité que Windows indique pour le volume.
+
+
+
+
+[[best-practices]]
+== Et des meilleures pratiques
+
+Vous devriez suivre ces bonnes pratiques :
+
+* Définissez des adaptateurs réseau dédiés, la bande passante et les configurations de commutateurs virtuels pour les réseaux ONTAP Select. Conservez le trafic de stockage externe, tel qu’iSCSI, sur des adaptateurs distincts.
+* Dédiez le volume du pool de stockage à ONTAP Select. N’y placez aucune autre machine virtuelle Hyper-V ni workload Windows sur le même volume, et n’utilisez pas le volume de démarrage Windows comme pool de stockage.
+* Dimensionnez le volume de manière à ce que ONTAP Select n'utilise pas toute sa capacité.
+* Configurez Windows MPIO pour les baies de stockage externes afin que les LUN soient présentées sur des chemins redondants.
+

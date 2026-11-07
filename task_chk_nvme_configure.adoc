@@ -19,6 +19,9 @@ Si vous prévoyez d’utiliser des disques NVMe avec RAID logiciel, vous devez c
 Optimisation de l'efficacité des données grâce au pass-through en E/S VMDirectPath sur les périphériques NVMe. Ce paramètre expose les lecteurs à la machine virtuelle ONTAP Select, ce qui permet à ONTAP d'avoir un accès PCI direct au périphérique.
 
 
+NOTE: ONTAP Select prend en charge les disques NVMe en tant que disques SCSI sur les hôtes Hyper-V. ONTAP Select ne prend pas en charge les disques NVMe en tant que Discrete Device Assignments (périphériques passthrough) sur les hôtes Hyper-V.
+
+
 
 [[step-1-configure-the-host]]
 == Étape 1 : Configurer l'hôte

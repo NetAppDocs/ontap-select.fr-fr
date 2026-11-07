@@ -100,49 +100,6 @@ Vous devez enregistrer chaque hôte d'hyperviseur sur lequel un nœud ONTAP Sele
 
 [role="tabbed-block"]
 ====
-.KVM
---
-Vous devez enregistrer un hôte d'hyperviseur sur lequel le nœud ONTAP Select sera exécuté. Dans ce cadre, l'utilitaire d'administration de déploiement s'authentifie auprès de l'hôte KVM.
-
-.Description de la tâche
-Si plusieurs hôtes hyperviseurs sont nécessaires, utilisez cette procédure pour ajouter chaque hôte.
-
-.Étapes
-. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
-. Enregistrez l'hôte :
-+
-[source, cli]
-----
-host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
-----
-+
-Exemple de sortie :
-
-+
-[listing]
-----
-host register -name 10.234.81.14 -hypervisor-type KVM -username root
-----
-+
-Entrez le mot de passe du compte hôte lorsque vous y êtes invité.
-
-. Afficher l'état de l'hôte et confirmer qu'il est authentifié :
-+
-[source, cli]
-----
-host show -name <FQDN|IP> -detailed
-----
-+
-Exemple de sortie :
-
-+
-[listing]
-----
-host show -name 10.234.81.14 -detailed
-----
-
-
---
 .VMware ESXi
 --
 Dans le cadre de cette opération, l'utilitaire d'administration Deploy s'authentifie auprès du serveur vCenter gérant l'hôte ou directement vers l'hôte autonome ESXi.
@@ -201,6 +158,60 @@ Exemple de sortie :
 ....
 host show -name 10.234.81.14 -detailed
 ....
+
+
+--
+.Hyper-V ou KVM
+--
+Vous devez enregistrer un hôte d'hyperviseur sur lequel le nœud ONTAP Select sera exécuté. Dans ce cadre, l'utilitaire d'administration de déploiement s'authentifie auprès de l'hôte KVM.
+
+.Description de la tâche
+Si plusieurs hôtes hyperviseurs sont nécessaires, utilisez cette procédure pour ajouter chaque hôte.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande de l'utilitaire de déploiement à l'aide de SSH avec le compte d'administrateur.
+. Enregistrez l'hôte :
++
+*Hyper-V*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type Hyper-V -username <Hyper-V_username>
+----
++
+*KVM*
+
++
+[source, cli]
+----
+host register -name <FQDN|IP> -hypervisor-type KVM -username <KVM_username>
+----
++
+Exemple de sortie :
+
++
+[listing]
+----
+host register -name 10.234.81.14 -hypervisor-type KVM -username root
+----
++
+Entrez le mot de passe du compte hôte lorsque vous y êtes invité.
+
+. Afficher l'état de l'hôte et confirmer qu'il est authentifié :
++
+[source, cli]
+----
+host show -name <FQDN|IP> -detailed
+----
++
+Exemple de sortie :
+
++
+[listing]
+----
+host show -name 10.234.81.14 -detailed
+----
 
 
 --
@@ -315,14 +326,14 @@ host network show -host-name 10.234.81.14 -detailed
 +
 [role="tabbed-block"]
 ====
-.Hôte ESXi
+.VMware ESXi
 --
 [source, cli]
 ----
 node modify -name <node_name> -cluster-name <cluster_name> -mgmt-ip IP -management-networks <network_name> -data-networks <network_name> -internal-network <network_name>
 ----
 --
-.Hôte KVM
+.Hyper-V ou KVM
 --
 [source, cli]
 ----

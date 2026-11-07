@@ -24,8 +24,14 @@ Chaque fois que vous démarrez un test, une nouvelle exécution de processus est
 
 Le test comporte deux modes qui contrôlent son fonctionnement :
 
-* Rapide ce mode effectue un test de base sans perturbation. Un test PING est effectué, avec un test de la taille de MTU du réseau et du vSwitch.
-* Étendu ce mode effectue un test plus complet sur tous les chemins réseau redondants. Si vous exécutez cet outil sur un cluster ONTAP Select actif, les performances du cluster peuvent être affectées.
+* Rapide
++
+Ce mode effectue un test de base non perturbateur. Un test PING est réalisé, ainsi qu'un test de la taille de l'unité de transmission maximale (MTU) du réseau et du vSwitch.
+
+* Étendu
++
+Ce mode effectue un test plus complet sur tous les chemins réseau redondants. Si vous l'exécutez sur un cluster ONTAP Select actif, les performances du cluster peuvent être affectées.
+
 
 
 

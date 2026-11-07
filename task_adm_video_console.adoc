@@ -22,5 +22,5 @@ Vous devrez peut-être accéder à la console de la machine virtuelle pour réso
 .Étapes
 . Accédez au client vSphere et connectez-vous.
 . Naviguez jusqu'à l'emplacement approprié dans la hiérarchie pour localiser la machine virtuelle ONTAP Select.
-. Sélectionnez la machine virtuelle avec le bouton droit et sélectionnez *Ouvrir la console*.
+. Faites un clic droit sur la machine virtuelle et sélectionnez *Open Console*.
 

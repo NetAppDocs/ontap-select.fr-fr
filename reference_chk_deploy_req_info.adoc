@@ -28,23 +28,23 @@ Dans le cadre de la planification de votre déploiement, vous devez déterminer 
 | Informations requises | Description 
 
 
-| Nom de la machine virtuelle déployée | Identificateur à utiliser pour la machine virtuelle. 
+| Nom de la machine virtuelle (VM) Deploy | Identifiant à utiliser pour la machine virtuelle. 
 
 
-| Nom de l'hôte hyperviseur | Identificateur de l'hôte de l'hyperviseur VMware ESXi ou KVM sur lequel l'utilitaire de déploiement est installé. 
+| Nom de l'hôte hyperviseur | Identifiant de l’hôte hyperviseur VMware ESXi, Hyper-V ou KVM sur lequel l’utilitaire Deploy est installé. 
 
 
-| Nom du magasin de données | Identificateur du datastore de l'hyperviseur contenant les fichiers de la machine virtuelle (environ 40 Go sont requis). 
+| Nom de l’emplacement de stockage | Identifiant du datastore (ESXi) ou du pool de stockage (Hyper-V ou KVM) contenant les fichiers de la VM (environ 40 Go sont nécessaires). 
 
 
-| Réseau de la machine virtuelle | Identifiant du réseau sur lequel la machine virtuelle de déploiement est connectée. 
+| Réseau pour la machine virtuelle | Identifiant du réseau auquel la VM Deploy est connectée. 
 |===
 
 
 [[optional-network-configuration-information]]
 == Informations optionnelles sur la configuration du réseau
 
-Par défaut, la machine virtuelle déployée est configurée à l'aide de DHCP. Toutefois, si nécessaire, vous pouvez configurer manuellement l'interface réseau de la machine virtuelle.
+La VM Deploy est configurée par défaut à l’aide de DHCP. Toutefois, si nécessaire, vous pouvez configurer manuellement l’interface réseau de la VM.
 
 [cols="35,65"]
 |===
@@ -57,7 +57,7 @@ Par défaut, la machine virtuelle déployée est configurée à l'aide de DHCP. 
 | Adresse IP de l'hôte | Adresse IPv4 statique de la machine hôte. 
 
 
-| Masque de sous-réseau | Masque de sous-réseau, basé sur le réseau dont fait partie la machine virtuelle. 
+| Masque de sous-réseau | Masque de sous-réseau, basé sur le réseau auquel appartient la VM. 
 
 
 | Passerelle | Passerelle ou routeur par défaut. 

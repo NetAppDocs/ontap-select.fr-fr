@@ -1,0 +1,249 @@
+---
+sidebar: sidebar 
+permalink: hyper-v-host-configuration-and-preparation-checklist.html 
+keywords: ontap select, pre-installation checklist, hyper-v, host preparation 
+summary: 'Préparez chaque hôte hyperviseur Hyper-V sur lequel un nœud ONTAP Select est déployé. Lors de cette préparation, évaluez soigneusement l"environnement de déploiement afin de vous assurer que les hôtes sont correctement configurés et prêts à prendre en charge le déploiement d"un cluster ONTAP Select.' 
+---
+= Préparer un hôte Hyper-V pour ONTAP Select
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Préparez chaque hôte hyperviseur Hyper-V sur lequel un nœud ONTAP Select est déployé. Assurez-vous que les hôtes sont correctement configurés et prêts à prendre en charge le déploiement d'un cluster ONTAP Select.
+
+
+NOTE: L'utilitaire d'administration ONTAP Select Deploy n'effectue pas la configuration réseau et de stockage requise des hôtes hyperviseurs. Vous devez préparer manuellement chaque hôte avant de déployer un cluster ONTAP Select .
+
+
+
+[[step-1-prepare-the-hyper-v-hypervisor-host]]
+[[prepare-hyper-v-server]]
+== Étape 1 : Préparer l’hôte de l’hyperviseur Hyper-V
+
+Préparez chacun des serveurs Windows Hyper-V sur lesquels un nœud ONTAP Select est déployé.
+
+.Description de la tâche
+Consultez la documentation Windows pour plus d'informations sur la manière d'effectuer ces étapes.
+
+.Étapes
+. Installez une version prise en charge de Windows Server et activez le rôle Hyper-V à l’aide de Server Manager, de Windows Admin Center ou de PowerShell.
+. Installez Windows sur le disque de démarrage local. N’installez pas Windows sur un disque que vous comptez fournir à ONTAP Select.
+. Vérifiez que la configuration répond aux exigences suivantes :
++
+** La version de Windows Server est indiquée comme prise en charge. L'utilitaire Deploy lit le nom du produit lors de l'enregistrement de l'hôte et signale une version non prise en charge.
+** Le rôle Hyper-V est activé. L'utilitaire Deploy vérifie ce point lors de l'enregistrement de l'hôte ; l'enregistrement échoue si le rôle n'est pas activé.
+** Le processeur et la mémoire de l'hôte ont une capacité suffisante pour Windows Server. L'utilitaire Deploy réserve 2 cœurs de processeur et 8 Go de mémoire pour l'hôte lors du dimensionnement d'un nœud.
+
+
+
+
+
+
+[[step-2-provide-remote-management-access-for-deploy]]
+== Étape 2 : Fournir un accès à la gestion à distance pour Deploy
+
+L'utilitaire Deploy administre l'hôte via Windows Remote Management (WinRM) à l'aide de HTTPS et de la configuration d'accès à distance PowerShell. Vous devez configurer l'écouteur HTTPS WinRM, le certificat associé et la règle de pare-feu.
+
+.Étapes
+. Activer WinRM HTTP :
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+. Vérifiez la configuration WinRM:
++
+[source, cli]
+----
+winrm enumerate winrm/config/listener
+----
+. Créez une règle de pare-feu entrante pour accepter les connexions réseau sur le port HTTPS 5986:
++
+[source, cli]
+----
+New-NetFirewallRule -DisplayName "WinRM HTTPS" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 5986
+----
+. Configurer le certificat associé :
++
+[role="tabbed-block"]
+====
+.Un certificat est disponible
+--
+Si vous possédez déjà un certificat valide dans le magasin de certificats de l’ordinateur local :
+
+.. Configurer l’accès à distance Powershell pour le certificat :
++
+[source, cli]
+----
+Enable-PSRemoting -Force
+----
+.. Configurer WinRM pour l'administration à distance:
++
+[source, cli]
+----
+winrm quickconfig -q
+----
+.. Vérifiez la configuration de l'écouteur HTTPS WinRM :
++
+[source, cli]
+----
+winrm e winrm/config/listener
+----
+
+
+--
+.Le certificat n'est pas disponible
+--
+.. Générez le certificat auto-signé :
++
+[source, cli]
+----
+$cert = New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My
+----
+.. Associez le certificat à l’écouteur WinRM :
++
+[source, cli]
+----
+New-WSManInstance -ResourceURI winrm/config/Listener -SelectorSet @{Transport='HTTPS';Address='*'} -ValueSet @{CertificateThumbprint=$cert.Thumbprint}
+----
+
+
+--
+====
+. Configurez la stratégie de groupe en sélectionnant *Configuration ordinateur* > *Modèles d'administration* > *Composants Windows* > *Gestion à distance Windows (WinRM)* > *Service WinRM*.
+. Vérifiez que la configuration répond aux exigences suivantes :
++
+** La machine virtuelle (VM) Deploy peut atteindre l’écouteur HTTPS WinRM sur le port TCP 5986. L’utilitaire Deploy n’utilise ni HTTP ni le port TCP 5985.
+** Il s'agit d'un certificat auto-signé. L'utilitaire Deploy ne valide pas le certificat auprès d'une autorité de certification.
+** Le compte utilisé pour enregistrer l’hôte dispose des droits d’administrateur sur celui-ci. L’utilitaire Deploy s’authentifie avec Kerberos. Si l’utilitaire Deploy ne peut pas utiliser Kerberos, il bascule vers NTLM.
+** Vous avez enregistré l'hôte Hyper-V à l'aide d'un nom unique qui répond sur le port TCP 5986. L'utilitaire Deploy récupère le certificat à l'aide du nom enregistré.
++
+
+NOTE: L'utilitaire Deploy enregistre le certificat et le valide à chaque connexion ultérieure. Si le certificat est remplacé, les connexions à l'hôte échouent et vous devez supprimer l'hôte de l'utilitaire Deploy puis l'enregistrer à nouveau.
+
+
+
+
+
+
+
+[[step-3-prepare-the-host-storage]]
+== Étape 3 : Préparer le stockage hôte
+
+Un pool de stockage sur un hôte Hyper-V est un volume local qui contient la machine virtuelle ONTAP Select et ses disques virtuels.
+
+.Étapes
+. Créez un volume local à l'aide de Disk Management, de Server Manager ou de Windows Admin Center. Consultez la documentation Microsoft pour plus d'informations.
+. Créez au moins un pool de stockage pour chaque nœud ONTAP Select. Consultez la documentation Microsoft pour plus d'informations.
++
+[NOTE]
+====
+** Vous devez créer un pool de stockage lorsque vous utilisez un RAID logiciel.
+** Pour supprimer un pool de stockage, supprimez d'abord le cluster ou le nœud ONTAP Select qui utilise le pool de stockage, puis supprimez le volume à l'aide des outils Windows standard.
+
+
+====
+. Vérifiez que le volume est formaté en NTFS ou ReFS et qu'une lettre de lecteur lui est attribuée. L'utilitaire Deploy identifie le pool de stockage par sa lettre de lecteur.
++
+[NOTE]
+====
+** L'utilitaire Deploy réserve deux pour cent du volume pour la surcharge et peut allouer un maximum de 64 To à partir d'un seul pool de stockage.
+** Vous ne pouvez pas utiliser les volumes partagés de cluster et les partages de fichiers SMB 3.0 comme pools de stockage ONTAP Select.
+** ONTAP Select ne peut pas détecter un volume monté uniquement sur un chemin de dossier, car il ne possède pas de lettre de lecteur.
+
+
+====
+. Si vous utilisez un RAID logiciel, vous devez réserver des disques physiques pour ONTAP Select. Le PCI passthrough n'est pas pris en charge sur Hyper-V, de sorte que les disques sont présentés à la machine virtuelle comme des disques physiques en mode passthrough. Les disques physiques doivent répondre aux exigences suivantes :
++
+** Ce sont des disques SSD ou NVMe d'une capacité de stockage d'au moins 200 Go chacun.
+** Ce sont des disques bruts sans partitions, volumes ni lettres de lecteur.
+** Les disques ne font pas partie d’un pool Storage Spaces.
+** Les disques restent en ligne. L'utilitaire Deploy met chaque disque hors ligne lorsqu'il le connecte à la machine virtuelle.
+
+
+. Un cluster à un seul nœud nécessite au minimum trois disques pour le RAID logiciel et quatre ou cinq disques pour le RAID-DP logiciel. Un cluster à deux nœuds nécessite six disques pour le RAID logiciel ou dix disques pour le RAID-DP logiciel. ONTAP Select prend en charge un maximum de 60 disques en mode passthrough par nœud.
++
+Vérifiez que les disques réservés sont éligibles avant d'enregistrer l'hôte :
+
++
+[source, cli]
+----
+Get-PhysicalDisk | Select-Object FriendlyName, MediaType, BusType, Size
+----
++
+
+NOTE: Les disques qui apparaissent comme membres d'un pool Espaces de stockage dans la `Get-StoragePool` sortie sont exclus par l'utilitaire Deploy et ne sont pas disponibles pour le RAID logiciel.
+
+
+
+
+
+[[step-4-review-the-ontap-select-cluster-configuration]]
+== Étape 4 : Vérifiez la configuration du cluster ONTAP Select
+
+Vous pouvez déployer ONTAP Select sous forme de cluster à deux ou quatre nœuds ou de cluster à un seul nœud. Dans de nombreux cas, un cluster à plusieurs nœuds est préférable en raison de la capacité de stockage supplémentaire et de la haute disponibilité (HA).
+
+Les figures suivantes illustrent les réseaux ONTAP Select utilisés avec un cluster à nœud unique et un cluster à quatre nœuds pour un hôte ESXi.
+
+[role="tabbed-block"]
+====
+.Cluster à un seul nœud
+--
+La figure suivante illustre un cluster à un seul nœud. Le réseau externe supporte le trafic client, de gestion et de réplication entre les clusters (SnapMirror/SnapVault).
+
+image:CHK_01.jpg["Cluster à un seul nœud montrant un réseau"]
+
+--
+.Cluster à quatre nœuds
+--
+La figure suivante illustre un cluster à quatre nœuds montrant deux réseaux. Le réseau interne permet la communication entre les nœuds qui prennent en charge les services réseau du cluster ONTAP. Le réseau externe supporte le trafic client, de gestion et de réplication entre les clusters (SnapMirror/SnapVault).
+
+image:CHK_02.jpg["Cluster à quatre nœuds affichant deux réseaux"]
+
+--
+.Un seul nœud dans un cluster à quatre nœuds
+--
+La figure suivante illustre la configuration réseau typique d'une seule machine virtuelle ONTAP Select au sein d'un cluster à quatre nœuds. Il existe deux réseaux distincts : ONTAP-interne et ONTAP-externe.
+
+image:CHK_03.jpg["Un seul nœud dans un cluster à quatre nœuds"]
+
+--
+====
+
+
+[[step-5-prepare-the-networks]]
+== Étape 5 : Préparer les réseaux
+
+ONTAP Select Deploy se connecte au réseau physique via des commutateurs virtuels Hyper-V. Vous devez créer ces commutateurs virtuels avant d'enregistrer l'hôte.
+
+.Description de la tâche
+Consultez la documentation Windows pour plus d'informations sur la manière d'effectuer ces étapes.
+
+.Étapes
+. Créez les commutateurs à l’aide de Virtual Switch Manager dans Hyper-V Manager, Windows Admin Center ou PowerShell.
++
+Créez un commutateur virtuel externe pour chaque adaptateur physique utilisé par ONTAP Select. Un cluster à un seul nœud nécessite au moins un adaptateur et un cluster à deux nœuds nécessite au moins deux adaptateurs.
+
+. Configurez les trames jumbo dans les propriétés avancées de l'adaptateur physique.
+. Associez un adaptateur physique à chaque commutateur virtuel.
++
+
+NOTE: L'agrégation de cartes réseau (NIC teaming) et l'agrégation intégrée au commutateur (Switch Embedded Teaming) ne sont pas prises en charge.
+
+. Vérifiez que chaque liaison montante est `up`.
++
+
+NOTE: Un commutateur virtuel externe dont la liaison montante est `down` signalée comme indisponible.
+
+. Configurez le marquage VLAN sur le port physique du commutateur ou sur l’adaptateur du système d’exploitation de gestion. L’utilitaire Deploy lit le VLAN utilisé ; il n’attribue pas de VLAN.
+. Le réseau interne d'un cluster à deux nœuds nécessite une unité de transmission maximale (MTU) de 7 500 à 9 000 octets. Activez les trames jumbo sur l'adaptateur qui transporte le réseau interne.
++
+
+NOTE: Windows Server indique la taille des trames jumbo, en incluant l'en-tête Ethernet, de sorte qu'un adaptateur configuré à 9 014 octets fournit une MTU de 9 000 octets. C'est ainsi que l'utilitaire Deploy interprète la valeur MTU du paramètre de l'adaptateur. Lorsqu'un commutateur virtuel est partagé avec le système d'exploitation de gestion, la MTU IP de l'adaptateur hôte correspondant limite également la MTU indiquée par l'utilitaire Deploy.
+
+
