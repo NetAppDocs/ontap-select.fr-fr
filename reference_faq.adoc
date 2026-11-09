@@ -191,7 +191,7 @@ Storage Add prend également en charge le RAID logiciel. Toutefois, dans le cas 
 .ONTAP Select prend-il en charge les datastores VSAN ou de type baie externe ?
 ONTAP Select Deploy et ONTAP Select pour ESXi prennent en charge la configuration d'un cluster ONTAP Select à nœud unique utilisant soit un datastore de type vSAN, soit une baie externe comme pool de stockage.
 
-ONTAP Select Deploy et ONTAP Select for KVM prennent en charge la configuration d'un cluster ONTAP Select à nœud unique utilisant un type de pool de stockage logique partagé sur des baies externes. Les pools de stockage peuvent être basés sur iSCSI, FC/FCoE et NFS. Les autres types de pools de stockage ne sont pas pris en charge.
+ONTAP Select Deploy et ONTAP Select for KVM prennent en charge la configuration d'un cluster ONTAP Select à nœud unique utilisant un type de pool de stockage logique partagé sur des baies externes. Les pools de stockage peuvent être basés sur iSCSI ou FC/FCoE. Les autres types de pools de stockage ne sont pas pris en charge.
 
 Les clusters haute disponibilité (HA) multi-nœuds sur stockage partagé sont pris en charge.
 

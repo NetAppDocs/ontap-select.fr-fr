@@ -166,7 +166,7 @@ Dans le cadre de la planification de votre déploiement, vous devez déterminer 
 --
 .KVM
 --
-Il existe plusieurs exigences et restrictions spécifiques à l'environnement d'hyperviseur que vous devez prendre en compte avant d'installer l'utilitaire ONTAP Select Deploy dans un environnement KVM.
+Il existe plusieurs exigences et restrictions propres à l'environnement de l'hyperviseur KVM que vous devez prendre en compte avant d'installer l'utilitaire ONTAP Select Deploy dans un environnement KVM.
 
 .Exigences matérielles
 Vérifiez que les hôtes d'hyperviseur KVM Linux sur lesquels ONTAP Select est déployé répondent aux exigences de base suivantes :
@@ -216,10 +216,10 @@ Dans le cadre de la planification de votre déploiement, vous devez déterminer 
 ====
 
 
+[[vmware-vsphere-privileges-for-esa]]
 [[vmware-vcenter-server-considerations]]
-== Considérations relatives au serveur VMware vCenter
+== Privilèges VMware vSphere pour ESA
 
-.Privilèges VMware vSphere pour ESA
 Pour créer et gérer l’architecture de stockage vSAN Express (ESA) dans vCenter, vous avez besoin des privilèges de bibliothèque de contenu vSphere suivants :
 
 
