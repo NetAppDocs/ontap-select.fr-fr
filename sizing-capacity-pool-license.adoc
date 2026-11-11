@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: sizing-capacity-pool-license.html 
-keywords: license, licensing, Capacity Tiers, usable, space 
-summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacente gérée par chaque nœud, et non sur la capacité utilisable du nœud, de la paire haute disponibilité ou du cluster. Chaque licence Capacity Tiers est attribuée à un numéro de série de nœud individuel pour une capacité spécifiée et nécessite un contrat de support associé. 
+keywords: license, licensing, Capacity Pools, usable, space 
+summary: La licence Capacity Pools est basée sur la capacité de disque sous-jacente gérée par chaque nœud, et non sur la capacité utilisable du nœud, de la paire haute disponibilité ou du cluster. Chaque licence Capacity Pools est attribuée à un numéro de série de nœud individuel pour une capacité spécifiée et nécessite un contrat de support. 
 ---
 = Déterminez la taille de la licence des pools de capacité pour ONTAP Select
 :hardbreaks:
@@ -14,13 +14,23 @@ summary: La licence Capacity Tiers est basée sur la capacité disque sous-jacen
 
 
 [role="lead"]
+Calculez la taille de la licence ONTAP Select Capacity Pool en fonction de l'espace utilisable et de la surcharge de configuration du cluster afin de garantir une capacité sous licence suffisante pour un déploiement.
+
+Avant de déterminer la taille de la licence Capacity Pools, vous devez prendre en compte les éléments suivants :
+
+* Dans les deux configurations RAID matériel (VMDK) et RAID logiciel (NVMe ou SSD), la consommation de licences est calculée à partir des disques de données ou des partitions de données alloués aux agrégats de données.
+* ONTAP Select exclut les disques et partitions de parité RAID-DP de la consommation de licence. Seules les partitions et disques de données ajoutés à un agrégat sont soumis à licence ; par conséquent, la surcharge liée à la parité RAID-DP n’entraîne aucune consommation de capacité de licence supplémentaire.
+* La capacité du disque en veille n'est pas incluse dans la capacité utilisable de l'agrégat et ne consomme pas de capacité de licence.
+* Les disques de parité sont dédiés à la protection des données. Ils ne fournissent pas d'espace de stockage utilisable pour les volumes et les données et ne sont pas comptabilisés dans la capacité utilisable.
+
+
 La capacité souscrite pour une licence Capacity Pool est exprimée en téraoctets (To) entiers, avec un minimum de 2 To. Vous calculez la capacité souscrite en multipliant l’espace utilisable par le facteur de surcharge. Le facteur de surcharge estime la capacité de surcharge logicielle ONTAP Select à déduire de l’espace utilisable et s’applique à la détermination de la capacité ONTAP Select pour les disques NVMe, SSD, HDD ou virtuels. Le facteur de surcharge diffère entre les clusters à nœud unique et les clusters à nœuds multiples (basés sur des paires haute disponibilité).
 
 * Le facteur de surcharge pour les clusters à nœud unique est de 1,13
 * Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
 
 
-Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de vous assurer qu'elle est suffisante pour votre déploiement. Par exemple, si vous souhaitez 20 To de capacité utilisable pour une paire haute disponibilité (10 To par nœud) :
+Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de garantir une capacité suffisante pour un déploiement. Par exemple, si vous souhaitez 20 To de capacité utilisable pour une paire haute disponibilité (10 To par nœud) :
 
 * Avec une paire haute disponibilité, les données sont dupliquées entre les deux nœuds pour assurer la redondance. Ainsi, pour 20 To de données utilisables dans une paire haute disponibilité, vous devez disposer de 20 To par nœud, au cas où l'un des nœuds serait hors ligne.
 * Le facteur de 2,67 double la capacité de chaque nœud et ajoute la capacité de surcharge (0,67) nécessaire au fonctionnement d'ONTAP Select.
