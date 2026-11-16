@@ -14,7 +14,7 @@ summary: La licence Capacity Pools est basée sur la capacité de disque sous-ja
 
 
 [role="lead"]
-Calculez la taille de la licence ONTAP Select Capacity Pool en fonction de l'espace utilisable et de la surcharge de configuration du cluster afin de garantir une capacité sous licence suffisante pour un déploiement.
+Calculez la taille de la licence ONTAP Select Capacity Pool en fonction de l'espace utilisable et de la surcharge de configuration du cluster afin de vous assurer que vous disposez d'une capacité sous licence suffisante pour un déploiement.
 
 Avant de déterminer la taille de la licence Capacity Pools, vous devez prendre en compte les éléments suivants :
 
@@ -30,7 +30,7 @@ La capacité souscrite pour une licence Capacity Pool est exprimée en téraocte
 * Le facteur de surcharge pour les clusters multi-nœuds est de 2,67
 
 
-Vous devez calculer la capacité sous licence en fonction de l'espace utilisable afin de garantir une capacité suffisante pour un déploiement. Par exemple, si vous souhaitez 20 To de capacité utilisable pour une paire haute disponibilité (10 To par nœud) :
+Par exemple, si vous souhaitez 20 To de capacité utilisable pour une paire haute disponibilité (10 To par nœud) :
 
 * Avec une paire haute disponibilité, les données sont dupliquées entre les deux nœuds pour assurer la redondance. Ainsi, pour 20 To de données utilisables dans une paire haute disponibilité, vous devez disposer de 20 To par nœud, au cas où l'un des nœuds serait hors ligne.
 * Le facteur de 2,67 double la capacité de chaque nœud et ajoute la capacité de surcharge (0,67) nécessaire au fonctionnement d'ONTAP Select.

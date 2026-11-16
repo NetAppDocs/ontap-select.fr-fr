@@ -98,7 +98,7 @@ image:nvme_02.png["Modifier la disponibilité des périphériques PCI"]
 
 +
 
-NOTE: Vous avez besoin d'un datastore VMFS également sauvegardé par un périphérique NVMe pour héberger les disques système de machine virtuelle ONTAP Select et la NVRAM virtuelle. Laissez au moins un disque NVMe disponible à cette fin lors de la configuration des autres disques pour une passerelle PCI.
+NOTE: Vous avez besoin d’une banque de données VMFS également prise en charge par un périphérique NVMe pour héberger les disques système de la machine virtuelle ONTAP Select et la NVRAM virtuelle. Laissez au moins un disque NVMe disponible à cette fin lorsque vous configurez les autres pour le transfert PCI.
 
 .. Sélectionnez *OK*. Les appareils sélectionnés indiquent *Disponible (en attente)*.
 
